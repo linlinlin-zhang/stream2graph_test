@@ -1,0 +1,3637 @@
+{
+  "sample_id": "gh_architecture_01830",
+  "diagram_type": "architecture",
+  "generated_at_utc": "2026-03-21T17:39:13Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "oracle_gate",
+    "planner_model": "oracle_planner"
+  },
+  "summary": {
+    "turn_count": 15,
+    "total_stages": 5,
+    "updates_emitted": 5,
+    "final_stage_index": 5,
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": true,
+    "final_graph_metrics": {
+      "node_count": 31,
+      "edge_count": 0,
+      "group_count": 9,
+      "node_ids": [
+        "WEB",
+        "MOBILE",
+        "API_CLIENT",
+        "CDN",
+        "LB",
+        "API",
+        "WEB_APP",
+        "JWT",
+        "CSRF",
+        "RATE_LIMIT",
+        "AUTH",
+        "PAYMENTS"
+      ],
+      "edge_ids": [],
+      "group_ids": [
+        "group_1",
+        "group_2",
+        "group_3",
+        "group_4",
+        "group_5",
+        "group_6",
+        "group_7",
+        "group_8",
+        "group_9"
+      ]
+    },
+    "reference_graph_metrics": {
+      "node_count": 31,
+      "edge_count": 0,
+      "group_count": 9,
+      "node_ids": [
+        "WEB",
+        "MOBILE",
+        "API_CLIENT",
+        "CDN",
+        "LB",
+        "API",
+        "WEB_APP",
+        "JWT",
+        "CSRF",
+        "RATE_LIMIT",
+        "AUTH",
+        "PAYMENTS"
+      ],
+      "edge_ids": [],
+      "group_ids": [
+        "group_1",
+        "group_2",
+        "group_3",
+        "group_4",
+        "group_5",
+        "group_6",
+        "group_7",
+        "group_8",
+        "group_9"
+      ]
+    }
+  },
+  "final_state": {
+    "sample_id": "gh_architecture_01830",
+    "diagram_type": "architecture",
+    "current_stage_index": 5,
+    "current_graph_ir": {
+      "graph_id": "gh_architecture_01830",
+      "diagram_type": "architecture",
+      "nodes": [
+        {
+          "id": "WEB",
+          "label": "Web Frontend<br/Next.js + React",
+          "kind": "node",
+          "parent": "group_1",
+          "source_index": 5,
+          "metadata": {
+            "diagram_type": "architecture"
+          }
+        },
+        {
+          "id": "MOBILE",
+          "label": "Mobile App<br/React Native",
+          "kind": "node",
+          "parent": "group_1",
+          "source_index": 6,
+          "metadata": {
+            "diagram_type": "architecture"
+          }
+        },
+        {
+          "id": "API_CLIENT",
+          "label": "API Client<br/SDK",
+          "kind": "node",
+          "parent": "group_1",
+          "source_index": 7,
+          "metadata": {
+            "diagram_type": "architecture"
+          }
+        },
+        {
+          "id": "CDN",
+          "label": "Vercel Edge Network",
+          "kind": "node",
+          "parent": "group_2",
+          "source_index": 8,
+          "metadata": {
+            "diagram_type": "architecture"
+          }
+        },
+        {
+          "id": "LB",
+          "label": "Load Balancer<br/Nginx",
+          "kind": "node",
+          "parent": "group_2",
+          "source_index": 9,
+          "metadata": {
+            "diagram_type": "architecture"
+          }
+        },
+        {
+          "id": "API",
+          "label": "API Server<br/NestJS + Fastify<br/Port 4000",
+          "kind": "node",
+          "parent": "group_3",
+          "source_index": 10,
+          "metadata": {
+            "diagram_type": "architecture"
+          }
+        },
+        {
+          "id": "WEB_APP",
+          "label": "Web App<br/Next.js<br/Port 3000",
+          "kind": "node",
+          "parent": "group_3",
+          "source_index": 11,
+          "metadata": {
+            "diagram_type": "architecture"
+          }
+        },
+        {
+          "id": "JWT",
+          "label": "JWT Tokens<br/Access + Refresh",
+          "kind": "node",
+          "parent": "group_4",
+          "source_index": 15,
+          "metadata": {
+            "diagram_type": "architecture"
+          }
+        },
+        {
+          "id": "CSRF",
+          "label": "CSRF Protection<br/Double Submit",
+          "kind": "node",
+          "parent": "group_4",
+          "source_index": 16,
+          "metadata": {
+            "diagram_type": "architecture"
+          }
+        },
+        {
+          "id": "RATE_LIMIT",
+          "label": "Rate Limiting<br/Redis-based",
+          "kind": "node",
+          "parent": "group_4",
+          "source_index": 17,
+          "metadata": {
+            "diagram_type": "architecture"
+          }
+        },
+        {
+          "id": "AUTH",
+          "label": "Authentication<br/Service",
+          "kind": "node",
+          "parent": "group_5",
+          "source_index": 18,
+          "metadata": {
+            "diagram_type": "architecture"
+          }
+        },
+        {
+          "id": "PAYMENTS",
+          "label": "Payments<br/Service",
+          "kind": "node",
+          "parent": "group_5",
+          "source_index": 19,
+          "metadata": {
+            "diagram_type": "architecture"
+          }
+        },
+        {
+          "id": "ORDERS",
+          "label": "Orders<br/Service",
+          "kind": "node",
+          "parent": "group_5",
+          "source_index": 20,
+          "metadata": {
+            "diagram_type": "architecture"
+          }
+        },
+        {
+          "id": "DELIVERIES",
+          "label": "Deliveries<br/Service",
+          "kind": "node",
+          "parent": "group_5",
+          "source_index": 23,
+          "metadata": {
+            "diagram_type": "architecture"
+          }
+        },
+        {
+          "id": "TICKETS",
+          "label": "Tickets<br/Service",
+          "kind": "node",
+          "parent": "group_5",
+          "source_index": 24,
+          "metadata": {
+            "diagram_type": "architecture"
+          }
+        },
+        {
+          "id": "SEARCH",
+          "label": "Search<br/Service",
+          "kind": "node",
+          "parent": "group_5",
+          "source_index": 25,
+          "metadata": {
+            "diagram_type": "architecture"
+          }
+        },
+        {
+          "id": "NEWS",
+          "label": "News<br/Service",
+          "kind": "node",
+          "parent": "group_5",
+          "source_index": 26,
+          "metadata": {
+            "diagram_type": "architecture"
+          }
+        },
+        {
+          "id": "EXPORTS",
+          "label": "Exports<br/Service",
+          "kind": "node",
+          "parent": "group_5",
+          "source_index": 27,
+          "metadata": {
+            "diagram_type": "architecture"
+          }
+        },
+        {
+          "id": "DB",
+          "label": "(PostgreSQL<br/Neon Database)",
+          "kind": "node",
+          "parent": "group_6",
+          "source_index": 28,
+          "metadata": {
+            "diagram_type": "architecture"
+          }
+        },
+        {
+          "id": "REDIS",
+          "label": "(Redis<br/Upstash Cache)",
+          "kind": "node",
+          "parent": "group_6",
+          "source_index": 32,
+          "metadata": {
+            "diagram_type": "architecture"
+          }
+        },
+        {
+          "id": "FILES",
+          "label": "(File Storage<br/S3/R2)",
+          "kind": "node",
+          "parent": "group_6",
+          "source_index": 33,
+          "metadata": {
+            "diagram_type": "architecture"
+          }
+        },
+        {
+          "id": "SEPAY",
+          "label": "SEPay<br/Payment Gateway",
+          "kind": "node",
+          "parent": "group_7",
+          "source_index": 34,
+          "metadata": {
+            "diagram_type": "architecture"
+          }
+        },
+        {
+          "id": "DISCORD",
+          "label": "Discord<br/Notifications",
+          "kind": "node",
+          "parent": "group_7",
+          "source_index": 35,
+          "metadata": {
+            "diagram_type": "architecture"
+          }
+        },
+        {
+          "id": "EMAIL",
+          "label": "Email<br/SMTP",
+          "kind": "node",
+          "parent": "group_7",
+          "source_index": 36,
+          "metadata": {
+            "diagram_type": "architecture"
+          }
+        },
+        {
+          "id": "DOCKER",
+          "label": "Docker<br/Containers",
+          "kind": "node",
+          "parent": "group_8",
+          "source_index": 37,
+          "metadata": {
+            "diagram_type": "architecture"
+          }
+        },
+        {
+          "id": "JENKINS",
+          "label": "Jenkins<br/CI/CD",
+          "kind": "node",
+          "parent": "group_8",
+          "source_index": 40,
+          "metadata": {
+            "diagram_type": "architecture"
+          }
+        },
+        {
+          "id": "SONAR",
+          "label": "SonarQube<br/Quality Gate",
+          "kind": "node",
+          "parent": "group_8",
+          "source_index": 41,
+          "metadata": {
+            "diagram_type": "architecture"
+          }
+        },
+        {
+          "id": "MONITORING",
+          "label": "Monitoring<br/Prometheus + Grafana",
+          "kind": "node",
+          "parent": "group_8",
+          "source_index": 42,
+          "metadata": {
+            "diagram_type": "architecture"
+          }
+        },
+        {
+          "id": "VERCEL",
+          "label": "Vercel<br/Frontend",
+          "kind": "node",
+          "parent": "group_9",
+          "source_index": 43,
+          "metadata": {
+            "diagram_type": "architecture"
+          }
+        },
+        {
+          "id": "FLY",
+          "label": "Fly.io<br/API Production",
+          "kind": "node",
+          "parent": "group_9",
+          "source_index": 44,
+          "metadata": {
+            "diagram_type": "architecture"
+          }
+        },
+        {
+          "id": "KOYEB",
+          "label": "Koyeb<br/API Staging",
+          "kind": "node",
+          "parent": "group_9",
+          "source_index": 45,
+          "metadata": {
+            "diagram_type": "architecture"
+          }
+        }
+      ],
+      "edges": [],
+      "groups": [
+        {
+          "id": "group_1",
+          "label": "Client Layer",
+          "parent": null,
+          "member_ids": [
+            "WEB",
+            "MOBILE",
+            "API_CLIENT"
+          ],
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "group_2",
+          "label": "CDN & Load Balancer",
+          "parent": null,
+          "member_ids": [
+            "CDN",
+            "LB"
+          ],
+          "source_index": 3,
+          "metadata": {}
+        },
+        {
+          "id": "group_3",
+          "label": "Application Layer",
+          "parent": null,
+          "member_ids": [
+            "API",
+            "WEB_APP"
+          ],
+          "source_index": 4,
+          "metadata": {}
+        },
+        {
+          "id": "group_4",
+          "label": "Authentication & Security",
+          "parent": null,
+          "member_ids": [
+            "JWT",
+            "CSRF",
+            "RATE_LIMIT"
+          ],
+          "source_index": 6,
+          "metadata": {}
+        },
+        {
+          "id": "group_5",
+          "label": "Business Logic",
+          "parent": null,
+          "member_ids": [
+            "AUTH",
+            "PAYMENTS",
+            "ORDERS",
+            "DELIVERIES",
+            "TICKETS",
+            "SEARCH",
+            "NEWS",
+            "EXPORTS"
+          ],
+          "source_index": 7,
+          "metadata": {}
+        },
+        {
+          "id": "group_6",
+          "label": "Data Layer",
+          "parent": null,
+          "member_ids": [
+            "DB",
+            "REDIS",
+            "FILES"
+          ],
+          "source_index": 9,
+          "metadata": {}
+        },
+        {
+          "id": "group_7",
+          "label": "External Services",
+          "parent": null,
+          "member_ids": [
+            "SEPAY",
+            "DISCORD",
+            "EMAIL"
+          ],
+          "source_index": 11,
+          "metadata": {}
+        },
+        {
+          "id": "group_8",
+          "label": "Infrastructure",
+          "parent": null,
+          "member_ids": [
+            "DOCKER",
+            "JENKINS",
+            "SONAR",
+            "MONITORING"
+          ],
+          "source_index": 12,
+          "metadata": {}
+        },
+        {
+          "id": "group_9",
+          "label": "Deployment",
+          "parent": null,
+          "member_ids": [
+            "VERCEL",
+            "FLY",
+            "KOYEB"
+          ],
+          "source_index": 14,
+          "metadata": {}
+        }
+      ],
+      "styles": [],
+      "metadata": {
+        "source_path": "E:\\Desktop\\stream2graph\\data\\incremental_dataset\\sources\\open_balanced_v1_3360\\gh_architecture_01830.json",
+        "compilation_status": "success",
+        "content_size": 3416,
+        "normalized_code": "graph TB\n    subgraph \"Client Layer\"\n        WEB[Web Frontend<br/Next.js + React]\n        MOBILE[Mobile App<br/React Native]\n        API_CLIENT[API Client<br/SDK]\n    end\n    subgraph \"CDN & Load Balancer\"\n        CDN[Vercel Edge Network]\n        LB[Load Balancer<br/Nginx]\n    end\n    subgraph \"Application Layer\"\n        API[API Server<br/NestJS + Fastify<br/Port 4000]\n        WEB_APP[Web App<br/Next.js<br/Port 3000]\n    end\n    subgraph \"Authentication & Security\"\n        JWT[JWT Tokens<br/Access + Refresh]\n        CSRF[CSRF Protection<br/Double Submit]\n        RATE_LIMIT[Rate Limiting<br/Redis-based]\n    end\n    subgraph \"Business Logic\"\n        AUTH[Authentication<br/Service]\n        PAYMENTS[Payments<br/Service]\n        ORDERS[Orders<br/Service]\n        DELIVERIES[Deliveries<br/Service]\n        TICKETS[Tickets<br/Service]\n        SEARCH[Search<br/Service]\n        NEWS[News<br/Service]\n        EXPORTS[Exports<br/Service]\n    end\n    subgraph \"Data Layer\"\n        DB[(PostgreSQL<br/Neon Database)]\n        REDIS[(Redis<br/Upstash Cache)]\n        FILES[(File Storage<br/S3/R2)]\n    end\n    subgraph \"External Services\"\n        SEPAY[SEPay<br/Payment Gateway]\n        DISCORD[Discord<br/Notifications]\n        EMAIL[Email<br/SMTP]\n    end\n    subgraph \"Infrastructure\"\n        DOCKER[Docker<br/Containers]\n        JENKINS[Jenkins<br/CI/CD]\n        SONAR[SonarQube<br/Quality Gate]\n        MONITORING[Monitoring<br/Prometheus + Grafana]\n    end\n    subgraph \"Deployment\"\n        VERCEL[Vercel<br/Frontend]\n        FLY[Fly.io<br/API Production]\n        KOYEB[Koyeb<br/API Staging]\n    end\n    %% Client connections\n    WEB -- CDN\n    MOBILE -- CDN\n    API_CLIENT -- CDN\n    %% CDN to Load Balancer\n    CDN -- LB\n    %% Load Balancer to Applications\n    LB -- API\n    LB -- WEB_APP\n    %% API to Business Logic\n    API -- AUTH\n    API -- PAYMENTS\n    API -- ORDERS\n    API -- DELIVERIES\n    API -- TICKETS\n    API -- SEARCH\n    API -- NEWS\n    API -- EXPORTS\n    %% Business Logic to Data Layer\n    AUTH -- DB\n    AUTH -- REDIS\n    PAYMENTS -- DB\n    ORDERS -- DB\n    DELIVERIES -- DB\n    TICKETS -- DB\n    SEARCH -- DB\n    NEWS -- DB\n    EXPORTS -- DB\n    EXPORTS -- FILES\n    %% Authentication & Security\n    API -- JWT\n    API -- CSRF\n    API -- RATE_LIMIT\n    RATE_LIMIT -- REDIS\n    %% External Services\n    PAYMENTS -- SEPAY\n    TICKETS -- DISCORD\n    AUTH -- EMAIL\n    %% Infrastructure\n    API -- DOCKER\n    WEB_APP -- DOCKER\n    DOCKER -- JENKINS\n    JENKINS -- SONAR\n    JENKINS -- MONITORING\n    %% Deployment\n    WEB_APP -- VERCEL\n    API -- FLY\n    API -- KOYEB\n    %% Styling\n    classDef client fill:#e1f5fe\n    classDef cdn fill:#f3e5f5\n    classDef app fill:#e8f5e8\n    classDef security fill:#fff3e0\n    classDef business fill:#fce4ec\n    classDef data fill:#e0f2f1\n    classDef external fill:#f1f8e9\n    classDef infra fill:#e3f2fd\n    classDef deploy fill:#f9fbe7\n    class WEB,MOBILE,API_CLIENT client\n    class CDN,LB cdn\n    class API,WEB_APP app\n    class JWT,CSRF,RATE_LIMIT security\n    class AUTH,PAYMENTS,ORDERS,DELIVERIES,TICKETS,SEARCH,NEWS,EXPORTS business\n    class DB,REDIS,FILES data\n    class SEPAY,DISCORD,EMAIL external\n    class DOCKER,JENKINS,SONAR,MONITORING infra\n    class VERCEL,FLY,KOYEB deploy"
+      }
+    },
+    "rendered_mermaid": "graph TD\n    WEB[\"Web Frontend<br/Next.js + React\"]\n    MOBILE[\"Mobile App<br/React Native\"]\n    API_CLIENT[\"API Client<br/SDK\"]\n    CDN[\"Vercel Edge Network\"]\n    LB[\"Load Balancer<br/Nginx\"]\n    API[\"API Server<br/NestJS + Fastify<br/Port 4000\"]\n    WEB_APP[\"Web App<br/Next.js<br/Port 3000\"]\n    JWT[\"JWT Tokens<br/Access + Refresh\"]\n    CSRF[\"CSRF Protection<br/Double Submit\"]\n    RATE_LIMIT[\"Rate Limiting<br/Redis-based\"]\n    AUTH[\"Authentication<br/Service\"]\n    PAYMENTS[\"Payments<br/Service\"]\n    ORDERS[\"Orders<br/Service\"]\n    DELIVERIES[\"Deliveries<br/Service\"]\n    TICKETS[\"Tickets<br/Service\"]\n    SEARCH[\"Search<br/Service\"]\n    NEWS[\"News<br/Service\"]\n    EXPORTS[\"Exports<br/Service\"]\n    DB[\"(PostgreSQL<br/Neon Database)\"]\n    REDIS[\"(Redis<br/Upstash Cache)\"]\n    FILES[\"(File Storage<br/S3/R2)\"]\n    SEPAY[\"SEPay<br/Payment Gateway\"]\n    DISCORD[\"Discord<br/Notifications\"]\n    EMAIL[\"Email<br/SMTP\"]\n    DOCKER[\"Docker<br/Containers\"]\n    JENKINS[\"Jenkins<br/CI/CD\"]\n    SONAR[\"SonarQube<br/Quality Gate\"]\n    MONITORING[\"Monitoring<br/Prometheus + Grafana\"]\n    VERCEL[\"Vercel<br/Frontend\"]\n    FLY[\"Fly.io<br/API Production\"]\n    KOYEB[\"Koyeb<br/API Staging\"]",
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 31,
+        "edge_count": 0,
+        "group_count": 9,
+        "node_ids": [
+          "WEB",
+          "MOBILE",
+          "API_CLIENT",
+          "CDN",
+          "LB",
+          "API",
+          "WEB_APP",
+          "JWT",
+          "CSRF",
+          "RATE_LIMIT",
+          "AUTH",
+          "PAYMENTS"
+        ],
+        "edge_ids": [],
+        "group_ids": [
+          "group_1",
+          "group_2",
+          "group_3",
+          "group_4",
+          "group_5",
+          "group_6",
+          "group_7",
+          "group_8",
+          "group_9"
+        ]
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 0,
+        "speaker": "架构师",
+        "content": "好的，我们今天来设计一个现代全栈应用的架构。首先需要建立最核心的基础层。我建议从客户端层、CDN与负载均衡层、以及应用层这三个主要层次开始。用户会通过各种客户端发起请求，这些请求首先会经过边缘网络和负载均衡进行分发。",
+        "stage_index": null,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Turn 0 introduces the initial three core layers (客户端层、CDN与负载均衡层、应用层) for bootstrapping.",
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "开发者A",
+        "content": "明白了，那客户端层应该包含什么呢？",
+        "stage_index": null,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Turn 1 is a follow-up question within Stage 1 about client layer composition.",
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "架构师",
+        "content": "客户端层会有Web前端、移动端App，以及供第三方调用的API Client SDK。Web前端我们用Next.js实现，移动端采用React Native开发。请求进来后，会先经过Vercel Edge Network进行边缘加速，然后到达Nginx负载均衡器，最后分发到我们的API服务器和Web应用服务。API服务器使用NestJS配合Fastify运行在4000端口，Web应用则是Next.js运行在3000端口。",
+        "stage_index": null,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Turn 2 completes the initial bootstrap by detailing client layer components, CDN, load balancer, and application services.",
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "turn 2 reached end boundary for stage 1",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "group_1",
+            "label": "Client Layer"
+          },
+          {
+            "op": "add_group",
+            "group_id": "group_2",
+            "label": "CDN & Load Balancer"
+          },
+          {
+            "op": "add_group",
+            "group_id": "group_3",
+            "label": "Application Layer"
+          },
+          {
+            "op": "add_node",
+            "node_id": "WEB",
+            "label": "Web Frontend<br/Next.js + React",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "MOBILE",
+            "label": "Mobile App<br/React Native",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "API_CLIENT",
+            "label": "API Client<br/SDK",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "CDN",
+            "label": "Vercel Edge Network",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "LB",
+            "label": "Load Balancer<br/Nginx",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "API",
+            "label": "API Server<br/NestJS + Fastify<br/Port 4000",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "WEB_APP",
+            "label": "Web App<br/Next.js<br/Port 3000",
+            "kind": "node"
+          }
+        ],
+        "target_graph_ir": {
+          "graph_id": "gh_architecture_01830",
+          "diagram_type": "architecture",
+          "nodes": [
+            {
+              "id": "WEB",
+              "label": "Web Frontend<br/Next.js + React",
+              "kind": "node",
+              "parent": "group_1",
+              "source_index": 3,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "MOBILE",
+              "label": "Mobile App<br/React Native",
+              "kind": "node",
+              "parent": "group_1",
+              "source_index": 4,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "API_CLIENT",
+              "label": "API Client<br/SDK",
+              "kind": "node",
+              "parent": "group_1",
+              "source_index": 5,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "CDN",
+              "label": "Vercel Edge Network",
+              "kind": "node",
+              "parent": "group_2",
+              "source_index": 8,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "LB",
+              "label": "Load Balancer<br/Nginx",
+              "kind": "node",
+              "parent": "group_2",
+              "source_index": 9,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "API",
+              "label": "API Server<br/NestJS + Fastify<br/Port 4000",
+              "kind": "node",
+              "parent": "group_3",
+              "source_index": 12,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "WEB_APP",
+              "label": "Web App<br/Next.js<br/Port 3000",
+              "kind": "node",
+              "parent": "group_3",
+              "source_index": 13,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            }
+          ],
+          "edges": [],
+          "groups": [
+            {
+              "id": "group_1",
+              "label": "Client Layer",
+              "parent": null,
+              "member_ids": [
+                "WEB",
+                "MOBILE",
+                "API_CLIENT"
+              ],
+              "source_index": 2,
+              "metadata": {}
+            },
+            {
+              "id": "group_2",
+              "label": "CDN & Load Balancer",
+              "parent": null,
+              "member_ids": [
+                "CDN",
+                "LB"
+              ],
+              "source_index": 7,
+              "metadata": {}
+            },
+            {
+              "id": "group_3",
+              "label": "Application Layer",
+              "parent": null,
+              "member_ids": [
+                "API",
+                "WEB_APP"
+              ],
+              "source_index": 11,
+              "metadata": {}
+            }
+          ],
+          "styles": [],
+          "metadata": {
+            "source_path": "E:\\Desktop\\stream2graph\\data\\incremental_dataset\\sources\\open_balanced_v1_3360\\gh_architecture_01830.json",
+            "compilation_status": "success",
+            "content_size": 3416,
+            "normalized_code": "graph TB\n    subgraph \"Client Layer\"\n        WEB[Web Frontend<br/Next.js + React]\n        MOBILE[Mobile App<br/React Native]\n        API_CLIENT[API Client<br/SDK]\n    end\n    subgraph \"CDN & Load Balancer\"\n        CDN[Vercel Edge Network]\n        LB[Load Balancer<br/Nginx]\n    end\n    subgraph \"Application Layer\"\n        API[API Server<br/NestJS + Fastify<br/Port 4000]\n        WEB_APP[Web App<br/Next.js<br/Port 3000]\n    end\n    subgraph \"Authentication & Security\"\n        JWT[JWT Tokens<br/Access + Refresh]\n        CSRF[CSRF Protection<br/Double Submit]\n        RATE_LIMIT[Rate Limiting<br/Redis-based]\n    end\n    subgraph \"Business Logic\"\n        AUTH[Authentication<br/Service]\n        PAYMENTS[Payments<br/Service]\n        ORDERS[Orders<br/Service]\n        DELIVERIES[Deliveries<br/Service]\n        TICKETS[Tickets<br/Service]\n        SEARCH[Search<br/Service]\n        NEWS[News<br/Service]\n        EXPORTS[Exports<br/Service]\n    end\n    subgraph \"Data Layer\"\n        DB[(PostgreSQL<br/Neon Database)]\n        REDIS[(Redis<br/Upstash Cache)]\n        FILES[(File Storage<br/S3/R2)]\n    end\n    subgraph \"External Services\"\n        SEPAY[SEPay<br/Payment Gateway]\n        DISCORD[Discord<br/Notifications]\n        EMAIL[Email<br/SMTP]\n    end\n    subgraph \"Infrastructure\"\n        DOCKER[Docker<br/Containers]\n        JENKINS[Jenkins<br/CI/CD]\n        SONAR[SonarQube<br/Quality Gate]\n        MONITORING[Monitoring<br/Prometheus + Grafana]\n    end\n    subgraph \"Deployment\"\n        VERCEL[Vercel<br/Frontend]\n        FLY[Fly.io<br/API Production]\n        KOYEB[Koyeb<br/API Staging]\n    end\n    %% Client connections\n    WEB -- CDN\n    MOBILE -- CDN\n    API_CLIENT -- CDN\n    %% CDN to Load Balancer\n    CDN -- LB\n    %% Load Balancer to Applications\n    LB -- API\n    LB -- WEB_APP\n    %% API to Business Logic\n    API -- AUTH\n    API -- PAYMENTS\n    API -- ORDERS\n    API -- DELIVERIES\n    API -- TICKETS\n    API -- SEARCH\n    API -- NEWS\n    API -- EXPORTS\n    %% Business Logic to Data Layer\n    AUTH -- DB\n    AUTH -- REDIS\n    PAYMENTS -- DB\n    ORDERS -- DB\n    DELIVERIES -- DB\n    TICKETS -- DB\n    SEARCH -- DB\n    NEWS -- DB\n    EXPORTS -- DB\n    EXPORTS -- FILES\n    %% Authentication & Security\n    API -- JWT\n    API -- CSRF\n    API -- RATE_LIMIT\n    RATE_LIMIT -- REDIS\n    %% External Services\n    PAYMENTS -- SEPAY\n    TICKETS -- DISCORD\n    AUTH -- EMAIL\n    %% Infrastructure\n    API -- DOCKER\n    WEB_APP -- DOCKER\n    DOCKER -- JENKINS\n    JENKINS -- SONAR\n    JENKINS -- MONITORING\n    %% Deployment\n    WEB_APP -- VERCEL\n    API -- FLY\n    API -- KOYEB\n    %% Styling\n    classDef client fill:#e1f5fe\n    classDef cdn fill:#f3e5f5\n    classDef app fill:#e8f5e8\n    classDef security fill:#fff3e0\n    classDef business fill:#fce4ec\n    classDef data fill:#e0f2f1\n    classDef external fill:#f1f8e9\n    classDef infra fill:#e3f2fd\n    classDef deploy fill:#f9fbe7\n    class WEB,MOBILE,API_CLIENT client\n    class CDN,LB cdn\n    class API,WEB_APP app\n    class JWT,CSRF,RATE_LIMIT security\n    class AUTH,PAYMENTS,ORDERS,DELIVERIES,TICKETS,SEARCH,NEWS,EXPORTS business\n    class DB,REDIS,FILES data\n    class SEPAY,DISCORD,EMAIL external\n    class DOCKER,JENKINS,SONAR,MONITORING infra\n    class VERCEL,FLY,KOYEB deploy"
+          }
+        },
+        "notes": "Stage 1/5, adds 7 nodes, 0 edges, 3 groups, current state now contains 7 nodes and 0 edges",
+        "metadata": {
+          "planner_mode": "oracle",
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "group_1",
+            "label": "Client Layer"
+          },
+          {
+            "op": "add_group",
+            "group_id": "group_2",
+            "label": "CDN & Load Balancer"
+          },
+          {
+            "op": "add_group",
+            "group_id": "group_3",
+            "label": "Application Layer"
+          },
+          {
+            "op": "add_node",
+            "node_id": "WEB",
+            "label": "Web Frontend<br/Next.js + React",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "MOBILE",
+            "label": "Mobile App<br/React Native",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "API_CLIENT",
+            "label": "API Client<br/SDK",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "CDN",
+            "label": "Vercel Edge Network",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "LB",
+            "label": "Load Balancer<br/Nginx",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "API",
+            "label": "API Server<br/NestJS + Fastify<br/Port 4000",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "WEB_APP",
+            "label": "Web App<br/Next.js<br/Port 3000",
+            "kind": "node"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 7,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "WEB",
+            "MOBILE",
+            "API_CLIENT",
+            "CDN",
+            "LB",
+            "API",
+            "WEB_APP"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "group_1",
+            "group_2",
+            "group_3"
+          ]
+        },
+        "gold_stage_metrics": {
+          "node_count": 7,
+          "edge_count": 0,
+          "group_count": 3,
+          "delta_count": 10
+        },
+        "preview_mermaid": "graph TD\n    WEB[\"Web Frontend<br/Next.js + React\"]\n    MOBILE[\"Mobile App<br/React Native\"]\n    API_CLIENT[\"API Client<br/SDK\"]\n    CDN[\"Vercel Edge Network\"]\n    LB[\"Load Balancer<br/Nginx\"]\n    API[\"API Server<br/NestJS + Fastify<br/Port 4000\"]\n    WEB_APP[\"Web App<br/Next.js<br/Port 3000\"]",
+        "matches_reference_stage": true
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 7,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "WEB",
+            "MOBILE",
+            "API_CLIENT",
+            "CDN",
+            "LB",
+            "API",
+            "WEB_APP"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "group_1",
+            "group_2",
+            "group_3"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    WEB[\"Web Frontend<br/Next.js + React\"]\n    MOBILE[\"Mobile App<br/React Native\"]\n    API_CLIENT[\"API Client<br/SDK\"]\n    CDN[\"Vercel Edge Network\"]\n    LB[\"Load Balancer<br/Nginx\"]\n    API[\"API Server<br/NestJS + Fastify<br/Port 4000\"]\n    WEB_APP[\"Web App<br/Next.js<br/Port 3000\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "开发者B",
+        "content": "现在基础架构已经搭起来了，接下来是不是应该考虑安全机制？",
+        "stage_index": null,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Turn 3 initiates the transition to Stage 2 by asking about security mechanisms.",
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 7,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "WEB",
+            "MOBILE",
+            "API_CLIENT",
+            "CDN",
+            "LB",
+            "API",
+            "WEB_APP"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "group_1",
+            "group_2",
+            "group_3"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    WEB[\"Web Frontend<br/Next.js + React\"]\n    MOBILE[\"Mobile App<br/React Native\"]\n    API_CLIENT[\"API Client<br/SDK\"]\n    CDN[\"Vercel Edge Network\"]\n    LB[\"Load Balancer<br/Nginx\"]\n    API[\"API Server<br/NestJS + Fastify<br/Port 4000\"]\n    WEB_APP[\"Web App<br/Next.js<br/Port 3000\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "架构师",
+        "content": "没错，接下来我们需要添加认证与安全层，以及核心业务逻辑层。安全方面，我们要实现JWT Tokens来进行身份认证，包含Access Token和Refresh Token两种机制。同时还要加入CSRF保护，采用双重提交Cookie的方式防止跨站请求伪造。另外，Redis实现的限流机制也很重要，可以防止恶意请求对系统造成压力。",
+        "stage_index": null,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Turn 4 expands the architecture with Authentication & Security layer components (JWT, CSRF, Rate Limiting).",
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 7,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "WEB",
+            "MOBILE",
+            "API_CLIENT",
+            "CDN",
+            "LB",
+            "API",
+            "WEB_APP"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "group_1",
+            "group_2",
+            "group_3"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    WEB[\"Web Frontend<br/Next.js + React\"]\n    MOBILE[\"Mobile App<br/React Native\"]\n    API_CLIENT[\"API Client<br/SDK\"]\n    CDN[\"Vercel Edge Network\"]\n    LB[\"Load Balancer<br/Nginx\"]\n    API[\"API Server<br/NestJS + Fastify<br/Port 4000\"]\n    WEB_APP[\"Web App<br/Next.js<br/Port 3000\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "开发者A",
+        "content": "业务逻辑层包含哪些服务呢？",
+        "stage_index": null,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Turn 5 asks about business logic services, prompting expansion into Stage 2's business logic.",
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "turn 5 reached end boundary for stage 2",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 7,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "WEB",
+            "MOBILE",
+            "API_CLIENT",
+            "CDN",
+            "LB",
+            "API",
+            "WEB_APP"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "group_1",
+            "group_2",
+            "group_3"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    WEB[\"Web Frontend<br/Next.js + React\"]\n    MOBILE[\"Mobile App<br/React Native\"]\n    API_CLIENT[\"API Client<br/SDK\"]\n    CDN[\"Vercel Edge Network\"]\n    LB[\"Load Balancer<br/Nginx\"]\n    API[\"API Server<br/NestJS + Fastify<br/Port 4000\"]\n    WEB_APP[\"Web App<br/Next.js<br/Port 3000\"]"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "group_4",
+            "label": "Authentication & Security"
+          },
+          {
+            "op": "add_group",
+            "group_id": "group_5",
+            "label": "Business Logic"
+          },
+          {
+            "op": "add_node",
+            "node_id": "JWT",
+            "label": "JWT Tokens<br/Access + Refresh",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "CSRF",
+            "label": "CSRF Protection<br/Double Submit",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "RATE_LIMIT",
+            "label": "Rate Limiting<br/Redis-based",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "AUTH",
+            "label": "Authentication<br/Service",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "PAYMENTS",
+            "label": "Payments<br/Service",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "ORDERS",
+            "label": "Orders<br/Service",
+            "kind": "node"
+          }
+        ],
+        "target_graph_ir": {
+          "graph_id": "gh_architecture_01830",
+          "diagram_type": "architecture",
+          "nodes": [
+            {
+              "id": "WEB",
+              "label": "Web Frontend<br/Next.js + React",
+              "kind": "node",
+              "parent": "group_1",
+              "source_index": 3,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "MOBILE",
+              "label": "Mobile App<br/React Native",
+              "kind": "node",
+              "parent": "group_1",
+              "source_index": 4,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "API_CLIENT",
+              "label": "API Client<br/SDK",
+              "kind": "node",
+              "parent": "group_1",
+              "source_index": 5,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "CDN",
+              "label": "Vercel Edge Network",
+              "kind": "node",
+              "parent": "group_2",
+              "source_index": 8,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "LB",
+              "label": "Load Balancer<br/Nginx",
+              "kind": "node",
+              "parent": "group_2",
+              "source_index": 9,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "API",
+              "label": "API Server<br/NestJS + Fastify<br/Port 4000",
+              "kind": "node",
+              "parent": "group_3",
+              "source_index": 12,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "WEB_APP",
+              "label": "Web App<br/Next.js<br/Port 3000",
+              "kind": "node",
+              "parent": "group_3",
+              "source_index": 13,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "JWT",
+              "label": "JWT Tokens<br/Access + Refresh",
+              "kind": "node",
+              "parent": "group_4",
+              "source_index": 16,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "CSRF",
+              "label": "CSRF Protection<br/Double Submit",
+              "kind": "node",
+              "parent": "group_4",
+              "source_index": 17,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "RATE_LIMIT",
+              "label": "Rate Limiting<br/Redis-based",
+              "kind": "node",
+              "parent": "group_4",
+              "source_index": 18,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "AUTH",
+              "label": "Authentication<br/Service",
+              "kind": "node",
+              "parent": "group_5",
+              "source_index": 21,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "PAYMENTS",
+              "label": "Payments<br/Service",
+              "kind": "node",
+              "parent": "group_5",
+              "source_index": 22,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "ORDERS",
+              "label": "Orders<br/Service",
+              "kind": "node",
+              "parent": "group_5",
+              "source_index": 23,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            }
+          ],
+          "edges": [],
+          "groups": [
+            {
+              "id": "group_1",
+              "label": "Client Layer",
+              "parent": null,
+              "member_ids": [
+                "WEB",
+                "MOBILE",
+                "API_CLIENT"
+              ],
+              "source_index": 2,
+              "metadata": {}
+            },
+            {
+              "id": "group_2",
+              "label": "CDN & Load Balancer",
+              "parent": null,
+              "member_ids": [
+                "CDN",
+                "LB"
+              ],
+              "source_index": 7,
+              "metadata": {}
+            },
+            {
+              "id": "group_3",
+              "label": "Application Layer",
+              "parent": null,
+              "member_ids": [
+                "API",
+                "WEB_APP"
+              ],
+              "source_index": 11,
+              "metadata": {}
+            },
+            {
+              "id": "group_4",
+              "label": "Authentication & Security",
+              "parent": null,
+              "member_ids": [
+                "JWT",
+                "CSRF",
+                "RATE_LIMIT"
+              ],
+              "source_index": 15,
+              "metadata": {}
+            },
+            {
+              "id": "group_5",
+              "label": "Business Logic",
+              "parent": null,
+              "member_ids": [
+                "AUTH",
+                "PAYMENTS",
+                "ORDERS",
+                "DELIVERIES",
+                "TICKETS",
+                "SEARCH",
+                "NEWS",
+                "EXPORTS"
+              ],
+              "source_index": 20,
+              "metadata": {}
+            }
+          ],
+          "styles": [],
+          "metadata": {
+            "source_path": "E:\\Desktop\\stream2graph\\data\\incremental_dataset\\sources\\open_balanced_v1_3360\\gh_architecture_01830.json",
+            "compilation_status": "success",
+            "content_size": 3416,
+            "normalized_code": "graph TB\n    subgraph \"Client Layer\"\n        WEB[Web Frontend<br/Next.js + React]\n        MOBILE[Mobile App<br/React Native]\n        API_CLIENT[API Client<br/SDK]\n    end\n    subgraph \"CDN & Load Balancer\"\n        CDN[Vercel Edge Network]\n        LB[Load Balancer<br/Nginx]\n    end\n    subgraph \"Application Layer\"\n        API[API Server<br/NestJS + Fastify<br/Port 4000]\n        WEB_APP[Web App<br/Next.js<br/Port 3000]\n    end\n    subgraph \"Authentication & Security\"\n        JWT[JWT Tokens<br/Access + Refresh]\n        CSRF[CSRF Protection<br/Double Submit]\n        RATE_LIMIT[Rate Limiting<br/Redis-based]\n    end\n    subgraph \"Business Logic\"\n        AUTH[Authentication<br/Service]\n        PAYMENTS[Payments<br/Service]\n        ORDERS[Orders<br/Service]\n        DELIVERIES[Deliveries<br/Service]\n        TICKETS[Tickets<br/Service]\n        SEARCH[Search<br/Service]\n        NEWS[News<br/Service]\n        EXPORTS[Exports<br/Service]\n    end\n    subgraph \"Data Layer\"\n        DB[(PostgreSQL<br/Neon Database)]\n        REDIS[(Redis<br/Upstash Cache)]\n        FILES[(File Storage<br/S3/R2)]\n    end\n    subgraph \"External Services\"\n        SEPAY[SEPay<br/Payment Gateway]\n        DISCORD[Discord<br/Notifications]\n        EMAIL[Email<br/SMTP]\n    end\n    subgraph \"Infrastructure\"\n        DOCKER[Docker<br/Containers]\n        JENKINS[Jenkins<br/CI/CD]\n        SONAR[SonarQube<br/Quality Gate]\n        MONITORING[Monitoring<br/Prometheus + Grafana]\n    end\n    subgraph \"Deployment\"\n        VERCEL[Vercel<br/Frontend]\n        FLY[Fly.io<br/API Production]\n        KOYEB[Koyeb<br/API Staging]\n    end\n    %% Client connections\n    WEB -- CDN\n    MOBILE -- CDN\n    API_CLIENT -- CDN\n    %% CDN to Load Balancer\n    CDN -- LB\n    %% Load Balancer to Applications\n    LB -- API\n    LB -- WEB_APP\n    %% API to Business Logic\n    API -- AUTH\n    API -- PAYMENTS\n    API -- ORDERS\n    API -- DELIVERIES\n    API -- TICKETS\n    API -- SEARCH\n    API -- NEWS\n    API -- EXPORTS\n    %% Business Logic to Data Layer\n    AUTH -- DB\n    AUTH -- REDIS\n    PAYMENTS -- DB\n    ORDERS -- DB\n    DELIVERIES -- DB\n    TICKETS -- DB\n    SEARCH -- DB\n    NEWS -- DB\n    EXPORTS -- DB\n    EXPORTS -- FILES\n    %% Authentication & Security\n    API -- JWT\n    API -- CSRF\n    API -- RATE_LIMIT\n    RATE_LIMIT -- REDIS\n    %% External Services\n    PAYMENTS -- SEPAY\n    TICKETS -- DISCORD\n    AUTH -- EMAIL\n    %% Infrastructure\n    API -- DOCKER\n    WEB_APP -- DOCKER\n    DOCKER -- JENKINS\n    JENKINS -- SONAR\n    JENKINS -- MONITORING\n    %% Deployment\n    WEB_APP -- VERCEL\n    API -- FLY\n    API -- KOYEB\n    %% Styling\n    classDef client fill:#e1f5fe\n    classDef cdn fill:#f3e5f5\n    classDef app fill:#e8f5e8\n    classDef security fill:#fff3e0\n    classDef business fill:#fce4ec\n    classDef data fill:#e0f2f1\n    classDef external fill:#f1f8e9\n    classDef infra fill:#e3f2fd\n    classDef deploy fill:#f9fbe7\n    class WEB,MOBILE,API_CLIENT client\n    class CDN,LB cdn\n    class API,WEB_APP app\n    class JWT,CSRF,RATE_LIMIT security\n    class AUTH,PAYMENTS,ORDERS,DELIVERIES,TICKETS,SEARCH,NEWS,EXPORTS business\n    class DB,REDIS,FILES data\n    class SEPAY,DISCORD,EMAIL external\n    class DOCKER,JENKINS,SONAR,MONITORING infra\n    class VERCEL,FLY,KOYEB deploy"
+          }
+        },
+        "notes": "Stage 2/5, adds 6 nodes, 0 edges, 2 groups, current state now contains 13 nodes and 0 edges",
+        "metadata": {
+          "planner_mode": "oracle",
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "group_4",
+            "label": "Authentication & Security"
+          },
+          {
+            "op": "add_group",
+            "group_id": "group_5",
+            "label": "Business Logic"
+          },
+          {
+            "op": "add_node",
+            "node_id": "JWT",
+            "label": "JWT Tokens<br/Access + Refresh",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "CSRF",
+            "label": "CSRF Protection<br/Double Submit",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "RATE_LIMIT",
+            "label": "Rate Limiting<br/Redis-based",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "AUTH",
+            "label": "Authentication<br/Service",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "PAYMENTS",
+            "label": "Payments<br/Service",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "ORDERS",
+            "label": "Orders<br/Service",
+            "kind": "node"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 13,
+          "edge_count": 0,
+          "group_count": 5,
+          "node_ids": [
+            "WEB",
+            "MOBILE",
+            "API_CLIENT",
+            "CDN",
+            "LB",
+            "API",
+            "WEB_APP",
+            "JWT",
+            "CSRF",
+            "RATE_LIMIT",
+            "AUTH",
+            "PAYMENTS"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "group_1",
+            "group_2",
+            "group_3",
+            "group_4",
+            "group_5"
+          ]
+        },
+        "gold_stage_metrics": {
+          "node_count": 13,
+          "edge_count": 0,
+          "group_count": 5,
+          "delta_count": 8
+        },
+        "preview_mermaid": "graph TD\n    WEB[\"Web Frontend<br/Next.js + React\"]\n    MOBILE[\"Mobile App<br/React Native\"]\n    API_CLIENT[\"API Client<br/SDK\"]\n    CDN[\"Vercel Edge Network\"]\n    LB[\"Load Balancer<br/Nginx\"]\n    API[\"API Server<br/NestJS + Fastify<br/Port 4000\"]\n    WEB_APP[\"Web App<br/Next.js<br/Port 3000\"]\n    JWT[\"JWT Tokens<br/Access + Refresh\"]\n    CSRF[\"CSRF Protection<br/Double Submit\"]\n    RATE_LIMIT[\"Rate Limiting<br/Redis-based\"]\n    AUTH[\"Authentication<br/Service\"]\n    PAYMENTS[\"Payments<br/Service\"]\n    ORDERS[\"Orders<br/Service\"]",
+        "matches_reference_stage": true
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 13,
+          "edge_count": 0,
+          "group_count": 5,
+          "node_ids": [
+            "WEB",
+            "MOBILE",
+            "API_CLIENT",
+            "CDN",
+            "LB",
+            "API",
+            "WEB_APP",
+            "JWT",
+            "CSRF",
+            "RATE_LIMIT",
+            "AUTH",
+            "PAYMENTS"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "group_1",
+            "group_2",
+            "group_3",
+            "group_4",
+            "group_5"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    WEB[\"Web Frontend<br/Next.js + React\"]\n    MOBILE[\"Mobile App<br/React Native\"]\n    API_CLIENT[\"API Client<br/SDK\"]\n    CDN[\"Vercel Edge Network\"]\n    LB[\"Load Balancer<br/Nginx\"]\n    API[\"API Server<br/NestJS + Fastify<br/Port 4000\"]\n    WEB_APP[\"Web App<br/Next.js<br/Port 3000\"]\n    JWT[\"JWT Tokens<br/Access + Refresh\"]\n    CSRF[\"CSRF Protection<br/Double Submit\"]\n    RATE_LIMIT[\"Rate Limiting<br/Redis-based\"]\n    AUTH[\"Authentication<br/Service\"]\n    PAYMENTS[\"Payments<br/Service\"]\n    ORDERS[\"Orders<br/Service\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "架构师",
+        "content": "业务逻辑层目前先搭建三个核心微服务：Authentication服务负责用户认证，Payments服务处理支付流程，Orders服务管理订单业务。这些服务作为独立模块，后续可以方便地进行扩展和维护。",
+        "stage_index": null,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Turn 6 adds Business Logic services (Auth, Payments, Orders). The answer to Turn 5's question concludes Stage 2 naturally.",
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 13,
+          "edge_count": 0,
+          "group_count": 5,
+          "node_ids": [
+            "WEB",
+            "MOBILE",
+            "API_CLIENT",
+            "CDN",
+            "LB",
+            "API",
+            "WEB_APP",
+            "JWT",
+            "CSRF",
+            "RATE_LIMIT",
+            "AUTH",
+            "PAYMENTS"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "group_1",
+            "group_2",
+            "group_3",
+            "group_4",
+            "group_5"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    WEB[\"Web Frontend<br/Next.js + React\"]\n    MOBILE[\"Mobile App<br/React Native\"]\n    API_CLIENT[\"API Client<br/SDK\"]\n    CDN[\"Vercel Edge Network\"]\n    LB[\"Load Balancer<br/Nginx\"]\n    API[\"API Server<br/NestJS + Fastify<br/Port 4000\"]\n    WEB_APP[\"Web App<br/Next.js<br/Port 3000\"]\n    JWT[\"JWT Tokens<br/Access + Refresh\"]\n    CSRF[\"CSRF Protection<br/Double Submit\"]\n    RATE_LIMIT[\"Rate Limiting<br/Redis-based\"]\n    AUTH[\"Authentication<br/Service\"]\n    PAYMENTS[\"Payments<br/Service\"]\n    ORDERS[\"Orders<br/Service\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 7,
+        "speaker": "开发者B",
+        "content": "系统运行肯定需要持久化存储，我们的数据层要怎么设计？",
+        "stage_index": null,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Turn 7 transitions to Stage 3 by asking about data persistence.",
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 13,
+          "edge_count": 0,
+          "group_count": 5,
+          "node_ids": [
+            "WEB",
+            "MOBILE",
+            "API_CLIENT",
+            "CDN",
+            "LB",
+            "API",
+            "WEB_APP",
+            "JWT",
+            "CSRF",
+            "RATE_LIMIT",
+            "AUTH",
+            "PAYMENTS"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "group_1",
+            "group_2",
+            "group_3",
+            "group_4",
+            "group_5"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    WEB[\"Web Frontend<br/Next.js + React\"]\n    MOBILE[\"Mobile App<br/React Native\"]\n    API_CLIENT[\"API Client<br/SDK\"]\n    CDN[\"Vercel Edge Network\"]\n    LB[\"Load Balancer<br/Nginx\"]\n    API[\"API Server<br/NestJS + Fastify<br/Port 4000\"]\n    WEB_APP[\"Web App<br/Next.js<br/Port 3000\"]\n    JWT[\"JWT Tokens<br/Access + Refresh\"]\n    CSRF[\"CSRF Protection<br/Double Submit\"]\n    RATE_LIMIT[\"Rate Limiting<br/Redis-based\"]\n    AUTH[\"Authentication<br/Service\"]\n    PAYMENTS[\"Payments<br/Service\"]\n    ORDERS[\"Orders<br/Service\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 8,
+        "speaker": "架构师",
+        "content": "好问题，我们需要增加数据层来管理数据持久化。主数据库采用PostgreSQL，具体使用Neon托管版本，它提供Serverless PostgreSQL的能力。与此同时，我们还要添加一些支撑性的领域服务，包括Deliveries配送服务、Tickets工单服务、Search搜索服务、News新闻服务，以及Exports导出服务，来支持核心业务的各种扩展需求。",
+        "stage_index": null,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Turn 8 adds the Data Layer (PostgreSQL/Neon) and supporting services (Deliveries, Tickets, Search, News, Exports).",
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 3,
+        "reason": "turn 8 reached end boundary for stage 3",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 13,
+          "edge_count": 0,
+          "group_count": 5,
+          "node_ids": [
+            "WEB",
+            "MOBILE",
+            "API_CLIENT",
+            "CDN",
+            "LB",
+            "API",
+            "WEB_APP",
+            "JWT",
+            "CSRF",
+            "RATE_LIMIT",
+            "AUTH",
+            "PAYMENTS"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "group_1",
+            "group_2",
+            "group_3",
+            "group_4",
+            "group_5"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    WEB[\"Web Frontend<br/Next.js + React\"]\n    MOBILE[\"Mobile App<br/React Native\"]\n    API_CLIENT[\"API Client<br/SDK\"]\n    CDN[\"Vercel Edge Network\"]\n    LB[\"Load Balancer<br/Nginx\"]\n    API[\"API Server<br/NestJS + Fastify<br/Port 4000\"]\n    WEB_APP[\"Web App<br/Next.js<br/Port 3000\"]\n    JWT[\"JWT Tokens<br/Access + Refresh\"]\n    CSRF[\"CSRF Protection<br/Double Submit\"]\n    RATE_LIMIT[\"Rate Limiting<br/Redis-based\"]\n    AUTH[\"Authentication<br/Service\"]\n    PAYMENTS[\"Payments<br/Service\"]\n    ORDERS[\"Orders<br/Service\"]"
+      },
+      "planner": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "group_6",
+            "label": "Data Layer"
+          },
+          {
+            "op": "add_node",
+            "node_id": "DELIVERIES",
+            "label": "Deliveries<br/Service",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "TICKETS",
+            "label": "Tickets<br/Service",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "SEARCH",
+            "label": "Search<br/Service",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "NEWS",
+            "label": "News<br/Service",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "EXPORTS",
+            "label": "Exports<br/Service",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "DB",
+            "label": "(PostgreSQL<br/Neon Database)",
+            "kind": "node"
+          }
+        ],
+        "target_graph_ir": {
+          "graph_id": "gh_architecture_01830",
+          "diagram_type": "architecture",
+          "nodes": [
+            {
+              "id": "WEB",
+              "label": "Web Frontend<br/Next.js + React",
+              "kind": "node",
+              "parent": "group_1",
+              "source_index": 3,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "MOBILE",
+              "label": "Mobile App<br/React Native",
+              "kind": "node",
+              "parent": "group_1",
+              "source_index": 4,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "API_CLIENT",
+              "label": "API Client<br/SDK",
+              "kind": "node",
+              "parent": "group_1",
+              "source_index": 5,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "CDN",
+              "label": "Vercel Edge Network",
+              "kind": "node",
+              "parent": "group_2",
+              "source_index": 8,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "LB",
+              "label": "Load Balancer<br/Nginx",
+              "kind": "node",
+              "parent": "group_2",
+              "source_index": 9,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "API",
+              "label": "API Server<br/NestJS + Fastify<br/Port 4000",
+              "kind": "node",
+              "parent": "group_3",
+              "source_index": 12,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "WEB_APP",
+              "label": "Web App<br/Next.js<br/Port 3000",
+              "kind": "node",
+              "parent": "group_3",
+              "source_index": 13,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "JWT",
+              "label": "JWT Tokens<br/Access + Refresh",
+              "kind": "node",
+              "parent": "group_4",
+              "source_index": 16,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "CSRF",
+              "label": "CSRF Protection<br/Double Submit",
+              "kind": "node",
+              "parent": "group_4",
+              "source_index": 17,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "RATE_LIMIT",
+              "label": "Rate Limiting<br/Redis-based",
+              "kind": "node",
+              "parent": "group_4",
+              "source_index": 18,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "AUTH",
+              "label": "Authentication<br/Service",
+              "kind": "node",
+              "parent": "group_5",
+              "source_index": 21,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "PAYMENTS",
+              "label": "Payments<br/Service",
+              "kind": "node",
+              "parent": "group_5",
+              "source_index": 22,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "ORDERS",
+              "label": "Orders<br/Service",
+              "kind": "node",
+              "parent": "group_5",
+              "source_index": 23,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "DELIVERIES",
+              "label": "Deliveries<br/Service",
+              "kind": "node",
+              "parent": "group_5",
+              "source_index": 24,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "TICKETS",
+              "label": "Tickets<br/Service",
+              "kind": "node",
+              "parent": "group_5",
+              "source_index": 25,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "SEARCH",
+              "label": "Search<br/Service",
+              "kind": "node",
+              "parent": "group_5",
+              "source_index": 26,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "NEWS",
+              "label": "News<br/Service",
+              "kind": "node",
+              "parent": "group_5",
+              "source_index": 27,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "EXPORTS",
+              "label": "Exports<br/Service",
+              "kind": "node",
+              "parent": "group_5",
+              "source_index": 28,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "DB",
+              "label": "(PostgreSQL<br/Neon Database)",
+              "kind": "node",
+              "parent": "group_6",
+              "source_index": 31,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            }
+          ],
+          "edges": [],
+          "groups": [
+            {
+              "id": "group_1",
+              "label": "Client Layer",
+              "parent": null,
+              "member_ids": [
+                "WEB",
+                "MOBILE",
+                "API_CLIENT"
+              ],
+              "source_index": 2,
+              "metadata": {}
+            },
+            {
+              "id": "group_2",
+              "label": "CDN & Load Balancer",
+              "parent": null,
+              "member_ids": [
+                "CDN",
+                "LB"
+              ],
+              "source_index": 7,
+              "metadata": {}
+            },
+            {
+              "id": "group_3",
+              "label": "Application Layer",
+              "parent": null,
+              "member_ids": [
+                "API",
+                "WEB_APP"
+              ],
+              "source_index": 11,
+              "metadata": {}
+            },
+            {
+              "id": "group_4",
+              "label": "Authentication & Security",
+              "parent": null,
+              "member_ids": [
+                "JWT",
+                "CSRF",
+                "RATE_LIMIT"
+              ],
+              "source_index": 15,
+              "metadata": {}
+            },
+            {
+              "id": "group_5",
+              "label": "Business Logic",
+              "parent": null,
+              "member_ids": [
+                "AUTH",
+                "PAYMENTS",
+                "ORDERS",
+                "DELIVERIES",
+                "TICKETS",
+                "SEARCH",
+                "NEWS",
+                "EXPORTS"
+              ],
+              "source_index": 20,
+              "metadata": {}
+            },
+            {
+              "id": "group_6",
+              "label": "Data Layer",
+              "parent": null,
+              "member_ids": [
+                "DB",
+                "REDIS",
+                "FILES"
+              ],
+              "source_index": 30,
+              "metadata": {}
+            }
+          ],
+          "styles": [],
+          "metadata": {
+            "source_path": "E:\\Desktop\\stream2graph\\data\\incremental_dataset\\sources\\open_balanced_v1_3360\\gh_architecture_01830.json",
+            "compilation_status": "success",
+            "content_size": 3416,
+            "normalized_code": "graph TB\n    subgraph \"Client Layer\"\n        WEB[Web Frontend<br/Next.js + React]\n        MOBILE[Mobile App<br/React Native]\n        API_CLIENT[API Client<br/SDK]\n    end\n    subgraph \"CDN & Load Balancer\"\n        CDN[Vercel Edge Network]\n        LB[Load Balancer<br/Nginx]\n    end\n    subgraph \"Application Layer\"\n        API[API Server<br/NestJS + Fastify<br/Port 4000]\n        WEB_APP[Web App<br/Next.js<br/Port 3000]\n    end\n    subgraph \"Authentication & Security\"\n        JWT[JWT Tokens<br/Access + Refresh]\n        CSRF[CSRF Protection<br/Double Submit]\n        RATE_LIMIT[Rate Limiting<br/Redis-based]\n    end\n    subgraph \"Business Logic\"\n        AUTH[Authentication<br/Service]\n        PAYMENTS[Payments<br/Service]\n        ORDERS[Orders<br/Service]\n        DELIVERIES[Deliveries<br/Service]\n        TICKETS[Tickets<br/Service]\n        SEARCH[Search<br/Service]\n        NEWS[News<br/Service]\n        EXPORTS[Exports<br/Service]\n    end\n    subgraph \"Data Layer\"\n        DB[(PostgreSQL<br/Neon Database)]\n        REDIS[(Redis<br/Upstash Cache)]\n        FILES[(File Storage<br/S3/R2)]\n    end\n    subgraph \"External Services\"\n        SEPAY[SEPay<br/Payment Gateway]\n        DISCORD[Discord<br/Notifications]\n        EMAIL[Email<br/SMTP]\n    end\n    subgraph \"Infrastructure\"\n        DOCKER[Docker<br/Containers]\n        JENKINS[Jenkins<br/CI/CD]\n        SONAR[SonarQube<br/Quality Gate]\n        MONITORING[Monitoring<br/Prometheus + Grafana]\n    end\n    subgraph \"Deployment\"\n        VERCEL[Vercel<br/Frontend]\n        FLY[Fly.io<br/API Production]\n        KOYEB[Koyeb<br/API Staging]\n    end\n    %% Client connections\n    WEB -- CDN\n    MOBILE -- CDN\n    API_CLIENT -- CDN\n    %% CDN to Load Balancer\n    CDN -- LB\n    %% Load Balancer to Applications\n    LB -- API\n    LB -- WEB_APP\n    %% API to Business Logic\n    API -- AUTH\n    API -- PAYMENTS\n    API -- ORDERS\n    API -- DELIVERIES\n    API -- TICKETS\n    API -- SEARCH\n    API -- NEWS\n    API -- EXPORTS\n    %% Business Logic to Data Layer\n    AUTH -- DB\n    AUTH -- REDIS\n    PAYMENTS -- DB\n    ORDERS -- DB\n    DELIVERIES -- DB\n    TICKETS -- DB\n    SEARCH -- DB\n    NEWS -- DB\n    EXPORTS -- DB\n    EXPORTS -- FILES\n    %% Authentication & Security\n    API -- JWT\n    API -- CSRF\n    API -- RATE_LIMIT\n    RATE_LIMIT -- REDIS\n    %% External Services\n    PAYMENTS -- SEPAY\n    TICKETS -- DISCORD\n    AUTH -- EMAIL\n    %% Infrastructure\n    API -- DOCKER\n    WEB_APP -- DOCKER\n    DOCKER -- JENKINS\n    JENKINS -- SONAR\n    JENKINS -- MONITORING\n    %% Deployment\n    WEB_APP -- VERCEL\n    API -- FLY\n    API -- KOYEB\n    %% Styling\n    classDef client fill:#e1f5fe\n    classDef cdn fill:#f3e5f5\n    classDef app fill:#e8f5e8\n    classDef security fill:#fff3e0\n    classDef business fill:#fce4ec\n    classDef data fill:#e0f2f1\n    classDef external fill:#f1f8e9\n    classDef infra fill:#e3f2fd\n    classDef deploy fill:#f9fbe7\n    class WEB,MOBILE,API_CLIENT client\n    class CDN,LB cdn\n    class API,WEB_APP app\n    class JWT,CSRF,RATE_LIMIT security\n    class AUTH,PAYMENTS,ORDERS,DELIVERIES,TICKETS,SEARCH,NEWS,EXPORTS business\n    class DB,REDIS,FILES data\n    class SEPAY,DISCORD,EMAIL external\n    class DOCKER,JENKINS,SONAR,MONITORING infra\n    class VERCEL,FLY,KOYEB deploy"
+          }
+        },
+        "notes": "Stage 3/5, adds 6 nodes, 0 edges, 1 groups, current state now contains 19 nodes and 0 edges",
+        "metadata": {
+          "planner_mode": "oracle",
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "update": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "group_6",
+            "label": "Data Layer"
+          },
+          {
+            "op": "add_node",
+            "node_id": "DELIVERIES",
+            "label": "Deliveries<br/Service",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "TICKETS",
+            "label": "Tickets<br/Service",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "SEARCH",
+            "label": "Search<br/Service",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "NEWS",
+            "label": "News<br/Service",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "EXPORTS",
+            "label": "Exports<br/Service",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "DB",
+            "label": "(PostgreSQL<br/Neon Database)",
+            "kind": "node"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 19,
+          "edge_count": 0,
+          "group_count": 6,
+          "node_ids": [
+            "WEB",
+            "MOBILE",
+            "API_CLIENT",
+            "CDN",
+            "LB",
+            "API",
+            "WEB_APP",
+            "JWT",
+            "CSRF",
+            "RATE_LIMIT",
+            "AUTH",
+            "PAYMENTS"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "group_1",
+            "group_2",
+            "group_3",
+            "group_4",
+            "group_5",
+            "group_6"
+          ]
+        },
+        "gold_stage_metrics": {
+          "node_count": 19,
+          "edge_count": 0,
+          "group_count": 6,
+          "delta_count": 7
+        },
+        "preview_mermaid": "graph TD\n    WEB[\"Web Frontend<br/Next.js + React\"]\n    MOBILE[\"Mobile App<br/React Native\"]\n    API_CLIENT[\"API Client<br/SDK\"]\n    CDN[\"Vercel Edge Network\"]\n    LB[\"Load Balancer<br/Nginx\"]\n    API[\"API Server<br/NestJS + Fastify<br/Port 4000\"]\n    WEB_APP[\"Web App<br/Next.js<br/Port 3000\"]\n    JWT[\"JWT Tokens<br/Access + Refresh\"]\n    CSRF[\"CSRF Protection<br/Double Submit\"]\n    RATE_LIMIT[\"Rate Limiting<br/Redis-based\"]\n    AUTH[\"Authentication<br/Service\"]\n    PAYMENTS[\"Payments<br/Service\"]\n    ORDERS[\"Orders<br/Service\"]\n    DELIVERIES[\"Deliveries<br/Service\"]\n    TICKETS[\"Tickets<br/Service\"]\n    SEARCH[\"Search<br/Service\"]\n    NEWS[\"News<br/Service\"]\n    EXPORTS[\"Exports<br/Service\"]\n    DB[\"(PostgreSQL<br/Neon Database)\"]",
+        "matches_reference_stage": true
+      },
+      "state_after": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 19,
+          "edge_count": 0,
+          "group_count": 6,
+          "node_ids": [
+            "WEB",
+            "MOBILE",
+            "API_CLIENT",
+            "CDN",
+            "LB",
+            "API",
+            "WEB_APP",
+            "JWT",
+            "CSRF",
+            "RATE_LIMIT",
+            "AUTH",
+            "PAYMENTS"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "group_1",
+            "group_2",
+            "group_3",
+            "group_4",
+            "group_5",
+            "group_6"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    WEB[\"Web Frontend<br/Next.js + React\"]\n    MOBILE[\"Mobile App<br/React Native\"]\n    API_CLIENT[\"API Client<br/SDK\"]\n    CDN[\"Vercel Edge Network\"]\n    LB[\"Load Balancer<br/Nginx\"]\n    API[\"API Server<br/NestJS + Fastify<br/Port 4000\"]\n    WEB_APP[\"Web App<br/Next.js<br/Port 3000\"]\n    JWT[\"JWT Tokens<br/Access + Refresh\"]\n    CSRF[\"CSRF Protection<br/Double Submit\"]\n    RATE_LIMIT[\"Rate Limiting<br/Redis-based\"]\n    AUTH[\"Authentication<br/Service\"]\n    PAYMENTS[\"Payments<br/Service\"]\n    ORDERS[\"Orders<br/Service\"]\n    DELIVERIES[\"Deliveries<br/Service\"]\n    TICKETS[\"Tickets<br/Service\"]\n    SEARCH[\"Search<br/Service\"]\n    NEWS[\"News<br/Service\"]\n    EXPORTS[\"Exports<br/Service\"]\n    DB[\"(PostgreSQL<br/Neon Database)\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 9,
+        "speaker": "开发者A",
+        "content": "现在系统还缺什么？比如缓存、文件存储这些基础设施。",
+        "stage_index": null,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Turn 9 initiates Stage 4 by asking about missing infrastructure components.",
+          "stage_name": "Resolve Conditions"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 19,
+          "edge_count": 0,
+          "group_count": 6,
+          "node_ids": [
+            "WEB",
+            "MOBILE",
+            "API_CLIENT",
+            "CDN",
+            "LB",
+            "API",
+            "WEB_APP",
+            "JWT",
+            "CSRF",
+            "RATE_LIMIT",
+            "AUTH",
+            "PAYMENTS"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "group_1",
+            "group_2",
+            "group_3",
+            "group_4",
+            "group_5",
+            "group_6"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    WEB[\"Web Frontend<br/Next.js + React\"]\n    MOBILE[\"Mobile App<br/React Native\"]\n    API_CLIENT[\"API Client<br/SDK\"]\n    CDN[\"Vercel Edge Network\"]\n    LB[\"Load Balancer<br/Nginx\"]\n    API[\"API Server<br/NestJS + Fastify<br/Port 4000\"]\n    WEB_APP[\"Web App<br/Next.js<br/Port 3000\"]\n    JWT[\"JWT Tokens<br/Access + Refresh\"]\n    CSRF[\"CSRF Protection<br/Double Submit\"]\n    RATE_LIMIT[\"Rate Limiting<br/Redis-based\"]\n    AUTH[\"Authentication<br/Service\"]\n    PAYMENTS[\"Payments<br/Service\"]\n    ORDERS[\"Orders<br/Service\"]\n    DELIVERIES[\"Deliveries<br/Service\"]\n    TICKETS[\"Tickets<br/Service\"]\n    SEARCH[\"Search<br/Service\"]\n    NEWS[\"News<br/Service\"]\n    EXPORTS[\"Exports<br/Service\"]\n    DB[\"(PostgreSQL<br/Neon Database)\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 10,
+        "speaker": "架构师",
+        "content": "确实，我们需要添加外部服务层和基础设施层。基础设施方面，Redis缓存使用Upstash托管方案，文件存储采用S3或Cloudflare R2。外部服务集成包括SEPay支付网关、Discord消息通知、以及Email的SMTP发送服务。容器化方面，我们用Docker来打包所有服务，确保环境一致性。",
+        "stage_index": null,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Turn 10 adds External Services (SEPay, Discord, Email) and Infrastructure (Redis/Upstash, S3/R2, Docker).",
+          "stage_name": "Resolve Conditions"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 19,
+          "edge_count": 0,
+          "group_count": 6,
+          "node_ids": [
+            "WEB",
+            "MOBILE",
+            "API_CLIENT",
+            "CDN",
+            "LB",
+            "API",
+            "WEB_APP",
+            "JWT",
+            "CSRF",
+            "RATE_LIMIT",
+            "AUTH",
+            "PAYMENTS"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "group_1",
+            "group_2",
+            "group_3",
+            "group_4",
+            "group_5",
+            "group_6"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    WEB[\"Web Frontend<br/Next.js + React\"]\n    MOBILE[\"Mobile App<br/React Native\"]\n    API_CLIENT[\"API Client<br/SDK\"]\n    CDN[\"Vercel Edge Network\"]\n    LB[\"Load Balancer<br/Nginx\"]\n    API[\"API Server<br/NestJS + Fastify<br/Port 4000\"]\n    WEB_APP[\"Web App<br/Next.js<br/Port 3000\"]\n    JWT[\"JWT Tokens<br/Access + Refresh\"]\n    CSRF[\"CSRF Protection<br/Double Submit\"]\n    RATE_LIMIT[\"Rate Limiting<br/Redis-based\"]\n    AUTH[\"Authentication<br/Service\"]\n    PAYMENTS[\"Payments<br/Service\"]\n    ORDERS[\"Orders<br/Service\"]\n    DELIVERIES[\"Deliveries<br/Service\"]\n    TICKETS[\"Tickets<br/Service\"]\n    SEARCH[\"Search<br/Service\"]\n    NEWS[\"News<br/Service\"]\n    EXPORTS[\"Exports<br/Service\"]\n    DB[\"(PostgreSQL<br/Neon Database)\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 11,
+        "speaker": "开发者B",
+        "content": "部署策略和运维监控这部分还没考虑吧？",
+        "stage_index": null,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Turn 11 bridges Stage 4 and 5 by asking about deployment and monitoring, prompting final details.",
+          "stage_name": "Resolve Conditions"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 4,
+        "reason": "turn 11 reached end boundary for stage 4",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 19,
+          "edge_count": 0,
+          "group_count": 6,
+          "node_ids": [
+            "WEB",
+            "MOBILE",
+            "API_CLIENT",
+            "CDN",
+            "LB",
+            "API",
+            "WEB_APP",
+            "JWT",
+            "CSRF",
+            "RATE_LIMIT",
+            "AUTH",
+            "PAYMENTS"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "group_1",
+            "group_2",
+            "group_3",
+            "group_4",
+            "group_5",
+            "group_6"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    WEB[\"Web Frontend<br/Next.js + React\"]\n    MOBILE[\"Mobile App<br/React Native\"]\n    API_CLIENT[\"API Client<br/SDK\"]\n    CDN[\"Vercel Edge Network\"]\n    LB[\"Load Balancer<br/Nginx\"]\n    API[\"API Server<br/NestJS + Fastify<br/Port 4000\"]\n    WEB_APP[\"Web App<br/Next.js<br/Port 3000\"]\n    JWT[\"JWT Tokens<br/Access + Refresh\"]\n    CSRF[\"CSRF Protection<br/Double Submit\"]\n    RATE_LIMIT[\"Rate Limiting<br/Redis-based\"]\n    AUTH[\"Authentication<br/Service\"]\n    PAYMENTS[\"Payments<br/Service\"]\n    ORDERS[\"Orders<br/Service\"]\n    DELIVERIES[\"Deliveries<br/Service\"]\n    TICKETS[\"Tickets<br/Service\"]\n    SEARCH[\"Search<br/Service\"]\n    NEWS[\"News<br/Service\"]\n    EXPORTS[\"Exports<br/Service\"]\n    DB[\"(PostgreSQL<br/Neon Database)\"]"
+      },
+      "planner": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "group_7",
+            "label": "External Services"
+          },
+          {
+            "op": "add_group",
+            "group_id": "group_8",
+            "label": "Infrastructure"
+          },
+          {
+            "op": "add_node",
+            "node_id": "REDIS",
+            "label": "(Redis<br/Upstash Cache)",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "FILES",
+            "label": "(File Storage<br/S3/R2)",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "SEPAY",
+            "label": "SEPay<br/Payment Gateway",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "DISCORD",
+            "label": "Discord<br/Notifications",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "EMAIL",
+            "label": "Email<br/SMTP",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "DOCKER",
+            "label": "Docker<br/Containers",
+            "kind": "node"
+          }
+        ],
+        "target_graph_ir": {
+          "graph_id": "gh_architecture_01830",
+          "diagram_type": "architecture",
+          "nodes": [
+            {
+              "id": "WEB",
+              "label": "Web Frontend<br/Next.js + React",
+              "kind": "node",
+              "parent": "group_1",
+              "source_index": 3,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "MOBILE",
+              "label": "Mobile App<br/React Native",
+              "kind": "node",
+              "parent": "group_1",
+              "source_index": 4,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "API_CLIENT",
+              "label": "API Client<br/SDK",
+              "kind": "node",
+              "parent": "group_1",
+              "source_index": 5,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "CDN",
+              "label": "Vercel Edge Network",
+              "kind": "node",
+              "parent": "group_2",
+              "source_index": 8,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "LB",
+              "label": "Load Balancer<br/Nginx",
+              "kind": "node",
+              "parent": "group_2",
+              "source_index": 9,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "API",
+              "label": "API Server<br/NestJS + Fastify<br/Port 4000",
+              "kind": "node",
+              "parent": "group_3",
+              "source_index": 12,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "WEB_APP",
+              "label": "Web App<br/Next.js<br/Port 3000",
+              "kind": "node",
+              "parent": "group_3",
+              "source_index": 13,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "JWT",
+              "label": "JWT Tokens<br/Access + Refresh",
+              "kind": "node",
+              "parent": "group_4",
+              "source_index": 16,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "CSRF",
+              "label": "CSRF Protection<br/Double Submit",
+              "kind": "node",
+              "parent": "group_4",
+              "source_index": 17,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "RATE_LIMIT",
+              "label": "Rate Limiting<br/Redis-based",
+              "kind": "node",
+              "parent": "group_4",
+              "source_index": 18,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "AUTH",
+              "label": "Authentication<br/Service",
+              "kind": "node",
+              "parent": "group_5",
+              "source_index": 21,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "PAYMENTS",
+              "label": "Payments<br/Service",
+              "kind": "node",
+              "parent": "group_5",
+              "source_index": 22,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "ORDERS",
+              "label": "Orders<br/Service",
+              "kind": "node",
+              "parent": "group_5",
+              "source_index": 23,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "DELIVERIES",
+              "label": "Deliveries<br/Service",
+              "kind": "node",
+              "parent": "group_5",
+              "source_index": 24,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "TICKETS",
+              "label": "Tickets<br/Service",
+              "kind": "node",
+              "parent": "group_5",
+              "source_index": 25,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "SEARCH",
+              "label": "Search<br/Service",
+              "kind": "node",
+              "parent": "group_5",
+              "source_index": 26,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "NEWS",
+              "label": "News<br/Service",
+              "kind": "node",
+              "parent": "group_5",
+              "source_index": 27,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "EXPORTS",
+              "label": "Exports<br/Service",
+              "kind": "node",
+              "parent": "group_5",
+              "source_index": 28,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "DB",
+              "label": "(PostgreSQL<br/Neon Database)",
+              "kind": "node",
+              "parent": "group_6",
+              "source_index": 31,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "REDIS",
+              "label": "(Redis<br/Upstash Cache)",
+              "kind": "node",
+              "parent": "group_6",
+              "source_index": 32,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "FILES",
+              "label": "(File Storage<br/S3/R2)",
+              "kind": "node",
+              "parent": "group_6",
+              "source_index": 33,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "SEPAY",
+              "label": "SEPay<br/Payment Gateway",
+              "kind": "node",
+              "parent": "group_7",
+              "source_index": 36,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "DISCORD",
+              "label": "Discord<br/Notifications",
+              "kind": "node",
+              "parent": "group_7",
+              "source_index": 37,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "EMAIL",
+              "label": "Email<br/SMTP",
+              "kind": "node",
+              "parent": "group_7",
+              "source_index": 38,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "DOCKER",
+              "label": "Docker<br/Containers",
+              "kind": "node",
+              "parent": "group_8",
+              "source_index": 41,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            }
+          ],
+          "edges": [],
+          "groups": [
+            {
+              "id": "group_1",
+              "label": "Client Layer",
+              "parent": null,
+              "member_ids": [
+                "WEB",
+                "MOBILE",
+                "API_CLIENT"
+              ],
+              "source_index": 2,
+              "metadata": {}
+            },
+            {
+              "id": "group_2",
+              "label": "CDN & Load Balancer",
+              "parent": null,
+              "member_ids": [
+                "CDN",
+                "LB"
+              ],
+              "source_index": 7,
+              "metadata": {}
+            },
+            {
+              "id": "group_3",
+              "label": "Application Layer",
+              "parent": null,
+              "member_ids": [
+                "API",
+                "WEB_APP"
+              ],
+              "source_index": 11,
+              "metadata": {}
+            },
+            {
+              "id": "group_4",
+              "label": "Authentication & Security",
+              "parent": null,
+              "member_ids": [
+                "JWT",
+                "CSRF",
+                "RATE_LIMIT"
+              ],
+              "source_index": 15,
+              "metadata": {}
+            },
+            {
+              "id": "group_5",
+              "label": "Business Logic",
+              "parent": null,
+              "member_ids": [
+                "AUTH",
+                "PAYMENTS",
+                "ORDERS",
+                "DELIVERIES",
+                "TICKETS",
+                "SEARCH",
+                "NEWS",
+                "EXPORTS"
+              ],
+              "source_index": 20,
+              "metadata": {}
+            },
+            {
+              "id": "group_6",
+              "label": "Data Layer",
+              "parent": null,
+              "member_ids": [
+                "DB",
+                "REDIS",
+                "FILES"
+              ],
+              "source_index": 30,
+              "metadata": {}
+            },
+            {
+              "id": "group_7",
+              "label": "External Services",
+              "parent": null,
+              "member_ids": [
+                "SEPAY",
+                "DISCORD",
+                "EMAIL"
+              ],
+              "source_index": 35,
+              "metadata": {}
+            },
+            {
+              "id": "group_8",
+              "label": "Infrastructure",
+              "parent": null,
+              "member_ids": [
+                "DOCKER",
+                "JENKINS",
+                "SONAR",
+                "MONITORING"
+              ],
+              "source_index": 40,
+              "metadata": {}
+            }
+          ],
+          "styles": [],
+          "metadata": {
+            "source_path": "E:\\Desktop\\stream2graph\\data\\incremental_dataset\\sources\\open_balanced_v1_3360\\gh_architecture_01830.json",
+            "compilation_status": "success",
+            "content_size": 3416,
+            "normalized_code": "graph TB\n    subgraph \"Client Layer\"\n        WEB[Web Frontend<br/Next.js + React]\n        MOBILE[Mobile App<br/React Native]\n        API_CLIENT[API Client<br/SDK]\n    end\n    subgraph \"CDN & Load Balancer\"\n        CDN[Vercel Edge Network]\n        LB[Load Balancer<br/Nginx]\n    end\n    subgraph \"Application Layer\"\n        API[API Server<br/NestJS + Fastify<br/Port 4000]\n        WEB_APP[Web App<br/Next.js<br/Port 3000]\n    end\n    subgraph \"Authentication & Security\"\n        JWT[JWT Tokens<br/Access + Refresh]\n        CSRF[CSRF Protection<br/Double Submit]\n        RATE_LIMIT[Rate Limiting<br/Redis-based]\n    end\n    subgraph \"Business Logic\"\n        AUTH[Authentication<br/Service]\n        PAYMENTS[Payments<br/Service]\n        ORDERS[Orders<br/Service]\n        DELIVERIES[Deliveries<br/Service]\n        TICKETS[Tickets<br/Service]\n        SEARCH[Search<br/Service]\n        NEWS[News<br/Service]\n        EXPORTS[Exports<br/Service]\n    end\n    subgraph \"Data Layer\"\n        DB[(PostgreSQL<br/Neon Database)]\n        REDIS[(Redis<br/Upstash Cache)]\n        FILES[(File Storage<br/S3/R2)]\n    end\n    subgraph \"External Services\"\n        SEPAY[SEPay<br/Payment Gateway]\n        DISCORD[Discord<br/Notifications]\n        EMAIL[Email<br/SMTP]\n    end\n    subgraph \"Infrastructure\"\n        DOCKER[Docker<br/Containers]\n        JENKINS[Jenkins<br/CI/CD]\n        SONAR[SonarQube<br/Quality Gate]\n        MONITORING[Monitoring<br/Prometheus + Grafana]\n    end\n    subgraph \"Deployment\"\n        VERCEL[Vercel<br/Frontend]\n        FLY[Fly.io<br/API Production]\n        KOYEB[Koyeb<br/API Staging]\n    end\n    %% Client connections\n    WEB -- CDN\n    MOBILE -- CDN\n    API_CLIENT -- CDN\n    %% CDN to Load Balancer\n    CDN -- LB\n    %% Load Balancer to Applications\n    LB -- API\n    LB -- WEB_APP\n    %% API to Business Logic\n    API -- AUTH\n    API -- PAYMENTS\n    API -- ORDERS\n    API -- DELIVERIES\n    API -- TICKETS\n    API -- SEARCH\n    API -- NEWS\n    API -- EXPORTS\n    %% Business Logic to Data Layer\n    AUTH -- DB\n    AUTH -- REDIS\n    PAYMENTS -- DB\n    ORDERS -- DB\n    DELIVERIES -- DB\n    TICKETS -- DB\n    SEARCH -- DB\n    NEWS -- DB\n    EXPORTS -- DB\n    EXPORTS -- FILES\n    %% Authentication & Security\n    API -- JWT\n    API -- CSRF\n    API -- RATE_LIMIT\n    RATE_LIMIT -- REDIS\n    %% External Services\n    PAYMENTS -- SEPAY\n    TICKETS -- DISCORD\n    AUTH -- EMAIL\n    %% Infrastructure\n    API -- DOCKER\n    WEB_APP -- DOCKER\n    DOCKER -- JENKINS\n    JENKINS -- SONAR\n    JENKINS -- MONITORING\n    %% Deployment\n    WEB_APP -- VERCEL\n    API -- FLY\n    API -- KOYEB\n    %% Styling\n    classDef client fill:#e1f5fe\n    classDef cdn fill:#f3e5f5\n    classDef app fill:#e8f5e8\n    classDef security fill:#fff3e0\n    classDef business fill:#fce4ec\n    classDef data fill:#e0f2f1\n    classDef external fill:#f1f8e9\n    classDef infra fill:#e3f2fd\n    classDef deploy fill:#f9fbe7\n    class WEB,MOBILE,API_CLIENT client\n    class CDN,LB cdn\n    class API,WEB_APP app\n    class JWT,CSRF,RATE_LIMIT security\n    class AUTH,PAYMENTS,ORDERS,DELIVERIES,TICKETS,SEARCH,NEWS,EXPORTS business\n    class DB,REDIS,FILES data\n    class SEPAY,DISCORD,EMAIL external\n    class DOCKER,JENKINS,SONAR,MONITORING infra\n    class VERCEL,FLY,KOYEB deploy"
+          }
+        },
+        "notes": "Stage 4/5, adds 6 nodes, 0 edges, 2 groups, current state now contains 25 nodes and 0 edges",
+        "metadata": {
+          "planner_mode": "oracle",
+          "stage_name": "Resolve Conditions"
+        }
+      },
+      "update": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "group_7",
+            "label": "External Services"
+          },
+          {
+            "op": "add_group",
+            "group_id": "group_8",
+            "label": "Infrastructure"
+          },
+          {
+            "op": "add_node",
+            "node_id": "REDIS",
+            "label": "(Redis<br/Upstash Cache)",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "FILES",
+            "label": "(File Storage<br/S3/R2)",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "SEPAY",
+            "label": "SEPay<br/Payment Gateway",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "DISCORD",
+            "label": "Discord<br/Notifications",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "EMAIL",
+            "label": "Email<br/SMTP",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "DOCKER",
+            "label": "Docker<br/Containers",
+            "kind": "node"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 25,
+          "edge_count": 0,
+          "group_count": 8,
+          "node_ids": [
+            "WEB",
+            "MOBILE",
+            "API_CLIENT",
+            "CDN",
+            "LB",
+            "API",
+            "WEB_APP",
+            "JWT",
+            "CSRF",
+            "RATE_LIMIT",
+            "AUTH",
+            "PAYMENTS"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "group_1",
+            "group_2",
+            "group_3",
+            "group_4",
+            "group_5",
+            "group_6",
+            "group_7",
+            "group_8"
+          ]
+        },
+        "gold_stage_metrics": {
+          "node_count": 25,
+          "edge_count": 0,
+          "group_count": 8,
+          "delta_count": 8
+        },
+        "preview_mermaid": "graph TD\n    WEB[\"Web Frontend<br/Next.js + React\"]\n    MOBILE[\"Mobile App<br/React Native\"]\n    API_CLIENT[\"API Client<br/SDK\"]\n    CDN[\"Vercel Edge Network\"]\n    LB[\"Load Balancer<br/Nginx\"]\n    API[\"API Server<br/NestJS + Fastify<br/Port 4000\"]\n    WEB_APP[\"Web App<br/Next.js<br/Port 3000\"]\n    JWT[\"JWT Tokens<br/Access + Refresh\"]\n    CSRF[\"CSRF Protection<br/Double Submit\"]\n    RATE_LIMIT[\"Rate Limiting<br/Redis-based\"]\n    AUTH[\"Authentication<br/Service\"]\n    PAYMENTS[\"Payments<br/Service\"]\n    ORDERS[\"Orders<br/Service\"]\n    DELIVERIES[\"Deliveries<br/Service\"]\n    TICKETS[\"Tickets<br/Service\"]\n    SEARCH[\"Search<br/Service\"]\n    NEWS[\"News<br/Service\"]\n    EXPORTS[\"Exports<br/Service\"]\n    DB[\"(PostgreSQL<br/Neon Database)\"]\n    REDIS[\"(Redis<br/Upstash Cache)\"]\n    FILES[\"(File Storage<br/S3/R2)\"]\n    SEPAY[\"SEPay<br/Payment Gateway\"]\n    DISCORD[\"Discord<br/Notifications\"]\n    EMAIL[\"Email<br/SMTP\"]\n    DOCKER[\"Docker<br/Containers\"]",
+        "matches_reference_stage": true
+      },
+      "state_after": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 25,
+          "edge_count": 0,
+          "group_count": 8,
+          "node_ids": [
+            "WEB",
+            "MOBILE",
+            "API_CLIENT",
+            "CDN",
+            "LB",
+            "API",
+            "WEB_APP",
+            "JWT",
+            "CSRF",
+            "RATE_LIMIT",
+            "AUTH",
+            "PAYMENTS"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "group_1",
+            "group_2",
+            "group_3",
+            "group_4",
+            "group_5",
+            "group_6",
+            "group_7",
+            "group_8"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    WEB[\"Web Frontend<br/Next.js + React\"]\n    MOBILE[\"Mobile App<br/React Native\"]\n    API_CLIENT[\"API Client<br/SDK\"]\n    CDN[\"Vercel Edge Network\"]\n    LB[\"Load Balancer<br/Nginx\"]\n    API[\"API Server<br/NestJS + Fastify<br/Port 4000\"]\n    WEB_APP[\"Web App<br/Next.js<br/Port 3000\"]\n    JWT[\"JWT Tokens<br/Access + Refresh\"]\n    CSRF[\"CSRF Protection<br/Double Submit\"]\n    RATE_LIMIT[\"Rate Limiting<br/Redis-based\"]\n    AUTH[\"Authentication<br/Service\"]\n    PAYMENTS[\"Payments<br/Service\"]\n    ORDERS[\"Orders<br/Service\"]\n    DELIVERIES[\"Deliveries<br/Service\"]\n    TICKETS[\"Tickets<br/Service\"]\n    SEARCH[\"Search<br/Service\"]\n    NEWS[\"News<br/Service\"]\n    EXPORTS[\"Exports<br/Service\"]\n    DB[\"(PostgreSQL<br/Neon Database)\"]\n    REDIS[\"(Redis<br/Upstash Cache)\"]\n    FILES[\"(File Storage<br/S3/R2)\"]\n    SEPAY[\"SEPay<br/Payment Gateway\"]\n    DISCORD[\"Discord<br/Notifications\"]\n    EMAIL[\"Email<br/SMTP\"]\n    DOCKER[\"Docker<br/Containers\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 12,
+        "speaker": "架构师",
+        "content": "最后一步，我们需要完善部署层和可观测性。首先CI/CD流水线采用Jenkins自动化构建和部署流程。代码质量门禁使用SonarQube进行静态分析。监控告警系统整合Prometheus和Grafana，实现指标收集和可视化看板。部署拓扑上，Vercel负责前端托管，Fly.io用于API服务的生产环境，Koyeb则作为API的预发布环境。",
+        "stage_index": null,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Turn 12 completes the architecture by adding the Deployment layer (Jenkins, SonarQube, Monitoring, Vercel, Fly.io, Koyeb).",
+          "stage_name": "Finalize Surface Details"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 25,
+          "edge_count": 0,
+          "group_count": 8,
+          "node_ids": [
+            "WEB",
+            "MOBILE",
+            "API_CLIENT",
+            "CDN",
+            "LB",
+            "API",
+            "WEB_APP",
+            "JWT",
+            "CSRF",
+            "RATE_LIMIT",
+            "AUTH",
+            "PAYMENTS"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "group_1",
+            "group_2",
+            "group_3",
+            "group_4",
+            "group_5",
+            "group_6",
+            "group_7",
+            "group_8"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    WEB[\"Web Frontend<br/Next.js + React\"]\n    MOBILE[\"Mobile App<br/React Native\"]\n    API_CLIENT[\"API Client<br/SDK\"]\n    CDN[\"Vercel Edge Network\"]\n    LB[\"Load Balancer<br/Nginx\"]\n    API[\"API Server<br/NestJS + Fastify<br/Port 4000\"]\n    WEB_APP[\"Web App<br/Next.js<br/Port 3000\"]\n    JWT[\"JWT Tokens<br/Access + Refresh\"]\n    CSRF[\"CSRF Protection<br/Double Submit\"]\n    RATE_LIMIT[\"Rate Limiting<br/Redis-based\"]\n    AUTH[\"Authentication<br/Service\"]\n    PAYMENTS[\"Payments<br/Service\"]\n    ORDERS[\"Orders<br/Service\"]\n    DELIVERIES[\"Deliveries<br/Service\"]\n    TICKETS[\"Tickets<br/Service\"]\n    SEARCH[\"Search<br/Service\"]\n    NEWS[\"News<br/Service\"]\n    EXPORTS[\"Exports<br/Service\"]\n    DB[\"(PostgreSQL<br/Neon Database)\"]\n    REDIS[\"(Redis<br/Upstash Cache)\"]\n    FILES[\"(File Storage<br/S3/R2)\"]\n    SEPAY[\"SEPay<br/Payment Gateway\"]\n    DISCORD[\"Discord<br/Notifications\"]\n    EMAIL[\"Email<br/SMTP\"]\n    DOCKER[\"Docker<br/Containers\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 13,
+        "speaker": "开发者A",
+        "content": "现在整个架构就完整了，从客户端到基础设施，再到部署运维全覆盖。",
+        "stage_index": 5,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Turn 13 provides confirmation that the architecture is complete.",
+          "stage_name": "Finalize Surface Details"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 25,
+          "edge_count": 0,
+          "group_count": 8,
+          "node_ids": [
+            "WEB",
+            "MOBILE",
+            "API_CLIENT",
+            "CDN",
+            "LB",
+            "API",
+            "WEB_APP",
+            "JWT",
+            "CSRF",
+            "RATE_LIMIT",
+            "AUTH",
+            "PAYMENTS"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "group_1",
+            "group_2",
+            "group_3",
+            "group_4",
+            "group_5",
+            "group_6",
+            "group_7",
+            "group_8"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    WEB[\"Web Frontend<br/Next.js + React\"]\n    MOBILE[\"Mobile App<br/React Native\"]\n    API_CLIENT[\"API Client<br/SDK\"]\n    CDN[\"Vercel Edge Network\"]\n    LB[\"Load Balancer<br/Nginx\"]\n    API[\"API Server<br/NestJS + Fastify<br/Port 4000\"]\n    WEB_APP[\"Web App<br/Next.js<br/Port 3000\"]\n    JWT[\"JWT Tokens<br/Access + Refresh\"]\n    CSRF[\"CSRF Protection<br/Double Submit\"]\n    RATE_LIMIT[\"Rate Limiting<br/Redis-based\"]\n    AUTH[\"Authentication<br/Service\"]\n    PAYMENTS[\"Payments<br/Service\"]\n    ORDERS[\"Orders<br/Service\"]\n    DELIVERIES[\"Deliveries<br/Service\"]\n    TICKETS[\"Tickets<br/Service\"]\n    SEARCH[\"Search<br/Service\"]\n    NEWS[\"News<br/Service\"]\n    EXPORTS[\"Exports<br/Service\"]\n    DB[\"(PostgreSQL<br/Neon Database)\"]\n    REDIS[\"(Redis<br/Upstash Cache)\"]\n    FILES[\"(File Storage<br/S3/R2)\"]\n    SEPAY[\"SEPay<br/Payment Gateway\"]\n    DISCORD[\"Discord<br/Notifications\"]\n    EMAIL[\"Email<br/SMTP\"]\n    DOCKER[\"Docker<br/Containers\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 14,
+        "speaker": "架构师",
+        "content": "是的，这样一个完整的多层微服务架构就设计完成了。整个系统包含客户端层、CDN与负载均衡、应用层、认证安全、业务逻辑、数据层、外部服务和部署层等九大模块，各层职责清晰，便于独立演进和扩展。",
+        "stage_index": 5,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Turn 14 summarizes the complete nine-module architecture as finalization.",
+          "stage_name": "Finalize Surface Details"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 5,
+        "reason": "turn 14 reached end boundary for stage 5",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 25,
+          "edge_count": 0,
+          "group_count": 8,
+          "node_ids": [
+            "WEB",
+            "MOBILE",
+            "API_CLIENT",
+            "CDN",
+            "LB",
+            "API",
+            "WEB_APP",
+            "JWT",
+            "CSRF",
+            "RATE_LIMIT",
+            "AUTH",
+            "PAYMENTS"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "group_1",
+            "group_2",
+            "group_3",
+            "group_4",
+            "group_5",
+            "group_6",
+            "group_7",
+            "group_8"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    WEB[\"Web Frontend<br/Next.js + React\"]\n    MOBILE[\"Mobile App<br/React Native\"]\n    API_CLIENT[\"API Client<br/SDK\"]\n    CDN[\"Vercel Edge Network\"]\n    LB[\"Load Balancer<br/Nginx\"]\n    API[\"API Server<br/NestJS + Fastify<br/Port 4000\"]\n    WEB_APP[\"Web App<br/Next.js<br/Port 3000\"]\n    JWT[\"JWT Tokens<br/Access + Refresh\"]\n    CSRF[\"CSRF Protection<br/Double Submit\"]\n    RATE_LIMIT[\"Rate Limiting<br/Redis-based\"]\n    AUTH[\"Authentication<br/Service\"]\n    PAYMENTS[\"Payments<br/Service\"]\n    ORDERS[\"Orders<br/Service\"]\n    DELIVERIES[\"Deliveries<br/Service\"]\n    TICKETS[\"Tickets<br/Service\"]\n    SEARCH[\"Search<br/Service\"]\n    NEWS[\"News<br/Service\"]\n    EXPORTS[\"Exports<br/Service\"]\n    DB[\"(PostgreSQL<br/Neon Database)\"]\n    REDIS[\"(Redis<br/Upstash Cache)\"]\n    FILES[\"(File Storage<br/S3/R2)\"]\n    SEPAY[\"SEPay<br/Payment Gateway\"]\n    DISCORD[\"Discord<br/Notifications\"]\n    EMAIL[\"Email<br/SMTP\"]\n    DOCKER[\"Docker<br/Containers\"]"
+      },
+      "planner": {
+        "target_stage_index": 5,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "group_9",
+            "label": "Deployment"
+          },
+          {
+            "op": "add_node",
+            "node_id": "JENKINS",
+            "label": "Jenkins<br/CI/CD",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "SONAR",
+            "label": "SonarQube<br/Quality Gate",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "MONITORING",
+            "label": "Monitoring<br/Prometheus + Grafana",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "VERCEL",
+            "label": "Vercel<br/Frontend",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "FLY",
+            "label": "Fly.io<br/API Production",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "KOYEB",
+            "label": "Koyeb<br/API Staging",
+            "kind": "node"
+          }
+        ],
+        "target_graph_ir": {
+          "graph_id": "gh_architecture_01830",
+          "diagram_type": "architecture",
+          "nodes": [
+            {
+              "id": "WEB",
+              "label": "Web Frontend<br/Next.js + React",
+              "kind": "node",
+              "parent": "group_1",
+              "source_index": 3,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "MOBILE",
+              "label": "Mobile App<br/React Native",
+              "kind": "node",
+              "parent": "group_1",
+              "source_index": 4,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "API_CLIENT",
+              "label": "API Client<br/SDK",
+              "kind": "node",
+              "parent": "group_1",
+              "source_index": 5,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "CDN",
+              "label": "Vercel Edge Network",
+              "kind": "node",
+              "parent": "group_2",
+              "source_index": 8,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "LB",
+              "label": "Load Balancer<br/Nginx",
+              "kind": "node",
+              "parent": "group_2",
+              "source_index": 9,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "API",
+              "label": "API Server<br/NestJS + Fastify<br/Port 4000",
+              "kind": "node",
+              "parent": "group_3",
+              "source_index": 12,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "WEB_APP",
+              "label": "Web App<br/Next.js<br/Port 3000",
+              "kind": "node",
+              "parent": "group_3",
+              "source_index": 13,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "JWT",
+              "label": "JWT Tokens<br/Access + Refresh",
+              "kind": "node",
+              "parent": "group_4",
+              "source_index": 16,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "CSRF",
+              "label": "CSRF Protection<br/Double Submit",
+              "kind": "node",
+              "parent": "group_4",
+              "source_index": 17,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "RATE_LIMIT",
+              "label": "Rate Limiting<br/Redis-based",
+              "kind": "node",
+              "parent": "group_4",
+              "source_index": 18,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "AUTH",
+              "label": "Authentication<br/Service",
+              "kind": "node",
+              "parent": "group_5",
+              "source_index": 21,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "PAYMENTS",
+              "label": "Payments<br/Service",
+              "kind": "node",
+              "parent": "group_5",
+              "source_index": 22,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "ORDERS",
+              "label": "Orders<br/Service",
+              "kind": "node",
+              "parent": "group_5",
+              "source_index": 23,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "DELIVERIES",
+              "label": "Deliveries<br/Service",
+              "kind": "node",
+              "parent": "group_5",
+              "source_index": 24,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "TICKETS",
+              "label": "Tickets<br/Service",
+              "kind": "node",
+              "parent": "group_5",
+              "source_index": 25,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "SEARCH",
+              "label": "Search<br/Service",
+              "kind": "node",
+              "parent": "group_5",
+              "source_index": 26,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "NEWS",
+              "label": "News<br/Service",
+              "kind": "node",
+              "parent": "group_5",
+              "source_index": 27,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "EXPORTS",
+              "label": "Exports<br/Service",
+              "kind": "node",
+              "parent": "group_5",
+              "source_index": 28,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "DB",
+              "label": "(PostgreSQL<br/Neon Database)",
+              "kind": "node",
+              "parent": "group_6",
+              "source_index": 31,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "REDIS",
+              "label": "(Redis<br/Upstash Cache)",
+              "kind": "node",
+              "parent": "group_6",
+              "source_index": 32,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "FILES",
+              "label": "(File Storage<br/S3/R2)",
+              "kind": "node",
+              "parent": "group_6",
+              "source_index": 33,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "SEPAY",
+              "label": "SEPay<br/Payment Gateway",
+              "kind": "node",
+              "parent": "group_7",
+              "source_index": 36,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "DISCORD",
+              "label": "Discord<br/Notifications",
+              "kind": "node",
+              "parent": "group_7",
+              "source_index": 37,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "EMAIL",
+              "label": "Email<br/SMTP",
+              "kind": "node",
+              "parent": "group_7",
+              "source_index": 38,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "DOCKER",
+              "label": "Docker<br/Containers",
+              "kind": "node",
+              "parent": "group_8",
+              "source_index": 41,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "JENKINS",
+              "label": "Jenkins<br/CI/CD",
+              "kind": "node",
+              "parent": "group_8",
+              "source_index": 42,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "SONAR",
+              "label": "SonarQube<br/Quality Gate",
+              "kind": "node",
+              "parent": "group_8",
+              "source_index": 43,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "MONITORING",
+              "label": "Monitoring<br/Prometheus + Grafana",
+              "kind": "node",
+              "parent": "group_8",
+              "source_index": 44,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "VERCEL",
+              "label": "Vercel<br/Frontend",
+              "kind": "node",
+              "parent": "group_9",
+              "source_index": 47,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "FLY",
+              "label": "Fly.io<br/API Production",
+              "kind": "node",
+              "parent": "group_9",
+              "source_index": 48,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            },
+            {
+              "id": "KOYEB",
+              "label": "Koyeb<br/API Staging",
+              "kind": "node",
+              "parent": "group_9",
+              "source_index": 49,
+              "metadata": {
+                "diagram_type": "architecture"
+              }
+            }
+          ],
+          "edges": [],
+          "groups": [
+            {
+              "id": "group_1",
+              "label": "Client Layer",
+              "parent": null,
+              "member_ids": [
+                "WEB",
+                "MOBILE",
+                "API_CLIENT"
+              ],
+              "source_index": 2,
+              "metadata": {}
+            },
+            {
+              "id": "group_2",
+              "label": "CDN & Load Balancer",
+              "parent": null,
+              "member_ids": [
+                "CDN",
+                "LB"
+              ],
+              "source_index": 7,
+              "metadata": {}
+            },
+            {
+              "id": "group_3",
+              "label": "Application Layer",
+              "parent": null,
+              "member_ids": [
+                "API",
+                "WEB_APP"
+              ],
+              "source_index": 11,
+              "metadata": {}
+            },
+            {
+              "id": "group_4",
+              "label": "Authentication & Security",
+              "parent": null,
+              "member_ids": [
+                "JWT",
+                "CSRF",
+                "RATE_LIMIT"
+              ],
+              "source_index": 15,
+              "metadata": {}
+            },
+            {
+              "id": "group_5",
+              "label": "Business Logic",
+              "parent": null,
+              "member_ids": [
+                "AUTH",
+                "PAYMENTS",
+                "ORDERS",
+                "DELIVERIES",
+                "TICKETS",
+                "SEARCH",
+                "NEWS",
+                "EXPORTS"
+              ],
+              "source_index": 20,
+              "metadata": {}
+            },
+            {
+              "id": "group_6",
+              "label": "Data Layer",
+              "parent": null,
+              "member_ids": [
+                "DB",
+                "REDIS",
+                "FILES"
+              ],
+              "source_index": 30,
+              "metadata": {}
+            },
+            {
+              "id": "group_7",
+              "label": "External Services",
+              "parent": null,
+              "member_ids": [
+                "SEPAY",
+                "DISCORD",
+                "EMAIL"
+              ],
+              "source_index": 35,
+              "metadata": {}
+            },
+            {
+              "id": "group_8",
+              "label": "Infrastructure",
+              "parent": null,
+              "member_ids": [
+                "DOCKER",
+                "JENKINS",
+                "SONAR",
+                "MONITORING"
+              ],
+              "source_index": 40,
+              "metadata": {}
+            },
+            {
+              "id": "group_9",
+              "label": "Deployment",
+              "parent": null,
+              "member_ids": [
+                "VERCEL",
+                "FLY",
+                "KOYEB"
+              ],
+              "source_index": 46,
+              "metadata": {}
+            }
+          ],
+          "styles": [],
+          "metadata": {
+            "source_path": "E:\\Desktop\\stream2graph\\data\\incremental_dataset\\sources\\open_balanced_v1_3360\\gh_architecture_01830.json",
+            "compilation_status": "success",
+            "content_size": 3416,
+            "normalized_code": "graph TB\n    subgraph \"Client Layer\"\n        WEB[Web Frontend<br/Next.js + React]\n        MOBILE[Mobile App<br/React Native]\n        API_CLIENT[API Client<br/SDK]\n    end\n    subgraph \"CDN & Load Balancer\"\n        CDN[Vercel Edge Network]\n        LB[Load Balancer<br/Nginx]\n    end\n    subgraph \"Application Layer\"\n        API[API Server<br/NestJS + Fastify<br/Port 4000]\n        WEB_APP[Web App<br/Next.js<br/Port 3000]\n    end\n    subgraph \"Authentication & Security\"\n        JWT[JWT Tokens<br/Access + Refresh]\n        CSRF[CSRF Protection<br/Double Submit]\n        RATE_LIMIT[Rate Limiting<br/Redis-based]\n    end\n    subgraph \"Business Logic\"\n        AUTH[Authentication<br/Service]\n        PAYMENTS[Payments<br/Service]\n        ORDERS[Orders<br/Service]\n        DELIVERIES[Deliveries<br/Service]\n        TICKETS[Tickets<br/Service]\n        SEARCH[Search<br/Service]\n        NEWS[News<br/Service]\n        EXPORTS[Exports<br/Service]\n    end\n    subgraph \"Data Layer\"\n        DB[(PostgreSQL<br/Neon Database)]\n        REDIS[(Redis<br/Upstash Cache)]\n        FILES[(File Storage<br/S3/R2)]\n    end\n    subgraph \"External Services\"\n        SEPAY[SEPay<br/Payment Gateway]\n        DISCORD[Discord<br/Notifications]\n        EMAIL[Email<br/SMTP]\n    end\n    subgraph \"Infrastructure\"\n        DOCKER[Docker<br/Containers]\n        JENKINS[Jenkins<br/CI/CD]\n        SONAR[SonarQube<br/Quality Gate]\n        MONITORING[Monitoring<br/Prometheus + Grafana]\n    end\n    subgraph \"Deployment\"\n        VERCEL[Vercel<br/Frontend]\n        FLY[Fly.io<br/API Production]\n        KOYEB[Koyeb<br/API Staging]\n    end\n    %% Client connections\n    WEB -- CDN\n    MOBILE -- CDN\n    API_CLIENT -- CDN\n    %% CDN to Load Balancer\n    CDN -- LB\n    %% Load Balancer to Applications\n    LB -- API\n    LB -- WEB_APP\n    %% API to Business Logic\n    API -- AUTH\n    API -- PAYMENTS\n    API -- ORDERS\n    API -- DELIVERIES\n    API -- TICKETS\n    API -- SEARCH\n    API -- NEWS\n    API -- EXPORTS\n    %% Business Logic to Data Layer\n    AUTH -- DB\n    AUTH -- REDIS\n    PAYMENTS -- DB\n    ORDERS -- DB\n    DELIVERIES -- DB\n    TICKETS -- DB\n    SEARCH -- DB\n    NEWS -- DB\n    EXPORTS -- DB\n    EXPORTS -- FILES\n    %% Authentication & Security\n    API -- JWT\n    API -- CSRF\n    API -- RATE_LIMIT\n    RATE_LIMIT -- REDIS\n    %% External Services\n    PAYMENTS -- SEPAY\n    TICKETS -- DISCORD\n    AUTH -- EMAIL\n    %% Infrastructure\n    API -- DOCKER\n    WEB_APP -- DOCKER\n    DOCKER -- JENKINS\n    JENKINS -- SONAR\n    JENKINS -- MONITORING\n    %% Deployment\n    WEB_APP -- VERCEL\n    API -- FLY\n    API -- KOYEB\n    %% Styling\n    classDef client fill:#e1f5fe\n    classDef cdn fill:#f3e5f5\n    classDef app fill:#e8f5e8\n    classDef security fill:#fff3e0\n    classDef business fill:#fce4ec\n    classDef data fill:#e0f2f1\n    classDef external fill:#f1f8e9\n    classDef infra fill:#e3f2fd\n    classDef deploy fill:#f9fbe7\n    class WEB,MOBILE,API_CLIENT client\n    class CDN,LB cdn\n    class API,WEB_APP app\n    class JWT,CSRF,RATE_LIMIT security\n    class AUTH,PAYMENTS,ORDERS,DELIVERIES,TICKETS,SEARCH,NEWS,EXPORTS business\n    class DB,REDIS,FILES data\n    class SEPAY,DISCORD,EMAIL external\n    class DOCKER,JENKINS,SONAR,MONITORING infra\n    class VERCEL,FLY,KOYEB deploy"
+          }
+        },
+        "notes": "Stage 5/5, adds 6 nodes, 0 edges, 1 groups, current state now contains 31 nodes and 0 edges",
+        "metadata": {
+          "planner_mode": "oracle",
+          "stage_name": "Finalize Surface Details"
+        }
+      },
+      "update": {
+        "target_stage_index": 5,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "group_9",
+            "label": "Deployment"
+          },
+          {
+            "op": "add_node",
+            "node_id": "JENKINS",
+            "label": "Jenkins<br/CI/CD",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "SONAR",
+            "label": "SonarQube<br/Quality Gate",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "MONITORING",
+            "label": "Monitoring<br/Prometheus + Grafana",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "VERCEL",
+            "label": "Vercel<br/Frontend",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "FLY",
+            "label": "Fly.io<br/API Production",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "KOYEB",
+            "label": "Koyeb<br/API Staging",
+            "kind": "node"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 31,
+          "edge_count": 0,
+          "group_count": 9,
+          "node_ids": [
+            "WEB",
+            "MOBILE",
+            "API_CLIENT",
+            "CDN",
+            "LB",
+            "API",
+            "WEB_APP",
+            "JWT",
+            "CSRF",
+            "RATE_LIMIT",
+            "AUTH",
+            "PAYMENTS"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "group_1",
+            "group_2",
+            "group_3",
+            "group_4",
+            "group_5",
+            "group_6",
+            "group_7",
+            "group_8",
+            "group_9"
+          ]
+        },
+        "gold_stage_metrics": {
+          "node_count": 31,
+          "edge_count": 0,
+          "group_count": 9,
+          "delta_count": 7
+        },
+        "preview_mermaid": "graph TD\n    WEB[\"Web Frontend<br/Next.js + React\"]\n    MOBILE[\"Mobile App<br/React Native\"]\n    API_CLIENT[\"API Client<br/SDK\"]\n    CDN[\"Vercel Edge Network\"]\n    LB[\"Load Balancer<br/Nginx\"]\n    API[\"API Server<br/NestJS + Fastify<br/Port 4000\"]\n    WEB_APP[\"Web App<br/Next.js<br/Port 3000\"]\n    JWT[\"JWT Tokens<br/Access + Refresh\"]\n    CSRF[\"CSRF Protection<br/Double Submit\"]\n    RATE_LIMIT[\"Rate Limiting<br/Redis-based\"]\n    AUTH[\"Authentication<br/Service\"]\n    PAYMENTS[\"Payments<br/Service\"]\n    ORDERS[\"Orders<br/Service\"]\n    DELIVERIES[\"Deliveries<br/Service\"]\n    TICKETS[\"Tickets<br/Service\"]\n    SEARCH[\"Search<br/Service\"]\n    NEWS[\"News<br/Service\"]\n    EXPORTS[\"Exports<br/Service\"]\n    DB[\"(PostgreSQL<br/Neon Database)\"]\n    REDIS[\"(Redis<br/Upstash Cache)\"]\n    FILES[\"(File Storage<br/S3/R2)\"]\n    SEPAY[\"SEPay<br/Payment Gateway\"]\n    DISCORD[\"Discord<br/Notifications\"]\n    EMAIL[\"Email<br/SMTP\"]\n    DOCKER[\"Docker<br/Containers\"]\n    JENKINS[\"Jenkins<br/CI/CD\"]\n    SONAR[\"SonarQube<br/Quality Gate\"]\n    MONITORING[\"Monitoring<br/Prometheus + Grafana\"]\n    VERCEL[\"Vercel<br/Frontend\"]\n    FLY[\"Fly.io<br/API Production\"]\n    KOYEB[\"Koyeb<br/API Staging\"]",
+        "matches_reference_stage": true
+      },
+      "state_after": {
+        "current_stage_index": 5,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "graph_metrics": {
+          "node_count": 31,
+          "edge_count": 0,
+          "group_count": 9,
+          "node_ids": [
+            "WEB",
+            "MOBILE",
+            "API_CLIENT",
+            "CDN",
+            "LB",
+            "API",
+            "WEB_APP",
+            "JWT",
+            "CSRF",
+            "RATE_LIMIT",
+            "AUTH",
+            "PAYMENTS"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "group_1",
+            "group_2",
+            "group_3",
+            "group_4",
+            "group_5",
+            "group_6",
+            "group_7",
+            "group_8",
+            "group_9"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    WEB[\"Web Frontend<br/Next.js + React\"]\n    MOBILE[\"Mobile App<br/React Native\"]\n    API_CLIENT[\"API Client<br/SDK\"]\n    CDN[\"Vercel Edge Network\"]\n    LB[\"Load Balancer<br/Nginx\"]\n    API[\"API Server<br/NestJS + Fastify<br/Port 4000\"]\n    WEB_APP[\"Web App<br/Next.js<br/Port 3000\"]\n    JWT[\"JWT Tokens<br/Access + Refresh\"]\n    CSRF[\"CSRF Protection<br/Double Submit\"]\n    RATE_LIMIT[\"Rate Limiting<br/Redis-based\"]\n    AUTH[\"Authentication<br/Service\"]\n    PAYMENTS[\"Payments<br/Service\"]\n    ORDERS[\"Orders<br/Service\"]\n    DELIVERIES[\"Deliveries<br/Service\"]\n    TICKETS[\"Tickets<br/Service\"]\n    SEARCH[\"Search<br/Service\"]\n    NEWS[\"News<br/Service\"]\n    EXPORTS[\"Exports<br/Service\"]\n    DB[\"(PostgreSQL<br/Neon Database)\"]\n    REDIS[\"(Redis<br/Upstash Cache)\"]\n    FILES[\"(File Storage<br/S3/R2)\"]\n    SEPAY[\"SEPay<br/Payment Gateway\"]\n    DISCORD[\"Discord<br/Notifications\"]\n    EMAIL[\"Email<br/SMTP\"]\n    DOCKER[\"Docker<br/Containers\"]\n    JENKINS[\"Jenkins<br/CI/CD\"]\n    SONAR[\"SonarQube<br/Quality Gate\"]\n    MONITORING[\"Monitoring<br/Prometheus + Grafana\"]\n    VERCEL[\"Vercel<br/Frontend\"]\n    FLY[\"Fly.io<br/API Production\"]\n    KOYEB[\"Koyeb<br/API Staging\"]"
+      }
+    }
+  ]
+}
