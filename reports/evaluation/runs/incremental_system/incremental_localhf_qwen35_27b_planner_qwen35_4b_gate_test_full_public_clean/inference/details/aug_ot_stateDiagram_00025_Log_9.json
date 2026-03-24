@@ -1,0 +1,2861 @@
+{
+  "sample_id": "aug_ot_stateDiagram_00025_Log_9",
+  "diagram_type": "statediagram",
+  "generated_at_utc": "2026-03-24T07:40:00Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 25,
+    "total_stages": 5,
+    "updates_emitted": 5,
+    "final_stage_index": 5,
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 45,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "InitTransport",
+        "LoadConfig",
+        "Initializing",
+        "RegisterSubscription",
+        "SetupWatcher",
+        "UnsubscribeResources",
+        "DrainPendingRequests",
+        "LogError",
+        "PersistCrashDump",
+        "EstablishConnection",
+        "Paused",
+        "Reconnecting"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    },
+    "reference_graph_metrics": {
+      "node_count": 46,
+      "edge_count": 54,
+      "group_count": 0,
+      "node_ids": [
+        "InitTransport",
+        "LoadConfig",
+        "EstablishConnection",
+        "SendInitialize",
+        "WaitForInitialized",
+        "Connected",
+        "Initializing",
+        "Active",
+        "ResourceOperations",
+        "ToolOperations",
+        "PromptOperations",
+        "Subscribing"
+      ],
+      "edge_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e5",
+        "e6",
+        "e7",
+        "e8",
+        "e9",
+        "e10",
+        "e11",
+        "e12"
+      ],
+      "group_ids": []
+    }
+  },
+  "final_state": {
+    "sample_id": "aug_ot_stateDiagram_00025_Log_9",
+    "diagram_type": "statediagram",
+    "current_stage_index": 5,
+    "current_graph_ir": {
+      "graph_id": "aug_ot_stateDiagram_00025_Log_9",
+      "diagram_type": "statediagram",
+      "nodes": [
+        {
+          "id": "InitTransport",
+          "label": "InitTransport",
+          "kind": "state",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "LoadConfig",
+          "label": "LoadConfig",
+          "kind": "state",
+          "parent": null,
+          "source_index": 3,
+          "metadata": {}
+        },
+        {
+          "id": "Initializing",
+          "label": "Initializing",
+          "kind": "state",
+          "parent": null,
+          "source_index": 4,
+          "metadata": {}
+        },
+        {
+          "id": "RegisterSubscription",
+          "label": "RegisterSubscription",
+          "kind": "state",
+          "parent": null,
+          "source_index": 5,
+          "metadata": {}
+        },
+        {
+          "id": "SetupWatcher",
+          "label": "SetupWatcher",
+          "kind": "state",
+          "parent": null,
+          "source_index": 6,
+          "metadata": {}
+        },
+        {
+          "id": "UnsubscribeResources",
+          "label": "UnsubscribeResources",
+          "kind": "state",
+          "parent": null,
+          "source_index": 7,
+          "metadata": {}
+        },
+        {
+          "id": "DrainPendingRequests",
+          "label": "DrainPendingRequests",
+          "kind": "state",
+          "parent": null,
+          "source_index": 8,
+          "metadata": {}
+        },
+        {
+          "id": "LogError",
+          "label": "LogError",
+          "kind": "state",
+          "parent": null,
+          "source_index": 9,
+          "metadata": {}
+        },
+        {
+          "id": "PersistCrashDump",
+          "label": "PersistCrashDump",
+          "kind": "state",
+          "parent": null,
+          "source_index": 10,
+          "metadata": {}
+        },
+        {
+          "id": "EstablishConnection",
+          "label": "EstablishConnection",
+          "kind": "state",
+          "parent": null,
+          "source_index": 12,
+          "metadata": {}
+        },
+        {
+          "id": "Paused",
+          "label": "Paused",
+          "kind": "state",
+          "parent": null,
+          "source_index": 13,
+          "metadata": {}
+        },
+        {
+          "id": "Reconnecting",
+          "label": "Reconnecting",
+          "kind": "state",
+          "parent": null,
+          "source_index": 14,
+          "metadata": {}
+        },
+        {
+          "id": "GracefulShutdown",
+          "label": "GracefulShutdown",
+          "kind": "state",
+          "parent": null,
+          "source_index": 16,
+          "metadata": {}
+        },
+        {
+          "id": "AbnormalShutdown",
+          "label": "AbnormalShutdown",
+          "kind": "state",
+          "parent": null,
+          "source_index": 17,
+          "metadata": {}
+        },
+        {
+          "id": "ConfirmSubscription",
+          "label": "ConfirmSubscription",
+          "kind": "state",
+          "parent": null,
+          "source_index": 18,
+          "metadata": {}
+        },
+        {
+          "id": "SessionValidation",
+          "label": "SessionValidation",
+          "kind": "state",
+          "parent": null,
+          "source_index": 19,
+          "metadata": {}
+        },
+        {
+          "id": "CloseTransport",
+          "label": "CloseTransport",
+          "kind": "state",
+          "parent": null,
+          "source_index": 20,
+          "metadata": {}
+        },
+        {
+          "id": "NotifyDependents",
+          "label": "NotifyDependents",
+          "kind": "state",
+          "parent": null,
+          "source_index": 21,
+          "metadata": {}
+        },
+        {
+          "id": "SendInitialize",
+          "label": "SendInitialize",
+          "kind": "state",
+          "parent": null,
+          "source_index": 22,
+          "metadata": {}
+        },
+        {
+          "id": "PersistSession",
+          "label": "PersistSession",
+          "kind": "state",
+          "parent": null,
+          "source_index": 23,
+          "metadata": {}
+        },
+        {
+          "id": "IdleTimeout",
+          "label": "IdleTimeout",
+          "kind": "state",
+          "parent": null,
+          "source_index": 24,
+          "metadata": {}
+        },
+        {
+          "id": "RateLimited",
+          "label": "RateLimited",
+          "kind": "state",
+          "parent": null,
+          "source_index": 25,
+          "metadata": {}
+        },
+        {
+          "id": "InProgress",
+          "label": "InProgress",
+          "kind": "state",
+          "parent": null,
+          "source_index": 26,
+          "metadata": {}
+        },
+        {
+          "id": "ProgressUpdate",
+          "label": "ProgressUpdate",
+          "kind": "state",
+          "parent": null,
+          "source_index": 27,
+          "metadata": {}
+        },
+        {
+          "id": "Complete",
+          "label": "Complete",
+          "kind": "state",
+          "parent": null,
+          "source_index": 28,
+          "metadata": {}
+        },
+        {
+          "id": "HealthCheck",
+          "label": "HealthCheck",
+          "kind": "state",
+          "parent": null,
+          "source_index": 29,
+          "metadata": {}
+        },
+        {
+          "id": "Degraded",
+          "label": "Degraded",
+          "kind": "state",
+          "parent": null,
+          "source_index": 30,
+          "metadata": {}
+        },
+        {
+          "id": "WaitForInitialized",
+          "label": "WaitForInitialized",
+          "kind": "state",
+          "parent": null,
+          "source_index": 32,
+          "metadata": {}
+        },
+        {
+          "id": "Connected",
+          "label": "Connected",
+          "kind": "state",
+          "parent": null,
+          "source_index": 33,
+          "metadata": {}
+        },
+        {
+          "id": "Active",
+          "label": "Active",
+          "kind": "state",
+          "parent": null,
+          "source_index": 34,
+          "metadata": {}
+        },
+        {
+          "id": "ResourceOperations",
+          "label": "ResourceOperations",
+          "kind": "state",
+          "parent": null,
+          "source_index": 35,
+          "metadata": {}
+        },
+        {
+          "id": "ToolOperations",
+          "label": "ToolOperations",
+          "kind": "state",
+          "parent": null,
+          "source_index": 36,
+          "metadata": {}
+        },
+        {
+          "id": "PromptOperations",
+          "label": "PromptOperations",
+          "kind": "state",
+          "parent": null,
+          "source_index": 37,
+          "metadata": {}
+        },
+        {
+          "id": "Subscribing",
+          "label": "Subscribing",
+          "kind": "state",
+          "parent": null,
+          "source_index": 38,
+          "metadata": {}
+        },
+        {
+          "id": "TerminateProcess",
+          "label": "TerminateProcess",
+          "kind": "state",
+          "parent": null,
+          "source_index": 39,
+          "metadata": {}
+        },
+        {
+          "id": "Failed",
+          "label": "Failed",
+          "kind": "state",
+          "parent": null,
+          "source_index": 40,
+          "metadata": {}
+        },
+        {
+          "id": "Backoff",
+          "label": "Backoff",
+          "kind": "state",
+          "parent": null,
+          "source_index": 42,
+          "metadata": {}
+        },
+        {
+          "id": "ReconnectAttempt",
+          "label": "ReconnectAttempt",
+          "kind": "state",
+          "parent": null,
+          "source_index": 43,
+          "metadata": {}
+        },
+        {
+          "id": "Success",
+          "label": "Success",
+          "kind": "state",
+          "parent": null,
+          "source_index": 44,
+          "metadata": {}
+        },
+        {
+          "id": "Failure",
+          "label": "Failure",
+          "kind": "state",
+          "parent": null,
+          "source_index": 45,
+          "metadata": {}
+        },
+        {
+          "id": "IncrementRetryCount",
+          "label": "IncrementRetryCount",
+          "kind": "state",
+          "parent": null,
+          "source_index": 46,
+          "metadata": {}
+        },
+        {
+          "id": "CheckMaxRetries",
+          "label": "CheckMaxRetries",
+          "kind": "state",
+          "parent": null,
+          "source_index": 47,
+          "metadata": {}
+        },
+        {
+          "id": "Watching",
+          "label": "Watching",
+          "kind": "state",
+          "parent": null,
+          "source_index": 48,
+          "metadata": {}
+        },
+        {
+          "id": "NotificationReceived",
+          "label": "NotificationReceived",
+          "kind": "state",
+          "parent": null,
+          "source_index": 49,
+          "metadata": {}
+        },
+        {
+          "id": "DeliverNotification",
+          "label": "DeliverNotification",
+          "kind": "state",
+          "parent": null,
+          "source_index": 50,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    InitTransport[\"InitTransport\"]\n    LoadConfig[\"LoadConfig\"]\n    Initializing[\"Initializing\"]\n    RegisterSubscription[\"RegisterSubscription\"]\n    SetupWatcher[\"SetupWatcher\"]\n    UnsubscribeResources[\"UnsubscribeResources\"]\n    DrainPendingRequests[\"DrainPendingRequests\"]\n    LogError[\"LogError\"]\n    PersistCrashDump[\"PersistCrashDump\"]\n    EstablishConnection[\"EstablishConnection\"]\n    Paused[\"Paused\"]\n    Reconnecting[\"Reconnecting\"]\n    GracefulShutdown[\"GracefulShutdown\"]\n    AbnormalShutdown[\"AbnormalShutdown\"]\n    ConfirmSubscription[\"ConfirmSubscription\"]\n    SessionValidation[\"SessionValidation\"]\n    CloseTransport[\"CloseTransport\"]\n    NotifyDependents[\"NotifyDependents\"]\n    SendInitialize[\"SendInitialize\"]\n    PersistSession[\"PersistSession\"]\n    IdleTimeout[\"IdleTimeout\"]\n    RateLimited[\"RateLimited\"]\n    InProgress[\"InProgress\"]\n    ProgressUpdate[\"ProgressUpdate\"]\n    Complete[\"Complete\"]\n    HealthCheck[\"HealthCheck\"]\n    Degraded[\"Degraded\"]\n    WaitForInitialized[\"WaitForInitialized\"]\n    Connected[\"Connected\"]\n    Active[\"Active\"]\n    ResourceOperations[\"ResourceOperations\"]\n    ToolOperations[\"ToolOperations\"]\n    PromptOperations[\"PromptOperations\"]\n    Subscribing[\"Subscribing\"]\n    TerminateProcess[\"TerminateProcess\"]\n    Failed[\"Failed\"]\n    Backoff[\"Backoff\"]\n    ReconnectAttempt[\"ReconnectAttempt\"]\n    Success[\"Success\"]\n    Failure[\"Failure\"]\n    IncrementRetryCount[\"IncrementRetryCount\"]\n    CheckMaxRetries[\"CheckMaxRetries\"]\n    Watching[\"Watching\"]\n    NotificationReceived[\"NotificationReceived\"]\n    DeliverNotification[\"DeliverNotification\"]",
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 45,
+        "edge_count": 0,
+        "group_count": 0,
+        "node_ids": [
+          "InitTransport",
+          "LoadConfig",
+          "Initializing",
+          "RegisterSubscription",
+          "SetupWatcher",
+          "UnsubscribeResources",
+          "DrainPendingRequests",
+          "LogError",
+          "PersistCrashDump",
+          "EstablishConnection",
+          "Paused",
+          "Reconnecting"
+        ],
+        "edge_ids": [],
+        "group_ids": []
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "张工",
+        "content": "我们先来设计传输层的核心状态机框架。我认为应该从最基础的初始化流程开始，首先要有一个LoadConfig状态来加载配置，然后通过InitTransport状态完成传输层的初始化准备。",
+        "stage_index": null,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2154.4738,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "李工",
+        "content": "同意，初始化过程需要一个Initializing状态来表示正在初始化中。另外，订阅管理也很重要，我们增加RegisterSubscription和SetupWatcher这两个状态，让订阅注册和观察者设置成为独立的状态节点。",
+        "stage_index": null,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2128.921,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "王工",
+        "content": "错误处理是必须的。我建议增加LogError和PersistCrashDump两个状态，当发生错误时先记录日志，然后持久化崩溃转储信息。这样我们就能清晰地追踪错误发生的完整过程。",
+        "stage_index": null,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2098.6648,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "张工",
+        "content": "很好，现在我们有了基本的框架。LoadConfig到InitTransport的边表示启动流程，RegisterSubscription到SetupWatcher的边表示订阅注册流程，UnsubscribeResources到DrainPendingRequests的边表示取消订阅时的请求排空，LogError到PersistCrashDump的边表示错误处理流程。核心引导工作已经完成，接下来应该扩展主功能分支了。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "turn 4 reached end boundary for stage 1",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2372.7603,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"EMIT_UPDATE\",\n  \"target_stage_index\": 1,\n  \"reason\": \"turn 4 reached end boundary for stage 1\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "InitTransport",
+            "label": "InitTransport",
+            "kind": "state",
+            "id": "InitTransport"
+          },
+          {
+            "op": "add_node",
+            "node_id": "LoadConfig",
+            "label": "LoadConfig",
+            "kind": "state",
+            "id": "LoadConfig"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Initializing",
+            "label": "Initializing",
+            "kind": "state",
+            "id": "Initializing"
+          },
+          {
+            "op": "add_node",
+            "node_id": "RegisterSubscription",
+            "label": "RegisterSubscription",
+            "kind": "state",
+            "id": "RegisterSubscription"
+          },
+          {
+            "op": "add_node",
+            "node_id": "SetupWatcher",
+            "label": "SetupWatcher",
+            "kind": "state",
+            "id": "SetupWatcher"
+          },
+          {
+            "op": "add_node",
+            "node_id": "UnsubscribeResources",
+            "label": "UnsubscribeResources",
+            "kind": "state",
+            "id": "UnsubscribeResources"
+          },
+          {
+            "op": "add_node",
+            "node_id": "DrainPendingRequests",
+            "label": "DrainPendingRequests",
+            "kind": "state",
+            "id": "DrainPendingRequests"
+          },
+          {
+            "op": "add_node",
+            "node_id": "LogError",
+            "label": "LogError",
+            "kind": "state",
+            "id": "LogError"
+          },
+          {
+            "op": "add_node",
+            "node_id": "PersistCrashDump",
+            "label": "PersistCrashDump",
+            "kind": "state",
+            "id": "PersistCrashDump"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 1/5, adds 9 nodes, 4 edges, current state now contains 9 nodes and 4 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 61569.3603,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"InitTransport\",\n      \"label\": \"InitTransport\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"LoadConfig\",\n      \"label\": \"LoadConfig\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Initializing\",\n      \"label\": \"Initializing\",\n      \"kind\": \"s",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "InitTransport",
+            "label": "InitTransport",
+            "kind": "state",
+            "id": "InitTransport"
+          },
+          {
+            "op": "add_node",
+            "node_id": "LoadConfig",
+            "label": "LoadConfig",
+            "kind": "state",
+            "id": "LoadConfig"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Initializing",
+            "label": "Initializing",
+            "kind": "state",
+            "id": "Initializing"
+          },
+          {
+            "op": "add_node",
+            "node_id": "RegisterSubscription",
+            "label": "RegisterSubscription",
+            "kind": "state",
+            "id": "RegisterSubscription"
+          },
+          {
+            "op": "add_node",
+            "node_id": "SetupWatcher",
+            "label": "SetupWatcher",
+            "kind": "state",
+            "id": "SetupWatcher"
+          },
+          {
+            "op": "add_node",
+            "node_id": "UnsubscribeResources",
+            "label": "UnsubscribeResources",
+            "kind": "state",
+            "id": "UnsubscribeResources"
+          },
+          {
+            "op": "add_node",
+            "node_id": "DrainPendingRequests",
+            "label": "DrainPendingRequests",
+            "kind": "state",
+            "id": "DrainPendingRequests"
+          },
+          {
+            "op": "add_node",
+            "node_id": "LogError",
+            "label": "LogError",
+            "kind": "state",
+            "id": "LogError"
+          },
+          {
+            "op": "add_node",
+            "node_id": "PersistCrashDump",
+            "label": "PersistCrashDump",
+            "kind": "state",
+            "id": "PersistCrashDump"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 9,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "InitTransport",
+            "LoadConfig",
+            "Initializing",
+            "RegisterSubscription",
+            "SetupWatcher",
+            "UnsubscribeResources",
+            "DrainPendingRequests",
+            "LogError",
+            "PersistCrashDump"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 10,
+          "edge_count": 4,
+          "group_count": 0,
+          "delta_count": 14
+        },
+        "preview_mermaid": "graph TD\n    InitTransport[\"InitTransport\"]\n    LoadConfig[\"LoadConfig\"]\n    Initializing[\"Initializing\"]\n    RegisterSubscription[\"RegisterSubscription\"]\n    SetupWatcher[\"SetupWatcher\"]\n    UnsubscribeResources[\"UnsubscribeResources\"]\n    DrainPendingRequests[\"DrainPendingRequests\"]\n    LogError[\"LogError\"]\n    PersistCrashDump[\"PersistCrashDump\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 9,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "InitTransport",
+            "LoadConfig",
+            "Initializing",
+            "RegisterSubscription",
+            "SetupWatcher",
+            "UnsubscribeResources",
+            "DrainPendingRequests",
+            "LogError",
+            "PersistCrashDump"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    InitTransport[\"InitTransport\"]\n    LoadConfig[\"LoadConfig\"]\n    Initializing[\"Initializing\"]\n    RegisterSubscription[\"RegisterSubscription\"]\n    SetupWatcher[\"SetupWatcher\"]\n    UnsubscribeResources[\"UnsubscribeResources\"]\n    DrainPendingRequests[\"DrainPendingRequests\"]\n    LogError[\"LogError\"]\n    PersistCrashDump[\"PersistCrashDump\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "李工",
+        "content": "现在进入第二阶段，我们来扩展主功能分支。连接管理是核心功能，需要增加EstablishConnection状态来表示正在建立连接。同时还需要Paused和Reconnecting状态来处理暂停和重连场景。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2160.2399,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 9,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "InitTransport",
+            "LoadConfig",
+            "Initializing",
+            "RegisterSubscription",
+            "SetupWatcher",
+            "UnsubscribeResources",
+            "DrainPendingRequests",
+            "LogError",
+            "PersistCrashDump"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    InitTransport[\"InitTransport\"]\n    LoadConfig[\"LoadConfig\"]\n    Initializing[\"Initializing\"]\n    RegisterSubscription[\"RegisterSubscription\"]\n    SetupWatcher[\"SetupWatcher\"]\n    UnsubscribeResources[\"UnsubscribeResources\"]\n    DrainPendingRequests[\"DrainPendingRequests\"]\n    LogError[\"LogError\"]\n    PersistCrashDump[\"PersistCrashDump\"]"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "EstablishConnection",
+            "label": "EstablishConnection",
+            "kind": "state",
+            "id": "EstablishConnection"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Paused",
+            "label": "Paused",
+            "kind": "state",
+            "id": "Paused"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Reconnecting",
+            "label": "Reconnecting",
+            "kind": "state",
+            "id": "Reconnecting"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 2/5, adds 3 nodes, 0 edges, current state now contains 12 nodes and 0 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 17812.439,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 2,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"EstablishConnection\",\n      \"label\": \"EstablishConnection\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Paused\",\n      \"label\": \"Paused\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Reconnecting\",\n      \"label\": \"Reconnecting\",\n      \"kind\"",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "EstablishConnection",
+            "label": "EstablishConnection",
+            "kind": "state",
+            "id": "EstablishConnection"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Paused",
+            "label": "Paused",
+            "kind": "state",
+            "id": "Paused"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Reconnecting",
+            "label": "Reconnecting",
+            "kind": "state",
+            "id": "Reconnecting"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 12,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "InitTransport",
+            "LoadConfig",
+            "Initializing",
+            "RegisterSubscription",
+            "SetupWatcher",
+            "UnsubscribeResources",
+            "DrainPendingRequests",
+            "LogError",
+            "PersistCrashDump",
+            "EstablishConnection",
+            "Paused",
+            "Reconnecting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 19,
+          "edge_count": 8,
+          "group_count": 0,
+          "delta_count": 13
+        },
+        "preview_mermaid": "graph TD\n    InitTransport[\"InitTransport\"]\n    LoadConfig[\"LoadConfig\"]\n    Initializing[\"Initializing\"]\n    RegisterSubscription[\"RegisterSubscription\"]\n    SetupWatcher[\"SetupWatcher\"]\n    UnsubscribeResources[\"UnsubscribeResources\"]\n    DrainPendingRequests[\"DrainPendingRequests\"]\n    LogError[\"LogError\"]\n    PersistCrashDump[\"PersistCrashDump\"]\n    EstablishConnection[\"EstablishConnection\"]\n    Paused[\"Paused\"]\n    Reconnecting[\"Reconnecting\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 12,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "InitTransport",
+            "LoadConfig",
+            "Initializing",
+            "RegisterSubscription",
+            "SetupWatcher",
+            "UnsubscribeResources",
+            "DrainPendingRequests",
+            "LogError",
+            "PersistCrashDump",
+            "EstablishConnection",
+            "Paused",
+            "Reconnecting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    InitTransport[\"InitTransport\"]\n    LoadConfig[\"LoadConfig\"]\n    Initializing[\"Initializing\"]\n    RegisterSubscription[\"RegisterSubscription\"]\n    SetupWatcher[\"SetupWatcher\"]\n    UnsubscribeResources[\"UnsubscribeResources\"]\n    DrainPendingRequests[\"DrainPendingRequests\"]\n    LogError[\"LogError\"]\n    PersistCrashDump[\"PersistCrashDump\"]\n    EstablishConnection[\"EstablishConnection\"]\n    Paused[\"Paused\"]\n    Reconnecting[\"Reconnecting\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "王工",
+        "content": "shutdown流程也很关键。我增加了GracefulShutdown状态用于优雅关闭，AbnormalShutdown状态用于异常关闭。这两种关闭方式后续可能会有不同的处理逻辑，所以分开比较合理。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2145.9646,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 12,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "InitTransport",
+            "LoadConfig",
+            "Initializing",
+            "RegisterSubscription",
+            "SetupWatcher",
+            "UnsubscribeResources",
+            "DrainPendingRequests",
+            "LogError",
+            "PersistCrashDump",
+            "EstablishConnection",
+            "Paused",
+            "Reconnecting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    InitTransport[\"InitTransport\"]\n    LoadConfig[\"LoadConfig\"]\n    Initializing[\"Initializing\"]\n    RegisterSubscription[\"RegisterSubscription\"]\n    SetupWatcher[\"SetupWatcher\"]\n    UnsubscribeResources[\"UnsubscribeResources\"]\n    DrainPendingRequests[\"DrainPendingRequests\"]\n    LogError[\"LogError\"]\n    PersistCrashDump[\"PersistCrashDump\"]\n    EstablishConnection[\"EstablishConnection\"]\n    Paused[\"Paused\"]\n    Reconnecting[\"Reconnecting\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 7,
+        "speaker": "张工",
+        "content": "订阅流程还需要一个ConfirmSubscription状态来确认订阅是否成功。SessionValidation状态可以用于定期验证会话的有效性。另外CloseTransport和NotifyDependents状态用于关闭传输层并通知依赖方。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2113.946,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 12,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "InitTransport",
+            "LoadConfig",
+            "Initializing",
+            "RegisterSubscription",
+            "SetupWatcher",
+            "UnsubscribeResources",
+            "DrainPendingRequests",
+            "LogError",
+            "PersistCrashDump",
+            "EstablishConnection",
+            "Paused",
+            "Reconnecting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    InitTransport[\"InitTransport\"]\n    LoadConfig[\"LoadConfig\"]\n    Initializing[\"Initializing\"]\n    RegisterSubscription[\"RegisterSubscription\"]\n    SetupWatcher[\"SetupWatcher\"]\n    UnsubscribeResources[\"UnsubscribeResources\"]\n    DrainPendingRequests[\"DrainPendingRequests\"]\n    LogError[\"LogError\"]\n    PersistCrashDump[\"PersistCrashDump\"]\n    EstablishConnection[\"EstablishConnection\"]\n    Paused[\"Paused\"]\n    Reconnecting[\"Reconnecting\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 8,
+        "speaker": "李工",
+        "content": "好的，现在InitTransport到EstablishConnection的边建立了初始化到连接建立的桥梁，SetupWatcher到ConfirmSubscription的边完成了观察者设置到订阅确认的流程，DrainPendingRequests到CloseTransport的边表示排空请求后关闭传输层。主体分支已经具备雏形了。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2102.8666,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 12,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "InitTransport",
+            "LoadConfig",
+            "Initializing",
+            "RegisterSubscription",
+            "SetupWatcher",
+            "UnsubscribeResources",
+            "DrainPendingRequests",
+            "LogError",
+            "PersistCrashDump",
+            "EstablishConnection",
+            "Paused",
+            "Reconnecting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    InitTransport[\"InitTransport\"]\n    LoadConfig[\"LoadConfig\"]\n    Initializing[\"Initializing\"]\n    RegisterSubscription[\"RegisterSubscription\"]\n    SetupWatcher[\"SetupWatcher\"]\n    UnsubscribeResources[\"UnsubscribeResources\"]\n    DrainPendingRequests[\"DrainPendingRequests\"]\n    LogError[\"LogError\"]\n    PersistCrashDump[\"PersistCrashDump\"]\n    EstablishConnection[\"EstablishConnection\"]\n    Paused[\"Paused\"]\n    Reconnecting[\"Reconnecting\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 9,
+        "speaker": "王工",
+        "content": "第三阶段，我们来增加操作执行层的支持结构。首先需要SendInitialize状态来表示发送初始化请求，还有PersistSession状态用于持久化会话信息。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2117.3465,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 12,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "InitTransport",
+            "LoadConfig",
+            "Initializing",
+            "RegisterSubscription",
+            "SetupWatcher",
+            "UnsubscribeResources",
+            "DrainPendingRequests",
+            "LogError",
+            "PersistCrashDump",
+            "EstablishConnection",
+            "Paused",
+            "Reconnecting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    InitTransport[\"InitTransport\"]\n    LoadConfig[\"LoadConfig\"]\n    Initializing[\"Initializing\"]\n    RegisterSubscription[\"RegisterSubscription\"]\n    SetupWatcher[\"SetupWatcher\"]\n    UnsubscribeResources[\"UnsubscribeResources\"]\n    DrainPendingRequests[\"DrainPendingRequests\"]\n    LogError[\"LogError\"]\n    PersistCrashDump[\"PersistCrashDump\"]\n    EstablishConnection[\"EstablishConnection\"]\n    Paused[\"Paused\"]\n    Reconnecting[\"Reconnecting\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 10,
+        "speaker": "张工",
+        "content": "流量控制方面需要IdleTimeout和RateLimited两个状态。当长时间没有活动时进入IdleTimeout状态，当请求速率超限时进入RateLimited状态。这两个状态能帮助我们更好地控制系统负载。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2112.9587,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 12,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "InitTransport",
+            "LoadConfig",
+            "Initializing",
+            "RegisterSubscription",
+            "SetupWatcher",
+            "UnsubscribeResources",
+            "DrainPendingRequests",
+            "LogError",
+            "PersistCrashDump",
+            "EstablishConnection",
+            "Paused",
+            "Reconnecting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    InitTransport[\"InitTransport\"]\n    LoadConfig[\"LoadConfig\"]\n    Initializing[\"Initializing\"]\n    RegisterSubscription[\"RegisterSubscription\"]\n    SetupWatcher[\"SetupWatcher\"]\n    UnsubscribeResources[\"UnsubscribeResources\"]\n    DrainPendingRequests[\"DrainPendingRequests\"]\n    LogError[\"LogError\"]\n    PersistCrashDump[\"PersistCrashDump\"]\n    EstablishConnection[\"EstablishConnection\"]\n    Paused[\"Paused\"]\n    Reconnecting[\"Reconnecting\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 11,
+        "speaker": "李工",
+        "content": "长时间运行的操作用InProgress、ProgressUpdate和Complete三个状态来追踪。从Executing状态通过long_running_op边进入InProgress状态，然后通过send_progress边在InProgress和ProgressUpdate之间循环，最后通过finished边完成操作。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2123.1587,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 12,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "InitTransport",
+            "LoadConfig",
+            "Initializing",
+            "RegisterSubscription",
+            "SetupWatcher",
+            "UnsubscribeResources",
+            "DrainPendingRequests",
+            "LogError",
+            "PersistCrashDump",
+            "EstablishConnection",
+            "Paused",
+            "Reconnecting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    InitTransport[\"InitTransport\"]\n    LoadConfig[\"LoadConfig\"]\n    Initializing[\"Initializing\"]\n    RegisterSubscription[\"RegisterSubscription\"]\n    SetupWatcher[\"SetupWatcher\"]\n    UnsubscribeResources[\"UnsubscribeResources\"]\n    DrainPendingRequests[\"DrainPendingRequests\"]\n    LogError[\"LogError\"]\n    PersistCrashDump[\"PersistCrashDump\"]\n    EstablishConnection[\"EstablishConnection\"]\n    Paused[\"Paused\"]\n    Reconnecting[\"Reconnecting\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 12,
+        "speaker": "王工",
+        "content": "健康监控子系统需要HealthCheck和Degraded两个状态。定时进行健康检查，当发现子系统故障时进入Degraded降级状态，通过recovery_complete边可以恢复到正常Connected状态。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2120.4097,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 12,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "InitTransport",
+            "LoadConfig",
+            "Initializing",
+            "RegisterSubscription",
+            "SetupWatcher",
+            "UnsubscribeResources",
+            "DrainPendingRequests",
+            "LogError",
+            "PersistCrashDump",
+            "EstablishConnection",
+            "Paused",
+            "Reconnecting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    InitTransport[\"InitTransport\"]\n    LoadConfig[\"LoadConfig\"]\n    Initializing[\"Initializing\"]\n    RegisterSubscription[\"RegisterSubscription\"]\n    SetupWatcher[\"SetupWatcher\"]\n    UnsubscribeResources[\"UnsubscribeResources\"]\n    DrainPendingRequests[\"DrainPendingRequests\"]\n    LogError[\"LogError\"]\n    PersistCrashDump[\"PersistCrashDump\"]\n    EstablishConnection[\"EstablishConnection\"]\n    Paused[\"Paused\"]\n    Reconnecting[\"Reconnecting\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 13,
+        "speaker": "张工",
+        "content": "现在状态机有了操作执行层和健康监控的基础设施。接下来第四阶段我们要解决条件转换的问题，建立完整的条件分支逻辑，让各个状态之间能够根据不同的条件进行转换。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2116.3795,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 12,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "InitTransport",
+            "LoadConfig",
+            "Initializing",
+            "RegisterSubscription",
+            "SetupWatcher",
+            "UnsubscribeResources",
+            "DrainPendingRequests",
+            "LogError",
+            "PersistCrashDump",
+            "EstablishConnection",
+            "Paused",
+            "Reconnecting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    InitTransport[\"InitTransport\"]\n    LoadConfig[\"LoadConfig\"]\n    Initializing[\"Initializing\"]\n    RegisterSubscription[\"RegisterSubscription\"]\n    SetupWatcher[\"SetupWatcher\"]\n    UnsubscribeResources[\"UnsubscribeResources\"]\n    DrainPendingRequests[\"DrainPendingRequests\"]\n    LogError[\"LogError\"]\n    PersistCrashDump[\"PersistCrashDump\"]\n    EstablishConnection[\"EstablishConnection\"]\n    Paused[\"Paused\"]\n    Reconnecting[\"Reconnecting\"]"
+      },
+      "planner": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "GracefulShutdown",
+            "label": "GracefulShutdown",
+            "kind": "state",
+            "id": "GracefulShutdown"
+          },
+          {
+            "op": "add_node",
+            "node_id": "AbnormalShutdown",
+            "label": "AbnormalShutdown",
+            "kind": "state",
+            "id": "AbnormalShutdown"
+          },
+          {
+            "op": "add_node",
+            "node_id": "ConfirmSubscription",
+            "label": "ConfirmSubscription",
+            "kind": "state",
+            "id": "ConfirmSubscription"
+          },
+          {
+            "op": "add_node",
+            "node_id": "SessionValidation",
+            "label": "SessionValidation",
+            "kind": "state",
+            "id": "SessionValidation"
+          },
+          {
+            "op": "add_node",
+            "node_id": "CloseTransport",
+            "label": "CloseTransport",
+            "kind": "state",
+            "id": "CloseTransport"
+          },
+          {
+            "op": "add_node",
+            "node_id": "NotifyDependents",
+            "label": "NotifyDependents",
+            "kind": "state",
+            "id": "NotifyDependents"
+          },
+          {
+            "op": "add_node",
+            "node_id": "SendInitialize",
+            "label": "SendInitialize",
+            "kind": "state",
+            "id": "SendInitialize"
+          },
+          {
+            "op": "add_node",
+            "node_id": "PersistSession",
+            "label": "PersistSession",
+            "kind": "state",
+            "id": "PersistSession"
+          },
+          {
+            "op": "add_node",
+            "node_id": "IdleTimeout",
+            "label": "IdleTimeout",
+            "kind": "state",
+            "id": "IdleTimeout"
+          },
+          {
+            "op": "add_node",
+            "node_id": "RateLimited",
+            "label": "RateLimited",
+            "kind": "state",
+            "id": "RateLimited"
+          },
+          {
+            "op": "add_node",
+            "node_id": "InProgress",
+            "label": "InProgress",
+            "kind": "state",
+            "id": "InProgress"
+          },
+          {
+            "op": "add_node",
+            "node_id": "ProgressUpdate",
+            "label": "ProgressUpdate",
+            "kind": "state",
+            "id": "ProgressUpdate"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Complete",
+            "label": "Complete",
+            "kind": "state",
+            "id": "Complete"
+          },
+          {
+            "op": "add_node",
+            "node_id": "HealthCheck",
+            "label": "HealthCheck",
+            "kind": "state",
+            "id": "HealthCheck"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Degraded",
+            "label": "Degraded",
+            "kind": "state",
+            "id": "Degraded"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 3/5, adds 15 nodes, 0 edges, current state now contains 27 nodes and 0 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 66701.6692,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 3,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"GracefulShutdown\",\n      \"label\": \"GracefulShutdown\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"AbnormalShutdown\",\n      \"label\": \"AbnormalShutdown\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"ConfirmSubscription\",\n      \"label\": \"Confir",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "GracefulShutdown",
+            "label": "GracefulShutdown",
+            "kind": "state",
+            "id": "GracefulShutdown"
+          },
+          {
+            "op": "add_node",
+            "node_id": "AbnormalShutdown",
+            "label": "AbnormalShutdown",
+            "kind": "state",
+            "id": "AbnormalShutdown"
+          },
+          {
+            "op": "add_node",
+            "node_id": "ConfirmSubscription",
+            "label": "ConfirmSubscription",
+            "kind": "state",
+            "id": "ConfirmSubscription"
+          },
+          {
+            "op": "add_node",
+            "node_id": "SessionValidation",
+            "label": "SessionValidation",
+            "kind": "state",
+            "id": "SessionValidation"
+          },
+          {
+            "op": "add_node",
+            "node_id": "CloseTransport",
+            "label": "CloseTransport",
+            "kind": "state",
+            "id": "CloseTransport"
+          },
+          {
+            "op": "add_node",
+            "node_id": "NotifyDependents",
+            "label": "NotifyDependents",
+            "kind": "state",
+            "id": "NotifyDependents"
+          },
+          {
+            "op": "add_node",
+            "node_id": "SendInitialize",
+            "label": "SendInitialize",
+            "kind": "state",
+            "id": "SendInitialize"
+          },
+          {
+            "op": "add_node",
+            "node_id": "PersistSession",
+            "label": "PersistSession",
+            "kind": "state",
+            "id": "PersistSession"
+          },
+          {
+            "op": "add_node",
+            "node_id": "IdleTimeout",
+            "label": "IdleTimeout",
+            "kind": "state",
+            "id": "IdleTimeout"
+          },
+          {
+            "op": "add_node",
+            "node_id": "RateLimited",
+            "label": "RateLimited",
+            "kind": "state",
+            "id": "RateLimited"
+          },
+          {
+            "op": "add_node",
+            "node_id": "InProgress",
+            "label": "InProgress",
+            "kind": "state",
+            "id": "InProgress"
+          },
+          {
+            "op": "add_node",
+            "node_id": "ProgressUpdate",
+            "label": "ProgressUpdate",
+            "kind": "state",
+            "id": "ProgressUpdate"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Complete",
+            "label": "Complete",
+            "kind": "state",
+            "id": "Complete"
+          },
+          {
+            "op": "add_node",
+            "node_id": "HealthCheck",
+            "label": "HealthCheck",
+            "kind": "state",
+            "id": "HealthCheck"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Degraded",
+            "label": "Degraded",
+            "kind": "state",
+            "id": "Degraded"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 27,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "InitTransport",
+            "LoadConfig",
+            "Initializing",
+            "RegisterSubscription",
+            "SetupWatcher",
+            "UnsubscribeResources",
+            "DrainPendingRequests",
+            "LogError",
+            "PersistCrashDump",
+            "EstablishConnection",
+            "Paused",
+            "Reconnecting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 28,
+          "edge_count": 15,
+          "group_count": 0,
+          "delta_count": 16
+        },
+        "preview_mermaid": "graph TD\n    InitTransport[\"InitTransport\"]\n    LoadConfig[\"LoadConfig\"]\n    Initializing[\"Initializing\"]\n    RegisterSubscription[\"RegisterSubscription\"]\n    SetupWatcher[\"SetupWatcher\"]\n    UnsubscribeResources[\"UnsubscribeResources\"]\n    DrainPendingRequests[\"DrainPendingRequests\"]\n    LogError[\"LogError\"]\n    PersistCrashDump[\"PersistCrashDump\"]\n    EstablishConnection[\"EstablishConnection\"]\n    Paused[\"Paused\"]\n    Reconnecting[\"Reconnecting\"]\n    GracefulShutdown[\"GracefulShutdown\"]\n    AbnormalShutdown[\"AbnormalShutdown\"]\n    ConfirmSubscription[\"ConfirmSubscription\"]\n    SessionValidation[\"SessionValidation\"]\n    CloseTransport[\"CloseTransport\"]\n    NotifyDependents[\"NotifyDependents\"]\n    SendInitialize[\"SendInitialize\"]\n    PersistSession[\"PersistSession\"]\n    IdleTimeout[\"IdleTimeout\"]\n    RateLimited[\"RateLimited\"]\n    InProgress[\"InProgress\"]\n    ProgressUpdate[\"ProgressUpdate\"]\n    Complete[\"Complete\"]\n    HealthCheck[\"HealthCheck\"]\n    Degraded[\"Degraded\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 27,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "InitTransport",
+            "LoadConfig",
+            "Initializing",
+            "RegisterSubscription",
+            "SetupWatcher",
+            "UnsubscribeResources",
+            "DrainPendingRequests",
+            "LogError",
+            "PersistCrashDump",
+            "EstablishConnection",
+            "Paused",
+            "Reconnecting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    InitTransport[\"InitTransport\"]\n    LoadConfig[\"LoadConfig\"]\n    Initializing[\"Initializing\"]\n    RegisterSubscription[\"RegisterSubscription\"]\n    SetupWatcher[\"SetupWatcher\"]\n    UnsubscribeResources[\"UnsubscribeResources\"]\n    DrainPendingRequests[\"DrainPendingRequests\"]\n    LogError[\"LogError\"]\n    PersistCrashDump[\"PersistCrashDump\"]\n    EstablishConnection[\"EstablishConnection\"]\n    Paused[\"Paused\"]\n    Reconnecting[\"Reconnecting\"]\n    GracefulShutdown[\"GracefulShutdown\"]\n    AbnormalShutdown[\"AbnormalShutdown\"]\n    ConfirmSubscription[\"ConfirmSubscription\"]\n    SessionValidation[\"SessionValidation\"]\n    CloseTransport[\"CloseTransport\"]\n    NotifyDependents[\"NotifyDependents\"]\n    SendInitialize[\"SendInitialize\"]\n    PersistSession[\"PersistSession\"]\n    IdleTimeout[\"IdleTimeout\"]\n    RateLimited[\"RateLimited\"]\n    InProgress[\"InProgress\"]\n    ProgressUpdate[\"ProgressUpdate\"]\n    Complete[\"Complete\"]\n    HealthCheck[\"HealthCheck\"]\n    Degraded[\"Degraded\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 14,
+        "speaker": "李工",
+        "content": "我增加了WaitForInitialized状态用于等待初始化完成，从SendInitialize状态进入。Connected状态现在代表连接已建立的重要里程碑，可以从这里进入Active状态开始实际工作。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2128.2542,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 27,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "InitTransport",
+            "LoadConfig",
+            "Initializing",
+            "RegisterSubscription",
+            "SetupWatcher",
+            "UnsubscribeResources",
+            "DrainPendingRequests",
+            "LogError",
+            "PersistCrashDump",
+            "EstablishConnection",
+            "Paused",
+            "Reconnecting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    InitTransport[\"InitTransport\"]\n    LoadConfig[\"LoadConfig\"]\n    Initializing[\"Initializing\"]\n    RegisterSubscription[\"RegisterSubscription\"]\n    SetupWatcher[\"SetupWatcher\"]\n    UnsubscribeResources[\"UnsubscribeResources\"]\n    DrainPendingRequests[\"DrainPendingRequests\"]\n    LogError[\"LogError\"]\n    PersistCrashDump[\"PersistCrashDump\"]\n    EstablishConnection[\"EstablishConnection\"]\n    Paused[\"Paused\"]\n    Reconnecting[\"Reconnecting\"]\n    GracefulShutdown[\"GracefulShutdown\"]\n    AbnormalShutdown[\"AbnormalShutdown\"]\n    ConfirmSubscription[\"ConfirmSubscription\"]\n    SessionValidation[\"SessionValidation\"]\n    CloseTransport[\"CloseTransport\"]\n    NotifyDependents[\"NotifyDependents\"]\n    SendInitialize[\"SendInitialize\"]\n    PersistSession[\"PersistSession\"]\n    IdleTimeout[\"IdleTimeout\"]\n    RateLimited[\"RateLimited\"]\n    InProgress[\"InProgress\"]\n    ProgressUpdate[\"ProgressUpdate\"]\n    Complete[\"Complete\"]\n    HealthCheck[\"HealthCheck\"]\n    Degraded[\"Degraded\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 15,
+        "speaker": "王工",
+        "content": "Active状态下可以有三种主要操作：ResourceOperations处理资源列表、读取和订阅操作，ToolOperations处理工具调用，PromptOperations处理提示词的列表和获取操作。这些操作完成后都返回Active状态。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2116.5621,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 27,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "InitTransport",
+            "LoadConfig",
+            "Initializing",
+            "RegisterSubscription",
+            "SetupWatcher",
+            "UnsubscribeResources",
+            "DrainPendingRequests",
+            "LogError",
+            "PersistCrashDump",
+            "EstablishConnection",
+            "Paused",
+            "Reconnecting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    InitTransport[\"InitTransport\"]\n    LoadConfig[\"LoadConfig\"]\n    Initializing[\"Initializing\"]\n    RegisterSubscription[\"RegisterSubscription\"]\n    SetupWatcher[\"SetupWatcher\"]\n    UnsubscribeResources[\"UnsubscribeResources\"]\n    DrainPendingRequests[\"DrainPendingRequests\"]\n    LogError[\"LogError\"]\n    PersistCrashDump[\"PersistCrashDump\"]\n    EstablishConnection[\"EstablishConnection\"]\n    Paused[\"Paused\"]\n    Reconnecting[\"Reconnecting\"]\n    GracefulShutdown[\"GracefulShutdown\"]\n    AbnormalShutdown[\"AbnormalShutdown\"]\n    ConfirmSubscription[\"ConfirmSubscription\"]\n    SessionValidation[\"SessionValidation\"]\n    CloseTransport[\"CloseTransport\"]\n    NotifyDependents[\"NotifyDependents\"]\n    SendInitialize[\"SendInitialize\"]\n    PersistSession[\"PersistSession\"]\n    IdleTimeout[\"IdleTimeout\"]\n    RateLimited[\"RateLimited\"]\n    InProgress[\"InProgress\"]\n    ProgressUpdate[\"ProgressUpdate\"]\n    Complete[\"Complete\"]\n    HealthCheck[\"HealthCheck\"]\n    Degraded[\"Degraded\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 16,
+        "speaker": "张工",
+        "content": "订阅资源还有Subscribing状态作为中间状态。通过subscribe_resource边从Active进入Subscribing，通过subscription_confirmed边返回Active。Connected和Paused之间可以通过pause_requested和resume_requested边进行暂停和恢复切换。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2120.9037,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 27,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "InitTransport",
+            "LoadConfig",
+            "Initializing",
+            "RegisterSubscription",
+            "SetupWatcher",
+            "UnsubscribeResources",
+            "DrainPendingRequests",
+            "LogError",
+            "PersistCrashDump",
+            "EstablishConnection",
+            "Paused",
+            "Reconnecting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    InitTransport[\"InitTransport\"]\n    LoadConfig[\"LoadConfig\"]\n    Initializing[\"Initializing\"]\n    RegisterSubscription[\"RegisterSubscription\"]\n    SetupWatcher[\"SetupWatcher\"]\n    UnsubscribeResources[\"UnsubscribeResources\"]\n    DrainPendingRequests[\"DrainPendingRequests\"]\n    LogError[\"LogError\"]\n    PersistCrashDump[\"PersistCrashDump\"]\n    EstablishConnection[\"EstablishConnection\"]\n    Paused[\"Paused\"]\n    Reconnecting[\"Reconnecting\"]\n    GracefulShutdown[\"GracefulShutdown\"]\n    AbnormalShutdown[\"AbnormalShutdown\"]\n    ConfirmSubscription[\"ConfirmSubscription\"]\n    SessionValidation[\"SessionValidation\"]\n    CloseTransport[\"CloseTransport\"]\n    NotifyDependents[\"NotifyDependents\"]\n    SendInitialize[\"SendInitialize\"]\n    PersistSession[\"PersistSession\"]\n    IdleTimeout[\"IdleTimeout\"]\n    RateLimited[\"RateLimited\"]\n    InProgress[\"InProgress\"]\n    ProgressUpdate[\"ProgressUpdate\"]\n    Complete[\"Complete\"]\n    HealthCheck[\"HealthCheck\"]\n    Degraded[\"Degraded\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 17,
+        "speaker": "李工",
+        "content": "连接状态的条件转换很重要。transport_error边触发从Connected到Reconnecting的重连流程，reconnect_success边回到Connected，reconnect_failed边则进入Failed状态。shutdown notification边触发GracefulShutdown，critical_error边触发AbnormalShutdown。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2124.7303,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 27,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "InitTransport",
+            "LoadConfig",
+            "Initializing",
+            "RegisterSubscription",
+            "SetupWatcher",
+            "UnsubscribeResources",
+            "DrainPendingRequests",
+            "LogError",
+            "PersistCrashDump",
+            "EstablishConnection",
+            "Paused",
+            "Reconnecting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    InitTransport[\"InitTransport\"]\n    LoadConfig[\"LoadConfig\"]\n    Initializing[\"Initializing\"]\n    RegisterSubscription[\"RegisterSubscription\"]\n    SetupWatcher[\"SetupWatcher\"]\n    UnsubscribeResources[\"UnsubscribeResources\"]\n    DrainPendingRequests[\"DrainPendingRequests\"]\n    LogError[\"LogError\"]\n    PersistCrashDump[\"PersistCrashDump\"]\n    EstablishConnection[\"EstablishConnection\"]\n    Paused[\"Paused\"]\n    Reconnecting[\"Reconnecting\"]\n    GracefulShutdown[\"GracefulShutdown\"]\n    AbnormalShutdown[\"AbnormalShutdown\"]\n    ConfirmSubscription[\"ConfirmSubscription\"]\n    SessionValidation[\"SessionValidation\"]\n    CloseTransport[\"CloseTransport\"]\n    NotifyDependents[\"NotifyDependents\"]\n    SendInitialize[\"SendInitialize\"]\n    PersistSession[\"PersistSession\"]\n    IdleTimeout[\"IdleTimeout\"]\n    RateLimited[\"RateLimited\"]\n    InProgress[\"InProgress\"]\n    ProgressUpdate[\"ProgressUpdate\"]\n    Complete[\"Complete\"]\n    HealthCheck[\"HealthCheck\"]\n    Degraded[\"Degraded\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 18,
+        "speaker": "王工",
+        "content": "健康检查相关的转换也很完善。periodic_health_check边触发SessionValidation，healthy边表示健康返回Connected，unhealthy边表示不健康进入Failed。rate_limit_persistent边表示持续超限进入Failed，backoff_complete边表示退避完成后返回Connected。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2103.5187,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 27,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "InitTransport",
+            "LoadConfig",
+            "Initializing",
+            "RegisterSubscription",
+            "SetupWatcher",
+            "UnsubscribeResources",
+            "DrainPendingRequests",
+            "LogError",
+            "PersistCrashDump",
+            "EstablishConnection",
+            "Paused",
+            "Reconnecting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    InitTransport[\"InitTransport\"]\n    LoadConfig[\"LoadConfig\"]\n    Initializing[\"Initializing\"]\n    RegisterSubscription[\"RegisterSubscription\"]\n    SetupWatcher[\"SetupWatcher\"]\n    UnsubscribeResources[\"UnsubscribeResources\"]\n    DrainPendingRequests[\"DrainPendingRequests\"]\n    LogError[\"LogError\"]\n    PersistCrashDump[\"PersistCrashDump\"]\n    EstablishConnection[\"EstablishConnection\"]\n    Paused[\"Paused\"]\n    Reconnecting[\"Reconnecting\"]\n    GracefulShutdown[\"GracefulShutdown\"]\n    AbnormalShutdown[\"AbnormalShutdown\"]\n    ConfirmSubscription[\"ConfirmSubscription\"]\n    SessionValidation[\"SessionValidation\"]\n    CloseTransport[\"CloseTransport\"]\n    NotifyDependents[\"NotifyDependents\"]\n    SendInitialize[\"SendInitialize\"]\n    PersistSession[\"PersistSession\"]\n    IdleTimeout[\"IdleTimeout\"]\n    RateLimited[\"RateLimited\"]\n    InProgress[\"InProgress\"]\n    ProgressUpdate[\"ProgressUpdate\"]\n    Complete[\"Complete\"]\n    HealthCheck[\"HealthCheck\"]\n    Degraded[\"Degraded\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 19,
+        "speaker": "张工",
+        "content": "最后还有TerminateProcess状态用于最终终止进程。PersistSession和NotifyDependents状态都可以到达TerminateProcess，形成完整的关闭路径。Failed状态用于表示各种失败情况，包括重连失败、健康检查失败和持续超限等。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2093.4212,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 27,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "InitTransport",
+            "LoadConfig",
+            "Initializing",
+            "RegisterSubscription",
+            "SetupWatcher",
+            "UnsubscribeResources",
+            "DrainPendingRequests",
+            "LogError",
+            "PersistCrashDump",
+            "EstablishConnection",
+            "Paused",
+            "Reconnecting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    InitTransport[\"InitTransport\"]\n    LoadConfig[\"LoadConfig\"]\n    Initializing[\"Initializing\"]\n    RegisterSubscription[\"RegisterSubscription\"]\n    SetupWatcher[\"SetupWatcher\"]\n    UnsubscribeResources[\"UnsubscribeResources\"]\n    DrainPendingRequests[\"DrainPendingRequests\"]\n    LogError[\"LogError\"]\n    PersistCrashDump[\"PersistCrashDump\"]\n    EstablishConnection[\"EstablishConnection\"]\n    Paused[\"Paused\"]\n    Reconnecting[\"Reconnecting\"]\n    GracefulShutdown[\"GracefulShutdown\"]\n    AbnormalShutdown[\"AbnormalShutdown\"]\n    ConfirmSubscription[\"ConfirmSubscription\"]\n    SessionValidation[\"SessionValidation\"]\n    CloseTransport[\"CloseTransport\"]\n    NotifyDependents[\"NotifyDependents\"]\n    SendInitialize[\"SendInitialize\"]\n    PersistSession[\"PersistSession\"]\n    IdleTimeout[\"IdleTimeout\"]\n    RateLimited[\"RateLimited\"]\n    InProgress[\"InProgress\"]\n    ProgressUpdate[\"ProgressUpdate\"]\n    Complete[\"Complete\"]\n    HealthCheck[\"HealthCheck\"]\n    Degraded[\"Degraded\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 20,
+        "speaker": "李工",
+        "content": "第四阶段增加了很多关键的条件转换边，现在连接状态机已经相当完整了。最后一个阶段我们需要完善重试机制和通知观察子系统的细节。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2111.6703,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 27,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "InitTransport",
+            "LoadConfig",
+            "Initializing",
+            "RegisterSubscription",
+            "SetupWatcher",
+            "UnsubscribeResources",
+            "DrainPendingRequests",
+            "LogError",
+            "PersistCrashDump",
+            "EstablishConnection",
+            "Paused",
+            "Reconnecting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    InitTransport[\"InitTransport\"]\n    LoadConfig[\"LoadConfig\"]\n    Initializing[\"Initializing\"]\n    RegisterSubscription[\"RegisterSubscription\"]\n    SetupWatcher[\"SetupWatcher\"]\n    UnsubscribeResources[\"UnsubscribeResources\"]\n    DrainPendingRequests[\"DrainPendingRequests\"]\n    LogError[\"LogError\"]\n    PersistCrashDump[\"PersistCrashDump\"]\n    EstablishConnection[\"EstablishConnection\"]\n    Paused[\"Paused\"]\n    Reconnecting[\"Reconnecting\"]\n    GracefulShutdown[\"GracefulShutdown\"]\n    AbnormalShutdown[\"AbnormalShutdown\"]\n    ConfirmSubscription[\"ConfirmSubscription\"]\n    SessionValidation[\"SessionValidation\"]\n    CloseTransport[\"CloseTransport\"]\n    NotifyDependents[\"NotifyDependents\"]\n    SendInitialize[\"SendInitialize\"]\n    PersistSession[\"PersistSession\"]\n    IdleTimeout[\"IdleTimeout\"]\n    RateLimited[\"RateLimited\"]\n    InProgress[\"InProgress\"]\n    ProgressUpdate[\"ProgressUpdate\"]\n    Complete[\"Complete\"]\n    HealthCheck[\"HealthCheck\"]\n    Degraded[\"Degraded\"]"
+      },
+      "planner": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "WaitForInitialized",
+            "label": "WaitForInitialized",
+            "kind": "state",
+            "id": "WaitForInitialized"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Connected",
+            "label": "Connected",
+            "kind": "state",
+            "id": "Connected"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Active",
+            "label": "Active",
+            "kind": "state",
+            "id": "Active"
+          },
+          {
+            "op": "add_node",
+            "node_id": "ResourceOperations",
+            "label": "ResourceOperations",
+            "kind": "state",
+            "id": "ResourceOperations"
+          },
+          {
+            "op": "add_node",
+            "node_id": "ToolOperations",
+            "label": "ToolOperations",
+            "kind": "state",
+            "id": "ToolOperations"
+          },
+          {
+            "op": "add_node",
+            "node_id": "PromptOperations",
+            "label": "PromptOperations",
+            "kind": "state",
+            "id": "PromptOperations"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Subscribing",
+            "label": "Subscribing",
+            "kind": "state",
+            "id": "Subscribing"
+          },
+          {
+            "op": "add_node",
+            "node_id": "TerminateProcess",
+            "label": "TerminateProcess",
+            "kind": "state",
+            "id": "TerminateProcess"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Failed",
+            "label": "Failed",
+            "kind": "state",
+            "id": "Failed"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 4/5, adds 10 nodes, 24 edges, current state now contains 37 nodes and 24 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 159812.6671,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 4,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"WaitForInitialized\",\n      \"label\": \"WaitForInitialized\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Connected\",\n      \"label\": \"Connected\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Active\",\n      \"label\": \"Active\",\n      \"kind\": \"state",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "WaitForInitialized",
+            "label": "WaitForInitialized",
+            "kind": "state",
+            "id": "WaitForInitialized"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Connected",
+            "label": "Connected",
+            "kind": "state",
+            "id": "Connected"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Active",
+            "label": "Active",
+            "kind": "state",
+            "id": "Active"
+          },
+          {
+            "op": "add_node",
+            "node_id": "ResourceOperations",
+            "label": "ResourceOperations",
+            "kind": "state",
+            "id": "ResourceOperations"
+          },
+          {
+            "op": "add_node",
+            "node_id": "ToolOperations",
+            "label": "ToolOperations",
+            "kind": "state",
+            "id": "ToolOperations"
+          },
+          {
+            "op": "add_node",
+            "node_id": "PromptOperations",
+            "label": "PromptOperations",
+            "kind": "state",
+            "id": "PromptOperations"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Subscribing",
+            "label": "Subscribing",
+            "kind": "state",
+            "id": "Subscribing"
+          },
+          {
+            "op": "add_node",
+            "node_id": "TerminateProcess",
+            "label": "TerminateProcess",
+            "kind": "state",
+            "id": "TerminateProcess"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Failed",
+            "label": "Failed",
+            "kind": "state",
+            "id": "Failed"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 36,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "InitTransport",
+            "LoadConfig",
+            "Initializing",
+            "RegisterSubscription",
+            "SetupWatcher",
+            "UnsubscribeResources",
+            "DrainPendingRequests",
+            "LogError",
+            "PersistCrashDump",
+            "EstablishConnection",
+            "Paused",
+            "Reconnecting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 37,
+          "edge_count": 45,
+          "group_count": 0,
+          "delta_count": 39
+        },
+        "preview_mermaid": "graph TD\n    InitTransport[\"InitTransport\"]\n    LoadConfig[\"LoadConfig\"]\n    Initializing[\"Initializing\"]\n    RegisterSubscription[\"RegisterSubscription\"]\n    SetupWatcher[\"SetupWatcher\"]\n    UnsubscribeResources[\"UnsubscribeResources\"]\n    DrainPendingRequests[\"DrainPendingRequests\"]\n    LogError[\"LogError\"]\n    PersistCrashDump[\"PersistCrashDump\"]\n    EstablishConnection[\"EstablishConnection\"]\n    Paused[\"Paused\"]\n    Reconnecting[\"Reconnecting\"]\n    GracefulShutdown[\"GracefulShutdown\"]\n    AbnormalShutdown[\"AbnormalShutdown\"]\n    ConfirmSubscription[\"ConfirmSubscription\"]\n    SessionValidation[\"SessionValidation\"]\n    CloseTransport[\"CloseTransport\"]\n    NotifyDependents[\"NotifyDependents\"]\n    SendInitialize[\"SendInitialize\"]\n    PersistSession[\"PersistSession\"]\n    IdleTimeout[\"IdleTimeout\"]\n    RateLimited[\"RateLimited\"]\n    InProgress[\"InProgress\"]\n    ProgressUpdate[\"ProgressUpdate\"]\n    Complete[\"Complete\"]\n    HealthCheck[\"HealthCheck\"]\n    Degraded[\"Degraded\"]\n    WaitForInitialized[\"WaitForInitialized\"]\n    Connected[\"Connected\"]\n    Active[\"Active\"]\n    ResourceOperations[\"ResourceOperations\"]\n    ToolOperations[\"ToolOperations\"]\n    PromptOperations[\"PromptOperations\"]\n    Subscribing[\"Subscribing\"]\n    TerminateProcess[\"TerminateProcess\"]\n    Failed[\"Failed\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 36,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "InitTransport",
+            "LoadConfig",
+            "Initializing",
+            "RegisterSubscription",
+            "SetupWatcher",
+            "UnsubscribeResources",
+            "DrainPendingRequests",
+            "LogError",
+            "PersistCrashDump",
+            "EstablishConnection",
+            "Paused",
+            "Reconnecting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    InitTransport[\"InitTransport\"]\n    LoadConfig[\"LoadConfig\"]\n    Initializing[\"Initializing\"]\n    RegisterSubscription[\"RegisterSubscription\"]\n    SetupWatcher[\"SetupWatcher\"]\n    UnsubscribeResources[\"UnsubscribeResources\"]\n    DrainPendingRequests[\"DrainPendingRequests\"]\n    LogError[\"LogError\"]\n    PersistCrashDump[\"PersistCrashDump\"]\n    EstablishConnection[\"EstablishConnection\"]\n    Paused[\"Paused\"]\n    Reconnecting[\"Reconnecting\"]\n    GracefulShutdown[\"GracefulShutdown\"]\n    AbnormalShutdown[\"AbnormalShutdown\"]\n    ConfirmSubscription[\"ConfirmSubscription\"]\n    SessionValidation[\"SessionValidation\"]\n    CloseTransport[\"CloseTransport\"]\n    NotifyDependents[\"NotifyDependents\"]\n    SendInitialize[\"SendInitialize\"]\n    PersistSession[\"PersistSession\"]\n    IdleTimeout[\"IdleTimeout\"]\n    RateLimited[\"RateLimited\"]\n    InProgress[\"InProgress\"]\n    ProgressUpdate[\"ProgressUpdate\"]\n    Complete[\"Complete\"]\n    HealthCheck[\"HealthCheck\"]\n    Degraded[\"Degraded\"]\n    WaitForInitialized[\"WaitForInitialized\"]\n    Connected[\"Connected\"]\n    Active[\"Active\"]\n    ResourceOperations[\"ResourceOperations\"]\n    ToolOperations[\"ToolOperations\"]\n    PromptOperations[\"PromptOperations\"]\n    Subscribing[\"Subscribing\"]\n    TerminateProcess[\"TerminateProcess\"]\n    Failed[\"Failed\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 21,
+        "speaker": "王工",
+        "content": "第五阶段首先是重试循环逻辑。我们需要Backoff状态表示退避等待，ReconnectAttempt状态表示进行重连尝试，Success和Failure两个终止状态分别表示成功和失败，还有IncrementRetryCount和CheckMaxRetries状态用于管理重试计数和最大重试次数检查。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2108.4356,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 5,\n  \"reason\": \"waiting for stage 5 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 36,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "InitTransport",
+            "LoadConfig",
+            "Initializing",
+            "RegisterSubscription",
+            "SetupWatcher",
+            "UnsubscribeResources",
+            "DrainPendingRequests",
+            "LogError",
+            "PersistCrashDump",
+            "EstablishConnection",
+            "Paused",
+            "Reconnecting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    InitTransport[\"InitTransport\"]\n    LoadConfig[\"LoadConfig\"]\n    Initializing[\"Initializing\"]\n    RegisterSubscription[\"RegisterSubscription\"]\n    SetupWatcher[\"SetupWatcher\"]\n    UnsubscribeResources[\"UnsubscribeResources\"]\n    DrainPendingRequests[\"DrainPendingRequests\"]\n    LogError[\"LogError\"]\n    PersistCrashDump[\"PersistCrashDump\"]\n    EstablishConnection[\"EstablishConnection\"]\n    Paused[\"Paused\"]\n    Reconnecting[\"Reconnecting\"]\n    GracefulShutdown[\"GracefulShutdown\"]\n    AbnormalShutdown[\"AbnormalShutdown\"]\n    ConfirmSubscription[\"ConfirmSubscription\"]\n    SessionValidation[\"SessionValidation\"]\n    CloseTransport[\"CloseTransport\"]\n    NotifyDependents[\"NotifyDependents\"]\n    SendInitialize[\"SendInitialize\"]\n    PersistSession[\"PersistSession\"]\n    IdleTimeout[\"IdleTimeout\"]\n    RateLimited[\"RateLimited\"]\n    InProgress[\"InProgress\"]\n    ProgressUpdate[\"ProgressUpdate\"]\n    Complete[\"Complete\"]\n    HealthCheck[\"HealthCheck\"]\n    Degraded[\"Degraded\"]\n    WaitForInitialized[\"WaitForInitialized\"]\n    Connected[\"Connected\"]\n    Active[\"Active\"]\n    ResourceOperations[\"ResourceOperations\"]\n    ToolOperations[\"ToolOperations\"]\n    PromptOperations[\"PromptOperations\"]\n    Subscribing[\"Subscribing\"]\n    TerminateProcess[\"TerminateProcess\"]\n    Failed[\"Failed\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 22,
+        "speaker": "张工",
+        "content": "重试流程是：Backoff到ReconnectAttempt，ReconnectAttempt到Success或Failure。失败后进入IncrementRetryCount增加计数，然后到CheckMaxRetries检查是否超过最大重试次数。如果没有超过，通过below_max边回到Backoff继续下一次重试。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2117.1985,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 5,\n  \"reason\": \"waiting for stage 5 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 36,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "InitTransport",
+            "LoadConfig",
+            "Initializing",
+            "RegisterSubscription",
+            "SetupWatcher",
+            "UnsubscribeResources",
+            "DrainPendingRequests",
+            "LogError",
+            "PersistCrashDump",
+            "EstablishConnection",
+            "Paused",
+            "Reconnecting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    InitTransport[\"InitTransport\"]\n    LoadConfig[\"LoadConfig\"]\n    Initializing[\"Initializing\"]\n    RegisterSubscription[\"RegisterSubscription\"]\n    SetupWatcher[\"SetupWatcher\"]\n    UnsubscribeResources[\"UnsubscribeResources\"]\n    DrainPendingRequests[\"DrainPendingRequests\"]\n    LogError[\"LogError\"]\n    PersistCrashDump[\"PersistCrashDump\"]\n    EstablishConnection[\"EstablishConnection\"]\n    Paused[\"Paused\"]\n    Reconnecting[\"Reconnecting\"]\n    GracefulShutdown[\"GracefulShutdown\"]\n    AbnormalShutdown[\"AbnormalShutdown\"]\n    ConfirmSubscription[\"ConfirmSubscription\"]\n    SessionValidation[\"SessionValidation\"]\n    CloseTransport[\"CloseTransport\"]\n    NotifyDependents[\"NotifyDependents\"]\n    SendInitialize[\"SendInitialize\"]\n    PersistSession[\"PersistSession\"]\n    IdleTimeout[\"IdleTimeout\"]\n    RateLimited[\"RateLimited\"]\n    InProgress[\"InProgress\"]\n    ProgressUpdate[\"ProgressUpdate\"]\n    Complete[\"Complete\"]\n    HealthCheck[\"HealthCheck\"]\n    Degraded[\"Degraded\"]\n    WaitForInitialized[\"WaitForInitialized\"]\n    Connected[\"Connected\"]\n    Active[\"Active\"]\n    ResourceOperations[\"ResourceOperations\"]\n    ToolOperations[\"ToolOperations\"]\n    PromptOperations[\"PromptOperations\"]\n    Subscribing[\"Subscribing\"]\n    TerminateProcess[\"TerminateProcess\"]\n    Failed[\"Failed\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 23,
+        "speaker": "李工",
+        "content": "最后是通知观察子系统的完善。Watching状态表示正在观察资源变化，NotificationReceived状态表示已收到通知，DeliverNotification状态表示正在交付通知。从Watching通过resource_changed边进入NotificationReceived，然后到DeliverNotification，最后返回Watching继续观察。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2088.7845,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 5,\n  \"reason\": \"waiting for stage 5 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 36,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "InitTransport",
+            "LoadConfig",
+            "Initializing",
+            "RegisterSubscription",
+            "SetupWatcher",
+            "UnsubscribeResources",
+            "DrainPendingRequests",
+            "LogError",
+            "PersistCrashDump",
+            "EstablishConnection",
+            "Paused",
+            "Reconnecting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    InitTransport[\"InitTransport\"]\n    LoadConfig[\"LoadConfig\"]\n    Initializing[\"Initializing\"]\n    RegisterSubscription[\"RegisterSubscription\"]\n    SetupWatcher[\"SetupWatcher\"]\n    UnsubscribeResources[\"UnsubscribeResources\"]\n    DrainPendingRequests[\"DrainPendingRequests\"]\n    LogError[\"LogError\"]\n    PersistCrashDump[\"PersistCrashDump\"]\n    EstablishConnection[\"EstablishConnection\"]\n    Paused[\"Paused\"]\n    Reconnecting[\"Reconnecting\"]\n    GracefulShutdown[\"GracefulShutdown\"]\n    AbnormalShutdown[\"AbnormalShutdown\"]\n    ConfirmSubscription[\"ConfirmSubscription\"]\n    SessionValidation[\"SessionValidation\"]\n    CloseTransport[\"CloseTransport\"]\n    NotifyDependents[\"NotifyDependents\"]\n    SendInitialize[\"SendInitialize\"]\n    PersistSession[\"PersistSession\"]\n    IdleTimeout[\"IdleTimeout\"]\n    RateLimited[\"RateLimited\"]\n    InProgress[\"InProgress\"]\n    ProgressUpdate[\"ProgressUpdate\"]\n    Complete[\"Complete\"]\n    HealthCheck[\"HealthCheck\"]\n    Degraded[\"Degraded\"]\n    WaitForInitialized[\"WaitForInitialized\"]\n    Connected[\"Connected\"]\n    Active[\"Active\"]\n    ResourceOperations[\"ResourceOperations\"]\n    ToolOperations[\"ToolOperations\"]\n    PromptOperations[\"PromptOperations\"]\n    Subscribing[\"Subscribing\"]\n    TerminateProcess[\"TerminateProcess\"]\n    Failed[\"Failed\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 24,
+        "speaker": "王工",
+        "content": "整个状态机现在包含了46个节点和54条边，涵盖了传输层初始化的完整生命周期、连接管理的各种状态转换、操作执行层的进度追踪、健康监控和降级机制、以及完善的重试策略和通知观察系统。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2143.8763,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 5,\n  \"reason\": \"waiting for stage 5 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 36,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "InitTransport",
+            "LoadConfig",
+            "Initializing",
+            "RegisterSubscription",
+            "SetupWatcher",
+            "UnsubscribeResources",
+            "DrainPendingRequests",
+            "LogError",
+            "PersistCrashDump",
+            "EstablishConnection",
+            "Paused",
+            "Reconnecting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    InitTransport[\"InitTransport\"]\n    LoadConfig[\"LoadConfig\"]\n    Initializing[\"Initializing\"]\n    RegisterSubscription[\"RegisterSubscription\"]\n    SetupWatcher[\"SetupWatcher\"]\n    UnsubscribeResources[\"UnsubscribeResources\"]\n    DrainPendingRequests[\"DrainPendingRequests\"]\n    LogError[\"LogError\"]\n    PersistCrashDump[\"PersistCrashDump\"]\n    EstablishConnection[\"EstablishConnection\"]\n    Paused[\"Paused\"]\n    Reconnecting[\"Reconnecting\"]\n    GracefulShutdown[\"GracefulShutdown\"]\n    AbnormalShutdown[\"AbnormalShutdown\"]\n    ConfirmSubscription[\"ConfirmSubscription\"]\n    SessionValidation[\"SessionValidation\"]\n    CloseTransport[\"CloseTransport\"]\n    NotifyDependents[\"NotifyDependents\"]\n    SendInitialize[\"SendInitialize\"]\n    PersistSession[\"PersistSession\"]\n    IdleTimeout[\"IdleTimeout\"]\n    RateLimited[\"RateLimited\"]\n    InProgress[\"InProgress\"]\n    ProgressUpdate[\"ProgressUpdate\"]\n    Complete[\"Complete\"]\n    HealthCheck[\"HealthCheck\"]\n    Degraded[\"Degraded\"]\n    WaitForInitialized[\"WaitForInitialized\"]\n    Connected[\"Connected\"]\n    Active[\"Active\"]\n    ResourceOperations[\"ResourceOperations\"]\n    ToolOperations[\"ToolOperations\"]\n    PromptOperations[\"PromptOperations\"]\n    Subscribing[\"Subscribing\"]\n    TerminateProcess[\"TerminateProcess\"]\n    Failed[\"Failed\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 25,
+        "speaker": "张工",
+        "content": "状态机设计讨论到此结束。从Bootstrap Core的核心框架到Expand Main Branches的主分支扩展，再到Add Supporting Structure的支持结构增加，然后是Resolve Conditions的条件转换完善，最后是Finalize Surface Details的重试和通知子系统细节补充，整个传输层状态机的设计已经非常完整了。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 5,
+        "reason": "turn 25 reached end boundary for stage 5",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2433.8925,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"EMIT_UPDATE\",\n  \"target_stage_index\": 5,\n  \"reason\": \"turn 25 reached end boundary for stage 5\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 36,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "InitTransport",
+            "LoadConfig",
+            "Initializing",
+            "RegisterSubscription",
+            "SetupWatcher",
+            "UnsubscribeResources",
+            "DrainPendingRequests",
+            "LogError",
+            "PersistCrashDump",
+            "EstablishConnection",
+            "Paused",
+            "Reconnecting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    InitTransport[\"InitTransport\"]\n    LoadConfig[\"LoadConfig\"]\n    Initializing[\"Initializing\"]\n    RegisterSubscription[\"RegisterSubscription\"]\n    SetupWatcher[\"SetupWatcher\"]\n    UnsubscribeResources[\"UnsubscribeResources\"]\n    DrainPendingRequests[\"DrainPendingRequests\"]\n    LogError[\"LogError\"]\n    PersistCrashDump[\"PersistCrashDump\"]\n    EstablishConnection[\"EstablishConnection\"]\n    Paused[\"Paused\"]\n    Reconnecting[\"Reconnecting\"]\n    GracefulShutdown[\"GracefulShutdown\"]\n    AbnormalShutdown[\"AbnormalShutdown\"]\n    ConfirmSubscription[\"ConfirmSubscription\"]\n    SessionValidation[\"SessionValidation\"]\n    CloseTransport[\"CloseTransport\"]\n    NotifyDependents[\"NotifyDependents\"]\n    SendInitialize[\"SendInitialize\"]\n    PersistSession[\"PersistSession\"]\n    IdleTimeout[\"IdleTimeout\"]\n    RateLimited[\"RateLimited\"]\n    InProgress[\"InProgress\"]\n    ProgressUpdate[\"ProgressUpdate\"]\n    Complete[\"Complete\"]\n    HealthCheck[\"HealthCheck\"]\n    Degraded[\"Degraded\"]\n    WaitForInitialized[\"WaitForInitialized\"]\n    Connected[\"Connected\"]\n    Active[\"Active\"]\n    ResourceOperations[\"ResourceOperations\"]\n    ToolOperations[\"ToolOperations\"]\n    PromptOperations[\"PromptOperations\"]\n    Subscribing[\"Subscribing\"]\n    TerminateProcess[\"TerminateProcess\"]\n    Failed[\"Failed\"]"
+      },
+      "planner": {
+        "target_stage_index": 5,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Backoff",
+            "label": "Backoff",
+            "kind": "state",
+            "id": "Backoff"
+          },
+          {
+            "op": "add_node",
+            "node_id": "ReconnectAttempt",
+            "label": "ReconnectAttempt",
+            "kind": "state",
+            "id": "ReconnectAttempt"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Success",
+            "label": "Success",
+            "kind": "state",
+            "id": "Success"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Failure",
+            "label": "Failure",
+            "kind": "state",
+            "id": "Failure"
+          },
+          {
+            "op": "add_node",
+            "node_id": "IncrementRetryCount",
+            "label": "IncrementRetryCount",
+            "kind": "state",
+            "id": "IncrementRetryCount"
+          },
+          {
+            "op": "add_node",
+            "node_id": "CheckMaxRetries",
+            "label": "CheckMaxRetries",
+            "kind": "state",
+            "id": "CheckMaxRetries"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Watching",
+            "label": "Watching",
+            "kind": "state",
+            "id": "Watching"
+          },
+          {
+            "op": "add_node",
+            "node_id": "NotificationReceived",
+            "label": "NotificationReceived",
+            "kind": "state",
+            "id": "NotificationReceived"
+          },
+          {
+            "op": "add_node",
+            "node_id": "DeliverNotification",
+            "label": "DeliverNotification",
+            "kind": "state",
+            "id": "DeliverNotification"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 5/5, adds 9 nodes, 9 edges, current state now contains 45 nodes and 54 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 87415.2992,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 5,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Backoff\",\n      \"label\": \"Backoff\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"ReconnectAttempt\",\n      \"label\": \"ReconnectAttempt\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Success\",\n      \"label\": \"Success\",\n      \"kind\": \"state\"\n    ",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 5,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Backoff",
+            "label": "Backoff",
+            "kind": "state",
+            "id": "Backoff"
+          },
+          {
+            "op": "add_node",
+            "node_id": "ReconnectAttempt",
+            "label": "ReconnectAttempt",
+            "kind": "state",
+            "id": "ReconnectAttempt"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Success",
+            "label": "Success",
+            "kind": "state",
+            "id": "Success"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Failure",
+            "label": "Failure",
+            "kind": "state",
+            "id": "Failure"
+          },
+          {
+            "op": "add_node",
+            "node_id": "IncrementRetryCount",
+            "label": "IncrementRetryCount",
+            "kind": "state",
+            "id": "IncrementRetryCount"
+          },
+          {
+            "op": "add_node",
+            "node_id": "CheckMaxRetries",
+            "label": "CheckMaxRetries",
+            "kind": "state",
+            "id": "CheckMaxRetries"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Watching",
+            "label": "Watching",
+            "kind": "state",
+            "id": "Watching"
+          },
+          {
+            "op": "add_node",
+            "node_id": "NotificationReceived",
+            "label": "NotificationReceived",
+            "kind": "state",
+            "id": "NotificationReceived"
+          },
+          {
+            "op": "add_node",
+            "node_id": "DeliverNotification",
+            "label": "DeliverNotification",
+            "kind": "state",
+            "id": "DeliverNotification"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 45,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "InitTransport",
+            "LoadConfig",
+            "Initializing",
+            "RegisterSubscription",
+            "SetupWatcher",
+            "UnsubscribeResources",
+            "DrainPendingRequests",
+            "LogError",
+            "PersistCrashDump",
+            "EstablishConnection",
+            "Paused",
+            "Reconnecting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 46,
+          "edge_count": 54,
+          "group_count": 0,
+          "delta_count": 18
+        },
+        "preview_mermaid": "graph TD\n    InitTransport[\"InitTransport\"]\n    LoadConfig[\"LoadConfig\"]\n    Initializing[\"Initializing\"]\n    RegisterSubscription[\"RegisterSubscription\"]\n    SetupWatcher[\"SetupWatcher\"]\n    UnsubscribeResources[\"UnsubscribeResources\"]\n    DrainPendingRequests[\"DrainPendingRequests\"]\n    LogError[\"LogError\"]\n    PersistCrashDump[\"PersistCrashDump\"]\n    EstablishConnection[\"EstablishConnection\"]\n    Paused[\"Paused\"]\n    Reconnecting[\"Reconnecting\"]\n    GracefulShutdown[\"GracefulShutdown\"]\n    AbnormalShutdown[\"AbnormalShutdown\"]\n    ConfirmSubscription[\"ConfirmSubscription\"]\n    SessionValidation[\"SessionValidation\"]\n    CloseTransport[\"CloseTransport\"]\n    NotifyDependents[\"NotifyDependents\"]\n    SendInitialize[\"SendInitialize\"]\n    PersistSession[\"PersistSession\"]\n    IdleTimeout[\"IdleTimeout\"]\n    RateLimited[\"RateLimited\"]\n    InProgress[\"InProgress\"]\n    ProgressUpdate[\"ProgressUpdate\"]\n    Complete[\"Complete\"]\n    HealthCheck[\"HealthCheck\"]\n    Degraded[\"Degraded\"]\n    WaitForInitialized[\"WaitForInitialized\"]\n    Connected[\"Connected\"]\n    Active[\"Active\"]\n    ResourceOperations[\"ResourceOperations\"]\n    ToolOperations[\"ToolOperations\"]\n    PromptOperations[\"PromptOperations\"]\n    Subscribing[\"Subscribing\"]\n    TerminateProcess[\"TerminateProcess\"]\n    Failed[\"Failed\"]\n    Backoff[\"Backoff\"]\n    ReconnectAttempt[\"ReconnectAttempt\"]\n    Success[\"Success\"]\n    Failure[\"Failure\"]\n    IncrementRetryCount[\"IncrementRetryCount\"]\n    CheckMaxRetries[\"CheckMaxRetries\"]\n    Watching[\"Watching\"]\n    NotificationReceived[\"NotificationReceived\"]\n    DeliverNotification[\"DeliverNotification\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 5,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "graph_metrics": {
+          "node_count": 45,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "InitTransport",
+            "LoadConfig",
+            "Initializing",
+            "RegisterSubscription",
+            "SetupWatcher",
+            "UnsubscribeResources",
+            "DrainPendingRequests",
+            "LogError",
+            "PersistCrashDump",
+            "EstablishConnection",
+            "Paused",
+            "Reconnecting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    InitTransport[\"InitTransport\"]\n    LoadConfig[\"LoadConfig\"]\n    Initializing[\"Initializing\"]\n    RegisterSubscription[\"RegisterSubscription\"]\n    SetupWatcher[\"SetupWatcher\"]\n    UnsubscribeResources[\"UnsubscribeResources\"]\n    DrainPendingRequests[\"DrainPendingRequests\"]\n    LogError[\"LogError\"]\n    PersistCrashDump[\"PersistCrashDump\"]\n    EstablishConnection[\"EstablishConnection\"]\n    Paused[\"Paused\"]\n    Reconnecting[\"Reconnecting\"]\n    GracefulShutdown[\"GracefulShutdown\"]\n    AbnormalShutdown[\"AbnormalShutdown\"]\n    ConfirmSubscription[\"ConfirmSubscription\"]\n    SessionValidation[\"SessionValidation\"]\n    CloseTransport[\"CloseTransport\"]\n    NotifyDependents[\"NotifyDependents\"]\n    SendInitialize[\"SendInitialize\"]\n    PersistSession[\"PersistSession\"]\n    IdleTimeout[\"IdleTimeout\"]\n    RateLimited[\"RateLimited\"]\n    InProgress[\"InProgress\"]\n    ProgressUpdate[\"ProgressUpdate\"]\n    Complete[\"Complete\"]\n    HealthCheck[\"HealthCheck\"]\n    Degraded[\"Degraded\"]\n    WaitForInitialized[\"WaitForInitialized\"]\n    Connected[\"Connected\"]\n    Active[\"Active\"]\n    ResourceOperations[\"ResourceOperations\"]\n    ToolOperations[\"ToolOperations\"]\n    PromptOperations[\"PromptOperations\"]\n    Subscribing[\"Subscribing\"]\n    TerminateProcess[\"TerminateProcess\"]\n    Failed[\"Failed\"]\n    Backoff[\"Backoff\"]\n    ReconnectAttempt[\"ReconnectAttempt\"]\n    Success[\"Success\"]\n    Failure[\"Failure\"]\n    IncrementRetryCount[\"IncrementRetryCount\"]\n    CheckMaxRetries[\"CheckMaxRetries\"]\n    Watching[\"Watching\"]\n    NotificationReceived[\"NotificationReceived\"]\n    DeliverNotification[\"DeliverNotification\"]"
+      }
+    }
+  ]
+}

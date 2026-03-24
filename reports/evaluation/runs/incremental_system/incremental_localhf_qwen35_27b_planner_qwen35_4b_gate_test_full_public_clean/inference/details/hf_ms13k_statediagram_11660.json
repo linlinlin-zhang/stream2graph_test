@@ -1,0 +1,1041 @@
+{
+  "sample_id": "hf_ms13k_statediagram_11660",
+  "diagram_type": "statediagram",
+  "generated_at_utc": "2026-03-24T06:05:52Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 12,
+    "total_stages": 4,
+    "updates_emitted": 4,
+    "final_stage_index": 4,
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 6,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "state_start",
+        "Review",
+        "InProgress",
+        "state_end",
+        "Done",
+        "Todo"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    },
+    "reference_graph_metrics": {
+      "node_count": 5,
+      "edge_count": 6,
+      "group_count": 0,
+      "node_ids": [
+        "To_Do",
+        "state_start",
+        "In_Progress",
+        "Review",
+        "Completed"
+      ],
+      "edge_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e5",
+        "e6"
+      ],
+      "group_ids": []
+    }
+  },
+  "final_state": {
+    "sample_id": "hf_ms13k_statediagram_11660",
+    "diagram_type": "statediagram",
+    "current_stage_index": 4,
+    "current_graph_ir": {
+      "graph_id": "hf_ms13k_statediagram_11660",
+      "diagram_type": "statediagram",
+      "nodes": [
+        {
+          "id": "state_start",
+          "label": "[*]",
+          "kind": "pseudo_state",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "Review",
+          "label": "Review",
+          "kind": "state",
+          "parent": null,
+          "source_index": 3,
+          "metadata": {}
+        },
+        {
+          "id": "InProgress",
+          "label": "InProgress",
+          "kind": "state",
+          "parent": null,
+          "source_index": 5,
+          "metadata": {}
+        },
+        {
+          "id": "state_end",
+          "label": "[*]",
+          "kind": "pseudo_state",
+          "parent": null,
+          "source_index": 7,
+          "metadata": {}
+        },
+        {
+          "id": "Done",
+          "label": "Done",
+          "kind": "state",
+          "parent": null,
+          "source_index": 8,
+          "metadata": {}
+        },
+        {
+          "id": "Todo",
+          "label": "Todo",
+          "kind": "state",
+          "parent": null,
+          "source_index": 10,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Review[\"Review\"]\n    InProgress[\"InProgress\"]\n    state_end[\"[*]\"]\n    Done[\"Done\"]\n    Todo[\"Todo\"]",
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 6,
+        "edge_count": 0,
+        "group_count": 0,
+        "node_ids": [
+          "state_start",
+          "Review",
+          "InProgress",
+          "state_end",
+          "Done",
+          "Todo"
+        ],
+        "edge_ids": [],
+        "group_ids": []
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "张工",
+        "content": "好的，我们开始构建这个任务工作流程的状态图。首先需要确定入口点，所有状态图都应该从[*]伪状态开始，这是我们的起点。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2088.4876,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "李工",
+        "content": "明白，入口点确定后，我们需要一个核心状态来作为整个工作流程的枢纽。在任务管理流程中，Review状态是最合适的，它将作为我们流程的中心节点。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2086.1897,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "state_start",
+            "label": "[*]",
+            "kind": "pseudo_state",
+            "id": "state_start"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Review",
+            "label": "Review",
+            "kind": "state",
+            "id": "Review"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 1/4, adds 2 nodes, 0 edges, current state now contains 2 nodes and 0 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 12970.4895,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"state_start\",\n      \"label\": \"[*]\",\n      \"kind\": \"pseudo_state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Review\",\n      \"label\": \"Review\",\n      \"kind\": \"state\"\n    }\n  ],\n  \"notes\": \"Stage 1/4, adds 2 nodes, 0 edges, current state now contains 2 nodes and 0 edges\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "state_start",
+            "label": "[*]",
+            "kind": "pseudo_state",
+            "id": "state_start"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Review",
+            "label": "Review",
+            "kind": "state",
+            "id": "Review"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Review"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "delta_count": 2
+        },
+        "preview_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Review[\"Review\"]",
+        "matches_reference_stage": true
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Review"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Review[\"Review\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "张工",
+        "content": "现在我们有了两个基本节点：状态入口[*]和Review状态。接下来应该引入表示任务正在进行的状态。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2072.5739,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Review"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Review[\"Review\"]"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "InProgress",
+            "label": "InProgress",
+            "kind": "state",
+            "id": "InProgress"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 2/4, adds 1 nodes, 0 edges, current state now contains 3 nodes and 0 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 9223.4776,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 2,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"InProgress\",\n      \"label\": \"InProgress\",\n      \"kind\": \"state\"\n    }\n  ],\n  \"notes\": \"Stage 2/4, adds 1 nodes, 0 edges, current state now contains 3 nodes and 0 edges\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "InProgress",
+            "label": "InProgress",
+            "kind": "state",
+            "id": "InProgress"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Review",
+            "InProgress"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 3,
+          "edge_count": 2,
+          "group_count": 0,
+          "delta_count": 3
+        },
+        "preview_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Review[\"Review\"]\n    InProgress[\"InProgress\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Review",
+            "InProgress"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Review[\"Review\"]\n    InProgress[\"InProgress\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "李工",
+        "content": "对，我们需要一个In_Progress状态来代表任务正在执行中。但这里有个问题，Review和In_Progress之间需要有双向流动，因为审查后可能需要返工修改。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2070.0204,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Review",
+            "InProgress"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Review[\"Review\"]\n    InProgress[\"InProgress\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "张工",
+        "content": "没错，我们添加两条边：一条从In_Progress到Review，标记为\"Submit for Review\"（提交审查），另一条从Review回到In_Progress，标记为\"Revise\"（修改）。这样就形成了迭代审查的循环。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2066.5298,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Review",
+            "InProgress"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Review[\"Review\"]\n    InProgress[\"InProgress\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "李工",
+        "content": "很好，现在状态机有了基本结构。接下来应该添加一个终端状态来表示任务完成，当审查通过后任务应该能够结束。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2081.7902,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Review",
+            "InProgress"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Review[\"Review\"]\n    InProgress[\"InProgress\"]"
+      },
+      "planner": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "state_end",
+            "label": "[*]",
+            "kind": "pseudo_state",
+            "id": "state_end"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Done",
+            "label": "Done",
+            "kind": "state",
+            "id": "Done"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 3/4, adds 2 nodes, 5 edges, current state now contains 5 nodes and 5 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 36120.5618,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 3,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"state_end\",\n      \"label\": \"[*]\",\n      \"kind\": \"pseudo_state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Done\",\n      \"label\": \"Done\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e1\",\n      \"source\": \"state_start\",\n      \"target\": \"InProgress\",\n      \"label\": ",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "state_end",
+            "label": "[*]",
+            "kind": "pseudo_state",
+            "id": "state_end"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Done",
+            "label": "Done",
+            "kind": "state",
+            "id": "Done"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Review",
+            "InProgress",
+            "state_end",
+            "Done"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 4,
+          "edge_count": 3,
+          "group_count": 0,
+          "delta_count": 2
+        },
+        "preview_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Review[\"Review\"]\n    InProgress[\"InProgress\"]\n    state_end[\"[*]\"]\n    Done[\"Done\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Review",
+            "InProgress",
+            "state_end",
+            "Done"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Review[\"Review\"]\n    InProgress[\"InProgress\"]\n    state_end[\"[*]\"]\n    Done[\"Done\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 7,
+        "speaker": "张工",
+        "content": "添加Completed状态作为终态。当审查通过时，从Review到Completed应该有一条\"Approve\"（批准）边。这样审查员就可以批准任务使其完成。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2071.4705,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Review",
+            "InProgress",
+            "state_end",
+            "Done"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Review[\"Review\"]\n    InProgress[\"InProgress\"]\n    state_end[\"[*]\"]\n    Done[\"Done\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 8,
+        "speaker": "李工",
+        "content": "现在流程有了起点、进行中的工作、审查环节和完成状态。但是我们的入口点[*]还没有连接到实际的状态，而且缺少初始的待办阶段。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Resolve Conditions"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2069.0155,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Review",
+            "InProgress",
+            "state_end",
+            "Done"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Review[\"Review\"]\n    InProgress[\"InProgress\"]\n    state_end[\"[*]\"]\n    Done[\"Done\"]"
+      },
+      "planner": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Todo",
+            "label": "Todo",
+            "kind": "state",
+            "id": "Todo"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 4/4, adds 1 nodes, 6 edges, current state now contains 6 nodes and 6 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 36537.7793,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 4,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Todo\",\n      \"label\": \"Todo\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e1\",\n      \"source\": \"state_start\",\n      \"target\": \"Todo\",\n      \"label\": \"\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e2\",\n      \"source\": \"Todo\",\n      \"target\": \"InProgress\",\n      \"",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Todo",
+            "label": "Todo",
+            "kind": "state",
+            "id": "Todo"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Review",
+            "InProgress",
+            "state_end",
+            "Done",
+            "Todo"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 5,
+          "edge_count": 6,
+          "group_count": 0,
+          "delta_count": 4
+        },
+        "preview_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Review[\"Review\"]\n    InProgress[\"InProgress\"]\n    state_end[\"[*]\"]\n    Done[\"Done\"]\n    Todo[\"Todo\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Review",
+            "InProgress",
+            "state_end",
+            "Done",
+            "Todo"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Review[\"Review\"]\n    InProgress[\"InProgress\"]\n    state_end[\"[*]\"]\n    Done[\"Done\"]\n    Todo[\"Todo\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 9,
+        "speaker": "张工",
+        "content": "对，我们还需要添加To_Do状态来表示待办任务。然后从入口[*]连接一条边到To_Do，任务从入口直接进入待办队列。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Resolve Conditions"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Review",
+            "InProgress",
+            "state_end",
+            "Done",
+            "Todo"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Review[\"Review\"]\n    InProgress[\"InProgress\"]\n    state_end[\"[*]\"]\n    Done[\"Done\"]\n    Todo[\"Todo\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 10,
+        "speaker": "李工",
+        "content": "从To_Do到In_Progress需要一条\"Start Task\"（开始任务）的边，表示任务被激活开始执行。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Resolve Conditions"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Review",
+            "InProgress",
+            "state_end",
+            "Done",
+            "Todo"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Review[\"Review\"]\n    InProgress[\"InProgress\"]\n    state_end[\"[*]\"]\n    Done[\"Done\"]\n    Todo[\"Todo\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 11,
+        "speaker": "张工",
+        "content": "还有一点很重要——需要允许已完成的任务重新打开。从Completed到To_Do添加一条\"Reopen Task\"（重新打开任务）边，这样任务就能进入下一轮循环。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Resolve Conditions"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Review",
+            "InProgress",
+            "state_end",
+            "Done",
+            "Todo"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Review[\"Review\"]\n    InProgress[\"InProgress\"]\n    state_end[\"[*]\"]\n    Done[\"Done\"]\n    Todo[\"Todo\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 12,
+        "speaker": "李工",
+        "content": "完美！现在我们有了完整的工作流程状态机：从未开始的[*]入口，到待办队列To_Do，到进行中In_Progress，再到审查Review，以及完成Completed，同时支持修改和重新打开任务。这个状态图完整地描述了任务的生命周期。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Resolve Conditions"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Review",
+            "InProgress",
+            "state_end",
+            "Done",
+            "Todo"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Review[\"Review\"]\n    InProgress[\"InProgress\"]\n    state_end[\"[*]\"]\n    Done[\"Done\"]\n    Todo[\"Todo\"]"
+      }
+    }
+  ]
+}

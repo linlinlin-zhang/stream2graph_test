@@ -1,0 +1,746 @@
+{
+  "sample_id": "hf_ms13k_er_12114",
+  "diagram_type": "er",
+  "generated_at_utc": "2026-03-24T06:45:25Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 8,
+    "total_stages": 3,
+    "updates_emitted": 3,
+    "final_stage_index": 3,
+    "applied_stage_indices": [
+      1,
+      2,
+      3
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 5,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "EDUCATORS",
+        "REGISTRATIONS",
+        "MODULES",
+        "ASSESSMENTS",
+        "CERTIFICATES"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    },
+    "reference_graph_metrics": {
+      "node_count": 5,
+      "edge_count": 4,
+      "group_count": 0,
+      "node_ids": [
+        "EDUCATORS",
+        "REGISTRATIONS",
+        "MODULES",
+        "ASSESSMENTS",
+        "CERTIFICATES"
+      ],
+      "edge_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "group_ids": []
+    }
+  },
+  "final_state": {
+    "sample_id": "hf_ms13k_er_12114",
+    "diagram_type": "er",
+    "current_stage_index": 3,
+    "current_graph_ir": {
+      "graph_id": "hf_ms13k_er_12114",
+      "diagram_type": "er",
+      "nodes": [
+        {
+          "id": "EDUCATORS",
+          "label": "EDUCATORS",
+          "kind": "entity",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "REGISTRATIONS",
+          "label": "REGISTRATIONS",
+          "kind": "entity",
+          "parent": null,
+          "source_index": 3,
+          "metadata": {}
+        },
+        {
+          "id": "MODULES",
+          "label": "MODULES",
+          "kind": "entity",
+          "parent": null,
+          "source_index": 5,
+          "metadata": {}
+        },
+        {
+          "id": "ASSESSMENTS",
+          "label": "ASSESSMENTS",
+          "kind": "entity",
+          "parent": null,
+          "source_index": 7,
+          "metadata": {}
+        },
+        {
+          "id": "CERTIFICATES",
+          "label": "CERTIFICATES",
+          "kind": "entity",
+          "parent": null,
+          "source_index": 8,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    EDUCATORS[\"EDUCATORS\"]\n    REGISTRATIONS[\"REGISTRATIONS\"]\n    MODULES[\"MODULES\"]\n    ASSESSMENTS[\"ASSESSMENTS\"]\n    CERTIFICATES[\"CERTIFICATES\"]",
+    "applied_stage_indices": [
+      1,
+      2,
+      3
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 5,
+        "edge_count": 0,
+        "group_count": 0,
+        "node_ids": [
+          "EDUCATORS",
+          "REGISTRATIONS",
+          "MODULES",
+          "ASSESSMENTS",
+          "CERTIFICATES"
+        ],
+        "edge_ids": [],
+        "group_ids": []
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "设计者",
+        "content": "好的，我们现在从最基础的部分开始构建这个教育平台的数据库模式。首先，我需要定义两个核心实体：EDUCATORS（教育者）和 REGISTRATIONS（注册记录）。这两个实体将作为整个系统的基础。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2120.0829,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "设计者",
+        "content": "在建立好这两个实体之后，我们需要定义它们之间的关系。教育者与注册记录之间存在一个“注册”关系，也就是说，一个 EDUCATORS 可以注册多个 REGISTRATIONS（学生注册记录）。这条边我们标记为“register”。这样核心结构就建立起来了。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "turn 2 reached end boundary for stage 1",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2428.993,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"EMIT_UPDATE\",\n  \"target_stage_index\": 1,\n  \"reason\": \"turn 2 reached end boundary for stage 1\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "EDUCATORS",
+            "label": "EDUCATORS",
+            "kind": "entity",
+            "id": "EDUCATORS"
+          },
+          {
+            "op": "add_node",
+            "node_id": "REGISTRATIONS",
+            "label": "REGISTRATIONS",
+            "kind": "entity",
+            "id": "REGISTRATIONS"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 1/3, adds 2 nodes, 1 edges, current state now contains 2 nodes and 1 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 18765.2321,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"EDUCATORS\",\n      \"label\": \"EDUCATORS\",\n      \"kind\": \"entity\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"REGISTRATIONS\",\n      \"label\": \"REGISTRATIONS\",\n      \"kind\": \"entity\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e1\",\n      \"source\": \"EDUCATORS\",\n      \"target\": \"REGISTRATIO",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "EDUCATORS",
+            "label": "EDUCATORS",
+            "kind": "entity",
+            "id": "EDUCATORS"
+          },
+          {
+            "op": "add_node",
+            "node_id": "REGISTRATIONS",
+            "label": "REGISTRATIONS",
+            "kind": "entity",
+            "id": "REGISTRATIONS"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "EDUCATORS",
+            "REGISTRATIONS"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 2,
+          "edge_count": 1,
+          "group_count": 0,
+          "delta_count": 3
+        },
+        "preview_mermaid": "graph TD\n    EDUCATORS[\"EDUCATORS\"]\n    REGISTRATIONS[\"REGISTRATIONS\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "EDUCATORS",
+            "REGISTRATIONS"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    EDUCATORS[\"EDUCATORS\"]\n    REGISTRATIONS[\"REGISTRATIONS\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "用户",
+        "content": "明白了。所以现在我们有了教育者和注册记录两个核心实体，它们之间通过“register”关系连接，教育者可以管理学生注册。这个基础结构看起来很清晰。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2126.7972,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "EDUCATORS",
+            "REGISTRATIONS"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    EDUCATORS[\"EDUCATORS\"]\n    REGISTRATIONS[\"REGISTRATIONS\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "设计者",
+        "content": "很好，现在进入第二阶段，我们需要扩展学习路径。首先添加 MODULES（课程模块）实体，然后建立从 REGISTRATIONS 到 MODULES 的访问关系，学生注册后可以访问课程模块。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2116.7991,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "EDUCATORS",
+            "REGISTRATIONS"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    EDUCATORS[\"EDUCATORS\"]\n    REGISTRATIONS[\"REGISTRATIONS\"]"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "MODULES",
+            "label": "MODULES",
+            "kind": "entity",
+            "id": "MODULES"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 2/3, adds 1 nodes, 1 edges, current state now contains 3 nodes and 1 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 14417.3338,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 2,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"MODULES\",\n      \"label\": \"MODULES\",\n      \"kind\": \"entity\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e2\",\n      \"source\": \"REGISTRATIONS\",\n      \"target\": \"MODULES\",\n      \"label\": \"access\"\n    }\n  ],\n  \"notes\": \"Stage 2/3, adds 1 nodes, 1 edges, current state now contains 3 nodes and 1 edges",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "MODULES",
+            "label": "MODULES",
+            "kind": "entity",
+            "id": "MODULES"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "EDUCATORS",
+            "REGISTRATIONS",
+            "MODULES"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 4,
+          "edge_count": 3,
+          "group_count": 0,
+          "delta_count": 4
+        },
+        "preview_mermaid": "graph TD\n    EDUCATORS[\"EDUCATORS\"]\n    REGISTRATIONS[\"REGISTRATIONS\"]\n    MODULES[\"MODULES\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "EDUCATORS",
+            "REGISTRATIONS",
+            "MODULES"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    EDUCATORS[\"EDUCATORS\"]\n    REGISTRATIONS[\"REGISTRATIONS\"]\n    MODULES[\"MODULES\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "设计者",
+        "content": "继续扩展，添加 ASSESSMENTS（评估）实体，并建立从 MODULES 到 ASSESSMENTS 的“完成”关系。学生需要完成课程模块才能参加相应的评估，这样就形成了一个完整的学习流程。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2117.8505,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "EDUCATORS",
+            "REGISTRATIONS",
+            "MODULES"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    EDUCATORS[\"EDUCATORS\"]\n    REGISTRATIONS[\"REGISTRATIONS\"]\n    MODULES[\"MODULES\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "用户",
+        "content": "理解了这个扩展结构。现在注册记录可以访问课程模块，而课程模块会连接到评估环节，形成了一个清晰的学习路径。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2138.139,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "EDUCATORS",
+            "REGISTRATIONS",
+            "MODULES"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    EDUCATORS[\"EDUCATORS\"]\n    REGISTRATIONS[\"REGISTRATIONS\"]\n    MODULES[\"MODULES\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 7,
+        "speaker": "设计者",
+        "content": "现在进入最后一个阶段，添加支持结构。我们需要添加 CERTIFICATES（证书）实体，然后建立从 ASSESSMENTS 到 CERTIFICATES 的“参加”关系，表示学生完成评估后可以获得相应的证书。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2112.9818,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "EDUCATORS",
+            "REGISTRATIONS",
+            "MODULES"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    EDUCATORS[\"EDUCATORS\"]\n    REGISTRATIONS[\"REGISTRATIONS\"]\n    MODULES[\"MODULES\"]"
+      },
+      "planner": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "ASSESSMENTS",
+            "label": "ASSESSMENTS",
+            "kind": "entity",
+            "id": "ASSESSMENTS"
+          },
+          {
+            "op": "add_node",
+            "node_id": "CERTIFICATES",
+            "label": "CERTIFICATES",
+            "kind": "entity",
+            "id": "CERTIFICATES"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 3/3, adds 2 nodes, 2 edges, current state now contains 5 nodes and 2 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 24248.5332,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 3,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"ASSESSMENTS\",\n      \"label\": \"ASSESSMENTS\",\n      \"kind\": \"entity\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"CERTIFICATES\",\n      \"label\": \"CERTIFICATES\",\n      \"kind\": \"entity\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e3\",\n      \"source\": \"MODULES\",\n      \"target\": \"ASSESSMENTS",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "ASSESSMENTS",
+            "label": "ASSESSMENTS",
+            "kind": "entity",
+            "id": "ASSESSMENTS"
+          },
+          {
+            "op": "add_node",
+            "node_id": "CERTIFICATES",
+            "label": "CERTIFICATES",
+            "kind": "entity",
+            "id": "CERTIFICATES"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "EDUCATORS",
+            "REGISTRATIONS",
+            "MODULES",
+            "ASSESSMENTS",
+            "CERTIFICATES"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 5,
+          "edge_count": 4,
+          "group_count": 0,
+          "delta_count": 2
+        },
+        "preview_mermaid": "graph TD\n    EDUCATORS[\"EDUCATORS\"]\n    REGISTRATIONS[\"REGISTRATIONS\"]\n    MODULES[\"MODULES\"]\n    ASSESSMENTS[\"ASSESSMENTS\"]\n    CERTIFICATES[\"CERTIFICATES\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "EDUCATORS",
+            "REGISTRATIONS",
+            "MODULES",
+            "ASSESSMENTS",
+            "CERTIFICATES"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    EDUCATORS[\"EDUCATORS\"]\n    REGISTRATIONS[\"REGISTRATIONS\"]\n    MODULES[\"MODULES\"]\n    ASSESSMENTS[\"ASSESSMENTS\"]\n    CERTIFICATES[\"CERTIFICATES\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 8,
+        "speaker": "用户",
+        "content": "完美，现在整个模式已经完整了。从教育者注册开始，到学生访问课程模块，完成评估，最后获得证书，形成了一个完整的教育认证流程。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "EDUCATORS",
+            "REGISTRATIONS",
+            "MODULES",
+            "ASSESSMENTS",
+            "CERTIFICATES"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    EDUCATORS[\"EDUCATORS\"]\n    REGISTRATIONS[\"REGISTRATIONS\"]\n    MODULES[\"MODULES\"]\n    ASSESSMENTS[\"ASSESSMENTS\"]\n    CERTIFICATES[\"CERTIFICATES\"]"
+      }
+    }
+  ]
+}

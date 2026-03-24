@@ -1,0 +1,421 @@
+{
+  "sample_id": "gh_sequence_00597",
+  "diagram_type": "sequence",
+  "generated_at_utc": "2026-03-24T07:15:44Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 6,
+    "total_stages": 1,
+    "updates_emitted": 1,
+    "final_stage_index": 1,
+    "applied_stage_indices": [
+      1
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 2,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "A",
+        "B"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    },
+    "reference_graph_metrics": {
+      "node_count": 4,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "App",
+        "SessionA",
+        "SessionB",
+        "ListenerB"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    }
+  },
+  "final_state": {
+    "sample_id": "gh_sequence_00597",
+    "diagram_type": "sequence",
+    "current_stage_index": 1,
+    "current_graph_ir": {
+      "graph_id": "gh_sequence_00597",
+      "diagram_type": "sequence",
+      "nodes": [
+        {
+          "id": "A",
+          "label": "Alice",
+          "kind": "participant",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "B",
+          "label": "Bob",
+          "kind": "participant",
+          "parent": null,
+          "source_index": 3,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    A[\"Alice\"]\n    B[\"Bob\"]",
+    "applied_stage_indices": [
+      1
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 2,
+        "edge_count": 0,
+        "group_count": 0,
+        "node_ids": [
+          "A",
+          "B"
+        ],
+        "edge_ids": [],
+        "group_ids": []
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "旁白",
+        "content": "现在我们开始构建一个基于会话的通信流程图。首先需要引入所有参与者。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Stage开场：介绍整体目标，需要引入所有参与者",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2142.5853,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "A",
+            "label": "Alice",
+            "kind": "participant",
+            "id": "A"
+          },
+          {
+            "op": "add_node",
+            "node_id": "B",
+            "label": "Bob",
+            "kind": "participant",
+            "id": "B"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 1/1, adds 2 nodes, 0 edges, current state now contains 2 nodes and 0 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 13074.0936,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"A\",\n      \"label\": \"Alice\",\n      \"kind\": \"participant\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"B\",\n      \"label\": \"Bob\",\n      \"kind\": \"participant\"\n    }\n  ],\n  \"notes\": \"Stage 1/1, adds 2 nodes, 0 edges, current state now contains 2 nodes and 0 edges\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "A",
+            "label": "Alice",
+            "kind": "participant",
+            "id": "A"
+          },
+          {
+            "op": "add_node",
+            "node_id": "B",
+            "label": "Bob",
+            "kind": "participant",
+            "id": "B"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "A",
+            "B"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "delta_count": 4
+        },
+        "preview_mermaid": "graph TD\n    A[\"Alice\"]\n    B[\"Bob\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "A",
+            "B"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    A[\"Alice\"]\n    B[\"Bob\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "旁白",
+        "content": "第一位参与者是主应用程序，我们将它标记为「Aplicación」，这是整个通信系统的核心发起者。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "添加节点：App (Aplicación)",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "A",
+            "B"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    A[\"Alice\"]\n    B[\"Bob\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "旁白",
+        "content": "接下来引入第一个会话实例「Sesión A」，它代表系统中创建的初始会话连接。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "添加节点：SessionA (Sesión A)",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "A",
+            "B"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    A[\"Alice\"]\n    B[\"Bob\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "旁白",
+        "content": "第三个参与者是「Sesión B」，这是第二个会话实例，用于处理并发或独立的通信任务。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "添加节点：SessionB (Sesión B)",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "A",
+            "B"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    A[\"Alice\"]\n    B[\"Bob\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "旁白",
+        "content": "最后引入监听器组件「Listener B」，它负责监控或处理会话B的相关事件。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "添加节点：ListenerB (Listener B)",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "A",
+            "B"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    A[\"Alice\"]\n    B[\"Bob\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "旁白",
+        "content": "四位参与者现已全部就位，形成了完整的通信架构框架。目前所有参与者的生命线已建立，但尚未定义它们之间的消息交互。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Stage收尾：四位参与者生命线已建立，框架完成，等待消息交互定义",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "A",
+            "B"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    A[\"Alice\"]\n    B[\"Bob\"]"
+      }
+    }
+  ]
+}

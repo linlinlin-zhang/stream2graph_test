@@ -1,0 +1,436 @@
+{
+  "sample_id": "gh_architecture_01659",
+  "diagram_type": "architecture",
+  "generated_at_utc": "2026-03-24T07:15:02Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 4,
+    "total_stages": 2,
+    "updates_emitted": 2,
+    "final_stage_index": 2,
+    "applied_stage_indices": [
+      1,
+      2
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 2,
+      "edge_count": 0,
+      "group_count": 1,
+      "node_ids": [
+        "Client",
+        "Send"
+      ],
+      "edge_ids": [],
+      "group_ids": [
+        "Message"
+      ]
+    },
+    "reference_graph_metrics": {
+      "node_count": 2,
+      "edge_count": 0,
+      "group_count": 1,
+      "node_ids": [
+        "Client",
+        "Send"
+      ],
+      "edge_ids": [],
+      "group_ids": [
+        "group_1"
+      ]
+    }
+  },
+  "final_state": {
+    "sample_id": "gh_architecture_01659",
+    "diagram_type": "architecture",
+    "current_stage_index": 2,
+    "current_graph_ir": {
+      "graph_id": "gh_architecture_01659",
+      "diagram_type": "architecture",
+      "nodes": [
+        {
+          "id": "Client",
+          "label": "Client Applications",
+          "kind": "node",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "Send",
+          "label": "Send Message",
+          "kind": "node",
+          "parent": null,
+          "source_index": 5,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [
+        {
+          "id": "Message",
+          "label": "Message Flow",
+          "parent": null,
+          "member_ids": [],
+          "source_index": 2,
+          "metadata": {}
+        }
+      ],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    Client[\"Client Applications\"]\n    Send[\"Send Message\"]",
+    "applied_stage_indices": [
+      1,
+      2
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 2,
+        "edge_count": 0,
+        "group_count": 1,
+        "node_ids": [
+          "Client",
+          "Send"
+        ],
+        "edge_ids": [],
+        "group_ids": [
+          "Message"
+        ]
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "系统架构师",
+        "content": "好的，我们现在开始构建这个架构图。首先，一切应用都从客户端开始——我们的入口点就是 Client Applications（客户端应用程序）。这是整个系统的起点，也是用户直接交互的前端层。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": "exact",
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2174.0804,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "技术顾问",
+        "content": "明白了，以客户端作为锚点确实很合理。那么现在我们已经有了一个基础的起点。接下来看看还需要补充哪些功能模块？",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "turn 2 reached end boundary for stage 1",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2421.484,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"EMIT_UPDATE\",\n  \"target_stage_index\": 1,\n  \"reason\": \"turn 2 reached end boundary for stage 1\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Client",
+            "label": "Client Applications",
+            "kind": "node",
+            "id": "Client"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 1/2, adds 1 nodes, 0 edges, current state now contains 1 nodes and 0 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 9427.4604,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Client\",\n      \"label\": \"Client Applications\",\n      \"kind\": \"node\"\n    }\n  ],\n  \"notes\": \"Stage 1/2, adds 1 nodes, 0 edges, current state now contains 1 nodes and 0 edges\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Client",
+            "label": "Client Applications",
+            "kind": "node",
+            "id": "Client"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Client"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "delta_count": 1
+        },
+        "preview_mermaid": "graph TD\n    Client[\"Client Applications\"]",
+        "matches_reference_stage": true
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Client"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Client[\"Client Applications\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "系统架构师",
+        "content": "现在我们添加一个关键的通信功能——Send Message（发送消息）。为了保持结构的清晰，我们把它归入一个逻辑分组中，命名为 Message Flow（消息流）。这样能更好地表达它负责处理消息传递的作用。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": "exact",
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2140.4996,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Client"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Client[\"Client Applications\"]"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "Message",
+            "label": "Message Flow",
+            "id": "Message"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Send",
+            "label": "Send Message",
+            "kind": "node",
+            "id": "Send"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 2/2, adds 1 nodes, 0 edges, 1 groups, current state now contains 2 nodes and 0 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 13212.4963,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 2,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_group\",\n      \"group_id\": \"group_1\",\n      \"label\": \"Message Flow\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Send\",\n      \"label\": \"Send Message\",\n      \"kind\": \"node\"\n    }\n  ],\n  \"notes\": \"Stage 2/2, adds 1 nodes, 0 edges, 1 groups, current state now contains 2 nodes and 0 edges\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "Message",
+            "label": "Message Flow",
+            "id": "Message"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Send",
+            "label": "Send Message",
+            "kind": "node",
+            "id": "Send"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [
+            "Client",
+            "Send"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "Message"
+          ]
+        },
+        "gold_stage_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 1,
+          "delta_count": 2
+        },
+        "preview_mermaid": "graph TD\n    Client[\"Client Applications\"]\n    Send[\"Send Message\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [
+            "Client",
+            "Send"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "Message"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    Client[\"Client Applications\"]\n    Send[\"Send Message\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "技术顾问",
+        "content": "很好，通过 Message Flow 分组把消息发送相关的功能组织在一起，架构层次就清晰多了。现在我们的架构图基本完整了——从客户端出发，到消息流程的处理。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [
+            "Client",
+            "Send"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "Message"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    Client[\"Client Applications\"]\n    Send[\"Send Message\"]"
+      }
+    }
+  ]
+}

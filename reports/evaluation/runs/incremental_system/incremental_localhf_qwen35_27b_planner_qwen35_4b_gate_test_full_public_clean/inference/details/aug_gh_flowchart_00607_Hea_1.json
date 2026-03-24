@@ -1,0 +1,548 @@
+{
+  "sample_id": "aug_gh_flowchart_00607_Hea_1",
+  "diagram_type": "flowchart",
+  "generated_at_utc": "2026-03-24T11:24:03Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 6,
+    "total_stages": 2,
+    "updates_emitted": 2,
+    "final_stage_index": 2,
+    "applied_stage_indices": [
+      1,
+      2
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 4,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    },
+    "reference_graph_metrics": {
+      "node_count": 4,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "thanksSigningUp",
+        "thanksVerifying",
+        "pendingApproval",
+        "pendingConfirmation"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    }
+  },
+  "final_state": {
+    "sample_id": "aug_gh_flowchart_00607_Hea_1",
+    "diagram_type": "flowchart",
+    "current_stage_index": 2,
+    "current_graph_ir": {
+      "graph_id": "aug_gh_flowchart_00607_Hea_1",
+      "diagram_type": "flowchart",
+      "nodes": [
+        {
+          "id": "A",
+          "label": "HealthTech_PatientRecords",
+          "kind": "node",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "B",
+          "label": "HealthTech_HIPAA_Vault",
+          "kind": "node",
+          "parent": null,
+          "source_index": 3,
+          "metadata": {}
+        },
+        {
+          "id": "C",
+          "label": "HealthTech_PatientRecords",
+          "kind": "node",
+          "parent": null,
+          "source_index": 5,
+          "metadata": {}
+        },
+        {
+          "id": "D",
+          "label": "HealthTech_PatientRecords",
+          "kind": "node",
+          "parent": null,
+          "source_index": 6,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    A[\"HealthTech_PatientRecords\"]\n    B[\"HealthTech_HIPAA_Vault\"]\n    C[\"HealthTech_PatientRecords\"]\n    D[\"HealthTech_PatientRecords\"]",
+    "applied_stage_indices": [
+      1,
+      2
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 4,
+        "edge_count": 0,
+        "group_count": 0,
+        "node_ids": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "edge_ids": [],
+        "group_ids": []
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "系统架构师",
+        "content": "我们先来梳理一下HealthTech患者记录系统的核心状态。我注意到在患者刚完成注册时，需要一个确认节点来告知用户 signup 流程已完成。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Introduces first core bootstrap node - Stage 1 opening turn",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2146.1632,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "产品设计师",
+        "content": "对，而且患者在完成身份验证后，也需要一个专门的验证确认页面。这个节点应该关联到我们的 HIPAA_Vault 系统，确保合规性。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Completes Stage 1 bootstrap core with second confirmation node",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2107.4774,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "A",
+            "label": "HealthTech_PatientRecords",
+            "kind": "node",
+            "id": "A"
+          },
+          {
+            "op": "add_node",
+            "node_id": "B",
+            "label": "HealthTech_HIPAA_Vault",
+            "kind": "node",
+            "id": "B"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 1/2, adds 2 nodes, 0 edges, current state now contains 2 nodes and 0 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 14198.5471,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"A\",\n      \"label\": \"HealthTech_PatientRecords\",\n      \"kind\": \"node\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"B\",\n      \"label\": \"HealthTech_HIPAA_Vault\",\n      \"kind\": \"node\"\n    }\n  ],\n  \"notes\": \"Stage 1/2, adds 2 nodes, 0 edges, current state now contains 2 nodes and 0 edges\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "A",
+            "label": "HealthTech_PatientRecords",
+            "kind": "node",
+            "id": "A"
+          },
+          {
+            "op": "add_node",
+            "node_id": "B",
+            "label": "HealthTech_HIPAA_Vault",
+            "kind": "node",
+            "id": "B"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "A",
+            "B"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "delta_count": 2
+        },
+        "preview_mermaid": "graph TD\n    A[\"HealthTech_PatientRecords\"]\n    B[\"HealthTech_HIPAA_Vault\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "A",
+            "B"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    A[\"HealthTech_PatientRecords\"]\n    B[\"HealthTech_HIPAA_Vault\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "后端开发",
+        "content": "好的，目前我们有了两个基础的确认状态。那接下来患者记录的审批流程呢？应该有对应的待处理状态。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Transitional trigger turn - explicitly bridges from Stage 1 to Stage 2",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2142.8156,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "A",
+            "B"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    A[\"HealthTech_PatientRecords\"]\n    B[\"HealthTech_HIPAA_Vault\"]"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "C",
+            "label": "HealthTech_PatientRecords",
+            "kind": "node",
+            "id": "C"
+          },
+          {
+            "op": "add_node",
+            "node_id": "D",
+            "label": "HealthTech_PatientRecords",
+            "kind": "node",
+            "id": "D"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 2/2, adds 2 nodes, 0 edges, current state now contains 4 nodes and 0 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 13953.4345,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 2,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"C\",\n      \"label\": \"HealthTech_PatientRecords\",\n      \"kind\": \"node\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"D\",\n      \"label\": \"HealthTech_PatientRecords\",\n      \"kind\": \"node\"\n    }\n  ],\n  \"notes\": \"Stage 2/2, adds 2 nodes, 0 edges, current state now contains 4 nodes and 0 edges\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "C",
+            "label": "HealthTech_PatientRecords",
+            "kind": "node",
+            "id": "C"
+          },
+          {
+            "op": "add_node",
+            "node_id": "D",
+            "label": "HealthTech_PatientRecords",
+            "kind": "node",
+            "id": "D"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "delta_count": 2
+        },
+        "preview_mermaid": "graph TD\n    A[\"HealthTech_PatientRecords\"]\n    B[\"HealthTech_HIPAA_Vault\"]\n    C[\"HealthTech_PatientRecords\"]\n    D[\"HealthTech_PatientRecords\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    A[\"HealthTech_PatientRecords\"]\n    B[\"HealthTech_HIPAA_Vault\"]\n    C[\"HealthTech_PatientRecords\"]\n    D[\"HealthTech_PatientRecords\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "产品设计师",
+        "content": "没错，我们需要添加 pendingApproval 状态。当患者提交的信息还在等待管理员审核时，应该显示这个状态。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Introduces first branch expansion node - Stage 2 opening turn",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    A[\"HealthTech_PatientRecords\"]\n    B[\"HealthTech_HIPAA_Vault\"]\n    C[\"HealthTech_PatientRecords\"]\n    D[\"HealthTech_PatientRecords\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "系统架构师",
+        "content": "同时，对于某些关键操作，患者可能还需要进行二次确认。pendingConfirmation 状态可以处理这类场景。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Continues Stage 2 expansion with second branch node",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    A[\"HealthTech_PatientRecords\"]\n    B[\"HealthTech_HIPAA_Vault\"]\n    C[\"HealthTech_PatientRecords\"]\n    D[\"HealthTech_PatientRecords\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "后端开发",
+        "content": "现在患者记录系统的四个核心状态都齐了：从 signup 确认、验证确认，到待审批和待确认，覆盖了完整的工作流程。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Closing summary - references all four nodes to finalize complete state machine",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    A[\"HealthTech_PatientRecords\"]\n    B[\"HealthTech_HIPAA_Vault\"]\n    C[\"HealthTech_PatientRecords\"]\n    D[\"HealthTech_PatientRecords\"]"
+      }
+    }
+  ]
+}

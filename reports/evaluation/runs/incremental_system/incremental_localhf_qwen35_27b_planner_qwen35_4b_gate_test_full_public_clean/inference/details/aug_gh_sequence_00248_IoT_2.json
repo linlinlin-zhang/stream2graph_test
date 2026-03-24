@@ -1,0 +1,497 @@
+{
+  "sample_id": "aug_gh_sequence_00248_IoT_2",
+  "diagram_type": "sequence",
+  "generated_at_utc": "2026-03-24T10:46:56Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 7,
+    "total_stages": 1,
+    "updates_emitted": 1,
+    "final_stage_index": 1,
+    "applied_stage_indices": [
+      1
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 3,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "D",
+        "M",
+        "P"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    },
+    "reference_graph_metrics": {
+      "node_count": 8,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "D",
+        "C",
+        "M",
+        "par",
+        "and",
+        "alt",
+        "else",
+        "loop"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    }
+  },
+  "final_state": {
+    "sample_id": "aug_gh_sequence_00248_IoT_2",
+    "diagram_type": "sequence",
+    "current_stage_index": 1,
+    "current_graph_ir": {
+      "graph_id": "aug_gh_sequence_00248_IoT_2",
+      "diagram_type": "sequence",
+      "nodes": [
+        {
+          "id": "D",
+          "label": "Data Stream",
+          "kind": "participant",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "M",
+          "label": "Metadata Stream",
+          "kind": "participant",
+          "parent": null,
+          "source_index": 3,
+          "metadata": {}
+        },
+        {
+          "id": "P",
+          "label": "Protocol Buffer",
+          "kind": "participant",
+          "parent": null,
+          "source_index": 4,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    D[\"Data Stream\"]\n    M[\"Metadata Stream\"]\n    P[\"Protocol Buffer\"]",
+    "applied_stage_indices": [
+      1
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 3,
+        "edge_count": 0,
+        "group_count": 0,
+        "node_ids": [
+          "D",
+          "M",
+          "P"
+        ],
+        "edge_ids": [],
+        "group_ids": []
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "系统架构师",
+        "content": "好，我们今天来设计一个IoT场景下的序列图。根据需求文档，我们需要处理数据流和元数据流的并发传输场景。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": "引入IoT场景背景，提及数据流和元数据流并发传输，与stage边界描述一致",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2147.2762,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "D",
+            "label": "Data Stream",
+            "kind": "participant",
+            "id": "D"
+          },
+          {
+            "op": "add_node",
+            "node_id": "M",
+            "label": "Metadata Stream",
+            "kind": "participant",
+            "id": "M"
+          },
+          {
+            "op": "add_node",
+            "node_id": "P",
+            "label": "Protocol Buffer",
+            "kind": "participant",
+            "id": "P"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 1/1, adds 3 nodes, 0 edges, current state now contains 3 nodes and 0 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 17504.678,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"D\",\n      \"label\": \"Data Stream\",\n      \"kind\": \"participant\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"M\",\n      \"label\": \"Metadata Stream\",\n      \"kind\": \"participant\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"P\",\n      \"label\": \"Protocol Buffer\",\n      \"kind\": \"participant\"\n  ",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "D",
+            "label": "Data Stream",
+            "kind": "participant",
+            "id": "D"
+          },
+          {
+            "op": "add_node",
+            "node_id": "M",
+            "label": "Metadata Stream",
+            "kind": "participant",
+            "id": "M"
+          },
+          {
+            "op": "add_node",
+            "node_id": "P",
+            "label": "Protocol Buffer",
+            "kind": "participant",
+            "id": "P"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "D",
+            "M",
+            "P"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 8,
+          "edge_count": 0,
+          "group_count": 0,
+          "delta_count": 8
+        },
+        "preview_mermaid": "graph TD\n    D[\"Data Stream\"]\n    M[\"Metadata Stream\"]\n    P[\"Protocol Buffer\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "D",
+            "M",
+            "P"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    D[\"Data Stream\"]\n    M[\"Metadata Stream\"]\n    P[\"Protocol Buffer\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "工程师",
+        "content": "明白，这个IoT系统涉及哪些核心参与者呢？",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": "询问核心参与者，属于Bootstrap Core阶段的探索性对话",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "D",
+            "M",
+            "P"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    D[\"Data Stream\"]\n    M[\"Metadata Stream\"]\n    P[\"Protocol Buffer\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "系统架构师",
+        "content": "首先我们需要定义三个关键参与者：第一个是数据流节点，负责传输原始传感器数据流；第二个是客户端，负责发起请求和接收处理结果；第三个是元数据流节点，用于管理数据的描述信息和标签。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": "定义三个核心参与者：Data Stream(D)、Client(C)、Metadata Stream(M)，直接对应delta_ops中的add_node操作",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "D",
+            "M",
+            "P"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    D[\"Data Stream\"]\n    M[\"Metadata Stream\"]\n    P[\"Protocol Buffer\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "工程师",
+        "content": "这三个参与者构成了我们系统的基础通信框架。那么在控制流程方面，我们需要支持哪些结构呢？",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": "询问控制流需求，属于Bootstrap阶段的探索性对话",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "D",
+            "M",
+            "P"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    D[\"Data Stream\"]\n    M[\"Metadata Stream\"]\n    P[\"Protocol Buffer\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "系统架构师",
+        "content": "根据IoT场景的复杂性，我们需要准备多种控制流构造器。首先是par节点，用于表示并行执行路径；其次是and节点，用于分支同步；然后是alt节点用于条件分支选择；else节点作为备选路径；最后loop节点用于处理循环迭代场景。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": "列举par、and、alt、else、loop五个控制流节点，直接对应delta_ops中的add_node操作",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "D",
+            "M",
+            "P"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    D[\"Data Stream\"]\n    M[\"Metadata Stream\"]\n    P[\"Protocol Buffer\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "工程师",
+        "content": "这些控制结构我们都记下了。目前我们只是定义好了参与者和控制流的框架，具体他们之间如何交互、消息如何传递，这些细节后续再讨论。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": "总结当前仅完成实体定义，尚未涉及消息传递，与stage边界描述高度吻合",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "D",
+            "M",
+            "P"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    D[\"Data Stream\"]\n    M[\"Metadata Stream\"]\n    P[\"Protocol Buffer\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 7,
+        "speaker": "系统架构师",
+        "content": "对，现在图上已经包含了Data Stream、Client、Metadata Stream这三个参与者，加上par、and、alt、else、loop这些控制流节点，一共八个元素。接下来我们会在这个基础上逐步定义它们之间的交互关系。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": "确认图上8个元素的当前状态，stage1阶段结束语",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "D",
+            "M",
+            "P"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    D[\"Data Stream\"]\n    M[\"Metadata Stream\"]\n    P[\"Protocol Buffer\"]"
+      }
+    }
+  ]
+}

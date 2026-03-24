@@ -1,0 +1,653 @@
+{
+  "sample_id": "aug_gh_sequence_00583_Gro_5",
+  "diagram_type": "sequence",
+  "generated_at_utc": "2026-03-24T10:52:52Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 10,
+    "total_stages": 1,
+    "updates_emitted": 1,
+    "final_stage_index": 1,
+    "applied_stage_indices": [
+      1
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 4,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "User",
+        "CLI",
+        "Session",
+        "FS"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    },
+    "reference_graph_metrics": {
+      "node_count": 6,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "User",
+        "CLI_Typer",
+        "Cmd_IP",
+        "Auth",
+        "Connector",
+        "Service"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    }
+  },
+  "final_state": {
+    "sample_id": "aug_gh_sequence_00583_Gro_5",
+    "diagram_type": "sequence",
+    "current_stage_index": 1,
+    "current_graph_ir": {
+      "graph_id": "aug_gh_sequence_00583_Gro_5",
+      "diagram_type": "sequence",
+      "nodes": [
+        {
+          "id": "User",
+          "label": "User",
+          "kind": "participant",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "CLI",
+          "label": "IP Intel CLI",
+          "kind": "participant",
+          "parent": null,
+          "source_index": 3,
+          "metadata": {}
+        },
+        {
+          "id": "Session",
+          "label": "Session Manager",
+          "kind": "participant",
+          "parent": null,
+          "source_index": 4,
+          "metadata": {}
+        },
+        {
+          "id": "FS",
+          "label": "File System",
+          "kind": "participant",
+          "parent": null,
+          "source_index": 5,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    User[\"User\"]\n    CLI[\"IP Intel CLI\"]\n    Session[\"Session Manager\"]\n    FS[\"File System\"]",
+    "applied_stage_indices": [
+      1
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 4,
+        "edge_count": 0,
+        "group_count": 0,
+        "node_ids": [
+          "User",
+          "CLI",
+          "Session",
+          "FS"
+        ],
+        "edge_ids": [],
+        "group_ids": []
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "系统",
+        "content": "正在初始化 IP Intel CLI 序列图环境。当前系统包含 0 个参与者和 0 条消息。准备进行核心引导阶段。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2253.5129,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "User",
+            "label": "User",
+            "kind": "participant",
+            "id": "User"
+          },
+          {
+            "op": "add_node",
+            "node_id": "CLI",
+            "label": "IP Intel CLI",
+            "kind": "participant",
+            "id": "CLI"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Session",
+            "label": "Session Manager",
+            "kind": "participant",
+            "id": "Session"
+          },
+          {
+            "op": "add_node",
+            "node_id": "FS",
+            "label": "File System",
+            "kind": "participant",
+            "id": "FS"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 1/1, adds 4 nodes, 5 edges, current state now contains 4 nodes and 5 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 45848.2897,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"User\",\n      \"label\": \"User\",\n      \"kind\": \"participant\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"CLI\",\n      \"label\": \"IP Intel CLI\",\n      \"kind\": \"participant\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Session\",\n      \"label\": \"Session Manager\",\n      \"kind\": \"participant\"\n ",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "User",
+            "label": "User",
+            "kind": "participant",
+            "id": "User"
+          },
+          {
+            "op": "add_node",
+            "node_id": "CLI",
+            "label": "IP Intel CLI",
+            "kind": "participant",
+            "id": "CLI"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Session",
+            "label": "Session Manager",
+            "kind": "participant",
+            "id": "Session"
+          },
+          {
+            "op": "add_node",
+            "node_id": "FS",
+            "label": "File System",
+            "kind": "participant",
+            "id": "FS"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "User",
+            "CLI",
+            "Session",
+            "FS"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "delta_count": 6
+        },
+        "preview_mermaid": "graph TD\n    User[\"User\"]\n    CLI[\"IP Intel CLI\"]\n    Session[\"Session Manager\"]\n    FS[\"File System\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "User",
+            "CLI",
+            "Session",
+            "FS"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    User[\"User\"]\n    CLI[\"IP Intel CLI\"]\n    Session[\"Session Manager\"]\n    FS[\"File System\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "系统",
+        "content": "步骤一：添加第一个参与者 - User（用户）。这是发起 CLI 命令的人类参与者。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "User",
+            "CLI",
+            "Session",
+            "FS"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    User[\"User\"]\n    CLI[\"IP Intel CLI\"]\n    Session[\"Session Manager\"]\n    FS[\"File System\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "系统",
+        "content": "步骤二：添加第二个参与者 - CLI Typer（CLI 输入器，来自 Groupware KanbanBoard）。这是 CLI 交互的入口点。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "User",
+            "CLI",
+            "Session",
+            "FS"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    User[\"User\"]\n    CLI[\"IP Intel CLI\"]\n    Session[\"Session Manager\"]\n    FS[\"File System\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "系统",
+        "content": "步骤三：添加第三个参与者 - Cmd_IP（ip.py 命令模块）。这是命令处理器模块。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "User",
+            "CLI",
+            "Session",
+            "FS"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    User[\"User\"]\n    CLI[\"IP Intel CLI\"]\n    Session[\"Session Manager\"]\n    FS[\"File System\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "系统",
+        "content": "步骤四：添加第四个参与者 - Auth（认证模块，auth.py）。负责处理身份验证功能。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "User",
+            "CLI",
+            "Session",
+            "FS"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    User[\"User\"]\n    CLI[\"IP Intel CLI\"]\n    Session[\"Session Manager\"]\n    FS[\"File System\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "系统",
+        "content": "步骤五：添加第五个参与者 - Connector（IP Intel 连接器）。这是外部服务的连接器组件。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "User",
+            "CLI",
+            "Session",
+            "FS"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    User[\"User\"]\n    CLI[\"IP Intel CLI\"]\n    Session[\"Session Manager\"]\n    FS[\"File System\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 7,
+        "speaker": "系统",
+        "content": "步骤六：添加第六个参与者 - Service（IP Intel 后端服务）。这是整个系统的后端服务。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "User",
+            "CLI",
+            "Session",
+            "FS"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    User[\"User\"]\n    CLI[\"IP Intel CLI\"]\n    Session[\"Session Manager\"]\n    FS[\"File System\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 8,
+        "speaker": "系统",
+        "content": "核心引导阶段完成。当前系统状态：6 个参与者已添加，0 条消息。参与者列表：User、CLI_Typer、Cmd_IP、Auth、Connector、Service。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "User",
+            "CLI",
+            "Session",
+            "FS"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    User[\"User\"]\n    CLI[\"IP Intel CLI\"]\n    Session[\"Session Manager\"]\n    FS[\"File System\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 9,
+        "speaker": "User",
+        "content": "我已了解系统中定义的全部 6 个参与者。User 是命令发起者，CLI_Typer 是入口点，Cmd_IP 是命令处理器，Auth 负责认证，Connector 连接外部服务，Service 是后端。准备好了，可以继续添加消息交互。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "User",
+            "CLI",
+            "Session",
+            "FS"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    User[\"User\"]\n    CLI[\"IP Intel CLI\"]\n    Session[\"Session Manager\"]\n    FS[\"File System\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 10,
+        "speaker": "系统",
+        "content": "确认收到用户确认。所有 6 个参与者已就绪，等待下一步指令。在添加消息交互之前，参与者结构必须保持稳定。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "User",
+            "CLI",
+            "Session",
+            "FS"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    User[\"User\"]\n    CLI[\"IP Intel CLI\"]\n    Session[\"Session Manager\"]\n    FS[\"File System\"]"
+      }
+    }
+  ]
+}

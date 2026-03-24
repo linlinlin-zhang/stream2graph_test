@@ -1,0 +1,1844 @@
+{
+  "sample_id": "aug_ot_stateDiagram_00115_IoT_2",
+  "diagram_type": "statediagram",
+  "generated_at_utc": "2026-03-24T08:00:36Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 28,
+    "total_stages": 5,
+    "updates_emitted": 5,
+    "final_stage_index": 5,
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 5,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "Idle",
+        "loaded",
+        "tracking",
+        "analyzing",
+        "reporting"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    },
+    "reference_graph_metrics": {
+      "node_count": 5,
+      "edge_count": 35,
+      "group_count": 0,
+      "node_ids": [
+        "idle",
+        "loaded",
+        "tracking",
+        "analyzing",
+        "reporting"
+      ],
+      "edge_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e5",
+        "e6",
+        "e7",
+        "e8",
+        "e9",
+        "e10",
+        "e11",
+        "e12"
+      ],
+      "group_ids": []
+    }
+  },
+  "final_state": {
+    "sample_id": "aug_ot_stateDiagram_00115_IoT_2",
+    "diagram_type": "statediagram",
+    "current_stage_index": 5,
+    "current_graph_ir": {
+      "graph_id": "aug_ot_stateDiagram_00115_IoT_2",
+      "diagram_type": "statediagram",
+      "nodes": [
+        {
+          "id": "Idle",
+          "label": "Idle",
+          "kind": "state",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "loaded",
+          "label": "loaded",
+          "kind": "state",
+          "parent": null,
+          "source_index": 4,
+          "metadata": {}
+        },
+        {
+          "id": "tracking",
+          "label": "tracking",
+          "kind": "state",
+          "parent": null,
+          "source_index": 6,
+          "metadata": {}
+        },
+        {
+          "id": "analyzing",
+          "label": "analyzing",
+          "kind": "state",
+          "parent": null,
+          "source_index": 8,
+          "metadata": {}
+        },
+        {
+          "id": "reporting",
+          "label": "reporting",
+          "kind": "state",
+          "parent": null,
+          "source_index": 10,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]\n    tracking[\"tracking\"]\n    analyzing[\"analyzing\"]\n    reporting[\"reporting\"]",
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 5,
+        "edge_count": 0,
+        "group_count": 0,
+        "node_ids": [
+          "Idle",
+          "loaded",
+          "tracking",
+          "analyzing",
+          "reporting"
+        ],
+        "edge_ids": [],
+        "group_ids": []
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "工程师张",
+        "content": "李工，我们来设计这个工业物联网的状态机吧。首先需要确定系统的初始状态，所有IoT操作都从这里开始。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Stage 1 creates idle node. Turns 1-2 discuss establishing idle as starting point, Turn 3 confirms idle as entry point with 0 edges.",
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2130.9221,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "工程师李",
+        "content": "好的，张工。我认为系统的起点应该是空闲状态，表示设备处于待机状态，还没有执行任何工业物联网操作。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Stage 1 creates idle node. Turns 1-2 discuss establishing idle as starting point, Turn 3 confirms idle as entry point with 0 edges.",
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2104.2399,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Idle",
+            "label": "Idle",
+            "kind": "state",
+            "id": "Idle"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 1/5, adds 1 nodes, 0 edges, current state now contains 1 nodes and 0 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 9296.7572,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Idle\",\n      \"label\": \"Idle\",\n      \"kind\": \"state\"\n    }\n  ],\n  \"notes\": \"Stage 1/5, adds 1 nodes, 0 edges, current state now contains 1 nodes and 0 edges\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Idle",
+            "label": "Idle",
+            "kind": "state",
+            "id": "Idle"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "delta_count": 1
+        },
+        "preview_mermaid": "graph TD\n    Idle[\"Idle\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "工程师张",
+        "content": "同意。我们把初始状态定义为idle，这是整个状态机的入口点。现在系统有一个节点idle，0条边。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Stage 1 creates idle node. Turns 1-2 discuss establishing idle as starting point, Turn 3 confirms idle as entry point with 0 edges.",
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2130.1994,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "工程师李",
+        "content": "接下来我们需要定义主要的操作容器。当模块加载后，系统应该进入loaded状态，这样才能进行后续的工业操作。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Stage 2 adds loaded node and 3 edges. Turn 4 introduces loaded state concept, Turn 5 adds LOAD edge (e1), Turn 6 adds self-loop (e2) and UNLOAD edge (e32), Turn 7 summarizes 2 nodes 3 edges, Turn 8 transitions to next stage discussion.",
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2104.7051,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "loaded",
+            "label": "loaded",
+            "kind": "state",
+            "id": "loaded"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 2/5, adds 1 nodes, 0 edges, current state now contains 2 nodes and 0 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 9446.7788,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 2,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"loaded\",\n      \"label\": \"loaded\",\n      \"kind\": \"state\"\n    }\n  ],\n  \"notes\": \"Stage 2/5, adds 1 nodes, 0 edges, current state now contains 2 nodes and 0 edges\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "loaded",
+            "label": "loaded",
+            "kind": "state",
+            "id": "loaded"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "loaded"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 2,
+          "edge_count": 3,
+          "group_count": 0,
+          "delta_count": 4
+        },
+        "preview_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "loaded"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "工程师张",
+        "content": "对。从idle到loaded需要一个LOAD转换，并且携带IoT_Industrial_EdgeNode的上下文信息，表示通过边缘节点进行加载。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Stage 2 adds loaded node and 3 edges. Turn 4 introduces loaded state concept, Turn 5 adds LOAD edge (e1), Turn 6 adds self-loop (e2) and UNLOAD edge (e32), Turn 7 summarizes 2 nodes 3 edges, Turn 8 transitions to next stage discussion.",
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2154.7585,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "loaded"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "工程师李",
+        "content": "loaded状态本身还需要一个自循环的LOAD边，允许重新加载或刷新已加载的模块。另外，从loaded也应该能通过UNLOAD返回idle进行清理。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Stage 2 adds loaded node and 3 edges. Turn 4 introduces loaded state concept, Turn 5 adds LOAD edge (e1), Turn 6 adds self-loop (e2) and UNLOAD edge (e32), Turn 7 summarizes 2 nodes 3 edges, Turn 8 transitions to next stage discussion.",
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2117.1534,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "loaded"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 7,
+        "speaker": "工程师张",
+        "content": "现在我们有2个节点和3条边了。主干架构已经建立：idle是起点，loaded是操作容器，它们之间通过LOAD和UNLOAD转换连接。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Stage 2 adds loaded node and 3 edges. Turn 4 introduces loaded state concept, Turn 5 adds LOAD edge (e1), Turn 6 adds self-loop (e2) and UNLOAD edge (e32), Turn 7 summarizes 2 nodes 3 edges, Turn 8 transitions to next stage discussion.",
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2135.4558,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "loaded"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 8,
+        "speaker": "工程师李",
+        "content": "下一步应该添加实时监控的能力。tracking状态可以处理实时遥测数据跟踪和内部状态管理操作。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Stage 2 adds loaded node and 3 edges. Turn 4 introduces loaded state concept, Turn 5 adds LOAD edge (e1), Turn 6 adds self-loop (e2) and UNLOAD edge (e32), Turn 7 summarizes 2 nodes 3 edges, Turn 8 transitions to next stage discussion.",
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2128.7131,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "loaded"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 9,
+        "speaker": "工程师张",
+        "content": "从loaded到tracking需要一个START转换，配合IoT_Industrial_PLC_Logic上下文，启动PLC逻辑控制。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Stage 3 adds tracking node and 11 edges. Turn 8 initiates tracking concept (boundary overlap), Turn 9 adds START edge (e6), Turn 10-11 add self-loop edges (e7-e11), Turn 12-13 add IMPORT edges (e12, e13), Turn 14-15 add RESET (e27), LOAD (implied), and UNLOAD edge (e33). Turn 16 wraps up tracking with 3 nodes 14 edges.",
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2118.9485,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "loaded"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]"
+      },
+      "planner": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "tracking",
+            "label": "tracking",
+            "kind": "state",
+            "id": "tracking"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 3/5, adds 1 nodes, 6 edges, current state now contains 3 nodes and 6 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 41782.1748,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 3,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"tracking\",\n      \"label\": \"tracking\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e1\",\n      \"source\": \"Idle\",\n      \"target\": \"loaded\",\n      \"label\": \"LOAD [IoT_Industrial_EdgeNode]\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e2\",\n      \"source\": \"loaded\",\n  ",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "tracking",
+            "label": "tracking",
+            "kind": "state",
+            "id": "tracking"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "loaded",
+            "tracking"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 3,
+          "edge_count": 14,
+          "group_count": 0,
+          "delta_count": 12
+        },
+        "preview_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]\n    tracking[\"tracking\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "loaded",
+            "tracking"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]\n    tracking[\"tracking\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 10,
+        "speaker": "工程师李",
+        "content": "tracking状态内部还需要多个自循环操作：STATE用于内部状态检查，TRANSITION用于状态转换监控，GATE用于门控条件管理。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Stage 3 adds tracking node and 11 edges. Turn 8 initiates tracking concept (boundary overlap), Turn 9 adds START edge (e6), Turn 10-11 add self-loop edges (e7-e11), Turn 12-13 add IMPORT edges (e12, e13), Turn 14-15 add RESET (e27), LOAD (implied), and UNLOAD edge (e33). Turn 16 wraps up tracking with 3 nodes 14 edges.",
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2110.1074,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "loaded",
+            "tracking"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]\n    tracking[\"tracking\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 11,
+        "speaker": "工程师张",
+        "content": "还有ACTION和EVENT，分别用于内部动作执行和事件处理。这些都是tracking状态的自我操作能力。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Stage 3 adds tracking node and 11 edges. Turn 8 initiates tracking concept (boundary overlap), Turn 9 adds START edge (e6), Turn 10-11 add self-loop edges (e7-e11), Turn 12-13 add IMPORT edges (e12, e13), Turn 14-15 add RESET (e27), LOAD (implied), and UNLOAD edge (e33). Turn 16 wraps up tracking with 3 nodes 14 edges.",
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2096.6432,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "loaded",
+            "tracking"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]\n    tracking[\"tracking\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 12,
+        "speaker": "工程师李",
+        "content": "tracking还需要导入功能。通过IMPORT操作，可以从loaded状态导入IoT_Industrial_ActuatorController，执行器控制器。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Stage 3 adds tracking node and 11 edges. Turn 8 initiates tracking concept (boundary overlap), Turn 9 adds START edge (e6), Turn 10-11 add self-loop edges (e7-e11), Turn 12-13 add IMPORT edges (e12, e13), Turn 14-15 add RESET (e27), LOAD (implied), and UNLOAD edge (e33). Turn 16 wraps up tracking with 3 nodes 14 edges.",
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2094.5649,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "loaded",
+            "tracking"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]\n    tracking[\"tracking\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 13,
+        "speaker": "工程师张",
+        "content": "也可以在tracking内部通过IMPORT导入IoT_Industrial_TelemetryStream，遥测数据流。这样就能持续接收传感器数据了。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Stage 3 adds tracking node and 11 edges. Turn 8 initiates tracking concept (boundary overlap), Turn 9 adds START edge (e6), Turn 10-11 add self-loop edges (e7-e11), Turn 12-13 add IMPORT edges (e12, e13), Turn 14-15 add RESET (e27), LOAD (implied), and UNLOAD edge (e33). Turn 16 wraps up tracking with 3 nodes 14 edges.",
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2105.6323,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "loaded",
+            "tracking"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]\n    tracking[\"tracking\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 14,
+        "speaker": "工程师李",
+        "content": "tracking状态还需要退出路径。RESET可以返回loaded状态重新配置，UNLOAD可以直接返回idle进行完全清理。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Stage 3 adds tracking node and 11 edges. Turn 8 initiates tracking concept (boundary overlap), Turn 9 adds START edge (e6), Turn 10-11 add self-loop edges (e7-e11), Turn 12-13 add IMPORT edges (e12, e13), Turn 14-15 add RESET (e27), LOAD (implied), and UNLOAD edge (e33). Turn 16 wraps up tracking with 3 nodes 14 edges.",
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2090.6036,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "loaded",
+            "tracking"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]\n    tracking[\"tracking\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 15,
+        "speaker": "工程师张",
+        "content": "tracking到loaded还有一个LOAD边，可以将跟踪数据加载回来。当前已经有3个节点和14条边了。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Stage 3 adds tracking node and 11 edges. Turn 8 initiates tracking concept (boundary overlap), Turn 9 adds START edge (e6), Turn 10-11 add self-loop edges (e7-e11), Turn 12-13 add IMPORT edges (e12, e13), Turn 14-15 add RESET (e27), LOAD (implied), and UNLOAD edge (e33). Turn 16 wraps up tracking with 3 nodes 14 edges.",
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2115.3245,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "loaded",
+            "tracking"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]\n    tracking[\"tracking\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 16,
+        "speaker": "工程师李",
+        "content": "现在我们有了实时监控层。接下来需要添加数据分析能力，analyzing状态可以将原始遥测转化为有价值的洞察。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Stage 3 adds tracking node and 11 edges. Turn 8 initiates tracking concept (boundary overlap), Turn 9 adds START edge (e6), Turn 10-11 add self-loop edges (e7-e11), Turn 12-13 add IMPORT edges (e12, e13), Turn 14-15 add RESET (e27), LOAD (implied), and UNLOAD edge (e33). Turn 16 wraps up tracking with 3 nodes 14 edges.",
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2094.9886,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "loaded",
+            "tracking"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]\n    tracking[\"tracking\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 17,
+        "speaker": "工程师张",
+        "content": "从tracking到analyzing通过ANALYZE转换，配合PLC逻辑上下文进行分析处理。loaded也可以直接跳转analyzing进行快速分析。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Stage 4 adds analyzing node and 6 edges. Turn 16 introduces analyzing state, Turn 17 adds ANALYZE edges (e14, e15), Turn 18 adds RESET/UNLOAD/LOAD edges (e4, e28, e34), Turn 19 adds BACK edge (e30) with 4 nodes 20 edges summary.",
+          "stage_name": "Resolve Conditions"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2088.865,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "loaded",
+            "tracking"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]\n    tracking[\"tracking\"]"
+      },
+      "planner": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "analyzing",
+            "label": "analyzing",
+            "kind": "state",
+            "id": "analyzing"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 4/5, adds 1 nodes, 16 edges, current state now contains 4 nodes and 16 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 89098.5613,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 4,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"analyzing\",\n      \"label\": \"analyzing\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e1\",\n      \"source\": \"Idle\",\n      \"target\": \"loaded\",\n      \"label\": \"LOAD [IoT_Industrial_EdgeNode]\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e2\",\n      \"source\": \"loaded\",\n",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "analyzing",
+            "label": "analyzing",
+            "kind": "state",
+            "id": "analyzing"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "loaded",
+            "tracking",
+            "analyzing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 4,
+          "edge_count": 20,
+          "group_count": 0,
+          "delta_count": 7
+        },
+        "preview_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]\n    tracking[\"tracking\"]\n    analyzing[\"analyzing\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "loaded",
+            "tracking",
+            "analyzing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]\n    tracking[\"tracking\"]\n    analyzing[\"analyzing\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 18,
+        "speaker": "工程师李",
+        "content": "analyzing状态也需要RESET返回loaded，以及UNLOAD直接到idle的清理路径。还有LOAD边可以加载分析结果回loaded状态。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Stage 4 adds analyzing node and 6 edges. Turn 16 introduces analyzing state, Turn 17 adds ANALYZE edges (e14, e15), Turn 18 adds RESET/UNLOAD/LOAD edges (e4, e28, e34), Turn 19 adds BACK edge (e30) with 4 nodes 20 edges summary.",
+          "stage_name": "Resolve Conditions"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2173.5883,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 5,\n  \"reason\": \"waiting for stage 5 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "loaded",
+            "tracking",
+            "analyzing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]\n    tracking[\"tracking\"]\n    analyzing[\"analyzing\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 19,
+        "speaker": "工程师张",
+        "content": "analyzing提供了回退能力，BACK操作可以导航回tracking状态，方便检查原始数据。系统现在有4个节点和20条边。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Stage 4 adds analyzing node and 6 edges. Turn 16 introduces analyzing state, Turn 17 adds ANALYZE edges (e14, e15), Turn 18 adds RESET/UNLOAD/LOAD edges (e4, e28, e34), Turn 19 adds BACK edge (e30) with 4 nodes 20 edges summary.",
+          "stage_name": "Resolve Conditions"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2154.0177,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 5,\n  \"reason\": \"waiting for stage 5 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "loaded",
+            "tracking",
+            "analyzing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]\n    tracking[\"tracking\"]\n    analyzing[\"analyzing\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 20,
+        "speaker": "工程师李",
+        "content": "很好。现在需要添加报表生成功能，reporting状态作为最终输出层，汇总分析结果并导出。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Stage 4 adds analyzing node and 6 edges. Turn 16 introduces analyzing state, Turn 17 adds ANALYZE edges (e14, e15), Turn 18 adds RESET/UNLOAD/LOAD edges (e4, e28, e34), Turn 19 adds BACK edge (e30) with 4 nodes 20 edges summary.",
+          "stage_name": "Resolve Conditions"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2155.8402,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 5,\n  \"reason\": \"waiting for stage 5 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "loaded",
+            "tracking",
+            "analyzing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]\n    tracking[\"tracking\"]\n    analyzing[\"analyzing\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 21,
+        "speaker": "工程师张",
+        "content": "从analyzing到reporting有多种报表生成方式：通过EdgeNode生成SUMMARY或DETAILED报告，通过ActuatorController生成GAP分析报告。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Stage 4 adds analyzing node and 6 edges. Turn 16 introduces analyzing state, Turn 17 adds ANALYZE edges (e14, e15), Turn 18 adds RESET/UNLOAD/LOAD edges (e4, e28, e34), Turn 19 adds BACK edge (e30) with 4 nodes 20 edges summary.",
+          "stage_name": "Resolve Conditions"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2165.4799,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 5,\n  \"reason\": \"waiting for stage 5 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "loaded",
+            "tracking",
+            "analyzing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]\n    tracking[\"tracking\"]\n    analyzing[\"analyzing\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 22,
+        "speaker": "工程师李",
+        "content": "还有通过TelemetryStream生成ALL_REPORTS全量报告。analyzing也可以直接EXPORT_HTML或EXPORT_JSON到reporting状态。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Stage 4 adds analyzing node and 6 edges. Turn 16 introduces analyzing state, Turn 17 adds ANALYZE edges (e14, e15), Turn 18 adds RESET/UNLOAD/LOAD edges (e4, e28, e34), Turn 19 adds BACK edge (e30) with 4 nodes 20 edges summary.",
+          "stage_name": "Resolve Conditions"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2118.7544,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 5,\n  \"reason\": \"waiting for stage 5 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "loaded",
+            "tracking",
+            "analyzing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]\n    tracking[\"tracking\"]\n    analyzing[\"analyzing\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 23,
+        "speaker": "工程师张",
+        "content": "reporting状态内部也有多种操作能力：EXPORT_HTML和EXPORT_JSON支持多种IoT上下文的自循环导出。",
+        "stage_index": 5,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Stage 5 adds reporting node and 15 edges. Turn 20 introduces reporting state, Turns 21-22 add SUMMARY/DETAILED/GAP/ALL_REPORTS edges (e16-e19), Turns 23-24 add EXPORT and internal report edges (e20-e26), Turn 25 adds RESET/BACK/UNLOAD edges (e29, e31, e35), Turn 26 adds LOAD edge (e5) with 5 nodes 35 edges summary, Turns 27-28 complete lifecycle summary.",
+          "stage_name": "Finalize Surface Details"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2150.5077,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 5,\n  \"reason\": \"waiting for stage 5 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "loaded",
+            "tracking",
+            "analyzing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]\n    tracking[\"tracking\"]\n    analyzing[\"analyzing\"]"
+      },
+      "planner": {
+        "target_stage_index": 5,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "reporting",
+            "label": "reporting",
+            "kind": "state",
+            "id": "reporting"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 5/5, adds 1 nodes, 9 edges, current state now contains 5 nodes and 29 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 54739.9201,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 5,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"reporting\",\n      \"label\": \"reporting\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e23\",\n      \"source\": \"analyzing\",\n      \"target\": \"reporting\",\n      \"label\": \"SUMMARY [IoT_Industrial_EdgeNode]\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e24\",\n      \"source",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 5,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "reporting",
+            "label": "reporting",
+            "kind": "state",
+            "id": "reporting"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "loaded",
+            "tracking",
+            "analyzing",
+            "reporting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 5,
+          "edge_count": 35,
+          "group_count": 0,
+          "delta_count": 16
+        },
+        "preview_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]\n    tracking[\"tracking\"]\n    analyzing[\"analyzing\"]\n    reporting[\"reporting\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 5,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "loaded",
+            "tracking",
+            "analyzing",
+            "reporting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]\n    tracking[\"tracking\"]\n    analyzing[\"analyzing\"]\n    reporting[\"reporting\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 24,
+        "speaker": "工程师李",
+        "content": "内部还可以生成各类报告：SUMMARY、DETAILED、GAP都支持自循环操作，通过PLC_Logic、EdgeNode等不同上下文执行。",
+        "stage_index": 5,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Stage 5 adds reporting node and 15 edges. Turn 20 introduces reporting state, Turns 21-22 add SUMMARY/DETAILED/GAP/ALL_REPORTS edges (e16-e19), Turns 23-24 add EXPORT and internal report edges (e20-e26), Turn 25 adds RESET/BACK/UNLOAD edges (e29, e31, e35), Turn 26 adds LOAD edge (e5) with 5 nodes 35 edges summary, Turns 27-28 complete lifecycle summary.",
+          "stage_name": "Finalize Surface Details"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 5,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "loaded",
+            "tracking",
+            "analyzing",
+            "reporting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]\n    tracking[\"tracking\"]\n    analyzing[\"analyzing\"]\n    reporting[\"reporting\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 25,
+        "speaker": "工程师张",
+        "content": "reporting状态也有完整的退出路径：RESET返回loaded，BACK返回analyzing，UNLOAD直接到idle进行清理。",
+        "stage_index": 5,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Stage 5 adds reporting node and 15 edges. Turn 20 introduces reporting state, Turns 21-22 add SUMMARY/DETAILED/GAP/ALL_REPORTS edges (e16-e19), Turns 23-24 add EXPORT and internal report edges (e20-e26), Turn 25 adds RESET/BACK/UNLOAD edges (e29, e31, e35), Turn 26 adds LOAD edge (e5) with 5 nodes 35 edges summary, Turns 27-28 complete lifecycle summary.",
+          "stage_name": "Finalize Surface Details"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 5,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "loaded",
+            "tracking",
+            "analyzing",
+            "reporting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]\n    tracking[\"tracking\"]\n    analyzing[\"analyzing\"]\n    reporting[\"reporting\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 26,
+        "speaker": "工程师李",
+        "content": "reporting还有LOAD边可以将报表数据加载回loaded状态。整个IoT状态机现在已经完整了，包含5个状态节点和35条转换边。",
+        "stage_index": 5,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Stage 5 adds reporting node and 15 edges. Turn 20 introduces reporting state, Turns 21-22 add SUMMARY/DETAILED/GAP/ALL_REPORTS edges (e16-e19), Turns 23-24 add EXPORT and internal report edges (e20-e26), Turn 25 adds RESET/BACK/UNLOAD edges (e29, e31, e35), Turn 26 adds LOAD edge (e5) with 5 nodes 35 edges summary, Turns 27-28 complete lifecycle summary.",
+          "stage_name": "Finalize Surface Details"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 5,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "loaded",
+            "tracking",
+            "analyzing",
+            "reporting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]\n    tracking[\"tracking\"]\n    analyzing[\"analyzing\"]\n    reporting[\"reporting\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 27,
+        "speaker": "工程师张",
+        "content": "完整生命周期是从idle开始，经过loaded加载模块，然后tracking进行实时监控，再到analyzing数据分析，最后reporting生成报表输出。",
+        "stage_index": 5,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Stage 5 adds reporting node and 15 edges. Turn 20 introduces reporting state, Turns 21-22 add SUMMARY/DETAILED/GAP/ALL_REPORTS edges (e16-e19), Turns 23-24 add EXPORT and internal report edges (e20-e26), Turn 25 adds RESET/BACK/UNLOAD edges (e29, e31, e35), Turn 26 adds LOAD edge (e5) with 5 nodes 35 edges summary, Turns 27-28 complete lifecycle summary.",
+          "stage_name": "Finalize Surface Details"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 5,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "loaded",
+            "tracking",
+            "analyzing",
+            "reporting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]\n    tracking[\"tracking\"]\n    analyzing[\"analyzing\"]\n    reporting[\"reporting\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 28,
+        "speaker": "工程师李",
+        "content": "每个状态都有RESET和UNLOAD路径确保系统可以从任何点返回初始状态或进行清理。这个工业物联网状态机设计完成了。",
+        "stage_index": 5,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Stage 5 adds reporting node and 15 edges. Turn 20 introduces reporting state, Turns 21-22 add SUMMARY/DETAILED/GAP/ALL_REPORTS edges (e16-e19), Turns 23-24 add EXPORT and internal report edges (e20-e26), Turn 25 adds RESET/BACK/UNLOAD edges (e29, e31, e35), Turn 26 adds LOAD edge (e5) with 5 nodes 35 edges summary, Turns 27-28 complete lifecycle summary.",
+          "stage_name": "Finalize Surface Details"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 5,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "loaded",
+            "tracking",
+            "analyzing",
+            "reporting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    loaded[\"loaded\"]\n    tracking[\"tracking\"]\n    analyzing[\"analyzing\"]\n    reporting[\"reporting\"]"
+      }
+    }
+  ]
+}

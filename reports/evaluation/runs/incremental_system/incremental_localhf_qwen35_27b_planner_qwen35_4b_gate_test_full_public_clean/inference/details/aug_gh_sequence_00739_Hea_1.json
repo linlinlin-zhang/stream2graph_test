@@ -1,0 +1,527 @@
+{
+  "sample_id": "aug_gh_sequence_00739_Hea_1",
+  "diagram_type": "sequence",
+  "generated_at_utc": "2026-03-24T11:15:56Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 7,
+    "total_stages": 1,
+    "updates_emitted": 1,
+    "final_stage_index": 1,
+    "applied_stage_indices": [
+      1
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 4,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "A",
+        "S1",
+        "S2",
+        "B"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    },
+    "reference_graph_metrics": {
+      "node_count": 6,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "User",
+        "Client",
+        "MatrixServer",
+        "Federation",
+        "Recipient",
+        "Database"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    }
+  },
+  "final_state": {
+    "sample_id": "aug_gh_sequence_00739_Hea_1",
+    "diagram_type": "sequence",
+    "current_stage_index": 1,
+    "current_graph_ir": {
+      "graph_id": "aug_gh_sequence_00739_Hea_1",
+      "diagram_type": "sequence",
+      "nodes": [
+        {
+          "id": "A",
+          "label": "Alice",
+          "kind": "participant",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "S1",
+          "label": "Server A",
+          "kind": "participant",
+          "parent": null,
+          "source_index": 3,
+          "metadata": {}
+        },
+        {
+          "id": "S2",
+          "label": "Server B",
+          "kind": "participant",
+          "parent": null,
+          "source_index": 4,
+          "metadata": {}
+        },
+        {
+          "id": "B",
+          "label": "Bob",
+          "kind": "participant",
+          "parent": null,
+          "source_index": 5,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    A[\"Alice\"]\n    S1[\"Server A\"]\n    S2[\"Server B\"]\n    B[\"Bob\"]",
+    "applied_stage_indices": [
+      1
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 4,
+        "edge_count": 0,
+        "group_count": 0,
+        "node_ids": [
+          "A",
+          "S1",
+          "S2",
+          "B"
+        ],
+        "edge_ids": [],
+        "group_ids": []
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "collaborator",
+        "content": "好的，我们现在开始构建一个Matrix联邦通信的序列图。首先，我需要帮你初始化所有参与这个通信流程的参与者（Participant）。这些参与者构成了整个序列图的基础角色。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2126.9464,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "A",
+            "label": "Alice",
+            "kind": "participant",
+            "id": "A"
+          },
+          {
+            "op": "add_node",
+            "node_id": "S1",
+            "label": "Server A",
+            "kind": "participant",
+            "id": "S1"
+          },
+          {
+            "op": "add_node",
+            "node_id": "S2",
+            "label": "Server B",
+            "kind": "participant",
+            "id": "S2"
+          },
+          {
+            "op": "add_node",
+            "node_id": "B",
+            "label": "Bob",
+            "kind": "participant",
+            "id": "B"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 1/1, adds 4 nodes, 0 edges, current state now contains 4 nodes and 0 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 21092.3436,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"A\",\n      \"label\": \"Alice\",\n      \"kind\": \"participant\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"S1\",\n      \"label\": \"Server A\",\n      \"kind\": \"participant\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"S2\",\n      \"label\": \"Server B\",\n      \"kind\": \"participant\"\n    },\n    {\n      \"",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "A",
+            "label": "Alice",
+            "kind": "participant",
+            "id": "A"
+          },
+          {
+            "op": "add_node",
+            "node_id": "S1",
+            "label": "Server A",
+            "kind": "participant",
+            "id": "S1"
+          },
+          {
+            "op": "add_node",
+            "node_id": "S2",
+            "label": "Server B",
+            "kind": "participant",
+            "id": "S2"
+          },
+          {
+            "op": "add_node",
+            "node_id": "B",
+            "label": "Bob",
+            "kind": "participant",
+            "id": "B"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "A",
+            "S1",
+            "S2",
+            "B"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "delta_count": 6
+        },
+        "preview_mermaid": "graph TD\n    A[\"Alice\"]\n    S1[\"Server A\"]\n    S2[\"Server B\"]\n    B[\"Bob\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "A",
+            "S1",
+            "S2",
+            "B"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    A[\"Alice\"]\n    S1[\"Server A\"]\n    S2[\"Server B\"]\n    B[\"Bob\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "user",
+        "content": "好的，请告诉我有哪些参与者需要初始化？",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "A",
+            "S1",
+            "S2",
+            "B"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    A[\"Alice\"]\n    S1[\"Server A\"]\n    S2[\"Server B\"]\n    B[\"Bob\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "collaborator",
+        "content": "根据Matrix联邦通信的标准架构，我们需要初始化6个参与者。让我逐一介绍：第一个是User，这是整个通信流程的发起者；第二个是Client，作为中介协调各方通信；第三个是MatrixServer，即Matrix homeserver，负责消息路由和存储；第四个是Federation，用于与其他Matrix服务器进行跨域通信；第五个是Recipient，作为消息的接收目标方；第六个是Database，负责持久化存储消息和用户数据。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "A",
+            "S1",
+            "S2",
+            "B"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    A[\"Alice\"]\n    S1[\"Server A\"]\n    S2[\"Server B\"]\n    B[\"Bob\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "user",
+        "content": "明白了。这6个参与者涵盖了Matrix通信的完整链路，从用户发起、客户端处理、服务器转发、联邦交换、到最终接收和存储。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "A",
+            "S1",
+            "S2",
+            "B"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    A[\"Alice\"]\n    S1[\"Server A\"]\n    S2[\"Server B\"]\n    B[\"Bob\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "collaborator",
+        "content": "完全正确。现在这6个参与者已经全部初始化完成，它们分别是：User（发起者）、Client（中介）、MatrixServer（服务器）、Federation（外部系统）、Recipient（目标）和Database（持久化层）。当前状态为6个节点，0条消息边。接下来我们可以开始定义这些参与者之间的消息交互流程了。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "A",
+            "S1",
+            "S2",
+            "B"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    A[\"Alice\"]\n    S1[\"Server A\"]\n    S2[\"Server B\"]\n    B[\"Bob\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "user",
+        "content": "好的，我已经准备好定义消息交换了。请引导我开始描述Client和MatrixServer之间的通信流程。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "A",
+            "S1",
+            "S2",
+            "B"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    A[\"Alice\"]\n    S1[\"Server A\"]\n    S2[\"Server B\"]\n    B[\"Bob\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 7,
+        "speaker": "collaborator",
+        "content": "很好，现在所有基础参与者已经就位。在进入消息流程定义之前，让我确认一下当前的参与者列表是否完整准确：User、Client、MatrixServer、Federation、Recipient和Database。如果确认无误，我们就可以开始添加消息边了。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "A",
+            "S1",
+            "S2",
+            "B"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    A[\"Alice\"]\n    S1[\"Server A\"]\n    S2[\"Server B\"]\n    B[\"Bob\"]"
+      }
+    }
+  ]
+}

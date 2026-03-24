@@ -1,0 +1,1379 @@
+{
+  "sample_id": "aug_gh_architecture_01521_IoT_2",
+  "diagram_type": "architecture",
+  "generated_at_utc": "2026-03-24T10:34:05Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 20,
+    "total_stages": 3,
+    "updates_emitted": 3,
+    "final_stage_index": 3,
+    "applied_stage_indices": [
+      1,
+      2,
+      3
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 4,
+      "edge_count": 0,
+      "group_count": 3,
+      "node_ids": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "edge_ids": [],
+      "group_ids": [
+        "DEV",
+        "ENV",
+        "CI"
+      ]
+    },
+    "reference_graph_metrics": {
+      "node_count": 5,
+      "edge_count": 0,
+      "group_count": 3,
+      "node_ids": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "edge_ids": [],
+      "group_ids": [
+        "DEV",
+        "CI",
+        "ENV"
+      ]
+    }
+  },
+  "final_state": {
+    "sample_id": "aug_gh_architecture_01521_IoT_2",
+    "diagram_type": "architecture",
+    "current_stage_index": 3,
+    "current_graph_ir": {
+      "graph_id": "aug_gh_architecture_01521_IoT_2",
+      "diagram_type": "architecture",
+      "nodes": [
+        {
+          "id": "A",
+          "label": "IoT_Industrial_MQTT_Broker",
+          "kind": "node",
+          "parent": null,
+          "source_index": 3,
+          "metadata": {}
+        },
+        {
+          "id": "B",
+          "label": "IoT_Industrial_MQTT_Broker",
+          "kind": "node",
+          "parent": null,
+          "source_index": 4,
+          "metadata": {}
+        },
+        {
+          "id": "C",
+          "label": "IoT_Industrial_MQTT_Broker",
+          "kind": "node",
+          "parent": null,
+          "source_index": 6,
+          "metadata": {}
+        },
+        {
+          "id": "D",
+          "label": "IoT_Industrial_PLC_Logic",
+          "kind": "node",
+          "parent": null,
+          "source_index": 7,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [
+        {
+          "id": "DEV",
+          "label": "IoT_Industrial_TelemetryStream",
+          "parent": null,
+          "member_ids": [],
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "ENV",
+          "label": "IoT_Industrial_TelemetryStream",
+          "parent": null,
+          "member_ids": [],
+          "source_index": 3,
+          "metadata": {}
+        },
+        {
+          "id": "CI",
+          "label": "IoT_Industrial_MQTT_Broker",
+          "parent": null,
+          "member_ids": [],
+          "source_index": 5,
+          "metadata": {}
+        }
+      ],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    A[\"IoT_Industrial_MQTT_Broker\"]\n    B[\"IoT_Industrial_MQTT_Broker\"]\n    C[\"IoT_Industrial_MQTT_Broker\"]\n    D[\"IoT_Industrial_PLC_Logic\"]",
+    "applied_stage_indices": [
+      1,
+      2,
+      3
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 4,
+        "edge_count": 0,
+        "group_count": 3,
+        "node_ids": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "edge_ids": [],
+        "group_ids": [
+          "DEV",
+          "ENV",
+          "CI"
+        ]
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "架构师",
+        "content": "各位好，今天我们开始部署IoT工业监控架构的基础设施。首先需要建立两个核心组织结构，用于分类管理不同的功能组件。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2129.8554,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "工程师A",
+        "content": "明白，我建议先创建DEV组，用于存放遥测数据流相关的组件，这样开发环境可以有独立的命名空间。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2135.7751,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "DEV",
+            "label": "IoT_Industrial_TelemetryStream",
+            "id": "DEV"
+          },
+          {
+            "op": "add_group",
+            "group_id": "ENV",
+            "label": "IoT_Industrial_TelemetryStream",
+            "id": "ENV"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 1/3, adds 0 nodes, 0 edges, 2 groups, current state now contains 0 nodes and 0 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 13410.5079,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_group\",\n      \"group_id\": \"DEV\",\n      \"label\": \"IoT_Industrial_TelemetryStream\"\n    },\n    {\n      \"op\": \"add_group\",\n      \"group_id\": \"ENV\",\n      \"label\": \"IoT_Industrial_TelemetryStream\"\n    }\n  ],\n  \"notes\": \"Stage 1/3, adds 0 nodes, 0 edges, 2 groups, current state now contains 0 nodes and 0 edges\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "DEV",
+            "label": "IoT_Industrial_TelemetryStream",
+            "id": "DEV"
+          },
+          {
+            "op": "add_group",
+            "group_id": "ENV",
+            "label": "IoT_Industrial_TelemetryStream",
+            "id": "ENV"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": [
+            "DEV",
+            "ENV"
+          ]
+        },
+        "gold_stage_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 2,
+          "delta_count": 4
+        },
+        "preview_mermaid": "graph TD",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": [
+            "DEV",
+            "ENV"
+          ]
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "架构师",
+        "content": "很好，DEV组专门负责遥测数据流。同时我们还需要一个CI组，用于管理MQTT消息代理的核心基础设施。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2113.2405,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": [
+            "DEV",
+            "ENV"
+          ]
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "工程师B",
+        "content": "收到，我来创建CI组，这个组将承载IoT工业MQTT消息代理的所有组件，确保集成环境有独立的资源池。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2087.1406,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": [
+            "DEV",
+            "ENV"
+          ]
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "架构师",
+        "content": "组织结构已建立，现在我们需要在CI组下部署第一个核心MQTT代理节点。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2108.0244,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": [
+            "DEV",
+            "ENV"
+          ]
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "工程师A",
+        "content": "我来添加节点A，作为IoT工业MQTT代理，这是整个通信架构的中央枢纽，负责设备间的消息传递。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2097.9552,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": [
+            "DEV",
+            "ENV"
+          ]
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 7,
+        "speaker": "架构师",
+        "content": "节点A已就位。为了保证高可用性，我们需要部署第二个MQTT代理节点作为冗余备份。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2132.2169,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": [
+            "DEV",
+            "ENV"
+          ]
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 8,
+        "speaker": "工程师B",
+        "content": "明白，添加节点B，同样是IoT工业MQTT代理，与节点A形成主备架构，确保通信链路的可靠性。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2143.2862,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": [
+            "DEV",
+            "ENV"
+          ]
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 9,
+        "speaker": "架构师",
+        "content": "核心基础设施Bootstrap完成，现在进入第二阶段，我们需要扩展MQTT代理的容量并引入工业控制组件。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2121.1736,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": [
+            "DEV",
+            "ENV"
+          ]
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "CI",
+            "label": "IoT_Industrial_MQTT_Broker",
+            "id": "CI"
+          },
+          {
+            "op": "add_node",
+            "node_id": "A",
+            "label": "IoT_Industrial_MQTT_Broker",
+            "kind": "node",
+            "id": "A"
+          },
+          {
+            "op": "add_node",
+            "node_id": "B",
+            "label": "IoT_Industrial_MQTT_Broker",
+            "kind": "node",
+            "id": "B"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 2/3, adds 2 nodes, 0 edges, 1 groups, current state now contains 2 nodes and 0 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 18929.2641,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 2,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_group\",\n      \"group_id\": \"CI\",\n      \"label\": \"IoT_Industrial_MQTT_Broker\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"A\",\n      \"label\": \"IoT_Industrial_MQTT_Broker\",\n      \"kind\": \"node\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"B\",\n      \"label\": \"IoT_Industrial_MQTT_Broker\",\n      \"kind\": \"node\"\n    }",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "CI",
+            "label": "IoT_Industrial_MQTT_Broker",
+            "id": "CI"
+          },
+          {
+            "op": "add_node",
+            "node_id": "A",
+            "label": "IoT_Industrial_MQTT_Broker",
+            "kind": "node",
+            "id": "A"
+          },
+          {
+            "op": "add_node",
+            "node_id": "B",
+            "label": "IoT_Industrial_MQTT_Broker",
+            "kind": "node",
+            "id": "B"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "A",
+            "B"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "DEV",
+            "ENV",
+            "CI"
+          ]
+        },
+        "gold_stage_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 2,
+          "delta_count": 2
+        },
+        "preview_mermaid": "graph TD\n    A[\"IoT_Industrial_MQTT_Broker\"]\n    B[\"IoT_Industrial_MQTT_Broker\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "A",
+            "B"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "DEV",
+            "ENV",
+            "CI"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    A[\"IoT_Industrial_MQTT_Broker\"]\n    B[\"IoT_Industrial_MQTT_Broker\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 10,
+        "speaker": "技术总监",
+        "content": "随着设备数量的增长，现有两个代理节点可能面临负载压力。建议增加第三个MQTT代理节点来分散流量。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2154.9747,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "A",
+            "B"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "DEV",
+            "ENV",
+            "CI"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    A[\"IoT_Industrial_MQTT_Broker\"]\n    B[\"IoT_Industrial_MQTT_Broker\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 11,
+        "speaker": "工程师A",
+        "content": "同意，我来添加节点C，作为第三个IoT工业MQTT代理，这样可以提升系统的并发处理能力和容错性。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2163.4336,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "A",
+            "B"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "DEV",
+            "ENV",
+            "CI"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    A[\"IoT_Industrial_MQTT_Broker\"]\n    B[\"IoT_Industrial_MQTT_Broker\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 12,
+        "speaker": "架构师",
+        "content": "MQTT容量已扩展。现在我们需要引入工业控制的核心组件，PLC逻辑单元是工厂自动化的关键。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2128.449,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "A",
+            "B"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "DEV",
+            "ENV",
+            "CI"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    A[\"IoT_Industrial_MQTT_Broker\"]\n    B[\"IoT_Industrial_MQTT_Broker\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 13,
+        "speaker": "工程师B",
+        "content": "我来添加节点D，这是IoT工业PLC逻辑组件，负责执行具体的工业控制策略，如设备启停、参数调节等。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2117.6927,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "A",
+            "B"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "DEV",
+            "ENV",
+            "CI"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    A[\"IoT_Industrial_MQTT_Broker\"]\n    B[\"IoT_Industrial_MQTT_Broker\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 14,
+        "speaker": "架构师",
+        "content": "主分支已扩展完成。接下来是最后一个阶段，我们需要建立边缘节点环境，并完善数据采集架构。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2138.1459,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "A",
+            "B"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "DEV",
+            "ENV",
+            "CI"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    A[\"IoT_Industrial_MQTT_Broker\"]\n    B[\"IoT_Industrial_MQTT_Broker\"]"
+      },
+      "planner": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "C",
+            "label": "IoT_Industrial_MQTT_Broker",
+            "kind": "node",
+            "id": "C"
+          },
+          {
+            "op": "add_node",
+            "node_id": "D",
+            "label": "IoT_Industrial_PLC_Logic",
+            "kind": "node",
+            "id": "D"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 3/3, adds 2 nodes, 0 edges, current state now contains 4 nodes and 0 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 14849.3783,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 3,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"C\",\n      \"label\": \"IoT_Industrial_MQTT_Broker\",\n      \"kind\": \"node\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"D\",\n      \"label\": \"IoT_Industrial_PLC_Logic\",\n      \"kind\": \"node\"\n    }\n  ],\n  \"notes\": \"Stage 3/3, adds 2 nodes, 0 edges, current state now contains 4 nodes and 0 edges\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "C",
+            "label": "IoT_Industrial_MQTT_Broker",
+            "kind": "node",
+            "id": "C"
+          },
+          {
+            "op": "add_node",
+            "node_id": "D",
+            "label": "IoT_Industrial_PLC_Logic",
+            "kind": "node",
+            "id": "D"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "DEV",
+            "ENV",
+            "CI"
+          ]
+        },
+        "gold_stage_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 3,
+          "delta_count": 2
+        },
+        "preview_mermaid": "graph TD\n    A[\"IoT_Industrial_MQTT_Broker\"]\n    B[\"IoT_Industrial_MQTT_Broker\"]\n    C[\"IoT_Industrial_MQTT_Broker\"]\n    D[\"IoT_Industrial_PLC_Logic\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "DEV",
+            "ENV",
+            "CI"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    A[\"IoT_Industrial_MQTT_Broker\"]\n    B[\"IoT_Industrial_MQTT_Broker\"]\n    C[\"IoT_Industrial_MQTT_Broker\"]\n    D[\"IoT_Industrial_PLC_Logic\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 15,
+        "speaker": "技术总监",
+        "content": "边缘计算在工业场景中非常重要，建议创建一个ENV组，专门用于部署边缘节点组件，实现数据的本地预处理。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "DEV",
+            "ENV",
+            "CI"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    A[\"IoT_Industrial_MQTT_Broker\"]\n    B[\"IoT_Industrial_MQTT_Broker\"]\n    C[\"IoT_Industrial_MQTT_Broker\"]\n    D[\"IoT_Industrial_PLC_Logic\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 16,
+        "speaker": "工程师A",
+        "content": "好的，我来创建ENV组，标签为IoT工业边缘节点，这将为边缘计算资源提供独立的隔离环境。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "DEV",
+            "ENV",
+            "CI"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    A[\"IoT_Industrial_MQTT_Broker\"]\n    B[\"IoT_Industrial_MQTT_Broker\"]\n    C[\"IoT_Industrial_MQTT_Broker\"]\n    D[\"IoT_Industrial_PLC_Logic\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 17,
+        "speaker": "架构师",
+        "content": "边缘节点环境已建立。现在我们需要在DEV组下添加遥测数据流组件，完善数据采集和传输链路。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "DEV",
+            "ENV",
+            "CI"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    A[\"IoT_Industrial_MQTT_Broker\"]\n    B[\"IoT_Industrial_MQTT_Broker\"]\n    C[\"IoT_Industrial_MQTT_Broker\"]\n    D[\"IoT_Industrial_PLC_Logic\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 18,
+        "speaker": "工程师B",
+        "content": "我来添加节点E，这是IoT工业遥测数据流组件，负责采集传感器数据并将其推送到MQTT代理进行分发。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "DEV",
+            "ENV",
+            "CI"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    A[\"IoT_Industrial_MQTT_Broker\"]\n    B[\"IoT_Industrial_MQTT_Broker\"]\n    C[\"IoT_Industrial_MQTT_Broker\"]\n    D[\"IoT_Industrial_PLC_Logic\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 19,
+        "speaker": "架构师",
+        "content": "整个IoT工业架构已经完整建立。总结一下：我们有DEV组管理遥测数据流，CI组管理三个MQTT代理，ENV组管理边缘节点，PLC逻辑负责控制执行。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "DEV",
+            "ENV",
+            "CI"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    A[\"IoT_Industrial_MQTT_Broker\"]\n    B[\"IoT_Industrial_MQTT_Broker\"]\n    C[\"IoT_Industrial_MQTT_Broker\"]\n    D[\"IoT_Industrial_PLC_Logic\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 20,
+        "speaker": "技术总监",
+        "content": "架构部署完成。这个设计遵循了分层原则，通信层、控制层和边缘计算层相互独立，便于后续的扩展和维护。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "DEV",
+            "ENV",
+            "CI"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    A[\"IoT_Industrial_MQTT_Broker\"]\n    B[\"IoT_Industrial_MQTT_Broker\"]\n    C[\"IoT_Industrial_MQTT_Broker\"]\n    D[\"IoT_Industrial_PLC_Logic\"]"
+      }
+    }
+  ]
+}

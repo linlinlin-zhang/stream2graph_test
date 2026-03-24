@@ -1,0 +1,1422 @@
+{
+  "sample_id": "gh_architecture_01891",
+  "diagram_type": "architecture",
+  "generated_at_utc": "2026-03-24T13:11:48Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 18,
+    "total_stages": 4,
+    "updates_emitted": 4,
+    "final_stage_index": 4,
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 6,
+      "edge_count": 0,
+      "group_count": 3,
+      "node_ids": [
+        "State",
+        "DataLoadingState",
+        "TrainingState",
+        "ValidationState",
+        "DeploymentState",
+        "Context"
+      ],
+      "edge_ids": [],
+      "group_ids": [
+        "States",
+        "Context",
+        "Client"
+      ]
+    },
+    "reference_graph_metrics": {
+      "node_count": 7,
+      "edge_count": 0,
+      "group_count": 3,
+      "node_ids": [
+        "State",
+        "DLS",
+        "TS",
+        "VS",
+        "DS",
+        "CT",
+        "ClientCall"
+      ],
+      "edge_ids": [],
+      "group_ids": [
+        "group_1",
+        "group_2",
+        "group_3"
+      ]
+    }
+  },
+  "final_state": {
+    "sample_id": "gh_architecture_01891",
+    "diagram_type": "architecture",
+    "current_stage_index": 4,
+    "current_graph_ir": {
+      "graph_id": "gh_architecture_01891",
+      "diagram_type": "architecture",
+      "nodes": [
+        {
+          "id": "State",
+          "label": "State",
+          "kind": "node",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "DataLoadingState",
+          "label": "DataLoadingState",
+          "kind": "node",
+          "parent": null,
+          "source_index": 3,
+          "metadata": {}
+        },
+        {
+          "id": "TrainingState",
+          "label": "TrainingState",
+          "kind": "node",
+          "parent": null,
+          "source_index": 6,
+          "metadata": {}
+        },
+        {
+          "id": "ValidationState",
+          "label": "ValidationState",
+          "kind": "node",
+          "parent": null,
+          "source_index": 7,
+          "metadata": {}
+        },
+        {
+          "id": "DeploymentState",
+          "label": "DeploymentState",
+          "kind": "node",
+          "parent": null,
+          "source_index": 10,
+          "metadata": {}
+        },
+        {
+          "id": "Context",
+          "label": "Context",
+          "kind": "node",
+          "parent": null,
+          "source_index": 11,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [
+        {
+          "id": "States",
+          "label": "States",
+          "parent": null,
+          "member_ids": [],
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "Context",
+          "label": "Context",
+          "parent": null,
+          "member_ids": [],
+          "source_index": 4,
+          "metadata": {}
+        },
+        {
+          "id": "Client",
+          "label": "Client",
+          "parent": null,
+          "member_ids": [],
+          "source_index": 6,
+          "metadata": {}
+        }
+      ],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    State[\"State\"]\n    DataLoadingState[\"DataLoadingState\"]\n    TrainingState[\"TrainingState\"]\n    ValidationState[\"ValidationState\"]\n    DeploymentState[\"DeploymentState\"]\n    Context[\"Context\"]",
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 6,
+        "edge_count": 0,
+        "group_count": 3,
+        "node_ids": [
+          "State",
+          "DataLoadingState",
+          "TrainingState",
+          "ValidationState",
+          "DeploymentState",
+          "Context"
+        ],
+        "edge_ids": [],
+        "group_ids": [
+          "States",
+          "Context",
+          "Client"
+        ]
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "系统架构师",
+        "content": "好的，我们现在开始设计这个状态机架构。首先，我需要建立一个核心的抽象层。我先引入一个 States 分组，作为所有状态的容器。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2084.2462,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "初级工程师",
+        "content": "明白，分组可以帮助我们组织相关的组件。那么 States 分组里面应该放什么呢？",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2113.6162,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "States",
+            "label": "States",
+            "id": "States"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 1/4, adds 0 nodes, 0 edges, 1 groups, current state now contains 0 nodes and 0 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 8960.6957,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_group\",\n      \"group_id\": \"group_1\",\n      \"label\": \"States\"\n    }\n  ],\n  \"notes\": \"Stage 1/4, adds 0 nodes, 0 edges, 1 groups, current state now contains 0 nodes and 0 edges\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "States",
+            "label": "States",
+            "id": "States"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": [
+            "States"
+          ]
+        },
+        "gold_stage_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 1,
+          "delta_count": 3
+        },
+        "preview_mermaid": "graph TD",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": [
+            "States"
+          ]
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "系统架构师",
+        "content": "首先，我们需要一个抽象的 State 基类，它代表了状态机中所有状态的通用概念。这个抽象状态定义了状态应该有的基本接口和行为。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2094.9078,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": [
+            "States"
+          ]
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "初级工程师",
+        "content": "抽象基类，这个设计很合理。那具体的状态实现呢？",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2103.5624,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": [
+            "States"
+          ]
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "系统架构师",
+        "content": "从数据加载开始。我们添加 DataLoadingState 作为系统的入口状态。任何流程开始前，都需要先完成数据的加载和准备。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2105.7596,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": [
+            "States"
+          ]
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "技术负责人",
+        "content": "好的，核心骨架已经搭好了。现在系统有了抽象状态的定义和初始的加载状态。接下来应该怎么扩展？",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2093.2503,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": [
+            "States"
+          ]
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "State",
+            "label": "State",
+            "kind": "node",
+            "id": "State"
+          },
+          {
+            "op": "add_node",
+            "node_id": "DataLoadingState",
+            "label": "DataLoadingState",
+            "kind": "node",
+            "id": "DataLoadingState"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 2/4, adds 2 nodes, 0 edges, current state now contains 2 nodes and 0 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 13433.6641,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 2,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"State\",\n      \"label\": \"State\",\n      \"kind\": \"node\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"DataLoadingState\",\n      \"label\": \"DataLoadingState\",\n      \"kind\": \"node\"\n    }\n  ],\n  \"notes\": \"Stage 2/4, adds 2 nodes, 0 edges, current state now contains 2 nodes and 0 edges\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "State",
+            "label": "State",
+            "kind": "node",
+            "id": "State"
+          },
+          {
+            "op": "add_node",
+            "node_id": "DataLoadingState",
+            "label": "DataLoadingState",
+            "kind": "node",
+            "id": "DataLoadingState"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [
+            "State",
+            "DataLoadingState"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "States"
+          ]
+        },
+        "gold_stage_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 1,
+          "delta_count": 2
+        },
+        "preview_mermaid": "graph TD\n    State[\"State\"]\n    DataLoadingState[\"DataLoadingState\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [
+            "State",
+            "DataLoadingState"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "States"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    State[\"State\"]\n    DataLoadingState[\"DataLoadingState\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 7,
+        "speaker": "系统架构师",
+        "content": "现在数据已经准备好了，状态机需要分叉到两个主要的操作路径。我添加 TrainingState，代表模型训练的阶段。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2057.565,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [
+            "State",
+            "DataLoadingState"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "States"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    State[\"State\"]\n    DataLoadingState[\"DataLoadingState\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 8,
+        "speaker": "技术负责人",
+        "content": "训练状态确实很重要，那验证呢？模型训练完成后肯定需要验证。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2068.0537,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [
+            "State",
+            "DataLoadingState"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "States"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    State[\"State\"]\n    DataLoadingState[\"DataLoadingState\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 9,
+        "speaker": "系统架构师",
+        "content": "没错，我再添加一个 ValidationState。所有训练好的模型都需要经过验证来确保质量，这是机器学习流程中不可或缺的一环。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2123.5297,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [
+            "State",
+            "DataLoadingState"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "States"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    State[\"State\"]\n    DataLoadingState[\"DataLoadingState\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 10,
+        "speaker": "技术负责人",
+        "content": "很好，现在我们有了数据加载、训练和验证三个主要状态。这个架构开始变得完整了。还有什么需要补充的吗？",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2165.3311,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [
+            "State",
+            "DataLoadingState"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "States"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    State[\"State\"]\n    DataLoadingState[\"DataLoadingState\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 11,
+        "speaker": "系统架构师",
+        "content": "还需要考虑部署层面的支持。我新增一个 Context 分组，用来存放与运行时环境相关的组件。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2106.6711,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [
+            "State",
+            "DataLoadingState"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "States"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    State[\"State\"]\n    DataLoadingState[\"DataLoadingState\"]"
+      },
+      "planner": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "Context",
+            "label": "Context",
+            "id": "Context"
+          },
+          {
+            "op": "add_node",
+            "node_id": "TrainingState",
+            "label": "TrainingState",
+            "kind": "node",
+            "id": "TrainingState"
+          },
+          {
+            "op": "add_node",
+            "node_id": "ValidationState",
+            "label": "ValidationState",
+            "kind": "node",
+            "id": "ValidationState"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 3/4, adds 2 nodes, 0 edges, 1 groups, current state now contains 4 nodes and 0 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 16911.7928,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 3,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_group\",\n      \"group_id\": \"Context\",\n      \"label\": \"Context\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"TrainingState\",\n      \"label\": \"TrainingState\",\n      \"kind\": \"node\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"ValidationState\",\n      \"label\": \"ValidationState\",\n      \"kind\": \"node\"\n    }\n  ],\n  \"not",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "Context",
+            "label": "Context",
+            "id": "Context"
+          },
+          {
+            "op": "add_node",
+            "node_id": "TrainingState",
+            "label": "TrainingState",
+            "kind": "node",
+            "id": "TrainingState"
+          },
+          {
+            "op": "add_node",
+            "node_id": "ValidationState",
+            "label": "ValidationState",
+            "kind": "node",
+            "id": "ValidationState"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [
+            "State",
+            "DataLoadingState",
+            "TrainingState",
+            "ValidationState"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "States",
+            "Context"
+          ]
+        },
+        "gold_stage_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 2,
+          "delta_count": 3
+        },
+        "preview_mermaid": "graph TD\n    State[\"State\"]\n    DataLoadingState[\"DataLoadingState\"]\n    TrainingState[\"TrainingState\"]\n    ValidationState[\"ValidationState\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [
+            "State",
+            "DataLoadingState",
+            "TrainingState",
+            "ValidationState"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "States",
+            "Context"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    State[\"State\"]\n    DataLoadingState[\"DataLoadingState\"]\n    TrainingState[\"TrainingState\"]\n    ValidationState[\"ValidationState\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 12,
+        "speaker": "初级工程师",
+        "content": "Context 分组是用于管理配置信息的吗？",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2074.8763,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [
+            "State",
+            "DataLoadingState",
+            "TrainingState",
+            "ValidationState"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "States",
+            "Context"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    State[\"State\"]\n    DataLoadingState[\"DataLoadingState\"]\n    TrainingState[\"TrainingState\"]\n    ValidationState[\"ValidationState\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 13,
+        "speaker": "系统架构师",
+        "content": "对，这是其中一个作用。我在这个分组里添加 DeploymentState，代表部署阶段的状态。同时也添加一个 Context 节点，用来管理运行时配置和环境变量。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2078.5677,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [
+            "State",
+            "DataLoadingState",
+            "TrainingState",
+            "ValidationState"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "States",
+            "Context"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    State[\"State\"]\n    DataLoadingState[\"DataLoadingState\"]\n    TrainingState[\"TrainingState\"]\n    ValidationState[\"ValidationState\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 14,
+        "speaker": "技术负责人",
+        "content": "部署状态加上上下文管理，系统的支撑层就完整了。现在缺的就是外部如何与这个系统交互的问题。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2060.3893,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [
+            "State",
+            "DataLoadingState",
+            "TrainingState",
+            "ValidationState"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "States",
+            "Context"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    State[\"State\"]\n    DataLoadingState[\"DataLoadingState\"]\n    TrainingState[\"TrainingState\"]\n    ValidationState[\"ValidationState\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 15,
+        "speaker": "系统架构师",
+        "content": "最后一步，我来添加客户端交互层。新增一个 Client 分组，专门处理外部请求的入口。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Resolve Conditions"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2067.5893,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [
+            "State",
+            "DataLoadingState",
+            "TrainingState",
+            "ValidationState"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "States",
+            "Context"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    State[\"State\"]\n    DataLoadingState[\"DataLoadingState\"]\n    TrainingState[\"TrainingState\"]\n    ValidationState[\"ValidationState\"]"
+      },
+      "planner": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "Client",
+            "label": "Client",
+            "id": "Client"
+          },
+          {
+            "op": "add_node",
+            "node_id": "DeploymentState",
+            "label": "DeploymentState",
+            "kind": "node",
+            "id": "DeploymentState"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Context",
+            "label": "Context",
+            "kind": "node"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 4/4, adds 2 nodes, 0 edges, 1 groups, current state now contains 6 nodes and 0 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 16541.9381,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 4,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_group\",\n      \"group_id\": \"Client\",\n      \"label\": \"Client\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"DeploymentState\",\n      \"label\": \"DeploymentState\",\n      \"kind\": \"node\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Context\",\n      \"label\": \"Context\",\n      \"kind\": \"node\"\n    }\n  ],\n  \"notes\": \"Stage 4/",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "Client",
+            "label": "Client",
+            "id": "Client"
+          },
+          {
+            "op": "add_node",
+            "node_id": "DeploymentState",
+            "label": "DeploymentState",
+            "kind": "node",
+            "id": "DeploymentState"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Context",
+            "label": "Context",
+            "kind": "node"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "State",
+            "DataLoadingState",
+            "TrainingState",
+            "ValidationState",
+            "DeploymentState",
+            "Context"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "States",
+            "Context",
+            "Client"
+          ]
+        },
+        "gold_stage_metrics": {
+          "node_count": 7,
+          "edge_count": 0,
+          "group_count": 3,
+          "delta_count": 2
+        },
+        "preview_mermaid": "graph TD\n    State[\"State\"]\n    DataLoadingState[\"DataLoadingState\"]\n    TrainingState[\"TrainingState\"]\n    ValidationState[\"ValidationState\"]\n    DeploymentState[\"DeploymentState\"]\n    Context[\"Context\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "State",
+            "DataLoadingState",
+            "TrainingState",
+            "ValidationState",
+            "DeploymentState",
+            "Context"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "States",
+            "Context",
+            "Client"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    State[\"State\"]\n    DataLoadingState[\"DataLoadingState\"]\n    TrainingState[\"TrainingState\"]\n    ValidationState[\"ValidationState\"]\n    DeploymentState[\"DeploymentState\"]\n    Context[\"Context\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 16,
+        "speaker": "初级工程师",
+        "content": "客户端分组会包含什么内容呢？",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Resolve Conditions"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "State",
+            "DataLoadingState",
+            "TrainingState",
+            "ValidationState",
+            "DeploymentState",
+            "Context"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "States",
+            "Context",
+            "Client"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    State[\"State\"]\n    DataLoadingState[\"DataLoadingState\"]\n    TrainingState[\"TrainingState\"]\n    ValidationState[\"ValidationState\"]\n    DeploymentState[\"DeploymentState\"]\n    Context[\"Context\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 17,
+        "speaker": "系统架构师",
+        "content": "在这个分组里，我添加 ClientCall 节点，使用 context.request() 方法作为接口。这意味着外部客户端通过上下文发起请求来与整个状态机系统交互。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Resolve Conditions"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "State",
+            "DataLoadingState",
+            "TrainingState",
+            "ValidationState",
+            "DeploymentState",
+            "Context"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "States",
+            "Context",
+            "Client"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    State[\"State\"]\n    DataLoadingState[\"DataLoadingState\"]\n    TrainingState[\"TrainingState\"]\n    ValidationState[\"ValidationState\"]\n    DeploymentState[\"DeploymentState\"]\n    Context[\"Context\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 18,
+        "speaker": "技术负责人",
+        "content": "完美！从核心状态抽象，到数据加载、训练、验证，再到部署支持和上下文管理，最后是客户端请求入口，整个架构就闭环了。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Resolve Conditions"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "State",
+            "DataLoadingState",
+            "TrainingState",
+            "ValidationState",
+            "DeploymentState",
+            "Context"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "States",
+            "Context",
+            "Client"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    State[\"State\"]\n    DataLoadingState[\"DataLoadingState\"]\n    TrainingState[\"TrainingState\"]\n    ValidationState[\"ValidationState\"]\n    DeploymentState[\"DeploymentState\"]\n    Context[\"Context\"]"
+      }
+    }
+  ]
+}

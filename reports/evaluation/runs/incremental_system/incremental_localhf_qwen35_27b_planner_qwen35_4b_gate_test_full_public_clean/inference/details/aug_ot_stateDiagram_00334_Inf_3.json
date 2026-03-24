@@ -1,0 +1,1382 @@
+{
+  "sample_id": "aug_ot_stateDiagram_00334_Inf_3",
+  "diagram_type": "statediagram",
+  "generated_at_utc": "2026-03-24T09:38:18Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 19,
+    "total_stages": 4,
+    "updates_emitted": 4,
+    "final_stage_index": 4,
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 6,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "GameStarted",
+        "Lobby",
+        "GameOver",
+        "QuestionPrep",
+        "QuestionActive",
+        "AnswerValidation"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    },
+    "reference_graph_metrics": {
+      "node_count": 6,
+      "edge_count": 7,
+      "group_count": 0,
+      "node_ids": [
+        "GameStarted",
+        "Lobby",
+        "QuestionPrep",
+        "QuestionActive",
+        "AnswerValidation",
+        "GameOver"
+      ],
+      "edge_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e5",
+        "e6",
+        "e7"
+      ],
+      "group_ids": []
+    }
+  },
+  "final_state": {
+    "sample_id": "aug_ot_stateDiagram_00334_Inf_3",
+    "diagram_type": "statediagram",
+    "current_stage_index": 4,
+    "current_graph_ir": {
+      "graph_id": "aug_ot_stateDiagram_00334_Inf_3",
+      "diagram_type": "statediagram",
+      "nodes": [
+        {
+          "id": "GameStarted",
+          "label": "GameStarted",
+          "kind": "state",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "Lobby",
+          "label": "Lobby",
+          "kind": "state",
+          "parent": null,
+          "source_index": 3,
+          "metadata": {}
+        },
+        {
+          "id": "GameOver",
+          "label": "GameOver",
+          "kind": "state",
+          "parent": null,
+          "source_index": 5,
+          "metadata": {}
+        },
+        {
+          "id": "QuestionPrep",
+          "label": "QuestionPrep",
+          "kind": "state",
+          "parent": null,
+          "source_index": 7,
+          "metadata": {}
+        },
+        {
+          "id": "QuestionActive",
+          "label": "QuestionActive",
+          "kind": "state",
+          "parent": null,
+          "source_index": 8,
+          "metadata": {}
+        },
+        {
+          "id": "AnswerValidation",
+          "label": "AnswerValidation",
+          "kind": "state",
+          "parent": null,
+          "source_index": 10,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    GameStarted[\"GameStarted\"]\n    Lobby[\"Lobby\"]\n    GameOver[\"GameOver\"]\n    QuestionPrep[\"QuestionPrep\"]\n    QuestionActive[\"QuestionActive\"]\n    AnswerValidation[\"AnswerValidation\"]",
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 6,
+        "edge_count": 0,
+        "group_count": 0,
+        "node_ids": [
+          "GameStarted",
+          "Lobby",
+          "GameOver",
+          "QuestionPrep",
+          "QuestionActive",
+          "AnswerValidation"
+        ],
+        "edge_ids": [],
+        "group_ids": []
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "设计师小王",
+        "content": "好，我们来设计这个问答游戏的状态图。首先，游戏需要有一个玩家等待的地方，也就是 Lobby。所有玩家进入后会在 Lobby 里等待。我们再加一个状态来表示游戏正式开始，叫做 GameStarted。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2171.4025,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "审阅者李工",
+        "content": "明白，所以 Lobby 是起点。那怎么从 Lobby 进入 GameStarted 呢？",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2176.8847,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "GameStarted",
+            "label": "GameStarted",
+            "kind": "state",
+            "id": "GameStarted"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Lobby",
+            "label": "Lobby",
+            "kind": "state",
+            "id": "Lobby"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 1/4, adds 2 nodes, 0 edges, current state now contains 2 nodes and 0 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 13565.8889,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"GameStarted\",\n      \"label\": \"GameStarted\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Lobby\",\n      \"label\": \"Lobby\",\n      \"kind\": \"state\"\n    }\n  ],\n  \"notes\": \"Stage 1/4, adds 2 nodes, 0 edges, current state now contains 2 nodes and 0 edges\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "GameStarted",
+            "label": "GameStarted",
+            "kind": "state",
+            "id": "GameStarted"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Lobby",
+            "label": "Lobby",
+            "kind": "state",
+            "id": "Lobby"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "GameStarted",
+            "Lobby"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 2,
+          "edge_count": 1,
+          "group_count": 0,
+          "delta_count": 3
+        },
+        "preview_mermaid": "graph TD\n    GameStarted[\"GameStarted\"]\n    Lobby[\"Lobby\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "GameStarted",
+            "Lobby"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    GameStarted[\"GameStarted\"]\n    Lobby[\"Lobby\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "设计师小王",
+        "content": "需要一条边从 Lobby 指向 GameStarted，标注为「Host Starts」，意思是主持人发起游戏。这样玩家看到 Lobby 状态后，知道是通过主持人启动来进入游戏正式开始阶段的。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2109.1497,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "GameStarted",
+            "Lobby"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    GameStarted[\"GameStarted\"]\n    Lobby[\"Lobby\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "审阅者李工",
+        "content": "好的，核心框架搭好了。那游戏进行完之后，总得有个结束的地方吧？",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2129.0321,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "GameStarted",
+            "Lobby"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    GameStarted[\"GameStarted\"]\n    Lobby[\"Lobby\"]"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "GameOver",
+            "label": "GameOver",
+            "kind": "state",
+            "id": "GameOver"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 2/4, adds 1 nodes, 1 edges, current state now contains 3 nodes and 1 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 14502.2409,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 2,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"GameOver\",\n      \"label\": \"GameOver\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e1\",\n      \"source\": \"Lobby\",\n      \"target\": \"GameStarted\",\n      \"label\": \"Host Starts\"\n    }\n  ],\n  \"notes\": \"Stage 2/4, adds 1 nodes, 1 edges, current state now contains 3 nodes and 1 edg",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "GameOver",
+            "label": "GameOver",
+            "kind": "state",
+            "id": "GameOver"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "GameStarted",
+            "Lobby",
+            "GameOver"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 3,
+          "edge_count": 1,
+          "group_count": 0,
+          "delta_count": 1
+        },
+        "preview_mermaid": "graph TD\n    GameStarted[\"GameStarted\"]\n    Lobby[\"Lobby\"]\n    GameOver[\"GameOver\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "GameStarted",
+            "Lobby",
+            "GameOver"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    GameStarted[\"GameStarted\"]\n    Lobby[\"Lobby\"]\n    GameOver[\"GameOver\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "设计师小王",
+        "content": "对，我们需要一个终端状态叫 GameOver，表示游戏结束。这样状态图就有头有尾了，主持人可以宣布游戏结束，进入这个终态。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2140.7461,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "GameStarted",
+            "Lobby",
+            "GameOver"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    GameStarted[\"GameStarted\"]\n    Lobby[\"Lobby\"]\n    GameOver[\"GameOver\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "审阅者李工",
+        "content": "接下来应该设计题目流程了吧？游戏开始了，总得有题目让玩家回答。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2143.2498,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "GameStarted",
+            "Lobby",
+            "GameOver"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    GameStarted[\"GameStarted\"]\n    Lobby[\"Lobby\"]\n    GameOver[\"GameOver\"]"
+      },
+      "planner": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "QuestionPrep",
+            "label": "QuestionPrep",
+            "kind": "state",
+            "id": "QuestionPrep"
+          },
+          {
+            "op": "add_node",
+            "node_id": "QuestionActive",
+            "label": "QuestionActive",
+            "kind": "state",
+            "id": "QuestionActive"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 3/4, adds 2 nodes, 2 edges, current state now contains 5 nodes and 2 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 24772.1031,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 3,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"QuestionPrep\",\n      \"label\": \"QuestionPrep\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"QuestionActive\",\n      \"label\": \"QuestionActive\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e1\",\n      \"source\": \"GameStarted\",\n      \"target\": \"Que",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "QuestionPrep",
+            "label": "QuestionPrep",
+            "kind": "state",
+            "id": "QuestionPrep"
+          },
+          {
+            "op": "add_node",
+            "node_id": "QuestionActive",
+            "label": "QuestionActive",
+            "kind": "state",
+            "id": "QuestionActive"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "GameStarted",
+            "Lobby",
+            "GameOver",
+            "QuestionPrep",
+            "QuestionActive"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 5,
+          "edge_count": 4,
+          "group_count": 0,
+          "delta_count": 5
+        },
+        "preview_mermaid": "graph TD\n    GameStarted[\"GameStarted\"]\n    Lobby[\"Lobby\"]\n    GameOver[\"GameOver\"]\n    QuestionPrep[\"QuestionPrep\"]\n    QuestionActive[\"QuestionActive\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "GameStarted",
+            "Lobby",
+            "GameOver",
+            "QuestionPrep",
+            "QuestionActive"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    GameStarted[\"GameStarted\"]\n    Lobby[\"Lobby\"]\n    GameOver[\"GameOver\"]\n    QuestionPrep[\"QuestionPrep\"]\n    QuestionActive[\"QuestionActive\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 7,
+        "speaker": "设计师小王",
+        "content": "没错。题目流程分为两个阶段：准备阶段和验证阶段。我们加入 QuestionPrep 表示主持人准备题目，还有 AnswerValidation 表示验证玩家答案。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2174.0639,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "GameStarted",
+            "Lobby",
+            "GameOver",
+            "QuestionPrep",
+            "QuestionActive"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    GameStarted[\"GameStarted\"]\n    Lobby[\"Lobby\"]\n    GameOver[\"GameOver\"]\n    QuestionPrep[\"QuestionPrep\"]\n    QuestionActive[\"QuestionActive\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 8,
+        "speaker": "审阅者李工",
+        "content": "那这些状态怎么连接起来呢？",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2202.553,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "GameStarted",
+            "Lobby",
+            "GameOver",
+            "QuestionPrep",
+            "QuestionActive"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    GameStarted[\"GameStarted\"]\n    Lobby[\"Lobby\"]\n    GameOver[\"GameOver\"]\n    QuestionPrep[\"QuestionPrep\"]\n    QuestionActive[\"QuestionActive\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 9,
+        "speaker": "设计师小王",
+        "content": "首先，从 GameStarted 到 QuestionPrep 有一条边叫「Init Question」，表示初始化一个问题。然后玩家答对了就回到 QuestionPrep 重新准备下一题，所以 AnswerValidation 到 QuestionPrep 标注为「Correct Answer」。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2125.6154,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "GameStarted",
+            "Lobby",
+            "GameOver",
+            "QuestionPrep",
+            "QuestionActive"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    GameStarted[\"GameStarted\"]\n    Lobby[\"Lobby\"]\n    GameOver[\"GameOver\"]\n    QuestionPrep[\"QuestionPrep\"]\n    QuestionActive[\"QuestionActive\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 10,
+        "speaker": "审阅者李工",
+        "content": "那主持人如果想结束游戏呢？总不能一直出题吧。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2121.9428,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "GameStarted",
+            "Lobby",
+            "GameOver",
+            "QuestionPrep",
+            "QuestionActive"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    GameStarted[\"GameStarted\"]\n    Lobby[\"Lobby\"]\n    GameOver[\"GameOver\"]\n    QuestionPrep[\"QuestionPrep\"]\n    QuestionActive[\"QuestionActive\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 11,
+        "speaker": "设计师小王",
+        "content": "好问题。在 QuestionPrep 状态下，主持人可以选择结束游戏，所以加一条边从 QuestionPrep 到 GameOver，标注为「Host Ends」。这样主持人随时可以终止游戏进入结束状态。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2125.6332,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "GameStarted",
+            "Lobby",
+            "GameOver",
+            "QuestionPrep",
+            "QuestionActive"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    GameStarted[\"GameStarted\"]\n    Lobby[\"Lobby\"]\n    GameOver[\"GameOver\"]\n    QuestionPrep[\"QuestionPrep\"]\n    QuestionActive[\"QuestionActive\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 12,
+        "speaker": "审阅者李工",
+        "content": "现在还缺一个关键环节——玩家实际答题的过程。题目准备好了，总得展示给玩家，然后玩家才能回答。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2117.1594,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "GameStarted",
+            "Lobby",
+            "GameOver",
+            "QuestionPrep",
+            "QuestionActive"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    GameStarted[\"GameStarted\"]\n    Lobby[\"Lobby\"]\n    GameOver[\"GameOver\"]\n    QuestionPrep[\"QuestionPrep\"]\n    QuestionActive[\"QuestionActive\"]"
+      },
+      "planner": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "AnswerValidation",
+            "label": "AnswerValidation",
+            "kind": "state",
+            "id": "AnswerValidation"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 4/4, adds 1 nodes, 7 edges, current state now contains 6 nodes and 7 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 45285.645,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 4,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"AnswerValidation\",\n      \"label\": \"AnswerValidation\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e1\",\n      \"source\": \"Lobby\",\n      \"target\": \"GameStarted\",\n      \"label\": \"Host Starts\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e3\",\n      \"source\": \"GameStar",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "AnswerValidation",
+            "label": "AnswerValidation",
+            "kind": "state",
+            "id": "AnswerValidation"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "GameStarted",
+            "Lobby",
+            "GameOver",
+            "QuestionPrep",
+            "QuestionActive",
+            "AnswerValidation"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 6,
+          "edge_count": 7,
+          "group_count": 0,
+          "delta_count": 4
+        },
+        "preview_mermaid": "graph TD\n    GameStarted[\"GameStarted\"]\n    Lobby[\"Lobby\"]\n    GameOver[\"GameOver\"]\n    QuestionPrep[\"QuestionPrep\"]\n    QuestionActive[\"QuestionActive\"]\n    AnswerValidation[\"AnswerValidation\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "GameStarted",
+            "Lobby",
+            "GameOver",
+            "QuestionPrep",
+            "QuestionActive",
+            "AnswerValidation"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    GameStarted[\"GameStarted\"]\n    Lobby[\"Lobby\"]\n    GameOver[\"GameOver\"]\n    QuestionPrep[\"QuestionPrep\"]\n    QuestionActive[\"QuestionActive\"]\n    AnswerValidation[\"AnswerValidation\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 13,
+        "speaker": "设计师小王",
+        "content": "对，我们加一个 QuestionActive 状态，表示题目正在展示给玩家，主持人用「Host Shows」这条边从 QuestionPrep 进入这个活跃状态。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "GameStarted",
+            "Lobby",
+            "GameOver",
+            "QuestionPrep",
+            "QuestionActive",
+            "AnswerValidation"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    GameStarted[\"GameStarted\"]\n    Lobby[\"Lobby\"]\n    GameOver[\"GameOver\"]\n    QuestionPrep[\"QuestionPrep\"]\n    QuestionActive[\"QuestionActive\"]\n    AnswerValidation[\"AnswerValidation\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 14,
+        "speaker": "审阅者李工",
+        "content": "玩家怎么参与呢？总得有个交互的触发点。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "GameStarted",
+            "Lobby",
+            "GameOver",
+            "QuestionPrep",
+            "QuestionActive",
+            "AnswerValidation"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    GameStarted[\"GameStarted\"]\n    Lobby[\"Lobby\"]\n    GameOver[\"GameOver\"]\n    QuestionPrep[\"QuestionPrep\"]\n    QuestionActive[\"QuestionActive\"]\n    AnswerValidation[\"AnswerValidation\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 15,
+        "speaker": "设计师小王",
+        "content": "玩家按下抢答器，从 QuestionActive 到 AnswerValidation 有一条「Player Buzzes」边，表示玩家抢答并进入答案验证阶段。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "GameStarted",
+            "Lobby",
+            "GameOver",
+            "QuestionPrep",
+            "QuestionActive",
+            "AnswerValidation"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    GameStarted[\"GameStarted\"]\n    Lobby[\"Lobby\"]\n    GameOver[\"GameOver\"]\n    QuestionPrep[\"QuestionPrep\"]\n    QuestionActive[\"QuestionActive\"]\n    AnswerValidation[\"AnswerValidation\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 16,
+        "speaker": "审阅者李工",
+        "content": "那如果答错了怎么办？总不能让玩家一直卡在那里吧。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "GameStarted",
+            "Lobby",
+            "GameOver",
+            "QuestionPrep",
+            "QuestionActive",
+            "AnswerValidation"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    GameStarted[\"GameStarted\"]\n    Lobby[\"Lobby\"]\n    GameOver[\"GameOver\"]\n    QuestionPrep[\"QuestionPrep\"]\n    QuestionActive[\"QuestionActive\"]\n    AnswerValidation[\"AnswerValidation\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 17,
+        "speaker": "设计师小王",
+        "content": "答错了就回到 QuestionActive 重新尝试，加一条「Wrong Answer」边从 AnswerValidation 指回 QuestionActive。这样玩家可以继续抢答，直到答对为止。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "GameStarted",
+            "Lobby",
+            "GameOver",
+            "QuestionPrep",
+            "QuestionActive",
+            "AnswerValidation"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    GameStarted[\"GameStarted\"]\n    Lobby[\"Lobby\"]\n    GameOver[\"GameOver\"]\n    QuestionPrep[\"QuestionPrep\"]\n    QuestionActive[\"QuestionActive\"]\n    AnswerValidation[\"AnswerValidation\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 18,
+        "speaker": "审阅者李工",
+        "content": "现在整个流程就完整了：玩家在 Lobby 等待，主持人开始游戏进入 GameStarted，然后初始化题目进入准备阶段，展示题目后玩家抢答，答对了回到准备下一题，答错了继续尝试，主持人随时可以结束游戏。整个状态图闭环了。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "GameStarted",
+            "Lobby",
+            "GameOver",
+            "QuestionPrep",
+            "QuestionActive",
+            "AnswerValidation"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    GameStarted[\"GameStarted\"]\n    Lobby[\"Lobby\"]\n    GameOver[\"GameOver\"]\n    QuestionPrep[\"QuestionPrep\"]\n    QuestionActive[\"QuestionActive\"]\n    AnswerValidation[\"AnswerValidation\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 19,
+        "speaker": "设计师小王",
+        "content": "没错，从 Lobby 到 GameStarted，再到 QuestionPrep 和 QuestionActive，然后 AnswerValidation 作为判断节点，答对循环回 QuestionPrep，答错循环回 QuestionActive，主持人随时可以结束到 GameOver。这个状态机设计得很完整。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "GameStarted",
+            "Lobby",
+            "GameOver",
+            "QuestionPrep",
+            "QuestionActive",
+            "AnswerValidation"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    GameStarted[\"GameStarted\"]\n    Lobby[\"Lobby\"]\n    GameOver[\"GameOver\"]\n    QuestionPrep[\"QuestionPrep\"]\n    QuestionActive[\"QuestionActive\"]\n    AnswerValidation[\"AnswerValidation\"]"
+      }
+    }
+  ]
+}

@@ -1,0 +1,846 @@
+{
+  "sample_id": "hf_ms13k_er_12129",
+  "diagram_type": "er",
+  "generated_at_utc": "2026-03-24T06:10:11Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 8,
+    "total_stages": 4,
+    "updates_emitted": 4,
+    "final_stage_index": 4,
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 5,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "CircuitDesign",
+        "ComponentManufacturing",
+        "EquipmentAssembly",
+        "QualityTesting",
+        "DistributionPlanning"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    },
+    "reference_graph_metrics": {
+      "node_count": 6,
+      "edge_count": 5,
+      "group_count": 0,
+      "node_ids": [
+        "CircuitDesign",
+        "ComponentManufacturing",
+        "DeviceAssembly",
+        "QualityTesting",
+        "Distribution",
+        "Consumer"
+      ],
+      "edge_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e5"
+      ],
+      "group_ids": []
+    }
+  },
+  "final_state": {
+    "sample_id": "hf_ms13k_er_12129",
+    "diagram_type": "er",
+    "current_stage_index": 4,
+    "current_graph_ir": {
+      "graph_id": "hf_ms13k_er_12129",
+      "diagram_type": "er",
+      "nodes": [
+        {
+          "id": "CircuitDesign",
+          "label": "CircuitDesign",
+          "kind": "entity",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "ComponentManufacturing",
+          "label": "ComponentManufacturing",
+          "kind": "entity",
+          "parent": null,
+          "source_index": 3,
+          "metadata": {}
+        },
+        {
+          "id": "EquipmentAssembly",
+          "label": "EquipmentAssembly",
+          "kind": "entity",
+          "parent": null,
+          "source_index": 5,
+          "metadata": {}
+        },
+        {
+          "id": "QualityTesting",
+          "label": "QualityTesting",
+          "kind": "entity",
+          "parent": null,
+          "source_index": 7,
+          "metadata": {}
+        },
+        {
+          "id": "DistributionPlanning",
+          "label": "DistributionPlanning",
+          "kind": "entity",
+          "parent": null,
+          "source_index": 8,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    CircuitDesign[\"CircuitDesign\"]\n    ComponentManufacturing[\"ComponentManufacturing\"]\n    EquipmentAssembly[\"EquipmentAssembly\"]\n    QualityTesting[\"QualityTesting\"]\n    DistributionPlanning[\"DistributionPlanning\"]",
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 5,
+        "edge_count": 0,
+        "group_count": 0,
+        "node_ids": [
+          "CircuitDesign",
+          "ComponentManufacturing",
+          "EquipmentAssembly",
+          "QualityTesting",
+          "DistributionPlanning"
+        ],
+        "edge_ids": [],
+        "group_ids": []
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "张工",
+        "content": "我们先从电路设计开始，电路设计稿是整个产品的核心，决定了后续的组件需求。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2076.5414,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "李经理",
+        "content": "明白，电路设计一旦完成，就可以交给组件制造部门进行生产，这里形成了‘设计’的关联。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2059.0661,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "CircuitDesign",
+            "label": "CircuitDesign",
+            "kind": "entity",
+            "id": "CircuitDesign"
+          },
+          {
+            "op": "add_node",
+            "node_id": "ComponentManufacturing",
+            "label": "ComponentManufacturing",
+            "kind": "entity",
+            "id": "ComponentManufacturing"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 1/4, adds 2 nodes, 1 edges, current state now contains 2 nodes and 1 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 18383.8787,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"CircuitDesign\",\n      \"label\": \"CircuitDesign\",\n      \"kind\": \"entity\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"ComponentManufacturing\",\n      \"label\": \"ComponentManufacturing\",\n      \"kind\": \"entity\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e1\",\n      \"source\": \"CircuitDesign\"",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "CircuitDesign",
+            "label": "CircuitDesign",
+            "kind": "entity",
+            "id": "CircuitDesign"
+          },
+          {
+            "op": "add_node",
+            "node_id": "ComponentManufacturing",
+            "label": "ComponentManufacturing",
+            "kind": "entity",
+            "id": "ComponentManufacturing"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "CircuitDesign",
+            "ComponentManufacturing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 2,
+          "edge_count": 1,
+          "group_count": 0,
+          "delta_count": 3
+        },
+        "preview_mermaid": "graph TD\n    CircuitDesign[\"CircuitDesign\"]\n    ComponentManufacturing[\"ComponentManufacturing\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "CircuitDesign",
+            "ComponentManufacturing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    CircuitDesign[\"CircuitDesign\"]\n    ComponentManufacturing[\"ComponentManufacturing\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "张工",
+        "content": "组件制造完成后，下一步是设备装配，装配部门会把所有部件组装成完整设备。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2063.1788,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "CircuitDesign",
+            "ComponentManufacturing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    CircuitDesign[\"CircuitDesign\"]\n    ComponentManufacturing[\"ComponentManufacturing\"]"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "EquipmentAssembly",
+            "label": "EquipmentAssembly",
+            "kind": "entity",
+            "id": "EquipmentAssembly"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 2/4, adds 1 nodes, 1 edges, current state now contains 3 nodes and 1 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 14220.1962,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 2,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"EquipmentAssembly\",\n      \"label\": \"EquipmentAssembly\",\n      \"kind\": \"entity\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e1\",\n      \"source\": \"CircuitDesign\",\n      \"target\": \"ComponentManufacturing\",\n      \"label\": \"Designs\"\n    }\n  ],\n  \"notes\": \"Stage 2/4, adds 1 nodes, 1 edges, current st",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "EquipmentAssembly",
+            "label": "EquipmentAssembly",
+            "kind": "entity",
+            "id": "EquipmentAssembly"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "CircuitDesign",
+            "ComponentManufacturing",
+            "EquipmentAssembly"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 3,
+          "edge_count": 2,
+          "group_count": 0,
+          "delta_count": 2
+        },
+        "preview_mermaid": "graph TD\n    CircuitDesign[\"CircuitDesign\"]\n    ComponentManufacturing[\"ComponentManufacturing\"]\n    EquipmentAssembly[\"EquipmentAssembly\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "CircuitDesign",
+            "ComponentManufacturing",
+            "EquipmentAssembly"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    CircuitDesign[\"CircuitDesign\"]\n    ComponentManufacturing[\"ComponentManufacturing\"]\n    EquipmentAssembly[\"EquipmentAssembly\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "李经理",
+        "content": "对的，组件制造部门负责制造装配所需的子模块，形成了从组件制造到设备装配的‘制造’关系。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 3,
+        "reason": "turn 4 reached end boundary for stage 3",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2323.2939,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"EMIT_UPDATE\",\n  \"target_stage_index\": 3,\n  \"reason\": \"turn 4 reached end boundary for stage 3\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "CircuitDesign",
+            "ComponentManufacturing",
+            "EquipmentAssembly"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    CircuitDesign[\"CircuitDesign\"]\n    ComponentManufacturing[\"ComponentManufacturing\"]\n    EquipmentAssembly[\"EquipmentAssembly\"]"
+      },
+      "planner": {
+        "target_stage_index": 3,
+        "delta_ops": [],
+        "target_graph_ir": {
+          "graph_id": "hf_ms13k_er_12129",
+          "diagram_type": "er",
+          "nodes": [
+            {
+              "id": "CircuitDesign",
+              "label": "CircuitDesign",
+              "kind": "entity",
+              "parent": null,
+              "source_index": 2,
+              "metadata": {}
+            },
+            {
+              "id": "ComponentManufacturing",
+              "label": "ComponentManufacturing",
+              "kind": "entity",
+              "parent": null,
+              "source_index": 3,
+              "metadata": {}
+            },
+            {
+              "id": "EquipmentAssembly",
+              "label": "EquipmentAssembly",
+              "kind": "entity",
+              "parent": null,
+              "source_index": 5,
+              "metadata": {}
+            }
+          ],
+          "edges": [],
+          "groups": [],
+          "styles": [],
+          "metadata": {}
+        },
+        "notes": "Stage 3/4, adds 0 nodes, 2 edges, current state now contains 3 nodes and 2 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 15108.6566,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 3,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e1\",\n      \"source\": \"CircuitDesign\",\n      \"target\": \"ComponentManufacturing\",\n      \"label\": \"Designs\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e2\",\n      \"source\": \"ComponentManufacturing\",\n      \"target\": \"EquipmentAssembly\",\n      \"label\": \"Manufactures\"\n    }\n  ],\n  \"notes\": \"Stage 3/4",
+          "semantic_attempt": 1,
+          "planner_noop": true,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 3,
+        "delta_ops": [],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "CircuitDesign",
+            "ComponentManufacturing",
+            "EquipmentAssembly"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 5,
+          "edge_count": 4,
+          "group_count": 0,
+          "delta_count": 4
+        },
+        "preview_mermaid": "graph TD\n    CircuitDesign[\"CircuitDesign\"]\n    ComponentManufacturing[\"ComponentManufacturing\"]\n    EquipmentAssembly[\"EquipmentAssembly\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "CircuitDesign",
+            "ComponentManufacturing",
+            "EquipmentAssembly"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    CircuitDesign[\"CircuitDesign\"]\n    ComponentManufacturing[\"ComponentManufacturing\"]\n    EquipmentAssembly[\"EquipmentAssembly\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "张工",
+        "content": "装配完成后，我们需要分两条路走：一是进行质量测试，二是开始分发计划。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2051.8596,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "CircuitDesign",
+            "ComponentManufacturing",
+            "EquipmentAssembly"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    CircuitDesign[\"CircuitDesign\"]\n    ComponentManufacturing[\"ComponentManufacturing\"]\n    EquipmentAssembly[\"EquipmentAssembly\"]"
+      },
+      "planner": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "QualityTesting",
+            "label": "QualityTesting",
+            "kind": "entity",
+            "id": "QualityTesting"
+          },
+          {
+            "op": "add_node",
+            "node_id": "DistributionPlanning",
+            "label": "DistributionPlanning",
+            "kind": "entity",
+            "id": "DistributionPlanning"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 4/4, adds 2 nodes, 0 edges, current state now contains 5 nodes and 0 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 13121.115,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 4,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"QualityTesting\",\n      \"label\": \"QualityTesting\",\n      \"kind\": \"entity\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"DistributionPlanning\",\n      \"label\": \"DistributionPlanning\",\n      \"kind\": \"entity\"\n    }\n  ],\n  \"notes\": \"Stage 4/4, adds 2 nodes, 0 edges, current state now contains 5 nodes a",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "QualityTesting",
+            "label": "QualityTesting",
+            "kind": "entity",
+            "id": "QualityTesting"
+          },
+          {
+            "op": "add_node",
+            "node_id": "DistributionPlanning",
+            "label": "DistributionPlanning",
+            "kind": "entity",
+            "id": "DistributionPlanning"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "CircuitDesign",
+            "ComponentManufacturing",
+            "EquipmentAssembly",
+            "QualityTesting",
+            "DistributionPlanning"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 6,
+          "edge_count": 5,
+          "group_count": 0,
+          "delta_count": 2
+        },
+        "preview_mermaid": "graph TD\n    CircuitDesign[\"CircuitDesign\"]\n    ComponentManufacturing[\"ComponentManufacturing\"]\n    EquipmentAssembly[\"EquipmentAssembly\"]\n    QualityTesting[\"QualityTesting\"]\n    DistributionPlanning[\"DistributionPlanning\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "CircuitDesign",
+            "ComponentManufacturing",
+            "EquipmentAssembly",
+            "QualityTesting",
+            "DistributionPlanning"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    CircuitDesign[\"CircuitDesign\"]\n    ComponentManufacturing[\"ComponentManufacturing\"]\n    EquipmentAssembly[\"EquipmentAssembly\"]\n    QualityTesting[\"QualityTesting\"]\n    DistributionPlanning[\"DistributionPlanning\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "李经理",
+        "content": "装配部门完成装配后，会把产品送往质量检测部门进行检测，同时交给分销部门进行分发，形成‘装配-检测’和‘装配-分发’的关联。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "CircuitDesign",
+            "ComponentManufacturing",
+            "EquipmentAssembly",
+            "QualityTesting",
+            "DistributionPlanning"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    CircuitDesign[\"CircuitDesign\"]\n    ComponentManufacturing[\"ComponentManufacturing\"]\n    EquipmentAssembly[\"EquipmentAssembly\"]\n    QualityTesting[\"QualityTesting\"]\n    DistributionPlanning[\"DistributionPlanning\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 7,
+        "speaker": "张工",
+        "content": "最终，通过质量检测并完成分销的产品将交付给消费者。",
+        "stage_index": 5,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "CircuitDesign",
+            "ComponentManufacturing",
+            "EquipmentAssembly",
+            "QualityTesting",
+            "DistributionPlanning"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    CircuitDesign[\"CircuitDesign\"]\n    ComponentManufacturing[\"ComponentManufacturing\"]\n    EquipmentAssembly[\"EquipmentAssembly\"]\n    QualityTesting[\"QualityTesting\"]\n    DistributionPlanning[\"DistributionPlanning\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 8,
+        "speaker": "李经理",
+        "content": "分销渠道负责把产品卖给最终消费者，这里完成了从分销到消费者的‘销售’关系。",
+        "stage_index": 5,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "CircuitDesign",
+            "ComponentManufacturing",
+            "EquipmentAssembly",
+            "QualityTesting",
+            "DistributionPlanning"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    CircuitDesign[\"CircuitDesign\"]\n    ComponentManufacturing[\"ComponentManufacturing\"]\n    EquipmentAssembly[\"EquipmentAssembly\"]\n    QualityTesting[\"QualityTesting\"]\n    DistributionPlanning[\"DistributionPlanning\"]"
+      }
+    }
+  ]
+}

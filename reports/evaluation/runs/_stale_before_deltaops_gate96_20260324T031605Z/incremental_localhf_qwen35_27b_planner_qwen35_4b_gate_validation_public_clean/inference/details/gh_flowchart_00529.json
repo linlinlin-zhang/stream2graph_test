@@ -1,0 +1,3535 @@
+{
+  "sample_id": "gh_flowchart_00529",
+  "diagram_type": "flowchart",
+  "generated_at_utc": "2026-03-24T03:07:21Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 28,
+    "total_stages": 5,
+    "updates_emitted": 5,
+    "final_stage_index": 5,
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 15,
+      "edge_count": 0,
+      "group_count": 5,
+      "node_ids": [
+        "InputA",
+        "InputB",
+        "schema",
+        "ValidateA",
+        "ValidateB",
+        "DiffTool",
+        "GenerateDiff",
+        "AnalyzeDiff",
+        "RuntimeCheck",
+        "ResourceCheck",
+        "ConstraintCheck",
+        "OutputA"
+      ],
+      "edge_ids": [],
+      "group_ids": [
+        "InputSources",
+        "SchemaValidation",
+        "DiffAnalysis",
+        "RuntimeValidation",
+        "OutputGeneration"
+      ]
+    },
+    "reference_graph_metrics": {
+      "node_count": 31,
+      "edge_count": 0,
+      "group_count": 10,
+      "node_ids": [
+        "SysConfigInput",
+        "EnvVarsInput",
+        "CLIInput",
+        "RPCInput",
+        "SchemaLoad",
+        "StructCheck",
+        "TypeCheck",
+        "EnumCheck",
+        "RangeCheck",
+        "PathCheck",
+        "DepCheck",
+        "SecCheck"
+      ],
+      "edge_ids": [],
+      "group_ids": [
+        "group_1",
+        "Input",
+        "Stage1",
+        "Stage2",
+        "Stage3",
+        "Gates",
+        "Output",
+        "ErrorHandling",
+        "Observability",
+        "Modes"
+      ]
+    }
+  },
+  "final_state": {
+    "sample_id": "gh_flowchart_00529",
+    "diagram_type": "flowchart",
+    "current_stage_index": 5,
+    "current_graph_ir": {
+      "graph_id": "gh_flowchart_00529",
+      "diagram_type": "flowchart",
+      "nodes": [
+        {
+          "id": "InputA",
+          "label": "Configuration File A<br/JSON Format",
+          "kind": "node",
+          "parent": "InputSources",
+          "source_index": 4,
+          "metadata": {
+            "diagram_type": "flowchart"
+          }
+        },
+        {
+          "id": "InputB",
+          "label": "Configuration File B<br/JSON Format",
+          "kind": "node",
+          "parent": "InputSources",
+          "source_index": 5,
+          "metadata": {
+            "diagram_type": "flowchart"
+          }
+        },
+        {
+          "id": "schema",
+          "label": "JSON Schema<br/Validation Rules",
+          "kind": "node",
+          "parent": "SchemaValidation",
+          "source_index": 6,
+          "metadata": {
+            "diagram_type": "flowchart"
+          }
+        },
+        {
+          "id": "ValidateA",
+          "label": "Validate Configuration A",
+          "kind": "node",
+          "parent": "SchemaValidation",
+          "source_index": 7,
+          "metadata": {
+            "diagram_type": "flowchart"
+          }
+        },
+        {
+          "id": "ValidateB",
+          "label": "Validate Configuration B",
+          "kind": "node",
+          "parent": "SchemaValidation",
+          "source_index": 8,
+          "metadata": {
+            "diagram_type": "flowchart"
+          }
+        },
+        {
+          "id": "DiffTool",
+          "label": "Diff Tool<br/Comparison Engine",
+          "kind": "node",
+          "parent": "DiffAnalysis",
+          "source_index": 11,
+          "metadata": {
+            "diagram_type": "flowchart"
+          }
+        },
+        {
+          "id": "GenerateDiff",
+          "label": "Generate Diff Report",
+          "kind": "node",
+          "parent": "DiffAnalysis",
+          "source_index": 12,
+          "metadata": {
+            "diagram_type": "flowchart"
+          }
+        },
+        {
+          "id": "AnalyzeDiff",
+          "label": "Analyze Differences",
+          "kind": "node",
+          "parent": "DiffAnalysis",
+          "source_index": 13,
+          "metadata": {
+            "diagram_type": "flowchart"
+          }
+        },
+        {
+          "id": "RuntimeCheck",
+          "label": "Runtime Validation",
+          "kind": "node",
+          "parent": "RuntimeValidation",
+          "source_index": 16,
+          "metadata": {
+            "diagram_type": "flowchart"
+          }
+        },
+        {
+          "id": "ResourceCheck",
+          "label": "Resource Availability",
+          "kind": "node",
+          "parent": "RuntimeValidation",
+          "source_index": 17,
+          "metadata": {
+            "diagram_type": "flowchart"
+          }
+        },
+        {
+          "id": "ConstraintCheck",
+          "label": "Constraint Validation",
+          "kind": "node",
+          "parent": "RuntimeValidation",
+          "source_index": 18,
+          "metadata": {
+            "diagram_type": "flowchart"
+          }
+        },
+        {
+          "id": "OutputA",
+          "label": "Validated Configuration A",
+          "kind": "node",
+          "parent": "OutputGeneration",
+          "source_index": 20,
+          "metadata": {
+            "diagram_type": "flowchart"
+          }
+        },
+        {
+          "id": "OutputB",
+          "label": "Validated Configuration B",
+          "kind": "node",
+          "parent": "OutputGeneration",
+          "source_index": 21,
+          "metadata": {
+            "diagram_type": "flowchart"
+          }
+        },
+        {
+          "id": "DiffOutput",
+          "label": "Diff Report",
+          "kind": "node",
+          "parent": "OutputGeneration",
+          "source_index": 22,
+          "metadata": {
+            "diagram_type": "flowchart"
+          }
+        },
+        {
+          "id": "RuntimeOutput",
+          "label": "Runtime Validation Results",
+          "kind": "node",
+          "parent": "OutputGeneration",
+          "source_index": 23,
+          "metadata": {
+            "diagram_type": "flowchart"
+          }
+        }
+      ],
+      "edges": [],
+      "groups": [
+        {
+          "id": "InputSources",
+          "label": "📥 Input Sources",
+          "parent": null,
+          "member_ids": [
+            "InputA",
+            "InputB"
+          ],
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "SchemaValidation",
+          "label": "🔍 Schema Validation",
+          "parent": null,
+          "member_ids": [
+            "schema",
+            "ValidateA",
+            "ValidateB"
+          ],
+          "source_index": 3,
+          "metadata": {}
+        },
+        {
+          "id": "DiffAnalysis",
+          "label": "🔎 Diff Analysis",
+          "parent": null,
+          "member_ids": [
+            "DiffTool",
+            "GenerateDiff",
+            "AnalyzeDiff"
+          ],
+          "source_index": 5,
+          "metadata": {}
+        },
+        {
+          "id": "RuntimeValidation",
+          "label": "⚙️ Runtime Validation",
+          "parent": null,
+          "member_ids": [
+            "RuntimeCheck",
+            "ResourceCheck",
+            "ConstraintCheck"
+          ],
+          "source_index": 7,
+          "metadata": {}
+        },
+        {
+          "id": "OutputGeneration",
+          "label": "📊 Output Generation",
+          "parent": null,
+          "member_ids": [
+            "OutputA",
+            "OutputB",
+            "DiffOutput",
+            "RuntimeOutput"
+          ],
+          "source_index": 9,
+          "metadata": {}
+        }
+      ],
+      "styles": [],
+      "metadata": {
+        "source_path": "E:\\Desktop\\stream2graph\\data\\incremental_dataset\\sources\\open_balanced_v1_3360\\gh_flowchart_00529.json",
+        "compilation_status": "success",
+        "content_size": 1425,
+        "normalized_code": "flowchart TD\n    %% Define the main sections\n    subgraph InputSources[\"📥 Input Sources\"]\n        InputA[\"Configuration File A<br/JSON Format\"]\n        InputB[\"Configuration File B<br/JSON Format\"]\n    end\n    subgraph SchemaValidation[\"🔍 Schema Validation\"]\n        Schema[\"JSON Schema<br/Validation Rules\"]\n        ValidateA[\"Validate Configuration A\"]\n        ValidateB[\"Validate Configuration B\"]\n    end\n    subgraph DiffAnalysis[\"🔎 Diff Analysis\"]\n        DiffTool[\"Diff Tool<br/Comparison Engine\"]\n        GenerateDiff[\"Generate Diff Report\"]\n        AnalyzeDiff[\"Analyze Differences\"]\n    end\n    subgraph OutputGeneration[\"📊 Output Generation\"]\n        FormatDiff[\"Format Diff Output\"]\n        FinalReport[\"Final Diff Report<br/HTML/PDF Format\"]\n    end\n    subgraph RuntimeValidation[\"⚙️ Runtime Validation\"]\n        RuntimeCheck[\"Runtime Validation\"]\n        ResourceCheck[\"Resource Availability\"]\n        ConstraintCheck[\"Constraint Validation\"]\n    end\n    %% Define the connections\n    InputA -- ValidateA\n    InputB -- ValidateB\n    Schema -- ValidateA\n    Schema -- ValidateB\n    ValidateA --|\"Valid\"| DiffTool\n    ValidateB --|\"Valid\"| DiffTool\n    ValidateA --|\"Invalid\"| ErrorA[\"Validation Error A<br/Stop Process\"]\n    ValidateB --|\"Invalid\"| ErrorB[\"Validation Error B<br/Stop Process\"]\n    DiffTool -- GenerateDiff\n    GenerateDiff -- AnalyzeDiff\n    AnalyzeDiff -- FormatDiff\n    FormatDiff -- FinalReport\n    RuntimeCheck -- ResourceCheck\n    RuntimeCheck -- ConstraintCheck\n    %% Apply styling\n    classDef inputStyle fill:#e3f2fd,stroke:#1565c0,stroke-width:2px\n    classDef validationStyle fill:#fff8e1,stroke:#f9a825,stroke-width:2px\n    classDef diffStyle fill:#fce4ec,stroke:#c2185b,stroke-width:2px\n    classDef outputStyle fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px\n    classDef errorStyle fill:#ffebee,stroke:#c62828,stroke-width:2px\n    class InputA,InputB inputStyle\n    class Schema,ValidateA,ValidateB validationStyle\n    class DiffTool,GenerateDiff,AnalyzeDiff diffStyle\n    class FormatDiff,FinalReport outputStyle\n    class ErrorA,ErrorB errorStyle"
+      }
+    },
+    "rendered_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]\n    DiffTool[\"Diff Tool<br/Comparison Engine\"]\n    GenerateDiff[\"Generate Diff Report\"]\n    AnalyzeDiff[\"Analyze Differences\"]\n    RuntimeCheck[\"Runtime Validation\"]\n    ResourceCheck[\"Resource Availability\"]\n    ConstraintCheck[\"Constraint Validation\"]\n    OutputA[\"Validated Configuration A\"]\n    OutputB[\"Validated Configuration B\"]\n    DiffOutput[\"Diff Report\"]\n    RuntimeOutput[\"Runtime Validation Results\"]",
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 15,
+        "edge_count": 0,
+        "group_count": 5,
+        "node_ids": [
+          "InputA",
+          "InputB",
+          "schema",
+          "ValidateA",
+          "ValidateB",
+          "DiffTool",
+          "GenerateDiff",
+          "AnalyzeDiff",
+          "RuntimeCheck",
+          "ResourceCheck",
+          "ConstraintCheck",
+          "OutputA"
+        ],
+        "edge_ids": [],
+        "group_ids": [
+          "InputSources",
+          "SchemaValidation",
+          "DiffAnalysis",
+          "RuntimeValidation",
+          "OutputGeneration"
+        ]
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "系统架构师",
+        "content": "今天我们来设计一个完整的配置验证管道。首先需要建立核心基础设施，包括输入源和基础的schema验证组件。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "Qwen/Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2092.1845,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "后端工程师",
+        "content": "配置输入源具体有哪些？",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "Qwen/Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2086.9584,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "InputSources",
+            "label": "📥 Input Sources",
+            "id": "InputSources"
+          },
+          {
+            "op": "add_group",
+            "group_id": "SchemaValidation",
+            "label": "🔍 Schema Validation",
+            "id": "SchemaValidation"
+          },
+          {
+            "op": "add_node",
+            "node_id": "InputA",
+            "label": "Configuration File A<br/JSON Format",
+            "kind": "node",
+            "id": "InputA"
+          },
+          {
+            "op": "add_node",
+            "node_id": "InputB",
+            "label": "Configuration File B<br/JSON Format",
+            "kind": "node",
+            "id": "InputB"
+          },
+          {
+            "op": "add_node",
+            "node_id": "schema",
+            "label": "JSON Schema<br/Validation Rules",
+            "kind": "node",
+            "id": "schema"
+          },
+          {
+            "op": "add_node",
+            "node_id": "ValidateA",
+            "label": "Validate Configuration A",
+            "kind": "node",
+            "id": "ValidateA"
+          },
+          {
+            "op": "add_node",
+            "node_id": "ValidateB",
+            "label": "Validate Configuration B",
+            "kind": "node",
+            "id": "ValidateB"
+          }
+        ],
+        "target_graph_ir": {
+          "graph_id": "gh_flowchart_00529",
+          "diagram_type": "flowchart",
+          "nodes": [
+            {
+              "id": "InputA",
+              "label": "Configuration File A<br/JSON Format",
+              "kind": "node",
+              "parent": "InputSources",
+              "source_index": 4,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "InputB",
+              "label": "Configuration File B<br/JSON Format",
+              "kind": "node",
+              "parent": "InputSources",
+              "source_index": 5,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "schema",
+              "label": "JSON Schema<br/Validation Rules",
+              "kind": "node",
+              "parent": "SchemaValidation",
+              "source_index": 8,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "ValidateA",
+              "label": "Validate Configuration A",
+              "kind": "node",
+              "parent": "SchemaValidation",
+              "source_index": 9,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "ValidateB",
+              "label": "Validate Configuration B",
+              "kind": "node",
+              "parent": "SchemaValidation",
+              "source_index": 10,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            }
+          ],
+          "edges": [],
+          "groups": [
+            {
+              "id": "InputSources",
+              "label": "📥 Input Sources",
+              "parent": null,
+              "member_ids": [
+                "InputA",
+                "InputB"
+              ],
+              "source_index": 3,
+              "metadata": {}
+            },
+            {
+              "id": "SchemaValidation",
+              "label": "🔍 Schema Validation",
+              "parent": null,
+              "member_ids": [
+                "schema",
+                "ValidateA",
+                "ValidateB"
+              ],
+              "source_index": 7,
+              "metadata": {}
+            }
+          ],
+          "styles": [],
+          "metadata": {
+            "source_path": "E:\\Desktop\\stream2graph\\data\\incremental_dataset\\sources\\open_balanced_v1_3360\\gh_flowchart_00529.json",
+            "compilation_status": "success",
+            "content_size": 1425,
+            "normalized_code": "flowchart TD\n    %% Define the main sections\n    subgraph InputSources[\"📥 Input Sources\"]\n        InputA[\"Configuration File A<br/JSON Format\"]\n        InputB[\"Configuration File B<br/JSON Format\"]\n    end\n    subgraph SchemaValidation[\"🔍 Schema Validation\"]\n        Schema[\"JSON Schema<br/Validation Rules\"]\n        ValidateA[\"Validate Configuration A\"]\n        ValidateB[\"Validate Configuration B\"]\n    end\n    subgraph DiffAnalysis[\"🔎 Diff Analysis\"]\n        DiffTool[\"Diff Tool<br/Comparison Engine\"]\n        GenerateDiff[\"Generate Diff Report\"]\n        AnalyzeDiff[\"Analyze Differences\"]\n    end\n    subgraph OutputGeneration[\"📊 Output Generation\"]\n        FormatDiff[\"Format Diff Output\"]\n        FinalReport[\"Final Diff Report<br/HTML/PDF Format\"]\n    end\n    %% Define the connections\n    InputA -- ValidateA\n    InputB -- ValidateB\n    Schema -- ValidateA\n    Schema -- ValidateB\n    ValidateA --|\"Valid\"| DiffTool\n    ValidateB --|\"Valid\"| DiffTool\n    ValidateA --|\"Invalid\"| ErrorA[\"Validation Error A<br/Stop Process\"]\n    ValidateB --|\"Invalid\"| ErrorB[\"Validation Error B<br/Stop Process\"]\n    DiffTool -- GenerateDiff\n    GenerateDiff -- AnalyzeDiff\n    AnalyzeDiff -- FormatDiff\n    FormatDiff -- FinalReport\n    %% Apply styling\n    classDef inputStyle fill:#e3f2fd,stroke:#1565c0,stroke-width:2px\n    classDef validationStyle fill:#fff8e1,stroke:#f9a825,stroke-width:2px\n    classDef diffStyle fill:#fce4ec,stroke:#c2185b,stroke-width:2px\n    classDef outputStyle fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px\n    classDef errorStyle fill:#ffebee,stroke:#c62828,stroke-width:2px\n    class InputA,InputB inputStyle\n    class Schema,ValidateA,ValidateB validationStyle\n    class DiffTool,GenerateDiff,AnalyzeDiff diffStyle\n    class FormatDiff,FinalReport outputStyle\n    class ErrorA,ErrorB errorStyle"
+          }
+        },
+        "notes": "Stage 1/5, adds 4 nodes, 0 edges, 2 groups, current state now contains 4 nodes and 0 edges",
+        "metadata": {
+          "model_name": "Qwen/Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 145178.9694,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_group\",\n      \"group_id\": \"InputSources\",\n      \"label\": \"📥 Input Sources\"\n    },\n    {\n      \"op\": \"add_group\",\n      \"group_id\": \"SchemaValidation\",\n      \"label\": \"🔍 Schema Validation\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"InputA\",\n      \"label\": \"Configuration File A<br/JSON Format\",\n      \"kind\": \"node\"\n    ",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "InputSources",
+            "label": "📥 Input Sources",
+            "id": "InputSources"
+          },
+          {
+            "op": "add_group",
+            "group_id": "SchemaValidation",
+            "label": "🔍 Schema Validation",
+            "id": "SchemaValidation"
+          },
+          {
+            "op": "add_node",
+            "node_id": "InputA",
+            "label": "Configuration File A<br/JSON Format",
+            "kind": "node",
+            "id": "InputA"
+          },
+          {
+            "op": "add_node",
+            "node_id": "InputB",
+            "label": "Configuration File B<br/JSON Format",
+            "kind": "node",
+            "id": "InputB"
+          },
+          {
+            "op": "add_node",
+            "node_id": "schema",
+            "label": "JSON Schema<br/Validation Rules",
+            "kind": "node",
+            "id": "schema"
+          },
+          {
+            "op": "add_node",
+            "node_id": "ValidateA",
+            "label": "Validate Configuration A",
+            "kind": "node",
+            "id": "ValidateA"
+          },
+          {
+            "op": "add_node",
+            "node_id": "ValidateB",
+            "label": "Validate Configuration B",
+            "kind": "node",
+            "id": "ValidateB"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation"
+          ]
+        },
+        "gold_stage_metrics": {
+          "node_count": 7,
+          "edge_count": 0,
+          "group_count": 3,
+          "delta_count": 10
+        },
+        "preview_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "系统架构师",
+        "content": "我们定义了四个输入来源：sys.config作为编译时的静态配置源，Environment Variables用于运行时环境变量配置，Command-line Args提供运行时命令行参数，RPC Updates支持动态更新。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "Qwen/Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2082.6693,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "后端工程师",
+        "content": "这些输入源进入验证管道后，最先处理的是什么？",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "Qwen/Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2091.9633,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "系统架构师",
+        "content": "第一阶段是Schema Validation层。首先通过jesse库加载JSON Schema，然后进行Structural Validation检查必需字段是否存在，最后通过Type Validation确保数据类型正确，比如integer、string等基础类型。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "Qwen/Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2090.6501,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "后端工程师",
+        "content": "Schema验证通过后，下一步是什么？",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "Qwen/Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2082.8092,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "DiffAnalysis",
+            "label": "🔎 Diff Analysis",
+            "id": "DiffAnalysis"
+          },
+          {
+            "op": "add_node",
+            "node_id": "DiffTool",
+            "label": "Diff Tool<br/Comparison Engine",
+            "kind": "node",
+            "id": "DiffTool"
+          },
+          {
+            "op": "add_node",
+            "node_id": "GenerateDiff",
+            "label": "Generate Diff Report",
+            "kind": "node",
+            "id": "GenerateDiff"
+          },
+          {
+            "op": "add_node",
+            "node_id": "AnalyzeDiff",
+            "label": "Analyze Differences",
+            "kind": "node",
+            "id": "AnalyzeDiff"
+          }
+        ],
+        "target_graph_ir": {
+          "graph_id": "gh_flowchart_00529",
+          "diagram_type": "flowchart",
+          "nodes": [
+            {
+              "id": "InputA",
+              "label": "Configuration File A<br/JSON Format",
+              "kind": "node",
+              "parent": "InputSources",
+              "source_index": 4,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "InputB",
+              "label": "Configuration File B<br/JSON Format",
+              "kind": "node",
+              "parent": "InputSources",
+              "source_index": 5,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "schema",
+              "label": "JSON Schema<br/Validation Rules",
+              "kind": "node",
+              "parent": "SchemaValidation",
+              "source_index": 6,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "ValidateA",
+              "label": "Validate Configuration A",
+              "kind": "node",
+              "parent": "SchemaValidation",
+              "source_index": 7,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "ValidateB",
+              "label": "Validate Configuration B",
+              "kind": "node",
+              "parent": "SchemaValidation",
+              "source_index": 8,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "DiffTool",
+              "label": "Diff Tool<br/Comparison Engine",
+              "kind": "node",
+              "parent": "DiffAnalysis",
+              "source_index": 10,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "GenerateDiff",
+              "label": "Generate Diff Report",
+              "kind": "node",
+              "parent": "DiffAnalysis",
+              "source_index": 11,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "AnalyzeDiff",
+              "label": "Analyze Differences",
+              "kind": "node",
+              "parent": "DiffAnalysis",
+              "source_index": 12,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            }
+          ],
+          "edges": [],
+          "groups": [
+            {
+              "id": "InputSources",
+              "label": "📥 Input Sources",
+              "parent": null,
+              "member_ids": [
+                "InputA",
+                "InputB"
+              ],
+              "source_index": 2,
+              "metadata": {}
+            },
+            {
+              "id": "SchemaValidation",
+              "label": "🔍 Schema Validation",
+              "parent": null,
+              "member_ids": [
+                "schema",
+                "ValidateA",
+                "ValidateB"
+              ],
+              "source_index": 3,
+              "metadata": {}
+            },
+            {
+              "id": "DiffAnalysis",
+              "label": "🔎 Diff Analysis",
+              "parent": null,
+              "member_ids": [
+                "DiffTool",
+                "GenerateDiff",
+                "AnalyzeDiff"
+              ],
+              "source_index": 9,
+              "metadata": {}
+            }
+          ],
+          "styles": [],
+          "metadata": {
+            "source_path": "E:\\Desktop\\stream2graph\\data\\incremental_dataset\\sources\\open_balanced_v1_3360\\gh_flowchart_00529.json",
+            "compilation_status": "success",
+            "content_size": 1425,
+            "normalized_code": "flowchart TD\n    %% Define the main sections\n    subgraph InputSources[\"📥 Input Sources\"]\n        InputA[\"Configuration File A<br/JSON Format\"]\n        InputB[\"Configuration File B<br/JSON Format\"]\n    end\n    subgraph SchemaValidation[\"🔍 Schema Validation\"]\n        Schema[\"JSON Schema<br/Validation Rules\"]\n        ValidateA[\"Validate Configuration A\"]\n        ValidateB[\"Validate Configuration B\"]\n    end\n    subgraph DiffAnalysis[\"🔎 Diff Analysis\"]\n        DiffTool[\"Diff Tool<br/Comparison Engine\"]\n        GenerateDiff[\"Generate Diff Report\"]\n        AnalyzeDiff[\"Analyze Differences\"]\n    end\n    subgraph OutputGeneration[\"📊 Output Generation\"]\n        FormatDiff[\"Format Diff Output\"]\n        FinalReport[\"Final Diff Report<br/HTML/PDF Format\"]\n    end\n    %% Define the connections\n    InputA -- ValidateA\n    InputB -- ValidateB\n    Schema -- ValidateA\n    Schema -- ValidateB\n    ValidateA --|\"Valid\"| DiffTool\n    ValidateB --|\"Valid\"| DiffTool\n    ValidateA --|\"Invalid\"| ErrorA[\"Validation Error A<br/Stop Process\"]\n    ValidateB --|\"Invalid\"| ErrorB[\"Validation Error B<br/Stop Process\"]\n    DiffTool -- GenerateDiff\n    GenerateDiff -- AnalyzeDiff\n    AnalyzeDiff -- FormatDiff\n    FormatDiff -- FinalReport\n    %% Apply styling\n    classDef inputStyle fill:#e3f2fd,stroke:#1565c0,stroke-width:2px\n    classDef validationStyle fill:#fff8e1,stroke:#f9a825,stroke-width:2px\n    classDef diffStyle fill:#fce4ec,stroke:#c2185b,stroke-width:2px\n    classDef outputStyle fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px\n    classDef errorStyle fill:#ffebee,stroke:#c62828,stroke-width:2px\n    class InputA,InputB inputStyle\n    class Schema,ValidateA,ValidateB validationStyle\n    class DiffTool,GenerateDiff,AnalyzeDiff diffStyle\n    class FormatDiff,FinalReport outputStyle\n    class ErrorA,ErrorB errorStyle"
+          }
+        },
+        "notes": "Stage 2/5, adds 3 nodes, 0 edges, 1 groups, current state now contains 8 nodes and 0 edges",
+        "metadata": {
+          "model_name": "Qwen/Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 162208.7903,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 2,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_group\",\n      \"group_id\": \"DiffAnalysis\",\n      \"label\": \"🔎 Diff Analysis\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"DiffTool\",\n      \"label\": \"Diff Tool<br/Comparison Engine\",\n      \"kind\": \"node\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"GenerateDiff\",\n      \"label\": \"Generate Diff Report\",\n      \"kind",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "DiffAnalysis",
+            "label": "🔎 Diff Analysis",
+            "id": "DiffAnalysis"
+          },
+          {
+            "op": "add_node",
+            "node_id": "DiffTool",
+            "label": "Diff Tool<br/Comparison Engine",
+            "kind": "node",
+            "id": "DiffTool"
+          },
+          {
+            "op": "add_node",
+            "node_id": "GenerateDiff",
+            "label": "Generate Diff Report",
+            "kind": "node",
+            "id": "GenerateDiff"
+          },
+          {
+            "op": "add_node",
+            "node_id": "AnalyzeDiff",
+            "label": "Analyze Differences",
+            "kind": "node",
+            "id": "AnalyzeDiff"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 8,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB",
+            "DiffTool",
+            "GenerateDiff",
+            "AnalyzeDiff"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation",
+            "DiffAnalysis"
+          ]
+        },
+        "gold_stage_metrics": {
+          "node_count": 13,
+          "edge_count": 0,
+          "group_count": 5,
+          "delta_count": 8
+        },
+        "preview_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]\n    DiffTool[\"Diff Tool<br/Comparison Engine\"]\n    GenerateDiff[\"Generate Diff Report\"]\n    AnalyzeDiff[\"Analyze Differences\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 8,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB",
+            "DiffTool",
+            "GenerateDiff",
+            "AnalyzeDiff"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation",
+            "DiffAnalysis"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]\n    DiffTool[\"Diff Tool<br/Comparison Engine\"]\n    GenerateDiff[\"Generate Diff Report\"]\n    AnalyzeDiff[\"Analyze Differences\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 7,
+        "speaker": "系统架构师",
+        "content": "接下来是Stage 2的Business Logic Validation层。这里我们检查配置值的业务语义是否正确。比如EnumCheck验证枚举值是否在允许范围内，RangeCheck检查数值是否在最小最大值之间。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "Qwen/Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2193.1937,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 8,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB",
+            "DiffTool",
+            "GenerateDiff",
+            "AnalyzeDiff"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation",
+            "DiffAnalysis"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]\n    DiffTool[\"Diff Tool<br/Comparison Engine\"]\n    GenerateDiff[\"Generate Diff Report\"]\n    AnalyzeDiff[\"Analyze Differences\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 8,
+        "speaker": "后端工程师",
+        "content": "还有其他业务逻辑检查吗？",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "Qwen/Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2191.7071,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 8,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB",
+            "DiffTool",
+            "GenerateDiff",
+            "AnalyzeDiff"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation",
+            "DiffAnalysis"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]\n    DiffTool[\"Diff Tool<br/Comparison Engine\"]\n    GenerateDiff[\"Generate Diff Report\"]\n    AnalyzeDiff[\"Analyze Differences\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 9,
+        "speaker": "系统架构师",
+        "content": "还有PathCheck验证文件路径是否存在且可读，DepCheck检查依赖冲突和必需项，SecCheck确保配置中不包含敏感 secrets，ConnCheck验证数据库和网络连接配置。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "Qwen/Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2196.4104,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 8,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB",
+            "DiffTool",
+            "GenerateDiff",
+            "AnalyzeDiff"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation",
+            "DiffAnalysis"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]\n    DiffTool[\"Diff Tool<br/Comparison Engine\"]\n    GenerateDiff[\"Generate Diff Report\"]\n    AnalyzeDiff[\"Analyze Differences\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 10,
+        "speaker": "后端工程师",
+        "content": "业务逻辑验证之后呢？",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "Qwen/Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2244.0424,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 8,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB",
+            "DiffTool",
+            "GenerateDiff",
+            "AnalyzeDiff"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation",
+            "DiffAnalysis"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]\n    DiffTool[\"Diff Tool<br/Comparison Engine\"]\n    GenerateDiff[\"Generate Diff Report\"]\n    AnalyzeDiff[\"Analyze Differences\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 11,
+        "speaker": "系统架构师",
+        "content": "我们还预置了Stage 3的Runtime Validation组，为后续运行时检查做准备。这将在系统启动前验证资源可用性等条件。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "Qwen/Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2199.9726,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 8,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB",
+            "DiffTool",
+            "GenerateDiff",
+            "AnalyzeDiff"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation",
+            "DiffAnalysis"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]\n    DiffTool[\"Diff Tool<br/Comparison Engine\"]\n    GenerateDiff[\"Generate Diff Report\"]\n    AnalyzeDiff[\"Analyze Differences\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 12,
+        "speaker": "后端工程师",
+        "content": "那实际运行时需要做哪些验证？",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "Qwen/Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2179.1646,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 8,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB",
+            "DiffTool",
+            "GenerateDiff",
+            "AnalyzeDiff"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation",
+            "DiffAnalysis"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]\n    DiffTool[\"Diff Tool<br/Comparison Engine\"]\n    GenerateDiff[\"Generate Diff Report\"]\n    AnalyzeDiff[\"Analyze Differences\"]"
+      },
+      "planner": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "RuntimeValidation",
+            "label": "⚙️ Runtime Validation",
+            "id": "RuntimeValidation"
+          },
+          {
+            "op": "add_node",
+            "node_id": "RuntimeCheck",
+            "label": "Runtime Validation",
+            "kind": "node",
+            "id": "RuntimeCheck"
+          },
+          {
+            "op": "add_node",
+            "node_id": "ResourceCheck",
+            "label": "Resource Availability",
+            "kind": "node",
+            "id": "ResourceCheck"
+          },
+          {
+            "op": "add_node",
+            "node_id": "ConstraintCheck",
+            "label": "Constraint Validation",
+            "kind": "node",
+            "id": "ConstraintCheck"
+          }
+        ],
+        "target_graph_ir": {
+          "graph_id": "gh_flowchart_00529",
+          "diagram_type": "flowchart",
+          "nodes": [
+            {
+              "id": "InputA",
+              "label": "Configuration File A<br/JSON Format",
+              "kind": "node",
+              "parent": "InputSources",
+              "source_index": 4,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "InputB",
+              "label": "Configuration File B<br/JSON Format",
+              "kind": "node",
+              "parent": "InputSources",
+              "source_index": 5,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "schema",
+              "label": "JSON Schema<br/Validation Rules",
+              "kind": "node",
+              "parent": "SchemaValidation",
+              "source_index": 6,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "ValidateA",
+              "label": "Validate Configuration A",
+              "kind": "node",
+              "parent": "SchemaValidation",
+              "source_index": 7,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "ValidateB",
+              "label": "Validate Configuration B",
+              "kind": "node",
+              "parent": "SchemaValidation",
+              "source_index": 8,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "DiffTool",
+              "label": "Diff Tool<br/Comparison Engine",
+              "kind": "node",
+              "parent": "DiffAnalysis",
+              "source_index": 11,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "GenerateDiff",
+              "label": "Generate Diff Report",
+              "kind": "node",
+              "parent": "DiffAnalysis",
+              "source_index": 12,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "AnalyzeDiff",
+              "label": "Analyze Differences",
+              "kind": "node",
+              "parent": "DiffAnalysis",
+              "source_index": 13,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "RuntimeCheck",
+              "label": "Runtime Validation",
+              "kind": "node",
+              "parent": "RuntimeValidation",
+              "source_index": 16,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "ResourceCheck",
+              "label": "Resource Availability",
+              "kind": "node",
+              "parent": "RuntimeValidation",
+              "source_index": 17,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "ConstraintCheck",
+              "label": "Constraint Validation",
+              "kind": "node",
+              "parent": "RuntimeValidation",
+              "source_index": 18,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            }
+          ],
+          "edges": [],
+          "groups": [
+            {
+              "id": "InputSources",
+              "label": "📥 Input Sources",
+              "parent": null,
+              "member_ids": [
+                "InputA",
+                "InputB"
+              ],
+              "source_index": 2,
+              "metadata": {}
+            },
+            {
+              "id": "SchemaValidation",
+              "label": "🔍 Schema Validation",
+              "parent": null,
+              "member_ids": [
+                "schema",
+                "ValidateA",
+                "ValidateB"
+              ],
+              "source_index": 3,
+              "metadata": {}
+            },
+            {
+              "id": "DiffAnalysis",
+              "label": "🔎 Diff Analysis",
+              "parent": null,
+              "member_ids": [
+                "DiffTool",
+                "GenerateDiff",
+                "AnalyzeDiff"
+              ],
+              "source_index": 5,
+              "metadata": {}
+            },
+            {
+              "id": "RuntimeValidation",
+              "label": "⚙️ Runtime Validation",
+              "parent": null,
+              "member_ids": [
+                "RuntimeCheck",
+                "ResourceCheck",
+                "ConstraintCheck"
+              ],
+              "source_index": 15,
+              "metadata": {}
+            }
+          ],
+          "styles": [],
+          "metadata": {
+            "source_path": "E:\\Desktop\\stream2graph\\data\\incremental_dataset\\sources\\open_balanced_v1_3360\\gh_flowchart_00529.json",
+            "compilation_status": "success",
+            "content_size": 1425,
+            "normalized_code": "flowchart TD\n    %% Define the main sections\n    subgraph InputSources[\"📥 Input Sources\"]\n        InputA[\"Configuration File A<br/JSON Format\"]\n        InputB[\"Configuration File B<br/JSON Format\"]\n    end\n    subgraph SchemaValidation[\"🔍 Schema Validation\"]\n        Schema[\"JSON Schema<br/Validation Rules\"]\n        ValidateA[\"Validate Configuration A\"]\n        ValidateB[\"Validate Configuration B\"]\n    end\n    subgraph DiffAnalysis[\"🔎 Diff Analysis\"]\n        DiffTool[\"Diff Tool<br/Comparison Engine\"]\n        GenerateDiff[\"Generate Diff Report\"]\n        AnalyzeDiff[\"Analyze Differences\"]\n    end\n    subgraph OutputGeneration[\"📊 Output Generation\"]\n        FormatDiff[\"Format Diff Output\"]\n        FinalReport[\"Final Diff Report<br/HTML/PDF Format\"]\n    end\n    subgraph RuntimeValidation[\"⚙️ Runtime Validation\"]\n        RuntimeCheck[\"Runtime Validation\"]\n        ResourceCheck[\"Resource Availability\"]\n        ConstraintCheck[\"Constraint Validation\"]\n    end\n    %% Define the connections\n    InputA -- ValidateA\n    InputB -- ValidateB\n    Schema -- ValidateA\n    Schema -- ValidateB\n    ValidateA --|\"Valid\"| DiffTool\n    ValidateB --|\"Valid\"| DiffTool\n    ValidateA --|\"Invalid\"| ErrorA[\"Validation Error A<br/Stop Process\"]\n    ValidateB --|\"Invalid\"| ErrorB[\"Validation Error B<br/Stop Process\"]\n    DiffTool -- GenerateDiff\n    GenerateDiff -- AnalyzeDiff\n    AnalyzeDiff -- FormatDiff\n    FormatDiff -- FinalReport\n    RuntimeCheck -- ResourceCheck\n    RuntimeCheck -- ConstraintCheck\n    %% Apply styling\n    classDef inputStyle fill:#e3f2fd,stroke:#1565c0,stroke-width:2px\n    classDef validationStyle fill:#fff8e1,stroke:#f9a825,stroke-width:2px\n    classDef diffStyle fill:#fce4ec,stroke:#c2185b,stroke-width:2px\n    classDef outputStyle fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px\n    classDef errorStyle fill:#ffebee,stroke:#c62828,stroke-width:2px\n    class InputA,InputB inputStyle\n    class Schema,ValidateA,ValidateB validationStyle\n    class DiffTool,GenerateDiff,AnalyzeDiff diffStyle\n    class FormatDiff,FinalReport outputStyle\n    class ErrorA,ErrorB errorStyle"
+          }
+        },
+        "notes": "Stage 3/5, adds 3 nodes, 0 edges, 1 groups, current state now contains 11 nodes and 0 edges",
+        "metadata": {
+          "model_name": "Qwen/Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 196844.8546,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 3,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_group\",\n      \"group_id\": \"RuntimeValidation\",\n      \"label\": \"⚙️ Runtime Validation\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"RuntimeCheck\",\n      \"label\": \"Runtime Validation\",\n      \"kind\": \"node\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"ResourceCheck\",\n      \"label\": \"Resource Availability\",\n      ",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "RuntimeValidation",
+            "label": "⚙️ Runtime Validation",
+            "id": "RuntimeValidation"
+          },
+          {
+            "op": "add_node",
+            "node_id": "RuntimeCheck",
+            "label": "Runtime Validation",
+            "kind": "node",
+            "id": "RuntimeCheck"
+          },
+          {
+            "op": "add_node",
+            "node_id": "ResourceCheck",
+            "label": "Resource Availability",
+            "kind": "node",
+            "id": "ResourceCheck"
+          },
+          {
+            "op": "add_node",
+            "node_id": "ConstraintCheck",
+            "label": "Constraint Validation",
+            "kind": "node",
+            "id": "ConstraintCheck"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 11,
+          "edge_count": 0,
+          "group_count": 4,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB",
+            "DiffTool",
+            "GenerateDiff",
+            "AnalyzeDiff",
+            "RuntimeCheck",
+            "ResourceCheck",
+            "ConstraintCheck"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation",
+            "DiffAnalysis",
+            "RuntimeValidation"
+          ]
+        },
+        "gold_stage_metrics": {
+          "node_count": 19,
+          "edge_count": 0,
+          "group_count": 6,
+          "delta_count": 7
+        },
+        "preview_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]\n    DiffTool[\"Diff Tool<br/Comparison Engine\"]\n    GenerateDiff[\"Generate Diff Report\"]\n    AnalyzeDiff[\"Analyze Differences\"]\n    RuntimeCheck[\"Runtime Validation\"]\n    ResourceCheck[\"Resource Availability\"]\n    ConstraintCheck[\"Constraint Validation\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 11,
+          "edge_count": 0,
+          "group_count": 4,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB",
+            "DiffTool",
+            "GenerateDiff",
+            "AnalyzeDiff",
+            "RuntimeCheck",
+            "ResourceCheck",
+            "ConstraintCheck"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation",
+            "DiffAnalysis",
+            "RuntimeValidation"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]\n    DiffTool[\"Diff Tool<br/Comparison Engine\"]\n    GenerateDiff[\"Generate Diff Report\"]\n    AnalyzeDiff[\"Analyze Differences\"]\n    RuntimeCheck[\"Runtime Validation\"]\n    ResourceCheck[\"Resource Availability\"]\n    ConstraintCheck[\"Constraint Validation\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 13,
+        "speaker": "系统架构师",
+        "content": "运行时验证包括三个方面：ResCheck检查内存和文件句柄等资源是否充足，PermCheck验证文件访问权限，HealthCheck检查外部服务的健康状态。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "Qwen/Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2089.0796,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 11,
+          "edge_count": 0,
+          "group_count": 4,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB",
+            "DiffTool",
+            "GenerateDiff",
+            "AnalyzeDiff",
+            "RuntimeCheck",
+            "ResourceCheck",
+            "ConstraintCheck"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation",
+            "DiffAnalysis",
+            "RuntimeValidation"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]\n    DiffTool[\"Diff Tool<br/Comparison Engine\"]\n    GenerateDiff[\"Generate Diff Report\"]\n    AnalyzeDiff[\"Analyze Differences\"]\n    RuntimeCheck[\"Runtime Validation\"]\n    ResourceCheck[\"Resource Availability\"]\n    ConstraintCheck[\"Constraint Validation\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 14,
+        "speaker": "后端工程师",
+        "content": "这些运行时检查会阻塞启动流程吗？",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "Qwen/Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2079.7541,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 11,
+          "edge_count": 0,
+          "group_count": 4,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB",
+            "DiffTool",
+            "GenerateDiff",
+            "AnalyzeDiff",
+            "RuntimeCheck",
+            "ResourceCheck",
+            "ConstraintCheck"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation",
+            "DiffAnalysis",
+            "RuntimeValidation"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]\n    DiffTool[\"Diff Tool<br/Comparison Engine\"]\n    GenerateDiff[\"Generate Diff Report\"]\n    AnalyzeDiff[\"Analyze Differences\"]\n    RuntimeCheck[\"Runtime Validation\"]\n    ResourceCheck[\"Resource Availability\"]\n    ConstraintCheck[\"Constraint Validation\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 15,
+        "speaker": "系统架构师",
+        "content": "这就是我们的Gate机制。我们定义了三个验证门：Gate 1是Schema门，Gate 2是Logic门，这两个都是blocking的，任何失败都会立即阻止启动。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "Qwen/Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2099.2594,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 11,
+          "edge_count": 0,
+          "group_count": 4,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB",
+            "DiffTool",
+            "GenerateDiff",
+            "AnalyzeDiff",
+            "RuntimeCheck",
+            "ResourceCheck",
+            "ConstraintCheck"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation",
+            "DiffAnalysis",
+            "RuntimeValidation"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]\n    DiffTool[\"Diff Tool<br/Comparison Engine\"]\n    GenerateDiff[\"Generate Diff Report\"]\n    AnalyzeDiff[\"Analyze Differences\"]\n    RuntimeCheck[\"Runtime Validation\"]\n    ResourceCheck[\"Resource Availability\"]\n    ConstraintCheck[\"Constraint Validation\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 16,
+        "speaker": "后端工程师",
+        "content": "第三个门呢？",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "Qwen/Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2103.2286,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 11,
+          "edge_count": 0,
+          "group_count": 4,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB",
+            "DiffTool",
+            "GenerateDiff",
+            "AnalyzeDiff",
+            "RuntimeCheck",
+            "ResourceCheck",
+            "ConstraintCheck"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation",
+            "DiffAnalysis",
+            "RuntimeValidation"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]\n    DiffTool[\"Diff Tool<br/Comparison Engine\"]\n    GenerateDiff[\"Generate Diff Report\"]\n    AnalyzeDiff[\"Analyze Differences\"]\n    RuntimeCheck[\"Runtime Validation\"]\n    ResourceCheck[\"Resource Availability\"]\n    ConstraintCheck[\"Constraint Validation\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 17,
+        "speaker": "系统架构师",
+        "content": "Gate 3是Runtime门，它只是warning only模式。即使运行时检查发现问题，系统仍会继续启动，但会记录警告日志供运维人员关注。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "Qwen/Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2073.7224,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 11,
+          "edge_count": 0,
+          "group_count": 4,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB",
+            "DiffTool",
+            "GenerateDiff",
+            "AnalyzeDiff",
+            "RuntimeCheck",
+            "ResourceCheck",
+            "ConstraintCheck"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation",
+            "DiffAnalysis",
+            "RuntimeValidation"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]\n    DiffTool[\"Diff Tool<br/Comparison Engine\"]\n    GenerateDiff[\"Generate Diff Report\"]\n    AnalyzeDiff[\"Analyze Differences\"]\n    RuntimeCheck[\"Runtime Validation\"]\n    ResourceCheck[\"Resource Availability\"]\n    ConstraintCheck[\"Constraint Validation\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 18,
+        "speaker": "后端工程师",
+        "content": "验证完成后有哪些可能的输出结果？",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Resolve Conditions"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "Qwen/Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2085.2835,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 11,
+          "edge_count": 0,
+          "group_count": 4,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB",
+            "DiffTool",
+            "GenerateDiff",
+            "AnalyzeDiff",
+            "RuntimeCheck",
+            "ResourceCheck",
+            "ConstraintCheck"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation",
+            "DiffAnalysis",
+            "RuntimeValidation"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]\n    DiffTool[\"Diff Tool<br/Comparison Engine\"]\n    GenerateDiff[\"Generate Diff Report\"]\n    AnalyzeDiff[\"Analyze Differences\"]\n    RuntimeCheck[\"Runtime Validation\"]\n    ResourceCheck[\"Resource Availability\"]\n    ConstraintCheck[\"Constraint Validation\"]"
+      },
+      "planner": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "OutputA",
+            "label": "Validated Configuration A",
+            "kind": "node",
+            "id": "OutputA"
+          },
+          {
+            "op": "add_node",
+            "node_id": "OutputB",
+            "label": "Validated Configuration B",
+            "kind": "node",
+            "id": "OutputB"
+          },
+          {
+            "op": "add_node",
+            "node_id": "DiffOutput",
+            "label": "Diff Report",
+            "kind": "node",
+            "id": "DiffOutput"
+          },
+          {
+            "op": "add_node",
+            "node_id": "RuntimeOutput",
+            "label": "Runtime Validation Results",
+            "kind": "node",
+            "id": "RuntimeOutput"
+          }
+        ],
+        "target_graph_ir": {
+          "graph_id": "gh_flowchart_00529",
+          "diagram_type": "flowchart",
+          "nodes": [
+            {
+              "id": "InputA",
+              "label": "Configuration File A<br/JSON Format",
+              "kind": "node",
+              "parent": "InputSources",
+              "source_index": 4,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "InputB",
+              "label": "Configuration File B<br/JSON Format",
+              "kind": "node",
+              "parent": "InputSources",
+              "source_index": 5,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "schema",
+              "label": "JSON Schema<br/Validation Rules",
+              "kind": "node",
+              "parent": "SchemaValidation",
+              "source_index": 6,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "ValidateA",
+              "label": "Validate Configuration A",
+              "kind": "node",
+              "parent": "SchemaValidation",
+              "source_index": 7,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "ValidateB",
+              "label": "Validate Configuration B",
+              "kind": "node",
+              "parent": "SchemaValidation",
+              "source_index": 8,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "DiffTool",
+              "label": "Diff Tool<br/Comparison Engine",
+              "kind": "node",
+              "parent": "DiffAnalysis",
+              "source_index": 11,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "GenerateDiff",
+              "label": "Generate Diff Report",
+              "kind": "node",
+              "parent": "DiffAnalysis",
+              "source_index": 12,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "AnalyzeDiff",
+              "label": "Analyze Differences",
+              "kind": "node",
+              "parent": "DiffAnalysis",
+              "source_index": 13,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "RuntimeCheck",
+              "label": "Runtime Validation",
+              "kind": "node",
+              "parent": "RuntimeValidation",
+              "source_index": 16,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "ResourceCheck",
+              "label": "Resource Availability",
+              "kind": "node",
+              "parent": "RuntimeValidation",
+              "source_index": 17,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "ConstraintCheck",
+              "label": "Constraint Validation",
+              "kind": "node",
+              "parent": "RuntimeValidation",
+              "source_index": 18,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "OutputA",
+              "label": "Validated Configuration A",
+              "kind": "node",
+              "parent": "OutputGeneration",
+              "source_index": 21,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "OutputB",
+              "label": "Validated Configuration B",
+              "kind": "node",
+              "parent": "OutputGeneration",
+              "source_index": 22,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "DiffOutput",
+              "label": "Diff Report",
+              "kind": "node",
+              "parent": "OutputGeneration",
+              "source_index": 23,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "RuntimeOutput",
+              "label": "Runtime Validation Results",
+              "kind": "node",
+              "parent": "OutputGeneration",
+              "source_index": 24,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            }
+          ],
+          "edges": [],
+          "groups": [
+            {
+              "id": "InputSources",
+              "label": "📥 Input Sources",
+              "parent": null,
+              "member_ids": [
+                "InputA",
+                "InputB"
+              ],
+              "source_index": 2,
+              "metadata": {}
+            },
+            {
+              "id": "SchemaValidation",
+              "label": "🔍 Schema Validation",
+              "parent": null,
+              "member_ids": [
+                "schema",
+                "ValidateA",
+                "ValidateB"
+              ],
+              "source_index": 3,
+              "metadata": {}
+            },
+            {
+              "id": "DiffAnalysis",
+              "label": "🔎 Diff Analysis",
+              "parent": null,
+              "member_ids": [
+                "DiffTool",
+                "GenerateDiff",
+                "AnalyzeDiff"
+              ],
+              "source_index": 5,
+              "metadata": {}
+            },
+            {
+              "id": "RuntimeValidation",
+              "label": "⚙️ Runtime Validation",
+              "parent": null,
+              "member_ids": [
+                "RuntimeCheck",
+                "ResourceCheck",
+                "ConstraintCheck"
+              ],
+              "source_index": 7,
+              "metadata": {}
+            },
+            {
+              "id": "OutputGeneration",
+              "label": "📊 Output Generation",
+              "parent": null,
+              "member_ids": [
+                "OutputA",
+                "OutputB",
+                "DiffOutput",
+                "RuntimeOutput"
+              ],
+              "source_index": 20,
+              "metadata": {}
+            }
+          ],
+          "styles": [],
+          "metadata": {
+            "source_path": "E:\\Desktop\\stream2graph\\data\\incremental_dataset\\sources\\open_balanced_v1_3360\\gh_flowchart_00529.json",
+            "compilation_status": "success",
+            "content_size": 1425,
+            "normalized_code": "flowchart TD\n    %% Define the main sections\n    subgraph InputSources[\"📥 Input Sources\"]\n        InputA[\"Configuration File A<br/JSON Format\"]\n        InputB[\"Configuration File B<br/JSON Format\"]\n    end\n    subgraph SchemaValidation[\"🔍 Schema Validation\"]\n        Schema[\"JSON Schema<br/Validation Rules\"]\n        ValidateA[\"Validate Configuration A\"]\n        ValidateB[\"Validate Configuration B\"]\n    end\n    subgraph DiffAnalysis[\"🔎 Diff Analysis\"]\n        DiffTool[\"Diff Tool<br/Comparison Engine\"]\n        GenerateDiff[\"Generate Diff Report\"]\n        AnalyzeDiff[\"Analyze Differences\"]\n    end\n    subgraph OutputGeneration[\"📊 Output Generation\"]\n        FormatDiff[\"Format Diff Output\"]\n        FinalReport[\"Final Diff Report<br/HTML/PDF Format\"]\n    end\n    subgraph RuntimeValidation[\"⚙️ Runtime Validation\"]\n        RuntimeCheck[\"Runtime Validation\"]\n        ResourceCheck[\"Resource Availability\"]\n        ConstraintCheck[\"Constraint Validation\"]\n    end\n    %% Define the connections\n    InputA -- ValidateA\n    InputB -- ValidateB\n    Schema -- ValidateA\n    Schema -- ValidateB\n    ValidateA --|\"Valid\"| DiffTool\n    ValidateB --|\"Valid\"| DiffTool\n    ValidateA --|\"Invalid\"| ErrorA[\"Validation Error A<br/Stop Process\"]\n    ValidateB --|\"Invalid\"| ErrorB[\"Validation Error B<br/Stop Process\"]\n    DiffTool -- GenerateDiff\n    GenerateDiff -- AnalyzeDiff\n    AnalyzeDiff -- FormatDiff\n    FormatDiff -- FinalReport\n    RuntimeCheck -- ResourceCheck\n    RuntimeCheck -- ConstraintCheck\n    %% Apply styling\n    classDef inputStyle fill:#e3f2fd,stroke:#1565c0,stroke-width:2px\n    classDef validationStyle fill:#fff8e1,stroke:#f9a825,stroke-width:2px\n    classDef diffStyle fill:#fce4ec,stroke:#c2185b,stroke-width:2px\n    classDef outputStyle fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px\n    classDef errorStyle fill:#ffebee,stroke:#c62828,stroke-width:2px\n    class InputA,InputB inputStyle\n    class Schema,ValidateA,ValidateB validationStyle\n    class DiffTool,GenerateDiff,AnalyzeDiff diffStyle\n    class FormatDiff,FinalReport outputStyle\n    class ErrorA,ErrorB errorStyle"
+          }
+        },
+        "notes": "Stage 4/5, adds 4 nodes, 0 edges, current state now contains 15 nodes and 0 edges",
+        "metadata": {
+          "model_name": "Qwen/Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 231691.1669,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 4,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"OutputA\",\n      \"label\": \"Validated Configuration A\",\n      \"kind\": \"node\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"OutputB\",\n      \"label\": \"Validated Configuration B\",\n      \"kind\": \"node\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"DiffOutput\",\n      \"label\": \"Diff Report\",\n   ",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "OutputA",
+            "label": "Validated Configuration A",
+            "kind": "node",
+            "id": "OutputA"
+          },
+          {
+            "op": "add_node",
+            "node_id": "OutputB",
+            "label": "Validated Configuration B",
+            "kind": "node",
+            "id": "OutputB"
+          },
+          {
+            "op": "add_node",
+            "node_id": "DiffOutput",
+            "label": "Diff Report",
+            "kind": "node",
+            "id": "DiffOutput"
+          },
+          {
+            "op": "add_node",
+            "node_id": "RuntimeOutput",
+            "label": "Runtime Validation Results",
+            "kind": "node",
+            "id": "RuntimeOutput"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 15,
+          "edge_count": 0,
+          "group_count": 4,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB",
+            "DiffTool",
+            "GenerateDiff",
+            "AnalyzeDiff",
+            "RuntimeCheck",
+            "ResourceCheck",
+            "ConstraintCheck",
+            "OutputA"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation",
+            "DiffAnalysis",
+            "RuntimeValidation"
+          ]
+        },
+        "gold_stage_metrics": {
+          "node_count": 25,
+          "edge_count": 0,
+          "group_count": 8,
+          "delta_count": 8
+        },
+        "preview_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]\n    DiffTool[\"Diff Tool<br/Comparison Engine\"]\n    GenerateDiff[\"Generate Diff Report\"]\n    AnalyzeDiff[\"Analyze Differences\"]\n    RuntimeCheck[\"Runtime Validation\"]\n    ResourceCheck[\"Resource Availability\"]\n    ConstraintCheck[\"Constraint Validation\"]\n    OutputA[\"Validated Configuration A\"]\n    OutputB[\"Validated Configuration B\"]\n    DiffOutput[\"Diff Report\"]\n    RuntimeOutput[\"Runtime Validation Results\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 15,
+          "edge_count": 0,
+          "group_count": 4,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB",
+            "DiffTool",
+            "GenerateDiff",
+            "AnalyzeDiff",
+            "RuntimeCheck",
+            "ResourceCheck",
+            "ConstraintCheck",
+            "OutputA"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation",
+            "DiffAnalysis",
+            "RuntimeValidation"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]\n    DiffTool[\"Diff Tool<br/Comparison Engine\"]\n    GenerateDiff[\"Generate Diff Report\"]\n    AnalyzeDiff[\"Analyze Differences\"]\n    RuntimeCheck[\"Runtime Validation\"]\n    ResourceCheck[\"Resource Availability\"]\n    ConstraintCheck[\"Constraint Validation\"]\n    OutputA[\"Validated Configuration A\"]\n    OutputB[\"Validated Configuration B\"]\n    DiffOutput[\"Diff Report\"]\n    RuntimeOutput[\"Runtime Validation Results\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 19,
+        "speaker": "系统架构师",
+        "content": "Validation Outcomes组定义了三种结果：Valid Configuration表示所有检查通过可直接启动，Valid with Warnings表示有警告但仍可继续，Invalid Configuration表示验证失败必须停止启动。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Resolve Conditions"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "Qwen/Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2108.2025,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 5,\n  \"reason\": \"waiting for stage 5 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 15,
+          "edge_count": 0,
+          "group_count": 4,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB",
+            "DiffTool",
+            "GenerateDiff",
+            "AnalyzeDiff",
+            "RuntimeCheck",
+            "ResourceCheck",
+            "ConstraintCheck",
+            "OutputA"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation",
+            "DiffAnalysis",
+            "RuntimeValidation"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]\n    DiffTool[\"Diff Tool<br/Comparison Engine\"]\n    GenerateDiff[\"Generate Diff Report\"]\n    AnalyzeDiff[\"Analyze Differences\"]\n    RuntimeCheck[\"Runtime Validation\"]\n    ResourceCheck[\"Resource Availability\"]\n    ConstraintCheck[\"Constraint Validation\"]\n    OutputA[\"Validated Configuration A\"]\n    OutputB[\"Validated Configuration B\"]\n    DiffOutput[\"Diff Report\"]\n    RuntimeOutput[\"Runtime Validation Results\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 20,
+        "speaker": "后端工程师",
+        "content": "如果验证失败，用户能得到什么帮助信息？",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Resolve Conditions"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "Qwen/Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2107.9595,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 5,\n  \"reason\": \"waiting for stage 5 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 15,
+          "edge_count": 0,
+          "group_count": 4,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB",
+            "DiffTool",
+            "GenerateDiff",
+            "AnalyzeDiff",
+            "RuntimeCheck",
+            "ResourceCheck",
+            "ConstraintCheck",
+            "OutputA"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation",
+            "DiffAnalysis",
+            "RuntimeValidation"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]\n    DiffTool[\"Diff Tool<br/Comparison Engine\"]\n    GenerateDiff[\"Generate Diff Report\"]\n    AnalyzeDiff[\"Analyze Differences\"]\n    RuntimeCheck[\"Runtime Validation\"]\n    ResourceCheck[\"Resource Availability\"]\n    ConstraintCheck[\"Constraint Validation\"]\n    OutputA[\"Validated Configuration A\"]\n    OutputB[\"Validated Configuration B\"]\n    DiffOutput[\"Diff Report\"]\n    RuntimeOutput[\"Runtime Validation Results\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 21,
+        "speaker": "系统架构师",
+        "content": "Error Handling组提供了分层的错误诊断。Schema Validation Error会指出具体字段位置，Business Logic Error会显示约束细节，Runtime Validation Error则会给出具体的修复建议。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Resolve Conditions"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "Qwen/Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2152.5495,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 5,\n  \"reason\": \"waiting for stage 5 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 15,
+          "edge_count": 0,
+          "group_count": 4,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB",
+            "DiffTool",
+            "GenerateDiff",
+            "AnalyzeDiff",
+            "RuntimeCheck",
+            "ResourceCheck",
+            "ConstraintCheck",
+            "OutputA"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation",
+            "DiffAnalysis",
+            "RuntimeValidation"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]\n    DiffTool[\"Diff Tool<br/Comparison Engine\"]\n    GenerateDiff[\"Generate Diff Report\"]\n    AnalyzeDiff[\"Analyze Differences\"]\n    RuntimeCheck[\"Runtime Validation\"]\n    ResourceCheck[\"Resource Availability\"]\n    ConstraintCheck[\"Constraint Validation\"]\n    OutputA[\"Validated Configuration A\"]\n    OutputB[\"Validated Configuration B\"]\n    DiffOutput[\"Diff Report\"]\n    RuntimeOutput[\"Runtime Validation Results\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 22,
+        "speaker": "后端工程师",
+        "content": "这样的错误信息分层设计很合理，从字段位置到约束细节再到修复建议，用户定位问题会快很多。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Resolve Conditions"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "Qwen/Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2111.5959,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 5,\n  \"reason\": \"waiting for stage 5 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 15,
+          "edge_count": 0,
+          "group_count": 4,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB",
+            "DiffTool",
+            "GenerateDiff",
+            "AnalyzeDiff",
+            "RuntimeCheck",
+            "ResourceCheck",
+            "ConstraintCheck",
+            "OutputA"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation",
+            "DiffAnalysis",
+            "RuntimeValidation"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]\n    DiffTool[\"Diff Tool<br/Comparison Engine\"]\n    GenerateDiff[\"Generate Diff Report\"]\n    AnalyzeDiff[\"Analyze Differences\"]\n    RuntimeCheck[\"Runtime Validation\"]\n    ResourceCheck[\"Resource Availability\"]\n    ConstraintCheck[\"Constraint Validation\"]\n    OutputA[\"Validated Configuration A\"]\n    OutputB[\"Validated Configuration B\"]\n    DiffOutput[\"Diff Report\"]\n    RuntimeOutput[\"Runtime Validation Results\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 23,
+        "speaker": "系统架构师",
+        "content": "最后我们需要添加可观测性支持。Validation Observability组包含Metrics记录验证总数和结果标签，Logging输出结构化验证事件日志，Tracing使用OpenTelemetry提供分布式追踪。",
+        "stage_index": 5,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Finalize Surface Details"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "Qwen/Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2113.0192,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 5,\n  \"reason\": \"waiting for stage 5 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 15,
+          "edge_count": 0,
+          "group_count": 4,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB",
+            "DiffTool",
+            "GenerateDiff",
+            "AnalyzeDiff",
+            "RuntimeCheck",
+            "ResourceCheck",
+            "ConstraintCheck",
+            "OutputA"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation",
+            "DiffAnalysis",
+            "RuntimeValidation"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]\n    DiffTool[\"Diff Tool<br/Comparison Engine\"]\n    GenerateDiff[\"Generate Diff Report\"]\n    AnalyzeDiff[\"Analyze Differences\"]\n    RuntimeCheck[\"Runtime Validation\"]\n    ResourceCheck[\"Resource Availability\"]\n    ConstraintCheck[\"Constraint Validation\"]\n    OutputA[\"Validated Configuration A\"]\n    OutputB[\"Validated Configuration B\"]\n    DiffOutput[\"Diff Report\"]\n    RuntimeOutput[\"Runtime Validation Results\"]"
+      },
+      "planner": {
+        "target_stage_index": 5,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "OutputGeneration",
+            "label": "📊 Output Generation",
+            "id": "OutputGeneration"
+          },
+          {
+            "op": "add_node",
+            "node_id": "OutputA",
+            "label": "Validated Configuration A",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "OutputB",
+            "label": "Validated Configuration B",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "DiffOutput",
+            "label": "Diff Report",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "RuntimeOutput",
+            "label": "Runtime Validation Results",
+            "kind": "node"
+          }
+        ],
+        "target_graph_ir": {
+          "graph_id": "gh_flowchart_00529",
+          "diagram_type": "flowchart",
+          "nodes": [
+            {
+              "id": "InputA",
+              "label": "Configuration File A<br/JSON Format",
+              "kind": "node",
+              "parent": "InputSources",
+              "source_index": 4,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "InputB",
+              "label": "Configuration File B<br/JSON Format",
+              "kind": "node",
+              "parent": "InputSources",
+              "source_index": 5,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "schema",
+              "label": "JSON Schema<br/Validation Rules",
+              "kind": "node",
+              "parent": "SchemaValidation",
+              "source_index": 6,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "ValidateA",
+              "label": "Validate Configuration A",
+              "kind": "node",
+              "parent": "SchemaValidation",
+              "source_index": 7,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "ValidateB",
+              "label": "Validate Configuration B",
+              "kind": "node",
+              "parent": "SchemaValidation",
+              "source_index": 8,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "DiffTool",
+              "label": "Diff Tool<br/Comparison Engine",
+              "kind": "node",
+              "parent": "DiffAnalysis",
+              "source_index": 11,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "GenerateDiff",
+              "label": "Generate Diff Report",
+              "kind": "node",
+              "parent": "DiffAnalysis",
+              "source_index": 12,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "AnalyzeDiff",
+              "label": "Analyze Differences",
+              "kind": "node",
+              "parent": "DiffAnalysis",
+              "source_index": 13,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "RuntimeCheck",
+              "label": "Runtime Validation",
+              "kind": "node",
+              "parent": "RuntimeValidation",
+              "source_index": 16,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "ResourceCheck",
+              "label": "Resource Availability",
+              "kind": "node",
+              "parent": "RuntimeValidation",
+              "source_index": 17,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "ConstraintCheck",
+              "label": "Constraint Validation",
+              "kind": "node",
+              "parent": "RuntimeValidation",
+              "source_index": 18,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "OutputA",
+              "label": "Validated Configuration A",
+              "kind": "node",
+              "parent": "OutputGeneration",
+              "source_index": 20,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "OutputB",
+              "label": "Validated Configuration B",
+              "kind": "node",
+              "parent": "OutputGeneration",
+              "source_index": 21,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "DiffOutput",
+              "label": "Diff Report",
+              "kind": "node",
+              "parent": "OutputGeneration",
+              "source_index": 22,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            },
+            {
+              "id": "RuntimeOutput",
+              "label": "Runtime Validation Results",
+              "kind": "node",
+              "parent": "OutputGeneration",
+              "source_index": 23,
+              "metadata": {
+                "diagram_type": "flowchart"
+              }
+            }
+          ],
+          "edges": [],
+          "groups": [
+            {
+              "id": "InputSources",
+              "label": "📥 Input Sources",
+              "parent": null,
+              "member_ids": [
+                "InputA",
+                "InputB"
+              ],
+              "source_index": 2,
+              "metadata": {}
+            },
+            {
+              "id": "SchemaValidation",
+              "label": "🔍 Schema Validation",
+              "parent": null,
+              "member_ids": [
+                "schema",
+                "ValidateA",
+                "ValidateB"
+              ],
+              "source_index": 3,
+              "metadata": {}
+            },
+            {
+              "id": "DiffAnalysis",
+              "label": "🔎 Diff Analysis",
+              "parent": null,
+              "member_ids": [
+                "DiffTool",
+                "GenerateDiff",
+                "AnalyzeDiff"
+              ],
+              "source_index": 5,
+              "metadata": {}
+            },
+            {
+              "id": "RuntimeValidation",
+              "label": "⚙️ Runtime Validation",
+              "parent": null,
+              "member_ids": [
+                "RuntimeCheck",
+                "ResourceCheck",
+                "ConstraintCheck"
+              ],
+              "source_index": 7,
+              "metadata": {}
+            },
+            {
+              "id": "OutputGeneration",
+              "label": "📊 Output Generation",
+              "parent": null,
+              "member_ids": [
+                "OutputA",
+                "OutputB",
+                "DiffOutput",
+                "RuntimeOutput"
+              ],
+              "source_index": 19,
+              "metadata": {}
+            }
+          ],
+          "styles": [],
+          "metadata": {
+            "source_path": "E:\\Desktop\\stream2graph\\data\\incremental_dataset\\sources\\open_balanced_v1_3360\\gh_flowchart_00529.json",
+            "compilation_status": "success",
+            "content_size": 1425,
+            "normalized_code": "flowchart TD\n    %% Define the main sections\n    subgraph InputSources[\"📥 Input Sources\"]\n        InputA[\"Configuration File A<br/JSON Format\"]\n        InputB[\"Configuration File B<br/JSON Format\"]\n    end\n    subgraph SchemaValidation[\"🔍 Schema Validation\"]\n        Schema[\"JSON Schema<br/Validation Rules\"]\n        ValidateA[\"Validate Configuration A\"]\n        ValidateB[\"Validate Configuration B\"]\n    end\n    subgraph DiffAnalysis[\"🔎 Diff Analysis\"]\n        DiffTool[\"Diff Tool<br/Comparison Engine\"]\n        GenerateDiff[\"Generate Diff Report\"]\n        AnalyzeDiff[\"Analyze Differences\"]\n    end\n    subgraph OutputGeneration[\"📊 Output Generation\"]\n        FormatDiff[\"Format Diff Output\"]\n        FinalReport[\"Final Diff Report<br/HTML/PDF Format\"]\n    end\n    subgraph RuntimeValidation[\"⚙️ Runtime Validation\"]\n        RuntimeCheck[\"Runtime Validation\"]\n        ResourceCheck[\"Resource Availability\"]\n        ConstraintCheck[\"Constraint Validation\"]\n    end\n    %% Define the connections\n    InputA -- ValidateA\n    InputB -- ValidateB\n    Schema -- ValidateA\n    Schema -- ValidateB\n    ValidateA --|\"Valid\"| DiffTool\n    ValidateB --|\"Valid\"| DiffTool\n    ValidateA --|\"Invalid\"| ErrorA[\"Validation Error A<br/Stop Process\"]\n    ValidateB --|\"Invalid\"| ErrorB[\"Validation Error B<br/Stop Process\"]\n    DiffTool -- GenerateDiff\n    GenerateDiff -- AnalyzeDiff\n    AnalyzeDiff -- FormatDiff\n    FormatDiff -- FinalReport\n    RuntimeCheck -- ResourceCheck\n    RuntimeCheck -- ConstraintCheck\n    %% Apply styling\n    classDef inputStyle fill:#e3f2fd,stroke:#1565c0,stroke-width:2px\n    classDef validationStyle fill:#fff8e1,stroke:#f9a825,stroke-width:2px\n    classDef diffStyle fill:#fce4ec,stroke:#c2185b,stroke-width:2px\n    classDef outputStyle fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px\n    classDef errorStyle fill:#ffebee,stroke:#c62828,stroke-width:2px\n    class InputA,InputB inputStyle\n    class Schema,ValidateA,ValidateB validationStyle\n    class DiffTool,GenerateDiff,AnalyzeDiff diffStyle\n    class FormatDiff,FinalReport outputStyle\n    class ErrorA,ErrorB errorStyle"
+          }
+        },
+        "notes": "Stage 5/5, adds 4 nodes, 0 edges, 1 groups, current state now contains 19 nodes and 0 edges",
+        "metadata": {
+          "model_name": "Qwen/Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 235257.0515,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 5,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_group\",\n      \"group_id\": \"OutputGeneration\",\n      \"label\": \"📊 Output Generation\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"OutputA\",\n      \"label\": \"Validated Configuration A\",\n      \"kind\": \"node\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"OutputB\",\n      \"label\": \"Validated Configuration B\",\n      \"ki",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 5,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "OutputGeneration",
+            "label": "📊 Output Generation",
+            "id": "OutputGeneration"
+          },
+          {
+            "op": "add_node",
+            "node_id": "OutputA",
+            "label": "Validated Configuration A",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "OutputB",
+            "label": "Validated Configuration B",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "DiffOutput",
+            "label": "Diff Report",
+            "kind": "node"
+          },
+          {
+            "op": "add_node",
+            "node_id": "RuntimeOutput",
+            "label": "Runtime Validation Results",
+            "kind": "node"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 15,
+          "edge_count": 0,
+          "group_count": 5,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB",
+            "DiffTool",
+            "GenerateDiff",
+            "AnalyzeDiff",
+            "RuntimeCheck",
+            "ResourceCheck",
+            "ConstraintCheck",
+            "OutputA"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation",
+            "DiffAnalysis",
+            "RuntimeValidation",
+            "OutputGeneration"
+          ]
+        },
+        "gold_stage_metrics": {
+          "node_count": 31,
+          "edge_count": 0,
+          "group_count": 10,
+          "delta_count": 8
+        },
+        "preview_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]\n    DiffTool[\"Diff Tool<br/Comparison Engine\"]\n    GenerateDiff[\"Generate Diff Report\"]\n    AnalyzeDiff[\"Analyze Differences\"]\n    RuntimeCheck[\"Runtime Validation\"]\n    ResourceCheck[\"Resource Availability\"]\n    ConstraintCheck[\"Constraint Validation\"]\n    OutputA[\"Validated Configuration A\"]\n    OutputB[\"Validated Configuration B\"]\n    DiffOutput[\"Diff Report\"]\n    RuntimeOutput[\"Runtime Validation Results\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 5,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "graph_metrics": {
+          "node_count": 15,
+          "edge_count": 0,
+          "group_count": 5,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB",
+            "DiffTool",
+            "GenerateDiff",
+            "AnalyzeDiff",
+            "RuntimeCheck",
+            "ResourceCheck",
+            "ConstraintCheck",
+            "OutputA"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation",
+            "DiffAnalysis",
+            "RuntimeValidation",
+            "OutputGeneration"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]\n    DiffTool[\"Diff Tool<br/Comparison Engine\"]\n    GenerateDiff[\"Generate Diff Report\"]\n    AnalyzeDiff[\"Analyze Differences\"]\n    RuntimeCheck[\"Runtime Validation\"]\n    ResourceCheck[\"Resource Availability\"]\n    ConstraintCheck[\"Constraint Validation\"]\n    OutputA[\"Validated Configuration A\"]\n    OutputB[\"Validated Configuration B\"]\n    DiffOutput[\"Diff Report\"]\n    RuntimeOutput[\"Runtime Validation Results\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 24,
+        "speaker": "后端工程师",
+        "content": "运维层面还有什么需要考虑的吗？",
+        "stage_index": 5,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Finalize Surface Details"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 5,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "graph_metrics": {
+          "node_count": 15,
+          "edge_count": 0,
+          "group_count": 5,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB",
+            "DiffTool",
+            "GenerateDiff",
+            "AnalyzeDiff",
+            "RuntimeCheck",
+            "ResourceCheck",
+            "ConstraintCheck",
+            "OutputA"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation",
+            "DiffAnalysis",
+            "RuntimeValidation",
+            "OutputGeneration"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]\n    DiffTool[\"Diff Tool<br/Comparison Engine\"]\n    GenerateDiff[\"Generate Diff Report\"]\n    AnalyzeDiff[\"Analyze Differences\"]\n    RuntimeCheck[\"Runtime Validation\"]\n    ResourceCheck[\"Resource Availability\"]\n    ConstraintCheck[\"Constraint Validation\"]\n    OutputA[\"Validated Configuration A\"]\n    OutputB[\"Validated Configuration B\"]\n    DiffOutput[\"Diff Report\"]\n    RuntimeOutput[\"Runtime Validation Results\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 25,
+        "speaker": "系统架构师",
+        "content": "Validation Modes组定义了三种运行模式。Strict Mode所有门都是blocking的，Lenient Mode运行时门只产生警告，Test Mode会跳过运行时检查以加快测试速度。",
+        "stage_index": 5,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Finalize Surface Details"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 5,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "graph_metrics": {
+          "node_count": 15,
+          "edge_count": 0,
+          "group_count": 5,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB",
+            "DiffTool",
+            "GenerateDiff",
+            "AnalyzeDiff",
+            "RuntimeCheck",
+            "ResourceCheck",
+            "ConstraintCheck",
+            "OutputA"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation",
+            "DiffAnalysis",
+            "RuntimeValidation",
+            "OutputGeneration"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]\n    DiffTool[\"Diff Tool<br/Comparison Engine\"]\n    GenerateDiff[\"Generate Diff Report\"]\n    AnalyzeDiff[\"Analyze Differences\"]\n    RuntimeCheck[\"Runtime Validation\"]\n    ResourceCheck[\"Resource Availability\"]\n    ConstraintCheck[\"Constraint Validation\"]\n    OutputA[\"Validated Configuration A\"]\n    OutputB[\"Validated Configuration B\"]\n    DiffOutput[\"Diff Report\"]\n    RuntimeOutput[\"Runtime Validation Results\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 26,
+        "speaker": "后端工程师",
+        "content": "这样可以覆盖开发、测试、生产不同环境的需要了。开发环境用Test Mode快速迭代，测试环境用Lenient Mode，生成环境用Strict Mode确保安全。",
+        "stage_index": 5,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Finalize Surface Details"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 5,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "graph_metrics": {
+          "node_count": 15,
+          "edge_count": 0,
+          "group_count": 5,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB",
+            "DiffTool",
+            "GenerateDiff",
+            "AnalyzeDiff",
+            "RuntimeCheck",
+            "ResourceCheck",
+            "ConstraintCheck",
+            "OutputA"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation",
+            "DiffAnalysis",
+            "RuntimeValidation",
+            "OutputGeneration"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]\n    DiffTool[\"Diff Tool<br/Comparison Engine\"]\n    GenerateDiff[\"Generate Diff Report\"]\n    AnalyzeDiff[\"Analyze Differences\"]\n    RuntimeCheck[\"Runtime Validation\"]\n    ResourceCheck[\"Resource Availability\"]\n    ConstraintCheck[\"Constraint Validation\"]\n    OutputA[\"Validated Configuration A\"]\n    OutputB[\"Validated Configuration B\"]\n    DiffOutput[\"Diff Report\"]\n    RuntimeOutput[\"Runtime Validation Results\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 27,
+        "speaker": "系统架构师",
+        "content": "完全正确。整个配置验证管道现在包含31个节点，分为10个功能组，从输入源到schema验证、业务逻辑验证、运行时验证，再到输出结果和可观测性，形成了完整的闭环。",
+        "stage_index": 5,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Finalize Surface Details"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 5,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "graph_metrics": {
+          "node_count": 15,
+          "edge_count": 0,
+          "group_count": 5,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB",
+            "DiffTool",
+            "GenerateDiff",
+            "AnalyzeDiff",
+            "RuntimeCheck",
+            "ResourceCheck",
+            "ConstraintCheck",
+            "OutputA"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation",
+            "DiffAnalysis",
+            "RuntimeValidation",
+            "OutputGeneration"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]\n    DiffTool[\"Diff Tool<br/Comparison Engine\"]\n    GenerateDiff[\"Generate Diff Report\"]\n    AnalyzeDiff[\"Analyze Differences\"]\n    RuntimeCheck[\"Runtime Validation\"]\n    ResourceCheck[\"Resource Availability\"]\n    ConstraintCheck[\"Constraint Validation\"]\n    OutputA[\"Validated Configuration A\"]\n    OutputB[\"Validated Configuration B\"]\n    DiffOutput[\"Diff Report\"]\n    RuntimeOutput[\"Runtime Validation Results\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 28,
+        "speaker": "后端工程师",
+        "content": "这个设计非常完善。从结构验证到语义验证再到运行时保障，层层递进，配合Gate机制和分层错误处理，再加上灵活的模式选择，是一个生产级别的配置验证方案。",
+        "stage_index": 5,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Finalize Surface Details"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 5,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "graph_metrics": {
+          "node_count": 15,
+          "edge_count": 0,
+          "group_count": 5,
+          "node_ids": [
+            "InputA",
+            "InputB",
+            "schema",
+            "ValidateA",
+            "ValidateB",
+            "DiffTool",
+            "GenerateDiff",
+            "AnalyzeDiff",
+            "RuntimeCheck",
+            "ResourceCheck",
+            "ConstraintCheck",
+            "OutputA"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "InputSources",
+            "SchemaValidation",
+            "DiffAnalysis",
+            "RuntimeValidation",
+            "OutputGeneration"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    InputA[\"Configuration File A<br/JSON Format\"]\n    InputB[\"Configuration File B<br/JSON Format\"]\n    schema[\"JSON Schema<br/Validation Rules\"]\n    ValidateA[\"Validate Configuration A\"]\n    ValidateB[\"Validate Configuration B\"]\n    DiffTool[\"Diff Tool<br/Comparison Engine\"]\n    GenerateDiff[\"Generate Diff Report\"]\n    AnalyzeDiff[\"Analyze Differences\"]\n    RuntimeCheck[\"Runtime Validation\"]\n    ResourceCheck[\"Resource Availability\"]\n    ConstraintCheck[\"Constraint Validation\"]\n    OutputA[\"Validated Configuration A\"]\n    OutputB[\"Validated Configuration B\"]\n    DiffOutput[\"Diff Report\"]\n    RuntimeOutput[\"Runtime Validation Results\"]"
+      }
+    }
+  ]
+}

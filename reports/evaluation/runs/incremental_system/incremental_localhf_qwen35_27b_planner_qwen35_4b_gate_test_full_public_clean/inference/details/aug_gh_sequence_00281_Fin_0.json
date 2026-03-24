@@ -1,0 +1,722 @@
+{
+  "sample_id": "aug_gh_sequence_00281_Fin_0",
+  "diagram_type": "sequence",
+  "generated_at_utc": "2026-03-24T10:54:43Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 10,
+    "total_stages": 1,
+    "updates_emitted": 1,
+    "final_stage_index": 1,
+    "applied_stage_indices": [
+      1
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 6,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "User",
+        "Main",
+        "Runner",
+        "Sampler",
+        "Analyzer",
+        "Reporter"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    },
+    "reference_graph_metrics": {
+      "node_count": 5,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "User",
+        "Sim",
+        "Pool",
+        "Engine",
+        "Result"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    }
+  },
+  "final_state": {
+    "sample_id": "aug_gh_sequence_00281_Fin_0",
+    "diagram_type": "sequence",
+    "current_stage_index": 1,
+    "current_graph_ir": {
+      "graph_id": "aug_gh_sequence_00281_Fin_0",
+      "diagram_type": "sequence",
+      "nodes": [
+        {
+          "id": "User",
+          "label": "Human orchestrator",
+          "kind": "participant",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "Main",
+          "label": "main.mjs",
+          "kind": "participant",
+          "parent": null,
+          "source_index": 3,
+          "metadata": {}
+        },
+        {
+          "id": "Runner",
+          "label": "run.mjs",
+          "kind": "participant",
+          "parent": null,
+          "source_index": 4,
+          "metadata": {}
+        },
+        {
+          "id": "Sampler",
+          "label": "sample.mjs",
+          "kind": "participant",
+          "parent": null,
+          "source_index": 5,
+          "metadata": {}
+        },
+        {
+          "id": "Analyzer",
+          "label": "analyze.mjs",
+          "kind": "participant",
+          "parent": null,
+          "source_index": 6,
+          "metadata": {}
+        },
+        {
+          "id": "Reporter",
+          "label": "report.mjs",
+          "kind": "participant",
+          "parent": null,
+          "source_index": 7,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    User[\"Human orchestrator\"]\n    Main[\"main.mjs\"]\n    Runner[\"run.mjs\"]\n    Sampler[\"sample.mjs\"]\n    Analyzer[\"analyze.mjs\"]\n    Reporter[\"report.mjs\"]",
+    "applied_stage_indices": [
+      1
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 6,
+        "edge_count": 0,
+        "group_count": 0,
+        "node_ids": [
+          "User",
+          "Main",
+          "Runner",
+          "Sampler",
+          "Analyzer",
+          "Reporter"
+        ],
+        "edge_ids": [],
+        "group_ids": []
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 0,
+        "speaker": "系统设计师",
+        "content": "我们现在要构建一个完整的蒙特卡洛模拟系统。在开始之前，让我先为大家介绍这个系统中的所有核心参与者。首先，我们有人类 orchestrator，也就是整个流程的发起者——User。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2191.5076,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "User",
+            "label": "Human orchestrator",
+            "kind": "participant",
+            "id": "User"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Main",
+            "label": "main.mjs",
+            "kind": "participant",
+            "id": "Main"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Runner",
+            "label": "run.mjs",
+            "kind": "participant",
+            "id": "Runner"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Sampler",
+            "label": "sample.mjs",
+            "kind": "participant",
+            "id": "Sampler"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Analyzer",
+            "label": "analyze.mjs",
+            "kind": "participant",
+            "id": "Analyzer"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Reporter",
+            "label": "report.mjs",
+            "kind": "participant",
+            "id": "Reporter"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 1/1, adds 6 nodes, 0 edges, current state now contains 6 nodes and 0 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 30011.5242,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"User\",\n      \"label\": \"Human orchestrator\",\n      \"kind\": \"participant\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Main\",\n      \"label\": \"main.mjs\",\n      \"kind\": \"participant\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Runner\",\n      \"label\": \"run.mjs\",\n      \"kind\": \"participant\"",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "User",
+            "label": "Human orchestrator",
+            "kind": "participant",
+            "id": "User"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Main",
+            "label": "main.mjs",
+            "kind": "participant",
+            "id": "Main"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Runner",
+            "label": "run.mjs",
+            "kind": "participant",
+            "id": "Runner"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Sampler",
+            "label": "sample.mjs",
+            "kind": "participant",
+            "id": "Sampler"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Analyzer",
+            "label": "analyze.mjs",
+            "kind": "participant",
+            "id": "Analyzer"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Reporter",
+            "label": "report.mjs",
+            "kind": "participant",
+            "id": "Reporter"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "User",
+            "Main",
+            "Runner",
+            "Sampler",
+            "Analyzer",
+            "Reporter"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "delta_count": 5
+        },
+        "preview_mermaid": "graph TD\n    User[\"Human orchestrator\"]\n    Main[\"main.mjs\"]\n    Runner[\"run.mjs\"]\n    Sampler[\"sample.mjs\"]\n    Analyzer[\"analyze.mjs\"]\n    Reporter[\"report.mjs\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "User",
+            "Main",
+            "Runner",
+            "Sampler",
+            "Analyzer",
+            "Reporter"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    User[\"Human orchestrator\"]\n    Main[\"main.mjs\"]\n    Runner[\"run.mjs\"]\n    Sampler[\"sample.mjs\"]\n    Analyzer[\"analyze.mjs\"]\n    Reporter[\"report.mjs\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "开发工程师A",
+        "content": "明白了，User 是整个模拟流程的起点和终点，负责发起请求并接收结果。那么接下来谁来承担主要的计算任务呢？",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "User",
+            "Main",
+            "Runner",
+            "Sampler",
+            "Analyzer",
+            "Reporter"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    User[\"Human orchestrator\"]\n    Main[\"main.mjs\"]\n    Runner[\"run.mjs\"]\n    Sampler[\"sample.mjs\"]\n    Analyzer[\"analyze.mjs\"]\n    Reporter[\"report.mjs\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "系统设计师",
+        "content": "很好的问题。主要的计算引擎是 MonteCarloSimulation，我们用 Sim 来标记它。它负责执行蒙特卡洛模拟的核心算法，处理随机采样和路径生成。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "User",
+            "Main",
+            "Runner",
+            "Sampler",
+            "Analyzer",
+            "Reporter"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    User[\"Human orchestrator\"]\n    Main[\"main.mjs\"]\n    Runner[\"run.mjs\"]\n    Sampler[\"sample.mjs\"]\n    Analyzer[\"analyze.mjs\"]\n    Reporter[\"report.mjs\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "开发工程师B",
+        "content": "我注意到蒙特卡洛模拟通常计算量很大，我们需要考虑并行执行的问题。这部分由谁来负责？",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "User",
+            "Main",
+            "Runner",
+            "Sampler",
+            "Analyzer",
+            "Reporter"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    User[\"Human orchestrator\"]\n    Main[\"main.mjs\"]\n    Runner[\"run.mjs\"]\n    Sampler[\"sample.mjs\"]\n    Analyzer[\"analyze.mjs\"]\n    Reporter[\"report.mjs\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "系统设计师",
+        "content": "这就是 Pool 的职责了。ThreadPool/ProcessPool 提供了并行执行的基础设施，可以选择使用线程池或进程池来并行处理大量模拟路径，提升整体吞吐量。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "User",
+            "Main",
+            "Runner",
+            "Sampler",
+            "Analyzer",
+            "Reporter"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    User[\"Human orchestrator\"]\n    Main[\"main.mjs\"]\n    Runner[\"run.mjs\"]\n    Sampler[\"sample.mjs\"]\n    Analyzer[\"analyze.mjs\"]\n    Reporter[\"report.mjs\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "开发工程师A",
+        "content": "那么模拟完成后的统计分析呢？这也是蒙特卡洛方法中非常重要的一环。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "User",
+            "Main",
+            "Runner",
+            "Sampler",
+            "Analyzer",
+            "Reporter"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    User[\"Human orchestrator\"]\n    Main[\"main.mjs\"]\n    Runner[\"run.mjs\"]\n    Sampler[\"sample.mjs\"]\n    Analyzer[\"analyze.mjs\"]\n    Reporter[\"report.mjs\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "系统设计师",
+        "content": "没错，StatsEngine 就是负责这项工作的。它会对模拟结果进行统计分析，计算期望值、方差、置信区间等统计指标。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "User",
+            "Main",
+            "Runner",
+            "Sampler",
+            "Analyzer",
+            "Reporter"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    User[\"Human orchestrator\"]\n    Main[\"main.mjs\"]\n    Runner[\"run.mjs\"]\n    Sampler[\"sample.mjs\"]\n    Analyzer[\"analyze.mjs\"]\n    Reporter[\"report.mjs\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 7,
+        "speaker": "开发工程师B",
+        "content": "最后一个参与者应该是最终输出的载体吧？所有结果最终需要汇总起来。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "User",
+            "Main",
+            "Runner",
+            "Sampler",
+            "Analyzer",
+            "Reporter"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    User[\"Human orchestrator\"]\n    Main[\"main.mjs\"]\n    Runner[\"run.mjs\"]\n    Sampler[\"sample.mjs\"]\n    Analyzer[\"analyze.mjs\"]\n    Reporter[\"report.mjs\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 8,
+        "speaker": "系统设计师",
+        "content": "正是如此。SimulationResult，也就是 Result，它作为输出收集器，负责汇总和存储最终的模拟结果，供 User 或其他系统后续使用。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "User",
+            "Main",
+            "Runner",
+            "Sampler",
+            "Analyzer",
+            "Reporter"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    User[\"Human orchestrator\"]\n    Main[\"main.mjs\"]\n    Runner[\"run.mjs\"]\n    Sampler[\"sample.mjs\"]\n    Analyzer[\"analyze.mjs\"]\n    Reporter[\"report.mjs\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 9,
+        "speaker": "开发工程师A",
+        "content": "好的，现在我们清楚了五个参与者：User 作为发起方，Sim 作为核心计算引擎，Pool 提供并行执行能力，Engine 进行统计分析，最后 Result 收集输出。这是一个完整的闭环流程。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "User",
+            "Main",
+            "Runner",
+            "Sampler",
+            "Analyzer",
+            "Reporter"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    User[\"Human orchestrator\"]\n    Main[\"main.mjs\"]\n    Runner[\"run.mjs\"]\n    Sampler[\"sample.mjs\"]\n    Analyzer[\"analyze.mjs\"]\n    Reporter[\"report.mjs\"]"
+      }
+    }
+  ]
+}

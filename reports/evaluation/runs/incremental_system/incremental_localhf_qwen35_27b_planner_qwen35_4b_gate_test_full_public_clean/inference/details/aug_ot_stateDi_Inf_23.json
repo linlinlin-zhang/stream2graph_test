@@ -1,0 +1,1481 @@
+{
+  "sample_id": "aug_ot_stateDi_Inf_23",
+  "diagram_type": "statediagram",
+  "generated_at_utc": "2026-03-24T08:42:38Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 17,
+    "total_stages": 5,
+    "updates_emitted": 5,
+    "final_stage_index": 5,
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 8,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "idle",
+        "left_loaded",
+        "ready",
+        "diff_complete",
+        "diffing",
+        "merging",
+        "merge_complete",
+        "conflict"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    },
+    "reference_graph_metrics": {
+      "node_count": 8,
+      "edge_count": 26,
+      "group_count": 0,
+      "node_ids": [
+        "idle",
+        "left_loaded",
+        "ready",
+        "diffing",
+        "diff_complete",
+        "merging",
+        "merge_complete",
+        "conflict"
+      ],
+      "edge_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e5",
+        "e6",
+        "e7",
+        "e8",
+        "e9",
+        "e10",
+        "e11",
+        "e12"
+      ],
+      "group_ids": []
+    }
+  },
+  "final_state": {
+    "sample_id": "aug_ot_stateDi_Inf_23",
+    "diagram_type": "statediagram",
+    "current_stage_index": 5,
+    "current_graph_ir": {
+      "graph_id": "aug_ot_stateDi_Inf_23",
+      "diagram_type": "statediagram",
+      "nodes": [
+        {
+          "id": "idle",
+          "label": "idle",
+          "kind": "state",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "left_loaded",
+          "label": "left_loaded",
+          "kind": "state",
+          "parent": null,
+          "source_index": 3,
+          "metadata": {}
+        },
+        {
+          "id": "ready",
+          "label": "ready",
+          "kind": "state",
+          "parent": null,
+          "source_index": 5,
+          "metadata": {}
+        },
+        {
+          "id": "diff_complete",
+          "label": "diff_complete",
+          "kind": "state",
+          "parent": null,
+          "source_index": 7,
+          "metadata": {}
+        },
+        {
+          "id": "diffing",
+          "label": "diffing",
+          "kind": "state",
+          "parent": null,
+          "source_index": 8,
+          "metadata": {}
+        },
+        {
+          "id": "merging",
+          "label": "merging",
+          "kind": "state",
+          "parent": null,
+          "source_index": 10,
+          "metadata": {}
+        },
+        {
+          "id": "merge_complete",
+          "label": "merge_complete",
+          "kind": "state",
+          "parent": null,
+          "source_index": 11,
+          "metadata": {}
+        },
+        {
+          "id": "conflict",
+          "label": "conflict",
+          "kind": "state",
+          "parent": null,
+          "source_index": 12,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diff_complete[\"diff_complete\"]\n    diffing[\"diffing\"]\n    merging[\"merging\"]\n    merge_complete[\"merge_complete\"]\n    conflict[\"conflict\"]",
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 8,
+        "edge_count": 0,
+        "group_count": 0,
+        "node_ids": [
+          "idle",
+          "left_loaded",
+          "ready",
+          "diff_complete",
+          "diffing",
+          "merging",
+          "merge_complete",
+          "conflict"
+        ],
+        "edge_ids": [],
+        "group_ids": []
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "设计师A",
+        "content": "我们今天来设计一个diff/merge工具的状态机。先从最基础的部分开始，定义系统的入口点。系统启动后应该处于一个空闲状态idle，表示当前没有加载任何资源。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2146.8372,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "设计师B",
+        "content": "明白，空闲状态作为初始状态很合理。那当用户开始操作时，第一个动作应该是加载左侧的资源，对吧？我认为从idle状态应该有一条LOAD_LEFT的转换指向一个新的left_loaded状态。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2151.9258,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "idle",
+            "label": "idle",
+            "kind": "state",
+            "id": "idle"
+          },
+          {
+            "op": "add_node",
+            "node_id": "left_loaded",
+            "label": "left_loaded",
+            "kind": "state",
+            "id": "left_loaded"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 1/5, adds 2 nodes, 1 edges, current state now contains 2 nodes and 1 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 18439.8775,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"idle\",\n      \"label\": \"idle\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"left_loaded\",\n      \"label\": \"left_loaded\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e1\",\n      \"source\": \"idle\",\n      \"target\": \"left_loaded\",\n      \"label\": \"LO",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "idle",
+            "label": "idle",
+            "kind": "state",
+            "id": "idle"
+          },
+          {
+            "op": "add_node",
+            "node_id": "left_loaded",
+            "label": "left_loaded",
+            "kind": "state",
+            "id": "left_loaded"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 2,
+          "edge_count": 1,
+          "group_count": 0,
+          "delta_count": 3
+        },
+        "preview_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "设计师A",
+        "content": "完全同意。这样我们就建立了基础框架：idle是起点，left_loaded表示左侧资源已加载。接下来我们需要在left_loaded状态上扩展更多的功能路径。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2166.5442,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "设计师B",
+        "content": "下一步应该让用户能够加载右侧资源，这样左右两侧都准备好后，系统就进入了准备就绪的状态。我建议从left_loaded通过LOAD_RIGHT转换到ready状态。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2128.3071,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "ready",
+            "label": "ready",
+            "kind": "state",
+            "id": "ready"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 2/5, adds 1 nodes, 2 edges, current state now contains 3 nodes and 2 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 19266.3424,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 2,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"ready\",\n      \"label\": \"ready\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e1\",\n      \"source\": \"idle\",\n      \"target\": \"left_loaded\",\n      \"label\": \"LOAD_LEFT\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e2\",\n      \"source\": \"left_loaded\",\n      \"target\": \"re",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "ready",
+            "label": "ready",
+            "kind": "state",
+            "id": "ready"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 4,
+          "edge_count": 7,
+          "group_count": 0,
+          "delta_count": 8
+        },
+        "preview_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "设计师A",
+        "content": "很好。现在进入了ready状态，这是用户操作的核心枢纽。在ready状态下，用户应该能够重复加载各个资源，所以需要添加自循环的LOAD_BASE、LOAD_LEFT和LOAD_RIGHT转换，这样用户可以随时刷新或更换资源。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2115.8464,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "设计师B",
+        "content": "没错，用户可能会中途更换文件。而且从ready状态应该能够发起diff操作，所以我们需要一条从ready到diffing的DIFF转换。另外，用户也应该能够清空当前会话返回idle状态，这需要一条CLEAR转换。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2136.2991,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 7,
+        "speaker": "设计师A",
+        "content": "核心流程已经搭建完成。现在diffing状态只是过渡，我们需要一个diff_complete状态来让用户查看结果。从diffing通过DIFF_DONE转换可以到达diff_complete。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2078.2659,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]"
+      },
+      "planner": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "diff_complete",
+            "label": "diff_complete",
+            "kind": "state",
+            "id": "diff_complete"
+          },
+          {
+            "op": "add_node",
+            "node_id": "diffing",
+            "label": "diffing",
+            "kind": "state",
+            "id": "diffing"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 3/5, adds 2 nodes, 8 edges, current state now contains 5 nodes and 8 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 52273.5665,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 3,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"diff_complete\",\n      \"label\": \"diff_complete\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"diffing\",\n      \"label\": \"diffing\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e1\",\n      \"source\": \"idle\",\n      \"target\": \"left_loaded\",\n      \"l",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "diff_complete",
+            "label": "diff_complete",
+            "kind": "state",
+            "id": "diff_complete"
+          },
+          {
+            "op": "add_node",
+            "node_id": "diffing",
+            "label": "diffing",
+            "kind": "state",
+            "id": "diffing"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diff_complete",
+            "diffing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 5,
+          "edge_count": 15,
+          "group_count": 0,
+          "delta_count": 9
+        },
+        "preview_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diff_complete[\"diff_complete\"]\n    diffing[\"diffing\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diff_complete",
+            "diffing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diff_complete[\"diff_complete\"]\n    diffing[\"diffing\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 8,
+        "speaker": "设计师B",
+        "content": "对，用户需要查看差异的多种形式。我建议在diff_complete状态下添加三个自循环转换：SHOW_SUMMARY显示摘要、SHOW_UNIFIED显示统一视图、SHOW_PATCH显示补丁形式。用户可能需要反复查看不同格式，所以这些操作应该可以重复执行。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2131.9411,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diff_complete",
+            "diffing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diff_complete[\"diff_complete\"]\n    diffing[\"diffing\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 9,
+        "speaker": "设计师A",
+        "content": "另外，从ready状态也许用户想直接查看所有差异而不逐个对比，所以可以添加一条从ready直接到diff_complete的DIFF_ALL转换。还有，用户完成查看后可能想回到ready状态重新配置资源，添加RESET转换；如果想重新开始，可以从diff_complete执行CLEAR返回idle。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 4,
+        "reason": "turn 9 reached end boundary for stage 4",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2432.7786,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"EMIT_UPDATE\",\n  \"target_stage_index\": 4,\n  \"reason\": \"turn 9 reached end boundary for stage 4\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diff_complete",
+            "diffing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diff_complete[\"diff_complete\"]\n    diffing[\"diffing\"]"
+      },
+      "planner": {
+        "target_stage_index": 4,
+        "delta_ops": [],
+        "target_graph_ir": {
+          "graph_id": "aug_ot_stateDi_Inf_23",
+          "diagram_type": "statediagram",
+          "nodes": [
+            {
+              "id": "idle",
+              "label": "idle",
+              "kind": "state",
+              "parent": null,
+              "source_index": 2,
+              "metadata": {}
+            },
+            {
+              "id": "left_loaded",
+              "label": "left_loaded",
+              "kind": "state",
+              "parent": null,
+              "source_index": 3,
+              "metadata": {}
+            },
+            {
+              "id": "ready",
+              "label": "ready",
+              "kind": "state",
+              "parent": null,
+              "source_index": 5,
+              "metadata": {}
+            },
+            {
+              "id": "diff_complete",
+              "label": "diff_complete",
+              "kind": "state",
+              "parent": null,
+              "source_index": 7,
+              "metadata": {}
+            },
+            {
+              "id": "diffing",
+              "label": "diffing",
+              "kind": "state",
+              "parent": null,
+              "source_index": 8,
+              "metadata": {}
+            }
+          ],
+          "edges": [],
+          "groups": [],
+          "styles": [],
+          "metadata": {}
+        },
+        "notes": "Stage 4/5, adds 0 nodes, 14 edges, current state now contains 5 nodes and 14 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 74355.7105,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 4,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e1\",\n      \"source\": \"idle\",\n      \"target\": \"left_loaded\",\n      \"label\": \"LOAD_LEFT\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e2\",\n      \"source\": \"left_loaded\",\n      \"target\": \"ready\",\n      \"label\": \"LOAD_RIGHT\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e3\",\n      \"source\":",
+          "semantic_attempt": 1,
+          "planner_noop": true,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 4,
+        "delta_ops": [],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diff_complete",
+            "diffing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 7,
+          "edge_count": 22,
+          "group_count": 0,
+          "delta_count": 9
+        },
+        "preview_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diff_complete[\"diff_complete\"]\n    diffing[\"diffing\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diff_complete",
+            "diffing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diff_complete[\"diff_complete\"]\n    diffing[\"diffing\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 10,
+        "speaker": "设计师B",
+        "content": "现在diff阶段已经很完整了。接下来应该进入merge合并阶段。从diff_complete应该能够发起合并操作，我们添加一条MERGE转换指向新的merging状态。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Resolve Conditions"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2121.7725,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 5,\n  \"reason\": \"waiting for stage 5 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diff_complete",
+            "diffing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diff_complete[\"diff_complete\"]\n    diffing[\"diffing\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 11,
+        "speaker": "设计师A",
+        "content": "合并过程有两种情况：自动合并成功和需要手动处理冲突。首先从merging状态，如果自动合并成功，应该通过MERGE_AUTO转换到达merge_complete状态。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Resolve Conditions"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2116.5755,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 5,\n  \"reason\": \"waiting for stage 5 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diff_complete",
+            "diffing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diff_complete[\"diff_complete\"]\n    diffing[\"diffing\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 12,
+        "speaker": "设计师B",
+        "content": "除了自动合并，用户可能想直接指定使用哪一侧的版本。我们可以从diff_complete直接添加两条快速合并路径：MERGE_LEFT和MERGE_RIGHT，分别对应使用左侧或右侧的版本，这两个都直接指向merge_complete。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Resolve Conditions"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2134.4521,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 5,\n  \"reason\": \"waiting for stage 5 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diff_complete",
+            "diffing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diff_complete[\"diff_complete\"]\n    diffing[\"diffing\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 13,
+        "speaker": "设计师A",
+        "content": "很好，提供了灵活性。merge_complete状态下，用户应该能够导出最终结果，所以添加一条EXPORT自循环转换。另外，用户可能想回到diff_complete重新检查或调整合并策略，添加BACK转换。当然也支持CLEAR清空回到初始状态idle。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Resolve Conditions"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2134.4845,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 5,\n  \"reason\": \"waiting for stage 5 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diff_complete",
+            "diffing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diff_complete[\"diff_complete\"]\n    diffing[\"diffing\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 14,
+        "speaker": "设计师B",
+        "content": "现在整个merge流程基本完成了。最后还需要处理冲突场景。当自动合并无法完成时，系统会检测到冲突，所以我们需要在merging状态上添加CONFLICT_DETECTED转换，指向新的conflict冲突状态。",
+        "stage_index": 5,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Finalize Surface Details"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2110.5878,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 5,\n  \"reason\": \"waiting for stage 5 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diff_complete",
+            "diffing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diff_complete[\"diff_complete\"]\n    diffing[\"diffing\"]"
+      },
+      "planner": {
+        "target_stage_index": 5,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "merging",
+            "label": "merging",
+            "kind": "state",
+            "id": "merging"
+          },
+          {
+            "op": "add_node",
+            "node_id": "merge_complete",
+            "label": "merge_complete",
+            "kind": "state",
+            "id": "merge_complete"
+          },
+          {
+            "op": "add_node",
+            "node_id": "conflict",
+            "label": "conflict",
+            "kind": "state",
+            "id": "conflict"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 5/5, adds 3 nodes, 0 edges, current state now contains 8 nodes and 0 edges",
+        "metadata": {
+          "model_name": "artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 18235.4298,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 5,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"merging\",\n      \"label\": \"merging\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"merge_complete\",\n      \"label\": \"merge_complete\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"conflict\",\n      \"label\": \"conflict\",\n      \"kind\": \"state\"\n    }\n",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 5,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "merging",
+            "label": "merging",
+            "kind": "state",
+            "id": "merging"
+          },
+          {
+            "op": "add_node",
+            "node_id": "merge_complete",
+            "label": "merge_complete",
+            "kind": "state",
+            "id": "merge_complete"
+          },
+          {
+            "op": "add_node",
+            "node_id": "conflict",
+            "label": "conflict",
+            "kind": "state",
+            "id": "conflict"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 8,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diff_complete",
+            "diffing",
+            "merging",
+            "merge_complete",
+            "conflict"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 8,
+          "edge_count": 26,
+          "group_count": 0,
+          "delta_count": 5
+        },
+        "preview_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diff_complete[\"diff_complete\"]\n    diffing[\"diffing\"]\n    merging[\"merging\"]\n    merge_complete[\"merge_complete\"]\n    conflict[\"conflict\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 5,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "graph_metrics": {
+          "node_count": 8,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diff_complete",
+            "diffing",
+            "merging",
+            "merge_complete",
+            "conflict"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diff_complete[\"diff_complete\"]\n    diffing[\"diffing\"]\n    merging[\"merging\"]\n    merge_complete[\"merge_complete\"]\n    conflict[\"conflict\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 15,
+        "speaker": "设计师A",
+        "content": "冲突状态需要提供解决选项。用户可以选择采用左侧版本，通过TAKE_LEFT转换到merge_complete；或者采用右侧版本，通过TAKE_RIGHT转换到merge_complete。如果用户想先查看差异详情再决定，也可以通过BACK转换回到diff_complete状态进行回顾。",
+        "stage_index": 5,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Finalize Surface Details"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 5,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "graph_metrics": {
+          "node_count": 8,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diff_complete",
+            "diffing",
+            "merging",
+            "merge_complete",
+            "conflict"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diff_complete[\"diff_complete\"]\n    diffing[\"diffing\"]\n    merging[\"merging\"]\n    merge_complete[\"merge_complete\"]\n    conflict[\"conflict\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 16,
+        "speaker": "设计师B",
+        "content": "这样整个状态机就完整了。从idle开始，经历left_loaded、ready、diffing、diff_complete，到merging或直接merge_complete，最后到conflict状态并解决冲突，整个diff/merge工作流的所有分支都已覆盖。",
+        "stage_index": 5,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Finalize Surface Details"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 5,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "graph_metrics": {
+          "node_count": 8,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diff_complete",
+            "diffing",
+            "merging",
+            "merge_complete",
+            "conflict"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diff_complete[\"diff_complete\"]\n    diffing[\"diffing\"]\n    merging[\"merging\"]\n    merge_complete[\"merge_complete\"]\n    conflict[\"conflict\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 17,
+        "speaker": "设计师A",
+        "content": "状态机设计已经完成，包含了8个状态和26条转换边。每个状态都有明确的职责和转换路径，用户可以在任何时候通过CLEAR重置会话，也可以自由导航查看结果或调整操作。整个工作流清晰完整。",
+        "stage_index": 5,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Finalize Surface Details"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 5,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "graph_metrics": {
+          "node_count": 8,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diff_complete",
+            "diffing",
+            "merging",
+            "merge_complete",
+            "conflict"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diff_complete[\"diff_complete\"]\n    diffing[\"diffing\"]\n    merging[\"merging\"]\n    merge_complete[\"merge_complete\"]\n    conflict[\"conflict\"]"
+      }
+    }
+  ]
+}
