@@ -1,0 +1,1249 @@
+{
+  "sample_id": "hf_ms13k_statediagram_05318",
+  "diagram_type": "statediagram",
+  "generated_at_utc": "2026-03-25T13:07:33Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 17,
+    "total_stages": 4,
+    "updates_emitted": 4,
+    "final_stage_index": 4,
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 5,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "Idle",
+        "state_start",
+        "ObstacleDetected",
+        "PathPlanning",
+        "Exploring"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    },
+    "reference_graph_metrics": {
+      "node_count": 5,
+      "edge_count": 6,
+      "group_count": 0,
+      "node_ids": [
+        "Idle",
+        "state_start",
+        "Exploring",
+        "ObstacleDetected",
+        "PathPlanning"
+      ],
+      "edge_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e5",
+        "e6"
+      ],
+      "group_ids": []
+    }
+  },
+  "final_state": {
+    "sample_id": "hf_ms13k_statediagram_05318",
+    "diagram_type": "statediagram",
+    "current_stage_index": 4,
+    "current_graph_ir": {
+      "graph_id": "hf_ms13k_statediagram_05318",
+      "diagram_type": "statediagram",
+      "nodes": [
+        {
+          "id": "Idle",
+          "label": "Idle",
+          "kind": "state",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "state_start",
+          "label": "[*]",
+          "kind": "pseudo_state",
+          "parent": null,
+          "source_index": 3,
+          "metadata": {}
+        },
+        {
+          "id": "ObstacleDetected",
+          "label": "ObstacleDetected",
+          "kind": "state",
+          "parent": null,
+          "source_index": 5,
+          "metadata": {}
+        },
+        {
+          "id": "PathPlanning",
+          "label": "PathPlanning",
+          "kind": "state",
+          "parent": null,
+          "source_index": 7,
+          "metadata": {}
+        },
+        {
+          "id": "Exploring",
+          "label": "Exploring",
+          "kind": "state",
+          "parent": null,
+          "source_index": 9,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    state_start[\"[*]\"]\n    ObstacleDetected[\"ObstacleDetected\"]\n    PathPlanning[\"PathPlanning\"]\n    Exploring[\"Exploring\"]",
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 5,
+        "edge_count": 0,
+        "group_count": 0,
+        "node_ids": [
+          "Idle",
+          "state_start",
+          "ObstacleDetected",
+          "PathPlanning",
+          "Exploring"
+        ],
+        "edge_ids": [],
+        "group_ids": []
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "系统架构师",
+        "content": "好的，我们开始设计这个机器人探索状态机。首先，我需要为系统建立一个入口点和基础状态。大家看看这个设计——我们用state_start作为伪状态作为整个状态机的起点。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "The current stage (Stage 1) is actively introducing concrete identifiers (state_start) and defining the system's entry point. Per the guidelines, when the same stage is still introducing concrete structure, the system should WAIT until the stage has at least a couple of substantive turns to ensure the graph is ready for the next stage transition.",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3264.9541,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The current stage (Stage 1) is actively introducing concrete identifiers (state_start) and defining the system's entry point. Per the guidelines, when the same stage is still introducing concrete structure, the system should WAIT until the stage has at least a couple of substantive turns to ensure the graph is ready for the next stage t",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "初级工程师",
+        "content": "我明白了，从state_start出发，有一个初始转换连接到Idle状态。这样机器人启动后就会进入空闲状态等待命令，对吗？",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3246.6221,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The current stage (Stage 1) is actively introducing concrete identifiers (state_start, Idle) and describing the initial transition logic. The current graph is empty, which is expected, but the dialogue is still focused on establishing the bootstrap structure for Stage 1. Per instructions, we should not emit an update until the stage has",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Idle",
+            "label": "Idle",
+            "kind": "state",
+            "id": "Idle"
+          },
+          {
+            "op": "add_node",
+            "node_id": "state_start",
+            "label": "[*]",
+            "kind": "pseudo_state",
+            "id": "state_start"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 1/4, adds 2 nodes, 1 edges, current state now contains 2 nodes and 1 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 17596.6463,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Idle\",\n      \"label\": \"Idle\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"state_start\",\n      \"label\": \"[*]\",\n      \"kind\": \"pseudo_state\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e1\",\n      \"source\": \"state_start\",\n      \"target\": \"Idle\",\n      \"label\": \"\"\n ",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Idle",
+            "label": "Idle",
+            "kind": "state",
+            "id": "Idle"
+          },
+          {
+            "op": "add_node",
+            "node_id": "state_start",
+            "label": "[*]",
+            "kind": "pseudo_state",
+            "id": "state_start"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "state_start"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 2,
+          "edge_count": 1,
+          "group_count": 0,
+          "delta_count": 3
+        },
+        "preview_mermaid": "graph TD\n    Idle[\"Idle\"]\n    state_start[\"[*]\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "state_start"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    state_start[\"[*]\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "系统架构师",
+        "content": "完全正确。Idle状态表示机器人处于静止状态，准备接受指令或等待任务触发。这是我们整个状态机的基础框架。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3288.4176,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The dialogue is still focused on establishing the foundational structure of Stage 1 (introducing 'state_start' and 'Idle'). The current graph has only 2 nodes and 0 edges, indicating the stage is in its bootstrap phase. According to the guidelines, when the same stage is actively introducing concrete identifiers, we should prefer WAIT u",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "state_start"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    state_start[\"[*]\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "初级工程师",
+        "content": "明白了。那接下来，在机器人执行探索任务的过程中，我们可能需要处理各种情况，比如遇到障碍物这样的状况。我看到下一张卡片是要添加ObstacleDetected状态。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3280.7643,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The dialogue is still focused on establishing the foundational structure of Stage 1 (introducing 'state_start' and 'Idle'). Although Turn 4 mentions 'ObstacleDetected' and hints at Stage 2, the current graph state reflects only the completion of Stage 1's bootstrap. The system should wait for the active introduction of concrete nodes an",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "state_start"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    state_start[\"[*]\"]"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "ObstacleDetected",
+            "label": "ObstacleDetected",
+            "kind": "state",
+            "id": "ObstacleDetected"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 2/4, adds 1 nodes, 0 edges, current state now contains 3 nodes and 0 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 9802.9749,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 2,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"ObstacleDetected\",\n      \"label\": \"ObstacleDetected\",\n      \"kind\": \"state\"\n    }\n  ],\n  \"notes\": \"Stage 2/4, adds 1 nodes, 0 edges, current state now contains 3 nodes and 0 edges\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "ObstacleDetected",
+            "label": "ObstacleDetected",
+            "kind": "state",
+            "id": "ObstacleDetected"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "state_start",
+            "ObstacleDetected"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 3,
+          "edge_count": 1,
+          "group_count": 0,
+          "delta_count": 1
+        },
+        "preview_mermaid": "graph TD\n    Idle[\"Idle\"]\n    state_start[\"[*]\"]\n    ObstacleDetected[\"ObstacleDetected\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "state_start",
+            "ObstacleDetected"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    state_start[\"[*]\"]\n    ObstacleDetected[\"ObstacleDetected\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "系统架构师",
+        "content": "对，现在我们来扩展状态机的分支。在实际探索中，机器人很可能会遇到障碍物。所以我们添加一个ObstacleDetected状态，用于表示机器人在探索过程中检测到了障碍物。这是一个关键的分支条件。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3276.0346,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"The dialogue is still actively introducing concrete identifiers for Stage 2 (specifically the 'ObstacleDetected' state). The current graph has 3 nodes but 0 edges, indicating the structural foundation is incomplete. Per the instruction to avoid emitting too early when the same stage is actively introducing buildable structure, we must w",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "state_start",
+            "ObstacleDetected"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    state_start[\"[*]\"]\n    ObstacleDetected[\"ObstacleDetected\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "初级工程师",
+        "content": "好的，这个状态很重要。有了它，状态机就能正确响应障碍物场景。不过目前还没有连接到这个状态的边，我们接下来应该添加转换边来实现状态的流转。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3556.721,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"The dialogue is still focused on Stage 2 (introducing the 'ObstacleDetected' state) and discussing the necessity of adding transitions. The current graph has 0 edges, and the dialogue explicitly mentions that edges are missing and need to be added in the next step. Since the stage is actively introducing concrete identifiers and the tra",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "state_start",
+            "ObstacleDetected"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    state_start[\"[*]\"]\n    ObstacleDetected[\"ObstacleDetected\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 7,
+        "speaker": "系统架构师",
+        "content": "确实如此。现在我们来添加支持结构。当机器人检测到障碍物后，需要计算替代路径。所以我们添加一个PathPlanning状态，表示机器人在计算绕开障碍物的替代路线。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 3,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3655.0796,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"The dialogue is still actively introducing concrete nodes for Stage 3 (specifically 'PathPlanning' in turn 7). According to the guidelines, when the same stage is actively introducing identifiers, the system should prefer WAIT until the stage has at least a couple of substantive turns. The current graph is lagging behind the dialogue's ",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "state_start",
+            "ObstacleDetected"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    state_start[\"[*]\"]\n    ObstacleDetected[\"ObstacleDetected\"]"
+      },
+      "planner": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "PathPlanning",
+            "label": "PathPlanning",
+            "kind": "state",
+            "id": "PathPlanning"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 3/4, adds 1 nodes, 0 edges, current state now contains 4 nodes and 0 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 11035.6593,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 3,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"PathPlanning\",\n      \"label\": \"PathPlanning\",\n      \"kind\": \"state\"\n    }\n  ],\n  \"notes\": \"Stage 3/4, adds 1 nodes, 0 edges, current state now contains 4 nodes and 0 edges\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "PathPlanning",
+            "label": "PathPlanning",
+            "kind": "state",
+            "id": "PathPlanning"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "state_start",
+            "ObstacleDetected",
+            "PathPlanning"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 4,
+          "edge_count": 2,
+          "group_count": 0,
+          "delta_count": 2
+        },
+        "preview_mermaid": "graph TD\n    Idle[\"Idle\"]\n    state_start[\"[*]\"]\n    ObstacleDetected[\"ObstacleDetected\"]\n    PathPlanning[\"PathPlanning\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "state_start",
+            "ObstacleDetected",
+            "PathPlanning"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    state_start[\"[*]\"]\n    ObstacleDetected[\"ObstacleDetected\"]\n    PathPlanning[\"PathPlanning\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 8,
+        "speaker": "初级工程师",
+        "content": "我理解了。PathPlanning状态代表机器人进行路径重新规划的过程。那么从ObstacleDetected到这个PathPlanning应该有一个转换边，标记为Plan Route，对吗？",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3680.7668,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"The dialogue is still actively introducing concrete nodes for Stage 3 (specifically 'PathPlanning' in turn 7) and discussing the transition logic. The current graph has 0 edges, indicating that the structural definition of Stage 3 is incomplete. Per the instruction to avoid emitting too early when the same stage is actively introducing ",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "state_start",
+            "ObstacleDetected",
+            "PathPlanning"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    state_start[\"[*]\"]\n    ObstacleDetected[\"ObstacleDetected\"]\n    PathPlanning[\"PathPlanning\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 9,
+        "speaker": "系统架构师",
+        "content": "完全正确。转换边e4从ObstacleDetected指向PathPlanning，标记为Plan Route。这样机器人检测到障碍后就会自动进入路径规划模式。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3696.6636,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"The dialogue is still actively introducing concrete nodes and defining the structure for Stage 3 (specifically the transition from ObstacleDetected to PathPlanning). The current state shows 0 edges, and the recent turns are focused on establishing the 'PathPlanning' node and the conceptual link between 'ObstacleDetected' and 'PathPlanni",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "state_start",
+            "ObstacleDetected",
+            "PathPlanning"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    state_start[\"[*]\"]\n    ObstacleDetected[\"ObstacleDetected\"]\n    PathPlanning[\"PathPlanning\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 10,
+        "speaker": "初级工程师",
+        "content": "现在我们有了基础框架和障碍处理机制。接下来应该是添加核心的Exploring状态，以及连接各个状态之间的转换边来完成整个状态机。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 4,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3361.1665,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"EMIT_UPDATE\",\n  \"target_stage_index\": 4,\n  \"reason\": \"The dialogue has completed Stage 3 by introducing the 'PathPlanning' node and defining the transition edge 'e4' from 'ObstacleDetected' to 'PathPlanning'. The current state reflects these additions (4 nodes, 0 edges in the snapshot, but the text confirms the edge definition is ready). The final turn explicitly states the",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "state_start",
+            "ObstacleDetected",
+            "PathPlanning"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    state_start[\"[*]\"]\n    ObstacleDetected[\"ObstacleDetected\"]\n    PathPlanning[\"PathPlanning\"]"
+      },
+      "planner": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Exploring",
+            "label": "Exploring",
+            "kind": "state",
+            "id": "Exploring"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 4/4, adds 1 nodes, 6 edges, current state now contains 5 nodes and 6 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 38975.1275,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 4,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Exploring\",\n      \"label\": \"Exploring\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e1\",\n      \"source\": \"state_start\",\n      \"target\": \"Idle\",\n      \"label\": \"\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e2\",\n      \"source\": \"Idle\",\n      \"target\": \"Exploring\"",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Exploring",
+            "label": "Exploring",
+            "kind": "state",
+            "id": "Exploring"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "state_start",
+            "ObstacleDetected",
+            "PathPlanning",
+            "Exploring"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 5,
+          "edge_count": 6,
+          "group_count": 0,
+          "delta_count": 5
+        },
+        "preview_mermaid": "graph TD\n    Idle[\"Idle\"]\n    state_start[\"[*]\"]\n    ObstacleDetected[\"ObstacleDetected\"]\n    PathPlanning[\"PathPlanning\"]\n    Exploring[\"Exploring\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "state_start",
+            "ObstacleDetected",
+            "PathPlanning",
+            "Exploring"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    state_start[\"[*]\"]\n    ObstacleDetected[\"ObstacleDetected\"]\n    PathPlanning[\"PathPlanning\"]\n    Exploring[\"Exploring\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 11,
+        "speaker": "系统架构师",
+        "content": "现在我们来最终完善状态机。首先添加核心的Exploring状态，这是表示机器人主动执行探索行为的主状态。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "state_start",
+            "ObstacleDetected",
+            "PathPlanning",
+            "Exploring"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    state_start[\"[*]\"]\n    ObstacleDetected[\"ObstacleDetected\"]\n    PathPlanning[\"PathPlanning\"]\n    Exploring[\"Exploring\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 12,
+        "speaker": "初级工程师",
+        "content": "好的，Exploring状态是整个状态机的核心活动状态。接下来我们需要添加几条关键的转换边来连接所有状态。让我看看——从Idle到Exploring应该有Start Exploration转换。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "state_start",
+            "ObstacleDetected",
+            "PathPlanning",
+            "Exploring"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    state_start[\"[*]\"]\n    ObstacleDetected[\"ObstacleDetected\"]\n    PathPlanning[\"PathPlanning\"]\n    Exploring[\"Exploring\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 13,
+        "speaker": "系统架构师",
+        "content": "对，e2边从Idle指向Exploring，标记为Start Exploration。当机器人从空闲状态启动探索任务时就会走这条边。另外，e6边从Exploring指向Idle，标记为Stop Exploration，用于结束探索回到空闲状态。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "state_start",
+            "ObstacleDetected",
+            "PathPlanning",
+            "Exploring"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    state_start[\"[*]\"]\n    ObstacleDetected[\"ObstacleDetected\"]\n    PathPlanning[\"PathPlanning\"]\n    Exploring[\"Exploring\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 14,
+        "speaker": "初级工程师",
+        "content": "明白了。那么在探索过程中，机器人检测到障碍物应该走哪条边呢？我记得e3应该是从Exploring到ObstacleDetected，标记为Detect Obstacle。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "state_start",
+            "ObstacleDetected",
+            "PathPlanning",
+            "Exploring"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    state_start[\"[*]\"]\n    ObstacleDetected[\"ObstacleDetected\"]\n    PathPlanning[\"PathPlanning\"]\n    Exploring[\"Exploring\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 15,
+        "speaker": "系统架构师",
+        "content": "完全正确。e3边从Exploring指向ObstacleDetected，标记为Detect Obstacle，表示在探索过程中检测到障碍的情况。最后，e5边从PathPlanning指向Exploring，标记为Continue Exploration，表示路径规划完成后继续探索。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "state_start",
+            "ObstacleDetected",
+            "PathPlanning",
+            "Exploring"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    state_start[\"[*]\"]\n    ObstacleDetected[\"ObstacleDetected\"]\n    PathPlanning[\"PathPlanning\"]\n    Exploring[\"Exploring\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 16,
+        "speaker": "初级工程师",
+        "content": "现在整个状态机完整了。让我梳理一下完整的流程：机器人从state_start进入Idle状态，通过Start Exploration转换进入Exploring状态开始探索。如果在探索中检测到障碍物，就进入ObstacleDetected状态，然后通过Plan Route转换进入PathPlanning状态计算新路径，规划完成后通过Continue Exploration转换回到Exploring状态继续探索。当然，也可以通过Stop Exploration转换停止探索回到Idle状态。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "state_start",
+            "ObstacleDetected",
+            "PathPlanning",
+            "Exploring"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    state_start[\"[*]\"]\n    ObstacleDetected[\"ObstacleDetected\"]\n    PathPlanning[\"PathPlanning\"]\n    Exploring[\"Exploring\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 17,
+        "speaker": "系统架构师",
+        "content": "很好，总结得很完整。这个状态机展示了机器人探索的完整周期：空闲、探索、障碍处理、路径重新规划，以及返回空闲状态。整个设计具有良好的模块化和可维护性。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Idle",
+            "state_start",
+            "ObstacleDetected",
+            "PathPlanning",
+            "Exploring"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Idle[\"Idle\"]\n    state_start[\"[*]\"]\n    ObstacleDetected[\"ObstacleDetected\"]\n    PathPlanning[\"PathPlanning\"]\n    Exploring[\"Exploring\"]"
+      }
+    }
+  ]
+}

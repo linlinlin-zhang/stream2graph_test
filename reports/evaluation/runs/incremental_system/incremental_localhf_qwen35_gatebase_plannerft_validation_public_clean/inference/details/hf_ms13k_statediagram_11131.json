@@ -1,0 +1,1001 @@
+{
+  "sample_id": "hf_ms13k_statediagram_11131",
+  "diagram_type": "statediagram",
+  "generated_at_utc": "2026-03-25T13:30:37Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 14,
+    "total_stages": 3,
+    "updates_emitted": 3,
+    "final_stage_index": 3,
+    "applied_stage_indices": [
+      1,
+      2,
+      3
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 4,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "state_start",
+        "Placed",
+        "Verified",
+        "Shipped"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    },
+    "reference_graph_metrics": {
+      "node_count": 6,
+      "edge_count": 6,
+      "group_count": 0,
+      "node_ids": [
+        "Placed",
+        "state_start",
+        "Verified",
+        "Processed",
+        "Shipped",
+        "Delivered"
+      ],
+      "edge_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e5",
+        "e6"
+      ],
+      "group_ids": []
+    }
+  },
+  "final_state": {
+    "sample_id": "hf_ms13k_statediagram_11131",
+    "diagram_type": "statediagram",
+    "current_stage_index": 3,
+    "current_graph_ir": {
+      "graph_id": "hf_ms13k_statediagram_11131",
+      "diagram_type": "statediagram",
+      "nodes": [
+        {
+          "id": "state_start",
+          "label": "[*]",
+          "kind": "pseudo_state",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "Placed",
+          "label": "Placed",
+          "kind": "state",
+          "parent": null,
+          "source_index": 3,
+          "metadata": {}
+        },
+        {
+          "id": "Verified",
+          "label": "Verified",
+          "kind": "state",
+          "parent": null,
+          "source_index": 5,
+          "metadata": {}
+        },
+        {
+          "id": "Shipped",
+          "label": "Shipped",
+          "kind": "state",
+          "parent": null,
+          "source_index": 7,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Placed[\"Placed\"]\n    Verified[\"Verified\"]\n    Shipped[\"Shipped\"]",
+    "applied_stage_indices": [
+      1,
+      2,
+      3
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 4,
+        "edge_count": 0,
+        "group_count": 0,
+        "node_ids": [
+          "state_start",
+          "Placed",
+          "Verified",
+          "Shipped"
+        ],
+        "edge_ids": [],
+        "group_ids": []
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "小张",
+        "content": "我们来设计一个订单管理系统的工作流状态图吧。首先需要一个明确的起点，表示订单生命周期的开始。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "The current stage (0) is still in its introductory phase, focusing on the concept of a starting point without any concrete nodes, groups, or specific state identifiers defined. The dialogue is generic and lacks the buildable structure required to proceed to the next stage.",
+        "confidence": 0.95,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3039.1674,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 0,\n  \"reason\": \"The current stage (0) is still in its introductory phase, focusing on the concept of a starting point without any concrete nodes, groups, or specific state identifiers defined. The dialogue is generic and lacks the buildable structure required to proceed to the next stage.\",\n  \"confidence\": 0.95\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "小李",
+        "content": "好的，我们用一个伪状态[*]来表示起点。然后订单一旦被创建，就进入'已下单'状态，这是整个流程的入口。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3231.7371,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 0,\n  \"reason\": \"The current stage (0) is still actively introducing concrete identifiers for the next stage (1). The dialogue has defined the start node and the 'Placed' state, but the graph remains empty. Per the instruction to avoid emitting too early when the same stage is introducing concrete structure, we must wait until the stage has at least a c",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "state_start",
+            "label": "[*]",
+            "kind": "pseudo_state",
+            "id": "state_start"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Placed",
+            "label": "Placed",
+            "kind": "state",
+            "id": "Placed"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 1/3, adds 2 nodes, 0 edges, current state now contains 2 nodes and 0 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 13196.9388,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"state_start\",\n      \"label\": \"[*]\",\n      \"kind\": \"pseudo_state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Placed\",\n      \"label\": \"Placed\",\n      \"kind\": \"state\"\n    }\n  ],\n  \"notes\": \"Stage 1/3, adds 2 nodes, 0 edges, current state now contains 2 nodes and 0 edges\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "state_start",
+            "label": "[*]",
+            "kind": "pseudo_state",
+            "id": "state_start"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Placed",
+            "label": "Placed",
+            "kind": "state",
+            "id": "Placed"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Placed"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 2,
+          "edge_count": 1,
+          "group_count": 0,
+          "delta_count": 3
+        },
+        "preview_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Placed[\"Placed\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Placed"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Placed[\"Placed\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "小张",
+        "content": "明白了，从起点直接连接到'已下单'状态，这样初始结构就建立好了。订单流程的第一步就这么开始了。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3243.1843,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The dialogue is still in the early bootstrap phase of Stage 1, focusing on defining the starting point and the first state ('Placed'). The current graph has 0 edges, indicating the structural connections are not yet established. According to the guidelines, when the same stage is actively introducing concrete identifiers and the graph i",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Placed"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Placed[\"Placed\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "小李",
+        "content": "接下来，订单需要经过验证才能继续处理。我们添加一个'已验证'状态，确保订单信息的准确性。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3258.9872,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"The dialogue is still in the early bootstrap phase of Stage 1, actively defining the initial states ('已下单'/'Placed') and the start node. Although Turn 4 mentions '已验证' and hints at Stage 2, the current graph state only reflects the completion of the initial setup for Stage 1. The system should wait for the",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Placed"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Placed[\"Placed\"]"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Verified",
+            "label": "Verified",
+            "kind": "state",
+            "id": "Verified"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 2/3, adds 1 nodes, 0 edges, current state now contains 3 nodes and 0 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 9193.068,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 2,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Verified\",\n      \"label\": \"Verified\",\n      \"kind\": \"state\"\n    }\n  ],\n  \"notes\": \"Stage 2/3, adds 1 nodes, 0 edges, current state now contains 3 nodes and 0 edges\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Verified",
+            "label": "Verified",
+            "kind": "state",
+            "id": "Verified"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Placed",
+            "Verified"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 4,
+          "edge_count": 3,
+          "group_count": 0,
+          "delta_count": 4
+        },
+        "preview_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Placed[\"Placed\"]\n    Verified[\"Verified\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Placed",
+            "Verified"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Placed[\"Placed\"]\n    Verified[\"Verified\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "小张",
+        "content": "对，然后从'已下单'到'已验证'应该有一个'验证订单'的转换，这样流程就清晰了。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3235.6369,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"The dialogue is still actively defining the structure for Stage 2 (introducing 'Verified' state and the transition from 'Placed'). Although the current graph has 3 nodes, the edge count is 0, indicating that the connections defining the flow are not yet established. The system should wait for the completion of Stage 2's structural defin",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Placed",
+            "Verified"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Placed[\"Placed\"]\n    Verified[\"Verified\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "小李",
+        "content": "没错。验证通过后，订单就要进入处理阶段了，我们添加'已处理'状态来代表这个阶段。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "The dialogue is still actively defining the structure for Stage 2 (introducing 'Verified' and 'Processed' states and discussing transitions). Although the current graph has 3 nodes, the stage is not yet complete or stable enough to emit an update; the system should wait for the full definition of Stage 2 before moving to Stage 3.",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3212.5249,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"The dialogue is still actively defining the structure for Stage 2 (introducing 'Verified' and 'Processed' states and discussing transitions). Although the current graph has 3 nodes, the stage is not yet complete or stable enough to emit an update; the system should wait for the full definition of Stage 2 before moving to Stage 3.\",\n ",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Placed",
+            "Verified"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Placed[\"Placed\"]\n    Verified[\"Verified\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 7,
+        "speaker": "小张",
+        "content": "从'已验证'到'已处理'添加'处理订单'转换，这样就完成了核心的处理流程。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3249.5971,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"The dialogue is still actively defining the structure for Stage 2 (introducing 'Verified' and 'Processed' states and their transitions). Although the current graph has 3 nodes, the conversation has not yet completed the definition of Stage 2's core components or moved to the next stage. Per the instruction to avoid emitting too early wh",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Placed",
+            "Verified"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Placed[\"Placed\"]\n    Verified[\"Verified\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 8,
+        "speaker": "小李",
+        "content": "现在我们有了下单、验证、处理三个依次进行的核心状态，这个主路径已经相当完整了。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3300.0586,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"The dialogue is still actively defining the structure for Stage 2 (introducing 'Verified' and 'Processed' states and their transitions). Although the current graph has 3 nodes, the conversation has not yet completed the definition of Stage 2's core components or moved to the next stage. Per the instruction to avoid emitting too early wh",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Placed",
+            "Verified"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Placed[\"Placed\"]\n    Verified[\"Verified\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 9,
+        "speaker": "小张",
+        "content": "订单处理完成后，接下来就是配送环节了。我们添加'已发货'状态来表示商品正在运输途中。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 3,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3276.0668,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"The dialogue is still actively introducing concrete nodes for Stage 2 (specifically 'Verified' and 'Processed') and transitioning into Stage 3 ('Shipped'). The current graph state shows only 3 nodes, but the dialogue has just defined the 'Shipped' state. Since the system is in the middle of defining the structure for Stage 2 and",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Placed",
+            "Verified"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Placed[\"Placed\"]\n    Verified[\"Verified\"]"
+      },
+      "planner": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Shipped",
+            "label": "Shipped",
+            "kind": "state",
+            "id": "Shipped"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 3/3, adds 1 nodes, 4 edges, current state now contains 4 nodes and 4 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 29336.3712,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 3,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Shipped\",\n      \"label\": \"Shipped\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e1\",\n      \"source\": \"state_start\",\n      \"target\": \"Placed\",\n      \"label\": \"\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e2\",\n      \"source\": \"Placed\",\n      \"target\": \"Verified\",",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Shipped",
+            "label": "Shipped",
+            "kind": "state",
+            "id": "Shipped"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Placed",
+            "Verified",
+            "Shipped"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 6,
+          "edge_count": 6,
+          "group_count": 0,
+          "delta_count": 5
+        },
+        "preview_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Placed[\"Placed\"]\n    Verified[\"Verified\"]\n    Shipped[\"Shipped\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Placed",
+            "Verified",
+            "Shipped"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Placed[\"Placed\"]\n    Verified[\"Verified\"]\n    Shipped[\"Shipped\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 10,
+        "speaker": "小李",
+        "content": "从'已处理'到'已发货'添加'发货订单'转换，这样就能看到订单离开仓库进入物流环节了。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Placed",
+            "Verified",
+            "Shipped"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Placed[\"Placed\"]\n    Verified[\"Verified\"]\n    Shipped[\"Shipped\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 11,
+        "speaker": "小张",
+        "content": "商品最终要到达客户手中，所以需要'已送达'状态来完成整个交付过程。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Placed",
+            "Verified",
+            "Shipped"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Placed[\"Placed\"]\n    Verified[\"Verified\"]\n    Shipped[\"Shipped\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 12,
+        "speaker": "小李",
+        "content": "从'已发货'到'已送达'添加'送达订单'转换，这样客户就能看到订单已经完成了。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Placed",
+            "Verified",
+            "Shipped"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Placed[\"Placed\"]\n    Verified[\"Verified\"]\n    Shipped[\"Shipped\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 13,
+        "speaker": "小张",
+        "content": "一个完整的订单完成后，客户可能会再次下单，所以我们让流程回到起点，这样就形成了循环。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Placed",
+            "Verified",
+            "Shipped"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Placed[\"Placed\"]\n    Verified[\"Verified\"]\n    Shipped[\"Shipped\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 14,
+        "speaker": "小李",
+        "content": "从'已送达'直接连接到起点，形成了一个完整的订单生命周期循环。这个状态图现在就涵盖了从下单到送达再到新订单的完整闭环。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Placed",
+            "Verified",
+            "Shipped"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Placed[\"Placed\"]\n    Verified[\"Verified\"]\n    Shipped[\"Shipped\"]"
+      }
+    }
+  ]
+}

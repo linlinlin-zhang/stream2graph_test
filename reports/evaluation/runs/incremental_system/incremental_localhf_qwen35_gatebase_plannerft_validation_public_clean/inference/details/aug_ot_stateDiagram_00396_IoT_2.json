@@ -1,0 +1,565 @@
+{
+  "sample_id": "aug_ot_stateDiagram_00396_IoT_2",
+  "diagram_type": "statediagram",
+  "generated_at_utc": "2026-03-25T18:54:36Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 7,
+    "total_stages": 2,
+    "updates_emitted": 2,
+    "final_stage_index": 2,
+    "applied_stage_indices": [
+      1,
+      2
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 3,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "IDLE",
+        "AWAITING_ACK",
+        "WRITING"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    },
+    "reference_graph_metrics": {
+      "node_count": 2,
+      "edge_count": 2,
+      "group_count": 0,
+      "node_ids": [
+        "IDLE",
+        "WRITING"
+      ],
+      "edge_ids": [
+        "e1",
+        "e2"
+      ],
+      "group_ids": []
+    }
+  },
+  "final_state": {
+    "sample_id": "aug_ot_stateDiagram_00396_IoT_2",
+    "diagram_type": "statediagram",
+    "current_stage_index": 2,
+    "current_graph_ir": {
+      "graph_id": "aug_ot_stateDiagram_00396_IoT_2",
+      "diagram_type": "statediagram",
+      "nodes": [
+        {
+          "id": "IDLE",
+          "label": "IDLE",
+          "kind": "state",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "AWAITING_ACK",
+          "label": "AWAITING_ACK",
+          "kind": "state",
+          "parent": null,
+          "source_index": 4,
+          "metadata": {}
+        },
+        {
+          "id": "WRITING",
+          "label": "WRITING",
+          "kind": "state",
+          "parent": null,
+          "source_index": 5,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    IDLE[\"IDLE\"]\n    AWAITING_ACK[\"AWAITING_ACK\"]\n    WRITING[\"WRITING\"]",
+    "applied_stage_indices": [
+      1,
+      2
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 3,
+        "edge_count": 0,
+        "group_count": 0,
+        "node_ids": [
+          "IDLE",
+          "AWAITING_ACK",
+          "WRITING"
+        ],
+        "edge_ids": [],
+        "group_ids": []
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "系统",
+        "content": "现在开始构建IoT工业边缘节点的状态机。根据分析，这个状态机需要表示边缘节点与执行器控制器之间的写入握手过程。在第一阶段，我建议添加IDLE状态作为系统的初始状态。IDLE状态代表边缘节点在等待写入命令时的空闲状态，是整个状态机的起点和默认条件。是否确认添加IDLE状态？",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3765.887,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 0,\n  \"reason\": \"The current stage (Stage 0) is actively introducing the first concrete node (IDLE) and asking for confirmation before proceeding. The graph is empty, and the stage has not yet completed its introduction of buildable structure. Per instructions, when the same stage is actively introducing identifiers, we must WAIT until the stage has at ",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "用户",
+        "content": "确认添加IDLE状态。这个空闲状态很适合作为起点，能清楚表示系统在没有写入任务时的基准条件。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3761.3347,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 0,\n  \"reason\": \"The dialogue is still in the bootstrap phase of Stage 1, actively introducing the concept of the 'IDLE' state. The current graph is empty (node_count: 0), and the user has only confirmed the intent to add a single state without providing the specific identifier or structural details required to emit the update. Per instructions, when th",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "IDLE",
+            "label": "IDLE",
+            "kind": "state",
+            "id": "IDLE"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 1/2, adds 1 nodes, 0 edges, current state now contains 1 nodes and 0 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 11247.3454,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"IDLE\",\n      \"label\": \"IDLE\",\n      \"kind\": \"state\"\n    }\n  ],\n  \"notes\": \"Stage 1/2, adds 1 nodes, 0 edges, current state now contains 1 nodes and 0 edges\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "IDLE",
+            "label": "IDLE",
+            "kind": "state",
+            "id": "IDLE"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "IDLE"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "delta_count": 1
+        },
+        "preview_mermaid": "graph TD\n    IDLE[\"IDLE\"]",
+        "matches_reference_stage": true
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "IDLE"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    IDLE[\"IDLE\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "系统",
+        "content": "IDLE状态已添加完成。当前状态机包含1个节点和0条边。接下来进入第二阶段，需要添加活跃的写入状态和握手转换来完成整个状态机。是否准备好继续？",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3824.3742,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The dialogue is still within Stage 1, actively introducing the initial 'IDLE' node. The system explicitly states 'Next enter Stage 2' but the user has not yet confirmed the transition or provided the specific identifiers for the new states (e.g., 'WRITING', 'HANDSHAKE') required to build Stage 2. Per instructions",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "IDLE"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    IDLE[\"IDLE\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "用户",
+        "content": "准备好了，请继续添加剩余元素。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3672.9789,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"EMIT_UPDATE\",\n  \"target_stage_index\": 2,\n  \"reason\": \"The user has explicitly confirmed readiness to proceed to the next stage (Turn 4). The current stage (Stage 1) has completed its specific task of adding the 'IDLE' node, and the system has transitioned to Stage 2, which involves adding the 'ACTIVE_WRITE' state and the handshake transition. The dialogue is no longer",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "IDLE"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    IDLE[\"IDLE\"]"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "AWAITING_ACK",
+            "label": "AWAITING_ACK",
+            "kind": "state",
+            "id": "AWAITING_ACK"
+          },
+          {
+            "op": "add_node",
+            "node_id": "WRITING",
+            "label": "WRITING",
+            "kind": "state",
+            "id": "WRITING"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 2/2, adds 2 nodes, 3 edges, current state now contains 3 nodes and 3 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 30168.4947,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 2,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"AWAITING_ACK\",\n      \"label\": \"AWAITING_ACK\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"WRITING\",\n      \"label\": \"WRITING\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e1\",\n      \"source\": \"IDLE\",\n      \"target\": \"WRITING\",\n      \"label\":",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "AWAITING_ACK",
+            "label": "AWAITING_ACK",
+            "kind": "state",
+            "id": "AWAITING_ACK"
+          },
+          {
+            "op": "add_node",
+            "node_id": "WRITING",
+            "label": "WRITING",
+            "kind": "state",
+            "id": "WRITING"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "IDLE",
+            "AWAITING_ACK",
+            "WRITING"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 2,
+          "edge_count": 2,
+          "group_count": 0,
+          "delta_count": 3
+        },
+        "preview_mermaid": "graph TD\n    IDLE[\"IDLE\"]\n    AWAITING_ACK[\"AWAITING_ACK\"]\n    WRITING[\"WRITING\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "IDLE",
+            "AWAITING_ACK",
+            "WRITING"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    IDLE[\"IDLE\"]\n    AWAITING_ACK[\"AWAITING_ACK\"]\n    WRITING[\"WRITING\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "系统",
+        "content": "第二阶段将添加以下元素：首先是WRITING状态，表示系统在执行写入操作时的活跃状态。然后添加两条转换边：从IDLE到WRITING的握手转换，标记为AW handshake，由IoT_Industrial_EdgeNode触发，表示边缘节点发起了写入请求；从WRITING回到IDLE的完成转换，标记为W complete，由IoT_Industrial_ActuatorController触发，表示执行器控制器确认写入完成。这些元素完整建模了边缘节点与执行器控制器之间的双向写入握手循环。是否确认这些变更？",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "IDLE",
+            "AWAITING_ACK",
+            "WRITING"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    IDLE[\"IDLE\"]\n    AWAITING_ACK[\"AWAITING_ACK\"]\n    WRITING[\"WRITING\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "用户",
+        "content": "确认这些添加。WRITING状态配合两条转换完整地表达了边缘节点与执行器控制器之间的写入握手协议。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "IDLE",
+            "AWAITING_ACK",
+            "WRITING"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    IDLE[\"IDLE\"]\n    AWAITING_ACK[\"AWAITING_ACK\"]\n    WRITING[\"WRITING\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 7,
+        "speaker": "系统",
+        "content": "很好。所有元素已成功添加。最终状态机包含2个状态节点（IDLE和WRITING）和2条转换边，建立了完整的写入握手循环。IDLE作为起点和终点，WRITING表示活跃的写入阶段，握手和完成转换分别由边缘节点和执行器控制器触发，完整反映了IoT工业边缘节点的写入操作周期。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "IDLE",
+            "AWAITING_ACK",
+            "WRITING"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    IDLE[\"IDLE\"]\n    AWAITING_ACK[\"AWAITING_ACK\"]\n    WRITING[\"WRITING\"]"
+      }
+    }
+  ]
+}

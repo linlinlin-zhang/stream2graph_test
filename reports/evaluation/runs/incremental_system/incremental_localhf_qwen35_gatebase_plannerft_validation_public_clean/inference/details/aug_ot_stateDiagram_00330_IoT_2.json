@@ -1,0 +1,730 @@
+{
+  "sample_id": "aug_ot_stateDiagram_00330_IoT_2",
+  "diagram_type": "statediagram",
+  "generated_at_utc": "2026-03-25T17:57:07Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 6,
+    "total_stages": 4,
+    "updates_emitted": 4,
+    "final_stage_index": 4,
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 5,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "ReceiveRequest",
+        "Validate",
+        "ApplyMinimization",
+        "RejectOrReduce",
+        "RecordDecision"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    },
+    "reference_graph_metrics": {
+      "node_count": 5,
+      "edge_count": 5,
+      "group_count": 0,
+      "node_ids": [
+        "ReceiveRequest",
+        "Validate",
+        "ApplyMinimization",
+        "RejectOrReduce",
+        "RecordDecision"
+      ],
+      "edge_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e5"
+      ],
+      "group_ids": []
+    }
+  },
+  "final_state": {
+    "sample_id": "aug_ot_stateDiagram_00330_IoT_2",
+    "diagram_type": "statediagram",
+    "current_stage_index": 4,
+    "current_graph_ir": {
+      "graph_id": "aug_ot_stateDiagram_00330_IoT_2",
+      "diagram_type": "statediagram",
+      "nodes": [
+        {
+          "id": "ReceiveRequest",
+          "label": "Receive requested attributes",
+          "kind": "state",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "Validate",
+          "label": "Validate requested attributes",
+          "kind": "state",
+          "parent": null,
+          "source_index": 3,
+          "metadata": {}
+        },
+        {
+          "id": "ApplyMinimization",
+          "label": "Apply minimization (IoT_Industrial_PLC_Logic)",
+          "kind": "state",
+          "parent": null,
+          "source_index": 5,
+          "metadata": {}
+        },
+        {
+          "id": "RejectOrReduce",
+          "label": "Reject/Reduce over-request and show warning",
+          "kind": "state",
+          "parent": null,
+          "source_index": 7,
+          "metadata": {}
+        },
+        {
+          "id": "RecordDecision",
+          "label": "Record privacy decision (IoT_Industrial_ActuatorController)",
+          "kind": "state",
+          "parent": null,
+          "source_index": 9,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    ReceiveRequest[\"Receive requested attributes\"]\n    Validate[\"Validate requested attributes\"]\n    ApplyMinimization[\"Apply minimization (IoT_Industrial_PLC_Logic)\"]\n    RejectOrReduce[\"Reject/Reduce over-request and show warning\"]\n    RecordDecision[\"Record privacy decision (IoT_Industrial_ActuatorController)\"]",
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 5,
+        "edge_count": 0,
+        "group_count": 0,
+        "node_ids": [
+          "ReceiveRequest",
+          "Validate",
+          "ApplyMinimization",
+          "RejectOrReduce",
+          "RecordDecision"
+        ],
+        "edge_ids": [],
+        "group_ids": []
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 0,
+        "speaker": "主持人",
+        "content": "现在我们开始构建IoT隐私决策状态机。首先，需要一个入口节点来处理收到的请求属性。我们把节点设为ReceiveRequest，标签为“Receive requested attributes”。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3321.0897,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The current stage (Stage 1) is actively introducing the first concrete node ('ReceiveRequest') and its label. According to the system instructions, when the same stage is still introducing concrete identifiers, the model should prefer WAIT until the stage has at least a couple of substantive turns to ensure the graph is sufficiently pop",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "开发者",
+        "content": "好的，接下来我们加入验证步骤。我们添加一个节点Validate，标签为“Validate requested attributes”，并用边e1把ReceiveRequest指向Validate。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3288.5454,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The current stage (index 1) is actively introducing concrete nodes (ReceiveRequest, Validate) and edges (e1). The system is still in the bootstrap phase of this stage, and the graph is empty. According to the guidelines, when the same stage is actively introducing concrete identifiers, we should prefer WAIT until the stage has at least ",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "ReceiveRequest",
+            "label": "Receive requested attributes",
+            "kind": "state",
+            "id": "ReceiveRequest"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Validate",
+            "label": "Validate requested attributes",
+            "kind": "state",
+            "id": "Validate"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 1/4, adds 2 nodes, 1 edges, current state now contains 2 nodes and 1 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 18311.7077,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"ReceiveRequest\",\n      \"label\": \"Receive requested attributes\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Validate\",\n      \"label\": \"Validate requested attributes\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e1\",\n      \"source\": \"Receive",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "ReceiveRequest",
+            "label": "Receive requested attributes",
+            "kind": "state",
+            "id": "ReceiveRequest"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Validate",
+            "label": "Validate requested attributes",
+            "kind": "state",
+            "id": "Validate"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ReceiveRequest",
+            "Validate"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 2,
+          "edge_count": 1,
+          "group_count": 0,
+          "delta_count": 3
+        },
+        "preview_mermaid": "graph TD\n    ReceiveRequest[\"Receive requested attributes\"]\n    Validate[\"Validate requested attributes\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ReceiveRequest",
+            "Validate"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ReceiveRequest[\"Receive requested attributes\"]\n    Validate[\"Validate requested attributes\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "主持人",
+        "content": "很好，基础框架已经完成。接下来我们要展开主分支。对于验证通过的请求，我们希望执行最小化策略。我们引入ApplyMinimization节点，标签中标注了IoT_Industrial_PLC_Logic，并从Validate到ApplyMinimization添加一条标记为“valid”的边e2。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3340.9262,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"The dialogue is still actively introducing concrete nodes and edges for Stage 1 (specifically the transition from ReceiveRequest to Validate). Although the hint suggests Stage 2, the current turn explicitly describes adding a node and an edge within the context of the initial setup. Per the instruction to avoid emitting too early when t",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ReceiveRequest",
+            "Validate"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ReceiveRequest[\"Receive requested attributes\"]\n    Validate[\"Validate requested attributes\"]"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "ApplyMinimization",
+            "label": "Apply minimization (IoT_Industrial_PLC_Logic)",
+            "kind": "state",
+            "id": "ApplyMinimization"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 2/4, adds 1 nodes, 2 edges, current state now contains 3 nodes and 2 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 21568.4731,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 2,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"ApplyMinimization\",\n      \"label\": \"Apply minimization (IoT_Industrial_PLC_Logic)\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e1\",\n      \"source\": \"ReceiveRequest\",\n      \"target\": \"Validate\",\n      \"label\": \"\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e2\",\n",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "ApplyMinimization",
+            "label": "Apply minimization (IoT_Industrial_PLC_Logic)",
+            "kind": "state",
+            "id": "ApplyMinimization"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ReceiveRequest",
+            "Validate",
+            "ApplyMinimization"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 3,
+          "edge_count": 2,
+          "group_count": 0,
+          "delta_count": 2
+        },
+        "preview_mermaid": "graph TD\n    ReceiveRequest[\"Receive requested attributes\"]\n    Validate[\"Validate requested attributes\"]\n    ApplyMinimization[\"Apply minimization (IoT_Industrial_PLC_Logic)\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ReceiveRequest",
+            "Validate",
+            "ApplyMinimization"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ReceiveRequest[\"Receive requested attributes\"]\n    Validate[\"Validate requested attributes\"]\n    ApplyMinimization[\"Apply minimization (IoT_Industrial_PLC_Logic)\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "开发者",
+        "content": "明白，这样验证通过的请求会进入最小化处理。现在我们考虑验证失败或请求过大的情况，添加RejectOrReduce节点，标签为“Reject/Reduce over-request and show warning”，并用边e3连接Validate，条件标记为“invalid/excessive”。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 3,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3708.9782,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"The dialogue is still actively introducing concrete nodes and edges for Stage 1 (turns 0-1) and Stage 2 (turn 2). Although turn 3 mentions a node for Stage 3, the current state shows 0 edges and only 3 nodes, indicating the graph is incomplete and lagging. The system should wait for the",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ReceiveRequest",
+            "Validate",
+            "ApplyMinimization"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ReceiveRequest[\"Receive requested attributes\"]\n    Validate[\"Validate requested attributes\"]\n    ApplyMinimization[\"Apply minimization (IoT_Industrial_PLC_Logic)\"]"
+      },
+      "planner": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "RejectOrReduce",
+            "label": "Reject/Reduce over-request and show warning",
+            "kind": "state",
+            "id": "RejectOrReduce"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 3/4, adds 1 nodes, 1 edges, current state now contains 4 nodes and 1 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 16456.5704,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 3,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"RejectOrReduce\",\n      \"label\": \"Reject/Reduce over-request and show warning\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e3\",\n      \"source\": \"Validate\",\n      \"target\": \"RejectOrReduce\",\n      \"label\": \"invalid/excessive\"\n    }\n  ],\n  \"notes\": \"Stage 3/4, adds 1 nodes, ",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "RejectOrReduce",
+            "label": "Reject/Reduce over-request and show warning",
+            "kind": "state",
+            "id": "RejectOrReduce"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ReceiveRequest",
+            "Validate",
+            "ApplyMinimization",
+            "RejectOrReduce"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 4,
+          "edge_count": 3,
+          "group_count": 0,
+          "delta_count": 2
+        },
+        "preview_mermaid": "graph TD\n    ReceiveRequest[\"Receive requested attributes\"]\n    Validate[\"Validate requested attributes\"]\n    ApplyMinimization[\"Apply minimization (IoT_Industrial_PLC_Logic)\"]\n    RejectOrReduce[\"Reject/Reduce over-request and show warning\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ReceiveRequest",
+            "Validate",
+            "ApplyMinimization",
+            "RejectOrReduce"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ReceiveRequest[\"Receive requested attributes\"]\n    Validate[\"Validate requested attributes\"]\n    ApplyMinimization[\"Apply minimization (IoT_Industrial_PLC_Logic)\"]\n    RejectOrReduce[\"Reject/Reduce over-request and show warning\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "主持人",
+        "content": "好的，主分支和错误分支都已经建立。最后，需要将两条路径收敛，记录隐私决策。我们加入RecordDecision节点，标签为“Record privacy decision (IoT_Industrial_ActuatorController)”。从ApplyMinimization到RecordDecision的边为e4，从RejectOrReduce到RecordDecision的边为e5，两条边均无额外条件。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Resolve Conditions"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 4,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3351.4659,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"EMIT_UPDATE\",\n  \"target_stage_index\": 4,\n  \"reason\": \"The dialogue has completed Stage 3 (introducing RejectOrReduce) and explicitly defined the structure for Stage 4 in the final turn (turn 4). It specifies the node 'RecordDecision', its label, and the edges connecting the previous nodes to it. The current state reflects the completion of the branching logic, and the final turn pro",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ReceiveRequest",
+            "Validate",
+            "ApplyMinimization",
+            "RejectOrReduce"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ReceiveRequest[\"Receive requested attributes\"]\n    Validate[\"Validate requested attributes\"]\n    ApplyMinimization[\"Apply minimization (IoT_Industrial_PLC_Logic)\"]\n    RejectOrReduce[\"Reject/Reduce over-request and show warning\"]"
+      },
+      "planner": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "RecordDecision",
+            "label": "Record privacy decision (IoT_Industrial_ActuatorController)",
+            "kind": "state",
+            "id": "RecordDecision"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 4/4, adds 1 nodes, 2 edges, current state now contains 5 nodes and 2 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 20289.2456,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 4,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"RecordDecision\",\n      \"label\": \"Record privacy decision (IoT_Industrial_ActuatorController)\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e4\",\n      \"source\": \"ApplyMinimization\",\n      \"target\": \"RecordDecision\",\n      \"label\": \"\"\n    },\n    {\n      \"op\": \"add_edge\",\n   ",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "RecordDecision",
+            "label": "Record privacy decision (IoT_Industrial_ActuatorController)",
+            "kind": "state",
+            "id": "RecordDecision"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ReceiveRequest",
+            "Validate",
+            "ApplyMinimization",
+            "RejectOrReduce",
+            "RecordDecision"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 5,
+          "edge_count": 5,
+          "group_count": 0,
+          "delta_count": 3
+        },
+        "preview_mermaid": "graph TD\n    ReceiveRequest[\"Receive requested attributes\"]\n    Validate[\"Validate requested attributes\"]\n    ApplyMinimization[\"Apply minimization (IoT_Industrial_PLC_Logic)\"]\n    RejectOrReduce[\"Reject/Reduce over-request and show warning\"]\n    RecordDecision[\"Record privacy decision (IoT_Industrial_ActuatorController)\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ReceiveRequest",
+            "Validate",
+            "ApplyMinimization",
+            "RejectOrReduce",
+            "RecordDecision"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ReceiveRequest[\"Receive requested attributes\"]\n    Validate[\"Validate requested attributes\"]\n    ApplyMinimization[\"Apply minimization (IoT_Industrial_PLC_Logic)\"]\n    RejectOrReduce[\"Reject/Reduce over-request and show warning\"]\n    RecordDecision[\"Record privacy decision (IoT_Industrial_ActuatorController)\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "开发者",
+        "content": "完成。这样我们就得到完整的状态机，展示了从请求接收到决策记录的全部流程，符合工业IoT隐私控制的要求。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Resolve Conditions"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ReceiveRequest",
+            "Validate",
+            "ApplyMinimization",
+            "RejectOrReduce",
+            "RecordDecision"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ReceiveRequest[\"Receive requested attributes\"]\n    Validate[\"Validate requested attributes\"]\n    ApplyMinimization[\"Apply minimization (IoT_Industrial_PLC_Logic)\"]\n    RejectOrReduce[\"Reject/Reduce over-request and show warning\"]\n    RecordDecision[\"Record privacy decision (IoT_Industrial_ActuatorController)\"]"
+      }
+    }
+  ]
+}

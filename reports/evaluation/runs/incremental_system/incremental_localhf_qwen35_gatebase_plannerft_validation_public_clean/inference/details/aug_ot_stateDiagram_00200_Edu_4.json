@@ -1,0 +1,929 @@
+{
+  "sample_id": "aug_ot_stateDiagram_00200_Edu_4",
+  "diagram_type": "statediagram",
+  "generated_at_utc": "2026-03-25T18:21:07Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 13,
+    "total_stages": 3,
+    "updates_emitted": 3,
+    "final_stage_index": 3,
+    "applied_stage_indices": [
+      1,
+      2,
+      3
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 3,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "Build",
+        "Test",
+        "Commit"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    },
+    "reference_graph_metrics": {
+      "node_count": 4,
+      "edge_count": 3,
+      "group_count": 0,
+      "node_ids": [
+        "Build",
+        "Test",
+        "Commit",
+        "Revert"
+      ],
+      "edge_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "group_ids": []
+    }
+  },
+  "final_state": {
+    "sample_id": "aug_ot_stateDiagram_00200_Edu_4",
+    "diagram_type": "statediagram",
+    "current_stage_index": 3,
+    "current_graph_ir": {
+      "graph_id": "aug_ot_stateDiagram_00200_Edu_4",
+      "diagram_type": "statediagram",
+      "nodes": [
+        {
+          "id": "Build",
+          "label": "Build",
+          "kind": "state",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "Test",
+          "label": "Test",
+          "kind": "state",
+          "parent": null,
+          "source_index": 3,
+          "metadata": {}
+        },
+        {
+          "id": "Commit",
+          "label": "✅ VCS commit",
+          "kind": "state",
+          "parent": null,
+          "source_index": 5,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    Build[\"Build\"]\n    Test[\"Test\"]\n    Commit[\"✅ VCS commit\"]",
+    "applied_stage_indices": [
+      1,
+      2,
+      3
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 3,
+        "edge_count": 0,
+        "group_count": 0,
+        "node_ids": [
+          "Build",
+          "Test",
+          "Commit"
+        ],
+        "edge_ids": [],
+        "group_ids": []
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "assistant",
+        "content": "好的，让我们开始构建这个 CI/CD 自动化流程的状态图。首先，我们需要建立基础框架。我想先添加两个核心状态节点：一个是 Build（构建），一个是 Test（测试）。这两个节点代表了我们流水线的基础环节。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3354.0843,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 0,\n  \"reason\": \"The current stage (index 0) is actively introducing concrete nodes (Build, Test) and defining their purpose. The graph is empty, and the dialogue is still in the bootstrap phase of stage 0. Per instructions, we should not emit an update until the stage has at least a couple of substantive turns to establish the foundational structure be",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "user",
+        "content": "好的，我理解。Build 节点负责编译和打包代码，Test 节点负责运行自动化测试用例，对吗？",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "The current stage (Stage 0) is actively introducing concrete nodes (Build, Test) and verifying their definitions. The system should wait for the user to confirm these initial nodes or request the next specific step before emitting an update to avoid premature state changes. The graph is still in the bootstrap phase of Stage 0.",
+        "confidence": 0.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3328.0783,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 0,\n  \"reason\": \"The current stage (Stage 0) is actively introducing concrete nodes (Build, Test) and verifying their definitions. The system should wait for the user to confirm these initial nodes or request the next specific step before emitting an update to avoid premature state changes. The graph is still in the bootstrap phase of Stage 0.\",\n  \"conf",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Build",
+            "label": "Build",
+            "kind": "state",
+            "id": "Build"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Test",
+            "label": "Test",
+            "kind": "state",
+            "id": "Test"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 1/3, adds 2 nodes, 0 edges, current state now contains 2 nodes and 0 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 13208.3998,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Build\",\n      \"label\": \"Build\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Test\",\n      \"label\": \"Test\",\n      \"kind\": \"state\"\n    }\n  ],\n  \"notes\": \"Stage 1/3, adds 2 nodes, 0 edges, current state now contains 2 nodes and 0 edges\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Build",
+            "label": "Build",
+            "kind": "state",
+            "id": "Build"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Test",
+            "label": "Test",
+            "kind": "state",
+            "id": "Test"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Build",
+            "Test"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 2,
+          "edge_count": 1,
+          "group_count": 0,
+          "delta_count": 3
+        },
+        "preview_mermaid": "graph TD\n    Build[\"Build\"]\n    Test[\"Test\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Build",
+            "Test"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Build[\"Build\"]\n    Test[\"Test\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "assistant",
+        "content": "完全正确！现在我们需要用一条边连接这两个节点，表示当构建成功后，流程会自动转向测试阶段。这条边上我们标注为 'pass'，表示条件是构建通过。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3291.3406,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The current stage (Stage 1) is actively introducing concrete nodes (Build, Test) and defining the logic for connecting them. The edge count is still 0, and the dialogue is focused on establishing the foundational structure of this specific stage. According to the guidelines, we should not emit an update until the stage has at least a co",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Build",
+            "Test"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Build[\"Build\"]\n    Test[\"Test\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "user",
+        "content": "明白了，那如果构建失败呢？流程会终止吗？",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3334.5344,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The current stage (Stage 1) is actively introducing concrete structure (nodes 'Build' and 'Test') and discussing their connections. The user's latest question ('What if the build fails?') indicates an ongoing discussion within Stage 1 regarding error handling or termination states. According to the guidelines, when the same stage is act",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Build",
+            "Test"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Build[\"Build\"]\n    Test[\"Test\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "assistant",
+        "content": "在当前的基础框架中，我们先关注成功路径。如果构建失败，流水线会直接报错并停止，这不需要在图上特别标注。现在我们已经有了基础的两节点一边的结构，下一步我们来看看测试通过后应该发生什么。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3291.4388,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The dialogue is still actively defining the structure for Stage 1 (introducing nodes 'Build' and 'Test' and discussing the 'pass' edge). Although the assistant mentions moving to Stage 2 in the last turn, the current stage has not yet completed its substantive introduction of concrete buildable elements (specifically the edge connection",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Build",
+            "Test"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Build[\"Build\"]\n    Test[\"Test\"]"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [],
+        "target_graph_ir": {
+          "graph_id": "aug_ot_stateDiagram_00200_Edu_4",
+          "diagram_type": "statediagram",
+          "nodes": [
+            {
+              "id": "Build",
+              "label": "Build",
+              "kind": "state",
+              "parent": null,
+              "source_index": 2,
+              "metadata": {}
+            },
+            {
+              "id": "Test",
+              "label": "Test",
+              "kind": "state",
+              "parent": null,
+              "source_index": 3,
+              "metadata": {}
+            }
+          ],
+          "edges": [],
+          "groups": [],
+          "styles": [],
+          "metadata": {}
+        },
+        "notes": "Stage 2/3, adds 0 nodes, 1 edges, current state now contains 2 nodes and 1 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 11223.2764,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 2,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e1\",\n      \"source\": \"Build\",\n      \"target\": \"Test\",\n      \"label\": \"pass\"\n    }\n  ],\n  \"notes\": \"Stage 2/3, adds 0 nodes, 1 edges, current state now contains 2 nodes and 1 edges\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": true,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Build",
+            "Test"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 3,
+          "edge_count": 2,
+          "group_count": 0,
+          "delta_count": 2
+        },
+        "preview_mermaid": "graph TD\n    Build[\"Build\"]\n    Test[\"Test\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Build",
+            "Test"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Build[\"Build\"]\n    Test[\"Test\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "user",
+        "content": "测试通过后，应该将代码变更提交到版本控制系统，对吧？这样才能保证 VCS 中的代码始终是可工作的状态。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3760.1447,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"The dialogue is still actively defining the structure for Stage 1 (introducing nodes Build and Test, and discussing the 'pass' edge). Although the assistant mentions moving to Stage 2 in Turn 5, the user's Turn 6 is still conceptualizing the next step rather than providing concrete identifiers or confirming the transition. The current g",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Build",
+            "Test"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Build[\"Build\"]\n    Test[\"Test\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 7,
+        "speaker": "assistant",
+        "content": "没错！这是一个很常见的最佳实践。让我添加一个 Commit 节点，标签是 '✅ VCS commit'，表示版本控制的提交操作。然后我们从 Test 节点到 Commit 节点添加一条 'pass' 边，表示测试通过后自动触发代码提交。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 3,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3818.3911,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"EMIT_UPDATE\",\n  \"target_stage_index\": 2,\n  \"reason\": \"The dialogue has completed the introduction of concrete nodes (Build, Test, Commit) and edges for Stage 2. The assistant explicitly added the 'Commit' node and the transition edge from 'Test' to 'Commit' in the last turn, moving past the generic setup phase into specific structural construction. The current state reflects these a",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Build",
+            "Test"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Build[\"Build\"]\n    Test[\"Test\"]"
+      },
+      "planner": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Commit",
+            "label": "✅ VCS commit",
+            "kind": "state",
+            "id": "Commit"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 3/3, adds 1 nodes, 2 edges, current state now contains 3 nodes and 2 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 20209.5106,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 3,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Commit\",\n      \"label\": \"✅ VCS commit\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e1\",\n      \"source\": \"Build\",\n      \"target\": \"Test\",\n      \"label\": \"pass\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e2\",\n      \"source\": \"Test\",\n      \"target\": \"Commit\",\n   ",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Commit",
+            "label": "✅ VCS commit",
+            "kind": "state",
+            "id": "Commit"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Build",
+            "Test",
+            "Commit"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 4,
+          "edge_count": 3,
+          "group_count": 0,
+          "delta_count": 2
+        },
+        "preview_mermaid": "graph TD\n    Build[\"Build\"]\n    Test[\"Test\"]\n    Commit[\"✅ VCS commit\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Build",
+            "Test",
+            "Commit"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Build[\"Build\"]\n    Test[\"Test\"]\n    Commit[\"✅ VCS commit\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 8,
+        "speaker": "user",
+        "content": "这样的话，我们的流水线就是：构建成功 → 运行测试 → 测试通过 → 提交代码。整个流程自动化程度很高，而且保证了 VCS 中的代码质量。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Build",
+            "Test",
+            "Commit"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Build[\"Build\"]\n    Test[\"Test\"]\n    Commit[\"✅ VCS commit\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 9,
+        "speaker": "assistant",
+        "content": "很好，你已经理解了这个正向流程。不过我们还需要考虑另一个重要的情况：如果测试失败了怎么办？我们不能把有问题的代码提交到仓库。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Build",
+            "Test",
+            "Commit"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Build[\"Build\"]\n    Test[\"Test\"]\n    Commit[\"✅ VCS commit\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 10,
+        "speaker": "user",
+        "content": "对啊，如果测试失败，应该有一种机制来撤销或者阻止不健康的代码进入仓库。通常的做法是回滚版本或者标记为失败状态。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Build",
+            "Test",
+            "Commit"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Build[\"Build\"]\n    Test[\"Test\"]\n    Commit[\"✅ VCS commit\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 11,
+        "speaker": "assistant",
+        "content": "正是如此！让我添加最后一个节点 Revert，标签是 '❌ VCS revert'，表示当测试失败时，系统会自动执行版本控制的回滚操作。然后从 Test 节点到 Revert 节点添加一条 'fail' 边，表示测试失败时的处理路径。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Build",
+            "Test",
+            "Commit"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Build[\"Build\"]\n    Test[\"Test\"]\n    Commit[\"✅ VCS commit\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 12,
+        "speaker": "user",
+        "content": "现在完整了！我们有四个节点：Build、Test、Commit 和 Revert。流程是：构建成功后进入测试，测试通过则提交代码，测试失败则回滚版本。这就是典型的 CI/CD 状态机逻辑。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Build",
+            "Test",
+            "Commit"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Build[\"Build\"]\n    Test[\"Test\"]\n    Commit[\"✅ VCS commit\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 13,
+        "speaker": "assistant",
+        "content": "非常好！你的总结非常到位。这个状态图清晰地展示了条件分支逻辑：Test 节点作为决策点，根据测试结果（pass 或 fail）将流程分发到不同的后续状态。整个图包含 4 个节点和 3 条边，形成了完整的 CI/CD 自动化流程闭环。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "Build",
+            "Test",
+            "Commit"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    Build[\"Build\"]\n    Test[\"Test\"]\n    Commit[\"✅ VCS commit\"]"
+      }
+    }
+  ]
+}

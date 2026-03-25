@@ -1,0 +1,959 @@
+{
+  "sample_id": "aug_ot_stateDiagram_00363_IoT_2",
+  "diagram_type": "statediagram",
+  "generated_at_utc": "2026-03-25T17:09:35Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 10,
+    "total_stages": 4,
+    "updates_emitted": 4,
+    "final_stage_index": 4,
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 6,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "idle",
+        "parsing",
+        "ready",
+        "sending",
+        "extracting",
+        "tracing"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    },
+    "reference_graph_metrics": {
+      "node_count": 5,
+      "edge_count": 8,
+      "group_count": 0,
+      "node_ids": [
+        "idle",
+        "parsing",
+        "extracting",
+        "tracing",
+        "computing"
+      ],
+      "edge_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e5",
+        "e6",
+        "e7",
+        "e8"
+      ],
+      "group_ids": []
+    }
+  },
+  "final_state": {
+    "sample_id": "aug_ot_stateDiagram_00363_IoT_2",
+    "diagram_type": "statediagram",
+    "current_stage_index": 4,
+    "current_graph_ir": {
+      "graph_id": "aug_ot_stateDiagram_00363_IoT_2",
+      "diagram_type": "statediagram",
+      "nodes": [
+        {
+          "id": "idle",
+          "label": "idle",
+          "kind": "state",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "parsing",
+          "label": "parsing",
+          "kind": "state",
+          "parent": null,
+          "source_index": 3,
+          "metadata": {}
+        },
+        {
+          "id": "ready",
+          "label": "ready",
+          "kind": "state",
+          "parent": null,
+          "source_index": 5,
+          "metadata": {}
+        },
+        {
+          "id": "sending",
+          "label": "sending",
+          "kind": "state",
+          "parent": null,
+          "source_index": 6,
+          "metadata": {}
+        },
+        {
+          "id": "extracting",
+          "label": "extracting",
+          "kind": "state",
+          "parent": null,
+          "source_index": 8,
+          "metadata": {}
+        },
+        {
+          "id": "tracing",
+          "label": "tracing",
+          "kind": "state",
+          "parent": null,
+          "source_index": 10,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    parsing[\"parsing\"]\n    ready[\"ready\"]\n    sending[\"sending\"]\n    extracting[\"extracting\"]\n    tracing[\"tracing\"]",
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 6,
+        "edge_count": 0,
+        "group_count": 0,
+        "node_ids": [
+          "idle",
+          "parsing",
+          "ready",
+          "sending",
+          "extracting",
+          "tracing"
+        ],
+        "edge_ids": [],
+        "group_ids": []
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "A",
+        "content": "好的，我们现在开始构建这个IoT工业状态机。首先，我需要建立最核心的基础架构。我想先添加两个基本状态：idle（空闲）和parsing（解析）。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3278.718,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The current stage (Stage 1) is actively introducing concrete nodes (idle, parsing) but the graph is still empty (node_count: 0). The dialogue is in the early bootstrap phase defining the first set of states. Per instructions, when the same stage is actively introducing concrete identifiers, we should prefer WAIT until the stage has at l",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "B",
+        "content": "明白了，先从核心状态开始。这两个状态之间如何连接？",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3526.6552,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The dialogue is still in the early bootstrap phase of Stage 1. While the user has identified the target states ('idle' and 'parsing'), the current graph is empty (0 nodes, 0 edges). The user has not yet provided the connection logic or confirmed the addition of these nodes. The system should wait for the user to specify the transitions",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "idle",
+            "label": "idle",
+            "kind": "state",
+            "id": "idle"
+          },
+          {
+            "op": "add_node",
+            "node_id": "parsing",
+            "label": "parsing",
+            "kind": "state",
+            "id": "parsing"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 1/4, adds 2 nodes, 0 edges, current state now contains 2 nodes and 0 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 15658.8407,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"idle\",\n      \"label\": \"idle\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"parsing\",\n      \"label\": \"parsing\",\n      \"kind\": \"state\"\n    }\n  ],\n  \"notes\": \"Stage 1/4, adds 2 nodes, 0 edges, current state now contains 2 nodes and 0 edges\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "idle",
+            "label": "idle",
+            "kind": "state",
+            "id": "idle"
+          },
+          {
+            "op": "add_node",
+            "node_id": "parsing",
+            "label": "parsing",
+            "kind": "state",
+            "id": "parsing"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "parsing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 2,
+          "edge_count": 2,
+          "group_count": 0,
+          "delta_count": 4
+        },
+        "preview_mermaid": "graph TD\n    idle[\"idle\"]\n    parsing[\"parsing\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "parsing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    parsing[\"parsing\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "A",
+        "content": "从idle到parsing我添加一条DECODE转换，条件是IoT_Industrial_MQTT_Broker。同时，parsing状态通过RESET边回到idle，形成一个完整的处理循环。这就是我们的基础架构。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3812.0947,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The dialogue is still focused on establishing the foundational states (idle, parsing) and their initial connections within Stage 1. The current graph has 0 edges, and the user has not yet introduced the specific components, actors, or complex logic required to transition to Stage 2. The stage is actively introducing concrete identifiers",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "parsing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    parsing[\"parsing\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "B",
+        "content": "很好理解。现在idle和parsing构成了一个稳定的初始化和重置机制。接下来我们扩展主流程吗？",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3765.7859,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The dialogue is still focused on establishing the foundational structure of Stage 1 (defining nodes 'idle' and 'parsing' and their initial reset loop). Although Turn 4 mentions moving to Stage 2, the actual construction of Stage 2 elements (new nodes, groups, or specific transitions) has not yet occurred. The system should wait for",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "parsing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    parsing[\"parsing\"]"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "ready",
+            "label": "ready",
+            "kind": "state",
+            "id": "ready"
+          },
+          {
+            "op": "add_node",
+            "node_id": "sending",
+            "label": "sending",
+            "kind": "state",
+            "id": "sending"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 2/4, adds 2 nodes, 5 edges, current state now contains 4 nodes and 5 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 38822.9697,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 2,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"ready\",\n      \"label\": \"ready\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"sending\",\n      \"label\": \"sending\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e1\",\n      \"source\": \"idle\",\n      \"target\": \"parsing\",\n      \"label\": \"DECODE [IoT_",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "ready",
+            "label": "ready",
+            "kind": "state",
+            "id": "ready"
+          },
+          {
+            "op": "add_node",
+            "node_id": "sending",
+            "label": "sending",
+            "kind": "state",
+            "id": "sending"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "parsing",
+            "ready",
+            "sending"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 3,
+          "edge_count": 4,
+          "group_count": 0,
+          "delta_count": 3
+        },
+        "preview_mermaid": "graph TD\n    idle[\"idle\"]\n    parsing[\"parsing\"]\n    ready[\"ready\"]\n    sending[\"sending\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "parsing",
+            "ready",
+            "sending"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    parsing[\"parsing\"]\n    ready[\"ready\"]\n    sending[\"sending\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "A",
+        "content": "是的。现在我在解析流程中添加一个新状态：extracting（提取）。从parsing到extracting有一条AUTO转换，同样基于IoT_Industrial_MQTT_Broker。而extracting通过RESET返回idle。这样提取阶段就有独立的处理和重置路径了。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3277.3581,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"The dialogue is still actively introducing concrete nodes and transitions for Stage 2 (specifically adding 'extracting' and its connections). The current graph shows 4 nodes but 0 edges, indicating the structural work for Stage 2 is incomplete. Per instructions, when the same stage is actively introducing identifiers, we must WAIT until",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "parsing",
+            "ready",
+            "sending"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    parsing[\"parsing\"]\n    ready[\"ready\"]\n    sending[\"sending\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "B",
+        "content": "明白了。现在从解析到提取是自动进行的，提取完成后可以重置。接下来是继续扩展处理链吗？",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 3,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3260.2453,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"The dialogue is still actively introducing concrete nodes and defining transitions for Stage 2 (specifically adding 'extracting' and its connections). The current state shows 4 nodes but 0 edges, indicating the graph is incomplete and the stage is not yet stable. Per instructions, when the same stage is actively introducing identifiers,",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "parsing",
+            "ready",
+            "sending"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    parsing[\"parsing\"]\n    ready[\"ready\"]\n    sending[\"sending\"]"
+      },
+      "planner": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "extracting",
+            "label": "extracting",
+            "kind": "state",
+            "id": "extracting"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 3/4, adds 1 nodes, 4 edges, current state now contains 5 nodes and 4 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 30421.3567,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 3,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"extracting\",\n      \"label\": \"extracting\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e1\",\n      \"source\": \"idle\",\n      \"target\": \"parsing\",\n      \"label\": \"DECODE [IoT_Industrial_MQTT_Broker]\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e2\",\n      \"source\": \"p",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "extracting",
+            "label": "extracting",
+            "kind": "state",
+            "id": "extracting"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "parsing",
+            "ready",
+            "sending",
+            "extracting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 4,
+          "edge_count": 6,
+          "group_count": 0,
+          "delta_count": 3
+        },
+        "preview_mermaid": "graph TD\n    idle[\"idle\"]\n    parsing[\"parsing\"]\n    ready[\"ready\"]\n    sending[\"sending\"]\n    extracting[\"extracting\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "parsing",
+            "ready",
+            "sending",
+            "extracting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    parsing[\"parsing\"]\n    ready[\"ready\"]\n    sending[\"sending\"]\n    extracting[\"extracting\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 7,
+        "speaker": "A",
+        "content": "正确。现在我要添加tracing（追踪）状态。它从extracting延伸出来，使用AUTO转换，条件是IoT_Industrial_PLC_Logic。tracing状态也有RESET边回到idle，保持重置机制的一致性。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3298.7301,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"The dialogue is still actively introducing concrete nodes and defining transitions within Stage 3 (specifically adding the 'tracing' state and its connections). The current graph shows 0 edges despite 5 nodes, indicating the structural definition of Stage 3 is incomplete. Per the instruction to avoid emitting too early when the same sta",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "parsing",
+            "ready",
+            "sending",
+            "extracting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    parsing[\"parsing\"]\n    ready[\"ready\"]\n    sending[\"sending\"]\n    extracting[\"extracting\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 8,
+        "speaker": "B",
+        "content": "好的，追踪状态现在是处理链的一部分。我注意到处理流程在持续延伸，从空闲到解析，再到提取，最后到追踪。这个链条的最终端点在哪里？",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 4,
+        "reason": "The dialogue has completed Stage 3 by introducing the 'tracing' state and its connections, and the user explicitly asks about the final endpoint of the chain in Stage 4. The current state reflects the completion of the previous stages' structural additions. It is time to transition to the final stage.",
+        "confidence": 0.9,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3274.7033,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"EMIT_UPDATE\",\n  \"target_stage_index\": 4,\n  \"reason\": \"The dialogue has completed Stage 3 by introducing the 'tracing' state and its connections, and the user explicitly asks about the final endpoint of the chain in Stage 4. The current state reflects the completion of the previous stages' structural additions. It is time to transition to the final stage.\",\n  \"confidence\": 0.9",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "parsing",
+            "ready",
+            "sending",
+            "extracting"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    parsing[\"parsing\"]\n    ready[\"ready\"]\n    sending[\"sending\"]\n    extracting[\"extracting\"]"
+      },
+      "planner": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "tracing",
+            "label": "tracing",
+            "kind": "state",
+            "id": "tracing"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 4/4, adds 1 nodes, 0 edges, current state now contains 6 nodes and 0 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 9771.2407,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 4,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"tracing\",\n      \"label\": \"tracing\",\n      \"kind\": \"state\"\n    }\n  ],\n  \"notes\": \"Stage 4/4, adds 1 nodes, 0 edges, current state now contains 6 nodes and 0 edges\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "tracing",
+            "label": "tracing",
+            "kind": "state",
+            "id": "tracing"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "parsing",
+            "ready",
+            "sending",
+            "extracting",
+            "tracing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 5,
+          "edge_count": 8,
+          "group_count": 0,
+          "delta_count": 3
+        },
+        "preview_mermaid": "graph TD\n    idle[\"idle\"]\n    parsing[\"parsing\"]\n    ready[\"ready\"]\n    sending[\"sending\"]\n    extracting[\"extracting\"]\n    tracing[\"tracing\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "parsing",
+            "ready",
+            "sending",
+            "extracting",
+            "tracing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    parsing[\"parsing\"]\n    ready[\"ready\"]\n    sending[\"sending\"]\n    extracting[\"extracting\"]\n    tracing[\"tracing\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 9,
+        "speaker": "A",
+        "content": "好问题。现在添加最后一个状态：computing（计算）。这是终端处理节点。从tracing到computing同样是AUTO转换，基于IoT_Industrial_PLC_Logic。最后，computing也通过RESET返回idle。这样整个状态机就完整了——从空闲开始，经过解析、提取、追踪、计算，然后重置循环。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "parsing",
+            "ready",
+            "sending",
+            "extracting",
+            "tracing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    parsing[\"parsing\"]\n    ready[\"ready\"]\n    sending[\"sending\"]\n    extracting[\"extracting\"]\n    tracing[\"tracing\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 10,
+        "speaker": "B",
+        "content": "完美。现在我们有了完整的5个状态和8条转换边。让我确认一下结构：idle是入口点，通过DECODE到达parsing，然后经过AUTO转换依次到达extracting、tracing、computing，所有非idle状态都有RESET边返回空闲状态。整体是一个清晰的多阶段处理流水线，并且每个阶段都能重置回到初始状态。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "parsing",
+            "ready",
+            "sending",
+            "extracting",
+            "tracing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    parsing[\"parsing\"]\n    ready[\"ready\"]\n    sending[\"sending\"]\n    extracting[\"extracting\"]\n    tracing[\"tracing\"]"
+      }
+    }
+  ]
+}

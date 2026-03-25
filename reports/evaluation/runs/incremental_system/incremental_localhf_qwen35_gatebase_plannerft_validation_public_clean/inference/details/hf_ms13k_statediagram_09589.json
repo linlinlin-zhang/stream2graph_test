@@ -1,0 +1,908 @@
+{
+  "sample_id": "hf_ms13k_statediagram_09589",
+  "diagram_type": "statediagram",
+  "generated_at_utc": "2026-03-25T14:02:44Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 11,
+    "total_stages": 3,
+    "updates_emitted": 3,
+    "final_stage_index": 3,
+    "applied_stage_indices": [
+      1,
+      2,
+      3
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 4,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "state_start",
+        "Yellow",
+        "Green",
+        "Red"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    },
+    "reference_graph_metrics": {
+      "node_count": 4,
+      "edge_count": 4,
+      "group_count": 0,
+      "node_ids": [
+        "Green",
+        "state_start",
+        "Yellow",
+        "Red"
+      ],
+      "edge_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "group_ids": []
+    }
+  },
+  "final_state": {
+    "sample_id": "hf_ms13k_statediagram_09589",
+    "diagram_type": "statediagram",
+    "current_stage_index": 3,
+    "current_graph_ir": {
+      "graph_id": "hf_ms13k_statediagram_09589",
+      "diagram_type": "statediagram",
+      "nodes": [
+        {
+          "id": "state_start",
+          "label": "[*]",
+          "kind": "pseudo_state",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "Yellow",
+          "label": "Yellow",
+          "kind": "state",
+          "parent": null,
+          "source_index": 3,
+          "metadata": {}
+        },
+        {
+          "id": "Green",
+          "label": "Green",
+          "kind": "state",
+          "parent": null,
+          "source_index": 5,
+          "metadata": {}
+        },
+        {
+          "id": "Red",
+          "label": "Red",
+          "kind": "state",
+          "parent": null,
+          "source_index": 6,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Yellow[\"Yellow\"]\n    Green[\"Green\"]\n    Red[\"Red\"]",
+    "applied_stage_indices": [
+      1,
+      2,
+      3
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 4,
+        "edge_count": 0,
+        "group_count": 0,
+        "node_ids": [
+          "state_start",
+          "Yellow",
+          "Green",
+          "Red"
+        ],
+        "edge_ids": [],
+        "group_ids": []
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "用户",
+        "content": "我想为交通信号灯系统创建一个状态图，应该从哪里开始？",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": "correct",
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3318.912,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 0,\n  \"reason\": \"The user is asking for guidance on where to start, which is a meta-question about the process rather than providing concrete buildable structure (nodes, edges, groups) for the diagram. The current graph is empty, and the dialogue is generic. According to the instructions, when the same stage is actively introducing or discussing the sta",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "助手",
+        "content": "好的，我们从最基础的部分开始。交通信号灯系统需要一个起始点，用一个伪状态[*]来表示整个系统的入口。同时，我先添加黄灯状态作为初始状态。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": "correct",
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3284.2278,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The current stage (Stage 1) is actively introducing foundational concepts (pseudo-state [*], initial state) but has not yet generated concrete buildable structure (nodes, edges, groups). The dialogue is still in the 'bootstrap' phase where the assistant is explaining the starting point rather than defining the specific state machine ele",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "state_start",
+            "label": "[*]",
+            "kind": "pseudo_state",
+            "id": "state_start"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Yellow",
+            "label": "Yellow",
+            "kind": "state",
+            "id": "Yellow"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 1/3, adds 2 nodes, 0 edges, current state now contains 2 nodes and 0 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 13250.9828,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"state_start\",\n      \"label\": \"[*]\",\n      \"kind\": \"pseudo_state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Yellow\",\n      \"label\": \"Yellow\",\n      \"kind\": \"state\"\n    }\n  ],\n  \"notes\": \"Stage 1/3, adds 2 nodes, 0 edges, current state now contains 2 nodes and 0 edges\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "state_start",
+            "label": "[*]",
+            "kind": "pseudo_state",
+            "id": "state_start"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Yellow",
+            "label": "Yellow",
+            "kind": "state",
+            "id": "Yellow"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Yellow"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "delta_count": 2
+        },
+        "preview_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Yellow[\"Yellow\"]",
+        "matches_reference_stage": true
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Yellow"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Yellow[\"Yellow\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "用户",
+        "content": "为什么先添加黄灯状态？而不是红灯或绿灯？",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": "correct",
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3339.4949,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The dialogue is still in the early bootstrap phase of Stage 1. The user is questioning the logic of adding the 'Yellow' state, indicating that the foundational structure and the rationale behind the initial state selection have not been fully established or agreed upon. The current graph has only 2 nodes and 0 edges, which is insufficie",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Yellow"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Yellow[\"Yellow\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "助手",
+        "content": "这是因为黄灯在许多交通系统中起到过渡作用，我们先把它作为基础状态之一。伪状态[*]就表示系统开始的地方。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": "correct",
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3361.5282,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The dialogue is still in the early bootstrap phase of Stage 1, focusing on justifying the initial node selection (Yellow light vs. Red/Green). The user has not yet requested the addition of new nodes, groups, or transitions, and the current graph is sparse (only 2 nodes, 0 edges). According to the guidelines, when the",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Yellow"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Yellow[\"Yellow\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "用户",
+        "content": "明白了，那接下来应该添加什么？",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": "correct",
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3393.7583,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The dialogue is still in the early bootstrap phase of Stage 1. The user explicitly asked 'what should be added next' in Turn 5, but the assistant has not yet provided the specific concrete nodes, groups, or transitions required to move forward. The current graph only contains a start pseudo-state and a Yellow light state, which is insuf",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Yellow"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Yellow[\"Yellow\"]"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Green",
+            "label": "Green",
+            "kind": "state",
+            "id": "Green"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Red",
+            "label": "Red",
+            "kind": "state",
+            "id": "Red"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 2/3, adds 2 nodes, 0 edges, current state now contains 4 nodes and 0 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 13010.2682,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 2,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Green\",\n      \"label\": \"Green\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Red\",\n      \"label\": \"Red\",\n      \"kind\": \"state\"\n    }\n  ],\n  \"notes\": \"Stage 2/3, adds 2 nodes, 0 edges, current state now contains 4 nodes and 0 edges\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Green",
+            "label": "Green",
+            "kind": "state",
+            "id": "Green"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Red",
+            "label": "Red",
+            "kind": "state",
+            "id": "Red"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Yellow",
+            "Green",
+            "Red"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 3,
+          "edge_count": 1,
+          "group_count": 0,
+          "delta_count": 2
+        },
+        "preview_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Yellow[\"Yellow\"]\n    Green[\"Green\"]\n    Red[\"Red\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Yellow",
+            "Green",
+            "Red"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Yellow[\"Yellow\"]\n    Green[\"Green\"]\n    Red[\"Red\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "助手",
+        "content": "现在我们需要添加红灯状态来表示'停止'阶段。黄灯的下一步应该是红灯，转换标签为'Prepare to Stop'，表示司机准备停车。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": "correct",
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3301.5139,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"The dialogue is still in Stage 1 (Bootstrap) and actively discussing the rationale for adding specific nodes (Yellow, Red) and pseudo-states. The user explicitly asked 'what should be added next' in turn 5, and the assistant responded in turn 6. Since the stage is actively introducing concrete identifiers and the user is waiting for the",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Yellow",
+            "Green",
+            "Red"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Yellow[\"Yellow\"]\n    Green[\"Green\"]\n    Red[\"Red\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 7,
+        "speaker": "用户",
+        "content": "所以黄灯亮起后就是要准备停车了？",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": "correct",
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3283.3161,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"The dialogue is still focused on Stage 1 (introduction of the start pseudo-state and Yellow light) and the transition logic to Stage 2. Although the user asks 'what to add next' in turn 5, the assistant's response in turn 6 introduces the Red state and the transition label, but the conversation has not yet fully solidified",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Yellow",
+            "Green",
+            "Red"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Yellow[\"Yellow\"]\n    Green[\"Green\"]\n    Red[\"Red\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 8,
+        "speaker": "助手",
+        "content": "正是如此，黄灯作为警示和过渡信号，提示车辆即将红灯需要停止。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": "correct",
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3370.997,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"The dialogue is still focused on Stage 1 (introduction of pseudo-state and initial Yellow state) and the beginning of Stage 2 (discussing the transition from Yellow to Red). Although the assistant mentioned adding Red in turn 6, the conversation has not yet fully established the concrete structure for Stage 2 (e.g., defining the Red nod",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Yellow",
+            "Green",
+            "Red"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Yellow[\"Yellow\"]\n    Green[\"Green\"]\n    Red[\"Red\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 9,
+        "speaker": "用户",
+        "content": "好的，现在我们还需要什么来完成整个交通信号灯系统？",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": "correct",
+          "alignment_note": null,
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 3,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3508.081,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"The dialogue is still focused on Stage 1 and the transition logic for Stage 2 (Yellow to Red). Although the user asks about Stage 3 in the last turn, the assistant has not yet provided the concrete buildable structure (nodes, edges, or groups) required for Stage 2. The current graph has 0 edges, and the assistant",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Yellow",
+            "Green",
+            "Red"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Yellow[\"Yellow\"]\n    Green[\"Green\"]\n    Red[\"Red\"]"
+      },
+      "planner": {
+        "target_stage_index": 3,
+        "delta_ops": [],
+        "target_graph_ir": {
+          "graph_id": "hf_ms13k_statediagram_09589",
+          "diagram_type": "statediagram",
+          "nodes": [
+            {
+              "id": "state_start",
+              "label": "[*]",
+              "kind": "pseudo_state",
+              "parent": null,
+              "source_index": 2,
+              "metadata": {}
+            },
+            {
+              "id": "Yellow",
+              "label": "Yellow",
+              "kind": "state",
+              "parent": null,
+              "source_index": 3,
+              "metadata": {}
+            },
+            {
+              "id": "Green",
+              "label": "Green",
+              "kind": "state",
+              "parent": null,
+              "source_index": 5,
+              "metadata": {}
+            },
+            {
+              "id": "Red",
+              "label": "Red",
+              "kind": "state",
+              "parent": null,
+              "source_index": 6,
+              "metadata": {}
+            }
+          ],
+          "edges": [],
+          "groups": [],
+          "styles": [],
+          "metadata": {}
+        },
+        "notes": "Stage 3/3, adds 0 nodes, 4 edges, current state now contains 4 nodes and 4 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 23838.7961,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 3,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e1\",\n      \"source\": \"state_start\",\n      \"target\": \"Green\",\n      \"label\": \"\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e2\",\n      \"source\": \"Green\",\n      \"target\": \"Yellow\",\n      \"label\": \"\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e3\",\n      \"source\": \"Yellow\",\n      \"targe",
+          "semantic_attempt": 1,
+          "planner_noop": true,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 3,
+        "delta_ops": [],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Yellow",
+            "Green",
+            "Red"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 4,
+          "edge_count": 4,
+          "group_count": 0,
+          "delta_count": 4
+        },
+        "preview_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Yellow[\"Yellow\"]\n    Green[\"Green\"]\n    Red[\"Red\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Yellow",
+            "Green",
+            "Red"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Yellow[\"Yellow\"]\n    Green[\"Green\"]\n    Red[\"Red\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 10,
+        "speaker": "助手",
+        "content": "现在我们添加绿灯状态，并完成整个循环。从起始点连接到绿灯表示系统开始运行并允许通行。绿灯到黄灯的转换标签为'Pedestrian Crossing'，表示行人过街触发了信号变化。红灯回到绿灯的转换标签为'Go'，表示可以通行了。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": "correct",
+          "alignment_note": null,
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Yellow",
+            "Green",
+            "Red"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Yellow[\"Yellow\"]\n    Green[\"Green\"]\n    Red[\"Red\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 11,
+        "speaker": "用户",
+        "content": "原来如此！这样整个信号灯循环就完整了：从开始到绿灯，再到黄灯红灯，最后又回到绿灯。行人过街时会触发绿灯变为黄灯。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": "correct",
+          "alignment_note": null,
+          "stage_name": "Add Supporting Structure"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Yellow",
+            "Green",
+            "Red"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Yellow[\"Yellow\"]\n    Green[\"Green\"]\n    Red[\"Red\"]"
+      }
+    }
+  ]
+}
