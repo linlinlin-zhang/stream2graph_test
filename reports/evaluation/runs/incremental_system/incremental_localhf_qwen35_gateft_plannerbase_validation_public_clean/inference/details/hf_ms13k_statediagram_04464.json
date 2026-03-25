@@ -1,0 +1,1276 @@
+{
+  "sample_id": "hf_ms13k_statediagram_04464",
+  "diagram_type": "statediagram",
+  "generated_at_utc": "2026-03-25T07:57:27Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 17,
+    "total_stages": 4,
+    "updates_emitted": 4,
+    "final_stage_index": 4,
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 6,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "start",
+        "video_selected",
+        "buffering",
+        "playing",
+        "paused",
+        "end"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    },
+    "reference_graph_metrics": {
+      "node_count": 6,
+      "edge_count": 8,
+      "group_count": 0,
+      "node_ids": [
+        "Video_Selected",
+        "state_start",
+        "Buffering",
+        "Playing",
+        "Paused",
+        "Stopped"
+      ],
+      "edge_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e5",
+        "e6",
+        "e7",
+        "e8"
+      ],
+      "group_ids": []
+    }
+  },
+  "final_state": {
+    "sample_id": "hf_ms13k_statediagram_04464",
+    "diagram_type": "statediagram",
+    "current_stage_index": 4,
+    "current_graph_ir": {
+      "graph_id": "hf_ms13k_statediagram_04464",
+      "diagram_type": "statediagram",
+      "nodes": [
+        {
+          "id": "start",
+          "label": "Start",
+          "kind": "initial",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "video_selected",
+          "label": "已选择视频",
+          "kind": "state",
+          "parent": null,
+          "source_index": 4,
+          "metadata": {}
+        },
+        {
+          "id": "buffering",
+          "label": "缓冲中",
+          "kind": "state",
+          "parent": null,
+          "source_index": 6,
+          "metadata": {}
+        },
+        {
+          "id": "playing",
+          "label": "播放中",
+          "kind": "state",
+          "parent": null,
+          "source_index": 7,
+          "metadata": {}
+        },
+        {
+          "id": "paused",
+          "label": "已暂停",
+          "kind": "state",
+          "parent": null,
+          "source_index": 9,
+          "metadata": {}
+        },
+        {
+          "id": "end",
+          "label": "End",
+          "kind": "final",
+          "parent": null,
+          "source_index": 10,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    start[\"Start\"]\n    video_selected[\"已选择视频\"]\n    buffering[\"缓冲中\"]\n    playing[\"播放中\"]\n    paused[\"已暂停\"]\n    end[\"End\"]",
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 6,
+        "edge_count": 0,
+        "group_count": 0,
+        "node_ids": [
+          "start",
+          "video_selected",
+          "buffering",
+          "playing",
+          "paused",
+          "end"
+        ],
+        "edge_ids": [],
+        "group_ids": []
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "系统设计师",
+        "content": "好的，我们现在开始设计视频播放器的状态机。首先需要确定整个流程的起点。我建议用一个伪状态作为起始点来表示程序启动。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2182.514,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "产品经理",
+        "content": "同意。那启动之后，用户应该处于什么状态呢？",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2120.7633,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "start",
+            "label": "Start",
+            "kind": "initial",
+            "id": "start"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added initial pseudo-state for video player startup",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 5494.2126,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"start\",\n      \"label\": \"Start\",\n      \"kind\": \"initial\"\n    }\n  ],\n  \"notes\": \"Added initial pseudo-state for video player startup\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "start",
+            "label": "Start",
+            "kind": "initial",
+            "id": "start"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 2,
+          "edge_count": 1,
+          "group_count": 0,
+          "delta_count": 3
+        },
+        "preview_mermaid": "graph TD\n    start[\"Start\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    start[\"Start\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "系统设计师",
+        "content": "从起始点应该直接进入一个'已选择视频'的状态，表示用户已经选择好要播放的视频，系统准备就绪。我来添加一条从起点到这个状态的边。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2115.905,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    start[\"Start\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "开发工程师",
+        "content": "那用户点击播放按钮后，系统会进入什么状态？",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2101.9769,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    start[\"Start\"]"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "video_selected",
+            "label": "已选择视频",
+            "kind": "state",
+            "id": "video_selected"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added '已选择视频' state as the next step after start.",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 6174.4261,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 2,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"video_selected\",\n      \"label\": \"已选择视频\",\n      \"kind\": \"state\"\n    }\n  ],\n  \"notes\": \"Added '已选择视频' state as the next step after start.\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "video_selected",
+            "label": "已选择视频",
+            "kind": "state",
+            "id": "video_selected"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start",
+            "video_selected"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 3,
+          "edge_count": 2,
+          "group_count": 0,
+          "delta_count": 2
+        },
+        "preview_mermaid": "graph TD\n    start[\"Start\"]\n    video_selected[\"已选择视频\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start",
+            "video_selected"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    start[\"Start\"]\n    video_selected[\"已选择视频\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "系统设计师",
+        "content": "在视频真正播放之前，需要一个缓冲阶段。我现在添加一个'缓冲中'状态作为中间步骤。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2136.2894,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start",
+            "video_selected"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    start[\"Start\"]\n    video_selected[\"已选择视频\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "开发工程师",
+        "content": "明白了，这条边应该标注为'开始播放'，表示用户的操作触发了缓冲过程。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2111.7744,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start",
+            "video_selected"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    start[\"Start\"]\n    video_selected[\"已选择视频\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 7,
+        "speaker": "产品经理",
+        "content": "缓冲完成后呢？用户应该能看到视频开始播放了。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2148.7651,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start",
+            "video_selected"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    start[\"Start\"]\n    video_selected[\"已选择视频\"]"
+      },
+      "planner": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "buffering",
+            "label": "缓冲中",
+            "kind": "state",
+            "id": "buffering"
+          },
+          {
+            "op": "add_node",
+            "node_id": "playing",
+            "label": "播放中",
+            "kind": "state",
+            "id": "playing"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added buffering and playing states as per dialogue.",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 8715.58,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 3,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"buffering\",\n      \"label\": \"缓冲中\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"playing\",\n      \"label\": \"播放中\",\n      \"kind\": \"state\"\n    }\n  ],\n  \"notes\": \"Added buffering and playing states as per dialogue.\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "buffering",
+            "label": "缓冲中",
+            "kind": "state",
+            "id": "buffering"
+          },
+          {
+            "op": "add_node",
+            "node_id": "playing",
+            "label": "播放中",
+            "kind": "state",
+            "id": "playing"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start",
+            "video_selected",
+            "buffering",
+            "playing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 5,
+          "edge_count": 5,
+          "group_count": 0,
+          "delta_count": 5
+        },
+        "preview_mermaid": "graph TD\n    start[\"Start\"]\n    video_selected[\"已选择视频\"]\n    buffering[\"缓冲中\"]\n    playing[\"播放中\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start",
+            "video_selected",
+            "buffering",
+            "playing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    start[\"Start\"]\n    video_selected[\"已选择视频\"]\n    buffering[\"缓冲中\"]\n    playing[\"播放中\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 8,
+        "speaker": "系统设计师",
+        "content": "是的，当缓冲足够时，系统进入'播放中'状态。我添加一条从缓冲到播放中的边，标注条件'缓冲足够'。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2165.1127,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start",
+            "video_selected",
+            "buffering",
+            "playing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    start[\"Start\"]\n    video_selected[\"已选择视频\"]\n    buffering[\"缓冲中\"]\n    playing[\"播放中\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 9,
+        "speaker": "开发工程师",
+        "content": "用户观看过程中肯定需要暂停功能，这个怎么实现？",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2113.1754,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start",
+            "video_selected",
+            "buffering",
+            "playing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    start[\"Start\"]\n    video_selected[\"已选择视频\"]\n    buffering[\"缓冲中\"]\n    playing[\"播放中\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 10,
+        "speaker": "系统设计师",
+        "content": "播放中状态应该能切换到暂停状态。我添加'播放中'到'已暂停'的边，标注为'暂停视频'。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2129.6737,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start",
+            "video_selected",
+            "buffering",
+            "playing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    start[\"Start\"]\n    video_selected[\"已选择视频\"]\n    buffering[\"缓冲中\"]\n    playing[\"播放中\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 11,
+        "speaker": "产品经理",
+        "content": "暂停后应该还能继续看吧？",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2143.6749,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start",
+            "video_selected",
+            "buffering",
+            "playing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    start[\"Start\"]\n    video_selected[\"已选择视频\"]\n    buffering[\"缓冲中\"]\n    playing[\"播放中\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 12,
+        "speaker": "系统设计师",
+        "content": "当然，需要一条从暂停回到播放中的边，标注为'继续播放'。这样播放和暂停之间就形成了双向切换的关系。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2160.9769,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start",
+            "video_selected",
+            "buffering",
+            "playing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    start[\"Start\"]\n    video_selected[\"已选择视频\"]\n    buffering[\"缓冲中\"]\n    playing[\"播放中\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 13,
+        "speaker": "开发工程师",
+        "content": "那用户不想看了要怎么退出？播放中和暂停状态都需要能够结束播放吧？",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2134.9864,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start",
+            "video_selected",
+            "buffering",
+            "playing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    start[\"Start\"]\n    video_selected[\"已选择视频\"]\n    buffering[\"缓冲中\"]\n    playing[\"播放中\"]"
+      },
+      "planner": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "paused",
+            "label": "已暂停",
+            "kind": "state",
+            "parent": null,
+            "id": "paused"
+          },
+          {
+            "op": "add_node",
+            "node_id": "end",
+            "label": "End",
+            "kind": "final",
+            "parent": null,
+            "id": "end"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added '已暂停' state and 'End' state to support pause and exit flows.",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 10079.5314,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 4,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"paused\",\n      \"label\": \"已暂停\",\n      \"kind\": \"state\",\n      \"parent\": null\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"end\",\n      \"label\": \"End\",\n      \"kind\": \"final\",\n      \"parent\": null\n    }\n  ],\n  \"notes\": \"Added '已暂停' state and 'End' state to support pause and exit flows.\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "paused",
+            "label": "已暂停",
+            "kind": "state",
+            "parent": null,
+            "id": "paused"
+          },
+          {
+            "op": "add_node",
+            "node_id": "end",
+            "label": "End",
+            "kind": "final",
+            "parent": null,
+            "id": "end"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start",
+            "video_selected",
+            "buffering",
+            "playing",
+            "paused",
+            "end"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 6,
+          "edge_count": 8,
+          "group_count": 0,
+          "delta_count": 4
+        },
+        "preview_mermaid": "graph TD\n    start[\"Start\"]\n    video_selected[\"已选择视频\"]\n    buffering[\"缓冲中\"]\n    playing[\"播放中\"]\n    paused[\"已暂停\"]\n    end[\"End\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start",
+            "video_selected",
+            "buffering",
+            "playing",
+            "paused",
+            "end"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    start[\"Start\"]\n    video_selected[\"已选择视频\"]\n    buffering[\"缓冲中\"]\n    playing[\"播放中\"]\n    paused[\"已暂停\"]\n    end[\"End\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 14,
+        "speaker": "系统设计师",
+        "content": "没错，我需要添加一个'已停止'状态。从播放中和已暂停都应该有边连接到已停止，都标注为'停止视频'。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start",
+            "video_selected",
+            "buffering",
+            "playing",
+            "paused",
+            "end"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    start[\"Start\"]\n    video_selected[\"已选择视频\"]\n    buffering[\"缓冲中\"]\n    playing[\"播放中\"]\n    paused[\"已暂停\"]\n    end[\"End\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 15,
+        "speaker": "产品经理",
+        "content": "停止之后呢？用户想换一部视频再看不就又要从头开始选择吗？",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start",
+            "video_selected",
+            "buffering",
+            "playing",
+            "paused",
+            "end"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    start[\"Start\"]\n    video_selected[\"已选择视频\"]\n    buffering[\"缓冲中\"]\n    playing[\"播放中\"]\n    paused[\"已暂停\"]\n    end[\"End\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 16,
+        "speaker": "系统设计师",
+        "content": "很好的一点！我在已停止状态和起始点之间添加一条边，这样就形成了一个完整的循环，可以重新选择新的视频。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start",
+            "video_selected",
+            "buffering",
+            "playing",
+            "paused",
+            "end"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    start[\"Start\"]\n    video_selected[\"已选择视频\"]\n    buffering[\"缓冲中\"]\n    playing[\"播放中\"]\n    paused[\"已暂停\"]\n    end[\"End\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 17,
+        "speaker": "开发工程师",
+        "content": "现在整个状态机完整了。从选择视频开始，经过缓冲，然后可以播放或暂停，最后停止并回到起点重新开始。逻辑非常清晰。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start",
+            "video_selected",
+            "buffering",
+            "playing",
+            "paused",
+            "end"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    start[\"Start\"]\n    video_selected[\"已选择视频\"]\n    buffering[\"缓冲中\"]\n    playing[\"播放中\"]\n    paused[\"已暂停\"]\n    end[\"End\"]"
+      }
+    }
+  ]
+}

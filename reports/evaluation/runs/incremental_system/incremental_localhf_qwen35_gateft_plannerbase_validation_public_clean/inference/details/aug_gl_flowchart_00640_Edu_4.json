@@ -1,0 +1,556 @@
+{
+  "sample_id": "aug_gl_flowchart_00640_Edu_4",
+  "diagram_type": "flowchart",
+  "generated_at_utc": "2026-03-25T11:25:04Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 5,
+    "total_stages": 2,
+    "updates_emitted": 2,
+    "final_stage_index": 2,
+    "applied_stage_indices": [
+      1,
+      2
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 4,
+      "edge_count": 0,
+      "group_count": 1,
+      "node_ids": [
+        "StudentDB",
+        "LMS",
+        "ClassroomService",
+        "CDN"
+      ],
+      "edge_ids": [],
+      "group_ids": [
+        "core_infrastructure"
+      ]
+    },
+    "reference_graph_metrics": {
+      "node_count": 4,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "Agents",
+        "AgentsManifest",
+        "RepoScan",
+        "GitHubActions"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    }
+  },
+  "final_state": {
+    "sample_id": "aug_gl_flowchart_00640_Edu_4",
+    "diagram_type": "flowchart",
+    "current_stage_index": 2,
+    "current_graph_ir": {
+      "graph_id": "aug_gl_flowchart_00640_Edu_4",
+      "diagram_type": "flowchart",
+      "nodes": [
+        {
+          "id": "StudentDB",
+          "label": "学生数据库",
+          "kind": "database",
+          "parent": "core_infrastructure",
+          "source_index": 3,
+          "metadata": {}
+        },
+        {
+          "id": "LMS",
+          "label": "LMS学习管理系统门户",
+          "kind": "portal",
+          "parent": "core_infrastructure",
+          "source_index": 4,
+          "metadata": {}
+        },
+        {
+          "id": "ClassroomService",
+          "label": "教室服务",
+          "kind": "service",
+          "parent": "core_infrastructure",
+          "source_index": 6,
+          "metadata": {}
+        },
+        {
+          "id": "CDN",
+          "label": "内容分发网络",
+          "kind": "service",
+          "parent": "core_infrastructure",
+          "source_index": 7,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [
+        {
+          "id": "core_infrastructure",
+          "label": "核心基础设施",
+          "parent": null,
+          "member_ids": [],
+          "source_index": 2,
+          "metadata": {}
+        }
+      ],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    StudentDB[\"学生数据库\"]\n    LMS[\"LMS学习管理系统门户\"]\n    ClassroomService[\"教室服务\"]\n    CDN[\"内容分发网络\"]",
+    "applied_stage_indices": [
+      1,
+      2
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 4,
+        "edge_count": 0,
+        "group_count": 1,
+        "node_ids": [
+          "StudentDB",
+          "LMS",
+          "ClassroomService",
+          "CDN"
+        ],
+        "edge_ids": [],
+        "group_ids": [
+          "core_infrastructure"
+        ]
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "张工",
+        "content": "我们今天来梳理一下教育平台的技术架构。首先，核心基础设施需要建立起来。最基础的两个组件是学生数据库和LMS学习管理系统门户。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2138.0217,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "李工",
+        "content": "明白，学生数据库负责存储和管理所有学生的注册信息、成绩记录和学习历史对吧？这个是整个平台的数据基石。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2132.1137,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "core_infrastructure",
+            "label": "核心基础设施",
+            "kind": "group",
+            "id": "core_infrastructure"
+          },
+          {
+            "op": "add_node",
+            "node_id": "StudentDB",
+            "label": "学生数据库",
+            "kind": "database",
+            "parent": "core_infrastructure",
+            "id": "StudentDB"
+          },
+          {
+            "op": "add_node",
+            "node_id": "LMS",
+            "label": "LMS学习管理系统门户",
+            "kind": "portal",
+            "parent": "core_infrastructure",
+            "id": "LMS"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added core infrastructure group with StudentDB and LMS nodes.",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 13441.7608,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_group\",\n      \"group_id\": \"core_infrastructure\",\n      \"label\": \"核心基础设施\",\n      \"kind\": \"group\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"StudentDB\",\n      \"label\": \"学生数据库\",\n      \"kind\": \"database\",\n      \"parent\": \"core_infrastructure\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"LMS\",\n      \"label\": \"LMS",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "core_infrastructure",
+            "label": "核心基础设施",
+            "kind": "group",
+            "id": "core_infrastructure"
+          },
+          {
+            "op": "add_node",
+            "node_id": "StudentDB",
+            "label": "学生数据库",
+            "kind": "database",
+            "parent": "core_infrastructure",
+            "id": "StudentDB"
+          },
+          {
+            "op": "add_node",
+            "node_id": "LMS",
+            "label": "LMS学习管理系统门户",
+            "kind": "portal",
+            "parent": "core_infrastructure",
+            "id": "LMS"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [
+            "StudentDB",
+            "LMS"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "core_infrastructure"
+          ]
+        },
+        "gold_stage_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "delta_count": 2
+        },
+        "preview_mermaid": "graph TD\n    StudentDB[\"学生数据库\"]\n    LMS[\"LMS学习管理系统门户\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [
+            "StudentDB",
+            "LMS"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "core_infrastructure"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    StudentDB[\"学生数据库\"]\n    LMS[\"LMS学习管理系统门户\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "张工",
+        "content": "没错，同时LMS门户是学生和教师登录系统的主要入口，提供课程浏览、在线学习和作业提交等功能。这两个组件构成了平台的核心骨架。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2146.8039,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [
+            "StudentDB",
+            "LMS"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "core_infrastructure"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    StudentDB[\"学生数据库\"]\n    LMS[\"LMS学习管理系统门户\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "李工",
+        "content": "现在核心部分已经清晰了。如果要扩展功能，还需要加入教室服务和内容分发网络。教室服务可以支持实时视频授课和互动讨论。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2161.6061,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [
+            "StudentDB",
+            "LMS"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "core_infrastructure"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    StudentDB[\"学生数据库\"]\n    LMS[\"LMS学习管理系统门户\"]"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "ClassroomService",
+            "label": "教室服务",
+            "kind": "service",
+            "parent": "core_infrastructure",
+            "id": "ClassroomService"
+          },
+          {
+            "op": "add_node",
+            "node_id": "CDN",
+            "label": "内容分发网络",
+            "kind": "service",
+            "parent": "core_infrastructure",
+            "id": "CDN"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added ClassroomService and CDN nodes to core_infrastructure as per dialogue.",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 10684.9828,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 2,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"ClassroomService\",\n      \"label\": \"教室服务\",\n      \"kind\": \"service\",\n      \"parent\": \"core_infrastructure\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"CDN\",\n      \"label\": \"内容分发网络\",\n      \"kind\": \"service\",\n      \"parent\": \"core_infrastructure\"\n    }\n  ],\n  \"notes\": \"Added ClassroomService and CD",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "ClassroomService",
+            "label": "教室服务",
+            "kind": "service",
+            "parent": "core_infrastructure",
+            "id": "ClassroomService"
+          },
+          {
+            "op": "add_node",
+            "node_id": "CDN",
+            "label": "内容分发网络",
+            "kind": "service",
+            "parent": "core_infrastructure",
+            "id": "CDN"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [
+            "StudentDB",
+            "LMS",
+            "ClassroomService",
+            "CDN"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "core_infrastructure"
+          ]
+        },
+        "gold_stage_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "delta_count": 2
+        },
+        "preview_mermaid": "graph TD\n    StudentDB[\"学生数据库\"]\n    LMS[\"LMS学习管理系统门户\"]\n    ClassroomService[\"教室服务\"]\n    CDN[\"内容分发网络\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [
+            "StudentDB",
+            "LMS",
+            "ClassroomService",
+            "CDN"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "core_infrastructure"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    StudentDB[\"学生数据库\"]\n    LMS[\"LMS学习管理系统门户\"]\n    ClassroomService[\"教室服务\"]\n    CDN[\"内容分发网络\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "张工",
+        "content": "对，内容分发网络能确保课件、视频等学习材料快速加载到全国各地的学生端。加上CDN的加速，整个平台的体验会更加流畅。这样四个核心服务组件就齐备了。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [
+            "StudentDB",
+            "LMS",
+            "ClassroomService",
+            "CDN"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "core_infrastructure"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    StudentDB[\"学生数据库\"]\n    LMS[\"LMS学习管理系统门户\"]\n    ClassroomService[\"教室服务\"]\n    CDN[\"内容分发网络\"]"
+      }
+    }
+  ]
+}

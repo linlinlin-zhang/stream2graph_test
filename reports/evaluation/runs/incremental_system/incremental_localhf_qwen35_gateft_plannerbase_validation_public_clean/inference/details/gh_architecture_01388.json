@@ -1,0 +1,1371 @@
+{
+  "sample_id": "gh_architecture_01388",
+  "diagram_type": "architecture",
+  "generated_at_utc": "2026-03-25T08:40:45Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 18,
+    "total_stages": 3,
+    "updates_emitted": 3,
+    "final_stage_index": 3,
+    "applied_stage_indices": [
+      1,
+      2,
+      3
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 6,
+      "edge_count": 0,
+      "group_count": 2,
+      "node_ids": [
+        "Circle",
+        "nilearn_CCI",
+        "host_docs",
+        "nilearn_doc_dev",
+        "nilearn_doc_stable",
+        "DocumentationBuilder"
+      ],
+      "edge_ids": [],
+      "group_ids": [
+        "nilearn",
+        "GitHub"
+      ]
+    },
+    "reference_graph_metrics": {
+      "node_count": 5,
+      "edge_count": 0,
+      "group_count": 2,
+      "node_ids": [
+        "nilearn_CCI",
+        "nilearn_doc_dev",
+        "nilearn_doc_stable",
+        "DocumentationBuilder",
+        "trigger_hosting"
+      ],
+      "edge_ids": [],
+      "group_ids": [
+        "Circle",
+        "GitHub"
+      ]
+    }
+  },
+  "final_state": {
+    "sample_id": "gh_architecture_01388",
+    "diagram_type": "architecture",
+    "current_stage_index": 3,
+    "current_graph_ir": {
+      "graph_id": "gh_architecture_01388",
+      "diagram_type": "architecture",
+      "nodes": [
+        {
+          "id": "Circle",
+          "label": "Circle CI",
+          "kind": "infrastructure",
+          "parent": "nilearn",
+          "source_index": 3,
+          "metadata": {}
+        },
+        {
+          "id": "nilearn_CCI",
+          "label": "nilearn_CCI",
+          "kind": "config",
+          "parent": "Circle",
+          "source_index": 5,
+          "metadata": {}
+        },
+        {
+          "id": "host_docs",
+          "label": "host_docs",
+          "kind": "task",
+          "parent": "nilearn_CCI",
+          "source_index": 6,
+          "metadata": {}
+        },
+        {
+          "id": "nilearn_doc_dev",
+          "label": "nilearn_doc_dev",
+          "kind": "config",
+          "parent": "Circle",
+          "source_index": 7,
+          "metadata": {}
+        },
+        {
+          "id": "nilearn_doc_stable",
+          "label": "nilearn_doc_stable",
+          "kind": "config",
+          "parent": "Circle",
+          "source_index": 8,
+          "metadata": {}
+        },
+        {
+          "id": "DocumentationBuilder",
+          "label": "DocumentationBuilder",
+          "kind": "workflow",
+          "parent": "GitHub",
+          "source_index": 12,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [
+        {
+          "id": "nilearn",
+          "label": "nilearn",
+          "parent": null,
+          "member_ids": [],
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "GitHub",
+          "label": "GitHub",
+          "parent": "nilearn",
+          "member_ids": [],
+          "source_index": 4,
+          "metadata": {}
+        }
+      ],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    Circle[\"Circle CI\"]\n    nilearn_CCI[\"nilearn_CCI\"]\n    host_docs[\"host_docs\"]\n    nilearn_doc_dev[\"nilearn_doc_dev\"]\n    nilearn_doc_stable[\"nilearn_doc_stable\"]\n    DocumentationBuilder[\"DocumentationBuilder\"]",
+    "applied_stage_indices": [
+      1,
+      2,
+      3
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 6,
+        "edge_count": 0,
+        "group_count": 2,
+        "node_ids": [
+          "Circle",
+          "nilearn_CCI",
+          "host_docs",
+          "nilearn_doc_dev",
+          "nilearn_doc_stable",
+          "DocumentationBuilder"
+        ],
+        "edge_ids": [],
+        "group_ids": [
+          "nilearn",
+          "GitHub"
+        ]
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "技术负责人",
+        "content": "我们今天来梳理一下nilearn项目的文档持续集成架构。首先需要建立核心基础设施，Circle CI已经集成到项目中了。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Introduces Stage 1 topic: Circle CI integration",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2179.3191,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "开发者",
+        "content": "好的，Circle CI这边具体负责什么工作呢？",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Question about Circle CI core setup",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2128.6585,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "nilearn",
+            "label": "nilearn",
+            "kind": "project",
+            "id": "nilearn"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Circle",
+            "label": "Circle CI",
+            "kind": "infrastructure",
+            "parent": "nilearn",
+            "id": "Circle"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added nilearn project group and Circle CI infrastructure node",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 9664.7,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_group\",\n      \"group_id\": \"nilearn\",\n      \"label\": \"nilearn\",\n      \"kind\": \"project\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Circle\",\n      \"label\": \"Circle CI\",\n      \"kind\": \"infrastructure\",\n      \"parent\": \"nilearn\"\n    }\n  ],\n  \"notes\": \"Added nilearn project group and Circle CI infrastructure node\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "nilearn",
+            "label": "nilearn",
+            "kind": "project",
+            "id": "nilearn"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Circle",
+            "label": "Circle CI",
+            "kind": "infrastructure",
+            "parent": "nilearn",
+            "id": "Circle"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [
+            "Circle"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "nilearn"
+          ]
+        },
+        "gold_stage_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 1,
+          "delta_count": 3
+        },
+        "preview_mermaid": "graph TD\n    Circle[\"Circle CI\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [
+            "Circle"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "nilearn"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    Circle[\"Circle CI\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "技术负责人",
+        "content": "Circle CI组里有几个关键配置。第一个是nilearn_CCI，它负责运行host_docs任务，用于托管文档。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Explains nilearn_CCI node operation",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2103.7838,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [
+            "Circle"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "nilearn"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    Circle[\"Circle CI\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "运维工程师",
+        "content": "明白了，那开发分支的文档构建也走这条路吗？",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Clarifies dev branch documentation path",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2130.3697,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [
+            "Circle"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "nilearn"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    Circle[\"Circle CI\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "技术负责人",
+        "content": "是的，nilearn_doc_dev节点专门处理开发分支（dev）的文档配置。这样开发者提交代码时能自动构建预览文档。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Details nilearn_doc_dev for dev branch",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2104.9423,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [
+            "Circle"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "nilearn"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    Circle[\"Circle CI\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "开发者",
+        "content": "开发分支的文档流程我清楚了。那稳定版本（stable）的文档怎么处理呢？",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Transitions to stable branch documentation",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2071.0018,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [
+            "Circle"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "nilearn"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    Circle[\"Circle CI\"]"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "nilearn_CCI",
+            "label": "nilearn_CCI",
+            "kind": "config",
+            "parent": "Circle",
+            "id": "nilearn_CCI"
+          },
+          {
+            "op": "add_node",
+            "node_id": "host_docs",
+            "label": "host_docs",
+            "kind": "task",
+            "parent": "nilearn_CCI",
+            "id": "host_docs"
+          },
+          {
+            "op": "add_node",
+            "node_id": "nilearn_doc_dev",
+            "label": "nilearn_doc_dev",
+            "kind": "config",
+            "parent": "Circle",
+            "id": "nilearn_doc_dev"
+          },
+          {
+            "op": "add_node",
+            "node_id": "nilearn_doc_stable",
+            "label": "nilearn_doc_stable",
+            "kind": "config",
+            "parent": "Circle",
+            "id": "nilearn_doc_stable"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added nilearn_CCI, host_docs, nilearn_doc_dev, and nilearn_doc_stable nodes under Circle CI group.",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 19495.1704,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 2,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"nilearn_CCI\",\n      \"label\": \"nilearn_CCI\",\n      \"kind\": \"config\",\n      \"parent\": \"Circle\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"host_docs\",\n      \"label\": \"host_docs\",\n      \"kind\": \"task\",\n      \"parent\": \"nilearn_CCI\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"nilearn_doc",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "nilearn_CCI",
+            "label": "nilearn_CCI",
+            "kind": "config",
+            "parent": "Circle",
+            "id": "nilearn_CCI"
+          },
+          {
+            "op": "add_node",
+            "node_id": "host_docs",
+            "label": "host_docs",
+            "kind": "task",
+            "parent": "nilearn_CCI",
+            "id": "host_docs"
+          },
+          {
+            "op": "add_node",
+            "node_id": "nilearn_doc_dev",
+            "label": "nilearn_doc_dev",
+            "kind": "config",
+            "parent": "Circle",
+            "id": "nilearn_doc_dev"
+          },
+          {
+            "op": "add_node",
+            "node_id": "nilearn_doc_stable",
+            "label": "nilearn_doc_stable",
+            "kind": "config",
+            "parent": "Circle",
+            "id": "nilearn_doc_stable"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [
+            "Circle",
+            "nilearn_CCI",
+            "host_docs",
+            "nilearn_doc_dev",
+            "nilearn_doc_stable"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "nilearn"
+          ]
+        },
+        "gold_stage_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 2,
+          "delta_count": 3
+        },
+        "preview_mermaid": "graph TD\n    Circle[\"Circle CI\"]\n    nilearn_CCI[\"nilearn_CCI\"]\n    host_docs[\"host_docs\"]\n    nilearn_doc_dev[\"nilearn_doc_dev\"]\n    nilearn_doc_stable[\"nilearn_doc_stable\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [
+            "Circle",
+            "nilearn_CCI",
+            "host_docs",
+            "nilearn_doc_dev",
+            "nilearn_doc_stable"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "nilearn"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    Circle[\"Circle CI\"]\n    nilearn_CCI[\"nilearn_CCI\"]\n    host_docs[\"host_docs\"]\n    nilearn_doc_dev[\"nilearn_doc_dev\"]\n    nilearn_doc_stable[\"nilearn_doc_stable\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 7,
+        "speaker": "技术负责人",
+        "content": "好问题。稳定版本的文档走的是GitHub Actions这边，我们在GitHub组中添加了相关配置。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Introduces GitHub Actions and GitHub group",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2105.7184,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [
+            "Circle",
+            "nilearn_CCI",
+            "host_docs",
+            "nilearn_doc_dev",
+            "nilearn_doc_stable"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "nilearn"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    Circle[\"Circle CI\"]\n    nilearn_CCI[\"nilearn_CCI\"]\n    host_docs[\"host_docs\"]\n    nilearn_doc_dev[\"nilearn_doc_dev\"]\n    nilearn_doc_stable[\"nilearn_doc_stable\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 8,
+        "speaker": "运维工程师",
+        "content": "GitHub Actions这边有什么组件呢？",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Questions GitHub Actions components",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2113.4245,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [
+            "Circle",
+            "nilearn_CCI",
+            "host_docs",
+            "nilearn_doc_dev",
+            "nilearn_doc_stable"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "nilearn"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    Circle[\"Circle CI\"]\n    nilearn_CCI[\"nilearn_CCI\"]\n    host_docs[\"host_docs\"]\n    nilearn_doc_dev[\"nilearn_doc_dev\"]\n    nilearn_doc_stable[\"nilearn_doc_stable\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 9,
+        "speaker": "技术负责人",
+        "content": "首先有nilearn_doc_stable节点，它负责stable分支的文档配置。另外还有DocumentationBuilder工作流，对应build-docs.yml文件。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Details nilearn_doc_stable and DocumentationBuilder",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2094.9514,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [
+            "Circle",
+            "nilearn_CCI",
+            "host_docs",
+            "nilearn_doc_dev",
+            "nilearn_doc_stable"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "nilearn"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    Circle[\"Circle CI\"]\n    nilearn_CCI[\"nilearn_CCI\"]\n    host_docs[\"host_docs\"]\n    nilearn_doc_dev[\"nilearn_doc_dev\"]\n    nilearn_doc_stable[\"nilearn_doc_stable\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 10,
+        "speaker": "开发者",
+        "content": "所以现在我们有了两套文档构建系统？一套给开发分支用，一套给稳定分支用？",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Confirms two-system architecture",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2086.0744,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [
+            "Circle",
+            "nilearn_CCI",
+            "host_docs",
+            "nilearn_doc_dev",
+            "nilearn_doc_stable"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "nilearn"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    Circle[\"Circle CI\"]\n    nilearn_CCI[\"nilearn_CCI\"]\n    host_docs[\"host_docs\"]\n    nilearn_doc_dev[\"nilearn_doc_dev\"]\n    nilearn_doc_stable[\"nilearn_doc_stable\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 11,
+        "speaker": "技术负责人",
+        "content": "没错，这样设计可以实现分支隔离管理。开发分支的改动不会影响稳定版本的文档。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Explains branch isolation design",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2090.3168,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [
+            "Circle",
+            "nilearn_CCI",
+            "host_docs",
+            "nilearn_doc_dev",
+            "nilearn_doc_stable"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "nilearn"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    Circle[\"Circle CI\"]\n    nilearn_CCI[\"nilearn_CCI\"]\n    host_docs[\"host_docs\"]\n    nilearn_doc_dev[\"nilearn_doc_dev\"]\n    nilearn_doc_stable[\"nilearn_doc_stable\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 12,
+        "speaker": "运维工程师",
+        "content": "那PR（Pull Request）相关的文档托管触发机制有吗？",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Asks about PR documentation hosting",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2153.5408,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 1,
+          "node_ids": [
+            "Circle",
+            "nilearn_CCI",
+            "host_docs",
+            "nilearn_doc_dev",
+            "nilearn_doc_stable"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "nilearn"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    Circle[\"Circle CI\"]\n    nilearn_CCI[\"nilearn_CCI\"]\n    host_docs[\"host_docs\"]\n    nilearn_doc_dev[\"nilearn_doc_dev\"]\n    nilearn_doc_stable[\"nilearn_doc_stable\"]"
+      },
+      "planner": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "GitHub",
+            "label": "GitHub",
+            "parent": "nilearn",
+            "id": "GitHub"
+          },
+          {
+            "op": "add_node",
+            "node_id": "nilearn_doc_stable",
+            "label": "nilearn_doc_stable",
+            "kind": "config",
+            "parent": "GitHub"
+          },
+          {
+            "op": "add_node",
+            "node_id": "DocumentationBuilder",
+            "label": "DocumentationBuilder",
+            "kind": "workflow",
+            "parent": "GitHub",
+            "id": "DocumentationBuilder"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added GitHub group and moved stable doc config/workflow there per dialogue.",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 13634.8231,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 3,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_group\",\n      \"group_id\": \"GitHub\",\n      \"label\": \"GitHub\",\n      \"parent\": \"nilearn\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"nilearn_doc_stable\",\n      \"label\": \"nilearn_doc_stable\",\n      \"kind\": \"config\",\n      \"parent\": \"GitHub\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"DocumentationBuilder\",\n    ",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "GitHub",
+            "label": "GitHub",
+            "parent": "nilearn",
+            "id": "GitHub"
+          },
+          {
+            "op": "add_node",
+            "node_id": "nilearn_doc_stable",
+            "label": "nilearn_doc_stable",
+            "kind": "config",
+            "parent": "GitHub"
+          },
+          {
+            "op": "add_node",
+            "node_id": "DocumentationBuilder",
+            "label": "DocumentationBuilder",
+            "kind": "workflow",
+            "parent": "GitHub",
+            "id": "DocumentationBuilder"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [
+            "Circle",
+            "nilearn_CCI",
+            "host_docs",
+            "nilearn_doc_dev",
+            "nilearn_doc_stable",
+            "DocumentationBuilder"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "nilearn",
+            "GitHub"
+          ]
+        },
+        "gold_stage_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 2,
+          "delta_count": 1
+        },
+        "preview_mermaid": "graph TD\n    Circle[\"Circle CI\"]\n    nilearn_CCI[\"nilearn_CCI\"]\n    host_docs[\"host_docs\"]\n    nilearn_doc_dev[\"nilearn_doc_dev\"]\n    nilearn_doc_stable[\"nilearn_doc_stable\"]\n    DocumentationBuilder[\"DocumentationBuilder\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [
+            "Circle",
+            "nilearn_CCI",
+            "host_docs",
+            "nilearn_doc_dev",
+            "nilearn_doc_stable",
+            "DocumentationBuilder"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "nilearn",
+            "GitHub"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    Circle[\"Circle CI\"]\n    nilearn_CCI[\"nilearn_CCI\"]\n    host_docs[\"host_docs\"]\n    nilearn_doc_dev[\"nilearn_doc_dev\"]\n    nilearn_doc_stable[\"nilearn_doc_stable\"]\n    DocumentationBuilder[\"DocumentationBuilder\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 13,
+        "speaker": "技术负责人",
+        "content": "有的，我们还需要添加trigger_hosting工作流，对应trigger_hosting_on_pr.yml文件。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Introduces trigger_hosting workflow",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [
+            "Circle",
+            "nilearn_CCI",
+            "host_docs",
+            "nilearn_doc_dev",
+            "nilearn_doc_stable",
+            "DocumentationBuilder"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "nilearn",
+            "GitHub"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    Circle[\"Circle CI\"]\n    nilearn_CCI[\"nilearn_CCI\"]\n    host_docs[\"host_docs\"]\n    nilearn_doc_dev[\"nilearn_doc_dev\"]\n    nilearn_doc_stable[\"nilearn_doc_stable\"]\n    DocumentationBuilder[\"DocumentationBuilder\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 14,
+        "speaker": "开发者",
+        "content": "这个工作流的作用是什么？",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Questions trigger_hosting purpose",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [
+            "Circle",
+            "nilearn_CCI",
+            "host_docs",
+            "nilearn_doc_dev",
+            "nilearn_doc_stable",
+            "DocumentationBuilder"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "nilearn",
+            "GitHub"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    Circle[\"Circle CI\"]\n    nilearn_CCI[\"nilearn_CCI\"]\n    host_docs[\"host_docs\"]\n    nilearn_doc_dev[\"nilearn_doc_dev\"]\n    nilearn_doc_stable[\"nilearn_doc_stable\"]\n    DocumentationBuilder[\"DocumentationBuilder\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 15,
+        "speaker": "技术负责人",
+        "content": "当有人创建Pull Request时，trigger_hosting工作流会自动触发文档托管流程，让审核者可以预览PR带来的文档变化。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Explains PR preview functionality",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [
+            "Circle",
+            "nilearn_CCI",
+            "host_docs",
+            "nilearn_doc_dev",
+            "nilearn_doc_stable",
+            "DocumentationBuilder"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "nilearn",
+            "GitHub"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    Circle[\"Circle CI\"]\n    nilearn_CCI[\"nilearn_CCI\"]\n    host_docs[\"host_docs\"]\n    nilearn_doc_dev[\"nilearn_doc_dev\"]\n    nilearn_doc_stable[\"nilearn_doc_stable\"]\n    DocumentationBuilder[\"DocumentationBuilder\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 16,
+        "speaker": "运维工程师",
+        "content": "这样整个文档生命周期就完整了：开发分支预览、合并后构建稳定文档、PR触发托管预览。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Summarizes full documentation lifecycle",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [
+            "Circle",
+            "nilearn_CCI",
+            "host_docs",
+            "nilearn_doc_dev",
+            "nilearn_doc_stable",
+            "DocumentationBuilder"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "nilearn",
+            "GitHub"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    Circle[\"Circle CI\"]\n    nilearn_CCI[\"nilearn_CCI\"]\n    host_docs[\"host_docs\"]\n    nilearn_doc_dev[\"nilearn_doc_dev\"]\n    nilearn_doc_stable[\"nilearn_doc_stable\"]\n    DocumentationBuilder[\"DocumentationBuilder\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 17,
+        "speaker": "技术负责人",
+        "content": "总结一下：Circle CI负责开发分支文档（nilearn_CCI和nilearn_doc_dev），GitHub Actions负责稳定分支文档（nilearn_doc_stable和DocumentationBuilder），最后trigger_hosting完成PR驱动的托管闭环。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Final architecture summary",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [
+            "Circle",
+            "nilearn_CCI",
+            "host_docs",
+            "nilearn_doc_dev",
+            "nilearn_doc_stable",
+            "DocumentationBuilder"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "nilearn",
+            "GitHub"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    Circle[\"Circle CI\"]\n    nilearn_CCI[\"nilearn_CCI\"]\n    host_docs[\"host_docs\"]\n    nilearn_doc_dev[\"nilearn_doc_dev\"]\n    nilearn_doc_stable[\"nilearn_doc_stable\"]\n    DocumentationBuilder[\"DocumentationBuilder\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 18,
+        "speaker": "开发者",
+        "content": "架构很清晰，CI/CD流程覆盖了文档的各个环节。这样的分层设计便于维护和扩展。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "Confirms CI/CD coverage",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [
+            "Circle",
+            "nilearn_CCI",
+            "host_docs",
+            "nilearn_doc_dev",
+            "nilearn_doc_stable",
+            "DocumentationBuilder"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "nilearn",
+            "GitHub"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    Circle[\"Circle CI\"]\n    nilearn_CCI[\"nilearn_CCI\"]\n    host_docs[\"host_docs\"]\n    nilearn_doc_dev[\"nilearn_doc_dev\"]\n    nilearn_doc_stable[\"nilearn_doc_stable\"]\n    DocumentationBuilder[\"DocumentationBuilder\"]"
+      }
+    }
+  ]
+}

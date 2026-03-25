@@ -1,0 +1,2585 @@
+{
+  "sample_id": "aug_ot_stateDiagram_00132_Inf_3",
+  "diagram_type": "statediagram",
+  "generated_at_utc": "2026-03-25T09:25:43Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 25,
+    "total_stages": 5,
+    "updates_emitted": 5,
+    "final_stage_index": 5,
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 34,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "STARTUP",
+        "POSITION_RECOVERY",
+        "FetchClosedTrades",
+        "FetchPortfolio",
+        "ProcessOutcomes",
+        "KillSwitchCheck",
+        "GetMonitoringContext",
+        "SendOrder",
+        "RecordMemory",
+        "PortfolioMemoryEngine",
+        "DailyReset",
+        "HALT"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    },
+    "reference_graph_metrics": {
+      "node_count": 36,
+      "edge_count": 37,
+      "group_count": 0,
+      "node_ids": [
+        "POSITION_RECOVERY",
+        "STARTUP",
+        "ExtractPositions",
+        "QueryPlatform",
+        "GenerateSyntheticDecisions",
+        "RebuildMemory",
+        "AssociateMonitor",
+        "RetryBackoff",
+        "ForceComplete",
+        "IDLE",
+        "LEARNING",
+        "FetchClosedTrades"
+      ],
+      "edge_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e5",
+        "e6",
+        "e7",
+        "e8",
+        "e9",
+        "e10",
+        "e11",
+        "e12"
+      ],
+      "group_ids": []
+    }
+  },
+  "final_state": {
+    "sample_id": "aug_ot_stateDiagram_00132_Inf_3",
+    "diagram_type": "statediagram",
+    "current_stage_index": 5,
+    "current_graph_ir": {
+      "graph_id": "aug_ot_stateDiagram_00132_Inf_3",
+      "diagram_type": "statediagram",
+      "nodes": [
+        {
+          "id": "STARTUP",
+          "label": "STARTUP",
+          "kind": "state",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "POSITION_RECOVERY",
+          "label": "POSITION_RECOVERY",
+          "kind": "state",
+          "parent": null,
+          "source_index": 3,
+          "metadata": {}
+        },
+        {
+          "id": "FetchClosedTrades",
+          "label": "FetchClosedTrades",
+          "kind": "state",
+          "parent": null,
+          "source_index": 4,
+          "metadata": {}
+        },
+        {
+          "id": "FetchPortfolio",
+          "label": "FetchPortfolio",
+          "kind": "state",
+          "parent": null,
+          "source_index": 5,
+          "metadata": {}
+        },
+        {
+          "id": "ProcessOutcomes",
+          "label": "ProcessOutcomes",
+          "kind": "state",
+          "parent": null,
+          "source_index": 7,
+          "metadata": {}
+        },
+        {
+          "id": "KillSwitchCheck",
+          "label": "KillSwitchCheck",
+          "kind": "state",
+          "parent": null,
+          "source_index": 8,
+          "metadata": {}
+        },
+        {
+          "id": "GetMonitoringContext",
+          "label": "GetMonitoringContext",
+          "kind": "state",
+          "parent": null,
+          "source_index": 9,
+          "metadata": {}
+        },
+        {
+          "id": "SendOrder",
+          "label": "SendOrder",
+          "kind": "state",
+          "parent": null,
+          "source_index": 10,
+          "metadata": {}
+        },
+        {
+          "id": "RecordMemory",
+          "label": "RecordMemory",
+          "kind": "state",
+          "parent": null,
+          "source_index": 11,
+          "metadata": {}
+        },
+        {
+          "id": "PortfolioMemoryEngine",
+          "label": "PortfolioMemoryEngine",
+          "kind": "state",
+          "parent": null,
+          "source_index": 12,
+          "metadata": {}
+        },
+        {
+          "id": "DailyReset",
+          "label": "DailyReset",
+          "kind": "state",
+          "parent": null,
+          "source_index": 14,
+          "metadata": {}
+        },
+        {
+          "id": "HALT",
+          "label": "HALT",
+          "kind": "state",
+          "parent": null,
+          "source_index": 15,
+          "metadata": {}
+        },
+        {
+          "id": "RiskGatekeeper",
+          "label": "RiskGatekeeper",
+          "kind": "state",
+          "parent": null,
+          "source_index": 16,
+          "metadata": {}
+        },
+        {
+          "id": "ValidateTrade",
+          "label": "ValidateTrade",
+          "kind": "state",
+          "parent": null,
+          "source_index": 17,
+          "metadata": {}
+        },
+        {
+          "id": "AssociateDecision",
+          "label": "AssociateDecision",
+          "kind": "state",
+          "parent": null,
+          "source_index": 18,
+          "metadata": {}
+        },
+        {
+          "id": "LogFailure",
+          "label": "LogFailure",
+          "kind": "state",
+          "parent": null,
+          "source_index": 19,
+          "metadata": {}
+        },
+        {
+          "id": "IncrementCounter",
+          "label": "IncrementCounter",
+          "kind": "state",
+          "parent": null,
+          "source_index": 20,
+          "metadata": {}
+        },
+        {
+          "id": "IDLE",
+          "label": "IDLE",
+          "kind": "state",
+          "parent": null,
+          "source_index": 21,
+          "metadata": {}
+        },
+        {
+          "id": "LEARNING",
+          "label": "LEARNING",
+          "kind": "state",
+          "parent": null,
+          "source_index": 22,
+          "metadata": {}
+        },
+        {
+          "id": "PERCEPTION",
+          "label": "PERCEPTION",
+          "kind": "state",
+          "parent": null,
+          "source_index": 24,
+          "metadata": {}
+        },
+        {
+          "id": "REASONING",
+          "label": "REASONING",
+          "kind": "state",
+          "parent": null,
+          "source_index": 25,
+          "metadata": {}
+        },
+        {
+          "id": "RISK_CHECK",
+          "label": "RISK_CHECK",
+          "kind": "state",
+          "parent": null,
+          "source_index": 26,
+          "metadata": {}
+        },
+        {
+          "id": "EXECUTION",
+          "label": "EXECUTION",
+          "kind": "state",
+          "parent": null,
+          "source_index": 27,
+          "metadata": {}
+        },
+        {
+          "id": "EXECUTION_FAILED",
+          "label": "EXECUTION_FAILED",
+          "kind": "state",
+          "parent": null,
+          "source_index": 28,
+          "metadata": {}
+        },
+        {
+          "id": "QueryPlatform",
+          "label": "QueryPlatform",
+          "kind": "state",
+          "parent": null,
+          "source_index": 29,
+          "metadata": {}
+        },
+        {
+          "id": "ExtractPositions",
+          "label": "ExtractPositions",
+          "kind": "state",
+          "parent": null,
+          "source_index": 30,
+          "metadata": {}
+        },
+        {
+          "id": "GenerateSyntheticDecisions",
+          "label": "GenerateSyntheticDecisions",
+          "kind": "state",
+          "parent": null,
+          "source_index": 32,
+          "metadata": {}
+        },
+        {
+          "id": "RebuildMemory",
+          "label": "RebuildMemory",
+          "kind": "state",
+          "parent": null,
+          "source_index": 33,
+          "metadata": {}
+        },
+        {
+          "id": "AssociateMonitor",
+          "label": "AssociateMonitor",
+          "kind": "state",
+          "parent": null,
+          "source_index": 34,
+          "metadata": {}
+        },
+        {
+          "id": "RetryBackoff",
+          "label": "RetryBackoff",
+          "kind": "state",
+          "parent": null,
+          "source_index": 35,
+          "metadata": {}
+        },
+        {
+          "id": "ForceComplete",
+          "label": "ForceComplete",
+          "kind": "state",
+          "parent": null,
+          "source_index": 36,
+          "metadata": {}
+        },
+        {
+          "id": "LoopAssets",
+          "label": "LoopAssets",
+          "kind": "state",
+          "parent": null,
+          "source_index": 37,
+          "metadata": {}
+        },
+        {
+          "id": "AnalyzeAsset",
+          "label": "AnalyzeAsset",
+          "kind": "state",
+          "parent": null,
+          "source_index": 38,
+          "metadata": {}
+        },
+        {
+          "id": "RetryLogic",
+          "label": "RetryLogic",
+          "kind": "state",
+          "parent": null,
+          "source_index": 39,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]\n    ProcessOutcomes[\"ProcessOutcomes\"]\n    KillSwitchCheck[\"KillSwitchCheck\"]\n    GetMonitoringContext[\"GetMonitoringContext\"]\n    SendOrder[\"SendOrder\"]\n    RecordMemory[\"RecordMemory\"]\n    PortfolioMemoryEngine[\"PortfolioMemoryEngine\"]\n    DailyReset[\"DailyReset\"]\n    HALT[\"HALT\"]\n    RiskGatekeeper[\"RiskGatekeeper\"]\n    ValidateTrade[\"ValidateTrade\"]\n    AssociateDecision[\"AssociateDecision\"]\n    LogFailure[\"LogFailure\"]\n    IncrementCounter[\"IncrementCounter\"]\n    IDLE[\"IDLE\"]\n    LEARNING[\"LEARNING\"]\n    PERCEPTION[\"PERCEPTION\"]\n    REASONING[\"REASONING\"]\n    RISK_CHECK[\"RISK_CHECK\"]\n    EXECUTION[\"EXECUTION\"]\n    EXECUTION_FAILED[\"EXECUTION_FAILED\"]\n    QueryPlatform[\"QueryPlatform\"]\n    ExtractPositions[\"ExtractPositions\"]\n    GenerateSyntheticDecisions[\"GenerateSyntheticDecisions\"]\n    RebuildMemory[\"RebuildMemory\"]\n    AssociateMonitor[\"AssociateMonitor\"]\n    RetryBackoff[\"RetryBackoff\"]\n    ForceComplete[\"ForceComplete\"]\n    LoopAssets[\"LoopAssets\"]\n    AnalyzeAsset[\"AnalyzeAsset\"]\n    RetryLogic[\"RetryLogic\"]",
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 34,
+        "edge_count": 0,
+        "group_count": 0,
+        "node_ids": [
+          "STARTUP",
+          "POSITION_RECOVERY",
+          "FetchClosedTrades",
+          "FetchPortfolio",
+          "ProcessOutcomes",
+          "KillSwitchCheck",
+          "GetMonitoringContext",
+          "SendOrder",
+          "RecordMemory",
+          "PortfolioMemoryEngine",
+          "DailyReset",
+          "HALT"
+        ],
+        "edge_ids": [],
+        "group_ids": []
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "周工",
+        "content": "各位好，我们今天来梳理一下交易智能体的状态机设计。首先看最核心的启动流程——系统从STARTUP状态出发，首先执行POSITION_RECOVERY，也就是位置恢复逻辑。这样设计是为了确保每次重启时，智能体能够恢复到一致的状态。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2321.1434,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "陈博士",
+        "content": "明白，POSITION_RECOVERY是关键的初始化节点。那么在恢复完成后，系统需要开始抓取数据，我注意到FetchClosedTrades和FetchPortfolio这两个数据获取节点是并行存在的？",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2319.3803,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "STARTUP",
+            "label": "STARTUP",
+            "kind": "state",
+            "id": "STARTUP"
+          },
+          {
+            "op": "add_node",
+            "node_id": "POSITION_RECOVERY",
+            "label": "POSITION_RECOVERY",
+            "kind": "state",
+            "id": "POSITION_RECOVERY"
+          },
+          {
+            "op": "add_node",
+            "node_id": "FetchClosedTrades",
+            "label": "FetchClosedTrades",
+            "kind": "state",
+            "id": "FetchClosedTrades"
+          },
+          {
+            "op": "add_node",
+            "node_id": "FetchPortfolio",
+            "label": "FetchPortfolio",
+            "kind": "state",
+            "id": "FetchPortfolio"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added initial states: STARTUP, POSITION_RECOVERY, and parallel data fetch nodes.",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 16788.9132,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"STARTUP\",\n      \"label\": \"STARTUP\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"POSITION_RECOVERY\",\n      \"label\": \"POSITION_RECOVERY\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"FetchClosedTrades\",\n      \"label\": \"FetchClosedTrades\",\n    ",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "STARTUP",
+            "label": "STARTUP",
+            "kind": "state",
+            "id": "STARTUP"
+          },
+          {
+            "op": "add_node",
+            "node_id": "POSITION_RECOVERY",
+            "label": "POSITION_RECOVERY",
+            "kind": "state",
+            "id": "POSITION_RECOVERY"
+          },
+          {
+            "op": "add_node",
+            "node_id": "FetchClosedTrades",
+            "label": "FetchClosedTrades",
+            "kind": "state",
+            "id": "FetchClosedTrades"
+          },
+          {
+            "op": "add_node",
+            "node_id": "FetchPortfolio",
+            "label": "FetchPortfolio",
+            "kind": "state",
+            "id": "FetchPortfolio"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 8,
+          "edge_count": 3,
+          "group_count": 0,
+          "delta_count": 11
+        },
+        "preview_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "周工",
+        "content": "对，这两条数据线是独立的。FetchClosedTrades负责拉取已平仓的交易记录，然后流向ProcessOutcomes处理交易结果。与此同时，FetchPortfolio拉取持仓组合信息，送往KillSwitchCheck进行风控检查。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2353.4081,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "林经理",
+        "content": "那GetMonitoringContext和SendOrder这条线是什么职能？我看它们也是独立于数据主线的。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2351.0892,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "周工",
+        "content": "GetMonitoringContext负责获取监控上下文，为后续的交易验证提供依据。SendOrder则是执行交易指令的节点。这条线是交易执行的核心路径，与数据采集路径是并行的，共同构成了智能体的初始工作框架。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2270.7443,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "陈博士",
+        "content": "好的，现在来看分支扩展部分。ProcessOutcomes处理完交易结果后，会流向RecordMemory节点，通过PortfolioMemoryEngine记录到记忆中。这个设计确保了历史数据不会丢失。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2250.0443,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "ProcessOutcomes",
+            "label": "ProcessOutcomes",
+            "kind": "state",
+            "id": "ProcessOutcomes"
+          },
+          {
+            "op": "add_node",
+            "node_id": "KillSwitchCheck",
+            "label": "KillSwitchCheck",
+            "kind": "state",
+            "id": "KillSwitchCheck"
+          },
+          {
+            "op": "add_node",
+            "node_id": "GetMonitoringContext",
+            "label": "GetMonitoringContext",
+            "kind": "state",
+            "id": "GetMonitoringContext"
+          },
+          {
+            "op": "add_node",
+            "node_id": "SendOrder",
+            "label": "SendOrder",
+            "kind": "state",
+            "id": "SendOrder"
+          },
+          {
+            "op": "add_node",
+            "node_id": "RecordMemory",
+            "label": "RecordMemory",
+            "kind": "state",
+            "id": "RecordMemory"
+          },
+          {
+            "op": "add_node",
+            "node_id": "PortfolioMemoryEngine",
+            "label": "PortfolioMemoryEngine",
+            "kind": "state",
+            "id": "PortfolioMemoryEngine"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added remaining states mentioned in stage 1 and stage 2 dialogue: ProcessOutcomes, KillSwitchCheck, GetMonitoringContext, SendOrder, RecordMemory, PortfolioMemoryEngine.",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 24151.8698,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 2,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"ProcessOutcomes\",\n      \"label\": \"ProcessOutcomes\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"KillSwitchCheck\",\n      \"label\": \"KillSwitchCheck\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"GetMonitoringContext\",\n      \"label\": \"GetMonito",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "ProcessOutcomes",
+            "label": "ProcessOutcomes",
+            "kind": "state",
+            "id": "ProcessOutcomes"
+          },
+          {
+            "op": "add_node",
+            "node_id": "KillSwitchCheck",
+            "label": "KillSwitchCheck",
+            "kind": "state",
+            "id": "KillSwitchCheck"
+          },
+          {
+            "op": "add_node",
+            "node_id": "GetMonitoringContext",
+            "label": "GetMonitoringContext",
+            "kind": "state",
+            "id": "GetMonitoringContext"
+          },
+          {
+            "op": "add_node",
+            "node_id": "SendOrder",
+            "label": "SendOrder",
+            "kind": "state",
+            "id": "SendOrder"
+          },
+          {
+            "op": "add_node",
+            "node_id": "RecordMemory",
+            "label": "RecordMemory",
+            "kind": "state",
+            "id": "RecordMemory"
+          },
+          {
+            "op": "add_node",
+            "node_id": "PortfolioMemoryEngine",
+            "label": "PortfolioMemoryEngine",
+            "kind": "state",
+            "id": "PortfolioMemoryEngine"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 10,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio",
+            "ProcessOutcomes",
+            "KillSwitchCheck",
+            "GetMonitoringContext",
+            "SendOrder",
+            "RecordMemory",
+            "PortfolioMemoryEngine"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 15,
+          "edge_count": 10,
+          "group_count": 0,
+          "delta_count": 14
+        },
+        "preview_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]\n    ProcessOutcomes[\"ProcessOutcomes\"]\n    KillSwitchCheck[\"KillSwitchCheck\"]\n    GetMonitoringContext[\"GetMonitoringContext\"]\n    SendOrder[\"SendOrder\"]\n    RecordMemory[\"RecordMemory\"]\n    PortfolioMemoryEngine[\"PortfolioMemoryEngine\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 10,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio",
+            "ProcessOutcomes",
+            "KillSwitchCheck",
+            "GetMonitoringContext",
+            "SendOrder",
+            "RecordMemory",
+            "PortfolioMemoryEngine"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]\n    ProcessOutcomes[\"ProcessOutcomes\"]\n    KillSwitchCheck[\"KillSwitchCheck\"]\n    GetMonitoringContext[\"GetMonitoringContext\"]\n    SendOrder[\"SendOrder\"]\n    RecordMemory[\"RecordMemory\"]\n    PortfolioMemoryEngine[\"PortfolioMemoryEngine\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 7,
+        "speaker": "林经理",
+        "content": "KillSwitchCheck这里出现了两条分支，我很感兴趣。能否详细说说？",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2313.7565,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 10,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio",
+            "ProcessOutcomes",
+            "KillSwitchCheck",
+            "GetMonitoringContext",
+            "SendOrder",
+            "RecordMemory",
+            "PortfolioMemoryEngine"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]\n    ProcessOutcomes[\"ProcessOutcomes\"]\n    KillSwitchCheck[\"KillSwitchCheck\"]\n    GetMonitoringContext[\"GetMonitoringContext\"]\n    SendOrder[\"SendOrder\"]\n    RecordMemory[\"RecordMemory\"]\n    PortfolioMemoryEngine[\"PortfolioMemoryEngine\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 8,
+        "speaker": "周工",
+        "content": "当然。KillSwitchCheck是止盈止损的风控门控节点。如果P&L在允许范围内，就流向DailyReset执行每日重置，保持系统日初状态干净。如果P&L突破了阈值，就流向HALT状态，系统完全停止，等待人工干预。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2289.7613,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 10,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio",
+            "ProcessOutcomes",
+            "KillSwitchCheck",
+            "GetMonitoringContext",
+            "SendOrder",
+            "RecordMemory",
+            "PortfolioMemoryEngine"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]\n    ProcessOutcomes[\"ProcessOutcomes\"]\n    KillSwitchCheck[\"KillSwitchCheck\"]\n    GetMonitoringContext[\"GetMonitoringContext\"]\n    SendOrder[\"SendOrder\"]\n    RecordMemory[\"RecordMemory\"]\n    PortfolioMemoryEngine[\"PortfolioMemoryEngine\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 9,
+        "speaker": "陈博士",
+        "content": "交易验证这边也是分支的。GetMonitoringContext经过RiskGatekeeper后到ValidateTrade验证交易合法性。然后SendOrder成功执行时通过execute_trade流向AssociateDecision，将决策与执行关联；失败时通过Error边流向LogFailure记录错误。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2302.0747,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 10,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio",
+            "ProcessOutcomes",
+            "KillSwitchCheck",
+            "GetMonitoringContext",
+            "SendOrder",
+            "RecordMemory",
+            "PortfolioMemoryEngine"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]\n    ProcessOutcomes[\"ProcessOutcomes\"]\n    KillSwitchCheck[\"KillSwitchCheck\"]\n    GetMonitoringContext[\"GetMonitoringContext\"]\n    SendOrder[\"SendOrder\"]\n    RecordMemory[\"RecordMemory\"]\n    PortfolioMemoryEngine[\"PortfolioMemoryEngine\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 10,
+        "speaker": "周工",
+        "content": "没错，AssociateDecision接着通过TradeMonitor流向IncrementCounter，对交易进行计数统计。LogFailure则记录异常，为后续分析提供数据。这两条失败路径现在会在Stage 3中与认知处理流程连接。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2264.5931,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 10,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio",
+            "ProcessOutcomes",
+            "KillSwitchCheck",
+            "GetMonitoringContext",
+            "SendOrder",
+            "RecordMemory",
+            "PortfolioMemoryEngine"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]\n    ProcessOutcomes[\"ProcessOutcomes\"]\n    KillSwitchCheck[\"KillSwitchCheck\"]\n    GetMonitoringContext[\"GetMonitoringContext\"]\n    SendOrder[\"SendOrder\"]\n    RecordMemory[\"RecordMemory\"]\n    PortfolioMemoryEngine[\"PortfolioMemoryEngine\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 11,
+        "speaker": "陈博士",
+        "content": "现在要引入认知控制结构了。首先，POSITION_RECOVERY完成后会进入IDLE状态，这是系统的休息等待态。当Timer Expires时，从IDLE流向LEARNING状态，开始学习更新。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2264.8246,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 10,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio",
+            "ProcessOutcomes",
+            "KillSwitchCheck",
+            "GetMonitoringContext",
+            "SendOrder",
+            "RecordMemory",
+            "PortfolioMemoryEngine"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]\n    ProcessOutcomes[\"ProcessOutcomes\"]\n    KillSwitchCheck[\"KillSwitchCheck\"]\n    GetMonitoringContext[\"GetMonitoringContext\"]\n    SendOrder[\"SendOrder\"]\n    RecordMemory[\"RecordMemory\"]\n    PortfolioMemoryEngine[\"PortfolioMemoryEngine\"]"
+      },
+      "planner": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "DailyReset",
+            "label": "DailyReset",
+            "kind": "state",
+            "id": "DailyReset"
+          },
+          {
+            "op": "add_node",
+            "node_id": "HALT",
+            "label": "HALT",
+            "kind": "state",
+            "id": "HALT"
+          },
+          {
+            "op": "add_node",
+            "node_id": "RiskGatekeeper",
+            "label": "RiskGatekeeper",
+            "kind": "state",
+            "id": "RiskGatekeeper"
+          },
+          {
+            "op": "add_node",
+            "node_id": "ValidateTrade",
+            "label": "ValidateTrade",
+            "kind": "state",
+            "id": "ValidateTrade"
+          },
+          {
+            "op": "add_node",
+            "node_id": "AssociateDecision",
+            "label": "AssociateDecision",
+            "kind": "state",
+            "id": "AssociateDecision"
+          },
+          {
+            "op": "add_node",
+            "node_id": "LogFailure",
+            "label": "LogFailure",
+            "kind": "state",
+            "id": "LogFailure"
+          },
+          {
+            "op": "add_node",
+            "node_id": "IncrementCounter",
+            "label": "IncrementCounter",
+            "kind": "state",
+            "id": "IncrementCounter"
+          },
+          {
+            "op": "add_node",
+            "node_id": "IDLE",
+            "label": "IDLE",
+            "kind": "state",
+            "id": "IDLE"
+          },
+          {
+            "op": "add_node",
+            "node_id": "LEARNING",
+            "label": "LEARNING",
+            "kind": "state",
+            "id": "LEARNING"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added states for KillSwitchCheck branches, trade validation path, and cognitive control structure (IDLE, LEARNING).",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 32255.1639,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 3,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"DailyReset\",\n      \"label\": \"DailyReset\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"HALT\",\n      \"label\": \"HALT\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"RiskGatekeeper\",\n      \"label\": \"RiskGatekeeper\",\n      \"kind\": \"state\"\n    },\n ",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "DailyReset",
+            "label": "DailyReset",
+            "kind": "state",
+            "id": "DailyReset"
+          },
+          {
+            "op": "add_node",
+            "node_id": "HALT",
+            "label": "HALT",
+            "kind": "state",
+            "id": "HALT"
+          },
+          {
+            "op": "add_node",
+            "node_id": "RiskGatekeeper",
+            "label": "RiskGatekeeper",
+            "kind": "state",
+            "id": "RiskGatekeeper"
+          },
+          {
+            "op": "add_node",
+            "node_id": "ValidateTrade",
+            "label": "ValidateTrade",
+            "kind": "state",
+            "id": "ValidateTrade"
+          },
+          {
+            "op": "add_node",
+            "node_id": "AssociateDecision",
+            "label": "AssociateDecision",
+            "kind": "state",
+            "id": "AssociateDecision"
+          },
+          {
+            "op": "add_node",
+            "node_id": "LogFailure",
+            "label": "LogFailure",
+            "kind": "state",
+            "id": "LogFailure"
+          },
+          {
+            "op": "add_node",
+            "node_id": "IncrementCounter",
+            "label": "IncrementCounter",
+            "kind": "state",
+            "id": "IncrementCounter"
+          },
+          {
+            "op": "add_node",
+            "node_id": "IDLE",
+            "label": "IDLE",
+            "kind": "state",
+            "id": "IDLE"
+          },
+          {
+            "op": "add_node",
+            "node_id": "LEARNING",
+            "label": "LEARNING",
+            "kind": "state",
+            "id": "LEARNING"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 19,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio",
+            "ProcessOutcomes",
+            "KillSwitchCheck",
+            "GetMonitoringContext",
+            "SendOrder",
+            "RecordMemory",
+            "PortfolioMemoryEngine",
+            "DailyReset",
+            "HALT"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 22,
+          "edge_count": 21,
+          "group_count": 0,
+          "delta_count": 18
+        },
+        "preview_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]\n    ProcessOutcomes[\"ProcessOutcomes\"]\n    KillSwitchCheck[\"KillSwitchCheck\"]\n    GetMonitoringContext[\"GetMonitoringContext\"]\n    SendOrder[\"SendOrder\"]\n    RecordMemory[\"RecordMemory\"]\n    PortfolioMemoryEngine[\"PortfolioMemoryEngine\"]\n    DailyReset[\"DailyReset\"]\n    HALT[\"HALT\"]\n    RiskGatekeeper[\"RiskGatekeeper\"]\n    ValidateTrade[\"ValidateTrade\"]\n    AssociateDecision[\"AssociateDecision\"]\n    LogFailure[\"LogFailure\"]\n    IncrementCounter[\"IncrementCounter\"]\n    IDLE[\"IDLE\"]\n    LEARNING[\"LEARNING\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 19,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio",
+            "ProcessOutcomes",
+            "KillSwitchCheck",
+            "GetMonitoringContext",
+            "SendOrder",
+            "RecordMemory",
+            "PortfolioMemoryEngine",
+            "DailyReset",
+            "HALT"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]\n    ProcessOutcomes[\"ProcessOutcomes\"]\n    KillSwitchCheck[\"KillSwitchCheck\"]\n    GetMonitoringContext[\"GetMonitoringContext\"]\n    SendOrder[\"SendOrder\"]\n    RecordMemory[\"RecordMemory\"]\n    PortfolioMemoryEngine[\"PortfolioMemoryEngine\"]\n    DailyReset[\"DailyReset\"]\n    HALT[\"HALT\"]\n    RiskGatekeeper[\"RiskGatekeeper\"]\n    ValidateTrade[\"ValidateTrade\"]\n    AssociateDecision[\"AssociateDecision\"]\n    LogFailure[\"LogFailure\"]\n    IncrementCounter[\"IncrementCounter\"]\n    IDLE[\"IDLE\"]\n    LEARNING[\"LEARNING\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 12,
+        "speaker": "周工",
+        "content": "LEARNING之后进入PERCEPTION感知阶段，然后是REASONING推理阶段。如果推理结果有可执行的决策，会标记为Actionable流向RISK_CHECK风险检查；如果没有行动必要，则标记为No Action回到IDLE等待下一轮。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2293.993,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 19,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio",
+            "ProcessOutcomes",
+            "KillSwitchCheck",
+            "GetMonitoringContext",
+            "SendOrder",
+            "RecordMemory",
+            "PortfolioMemoryEngine",
+            "DailyReset",
+            "HALT"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]\n    ProcessOutcomes[\"ProcessOutcomes\"]\n    KillSwitchCheck[\"KillSwitchCheck\"]\n    GetMonitoringContext[\"GetMonitoringContext\"]\n    SendOrder[\"SendOrder\"]\n    RecordMemory[\"RecordMemory\"]\n    PortfolioMemoryEngine[\"PortfolioMemoryEngine\"]\n    DailyReset[\"DailyReset\"]\n    HALT[\"HALT\"]\n    RiskGatekeeper[\"RiskGatekeeper\"]\n    ValidateTrade[\"ValidateTrade\"]\n    AssociateDecision[\"AssociateDecision\"]\n    LogFailure[\"LogFailure\"]\n    IncrementCounter[\"IncrementCounter\"]\n    IDLE[\"IDLE\"]\n    LEARNING[\"LEARNING\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 13,
+        "speaker": "陈博士",
+        "content": "RISK_CHECK之后也有分支。如果风险检查通过，标记为Approved流向EXECUTION执行阶段；如果被拒绝，则标记为Rejected回到PERCEPTION重新感知。这样形成了一个自我修正的闭环。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2287.807,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 19,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio",
+            "ProcessOutcomes",
+            "KillSwitchCheck",
+            "GetMonitoringContext",
+            "SendOrder",
+            "RecordMemory",
+            "PortfolioMemoryEngine",
+            "DailyReset",
+            "HALT"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]\n    ProcessOutcomes[\"ProcessOutcomes\"]\n    KillSwitchCheck[\"KillSwitchCheck\"]\n    GetMonitoringContext[\"GetMonitoringContext\"]\n    SendOrder[\"SendOrder\"]\n    RecordMemory[\"RecordMemory\"]\n    PortfolioMemoryEngine[\"PortfolioMemoryEngine\"]\n    DailyReset[\"DailyReset\"]\n    HALT[\"HALT\"]\n    RiskGatekeeper[\"RiskGatekeeper\"]\n    ValidateTrade[\"ValidateTrade\"]\n    AssociateDecision[\"AssociateDecision\"]\n    LogFailure[\"LogFailure\"]\n    IncrementCounter[\"IncrementCounter\"]\n    IDLE[\"IDLE\"]\n    LEARNING[\"LEARNING\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 14,
+        "speaker": "林经理",
+        "content": "那失败路径呢？EXECUTION成功执行后会回到LEARNING继续学习。如果是失败的情况呢？",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2262.0413,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 19,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio",
+            "ProcessOutcomes",
+            "KillSwitchCheck",
+            "GetMonitoringContext",
+            "SendOrder",
+            "RecordMemory",
+            "PortfolioMemoryEngine",
+            "DailyReset",
+            "HALT"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]\n    ProcessOutcomes[\"ProcessOutcomes\"]\n    KillSwitchCheck[\"KillSwitchCheck\"]\n    GetMonitoringContext[\"GetMonitoringContext\"]\n    SendOrder[\"SendOrder\"]\n    RecordMemory[\"RecordMemory\"]\n    PortfolioMemoryEngine[\"PortfolioMemoryEngine\"]\n    DailyReset[\"DailyReset\"]\n    HALT[\"HALT\"]\n    RiskGatekeeper[\"RiskGatekeeper\"]\n    ValidateTrade[\"ValidateTrade\"]\n    AssociateDecision[\"AssociateDecision\"]\n    LogFailure[\"LogFailure\"]\n    IncrementCounter[\"IncrementCounter\"]\n    IDLE[\"IDLE\"]\n    LEARNING[\"LEARNING\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 15,
+        "speaker": "周工",
+        "content": "好问题。Stage 2中的LogFailure现在连接到EXECUTION_FAILED状态，然后通过Retry边回到PERCEPTION进行重试。EXECUTION执行完成后也会通过Executed边回到LEARNING。这样就形成了一个完整的主循环加上失败恢复的子循环。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2294.9424,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 19,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio",
+            "ProcessOutcomes",
+            "KillSwitchCheck",
+            "GetMonitoringContext",
+            "SendOrder",
+            "RecordMemory",
+            "PortfolioMemoryEngine",
+            "DailyReset",
+            "HALT"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]\n    ProcessOutcomes[\"ProcessOutcomes\"]\n    KillSwitchCheck[\"KillSwitchCheck\"]\n    GetMonitoringContext[\"GetMonitoringContext\"]\n    SendOrder[\"SendOrder\"]\n    RecordMemory[\"RecordMemory\"]\n    PortfolioMemoryEngine[\"PortfolioMemoryEngine\"]\n    DailyReset[\"DailyReset\"]\n    HALT[\"HALT\"]\n    RiskGatekeeper[\"RiskGatekeeper\"]\n    ValidateTrade[\"ValidateTrade\"]\n    AssociateDecision[\"AssociateDecision\"]\n    LogFailure[\"LogFailure\"]\n    IncrementCounter[\"IncrementCounter\"]\n    IDLE[\"IDLE\"]\n    LEARNING[\"LEARNING\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 16,
+        "speaker": "陈博士",
+        "content": "现在来看错误恢复机制。QueryPlatform是查询交易平台的入口点。如果查询成功，通过get_portfolio_breakdown边流向ExtractPositions提取持仓数据。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2337.678,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 19,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio",
+            "ProcessOutcomes",
+            "KillSwitchCheck",
+            "GetMonitoringContext",
+            "SendOrder",
+            "RecordMemory",
+            "PortfolioMemoryEngine",
+            "DailyReset",
+            "HALT"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]\n    ProcessOutcomes[\"ProcessOutcomes\"]\n    KillSwitchCheck[\"KillSwitchCheck\"]\n    GetMonitoringContext[\"GetMonitoringContext\"]\n    SendOrder[\"SendOrder\"]\n    RecordMemory[\"RecordMemory\"]\n    PortfolioMemoryEngine[\"PortfolioMemoryEngine\"]\n    DailyReset[\"DailyReset\"]\n    HALT[\"HALT\"]\n    RiskGatekeeper[\"RiskGatekeeper\"]\n    ValidateTrade[\"ValidateTrade\"]\n    AssociateDecision[\"AssociateDecision\"]\n    LogFailure[\"LogFailure\"]\n    IncrementCounter[\"IncrementCounter\"]\n    IDLE[\"IDLE\"]\n    LEARNING[\"LEARNING\"]"
+      },
+      "planner": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "PERCEPTION",
+            "label": "PERCEPTION",
+            "kind": "state",
+            "id": "PERCEPTION"
+          },
+          {
+            "op": "add_node",
+            "node_id": "REASONING",
+            "label": "REASONING",
+            "kind": "state",
+            "id": "REASONING"
+          },
+          {
+            "op": "add_node",
+            "node_id": "RISK_CHECK",
+            "label": "RISK_CHECK",
+            "kind": "state",
+            "id": "RISK_CHECK"
+          },
+          {
+            "op": "add_node",
+            "node_id": "EXECUTION",
+            "label": "EXECUTION",
+            "kind": "state",
+            "id": "EXECUTION"
+          },
+          {
+            "op": "add_node",
+            "node_id": "EXECUTION_FAILED",
+            "label": "EXECUTION_FAILED",
+            "kind": "state",
+            "id": "EXECUTION_FAILED"
+          },
+          {
+            "op": "add_node",
+            "node_id": "QueryPlatform",
+            "label": "QueryPlatform",
+            "kind": "state",
+            "id": "QueryPlatform"
+          },
+          {
+            "op": "add_node",
+            "node_id": "ExtractPositions",
+            "label": "ExtractPositions",
+            "kind": "state",
+            "id": "ExtractPositions"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added cognitive control states (PERCEPTION, REASONING, RISK_CHECK, EXECUTION, EXECUTION_FAILED) and error recovery nodes (QueryPlatform, ExtractPositions) for Stage 4.",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 29014.482,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 4,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"PERCEPTION\",\n      \"label\": \"PERCEPTION\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"REASONING\",\n      \"label\": \"REASONING\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"RISK_CHECK\",\n      \"label\": \"RISK_CHECK\",\n      \"kind\": \"state\"\n    },",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "PERCEPTION",
+            "label": "PERCEPTION",
+            "kind": "state",
+            "id": "PERCEPTION"
+          },
+          {
+            "op": "add_node",
+            "node_id": "REASONING",
+            "label": "REASONING",
+            "kind": "state",
+            "id": "REASONING"
+          },
+          {
+            "op": "add_node",
+            "node_id": "RISK_CHECK",
+            "label": "RISK_CHECK",
+            "kind": "state",
+            "id": "RISK_CHECK"
+          },
+          {
+            "op": "add_node",
+            "node_id": "EXECUTION",
+            "label": "EXECUTION",
+            "kind": "state",
+            "id": "EXECUTION"
+          },
+          {
+            "op": "add_node",
+            "node_id": "EXECUTION_FAILED",
+            "label": "EXECUTION_FAILED",
+            "kind": "state",
+            "id": "EXECUTION_FAILED"
+          },
+          {
+            "op": "add_node",
+            "node_id": "QueryPlatform",
+            "label": "QueryPlatform",
+            "kind": "state",
+            "id": "QueryPlatform"
+          },
+          {
+            "op": "add_node",
+            "node_id": "ExtractPositions",
+            "label": "ExtractPositions",
+            "kind": "state",
+            "id": "ExtractPositions"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 26,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio",
+            "ProcessOutcomes",
+            "KillSwitchCheck",
+            "GetMonitoringContext",
+            "SendOrder",
+            "RecordMemory",
+            "PortfolioMemoryEngine",
+            "DailyReset",
+            "HALT"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 29,
+          "edge_count": 28,
+          "group_count": 0,
+          "delta_count": 14
+        },
+        "preview_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]\n    ProcessOutcomes[\"ProcessOutcomes\"]\n    KillSwitchCheck[\"KillSwitchCheck\"]\n    GetMonitoringContext[\"GetMonitoringContext\"]\n    SendOrder[\"SendOrder\"]\n    RecordMemory[\"RecordMemory\"]\n    PortfolioMemoryEngine[\"PortfolioMemoryEngine\"]\n    DailyReset[\"DailyReset\"]\n    HALT[\"HALT\"]\n    RiskGatekeeper[\"RiskGatekeeper\"]\n    ValidateTrade[\"ValidateTrade\"]\n    AssociateDecision[\"AssociateDecision\"]\n    LogFailure[\"LogFailure\"]\n    IncrementCounter[\"IncrementCounter\"]\n    IDLE[\"IDLE\"]\n    LEARNING[\"LEARNING\"]\n    PERCEPTION[\"PERCEPTION\"]\n    REASONING[\"REASONING\"]\n    RISK_CHECK[\"RISK_CHECK\"]\n    EXECUTION[\"EXECUTION\"]\n    EXECUTION_FAILED[\"EXECUTION_FAILED\"]\n    QueryPlatform[\"QueryPlatform\"]\n    ExtractPositions[\"ExtractPositions\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 26,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio",
+            "ProcessOutcomes",
+            "KillSwitchCheck",
+            "GetMonitoringContext",
+            "SendOrder",
+            "RecordMemory",
+            "PortfolioMemoryEngine",
+            "DailyReset",
+            "HALT"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]\n    ProcessOutcomes[\"ProcessOutcomes\"]\n    KillSwitchCheck[\"KillSwitchCheck\"]\n    GetMonitoringContext[\"GetMonitoringContext\"]\n    SendOrder[\"SendOrder\"]\n    RecordMemory[\"RecordMemory\"]\n    PortfolioMemoryEngine[\"PortfolioMemoryEngine\"]\n    DailyReset[\"DailyReset\"]\n    HALT[\"HALT\"]\n    RiskGatekeeper[\"RiskGatekeeper\"]\n    ValidateTrade[\"ValidateTrade\"]\n    AssociateDecision[\"AssociateDecision\"]\n    LogFailure[\"LogFailure\"]\n    IncrementCounter[\"IncrementCounter\"]\n    IDLE[\"IDLE\"]\n    LEARNING[\"LEARNING\"]\n    PERCEPTION[\"PERCEPTION\"]\n    REASONING[\"REASONING\"]\n    RISK_CHECK[\"RISK_CHECK\"]\n    EXECUTION[\"EXECUTION\"]\n    EXECUTION_FAILED[\"EXECUTION_FAILED\"]\n    QueryPlatform[\"QueryPlatform\"]\n    ExtractPositions[\"ExtractPositions\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 17,
+        "speaker": "周工",
+        "content": "ExtractPositions会找到N个持仓头寸，然后流向GenerateSyntheticDecisions生成合成决策记录。再经过RebuildMemory重建记忆，最后通过AssociateMonitor将监控关联到这些重建的持仓上。这样即使平台故障，也能恢复基本的决策上下文。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2412.5361,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 5,\n  \"reason\": \"waiting for stage 5 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 26,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio",
+            "ProcessOutcomes",
+            "KillSwitchCheck",
+            "GetMonitoringContext",
+            "SendOrder",
+            "RecordMemory",
+            "PortfolioMemoryEngine",
+            "DailyReset",
+            "HALT"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]\n    ProcessOutcomes[\"ProcessOutcomes\"]\n    KillSwitchCheck[\"KillSwitchCheck\"]\n    GetMonitoringContext[\"GetMonitoringContext\"]\n    SendOrder[\"SendOrder\"]\n    RecordMemory[\"RecordMemory\"]\n    PortfolioMemoryEngine[\"PortfolioMemoryEngine\"]\n    DailyReset[\"DailyReset\"]\n    HALT[\"HALT\"]\n    RiskGatekeeper[\"RiskGatekeeper\"]\n    ValidateTrade[\"ValidateTrade\"]\n    AssociateDecision[\"AssociateDecision\"]\n    LogFailure[\"LogFailure\"]\n    IncrementCounter[\"IncrementCounter\"]\n    IDLE[\"IDLE\"]\n    LEARNING[\"LEARNING\"]\n    PERCEPTION[\"PERCEPTION\"]\n    REASONING[\"REASONING\"]\n    RISK_CHECK[\"RISK_CHECK\"]\n    EXECUTION[\"EXECUTION\"]\n    EXECUTION_FAILED[\"EXECUTION_FAILED\"]\n    QueryPlatform[\"QueryPlatform\"]\n    ExtractPositions[\"ExtractPositions\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 18,
+        "speaker": "陈博士",
+        "content": "那如果QueryPlatform查询失败呢？我注意到有RetryBackoff和ForceComplete两条路径。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2417.4755,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 5,\n  \"reason\": \"waiting for stage 5 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 26,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio",
+            "ProcessOutcomes",
+            "KillSwitchCheck",
+            "GetMonitoringContext",
+            "SendOrder",
+            "RecordMemory",
+            "PortfolioMemoryEngine",
+            "DailyReset",
+            "HALT"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]\n    ProcessOutcomes[\"ProcessOutcomes\"]\n    KillSwitchCheck[\"KillSwitchCheck\"]\n    GetMonitoringContext[\"GetMonitoringContext\"]\n    SendOrder[\"SendOrder\"]\n    RecordMemory[\"RecordMemory\"]\n    PortfolioMemoryEngine[\"PortfolioMemoryEngine\"]\n    DailyReset[\"DailyReset\"]\n    HALT[\"HALT\"]\n    RiskGatekeeper[\"RiskGatekeeper\"]\n    ValidateTrade[\"ValidateTrade\"]\n    AssociateDecision[\"AssociateDecision\"]\n    LogFailure[\"LogFailure\"]\n    IncrementCounter[\"IncrementCounter\"]\n    IDLE[\"IDLE\"]\n    LEARNING[\"LEARNING\"]\n    PERCEPTION[\"PERCEPTION\"]\n    REASONING[\"REASONING\"]\n    RISK_CHECK[\"RISK_CHECK\"]\n    EXECUTION[\"EXECUTION\"]\n    EXECUTION_FAILED[\"EXECUTION_FAILED\"]\n    QueryPlatform[\"QueryPlatform\"]\n    ExtractPositions[\"ExtractPositions\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 19,
+        "speaker": "周工",
+        "content": "查询失败时，先流向RetryBackoff状态，执行指数退避等待。等待完成后通过Exponential delay边回到QueryPlatform重试。如果达到最大重试次数仍然失败，就通过Max retries边流向ForceComplete强制完成，避免系统无限等待。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2414.1324,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 5,\n  \"reason\": \"waiting for stage 5 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 26,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio",
+            "ProcessOutcomes",
+            "KillSwitchCheck",
+            "GetMonitoringContext",
+            "SendOrder",
+            "RecordMemory",
+            "PortfolioMemoryEngine",
+            "DailyReset",
+            "HALT"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]\n    ProcessOutcomes[\"ProcessOutcomes\"]\n    KillSwitchCheck[\"KillSwitchCheck\"]\n    GetMonitoringContext[\"GetMonitoringContext\"]\n    SendOrder[\"SendOrder\"]\n    RecordMemory[\"RecordMemory\"]\n    PortfolioMemoryEngine[\"PortfolioMemoryEngine\"]\n    DailyReset[\"DailyReset\"]\n    HALT[\"HALT\"]\n    RiskGatekeeper[\"RiskGatekeeper\"]\n    ValidateTrade[\"ValidateTrade\"]\n    AssociateDecision[\"AssociateDecision\"]\n    LogFailure[\"LogFailure\"]\n    IncrementCounter[\"IncrementCounter\"]\n    IDLE[\"IDLE\"]\n    LEARNING[\"LEARNING\"]\n    PERCEPTION[\"PERCEPTION\"]\n    REASONING[\"REASONING\"]\n    RISK_CHECK[\"RISK_CHECK\"]\n    EXECUTION[\"EXECUTION\"]\n    EXECUTION_FAILED[\"EXECUTION_FAILED\"]\n    QueryPlatform[\"QueryPlatform\"]\n    ExtractPositions[\"ExtractPositions\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 20,
+        "speaker": "林经理",
+        "content": "这个容错设计很完善。现在需要处理资产级别的细节了吧？",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2406.9452,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 5,\n  \"reason\": \"waiting for stage 5 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 26,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio",
+            "ProcessOutcomes",
+            "KillSwitchCheck",
+            "GetMonitoringContext",
+            "SendOrder",
+            "RecordMemory",
+            "PortfolioMemoryEngine",
+            "DailyReset",
+            "HALT"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]\n    ProcessOutcomes[\"ProcessOutcomes\"]\n    KillSwitchCheck[\"KillSwitchCheck\"]\n    GetMonitoringContext[\"GetMonitoringContext\"]\n    SendOrder[\"SendOrder\"]\n    RecordMemory[\"RecordMemory\"]\n    PortfolioMemoryEngine[\"PortfolioMemoryEngine\"]\n    DailyReset[\"DailyReset\"]\n    HALT[\"HALT\"]\n    RiskGatekeeper[\"RiskGatekeeper\"]\n    ValidateTrade[\"ValidateTrade\"]\n    AssociateDecision[\"AssociateDecision\"]\n    LogFailure[\"LogFailure\"]\n    IncrementCounter[\"IncrementCounter\"]\n    IDLE[\"IDLE\"]\n    LEARNING[\"LEARNING\"]\n    PERCEPTION[\"PERCEPTION\"]\n    REASONING[\"REASONING\"]\n    RISK_CHECK[\"RISK_CHECK\"]\n    EXECUTION[\"EXECUTION\"]\n    EXECUTION_FAILED[\"EXECUTION_FAILED\"]\n    QueryPlatform[\"QueryPlatform\"]\n    ExtractPositions[\"ExtractPositions\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 21,
+        "speaker": "陈博士",
+        "content": "对，最后一层是资产迭代逻辑。LoopAssets是资产循环的入口，对每个资产执行AnalyzeAsset分析。分析后通过generate_decision生成决策，然后流向RetryLogic尝试执行。",
+        "stage_index": 5,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2385.5536,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 5,\n  \"reason\": \"waiting for stage 5 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 26,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio",
+            "ProcessOutcomes",
+            "KillSwitchCheck",
+            "GetMonitoringContext",
+            "SendOrder",
+            "RecordMemory",
+            "PortfolioMemoryEngine",
+            "DailyReset",
+            "HALT"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]\n    ProcessOutcomes[\"ProcessOutcomes\"]\n    KillSwitchCheck[\"KillSwitchCheck\"]\n    GetMonitoringContext[\"GetMonitoringContext\"]\n    SendOrder[\"SendOrder\"]\n    RecordMemory[\"RecordMemory\"]\n    PortfolioMemoryEngine[\"PortfolioMemoryEngine\"]\n    DailyReset[\"DailyReset\"]\n    HALT[\"HALT\"]\n    RiskGatekeeper[\"RiskGatekeeper\"]\n    ValidateTrade[\"ValidateTrade\"]\n    AssociateDecision[\"AssociateDecision\"]\n    LogFailure[\"LogFailure\"]\n    IncrementCounter[\"IncrementCounter\"]\n    IDLE[\"IDLE\"]\n    LEARNING[\"LEARNING\"]\n    PERCEPTION[\"PERCEPTION\"]\n    REASONING[\"REASONING\"]\n    RISK_CHECK[\"RISK_CHECK\"]\n    EXECUTION[\"EXECUTION\"]\n    EXECUTION_FAILED[\"EXECUTION_FAILED\"]\n    QueryPlatform[\"QueryPlatform\"]\n    ExtractPositions[\"ExtractPositions\"]"
+      },
+      "planner": {
+        "target_stage_index": 5,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "GenerateSyntheticDecisions",
+            "label": "GenerateSyntheticDecisions",
+            "kind": "state",
+            "id": "GenerateSyntheticDecisions"
+          },
+          {
+            "op": "add_node",
+            "node_id": "RebuildMemory",
+            "label": "RebuildMemory",
+            "kind": "state",
+            "id": "RebuildMemory"
+          },
+          {
+            "op": "add_node",
+            "node_id": "AssociateMonitor",
+            "label": "AssociateMonitor",
+            "kind": "state",
+            "id": "AssociateMonitor"
+          },
+          {
+            "op": "add_node",
+            "node_id": "RetryBackoff",
+            "label": "RetryBackoff",
+            "kind": "state",
+            "id": "RetryBackoff"
+          },
+          {
+            "op": "add_node",
+            "node_id": "ForceComplete",
+            "label": "ForceComplete",
+            "kind": "state",
+            "id": "ForceComplete"
+          },
+          {
+            "op": "add_node",
+            "node_id": "LoopAssets",
+            "label": "LoopAssets",
+            "kind": "state",
+            "id": "LoopAssets"
+          },
+          {
+            "op": "add_node",
+            "node_id": "AnalyzeAsset",
+            "label": "AnalyzeAsset",
+            "kind": "state",
+            "id": "AnalyzeAsset"
+          },
+          {
+            "op": "add_node",
+            "node_id": "RetryLogic",
+            "label": "RetryLogic",
+            "kind": "state",
+            "id": "RetryLogic"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added error recovery nodes (GenerateSyntheticDecisions, RebuildMemory, AssociateMonitor, RetryBackoff, ForceComplete) and asset iteration nodes (LoopAssets, AnalyzeAsset, RetryLogic) for Stage 5.",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 33397.6698,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 5,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"GenerateSyntheticDecisions\",\n      \"label\": \"GenerateSyntheticDecisions\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"RebuildMemory\",\n      \"label\": \"RebuildMemory\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"AssociateMonitor\",\n      \"labe",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 5,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "GenerateSyntheticDecisions",
+            "label": "GenerateSyntheticDecisions",
+            "kind": "state",
+            "id": "GenerateSyntheticDecisions"
+          },
+          {
+            "op": "add_node",
+            "node_id": "RebuildMemory",
+            "label": "RebuildMemory",
+            "kind": "state",
+            "id": "RebuildMemory"
+          },
+          {
+            "op": "add_node",
+            "node_id": "AssociateMonitor",
+            "label": "AssociateMonitor",
+            "kind": "state",
+            "id": "AssociateMonitor"
+          },
+          {
+            "op": "add_node",
+            "node_id": "RetryBackoff",
+            "label": "RetryBackoff",
+            "kind": "state",
+            "id": "RetryBackoff"
+          },
+          {
+            "op": "add_node",
+            "node_id": "ForceComplete",
+            "label": "ForceComplete",
+            "kind": "state",
+            "id": "ForceComplete"
+          },
+          {
+            "op": "add_node",
+            "node_id": "LoopAssets",
+            "label": "LoopAssets",
+            "kind": "state",
+            "id": "LoopAssets"
+          },
+          {
+            "op": "add_node",
+            "node_id": "AnalyzeAsset",
+            "label": "AnalyzeAsset",
+            "kind": "state",
+            "id": "AnalyzeAsset"
+          },
+          {
+            "op": "add_node",
+            "node_id": "RetryLogic",
+            "label": "RetryLogic",
+            "kind": "state",
+            "id": "RetryLogic"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 34,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio",
+            "ProcessOutcomes",
+            "KillSwitchCheck",
+            "GetMonitoringContext",
+            "SendOrder",
+            "RecordMemory",
+            "PortfolioMemoryEngine",
+            "DailyReset",
+            "HALT"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 36,
+          "edge_count": 37,
+          "group_count": 0,
+          "delta_count": 16
+        },
+        "preview_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]\n    ProcessOutcomes[\"ProcessOutcomes\"]\n    KillSwitchCheck[\"KillSwitchCheck\"]\n    GetMonitoringContext[\"GetMonitoringContext\"]\n    SendOrder[\"SendOrder\"]\n    RecordMemory[\"RecordMemory\"]\n    PortfolioMemoryEngine[\"PortfolioMemoryEngine\"]\n    DailyReset[\"DailyReset\"]\n    HALT[\"HALT\"]\n    RiskGatekeeper[\"RiskGatekeeper\"]\n    ValidateTrade[\"ValidateTrade\"]\n    AssociateDecision[\"AssociateDecision\"]\n    LogFailure[\"LogFailure\"]\n    IncrementCounter[\"IncrementCounter\"]\n    IDLE[\"IDLE\"]\n    LEARNING[\"LEARNING\"]\n    PERCEPTION[\"PERCEPTION\"]\n    REASONING[\"REASONING\"]\n    RISK_CHECK[\"RISK_CHECK\"]\n    EXECUTION[\"EXECUTION\"]\n    EXECUTION_FAILED[\"EXECUTION_FAILED\"]\n    QueryPlatform[\"QueryPlatform\"]\n    ExtractPositions[\"ExtractPositions\"]\n    GenerateSyntheticDecisions[\"GenerateSyntheticDecisions\"]\n    RebuildMemory[\"RebuildMemory\"]\n    AssociateMonitor[\"AssociateMonitor\"]\n    RetryBackoff[\"RetryBackoff\"]\n    ForceComplete[\"ForceComplete\"]\n    LoopAssets[\"LoopAssets\"]\n    AnalyzeAsset[\"AnalyzeAsset\"]\n    RetryLogic[\"RetryLogic\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 5,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "graph_metrics": {
+          "node_count": 34,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio",
+            "ProcessOutcomes",
+            "KillSwitchCheck",
+            "GetMonitoringContext",
+            "SendOrder",
+            "RecordMemory",
+            "PortfolioMemoryEngine",
+            "DailyReset",
+            "HALT"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]\n    ProcessOutcomes[\"ProcessOutcomes\"]\n    KillSwitchCheck[\"KillSwitchCheck\"]\n    GetMonitoringContext[\"GetMonitoringContext\"]\n    SendOrder[\"SendOrder\"]\n    RecordMemory[\"RecordMemory\"]\n    PortfolioMemoryEngine[\"PortfolioMemoryEngine\"]\n    DailyReset[\"DailyReset\"]\n    HALT[\"HALT\"]\n    RiskGatekeeper[\"RiskGatekeeper\"]\n    ValidateTrade[\"ValidateTrade\"]\n    AssociateDecision[\"AssociateDecision\"]\n    LogFailure[\"LogFailure\"]\n    IncrementCounter[\"IncrementCounter\"]\n    IDLE[\"IDLE\"]\n    LEARNING[\"LEARNING\"]\n    PERCEPTION[\"PERCEPTION\"]\n    REASONING[\"REASONING\"]\n    RISK_CHECK[\"RISK_CHECK\"]\n    EXECUTION[\"EXECUTION\"]\n    EXECUTION_FAILED[\"EXECUTION_FAILED\"]\n    QueryPlatform[\"QueryPlatform\"]\n    ExtractPositions[\"ExtractPositions\"]\n    GenerateSyntheticDecisions[\"GenerateSyntheticDecisions\"]\n    RebuildMemory[\"RebuildMemory\"]\n    AssociateMonitor[\"AssociateMonitor\"]\n    RetryBackoff[\"RetryBackoff\"]\n    ForceComplete[\"ForceComplete\"]\n    LoopAssets[\"LoopAssets\"]\n    AnalyzeAsset[\"AnalyzeAsset\"]\n    RetryLogic[\"RetryLogic\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 22,
+        "speaker": "周工",
+        "content": "RetryLogic执行成功时，通过Success边流向CheckAction检查行动结果。如果行动是HOLD，就流向NextAsset处理下一个资产。这样每个资产都有独立的决策-执行-检查流程。",
+        "stage_index": 5,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 5,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "graph_metrics": {
+          "node_count": 34,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio",
+            "ProcessOutcomes",
+            "KillSwitchCheck",
+            "GetMonitoringContext",
+            "SendOrder",
+            "RecordMemory",
+            "PortfolioMemoryEngine",
+            "DailyReset",
+            "HALT"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]\n    ProcessOutcomes[\"ProcessOutcomes\"]\n    KillSwitchCheck[\"KillSwitchCheck\"]\n    GetMonitoringContext[\"GetMonitoringContext\"]\n    SendOrder[\"SendOrder\"]\n    RecordMemory[\"RecordMemory\"]\n    PortfolioMemoryEngine[\"PortfolioMemoryEngine\"]\n    DailyReset[\"DailyReset\"]\n    HALT[\"HALT\"]\n    RiskGatekeeper[\"RiskGatekeeper\"]\n    ValidateTrade[\"ValidateTrade\"]\n    AssociateDecision[\"AssociateDecision\"]\n    LogFailure[\"LogFailure\"]\n    IncrementCounter[\"IncrementCounter\"]\n    IDLE[\"IDLE\"]\n    LEARNING[\"LEARNING\"]\n    PERCEPTION[\"PERCEPTION\"]\n    REASONING[\"REASONING\"]\n    RISK_CHECK[\"RISK_CHECK\"]\n    EXECUTION[\"EXECUTION\"]\n    EXECUTION_FAILED[\"EXECUTION_FAILED\"]\n    QueryPlatform[\"QueryPlatform\"]\n    ExtractPositions[\"ExtractPositions\"]\n    GenerateSyntheticDecisions[\"GenerateSyntheticDecisions\"]\n    RebuildMemory[\"RebuildMemory\"]\n    AssociateMonitor[\"AssociateMonitor\"]\n    RetryBackoff[\"RetryBackoff\"]\n    ForceComplete[\"ForceComplete\"]\n    LoopAssets[\"LoopAssets\"]\n    AnalyzeAsset[\"AnalyzeAsset\"]\n    RetryLogic[\"RetryLogic\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 23,
+        "speaker": "陈博士",
+        "content": "如果RetryLogic失败呢？应该也是退避重试的逻辑吧。",
+        "stage_index": 5,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 5,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "graph_metrics": {
+          "node_count": 34,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio",
+            "ProcessOutcomes",
+            "KillSwitchCheck",
+            "GetMonitoringContext",
+            "SendOrder",
+            "RecordMemory",
+            "PortfolioMemoryEngine",
+            "DailyReset",
+            "HALT"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]\n    ProcessOutcomes[\"ProcessOutcomes\"]\n    KillSwitchCheck[\"KillSwitchCheck\"]\n    GetMonitoringContext[\"GetMonitoringContext\"]\n    SendOrder[\"SendOrder\"]\n    RecordMemory[\"RecordMemory\"]\n    PortfolioMemoryEngine[\"PortfolioMemoryEngine\"]\n    DailyReset[\"DailyReset\"]\n    HALT[\"HALT\"]\n    RiskGatekeeper[\"RiskGatekeeper\"]\n    ValidateTrade[\"ValidateTrade\"]\n    AssociateDecision[\"AssociateDecision\"]\n    LogFailure[\"LogFailure\"]\n    IncrementCounter[\"IncrementCounter\"]\n    IDLE[\"IDLE\"]\n    LEARNING[\"LEARNING\"]\n    PERCEPTION[\"PERCEPTION\"]\n    REASONING[\"REASONING\"]\n    RISK_CHECK[\"RISK_CHECK\"]\n    EXECUTION[\"EXECUTION\"]\n    EXECUTION_FAILED[\"EXECUTION_FAILED\"]\n    QueryPlatform[\"QueryPlatform\"]\n    ExtractPositions[\"ExtractPositions\"]\n    GenerateSyntheticDecisions[\"GenerateSyntheticDecisions\"]\n    RebuildMemory[\"RebuildMemory\"]\n    AssociateMonitor[\"AssociateMonitor\"]\n    RetryBackoff[\"RetryBackoff\"]\n    ForceComplete[\"ForceComplete\"]\n    LoopAssets[\"LoopAssets\"]\n    AnalyzeAsset[\"AnalyzeAsset\"]\n    RetryLogic[\"RetryLogic\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 24,
+        "speaker": "周工",
+        "content": "正是。失败时流向ExponentialBackoff执行指数退避。如果退避后重试成功，通过Retry边回到AnalyzeAsset重新分析该资产。如果达到最大重试次数，就通过Max retries边流向MarkFailure标记该资产为失败，然后通过Skip边流向NextAsset继续处理下一个。",
+        "stage_index": 5,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 5,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "graph_metrics": {
+          "node_count": 34,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio",
+            "ProcessOutcomes",
+            "KillSwitchCheck",
+            "GetMonitoringContext",
+            "SendOrder",
+            "RecordMemory",
+            "PortfolioMemoryEngine",
+            "DailyReset",
+            "HALT"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]\n    ProcessOutcomes[\"ProcessOutcomes\"]\n    KillSwitchCheck[\"KillSwitchCheck\"]\n    GetMonitoringContext[\"GetMonitoringContext\"]\n    SendOrder[\"SendOrder\"]\n    RecordMemory[\"RecordMemory\"]\n    PortfolioMemoryEngine[\"PortfolioMemoryEngine\"]\n    DailyReset[\"DailyReset\"]\n    HALT[\"HALT\"]\n    RiskGatekeeper[\"RiskGatekeeper\"]\n    ValidateTrade[\"ValidateTrade\"]\n    AssociateDecision[\"AssociateDecision\"]\n    LogFailure[\"LogFailure\"]\n    IncrementCounter[\"IncrementCounter\"]\n    IDLE[\"IDLE\"]\n    LEARNING[\"LEARNING\"]\n    PERCEPTION[\"PERCEPTION\"]\n    REASONING[\"REASONING\"]\n    RISK_CHECK[\"RISK_CHECK\"]\n    EXECUTION[\"EXECUTION\"]\n    EXECUTION_FAILED[\"EXECUTION_FAILED\"]\n    QueryPlatform[\"QueryPlatform\"]\n    ExtractPositions[\"ExtractPositions\"]\n    GenerateSyntheticDecisions[\"GenerateSyntheticDecisions\"]\n    RebuildMemory[\"RebuildMemory\"]\n    AssociateMonitor[\"AssociateMonitor\"]\n    RetryBackoff[\"RetryBackoff\"]\n    ForceComplete[\"ForceComplete\"]\n    LoopAssets[\"LoopAssets\"]\n    AnalyzeAsset[\"AnalyzeAsset\"]\n    RetryLogic[\"RetryLogic\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 25,
+        "speaker": "林经理",
+        "content": "NextAsset处理完当前资产后，如果还有更多资产，通过More assets边回到LoopAssets继续循环。这样整个资产层面的迭代就完整了。从STARTUP到资产级的细粒度处理，整个状态机结构很清晰，感谢各位的梳理。",
+        "stage_index": 5,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 5,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "graph_metrics": {
+          "node_count": 34,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "STARTUP",
+            "POSITION_RECOVERY",
+            "FetchClosedTrades",
+            "FetchPortfolio",
+            "ProcessOutcomes",
+            "KillSwitchCheck",
+            "GetMonitoringContext",
+            "SendOrder",
+            "RecordMemory",
+            "PortfolioMemoryEngine",
+            "DailyReset",
+            "HALT"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    STARTUP[\"STARTUP\"]\n    POSITION_RECOVERY[\"POSITION_RECOVERY\"]\n    FetchClosedTrades[\"FetchClosedTrades\"]\n    FetchPortfolio[\"FetchPortfolio\"]\n    ProcessOutcomes[\"ProcessOutcomes\"]\n    KillSwitchCheck[\"KillSwitchCheck\"]\n    GetMonitoringContext[\"GetMonitoringContext\"]\n    SendOrder[\"SendOrder\"]\n    RecordMemory[\"RecordMemory\"]\n    PortfolioMemoryEngine[\"PortfolioMemoryEngine\"]\n    DailyReset[\"DailyReset\"]\n    HALT[\"HALT\"]\n    RiskGatekeeper[\"RiskGatekeeper\"]\n    ValidateTrade[\"ValidateTrade\"]\n    AssociateDecision[\"AssociateDecision\"]\n    LogFailure[\"LogFailure\"]\n    IncrementCounter[\"IncrementCounter\"]\n    IDLE[\"IDLE\"]\n    LEARNING[\"LEARNING\"]\n    PERCEPTION[\"PERCEPTION\"]\n    REASONING[\"REASONING\"]\n    RISK_CHECK[\"RISK_CHECK\"]\n    EXECUTION[\"EXECUTION\"]\n    EXECUTION_FAILED[\"EXECUTION_FAILED\"]\n    QueryPlatform[\"QueryPlatform\"]\n    ExtractPositions[\"ExtractPositions\"]\n    GenerateSyntheticDecisions[\"GenerateSyntheticDecisions\"]\n    RebuildMemory[\"RebuildMemory\"]\n    AssociateMonitor[\"AssociateMonitor\"]\n    RetryBackoff[\"RetryBackoff\"]\n    ForceComplete[\"ForceComplete\"]\n    LoopAssets[\"LoopAssets\"]\n    AnalyzeAsset[\"AnalyzeAsset\"]\n    RetryLogic[\"RetryLogic\"]"
+      }
+    }
+  ]
+}

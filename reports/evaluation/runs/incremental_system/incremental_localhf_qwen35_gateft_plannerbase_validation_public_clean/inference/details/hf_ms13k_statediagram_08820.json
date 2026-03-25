@@ -1,0 +1,686 @@
+{
+  "sample_id": "hf_ms13k_statediagram_08820",
+  "diagram_type": "statediagram",
+  "generated_at_utc": "2026-03-25T08:24:03Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 6,
+    "total_stages": 3,
+    "updates_emitted": 3,
+    "final_stage_index": 3,
+    "applied_stage_indices": [
+      1,
+      2,
+      3
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 6,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "start",
+        "New",
+        "Registered",
+        "Activation",
+        "Active",
+        "Inactive"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    },
+    "reference_graph_metrics": {
+      "node_count": 6,
+      "edge_count": 6,
+      "group_count": 0,
+      "node_ids": [
+        "New",
+        "state_start",
+        "Registered",
+        "Activation",
+        "Active",
+        "Inactive"
+      ],
+      "edge_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e5",
+        "e6"
+      ],
+      "group_ids": []
+    }
+  },
+  "final_state": {
+    "sample_id": "hf_ms13k_statediagram_08820",
+    "diagram_type": "statediagram",
+    "current_stage_index": 3,
+    "current_graph_ir": {
+      "graph_id": "hf_ms13k_statediagram_08820",
+      "diagram_type": "statediagram",
+      "nodes": [
+        {
+          "id": "start",
+          "label": "[*]",
+          "kind": "initial",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "New",
+          "label": "New",
+          "kind": "state",
+          "parent": null,
+          "source_index": 3,
+          "metadata": {}
+        },
+        {
+          "id": "Registered",
+          "label": "Registered",
+          "kind": "state",
+          "parent": null,
+          "source_index": 5,
+          "metadata": {}
+        },
+        {
+          "id": "Activation",
+          "label": "Activation",
+          "kind": "state",
+          "parent": null,
+          "source_index": 6,
+          "metadata": {}
+        },
+        {
+          "id": "Active",
+          "label": "Active",
+          "kind": "state",
+          "parent": null,
+          "source_index": 8,
+          "metadata": {}
+        },
+        {
+          "id": "Inactive",
+          "label": "Inactive",
+          "kind": "state",
+          "parent": null,
+          "source_index": 9,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    start[\"[*]\"]\n    New[\"New\"]\n    Registered[\"Registered\"]\n    Activation[\"Activation\"]\n    Active[\"Active\"]\n    Inactive[\"Inactive\"]",
+    "applied_stage_indices": [
+      1,
+      2,
+      3
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 6,
+        "edge_count": 0,
+        "group_count": 0,
+        "node_ids": [
+          "start",
+          "New",
+          "Registered",
+          "Activation",
+          "Active",
+          "Inactive"
+        ],
+        "edge_ids": [],
+        "group_ids": []
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "甲",
+        "content": "好的，我们现在开始构建账户生命周期的状态图。首先需要确定入口点，我建议从初始伪状态[*]开始，然后连接到第一个状态New，代表新创建的账户。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": "perfect",
+          "alignment_note": "Turn 1 introduces the initial pseudo-state [*] and first state New, along with the edge between them—all Stage 1 operations.",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2123.1794,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "乙",
+        "content": "同意这个起点设置。接下来我需要考虑账户创建后会经历哪些阶段。按照实际流程，账户创建后应该先进入一个已注册的状态，然后进行激活流程。我们来添加Registered和Activation两个状态吧。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": "perfect",
+          "alignment_note": "Turn 2 introduces Registered and Activation nodes, matching Stage 2 node additions.",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "turn 2 reached end boundary for stage 1",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2371.8638,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"EMIT_UPDATE\",\n  \"target_stage_index\": 1,\n  \"reason\": \"turn 2 reached end boundary for stage 1\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "start",
+            "label": "[*]",
+            "kind": "initial",
+            "id": "start"
+          },
+          {
+            "op": "add_node",
+            "node_id": "New",
+            "label": "New",
+            "kind": "state",
+            "id": "New"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added initial pseudo-state and New state as per turn 1.",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 8690.6524,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"start\",\n      \"label\": \"[*]\",\n      \"kind\": \"initial\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"New\",\n      \"label\": \"New\",\n      \"kind\": \"state\"\n    }\n  ],\n  \"notes\": \"Added initial pseudo-state and New state as per turn 1.\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "start",
+            "label": "[*]",
+            "kind": "initial",
+            "id": "start"
+          },
+          {
+            "op": "add_node",
+            "node_id": "New",
+            "label": "New",
+            "kind": "state",
+            "id": "New"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start",
+            "New"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 2,
+          "edge_count": 1,
+          "group_count": 0,
+          "delta_count": 3
+        },
+        "preview_mermaid": "graph TD\n    start[\"[*]\"]\n    New[\"New\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start",
+            "New"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    start[\"[*]\"]\n    New[\"New\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "甲",
+        "content": "没错，这样逻辑很清晰。现在我们需要在这些状态之间添加转换边。从New到Registered应该有\"Account Created\"标签表示账户创建事件，而从Registered到Activation则是\"Activation Link Sent\"，表示激活链接已发送。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": "perfect",
+          "alignment_note": "Turn 3 adds the transition edges New→Registered ('Account Created') and Registered→Activation ('Activation Link Sent'), completing Stage 2 operations.",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "turn 3 reached end boundary for stage 2",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2404.2597,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"EMIT_UPDATE\",\n  \"target_stage_index\": 2,\n  \"reason\": \"turn 3 reached end boundary for stage 2\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start",
+            "New"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    start[\"[*]\"]\n    New[\"New\"]"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Registered",
+            "label": "Registered",
+            "kind": "state",
+            "id": "Registered"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Activation",
+            "label": "Activation",
+            "kind": "state",
+            "id": "Activation"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added Registered and Activation states as per dialogue.",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 8450.9525,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 2,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Registered\",\n      \"label\": \"Registered\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Activation\",\n      \"label\": \"Activation\",\n      \"kind\": \"state\"\n    }\n  ],\n  \"notes\": \"Added Registered and Activation states as per dialogue.\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Registered",
+            "label": "Registered",
+            "kind": "state",
+            "id": "Registered"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Activation",
+            "label": "Activation",
+            "kind": "state",
+            "id": "Activation"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start",
+            "New",
+            "Registered",
+            "Activation"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 4,
+          "edge_count": 3,
+          "group_count": 0,
+          "delta_count": 4
+        },
+        "preview_mermaid": "graph TD\n    start[\"[*]\"]\n    New[\"New\"]\n    Registered[\"Registered\"]\n    Activation[\"Activation\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start",
+            "New",
+            "Registered",
+            "Activation"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    start[\"[*]\"]\n    New[\"New\"]\n    Registered[\"Registered\"]\n    Activation[\"Activation\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "乙",
+        "content": "很好，现在状态图已经有了基本框架。接下来我需要考虑激活之后会发生什么。账户激活成功后应该进入Active状态，而如果账户被停用则会进入Inactive状态。我们来添加这两个状态。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": "perfect",
+          "alignment_note": "Turn 4 introduces Active and Inactive states, matching Stage 3 node additions.",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2162.0085,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start",
+            "New",
+            "Registered",
+            "Activation"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    start[\"[*]\"]\n    New[\"New\"]\n    Registered[\"Registered\"]\n    Activation[\"Activation\"]"
+      },
+      "planner": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Active",
+            "label": "Active",
+            "kind": "state",
+            "id": "Active"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Inactive",
+            "label": "Inactive",
+            "kind": "state",
+            "id": "Inactive"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added Active and Inactive states as per dialogue.",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 8539.1707,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 3,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Active\",\n      \"label\": \"Active\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Inactive\",\n      \"label\": \"Inactive\",\n      \"kind\": \"state\"\n    }\n  ],\n  \"notes\": \"Added Active and Inactive states as per dialogue.\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Active",
+            "label": "Active",
+            "kind": "state",
+            "id": "Active"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Inactive",
+            "label": "Inactive",
+            "kind": "state",
+            "id": "Inactive"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start",
+            "New",
+            "Registered",
+            "Activation",
+            "Active",
+            "Inactive"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 6,
+          "edge_count": 6,
+          "group_count": 0,
+          "delta_count": 5
+        },
+        "preview_mermaid": "graph TD\n    start[\"[*]\"]\n    New[\"New\"]\n    Registered[\"Registered\"]\n    Activation[\"Activation\"]\n    Active[\"Active\"]\n    Inactive[\"Inactive\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start",
+            "New",
+            "Registered",
+            "Activation",
+            "Active",
+            "Inactive"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    start[\"[*]\"]\n    New[\"New\"]\n    Registered[\"Registered\"]\n    Activation[\"Activation\"]\n    Active[\"Active\"]\n    Inactive[\"Inactive\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "甲",
+        "content": "没错。现在我们需要补充剩余的转换：从Activation到Active标记为\"Account Activated\"，从Active到Inactive标记为\"Account Deactivated\"。最后，为了让生命周期完整，我们应该添加一条从Inactive回到起点[*]的边，表示账户可以重新注册。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": "perfect",
+          "alignment_note": "Turn 5 adds all remaining Stage 3 edges: Activation→Active ('Account Activated'), Active→Inactive ('Account Deactivated'), and Inactive→[*].",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start",
+            "New",
+            "Registered",
+            "Activation",
+            "Active",
+            "Inactive"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    start[\"[*]\"]\n    New[\"New\"]\n    Registered[\"Registered\"]\n    Activation[\"Activation\"]\n    Active[\"Active\"]\n    Inactive[\"Inactive\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "乙",
+        "content": "完美！现在状态图已经完整了。整个生命周期从[*]开始，经过New、Registered、Activation到达Active，然后可能因为Deactivated回到Inactive，最后通过回到起点[*]形成完整的循环。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": "perfect",
+          "alignment_note": "Turn 6 provides summary/review of the complete diagram, consistent with Stage 3 completion.",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "start",
+            "New",
+            "Registered",
+            "Activation",
+            "Active",
+            "Inactive"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    start[\"[*]\"]\n    New[\"New\"]\n    Registered[\"Registered\"]\n    Activation[\"Activation\"]\n    Active[\"Active\"]\n    Inactive[\"Inactive\"]"
+      }
+    }
+  ]
+}
