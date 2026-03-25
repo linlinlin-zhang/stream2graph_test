@@ -1,0 +1,299 @@
+{
+  "sample_id": "gh_sequence_00805",
+  "diagram_type": "sequence",
+  "generated_at_utc": "2026-03-25T11:50:42Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 3,
+    "total_stages": 1,
+    "updates_emitted": 1,
+    "final_stage_index": 1,
+    "applied_stage_indices": [
+      1
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": true,
+    "final_graph_metrics": {
+      "node_count": 2,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "User",
+        "Agent"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    },
+    "reference_graph_metrics": {
+      "node_count": 2,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "User",
+        "Agent"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    }
+  },
+  "final_state": {
+    "sample_id": "gh_sequence_00805",
+    "diagram_type": "sequence",
+    "current_stage_index": 1,
+    "current_graph_ir": {
+      "graph_id": "gh_sequence_00805",
+      "diagram_type": "sequence",
+      "nodes": [
+        {
+          "id": "User",
+          "label": "User",
+          "kind": "participant",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "Agent",
+          "label": "Intelligent Agent",
+          "kind": "participant",
+          "parent": null,
+          "source_index": 3,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    User[\"User\"]\n    Agent[\"Intelligent Agent\"]",
+    "applied_stage_indices": [
+      1
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 2,
+        "edge_count": 0,
+        "group_count": 0,
+        "node_ids": [
+          "User",
+          "Agent"
+        ],
+        "edge_ids": [],
+        "group_ids": []
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "旁白",
+        "content": "欢迎来到智能对话系统。本次会话将有一位用户与智能代理进行互动。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": "旁白开场白，在 Bootstrap Core 阶段内，属于阶段边界范围",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "The current stage (0) is still in its bootstrap phase, introducing only generic meta-information (welcome message) without any concrete nodes, actors, or specific interaction structures. The dialogue lacks the buildable content required to proceed to the next stage.",
+        "confidence": 0.95,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3010.0353,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 0,\n  \"reason\": \"The current stage (0) is still in its bootstrap phase, introducing only generic meta-information (welcome message) without any concrete nodes, actors, or specific interaction structures. The dialogue lacks the buildable content required to proceed to the next stage.\",\n  \"confidence\": 0.95\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "User",
+            "label": "User",
+            "kind": "participant",
+            "id": "User"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Agent",
+            "label": "Intelligent Agent",
+            "kind": "participant",
+            "id": "Agent"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 1/1, adds 2 nodes, 0 edges, current state now contains 2 nodes and 0 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 13629.0324,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"User\",\n      \"label\": \"User\",\n      \"kind\": \"participant\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Agent\",\n      \"label\": \"Intelligent Agent\",\n      \"kind\": \"participant\"\n    }\n  ],\n  \"notes\": \"Stage 1/1, adds 2 nodes, 0 edges, current state now contains 2 nodes and 0 edges\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "User",
+            "label": "User",
+            "kind": "participant",
+            "id": "User"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Agent",
+            "label": "Intelligent Agent",
+            "kind": "participant",
+            "id": "Agent"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "User",
+            "Agent"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "delta_count": 2
+        },
+        "preview_mermaid": "graph TD\n    User[\"User\"]\n    Agent[\"Intelligent Agent\"]",
+        "matches_reference_stage": true
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "User",
+            "Agent"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    User[\"User\"]\n    Agent[\"Intelligent Agent\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "旁白",
+        "content": "系统已成功加载两位核心参与者：User（用户）和 Agent（智能代理）。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": "描述 delta_ops 中 add_node 操作的结果，与 Bootstrap Core 阶段完全对齐",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "User",
+            "Agent"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    User[\"User\"]\n    Agent[\"Intelligent Agent\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "旁白",
+        "content": "User 准备好了发起请求，Agent 已准备就绪等待响应。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": "参与者初始化完成后的状态描述，在 Bootstrap Core 阶段边界内",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "User",
+            "Agent"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    User[\"User\"]\n    Agent[\"Intelligent Agent\"]"
+      }
+    }
+  ]
+}
