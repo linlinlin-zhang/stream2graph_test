@@ -1,0 +1,1949 @@
+{
+  "sample_id": "aug_ot_stateDiagram_00368_Inf_3",
+  "diagram_type": "statediagram",
+  "generated_at_utc": "2026-03-25T05:20:58Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 29,
+    "total_stages": 4,
+    "updates_emitted": 4,
+    "final_stage_index": 4,
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 8,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "ClientInit",
+        "state_start",
+        "SendClientHello",
+        "WaitServerHello",
+        "DeriveHPKE",
+        "SendAuth",
+        "WaitAuth",
+        "Error"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    },
+    "reference_graph_metrics": {
+      "node_count": 9,
+      "edge_count": 9,
+      "group_count": 0,
+      "node_ids": [
+        "SendClientHello",
+        "Start",
+        "WaitServerHello",
+        "DeriveHPKE",
+        "SendAuth",
+        "WaitAuth",
+        "Established",
+        "Error",
+        "Rekey"
+      ],
+      "edge_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e5",
+        "e6",
+        "e7",
+        "e8",
+        "e9"
+      ],
+      "group_ids": []
+    }
+  },
+  "final_state": {
+    "sample_id": "aug_ot_stateDiagram_00368_Inf_3",
+    "diagram_type": "statediagram",
+    "current_stage_index": 4,
+    "current_graph_ir": {
+      "graph_id": "aug_ot_stateDiagram_00368_Inf_3",
+      "diagram_type": "statediagram",
+      "nodes": [
+        {
+          "id": "ClientInit",
+          "label": "ClientInit",
+          "kind": "state",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "state_start",
+          "label": "[*]",
+          "kind": "pseudo_state",
+          "parent": null,
+          "source_index": 3,
+          "metadata": {}
+        },
+        {
+          "id": "SendClientHello",
+          "label": "SendClientHello",
+          "kind": "state",
+          "parent": null,
+          "source_index": 5,
+          "metadata": {}
+        },
+        {
+          "id": "WaitServerHello",
+          "label": "WaitServerHello",
+          "kind": "state",
+          "parent": null,
+          "source_index": 6,
+          "metadata": {}
+        },
+        {
+          "id": "DeriveHPKE",
+          "label": "DeriveHPKE",
+          "kind": "state",
+          "parent": null,
+          "source_index": 8,
+          "metadata": {}
+        },
+        {
+          "id": "SendAuth",
+          "label": "SendAuth",
+          "kind": "state",
+          "parent": null,
+          "source_index": 9,
+          "metadata": {}
+        },
+        {
+          "id": "WaitAuth",
+          "label": "WaitAuth",
+          "kind": "state",
+          "parent": null,
+          "source_index": 10,
+          "metadata": {}
+        },
+        {
+          "id": "Error",
+          "label": "Error",
+          "kind": "state",
+          "parent": null,
+          "source_index": 12,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]\n    SendClientHello[\"SendClientHello\"]\n    WaitServerHello[\"WaitServerHello\"]\n    DeriveHPKE[\"DeriveHPKE\"]\n    SendAuth[\"SendAuth\"]\n    WaitAuth[\"WaitAuth\"]\n    Error[\"Error\"]",
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 8,
+        "edge_count": 0,
+        "group_count": 0,
+        "node_ids": [
+          "ClientInit",
+          "state_start",
+          "SendClientHello",
+          "WaitServerHello",
+          "DeriveHPKE",
+          "SendAuth",
+          "WaitAuth",
+          "Error"
+        ],
+        "edge_ids": [],
+        "group_ids": []
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "系统设计师",
+        "content": "好的，我们现在开始构建TLS/HPKE客户端工作流的状态图。首先，我们需要一个明确的起点，让整个流程有一个清晰的开端。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2217.6511,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "开发工程师",
+        "content": "明白了。任何协议工作流都需要一个起始状态。那接下来客户端应该做什么？",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2202.5006,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "ClientInit",
+            "label": "ClientInit",
+            "kind": "state",
+            "id": "ClientInit"
+          },
+          {
+            "op": "add_node",
+            "node_id": "state_start",
+            "label": "[*]",
+            "kind": "pseudo_state",
+            "id": "state_start"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 1/4, adds 2 nodes, 1 edges, current state now contains 2 nodes and 1 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 19006.0027,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"ClientInit\",\n      \"label\": \"ClientInit\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"state_start\",\n      \"label\": \"[*]\",\n      \"kind\": \"pseudo_state\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e1\",\n      \"source\": \"state_start\",\n      \"target\": \"ClientInit\",\n ",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "ClientInit",
+            "label": "ClientInit",
+            "kind": "state",
+            "id": "ClientInit"
+          },
+          {
+            "op": "add_node",
+            "node_id": "state_start",
+            "label": "[*]",
+            "kind": "pseudo_state",
+            "id": "state_start"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 3,
+          "edge_count": 2,
+          "group_count": 0,
+          "delta_count": 5
+        },
+        "preview_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "系统设计师",
+        "content": "客户端在启动后，首先需要向服务器发起连接请求。在TLS/HPKE场景中，这第一步就是发送ClientHello消息。所以我们需要一个状态来表示这个发送过程。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2225.2338,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "开发工程师",
+        "content": "好的，我来添加这个状态。那从Start到这个SendClientHello应该有一条直接的转换边。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2222.3337,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "系统设计师",
+        "content": "完美。现在ClientHello已经发出，客户端需要等待服务器的响应。ServerHello是服务器回复的第一条关键消息，所以我们需要另一个状态来表示这个等待过程。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2209.4688,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "开发工程师",
+        "content": "明白，那我们就添加WaitServerHello状态，并且让SendClientHello有一条边指向它。客户端发送完Hello之后，接下来自然就是等待回复。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "turn 6 reached end boundary for stage 2",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2515.3892,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"EMIT_UPDATE\",\n  \"target_stage_index\": 2,\n  \"reason\": \"turn 6 reached end boundary for stage 2\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "SendClientHello",
+            "label": "SendClientHello",
+            "kind": "state",
+            "id": "SendClientHello"
+          },
+          {
+            "op": "add_node",
+            "node_id": "WaitServerHello",
+            "label": "WaitServerHello",
+            "kind": "state",
+            "id": "WaitServerHello"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 2/4, adds 2 nodes, 2 edges, current state now contains 4 nodes and 2 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 24614.0237,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 2,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"SendClientHello\",\n      \"label\": \"SendClientHello\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"WaitServerHello\",\n      \"label\": \"WaitServerHello\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e1\",\n      \"source\": \"state_start\",\n      \"targe",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "SendClientHello",
+            "label": "SendClientHello",
+            "kind": "state",
+            "id": "SendClientHello"
+          },
+          {
+            "op": "add_node",
+            "node_id": "WaitServerHello",
+            "label": "WaitServerHello",
+            "kind": "state",
+            "id": "WaitServerHello"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start",
+            "SendClientHello",
+            "WaitServerHello"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 5,
+          "edge_count": 4,
+          "group_count": 0,
+          "delta_count": 4
+        },
+        "preview_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]\n    SendClientHello[\"SendClientHello\"]\n    WaitServerHello[\"WaitServerHello\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start",
+            "SendClientHello",
+            "WaitServerHello"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]\n    SendClientHello[\"SendClientHello\"]\n    WaitServerHello[\"WaitServerHello\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 7,
+        "speaker": "系统设计师",
+        "content": "非常好。现在我们有了基本的引导流程：Start → SendClientHello → WaitServerHello。接下来，当服务器返回ServerHello时，我们需要处理它。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2225.5661,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start",
+            "SendClientHello",
+            "WaitServerHello"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]\n    SendClientHello[\"SendClientHello\"]\n    WaitServerHello[\"WaitServerHello\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 8,
+        "speaker": "开发工程师",
+        "content": "收到ServerHello后，我们需要做什么？这个时候客户端应该开始处理服务器的响应并进行密钥协商了吧？",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2218.9531,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start",
+            "SendClientHello",
+            "WaitServerHello"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]\n    SendClientHello[\"SendClientHello\"]\n    WaitServerHello[\"WaitServerHello\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 9,
+        "speaker": "系统设计师",
+        "content": "完全正确。接收到ServerHello后，我们需要先验证它的有效性。如果验证通过，客户端才能进入密钥派生阶段。我们添加一个新状态来表示这个HPKE密钥派生过程。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2212.5595,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start",
+            "SendClientHello",
+            "WaitServerHello"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]\n    SendClientHello[\"SendClientHello\"]\n    WaitServerHello[\"WaitServerHello\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 10,
+        "speaker": "开发工程师",
+        "content": "所以从WaitServerHello到DeriveHPKE应该是一条有条件的边，标注为“valid ServerHello”，只有验证通过才会触发这个转换。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2203.8143,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start",
+            "SendClientHello",
+            "WaitServerHello"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]\n    SendClientHello[\"SendClientHello\"]\n    WaitServerHello[\"WaitServerHello\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 11,
+        "speaker": "系统设计师",
+        "content": "没错，这是关键的验证点。现在HPKE密钥已经派生完成，接下来客户端需要发送认证消息来完成握手。我们添加SendAuth状态。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2201.9634,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start",
+            "SendClientHello",
+            "WaitServerHello"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]\n    SendClientHello[\"SendClientHello\"]\n    WaitServerHello[\"WaitServerHello\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 12,
+        "speaker": "开发工程师",
+        "content": "好的，那DeriveHPKE状态后面紧跟着SendAuth状态，它们之间有一条直接的边。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2221.3981,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start",
+            "SendClientHello",
+            "WaitServerHello"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]\n    SendClientHello[\"SendClientHello\"]\n    WaitServerHello[\"WaitServerHello\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 13,
+        "speaker": "系统设计师",
+        "content": "很好。现在主流程已经清晰了。接下来我们需要添加一些支撑结构来处理认证等待和错误情况。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2223.2873,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start",
+            "SendClientHello",
+            "WaitServerHello"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]\n    SendClientHello[\"SendClientHello\"]\n    WaitServerHello[\"WaitServerHello\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 14,
+        "speaker": "开发工程师",
+        "content": "认证部分确实很关键。客户端发送认证消息后，应该需要等待服务器的认证确认吧？",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2213.5355,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start",
+            "SendClientHello",
+            "WaitServerHello"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]\n    SendClientHello[\"SendClientHello\"]\n    WaitServerHello[\"WaitServerHello\"]"
+      },
+      "planner": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "DeriveHPKE",
+            "label": "DeriveHPKE",
+            "kind": "state",
+            "id": "DeriveHPKE"
+          },
+          {
+            "op": "add_node",
+            "node_id": "SendAuth",
+            "label": "SendAuth",
+            "kind": "state",
+            "id": "SendAuth"
+          },
+          {
+            "op": "add_node",
+            "node_id": "WaitAuth",
+            "label": "WaitAuth",
+            "kind": "state",
+            "id": "WaitAuth"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 3/4, adds 3 nodes, 5 edges, current state now contains 7 nodes and 5 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 44475.9169,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 3,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"DeriveHPKE\",\n      \"label\": \"DeriveHPKE\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"SendAuth\",\n      \"label\": \"SendAuth\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"WaitAuth\",\n      \"label\": \"WaitAuth\",\n      \"kind\": \"state\"\n    },\n    {",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "DeriveHPKE",
+            "label": "DeriveHPKE",
+            "kind": "state",
+            "id": "DeriveHPKE"
+          },
+          {
+            "op": "add_node",
+            "node_id": "SendAuth",
+            "label": "SendAuth",
+            "kind": "state",
+            "id": "SendAuth"
+          },
+          {
+            "op": "add_node",
+            "node_id": "WaitAuth",
+            "label": "WaitAuth",
+            "kind": "state",
+            "id": "WaitAuth"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 7,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start",
+            "SendClientHello",
+            "WaitServerHello",
+            "DeriveHPKE",
+            "SendAuth",
+            "WaitAuth"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 7,
+          "edge_count": 6,
+          "group_count": 0,
+          "delta_count": 4
+        },
+        "preview_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]\n    SendClientHello[\"SendClientHello\"]\n    WaitServerHello[\"WaitServerHello\"]\n    DeriveHPKE[\"DeriveHPKE\"]\n    SendAuth[\"SendAuth\"]\n    WaitAuth[\"WaitAuth\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 7,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start",
+            "SendClientHello",
+            "WaitServerHello",
+            "DeriveHPKE",
+            "SendAuth",
+            "WaitAuth"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]\n    SendClientHello[\"SendClientHello\"]\n    WaitServerHello[\"WaitServerHello\"]\n    DeriveHPKE[\"DeriveHPKE\"]\n    SendAuth[\"SendAuth\"]\n    WaitAuth[\"WaitAuth\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 15,
+        "speaker": "系统设计师",
+        "content": "正是如此。我们添加WaitAuth状态，表示客户端正在等待服务器的认证响应。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2220.9771,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 7,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start",
+            "SendClientHello",
+            "WaitServerHello",
+            "DeriveHPKE",
+            "SendAuth",
+            "WaitAuth"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]\n    SendClientHello[\"SendClientHello\"]\n    WaitServerHello[\"WaitServerHello\"]\n    DeriveHPKE[\"DeriveHPKE\"]\n    SendAuth[\"SendAuth\"]\n    WaitAuth[\"WaitAuth\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 16,
+        "speaker": "开发工程师",
+        "content": "明白，从SendAuth到WaitAuth添加一条边。现在认证等待状态已经建立了。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2201.9107,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 7,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start",
+            "SendClientHello",
+            "WaitServerHello",
+            "DeriveHPKE",
+            "SendAuth",
+            "WaitAuth"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]\n    SendClientHello[\"SendClientHello\"]\n    WaitServerHello[\"WaitServerHello\"]\n    DeriveHPKE[\"DeriveHPKE\"]\n    SendAuth[\"SendAuth\"]\n    WaitAuth[\"WaitAuth\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 17,
+        "speaker": "系统设计师",
+        "content": "现在我们需要考虑认证失败的情况。并不是所有认证尝试都会成功，如果服务器检测到认证问题，我们需要一个错误处理路径。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2226.8224,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 7,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start",
+            "SendClientHello",
+            "WaitServerHello",
+            "DeriveHPKE",
+            "SendAuth",
+            "WaitAuth"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]\n    SendClientHello[\"SendClientHello\"]\n    WaitServerHello[\"WaitServerHello\"]\n    DeriveHPKE[\"DeriveHPKE\"]\n    SendAuth[\"SendAuth\"]\n    WaitAuth[\"WaitAuth\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 18,
+        "speaker": "开发工程师",
+        "content": "当然需要。那我们就添加一个Error状态，并从WaitAuth连一条边过去，标注为“auth fail”来表示认证失败的路径。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2208.4951,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 7,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start",
+            "SendClientHello",
+            "WaitServerHello",
+            "DeriveHPKE",
+            "SendAuth",
+            "WaitAuth"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]\n    SendClientHello[\"SendClientHello\"]\n    WaitServerHello[\"WaitServerHello\"]\n    DeriveHPKE[\"DeriveHPKE\"]\n    SendAuth[\"SendAuth\"]\n    WaitAuth[\"WaitAuth\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 19,
+        "speaker": "系统设计师",
+        "content": "完美。现在我们已经建立了完整的认证等待和错误处理机制。接下来就是完成整个握手流程了。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2211.6861,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 7,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start",
+            "SendClientHello",
+            "WaitServerHello",
+            "DeriveHPKE",
+            "SendAuth",
+            "WaitAuth"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]\n    SendClientHello[\"SendClientHello\"]\n    WaitServerHello[\"WaitServerHello\"]\n    DeriveHPKE[\"DeriveHPKE\"]\n    SendAuth[\"SendAuth\"]\n    WaitAuth[\"WaitAuth\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 20,
+        "speaker": "开发工程师",
+        "content": "对，我们已经处理了认证失败的情况。那认证成功之后呢？客户端应该进入什么状态？",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2218.8148,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 7,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start",
+            "SendClientHello",
+            "WaitServerHello",
+            "DeriveHPKE",
+            "SendAuth",
+            "WaitAuth"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]\n    SendClientHello[\"SendClientHello\"]\n    WaitServerHello[\"WaitServerHello\"]\n    DeriveHPKE[\"DeriveHPKE\"]\n    SendAuth[\"SendAuth\"]\n    WaitAuth[\"WaitAuth\"]"
+      },
+      "planner": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Error",
+            "label": "Error",
+            "kind": "state",
+            "id": "Error"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 4/4, adds 1 nodes, 1 edges, current state now contains 8 nodes and 1 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 15298.7509,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 4,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Error\",\n      \"label\": \"Error\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e10\",\n      \"source\": \"WaitAuth\",\n      \"target\": \"Error\",\n      \"label\": \"auth fail\"\n    }\n  ],\n  \"notes\": \"Stage 4/4, adds 1 nodes, 1 edges, current state now contains 8 nodes and 1 edges\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Error",
+            "label": "Error",
+            "kind": "state",
+            "id": "Error"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 8,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start",
+            "SendClientHello",
+            "WaitServerHello",
+            "DeriveHPKE",
+            "SendAuth",
+            "WaitAuth",
+            "Error"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 9,
+          "edge_count": 9,
+          "group_count": 0,
+          "delta_count": 5
+        },
+        "preview_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]\n    SendClientHello[\"SendClientHello\"]\n    WaitServerHello[\"WaitServerHello\"]\n    DeriveHPKE[\"DeriveHPKE\"]\n    SendAuth[\"SendAuth\"]\n    WaitAuth[\"WaitAuth\"]\n    Error[\"Error\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 8,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start",
+            "SendClientHello",
+            "WaitServerHello",
+            "DeriveHPKE",
+            "SendAuth",
+            "WaitAuth",
+            "Error"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]\n    SendClientHello[\"SendClientHello\"]\n    WaitServerHello[\"WaitServerHello\"]\n    DeriveHPKE[\"DeriveHPKE\"]\n    SendAuth[\"SendAuth\"]\n    WaitAuth[\"WaitAuth\"]\n    Error[\"Error\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 21,
+        "speaker": "系统设计师",
+        "content": "认证成功后，TLS连接就正式建立了。我们添加Established状态来表示安全的会话已经成功建立。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 8,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start",
+            "SendClientHello",
+            "WaitServerHello",
+            "DeriveHPKE",
+            "SendAuth",
+            "WaitAuth",
+            "Error"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]\n    SendClientHello[\"SendClientHello\"]\n    WaitServerHello[\"WaitServerHello\"]\n    DeriveHPKE[\"DeriveHPKE\"]\n    SendAuth[\"SendAuth\"]\n    WaitAuth[\"WaitAuth\"]\n    Error[\"Error\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 22,
+        "speaker": "开发工程师",
+        "content": "好的，从WaitAuth到Established应该有一条边，标注为“auth ok”表示认证成功的条件。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 8,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start",
+            "SendClientHello",
+            "WaitServerHello",
+            "DeriveHPKE",
+            "SendAuth",
+            "WaitAuth",
+            "Error"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]\n    SendClientHello[\"SendClientHello\"]\n    WaitServerHello[\"WaitServerHello\"]\n    DeriveHPKE[\"DeriveHPKE\"]\n    SendAuth[\"SendAuth\"]\n    WaitAuth[\"WaitAuth\"]\n    Error[\"Error\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 23,
+        "speaker": "系统设计师",
+        "content": "非常好。现在连接已经建立，我们需要考虑一个实际的TLS需求：会话密钥更新。在长期连接中，密钥需要定期更新以保持安全性。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 8,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start",
+            "SendClientHello",
+            "WaitServerHello",
+            "DeriveHPKE",
+            "SendAuth",
+            "WaitAuth",
+            "Error"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]\n    SendClientHello[\"SendClientHello\"]\n    WaitServerHello[\"WaitServerHello\"]\n    DeriveHPKE[\"DeriveHPKE\"]\n    SendAuth[\"SendAuth\"]\n    WaitAuth[\"WaitAuth\"]\n    Error[\"Error\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 24,
+        "speaker": "开发工程师",
+        "content": "确实，TLS协议支持SessionKeyUpdate机制。那我们需要一个状态来处理这个密钥更新过程。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 8,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start",
+            "SendClientHello",
+            "WaitServerHello",
+            "DeriveHPKE",
+            "SendAuth",
+            "WaitAuth",
+            "Error"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]\n    SendClientHello[\"SendClientHello\"]\n    WaitServerHello[\"WaitServerHello\"]\n    DeriveHPKE[\"DeriveHPKE\"]\n    SendAuth[\"SendAuth\"]\n    WaitAuth[\"WaitAuth\"]\n    Error[\"Error\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 25,
+        "speaker": "系统设计师",
+        "content": "没错。添加Rekey状态。当Established状态收到SessionKeyUpdate事件时，转换到Rekey状态执行密钥更新。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 8,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start",
+            "SendClientHello",
+            "WaitServerHello",
+            "DeriveHPKE",
+            "SendAuth",
+            "WaitAuth",
+            "Error"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]\n    SendClientHello[\"SendClientHello\"]\n    WaitServerHello[\"WaitServerHello\"]\n    DeriveHPKE[\"DeriveHPKE\"]\n    SendAuth[\"SendAuth\"]\n    WaitAuth[\"WaitAuth\"]\n    Error[\"Error\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 26,
+        "speaker": "开发工程师",
+        "content": "明白，Established到Rekey的边标注为“SessionKeyUpdate”。那Rekey完成后呢？应该回到Established状态吧？",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 8,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start",
+            "SendClientHello",
+            "WaitServerHello",
+            "DeriveHPKE",
+            "SendAuth",
+            "WaitAuth",
+            "Error"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]\n    SendClientHello[\"SendClientHello\"]\n    WaitServerHello[\"WaitServerHello\"]\n    DeriveHPKE[\"DeriveHPKE\"]\n    SendAuth[\"SendAuth\"]\n    WaitAuth[\"WaitAuth\"]\n    Error[\"Error\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 27,
+        "speaker": "系统设计师",
+        "content": "正是如此。Rekey完成后，新的密钥已经生效，连接重新回到Established状态。这样就形成了一个完整的密钥更新循环。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 8,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start",
+            "SendClientHello",
+            "WaitServerHello",
+            "DeriveHPKE",
+            "SendAuth",
+            "WaitAuth",
+            "Error"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]\n    SendClientHello[\"SendClientHello\"]\n    WaitServerHello[\"WaitServerHello\"]\n    DeriveHPKE[\"DeriveHPKE\"]\n    SendAuth[\"SendAuth\"]\n    WaitAuth[\"WaitAuth\"]\n    Error[\"Error\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 28,
+        "speaker": "开发工程师",
+        "content": "太好了！现在我们完整的状态图已经构建完成。从Start开始，经过ClientHello发送、ServerHello验证、HPKE密钥派生、认证流程，再到Established成功连接，最后还有Rekey密钥更新循环。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 8,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start",
+            "SendClientHello",
+            "WaitServerHello",
+            "DeriveHPKE",
+            "SendAuth",
+            "WaitAuth",
+            "Error"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]\n    SendClientHello[\"SendClientHello\"]\n    WaitServerHello[\"WaitServerHello\"]\n    DeriveHPKE[\"DeriveHPKE\"]\n    SendAuth[\"SendAuth\"]\n    WaitAuth[\"WaitAuth\"]\n    Error[\"Error\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 29,
+        "speaker": "系统设计师",
+        "content": "完美总结。这个状态图清晰地展示了TLS/HPKE客户端的完整工作流程，包括了正常的成功路径、认证失败处理，以及会话密钥更新机制。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 8,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "ClientInit",
+            "state_start",
+            "SendClientHello",
+            "WaitServerHello",
+            "DeriveHPKE",
+            "SendAuth",
+            "WaitAuth",
+            "Error"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    ClientInit[\"ClientInit\"]\n    state_start[\"[*]\"]\n    SendClientHello[\"SendClientHello\"]\n    WaitServerHello[\"WaitServerHello\"]\n    DeriveHPKE[\"DeriveHPKE\"]\n    SendAuth[\"SendAuth\"]\n    WaitAuth[\"WaitAuth\"]\n    Error[\"Error\"]"
+      }
+    }
+  ]
+}

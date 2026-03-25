@@ -1,0 +1,1880 @@
+{
+  "sample_id": "aug_ot_stateDiagram_00122_Edu_4",
+  "diagram_type": "statediagram",
+  "generated_at_utc": "2026-03-25T04:17:29Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 26,
+    "total_stages": 5,
+    "updates_emitted": 5,
+    "final_stage_index": 5,
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 7,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "idle",
+        "left_loaded",
+        "ready",
+        "diffing",
+        "merging",
+        "merge_complete",
+        "diff_complete"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    },
+    "reference_graph_metrics": {
+      "node_count": 8,
+      "edge_count": 26,
+      "group_count": 0,
+      "node_ids": [
+        "idle",
+        "left_loaded",
+        "ready",
+        "diffing",
+        "diff_complete",
+        "merging",
+        "merge_complete",
+        "conflict"
+      ],
+      "edge_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e5",
+        "e6",
+        "e7",
+        "e8",
+        "e9",
+        "e10",
+        "e11",
+        "e12"
+      ],
+      "group_ids": []
+    }
+  },
+  "final_state": {
+    "sample_id": "aug_ot_stateDiagram_00122_Edu_4",
+    "diagram_type": "statediagram",
+    "current_stage_index": 5,
+    "current_graph_ir": {
+      "graph_id": "aug_ot_stateDiagram_00122_Edu_4",
+      "diagram_type": "statediagram",
+      "nodes": [
+        {
+          "id": "idle",
+          "label": "idle",
+          "kind": "state",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "left_loaded",
+          "label": "left_loaded",
+          "kind": "state",
+          "parent": null,
+          "source_index": 3,
+          "metadata": {}
+        },
+        {
+          "id": "ready",
+          "label": "ready",
+          "kind": "state",
+          "parent": null,
+          "source_index": 5,
+          "metadata": {}
+        },
+        {
+          "id": "diffing",
+          "label": "diffing",
+          "kind": "state",
+          "parent": null,
+          "source_index": 6,
+          "metadata": {}
+        },
+        {
+          "id": "merging",
+          "label": "merging",
+          "kind": "state",
+          "parent": null,
+          "source_index": 8,
+          "metadata": {}
+        },
+        {
+          "id": "merge_complete",
+          "label": "merge_complete",
+          "kind": "state",
+          "parent": null,
+          "source_index": 9,
+          "metadata": {}
+        },
+        {
+          "id": "diff_complete",
+          "label": "diff_complete",
+          "kind": "state",
+          "parent": null,
+          "source_index": 11,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diffing[\"diffing\"]\n    merging[\"merging\"]\n    merge_complete[\"merge_complete\"]\n    diff_complete[\"diff_complete\"]",
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 7,
+        "edge_count": 0,
+        "group_count": 0,
+        "node_ids": [
+          "idle",
+          "left_loaded",
+          "ready",
+          "diffing",
+          "merging",
+          "merge_complete",
+          "diff_complete"
+        ],
+        "edge_ids": [],
+        "group_ids": []
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 0,
+        "speaker": "讲解员",
+        "content": "好的，我们今天来构建一个数据差异比较的状态机。首先，这个状态机需要一个起点，也就是初始状态。我们先创建两个基础状态：idle状态表示还没有加载任何数据，left_loaded状态表示左侧数据已经加载完成。",
+        "stage_index": null,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2272.095,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "学习者",
+        "content": "明白了，idle是起始点。那这两个状态之间是怎么连接的呢？",
+        "stage_index": null,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2247.7148,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "讲解员",
+        "content": "很好问！它们通过LOAD_LEFT事件连接，从idle状态转换到left_loaded状态。这代表用户触发了加载左侧数据的操作。这是我们状态机的第一个转换边。",
+        "stage_index": null,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "waiting for stage 1 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2240.2139,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"waiting for stage 1 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "学习者",
+        "content": "原来如此。那现在我们有了入口点和第一个加载步骤，这就是整个状态机的基础框架了对吗？",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "turn 3 reached end boundary for stage 1",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2531.2049,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"EMIT_UPDATE\",\n  \"target_stage_index\": 1,\n  \"reason\": \"turn 3 reached end boundary for stage 1\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "idle",
+            "label": "idle",
+            "kind": "state",
+            "id": "idle"
+          },
+          {
+            "op": "add_node",
+            "node_id": "left_loaded",
+            "label": "left_loaded",
+            "kind": "state",
+            "id": "left_loaded"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 1/5, adds 2 nodes, 1 edges, current state now contains 2 nodes and 1 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 19573.8707,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"idle\",\n      \"label\": \"idle\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"left_loaded\",\n      \"label\": \"left_loaded\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e1\",\n      \"source\": \"idle\",\n      \"target\": \"left_loaded\",\n      \"label\": \"LO",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "idle",
+            "label": "idle",
+            "kind": "state",
+            "id": "idle"
+          },
+          {
+            "op": "add_node",
+            "node_id": "left_loaded",
+            "label": "left_loaded",
+            "kind": "state",
+            "id": "left_loaded"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 2,
+          "edge_count": 1,
+          "group_count": 0,
+          "delta_count": 3
+        },
+        "preview_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "讲解员",
+        "content": "没错，基础框架已经建立。现在我们要扩展主要分支。首先添加一个ready状态，这是数据准备就绪的状态，可以加载基础数据和右侧数据。然后添加diffing状态，表示正在进行差异比较。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "waiting for stage 2 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2283.7429,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"waiting for stage 2 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "ready",
+            "label": "ready",
+            "kind": "state",
+            "id": "ready"
+          },
+          {
+            "op": "add_node",
+            "node_id": "diffing",
+            "label": "diffing",
+            "kind": "state",
+            "id": "diffing"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 2/5, adds 2 nodes, 1 edges, current state now contains 4 nodes and 1 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 19698.7684,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 2,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"ready\",\n      \"label\": \"ready\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"diffing\",\n      \"label\": \"diffing\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e1\",\n      \"source\": \"idle\",\n      \"target\": \"left_loaded\",\n      \"label\": \"LOAD_LEF",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "ready",
+            "label": "ready",
+            "kind": "state",
+            "id": "ready"
+          },
+          {
+            "op": "add_node",
+            "node_id": "diffing",
+            "label": "diffing",
+            "kind": "state",
+            "id": "diffing"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diffing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 4,
+          "edge_count": 7,
+          "group_count": 0,
+          "delta_count": 8
+        },
+        "preview_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diffing[\"diffing\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diffing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diffing[\"diffing\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "学习者",
+        "content": "那从left_loaded状态怎么到ready状态呢？",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2250.525,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diffing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diffing[\"diffing\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "讲解员",
+        "content": "通过LOAD_RIGHT事件，从left_loaded转换到ready。这意味着用户加载了右侧数据后，系统就准备好了，可以进行后续操作。在ready状态下，我们还需要支持多次加载操作，所以添加了四个自循环边：LOAD_BASE、LOAD_LEFT、LOAD_RIGHT三个加载事件，以及一个DIFF事件可以触发差异比较。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2276.6922,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diffing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diffing[\"diffing\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 7,
+        "speaker": "学习者",
+        "content": "自循环边是什么意思？",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2262.8593,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diffing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diffing[\"diffing\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 8,
+        "speaker": "讲解员",
+        "content": "自循环就是边从某个状态出发又回到同一个状态。比如在ready状态下，用户可以再次执行LOAD_BASE操作来重新加载基础数据，这不会改变当前状态，但会刷新数据。另外从ready可以通过DIFF事件配合Education_StudentDB服务转换到diffing状态开始差异比较。还有一个CLEAR边可以从ready返回到idle重置整个流程。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2318.0563,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diffing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diffing[\"diffing\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 9,
+        "speaker": "学习者",
+        "content": "差异比较完成后会到哪个状态呢？",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 3,
+        "reason": "waiting for stage 3 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2260.4997,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"waiting for stage 3 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diffing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diffing[\"diffing\"]"
+      },
+      "planner": {
+        "target_stage_index": 3,
+        "delta_ops": [],
+        "target_graph_ir": {
+          "graph_id": "aug_ot_stateDiagram_00122_Edu_4",
+          "diagram_type": "statediagram",
+          "nodes": [
+            {
+              "id": "idle",
+              "label": "idle",
+              "kind": "state",
+              "parent": null,
+              "source_index": 2,
+              "metadata": {}
+            },
+            {
+              "id": "left_loaded",
+              "label": "left_loaded",
+              "kind": "state",
+              "parent": null,
+              "source_index": 3,
+              "metadata": {}
+            },
+            {
+              "id": "ready",
+              "label": "ready",
+              "kind": "state",
+              "parent": null,
+              "source_index": 5,
+              "metadata": {}
+            },
+            {
+              "id": "diffing",
+              "label": "diffing",
+              "kind": "state",
+              "parent": null,
+              "source_index": 6,
+              "metadata": {}
+            }
+          ],
+          "edges": [],
+          "groups": [],
+          "styles": [],
+          "metadata": {}
+        },
+        "notes": "Stage 3/5, adds 0 nodes, 7 edges, current state now contains 4 nodes and 7 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 42553.3371,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 3,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e1\",\n      \"source\": \"idle\",\n      \"target\": \"left_loaded\",\n      \"label\": \"LOAD_LEFT\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e2\",\n      \"source\": \"left_loaded\",\n      \"target\": \"ready\",\n      \"label\": \"LOAD_RIGHT\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e3\",\n      \"source\":",
+          "semantic_attempt": 1,
+          "planner_noop": true,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 3,
+        "delta_ops": [],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diffing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 5,
+          "edge_count": 15,
+          "group_count": 0,
+          "delta_count": 9
+        },
+        "preview_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diffing[\"diffing\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diffing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diffing[\"diffing\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 10,
+        "speaker": "讲解员",
+        "content": "好问题！现在添加diff_complete状态，这是差异比较完成、结果可以查看的状态。从diffing状态通过DIFF_DONE事件转换过来。同时我们还添加了一条捷径：从ready通过DIFF_ALL事件配合Education_ClassroomService服务直接跳转到diff_complete，这样可以直接看到所有差异。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2292.2497,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diffing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diffing[\"diffing\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 11,
+        "speaker": "学习者",
+        "content": "在diff_complete状态下能看到什么？",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2270.7305,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diffing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diffing[\"diffing\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 12,
+        "speaker": "讲解员",
+        "content": "在diff_complete状态下有多个查看选项。通过Education_ContentCDN服务可以SHOW_SUMMARY查看摘要或SHOW_UNIFIED查看统一视图，通过Education_LMS_Portal服务可以SHOW_PATCH查看补丁内容。还有DIFF_ALL自循环可以重新执行差异比较。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2253.1133,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diffing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diffing[\"diffing\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 13,
+        "speaker": "学习者",
+        "content": "那用户看完了想要返回或者清空怎么办？",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2235.3818,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diffing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diffing[\"diffing\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 14,
+        "speaker": "讲解员",
+        "content": "我们添加了RESET边可以从diff_complete返回到ready重新准备，还有CLEAR边可以从diff_complete直接返回到idle清空所有数据。这样用户可以根据需要灵活地在各个状态间导航。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2248.3437,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diffing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diffing[\"diffing\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 15,
+        "speaker": "学习者",
+        "content": "好的，现在我想把比较结果合并，应该怎么进入合并流程？",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 4,
+        "reason": "waiting for stage 4 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2238.4915,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 4,\n  \"reason\": \"waiting for stage 4 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diffing"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diffing[\"diffing\"]"
+      },
+      "planner": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "merging",
+            "label": "merging",
+            "kind": "state",
+            "id": "merging"
+          },
+          {
+            "op": "add_node",
+            "node_id": "merge_complete",
+            "label": "merge_complete",
+            "kind": "state",
+            "id": "merge_complete"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 4/5, adds 2 nodes, 6 edges, current state now contains 6 nodes and 6 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 41561.0008,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 4,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"merging\",\n      \"label\": \"merging\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"merge_complete\",\n      \"label\": \"merge_complete\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e17\",\n      \"source\": \"diff_complete\",\n      \"target\": \"merging\",\n",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "merging",
+            "label": "merging",
+            "kind": "state",
+            "id": "merging"
+          },
+          {
+            "op": "add_node",
+            "node_id": "merge_complete",
+            "label": "merge_complete",
+            "kind": "state",
+            "id": "merge_complete"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diffing",
+            "merging",
+            "merge_complete"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 7,
+          "edge_count": 22,
+          "group_count": 0,
+          "delta_count": 9
+        },
+        "preview_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diffing[\"diffing\"]\n    merging[\"merging\"]\n    merge_complete[\"merge_complete\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diffing",
+            "merging",
+            "merge_complete"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diffing[\"diffing\"]\n    merging[\"merging\"]\n    merge_complete[\"merge_complete\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 16,
+        "speaker": "讲解员",
+        "content": "现在添加合并工作流。首先是merging状态表示正在执行合并操作，还有merge_complete状态表示合并完成。从diff_complete通过MERGE事件配合Education_StudentDB服务可以进入merging状态。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2260.2513,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 5,\n  \"reason\": \"waiting for stage 5 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diffing",
+            "merging",
+            "merge_complete"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diffing[\"diffing\"]\n    merging[\"merging\"]\n    merge_complete[\"merge_complete\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 17,
+        "speaker": "学习者",
+        "content": "合并操作有几种方式？",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2242.3606,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 5,\n  \"reason\": \"waiting for stage 5 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diffing",
+            "merging",
+            "merge_complete"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diffing[\"diffing\"]\n    merging[\"merging\"]\n    merge_complete[\"merge_complete\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 18,
+        "speaker": "讲解员",
+        "content": "合并有多种策略。第一种是自动合并：从merging状态通过MERGE_AUTO事件配合Education_ContentCDN服务自动完成转换到merge_complete。第二种是手动选择：通过MERGE_LEFT事件配合Education_LMS_Portal服务直接采用左侧数据，或者MERGE_RIGHT事件配合Education_GradeSync服务直接采用右侧数据，这两种都是直接从diff_complete跳到merge_complete。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2243.48,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 5,\n  \"reason\": \"waiting for stage 5 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diffing",
+            "merging",
+            "merge_complete"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diffing[\"diffing\"]\n    merging[\"merging\"]\n    merge_complete[\"merge_complete\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 19,
+        "speaker": "学习者",
+        "content": "合并完成后还能做什么操作？",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2242.6667,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 5,\n  \"reason\": \"waiting for stage 5 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diffing",
+            "merging",
+            "merge_complete"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diffing[\"diffing\"]\n    merging[\"merging\"]\n    merge_complete[\"merge_complete\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 20,
+        "speaker": "讲解员",
+        "content": "在merge_complete状态下可以通过EXPORT事件配合Education_ClassroomService服务导出结果。同时有BACK边可以返回到diff_complete重新查看差异，还有CLEAR边可以返回到idle清空所有状态重新开始。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2267.7405,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 5,\n  \"reason\": \"waiting for stage 5 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diffing",
+            "merging",
+            "merge_complete"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diffing[\"diffing\"]\n    merging[\"merging\"]\n    merge_complete[\"merge_complete\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 21,
+        "speaker": "学习者",
+        "content": "如果在合并过程中出现冲突怎么办？",
+        "stage_index": 5,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 5,
+        "reason": "waiting for stage 5 boundary",
+        "confidence": 1.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 2269.377,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 5,\n  \"reason\": \"waiting for stage 5 boundary\",\n  \"confidence\": 1.0\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diffing",
+            "merging",
+            "merge_complete"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diffing[\"diffing\"]\n    merging[\"merging\"]\n    merge_complete[\"merge_complete\"]"
+      },
+      "planner": {
+        "target_stage_index": 5,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "diff_complete",
+            "label": "diff_complete",
+            "kind": "state",
+            "id": "diff_complete"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Stage 5/5, adds 1 nodes, 15 edges, current state now contains 7 nodes and 15 edges",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B+/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/finetune/qwen35_27b_incremental_planner_cloud_rtxpro6000_96g/final_adapter",
+          "latency_ms": 95566.6473,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 5,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"diff_complete\",\n      \"label\": \"diff_complete\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e10\",\n      \"source\": \"diffing\",\n      \"target\": \"diff_complete\",\n      \"label\": \"DIFF_DONE\"\n    },\n    {\n      \"op\": \"add_edge\",\n      \"edge_id\": \"e11\",\n      \"source\": \"ready\",\n  ",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 5,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "diff_complete",
+            "label": "diff_complete",
+            "kind": "state",
+            "id": "diff_complete"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 7,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diffing",
+            "merging",
+            "merge_complete",
+            "diff_complete"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 8,
+          "edge_count": 26,
+          "group_count": 0,
+          "delta_count": 5
+        },
+        "preview_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diffing[\"diffing\"]\n    merging[\"merging\"]\n    merge_complete[\"merge_complete\"]\n    diff_complete[\"diff_complete\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 5,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "graph_metrics": {
+          "node_count": 7,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diffing",
+            "merging",
+            "merge_complete",
+            "diff_complete"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diffing[\"diffing\"]\n    merging[\"merging\"]\n    merge_complete[\"merge_complete\"]\n    diff_complete[\"diff_complete\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 22,
+        "speaker": "讲解员",
+        "content": "这就是最后要添加的冲突处理机制。当自动合并过程中检测到冲突时，系统会通过CONFLICT_DETECTED事件配合Education_StudentDB服务从merging状态转换到conflict冲突状态。",
+        "stage_index": 5,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 5,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "graph_metrics": {
+          "node_count": 7,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diffing",
+            "merging",
+            "merge_complete",
+            "diff_complete"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diffing[\"diffing\"]\n    merging[\"merging\"]\n    merge_complete[\"merge_complete\"]\n    diff_complete[\"diff_complete\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 23,
+        "speaker": "学习者",
+        "content": "用户遇到冲突时如何解决？",
+        "stage_index": 5,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 5,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "graph_metrics": {
+          "node_count": 7,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diffing",
+            "merging",
+            "merge_complete",
+            "diff_complete"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diffing[\"diffing\"]\n    merging[\"merging\"]\n    merge_complete[\"merge_complete\"]\n    diff_complete[\"diff_complete\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 24,
+        "speaker": "讲解员",
+        "content": "用户提供两个选择：TAKE_LEFT选择采用左侧数据，或者TAKE_RIGHT选择采用右侧数据。两种选择都会转换到merge_complete状态完成合并。如果用户想重新查看差异再决定，可以选择BACK边返回到diff_complete状态。",
+        "stage_index": 5,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 5,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "graph_metrics": {
+          "node_count": 7,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diffing",
+            "merging",
+            "merge_complete",
+            "diff_complete"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diffing[\"diffing\"]\n    merging[\"merging\"]\n    merge_complete[\"merge_complete\"]\n    diff_complete[\"diff_complete\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 25,
+        "speaker": "讲解员",
+        "content": "完美！现在整个状态机已经完全构建完成。我们从idle起始状态开始，经历了数据加载、差异比较、结果查看、合并操作，最后到冲突检测和解决，形成了完整的数据差异比较工作流程。这个状态机包含了8个状态节点和26条转换边，覆盖了各种操作场景。",
+        "stage_index": 5,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 5,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 5,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "graph_metrics": {
+          "node_count": 7,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "idle",
+            "left_loaded",
+            "ready",
+            "diffing",
+            "merging",
+            "merge_complete",
+            "diff_complete"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    idle[\"idle\"]\n    left_loaded[\"left_loaded\"]\n    ready[\"ready\"]\n    diffing[\"diffing\"]\n    merging[\"merging\"]\n    merge_complete[\"merge_complete\"]\n    diff_complete[\"diff_complete\"]"
+      }
+    }
+  ]
+}
