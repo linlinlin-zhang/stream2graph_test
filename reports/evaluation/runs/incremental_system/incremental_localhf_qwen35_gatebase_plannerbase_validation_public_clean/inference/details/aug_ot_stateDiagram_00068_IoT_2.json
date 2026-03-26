@@ -1,0 +1,793 @@
+{
+  "sample_id": "aug_ot_stateDiagram_00068_IoT_2",
+  "diagram_type": "statediagram",
+  "generated_at_utc": "2026-03-25T23:13:29Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 12,
+    "total_stages": 2,
+    "updates_emitted": 2,
+    "final_stage_index": 2,
+    "applied_stage_indices": [
+      1,
+      2
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 3,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "IoT",
+        "NeedMore",
+        "Error"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    },
+    "reference_graph_metrics": {
+      "node_count": 3,
+      "edge_count": 3,
+      "group_count": 0,
+      "node_ids": [
+        "NeedMore",
+        "Complete",
+        "Error"
+      ],
+      "edge_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "group_ids": []
+    }
+  },
+  "final_state": {
+    "sample_id": "aug_ot_stateDiagram_00068_IoT_2",
+    "diagram_type": "statediagram",
+    "current_stage_index": 2,
+    "current_graph_ir": {
+      "graph_id": "aug_ot_stateDiagram_00068_IoT_2",
+      "diagram_type": "statediagram",
+      "nodes": [
+        {
+          "id": "IoT",
+          "label": "IoT",
+          "kind": "state",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "NeedMore",
+          "label": "NeedMore",
+          "kind": "state",
+          "parent": null,
+          "source_index": 3,
+          "metadata": {}
+        },
+        {
+          "id": "Error",
+          "label": "Error",
+          "kind": "state",
+          "parent": null,
+          "source_index": 5,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    IoT[\"IoT\"]\n    NeedMore[\"NeedMore\"]\n    Error[\"Error\"]",
+    "applied_stage_indices": [
+      1,
+      2
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 3,
+        "edge_count": 0,
+        "group_count": 0,
+        "node_ids": [
+          "IoT",
+          "NeedMore",
+          "Error"
+        ],
+        "edge_ids": [],
+        "group_ids": []
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "参与者A",
+        "content": "好的，我们来设计这个IoT数据处理的状态机。首先需要一个初始状态来处理持续的输入流。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "The current stage (index 0) is still in its introductory phase, discussing the concept of an initial state for continuous input streams. No concrete nodes, groups, or specific identifiers have been defined yet. The dialogue is generic and meta, lacking the buildable structure required to transition to the next stage.",
+        "confidence": 0.95,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3282.6471,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 0,\n  \"reason\": \"The current stage (index 0) is still in its introductory phase, discussing the concept of an initial state for continuous input streams. No concrete nodes, groups, or specific identifiers have been defined yet. The dialogue is generic and meta, lacking the buildable structure required to transition to the next stage.\",\n  \"confidence\": 0",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "参与者B",
+        "content": "同意。我建议我们先定义一个NeedMore状态，表示系统需要更多输入数据才能继续处理。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3243.5565,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 0,\n  \"reason\": \"The current stage (index 0) is still actively introducing concrete identifiers (NeedMore state) and has not yet reached a point where the graph structure is sufficiently populated to transition to the next stage. The dialogue is focused on defining the initial state and a specific sub-state, which aligns with the bootstrap phase of Stag",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "IoT",
+            "label": "IoT",
+            "kind": "state",
+            "id": "IoT"
+          },
+          {
+            "op": "add_node",
+            "node_id": "NeedMore",
+            "label": "NeedMore",
+            "kind": "state",
+            "id": "NeedMore"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added initial IoT state and NeedMore state as discussed.",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 8406.1713,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"IoT\",\n      \"label\": \"IoT\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"NeedMore\",\n      \"label\": \"NeedMore\",\n      \"kind\": \"state\"\n    }\n  ],\n  \"notes\": \"Added initial IoT state and NeedMore state as discussed.\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "IoT",
+            "label": "IoT",
+            "kind": "state",
+            "id": "IoT"
+          },
+          {
+            "op": "add_node",
+            "node_id": "NeedMore",
+            "label": "NeedMore",
+            "kind": "state",
+            "id": "NeedMore"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "IoT",
+            "NeedMore"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 2,
+          "edge_count": 2,
+          "group_count": 0,
+          "delta_count": 4
+        },
+        "preview_mermaid": "graph TD\n    IoT[\"IoT\"]\n    NeedMore[\"NeedMore\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "IoT",
+            "NeedMore"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    IoT[\"IoT\"]\n    NeedMore[\"NeedMore\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "参与者A",
+        "content": "很好。那我们需要一条从NeedMore回到自身的边，用来表示收到更多输入数据的情况。这样形成一个循环。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3257.7446,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The current stage (Stage 1) is actively introducing concrete nodes ('NeedMore') and defining structural logic (self-loop) for the initial state. The dialogue is still focused on establishing the foundational structure of the state machine before transitioning to the next stage. According to the guidelines, when the same stage is activel",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "IoT",
+            "NeedMore"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    IoT[\"IoT\"]\n    NeedMore[\"NeedMore\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "参与者C",
+        "content": "对，标签就写'more input'吧，表示接收到更多输入。那最终怎么结束呢？",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3284.3552,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The dialogue is still focused on defining the initial state structure (NeedMore) and its self-loop within Stage 1. The user asks 'how to end it', but no concrete nodes, groups, or edges for the next stage have been introduced yet. The current graph is empty of edges and groups, indicating the system is still in the bootstrap phase of",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "IoT",
+            "NeedMore"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    IoT[\"IoT\"]\n    NeedMore[\"NeedMore\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "参与者B",
+        "content": "需要一个Complete状态作为终止状态。从NeedMore到Complete的边标记为'EOF/complete'，表示输入结束或处理完成。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3273.2954,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The dialogue is still actively defining the structure for Stage 1 (introducing 'NeedMore', 'Complete', and transition labels). The current graph has 0 edges and only 2 nodes, indicating the stage is in its bootstrap phase. Per instructions, when the same stage is introducing concrete identifiers, we must WAIT until the stage has at leas",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "IoT",
+            "NeedMore"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    IoT[\"IoT\"]\n    NeedMore[\"NeedMore\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "参与者A",
+        "content": "完美。这样核心结构就有了：一个NeedMore状态通过自环处理增量输入，最后转到Complete结束。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3260.5429,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The dialogue is still actively defining the core structure of Stage 1 (IoT processing state machine). Participants are discussing specific states (NeedMore, Complete) and transitions (self-loop, EOF). The current graph has 0 edges, indicating the structural definition is incomplete. Per instructions, when the same stage is actively intr",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "IoT",
+            "NeedMore"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    IoT[\"IoT\"]\n    NeedMore[\"NeedMore\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 7,
+        "speaker": "参与者C",
+        "content": "现在考虑异常情况。如果输入处理过程中出现错误怎么办？",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3246.2745,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"EMIT_UPDATE\",\n  \"target_stage_index\": 2,\n  \"reason\": \"The dialogue has completed Stage 1 by defining concrete nodes ('NeedMore', 'IoT') and edges ('self-loop', 'EOF/complete') as requested. The final turn (Turn 7) explicitly introduces the topic for Stage 2 (error handling), providing the necessary context to transition to the next stage. The current graph is ready for",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "IoT",
+            "NeedMore"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    IoT[\"IoT\"]\n    NeedMore[\"NeedMore\"]"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Error",
+            "label": "Error",
+            "kind": "state",
+            "id": "Error"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added Error state to handle exceptions in input processing.",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 5578.0184,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 2,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Error\",\n      \"label\": \"Error\",\n      \"kind\": \"state\"\n    }\n  ],\n  \"notes\": \"Added Error state to handle exceptions in input processing.\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Error",
+            "label": "Error",
+            "kind": "state",
+            "id": "Error"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "IoT",
+            "NeedMore",
+            "Error"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 3,
+          "edge_count": 3,
+          "group_count": 0,
+          "delta_count": 2
+        },
+        "preview_mermaid": "graph TD\n    IoT[\"IoT\"]\n    NeedMore[\"NeedMore\"]\n    Error[\"Error\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "IoT",
+            "NeedMore",
+            "Error"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    IoT[\"IoT\"]\n    NeedMore[\"NeedMore\"]\n    Error[\"Error\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 8,
+        "speaker": "参与者B",
+        "content": "应该添加一个Error状态来处理这种情况。当处理失败时，系统转入错误状态。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "IoT",
+            "NeedMore",
+            "Error"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    IoT[\"IoT\"]\n    NeedMore[\"NeedMore\"]\n    Error[\"Error\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 9,
+        "speaker": "参与者A",
+        "content": "同意。从NeedMore到Error加一条边，标签为'error'。这样任何阶段的处理失败都能被捕获。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "IoT",
+            "NeedMore",
+            "Error"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    IoT[\"IoT\"]\n    NeedMore[\"NeedMore\"]\n    Error[\"Error\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 10,
+        "speaker": "参与者C",
+        "content": "Error状态作为终端状态应该没有出边，对吧？表示错误后不需要进一步处理。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "IoT",
+            "NeedMore",
+            "Error"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    IoT[\"IoT\"]\n    NeedMore[\"NeedMore\"]\n    Error[\"Error\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 11,
+        "speaker": "参与者B",
+        "content": "对，Complete和Error都是终止状态，不应该有后续转移。这个状态机就完整了。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "IoT",
+            "NeedMore",
+            "Error"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    IoT[\"IoT\"]\n    NeedMore[\"NeedMore\"]\n    Error[\"Error\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 12,
+        "speaker": "参与者A",
+        "content": "很好。总结一下：NeedMore处理输入循环，EOF转到Complete正常结束，出错转到Error状态。模型完整且一致。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "IoT",
+            "NeedMore",
+            "Error"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    IoT[\"IoT\"]\n    NeedMore[\"NeedMore\"]\n    Error[\"Error\"]"
+      }
+    }
+  ]
+}

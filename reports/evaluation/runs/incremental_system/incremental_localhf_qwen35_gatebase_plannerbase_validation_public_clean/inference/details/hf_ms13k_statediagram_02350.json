@@ -1,0 +1,910 @@
+{
+  "sample_id": "hf_ms13k_statediagram_02350",
+  "diagram_type": "statediagram",
+  "generated_at_utc": "2026-03-25T19:55:27Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 9,
+    "total_stages": 4,
+    "updates_emitted": 4,
+    "final_stage_index": 4,
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 6,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "state_start",
+        "Idle",
+        "Login",
+        "Transfer",
+        "Logout",
+        "ViewAccount"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    },
+    "reference_graph_metrics": {
+      "node_count": 6,
+      "edge_count": 6,
+      "group_count": 0,
+      "node_ids": [
+        "Idle",
+        "state_start",
+        "Login",
+        "ViewAccount",
+        "TransferFunds",
+        "Logout"
+      ],
+      "edge_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e5",
+        "e6"
+      ],
+      "group_ids": []
+    }
+  },
+  "final_state": {
+    "sample_id": "hf_ms13k_statediagram_02350",
+    "diagram_type": "statediagram",
+    "current_stage_index": 4,
+    "current_graph_ir": {
+      "graph_id": "hf_ms13k_statediagram_02350",
+      "diagram_type": "statediagram",
+      "nodes": [
+        {
+          "id": "state_start",
+          "label": "[*]",
+          "kind": "start",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "Idle",
+          "label": "Idle",
+          "kind": "state",
+          "parent": null,
+          "source_index": 3,
+          "metadata": {}
+        },
+        {
+          "id": "Login",
+          "label": "Login",
+          "kind": "state",
+          "parent": null,
+          "source_index": 5,
+          "metadata": {}
+        },
+        {
+          "id": "Transfer",
+          "label": "Transfer",
+          "kind": "state",
+          "parent": null,
+          "source_index": 7,
+          "metadata": {}
+        },
+        {
+          "id": "Logout",
+          "label": "Logout",
+          "kind": "state",
+          "parent": null,
+          "source_index": 8,
+          "metadata": {}
+        },
+        {
+          "id": "ViewAccount",
+          "label": "ViewAccount",
+          "kind": "state",
+          "parent": null,
+          "source_index": 10,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Idle[\"Idle\"]\n    Login[\"Login\"]\n    Transfer[\"Transfer\"]\n    Logout[\"Logout\"]\n    ViewAccount[\"ViewAccount\"]",
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 6,
+        "edge_count": 0,
+        "group_count": 0,
+        "node_ids": [
+          "state_start",
+          "Idle",
+          "Login",
+          "Transfer",
+          "Logout",
+          "ViewAccount"
+        ],
+        "edge_ids": [],
+        "group_ids": []
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "设计师A",
+        "content": "好的，我们来设计这个银行系统的状态机。首先需要一个起始点——[*]，然后默认进入空闲状态。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "The current stage (Stage 1) is actively introducing the initial concept (starting point) but has not yet provided concrete buildable structure like specific state names, transitions, or identifiers. The dialogue is still generic/meta about the process. Waiting allows the user to define the specific states and transitions before the graph is populated.",
+        "confidence": 0.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3814.6553,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The current stage (Stage 1) is actively introducing the initial concept (starting point) but has not yet provided concrete buildable structure like specific state names, transitions, or identifiers. The dialogue is still generic/meta about the process. Waiting allows the user to define the specific states and transitions before the grap",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "设计师B",
+        "content": "明白，我先把state_start（[*]）和Idle状态画上去。它们之间用e1这条边连接，表示系统启动后直接进入空闲状态。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "The current stage (Stage 1) is actively introducing concrete identifiers (state_start, Idle, e1) and describing the initial structure. Per the guidelines, when the same stage is still introducing concrete buildable structure, the system should WAIT until the stage has at least a couple of substantive turns to ensure the graph is ready for the next stage transition.",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 4114.9836,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The current stage (Stage 1) is actively introducing concrete identifiers (state_start, Idle, e1) and describing the initial structure. Per the guidelines, when the same stage is still introducing concrete buildable structure, the system should WAIT until the stage has at least a couple of substantive turns to ensure the graph is ready f",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "state_start",
+            "label": "[*]",
+            "kind": "start",
+            "id": "state_start"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Idle",
+            "label": "Idle",
+            "kind": "state",
+            "id": "Idle"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added start node and Idle state as per dialogue; edge e1 omitted due to statediagram prior disallowing edges.",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 11301.635,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"state_start\",\n      \"label\": \"[*]\",\n      \"kind\": \"start\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Idle\",\n      \"label\": \"Idle\",\n      \"kind\": \"state\"\n    }\n  ],\n  \"notes\": \"Added start node and Idle state as per dialogue; edge e1 omitted due to statediagram prior disallowing edges.\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "state_start",
+            "label": "[*]",
+            "kind": "start",
+            "id": "state_start"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Idle",
+            "label": "Idle",
+            "kind": "state",
+            "id": "Idle"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Idle"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 2,
+          "edge_count": 1,
+          "group_count": 0,
+          "delta_count": 3
+        },
+        "preview_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Idle[\"Idle\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Idle"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Idle[\"Idle\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "设计师A",
+        "content": "很好，基础框架已经搭好了。现在用户需要登录才能进行操作，我们加一个Login状态吧。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3860.0078,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"The dialogue is still in the early bootstrap phase of Stage 1. While Turn 3 mentions adding a 'Login' state, the current graph (current_stage_index: 1) only contains 'state_start' and 'Idle'. The instruction to add 'Login' has not yet been executed or reflected in the graph. Per the system constraints, when",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Idle"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Idle[\"Idle\"]"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Login",
+            "label": "Login",
+            "kind": "state",
+            "parent": null,
+            "id": "Login"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added Login state as requested for stage 2.",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 6922.929,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 2,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Login\",\n      \"label\": \"Login\",\n      \"kind\": \"state\",\n      \"parent\": null\n    }\n  ],\n  \"notes\": \"Added Login state as requested for stage 2.\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Login",
+            "label": "Login",
+            "kind": "state",
+            "parent": null,
+            "id": "Login"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Idle",
+            "Login"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 3,
+          "edge_count": 2,
+          "group_count": 0,
+          "delta_count": 2
+        },
+        "preview_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Idle[\"Idle\"]\n    Login[\"Login\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Idle",
+            "Login"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Idle[\"Idle\"]\n    Login[\"Login\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "设计师B",
+        "content": "我来添加Login状态，然后从Idle画一条边到Login，标注'Enter Credentials'，表示用户在空闲状态下输入凭证。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3681.5131,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"The dialogue is still actively introducing concrete nodes for Stage 2 (specifically the 'Login' state). The current graph has 0 edges, and the recent turns are focused on adding the third node to complete the basic structure of Stage 2. Per the instruction to avoid emitting too early when the same stage is actively introducing identifie",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Idle",
+            "Login"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Idle[\"Idle\"]\n    Login[\"Login\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "设计师A",
+        "content": "好的，用户登录后会进行什么操作呢？应该需要转帐和退出登录这两个主要功能。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 3,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3551.6491,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"The dialogue is still in the early bootstrap phase of Stage 2. While the user has identified the need for 'Transfer' and 'Logout' actions, no concrete nodes, edges, or groups have been added to the graph yet. The current state shows 0 edges and 0 groups. According to the guidelines, when the same stage is actively introducing",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Idle",
+            "Login"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Idle[\"Idle\"]\n    Login[\"Login\"]"
+      },
+      "planner": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Transfer",
+            "label": "Transfer",
+            "kind": "state",
+            "id": "Transfer"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Logout",
+            "label": "Logout",
+            "kind": "state",
+            "id": "Logout"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added Transfer and Logout states as next actions after Login.",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 9080.0724,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 3,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Transfer\",\n      \"label\": \"Transfer\",\n      \"kind\": \"state\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Logout\",\n      \"label\": \"Logout\",\n      \"kind\": \"state\"\n    }\n  ],\n  \"notes\": \"Added Transfer and Logout states as next actions after Login.\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Transfer",
+            "label": "Transfer",
+            "kind": "state",
+            "id": "Transfer"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Logout",
+            "label": "Logout",
+            "kind": "state",
+            "id": "Logout"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Idle",
+            "Login",
+            "Transfer",
+            "Logout"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 5,
+          "edge_count": 2,
+          "group_count": 0,
+          "delta_count": 2
+        },
+        "preview_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Idle[\"Idle\"]\n    Login[\"Login\"]\n    Transfer[\"Transfer\"]\n    Logout[\"Logout\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Idle",
+            "Login",
+            "Transfer",
+            "Logout"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Idle[\"Idle\"]\n    Login[\"Login\"]\n    Transfer[\"Transfer\"]\n    Logout[\"Logout\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "设计师B",
+        "content": "我先添加TransferFunds和Logout这两个状态，这样后面就可以给它们连边了。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3709.496,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"The dialogue is still actively introducing concrete nodes for Stage 3 (specifically 'TransferFunds' and 'Logout' in turn 6). The current graph shows 0 edges, indicating that the structural connections for Stage 3 have not yet been established or discussed. Per the instruction to avoid emitting too early when the same stage is actively i",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Idle",
+            "Login",
+            "Transfer",
+            "Logout"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Idle[\"Idle\"]\n    Login[\"Login\"]\n    Transfer[\"Transfer\"]\n    Logout[\"Logout\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 7,
+        "speaker": "设计师A",
+        "content": "不错，现在需要一个中间状态来让用户选择操作。登录后应该先查看账户信息。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 4,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3615.0002,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 3,\n  \"reason\": \"The dialogue is still in the process of defining the structure for Stage 3 (introducing TransferFunds and Logout) and transitioning to Stage 4 (introducing an intermediate state). The current graph has 0 edges, indicating that the connections between the newly introduced nodes are not yet established. The system should wait for the dial",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Idle",
+            "Login",
+            "Transfer",
+            "Logout"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Idle[\"Idle\"]\n    Login[\"Login\"]\n    Transfer[\"Transfer\"]\n    Logout[\"Logout\"]"
+      },
+      "planner": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "ViewAccount",
+            "label": "ViewAccount",
+            "kind": "state",
+            "id": "ViewAccount"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added ViewAccount state as the intermediate step after Login for viewing account info.",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 6673.43,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 4,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"ViewAccount\",\n      \"label\": \"ViewAccount\",\n      \"kind\": \"state\"\n    }\n  ],\n  \"notes\": \"Added ViewAccount state as the intermediate step after Login for viewing account info.\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "ViewAccount",
+            "label": "ViewAccount",
+            "kind": "state",
+            "id": "ViewAccount"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Idle",
+            "Login",
+            "Transfer",
+            "Logout",
+            "ViewAccount"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 6,
+          "edge_count": 6,
+          "group_count": 0,
+          "delta_count": 5
+        },
+        "preview_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Idle[\"Idle\"]\n    Login[\"Login\"]\n    Transfer[\"Transfer\"]\n    Logout[\"Logout\"]\n    ViewAccount[\"ViewAccount\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Idle",
+            "Login",
+            "Transfer",
+            "Logout",
+            "ViewAccount"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Idle[\"Idle\"]\n    Login[\"Login\"]\n    Transfer[\"Transfer\"]\n    Logout[\"Logout\"]\n    ViewAccount[\"ViewAccount\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 8,
+        "speaker": "设计师B",
+        "content": "我加上ViewAccount状态，然后完成所有剩余的边：从Login到ViewAccount（'View Account'），从ViewAccount到TransferFunds（'Initiate Transfer'），从TransferFunds回到ViewAccount（'Transfer Complete'），最后从ViewAccount到Logout（'Logout'）。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Idle",
+            "Login",
+            "Transfer",
+            "Logout",
+            "ViewAccount"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Idle[\"Idle\"]\n    Login[\"Login\"]\n    Transfer[\"Transfer\"]\n    Logout[\"Logout\"]\n    ViewAccount[\"ViewAccount\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 9,
+        "speaker": "设计师A",
+        "content": "完美！这个状态机现在就完整了，用户可以从Idle开始，登录后查看账户，决定是否转帐，转帐完成后继续查看或退出登录。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "state_start",
+            "Idle",
+            "Login",
+            "Transfer",
+            "Logout",
+            "ViewAccount"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    state_start[\"[*]\"]\n    Idle[\"Idle\"]\n    Login[\"Login\"]\n    Transfer[\"Transfer\"]\n    Logout[\"Logout\"]\n    ViewAccount[\"ViewAccount\"]"
+      }
+    }
+  ]
+}

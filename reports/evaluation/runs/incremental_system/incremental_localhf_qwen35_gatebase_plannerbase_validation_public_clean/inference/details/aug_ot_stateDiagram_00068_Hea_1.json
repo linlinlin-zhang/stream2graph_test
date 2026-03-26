@@ -1,0 +1,706 @@
+{
+  "sample_id": "aug_ot_stateDiagram_00068_Hea_1",
+  "diagram_type": "statediagram",
+  "generated_at_utc": "2026-03-25T23:12:52Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 10,
+    "total_stages": 2,
+    "updates_emitted": 2,
+    "final_stage_index": 2,
+    "applied_stage_indices": [
+      1,
+      2
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 3,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "NeedMore",
+        "Complete",
+        "Error"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    },
+    "reference_graph_metrics": {
+      "node_count": 3,
+      "edge_count": 3,
+      "group_count": 0,
+      "node_ids": [
+        "NeedMore",
+        "Complete",
+        "Error"
+      ],
+      "edge_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "group_ids": []
+    }
+  },
+  "final_state": {
+    "sample_id": "aug_ot_stateDiagram_00068_Hea_1",
+    "diagram_type": "statediagram",
+    "current_stage_index": 2,
+    "current_graph_ir": {
+      "graph_id": "aug_ot_stateDiagram_00068_Hea_1",
+      "diagram_type": "statediagram",
+      "nodes": [
+        {
+          "id": "NeedMore",
+          "label": "NeedMore",
+          "kind": "state",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "Complete",
+          "label": "Complete",
+          "kind": "state",
+          "parent": null,
+          "source_index": 4,
+          "metadata": {}
+        },
+        {
+          "id": "Error",
+          "label": "Error",
+          "kind": "state",
+          "parent": null,
+          "source_index": 5,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    NeedMore[\"NeedMore\"]\n    Complete[\"Complete\"]\n    Error[\"Error\"]",
+    "applied_stage_indices": [
+      1,
+      2
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 3,
+        "edge_count": 0,
+        "group_count": 0,
+        "node_ids": [
+          "NeedMore",
+          "Complete",
+          "Error"
+        ],
+        "edge_ids": [],
+        "group_ids": []
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "A",
+        "content": "好的，我们来设计一个处理输入的状态机。首先，我们需要一个状态来表明系统还在等待更多的输入数据。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "The current stage (index 0) is still in its introductory phase, discussing the concept of a 'waiting' state without defining concrete node identifiers, groups, or specific state transitions. The dialogue is generic and lacks the buildable structure required to proceed to the next stage.",
+        "confidence": 0.95,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3229.6531,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 0,\n  \"reason\": \"The current stage (index 0) is still in its introductory phase, discussing the concept of a 'waiting' state without defining concrete node identifiers, groups, or specific state transitions. The dialogue is generic and lacks the buildable structure required to proceed to the next stage.\",\n  \"confidence\": 0.95\n}",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "B",
+        "content": "明白，这是初始状态。我来创建一个叫做 NeedMore 的状态节点，代表等待额外输入的状态。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "The current stage (Stage 1) is actively introducing concrete identifiers (the 'NeedMore' state node) and defining its purpose. The system should wait for this stage to complete its substantive turns before emitting an update to Stage 1, as per the instruction to avoid emitting too early for bootstrap-heavy stages.",
+        "confidence": 0.9,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3338.0365,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The current stage (Stage 1) is actively introducing concrete identifiers (the 'NeedMore' state node) and defining its purpose. The system should wait for this stage to complete its substantive turns before emitting an update to Stage 1, as per the instruction to avoid emitting too early for bootstrap-heavy stages.\",\n  \"confidence\": 0.9",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "NeedMore",
+            "label": "NeedMore",
+            "kind": "state",
+            "id": "NeedMore"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added initial state node NeedMore as per dialogue.",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 5793.788,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"NeedMore\",\n      \"label\": \"NeedMore\",\n      \"kind\": \"state\"\n    }\n  ],\n  \"notes\": \"Added initial state node NeedMore as per dialogue.\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "NeedMore",
+            "label": "NeedMore",
+            "kind": "state",
+            "id": "NeedMore"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "NeedMore"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 2,
+          "edge_count": 2,
+          "group_count": 0,
+          "delta_count": 4
+        },
+        "preview_mermaid": "graph TD\n    NeedMore[\"NeedMore\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "NeedMore"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    NeedMore[\"NeedMore\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "A",
+        "content": "很好。现在，如果系统继续收到输入数据，它应该保持在等待状态。我们可以加一个自循环来表达这个行为。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3252.6052,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The current stage (Stage 1) is actively introducing concrete structure (the 'NeedMore' node) and discussing its behavior (self-loop). The dialogue is still focused on defining the initial state and its internal transitions. According to the guidelines, when the same stage is actively introducing concrete identifiers, we should prefer WA",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "NeedMore"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    NeedMore[\"NeedMore\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "B",
+        "content": "我在 NeedMore 状态上添加一条标记为 'more input' 的自循环边。这样每次收到更多输入时，状态机就会循环回到自身。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3251.0383,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The current stage (Stage 1) is actively introducing concrete structure (Node 'NeedMore' and planning a self-loop edge). The dialogue is still focused on defining the initial state and its internal transitions. According to the guidelines, when the same stage is actively introducing concrete identifiers, we should prefer WAIT until the s",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "NeedMore"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    NeedMore[\"NeedMore\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "A",
+        "content": "不错。那当所有输入都完成后呢？我们需要表示成功完成的状态。创建一个 Complete 状态吧。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3242.9633,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The dialogue is still actively introducing concrete identifiers for the current stage (Stage 1). Turn 5 introduces a new node 'Complete', but the system has only processed the initial 'NeedMore' node and zero edges. The stage is not yet complete with a couple of substantive turns defining the full structure of this stage before transiti",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "NeedMore"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    NeedMore[\"NeedMore\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "B",
+        "content": "添加了 Complete 状态。现在加一条从 NeedMore 到 Complete 的边，标记为 'EOF/complete'，表示收到文件结束或完成信号时转移到完成状态。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Bootstrap Core"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3255.0397,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The dialogue is still actively introducing concrete nodes and edges for Stage 1 (specifically adding the 'Complete' state and the transition edge). The current state shows only 1 node and 0 edges, indicating the stage is not yet complete. Per instructions, when the same stage is actively introducing identifiers, we must prefer WAIT unti",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "NeedMore"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    NeedMore[\"NeedMore\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 7,
+        "speaker": "A",
+        "content": "好的，基本的完成流程已经建立起来了。现在我们还需要考虑如果处理过程中出错了怎么办。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3283.4306,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"The dialogue is still in Stage 1, actively defining the initial state (NeedMore) and its self-loop. Although Turn 7 introduces the concept of error handling and hints at moving to Stage 2, no concrete nodes, edges, or groups for Stage 2 have been created yet. The current graph is lagging and lacks the buildable structure",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "NeedMore"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    NeedMore[\"NeedMore\"]"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Complete",
+            "label": "Complete",
+            "kind": "state",
+            "parent": null,
+            "id": "Complete"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Error",
+            "label": "Error",
+            "kind": "state",
+            "parent": null,
+            "id": "Error"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added Complete and Error states as per dialogue progression.",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 9106.6351,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 2,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Complete\",\n      \"label\": \"Complete\",\n      \"kind\": \"state\",\n      \"parent\": null\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Error\",\n      \"label\": \"Error\",\n      \"kind\": \"state\",\n      \"parent\": null\n    }\n  ],\n  \"notes\": \"Added Complete and Error states as per dialogue progression.\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "Complete",
+            "label": "Complete",
+            "kind": "state",
+            "parent": null,
+            "id": "Complete"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Error",
+            "label": "Error",
+            "kind": "state",
+            "parent": null,
+            "id": "Error"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "NeedMore",
+            "Complete",
+            "Error"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 3,
+          "edge_count": 3,
+          "group_count": 0,
+          "delta_count": 2
+        },
+        "preview_mermaid": "graph TD\n    NeedMore[\"NeedMore\"]\n    Complete[\"Complete\"]\n    Error[\"Error\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "NeedMore",
+            "Complete",
+            "Error"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    NeedMore[\"NeedMore\"]\n    Complete[\"Complete\"]\n    Error[\"Error\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 8,
+        "speaker": "B",
+        "content": "确实需要错误处理。我添加一个 Error 状态来表示出错的情况。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "NeedMore",
+            "Complete",
+            "Error"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    NeedMore[\"NeedMore\"]\n    Complete[\"Complete\"]\n    Error[\"Error\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 9,
+        "speaker": "A",
+        "content": "现在需要一条从 NeedMore 到 Error 的转换边，让系统在遇到问题时能转移到错误状态。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "NeedMore",
+            "Complete",
+            "Error"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    NeedMore[\"NeedMore\"]\n    Complete[\"Complete\"]\n    Error[\"Error\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 10,
+        "speaker": "B",
+        "content": "添加了从 NeedMore 到 Error 的边，标记为 'error'。这样状态机就完整了：可以循环等待输入，正常完成，或者遇到错误时转到错误状态。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": "Expand Main Branches"
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "NeedMore",
+            "Complete",
+            "Error"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    NeedMore[\"NeedMore\"]\n    Complete[\"Complete\"]\n    Error[\"Error\"]"
+      }
+    }
+  ]
+}

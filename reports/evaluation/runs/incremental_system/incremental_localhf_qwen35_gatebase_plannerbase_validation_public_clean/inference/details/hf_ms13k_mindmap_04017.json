@@ -1,0 +1,614 @@
+{
+  "sample_id": "hf_ms13k_mindmap_04017",
+  "diagram_type": "mindmap",
+  "generated_at_utc": "2026-03-25T20:58:19Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 8,
+    "total_stages": 2,
+    "updates_emitted": 2,
+    "final_stage_index": 2,
+    "applied_stage_indices": [
+      1,
+      2
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 3,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "root",
+        "评估",
+        "测验"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    },
+    "reference_graph_metrics": {
+      "node_count": 5,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "root",
+        "Assessments",
+        "Quizzes",
+        "Assignments",
+        "Exams"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    }
+  },
+  "final_state": {
+    "sample_id": "hf_ms13k_mindmap_04017",
+    "diagram_type": "mindmap",
+    "current_stage_index": 2,
+    "current_graph_ir": {
+      "graph_id": "hf_ms13k_mindmap_04017",
+      "diagram_type": "mindmap",
+      "nodes": [
+        {
+          "id": "root",
+          "label": "在线学习平台",
+          "kind": "root",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "评估",
+          "label": "评估",
+          "kind": "branch",
+          "parent": "root",
+          "source_index": 4,
+          "metadata": {}
+        },
+        {
+          "id": "测验",
+          "label": "测验",
+          "kind": "branch",
+          "parent": "root",
+          "source_index": 5,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    root[\"在线学习平台\"]\n    评估[\"评估\"]\n    测验[\"测验\"]",
+    "applied_stage_indices": [
+      1,
+      2
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 3,
+        "edge_count": 0,
+        "group_count": 0,
+        "node_ids": [
+          "root",
+          "评估",
+          "测验"
+        ],
+        "edge_ids": [],
+        "group_ids": []
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "user",
+        "content": "我想要创建一个关于在线学习平台的思维导图，你觉得应该从哪里开始？",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "用户询问如何开始创建思维导图，引入核心主题，与stage 1的root节点操作对齐。",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "The user is asking for guidance on where to start, which is a meta-discussion about the process rather than providing concrete buildable structure (nodes, groups, or specific topics). The current graph is empty, and the dialogue is generic. We must wait for the user to specify the root topic or the first concrete branch before emitting an update.",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3534.7562,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 0,\n  \"reason\": \"The user is asking for guidance on where to start, which is a meta-discussion about the process rather than providing concrete buildable structure (nodes, groups, or specific topics). The current graph is empty, and the dialogue is generic. We must wait for the user to specify the root topic or the first concrete branch before emitting ",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "assistant",
+        "content": "好的，让我们从核心主题开始。首先，我们需要一个中心节点来代表整个主题——「在线学习平台」。这是思维导图的主干，所有其他概念都将围绕它展开。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "助手明确提出添加中心节点「在线学习平台」，直接对应delta_ops中root节点操作。",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "The dialogue is still in the bootstrap phase (Stage 1) focusing on the core theme. The current graph is empty, and the user has not yet provided specific branches, actors, or components required to transition to Stage 2. Waiting ensures the concrete structure for the next stage is established before emitting an update.",
+        "confidence": 0.0,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3454.9549,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 0,\n  \"reason\": \"The dialogue is still in the bootstrap phase (Stage 1) focusing on the core theme. The current graph is empty, and the user has not yet provided specific branches, actors, or components required to transition to Stage 2. Waiting ensures the concrete structure for the next stage is established before emitting an update.\",\n  \"confidence\":",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "root",
+            "label": "在线学习平台",
+            "kind": "root",
+            "id": "root"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added root node for the mindmap topic.",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 5966.0792,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"root\",\n      \"label\": \"在线学习平台\",\n      \"kind\": \"root\"\n    }\n  ],\n  \"notes\": \"Added root node for the mindmap topic.\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "root",
+            "label": "在线学习平台",
+            "kind": "root",
+            "id": "root"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "root"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "delta_count": 3
+        },
+        "preview_mermaid": "graph TD\n    root[\"在线学习平台\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "root"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    root[\"在线学习平台\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "user",
+        "content": "明白了，那一级分支应该包含哪些主要类别呢？",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "用户询问一级分支应包含哪些主要类别，推进核心分支的讨论，符合stage 1范围。",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3791.115,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The current stage (1) is actively introducing the structure for the first level of branches. The user has just asked for the main categories, but no concrete nodes, groups, or specific branch identifiers have been generated yet. The graph currently only contains the root node. We must wait for the assistant to provide the specific categ",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "root"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    root[\"在线学习平台\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "assistant",
+        "content": "对于在线学习平台来说，评估学习效果是非常重要的功能。我建议我们先添加两个核心分支：「评估」和「测验」。这两个概念是学生学习过程中不可或缺的组成部分。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "助手建议添加「评估」和「测验」两个核心分支，对应stage 1的Assessments和Quizzes节点操作，且为stage 1的最后一个操作。",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3925.7996,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The dialogue is still in the early bootstrap phase of Stage 1, actively defining the core theme and the first-level branches ('评估' and '测验'). The current graph has only 1 node ('root') and 0 edges, indicating that the structure for the first stage is incomplete. The user is asking for the next level of branches, but the",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "root"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    root[\"在线学习平台\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "user",
+        "content": "这两个分类确实很关键。不过在线学习平台应该还有其他重要的评估方式吧？",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "用户提出平台还有其他重要评估方式，引发stage 2的扩展操作，触发点准确。",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3925.4436,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The dialogue is still in the early stages of defining the first-level branches (Level 1). The user has just asked about other important assessment methods, and the assistant has not yet provided the specific concrete nodes or groups that constitute these branches. The current graph is empty (only root node), and the stage is actively in",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "root"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    root[\"在线学习平台\"]"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "评估",
+            "label": "评估",
+            "kind": "branch",
+            "parent": "root",
+            "id": "评估"
+          },
+          {
+            "op": "add_node",
+            "node_id": "测验",
+            "label": "测验",
+            "kind": "branch",
+            "parent": "root",
+            "id": "测验"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added '评估' and '测验' as first-level branches under '在线学习平台'.",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 12253.4783,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 2,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"评估\",\n      \"label\": \"评估\",\n      \"kind\": \"branch\",\n      \"parent\": \"root\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"测验\",\n      \"label\": \"测验\",\n      \"kind\": \"branch\",\n      \"parent\": \"root\"\n    }\n  ],\n  \"notes\": \"Added '评估' and '测验' as first-level branches under '在线学习平台'.\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "评估",
+            "label": "评估",
+            "kind": "branch",
+            "parent": "root",
+            "id": "评估"
+          },
+          {
+            "op": "add_node",
+            "node_id": "测验",
+            "label": "测验",
+            "kind": "branch",
+            "parent": "root",
+            "id": "测验"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "root",
+            "评估",
+            "测验"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "delta_count": 2
+        },
+        "preview_mermaid": "graph TD\n    root[\"在线学习平台\"]\n    评估[\"评估\"]\n    测验[\"测验\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "root",
+            "评估",
+            "测验"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    root[\"在线学习平台\"]\n    评估[\"评估\"]\n    测验[\"测验\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "assistant",
+        "content": "你说得对！除了评估和测验，在线学习平台通常还包括作业和考试这些重要的评估手段。让我把这些也添加进来，完善我们的思维导图。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "助手明确添加「作业」和「考试」，直接对应stage 2的delta_ops操作。",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "root",
+            "评估",
+            "测验"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    root[\"在线学习平台\"]\n    评估[\"评估\"]\n    测验[\"测验\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 7,
+        "speaker": "user",
+        "content": "很好，现在这个思维导图看起来完整了。作业、测验、考试、评估，这些构成了一个完整的在线学习评估体系。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "用户总结作业、测验、考试、评估构成完整评估体系，确认stage 2成果。",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "root",
+            "评估",
+            "测验"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    root[\"在线学习平台\"]\n    评估[\"评估\"]\n    测验[\"测验\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 8,
+        "speaker": "assistant",
+        "content": "是的，我们的在线学习平台思维导图现在已经完整了。中心是「在线学习平台」，四个分支分别是「评估」、「测验」、「作业」和「考试」，涵盖了在线学习环境中所有的核心评估机制。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": "助手总结最终结构，确认四个分支，stage 2正确结束于第8轮。",
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "root",
+            "评估",
+            "测验"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    root[\"在线学习平台\"]\n    评估[\"评估\"]\n    测验[\"测验\"]"
+      }
+    }
+  ]
+}

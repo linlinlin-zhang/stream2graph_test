@@ -1,0 +1,1028 @@
+{
+  "sample_id": "aug_gh_flowchart_00778_Edu_4",
+  "diagram_type": "flowchart",
+  "generated_at_utc": "2026-03-25T22:59:36Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 10,
+    "total_stages": 3,
+    "updates_emitted": 3,
+    "final_stage_index": 3,
+    "applied_stage_indices": [
+      1,
+      2,
+      3
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 7,
+      "edge_count": 0,
+      "group_count": 3,
+      "node_ids": [
+        "Path",
+        "VectorStoreEmbeddings",
+        "TopK",
+        "UserQuery",
+        "Chunker",
+        "SearchOutput",
+        "Raphael"
+      ],
+      "edge_ids": [],
+      "group_ids": [
+        "Education_GradeSync",
+        "Education_ContentCDN",
+        "LMS"
+      ]
+    },
+    "reference_graph_metrics": {
+      "node_count": 8,
+      "edge_count": 0,
+      "group_count": 1,
+      "node_ids": [
+        "Path",
+        "TopK",
+        "UserQuery",
+        "VectorStoreEmbeddings",
+        "Chunker",
+        "SearchOutput",
+        "Raphael",
+        "Eve"
+      ],
+      "edge_ids": [],
+      "group_ids": [
+        "Inputs"
+      ]
+    }
+  },
+  "final_state": {
+    "sample_id": "aug_gh_flowchart_00778_Edu_4",
+    "diagram_type": "flowchart",
+    "current_stage_index": 3,
+    "current_graph_ir": {
+      "graph_id": "aug_gh_flowchart_00778_Edu_4",
+      "diagram_type": "flowchart",
+      "nodes": [
+        {
+          "id": "Path",
+          "label": "Path",
+          "kind": "node",
+          "parent": "Education_ContentCDN",
+          "source_index": 4,
+          "metadata": {}
+        },
+        {
+          "id": "VectorStoreEmbeddings",
+          "label": "VectorStoreEmbeddings",
+          "kind": "node",
+          "parent": "LMS",
+          "source_index": 7,
+          "metadata": {}
+        },
+        {
+          "id": "TopK",
+          "label": "TopK",
+          "kind": "node",
+          "parent": "Education_StudentDB",
+          "source_index": 9,
+          "metadata": {}
+        },
+        {
+          "id": "UserQuery",
+          "label": "UserQuery",
+          "kind": "node",
+          "parent": "Education_ClassroomService",
+          "source_index": 10,
+          "metadata": {}
+        },
+        {
+          "id": "Chunker",
+          "label": "Chunker",
+          "kind": "node",
+          "parent": "Education_ContentCDN",
+          "source_index": 11,
+          "metadata": {}
+        },
+        {
+          "id": "SearchOutput",
+          "label": "SearchOutput",
+          "kind": "node",
+          "parent": "LMS",
+          "source_index": 12,
+          "metadata": {}
+        },
+        {
+          "id": "Raphael",
+          "label": "Raphael",
+          "kind": "node",
+          "parent": "Education_ContentCDN",
+          "source_index": 13,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [
+        {
+          "id": "Education_GradeSync",
+          "label": "Education_GradeSync",
+          "parent": null,
+          "member_ids": [],
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "Education_ContentCDN",
+          "label": "Education_ContentCDN",
+          "parent": null,
+          "member_ids": [],
+          "source_index": 3,
+          "metadata": {}
+        },
+        {
+          "id": "LMS",
+          "label": "LMS",
+          "parent": null,
+          "member_ids": [],
+          "source_index": 5,
+          "metadata": {}
+        }
+      ],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    Path[\"Path\"]\n    VectorStoreEmbeddings[\"VectorStoreEmbeddings\"]\n    TopK[\"TopK\"]\n    UserQuery[\"UserQuery\"]\n    Chunker[\"Chunker\"]\n    SearchOutput[\"SearchOutput\"]\n    Raphael[\"Raphael\"]",
+    "applied_stage_indices": [
+      1,
+      2,
+      3
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 7,
+        "edge_count": 0,
+        "group_count": 3,
+        "node_ids": [
+          "Path",
+          "VectorStoreEmbeddings",
+          "TopK",
+          "UserQuery",
+          "Chunker",
+          "SearchOutput",
+          "Raphael"
+        ],
+        "edge_ids": [],
+        "group_ids": [
+          "Education_GradeSync",
+          "Education_ContentCDN",
+          "LMS"
+        ]
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "王架构师",
+        "content": "李工，我们今天来搭建一个教育系统的核心架构。首先，我建议创建一个输入组来统一管理外部数据入口。这个组我们命名为Education_GradeSync，专门负责学生成绩数据的同步与管理。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3681.3345,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 0,\n  \"reason\": \"The dialogue is in the early bootstrap phase (Stage 0). While a specific group name 'Education_GradeSync' was mentioned in the first turn, the current graph is completely empty (0 nodes, 0 edges, 0 groups). The system needs to wait for the user to provide the concrete buildable structure (nodes, edges, or groups",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "李工程师",
+        "content": "明白，王架构师。那么在内容分发方面，我们需要一个基础节点来处理教学内容资源的路径管理。我建议使用Path节点，挂载在Education_ContentCDN服务下。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "The dialogue is still in the early bootstrap phase of Stage 1, introducing high-level concepts (input groups, content distribution) but lacking concrete buildable structure (specific node IDs, group IDs, or connections) required to transition to Stage 2. The current graph is empty, and the stage is actively defining the scope before concrete elements can be emitted.",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3389.3867,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 0,\n  \"reason\": \"The dialogue is still in the early bootstrap phase of Stage 1, introducing high-level concepts (input groups, content distribution) but lacking concrete buildable structure (specific node IDs, group IDs, or connections) required to transition to Stage 2. The current graph is empty, and the stage is actively defining the scope before con",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "Education_GradeSync",
+            "label": "Education_GradeSync",
+            "kind": "group",
+            "id": "Education_GradeSync"
+          },
+          {
+            "op": "add_group",
+            "group_id": "Education_ContentCDN",
+            "label": "Education_ContentCDN",
+            "kind": "group",
+            "id": "Education_ContentCDN"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Path",
+            "label": "Path",
+            "kind": "node",
+            "parent": "Education_ContentCDN",
+            "id": "Path"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added Education_GradeSync group and Education_ContentCDN group with Path node inside.",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 13254.5664,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_group\",\n      \"group_id\": \"Education_GradeSync\",\n      \"label\": \"Education_GradeSync\",\n      \"kind\": \"group\"\n    },\n    {\n      \"op\": \"add_group\",\n      \"group_id\": \"Education_ContentCDN\",\n      \"label\": \"Education_ContentCDN\",\n      \"kind\": \"group\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"Path\",\n      \"label\": \"Pat",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "Education_GradeSync",
+            "label": "Education_GradeSync",
+            "kind": "group",
+            "id": "Education_GradeSync"
+          },
+          {
+            "op": "add_group",
+            "group_id": "Education_ContentCDN",
+            "label": "Education_ContentCDN",
+            "kind": "group",
+            "id": "Education_ContentCDN"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Path",
+            "label": "Path",
+            "kind": "node",
+            "parent": "Education_ContentCDN",
+            "id": "Path"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [
+            "Path"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "Education_GradeSync",
+            "Education_ContentCDN"
+          ]
+        },
+        "gold_stage_metrics": {
+          "node_count": 3,
+          "edge_count": 0,
+          "group_count": 1,
+          "delta_count": 4
+        },
+        "preview_mermaid": "graph TD\n    Path[\"Path\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [
+            "Path"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "Education_GradeSync",
+            "Education_ContentCDN"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    Path[\"Path\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "王架构师",
+        "content": "很好。另外，学生数据库查询是核心功能之一，我们加入TopK节点，用于从Education_StudentDB中高效检索排名前K的学生数据。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3375.9449,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The dialogue is still actively introducing concrete nodes and groups for Stage 1 (Education_GradeSync, Education_ContentCDN, Path, TopK). The current state shows only 1 node and 2 groups, indicating the stage is not yet complete. Per instructions, when the same stage is actively introducing identifiers, we must WAIT until it has at leas",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [
+            "Path"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "Education_GradeSync",
+            "Education_ContentCDN"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    Path[\"Path\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "李工程师",
+        "content": "了解了。还有课堂教学服务的查询入口，我建议添加UserQuery节点，作为Education_ClassroomService的主要交互接口。这样我们就有三个核心节点了。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3450.9299,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The dialogue is still actively introducing concrete nodes and groups for Stage 1 (Education_GradeSync, Path, TopK, UserQuery). The current state shows only 1 node and 2 groups, indicating the stage is not yet complete or stable. Per instructions, when the same stage is actively introducing identifiers, we must WAIT until it has at least",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [
+            "Path"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "Education_GradeSync",
+            "Education_ContentCDN"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    Path[\"Path\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "王架构师",
+        "content": "不错，现在我们的核心架构已经初具规模。接下来，我需要扩展LMS门户的功能。VectorStoreEmbeddings节点可以提供语义向量化能力，让教育内容具备智能搜索的基础。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3269.4597,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"Stage 1 is still actively introducing concrete nodes and groups. Turn 5 introduces a new node (VectorStoreEmbeddings) and explicitly mentions moving to Stage 2, but the current graph state only reflects the initial setup of Stage 1 (1 node, 2 groups). The dialogue is in the process of defining the structure for Stage 1 before",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 2,
+          "node_ids": [
+            "Path"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "Education_GradeSync",
+            "Education_ContentCDN"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    Path[\"Path\"]"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "LMS",
+            "label": "LMS",
+            "parent": null,
+            "id": "LMS"
+          },
+          {
+            "op": "add_node",
+            "node_id": "VectorStoreEmbeddings",
+            "label": "VectorStoreEmbeddings",
+            "parent": "LMS",
+            "id": "VectorStoreEmbeddings"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added LMS group and VectorStoreEmbeddings node for semantic search capabilities.",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 9149.2939,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 2,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_group\",\n      \"group_id\": \"LMS\",\n      \"label\": \"LMS\",\n      \"parent\": null\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"VectorStoreEmbeddings\",\n      \"label\": \"VectorStoreEmbeddings\",\n      \"parent\": \"LMS\"\n    }\n  ],\n  \"notes\": \"Added LMS group and VectorStoreEmbeddings node for semantic search capabilities.\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_group",
+            "group_id": "LMS",
+            "label": "LMS",
+            "parent": null,
+            "id": "LMS"
+          },
+          {
+            "op": "add_node",
+            "node_id": "VectorStoreEmbeddings",
+            "label": "VectorStoreEmbeddings",
+            "parent": "LMS",
+            "id": "VectorStoreEmbeddings"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "Path",
+            "VectorStoreEmbeddings"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "Education_GradeSync",
+            "Education_ContentCDN",
+            "LMS"
+          ]
+        },
+        "gold_stage_metrics": {
+          "node_count": 6,
+          "edge_count": 0,
+          "group_count": 1,
+          "delta_count": 3
+        },
+        "preview_mermaid": "graph TD\n    Path[\"Path\"]\n    VectorStoreEmbeddings[\"VectorStoreEmbeddings\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "Path",
+            "VectorStoreEmbeddings"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "Education_GradeSync",
+            "Education_ContentCDN",
+            "LMS"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    Path[\"Path\"]\n    VectorStoreEmbeddings[\"VectorStoreEmbeddings\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "李工程师",
+        "content": "同意，同时在内容分发网络这边，我们需要一个内容分块处理节点。Chunker节点可以帮我们将大型教学视频或文档拆分成适合传输的小单元。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3353.1892,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"The dialogue is still actively introducing concrete nodes and groups for Stage 2 (VectorStoreEmbeddings, Chunker, LMS). According to the system instructions, when the same stage is actively introducing buildable structure, the model should prefer WAIT until the stage has at least a couple of substantive turns to ensure the graph is suff",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "Path",
+            "VectorStoreEmbeddings"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "Education_GradeSync",
+            "Education_ContentCDN",
+            "LMS"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    Path[\"Path\"]\n    VectorStoreEmbeddings[\"VectorStoreEmbeddings\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 7,
+        "speaker": "王架构师",
+        "content": "很好。那么在LMS门户侧，我们还需要一个SearchOutput节点来呈现搜索结果，为师生提供直观的内容检索反馈。这样就扩展到六个节点了。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3279.851,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"The dialogue is still actively introducing concrete nodes and groups for Stage 2 (turns 5, 6, 7). According to the system instructions, when the same stage is actively introducing identifiers, the model should prefer WAIT until the stage has at least a couple of substantive turns. The current state reflects only 2 nodes, indicating the ",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "Path",
+            "VectorStoreEmbeddings"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "Education_GradeSync",
+            "Education_ContentCDN",
+            "LMS"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    Path[\"Path\"]\n    VectorStoreEmbeddings[\"VectorStoreEmbeddings\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 8,
+        "speaker": "李工程师",
+        "content": "王架构师，我们还需要补充一些支持性节点来完成整个架构。我想添加Raphael节点作为Education_ContentCDN的辅助处理单元，用于特定内容的优化渲染。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 3,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3282.5451,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"The dialogue is still actively introducing concrete nodes and groups for Stage 2 (VectorStoreEmbeddings, Chunker, SearchOutput). Although Turn 8 mentions a Stage 3 node (Raphael), the system is currently in the middle of populating Stage 2. Per the instruction to avoid emitting too early when the same stage is actively introducing ident",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "Path",
+            "VectorStoreEmbeddings"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "Education_GradeSync",
+            "Education_ContentCDN",
+            "LMS"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    Path[\"Path\"]\n    VectorStoreEmbeddings[\"VectorStoreEmbeddings\"]"
+      },
+      "planner": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "TopK",
+            "label": "TopK",
+            "kind": "node",
+            "parent": "Education_StudentDB",
+            "id": "TopK"
+          },
+          {
+            "op": "add_node",
+            "node_id": "UserQuery",
+            "label": "UserQuery",
+            "kind": "node",
+            "parent": "Education_ClassroomService",
+            "id": "UserQuery"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Chunker",
+            "label": "Chunker",
+            "kind": "node",
+            "parent": "Education_ContentCDN",
+            "id": "Chunker"
+          },
+          {
+            "op": "add_node",
+            "node_id": "SearchOutput",
+            "label": "SearchOutput",
+            "kind": "node",
+            "parent": "LMS",
+            "id": "SearchOutput"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Raphael",
+            "label": "Raphael",
+            "kind": "node",
+            "parent": "Education_ContentCDN",
+            "id": "Raphael"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added TopK, UserQuery, Chunker, SearchOutput, and Raphael nodes to complete stage 3.",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 21329.181,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 3,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"TopK\",\n      \"label\": \"TopK\",\n      \"kind\": \"node\",\n      \"parent\": \"Education_StudentDB\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"UserQuery\",\n      \"label\": \"UserQuery\",\n      \"kind\": \"node\",\n      \"parent\": \"Education_ClassroomService\"\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": ",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "TopK",
+            "label": "TopK",
+            "kind": "node",
+            "parent": "Education_StudentDB",
+            "id": "TopK"
+          },
+          {
+            "op": "add_node",
+            "node_id": "UserQuery",
+            "label": "UserQuery",
+            "kind": "node",
+            "parent": "Education_ClassroomService",
+            "id": "UserQuery"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Chunker",
+            "label": "Chunker",
+            "kind": "node",
+            "parent": "Education_ContentCDN",
+            "id": "Chunker"
+          },
+          {
+            "op": "add_node",
+            "node_id": "SearchOutput",
+            "label": "SearchOutput",
+            "kind": "node",
+            "parent": "LMS",
+            "id": "SearchOutput"
+          },
+          {
+            "op": "add_node",
+            "node_id": "Raphael",
+            "label": "Raphael",
+            "kind": "node",
+            "parent": "Education_ContentCDN",
+            "id": "Raphael"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 7,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "Path",
+            "VectorStoreEmbeddings",
+            "TopK",
+            "UserQuery",
+            "Chunker",
+            "SearchOutput",
+            "Raphael"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "Education_GradeSync",
+            "Education_ContentCDN",
+            "LMS"
+          ]
+        },
+        "gold_stage_metrics": {
+          "node_count": 8,
+          "edge_count": 0,
+          "group_count": 1,
+          "delta_count": 2
+        },
+        "preview_mermaid": "graph TD\n    Path[\"Path\"]\n    VectorStoreEmbeddings[\"VectorStoreEmbeddings\"]\n    TopK[\"TopK\"]\n    UserQuery[\"UserQuery\"]\n    Chunker[\"Chunker\"]\n    SearchOutput[\"SearchOutput\"]\n    Raphael[\"Raphael\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 7,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "Path",
+            "VectorStoreEmbeddings",
+            "TopK",
+            "UserQuery",
+            "Chunker",
+            "SearchOutput",
+            "Raphael"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "Education_GradeSync",
+            "Education_ContentCDN",
+            "LMS"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    Path[\"Path\"]\n    VectorStoreEmbeddings[\"VectorStoreEmbeddings\"]\n    TopK[\"TopK\"]\n    UserQuery[\"UserQuery\"]\n    Chunker[\"Chunker\"]\n    SearchOutput[\"SearchOutput\"]\n    Raphael[\"Raphael\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 9,
+        "speaker": "王架构师",
+        "content": "好的，在LMS门户这边也加入Eve节点，作为Education_LMS_Portal的个性化推荐引擎，为学生提供定制化的学习路径建议。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 7,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "Path",
+            "VectorStoreEmbeddings",
+            "TopK",
+            "UserQuery",
+            "Chunker",
+            "SearchOutput",
+            "Raphael"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "Education_GradeSync",
+            "Education_ContentCDN",
+            "LMS"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    Path[\"Path\"]\n    VectorStoreEmbeddings[\"VectorStoreEmbeddings\"]\n    TopK[\"TopK\"]\n    UserQuery[\"UserQuery\"]\n    Chunker[\"Chunker\"]\n    SearchOutput[\"SearchOutput\"]\n    Raphael[\"Raphael\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 10,
+        "speaker": "李工程师",
+        "content": "现在我们的教育系统架构已经完整了。整体包含8个节点，涵盖成绩同步输入、内容分发网络、学生数据库、课堂教学服务以及LMS门户五大服务领域，结构清晰且各司其职。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": "aligned",
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 3,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 7,
+          "edge_count": 0,
+          "group_count": 3,
+          "node_ids": [
+            "Path",
+            "VectorStoreEmbeddings",
+            "TopK",
+            "UserQuery",
+            "Chunker",
+            "SearchOutput",
+            "Raphael"
+          ],
+          "edge_ids": [],
+          "group_ids": [
+            "Education_GradeSync",
+            "Education_ContentCDN",
+            "LMS"
+          ]
+        },
+        "rendered_mermaid": "graph TD\n    Path[\"Path\"]\n    VectorStoreEmbeddings[\"VectorStoreEmbeddings\"]\n    TopK[\"TopK\"]\n    UserQuery[\"UserQuery\"]\n    Chunker[\"Chunker\"]\n    SearchOutput[\"SearchOutput\"]\n    Raphael[\"Raphael\"]"
+      }
+    }
+  ]
+}

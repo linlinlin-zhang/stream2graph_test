@@ -1,0 +1,1151 @@
+{
+  "sample_id": "hf_ms13k_er_12130",
+  "diagram_type": "er",
+  "generated_at_utc": "2026-03-25T19:50:26Z",
+  "system": {
+    "algorithm_layer": "deterministic_algorithm_layer",
+    "gate_model": "llm_gate",
+    "planner_model": "llm_planner"
+  },
+  "summary": {
+    "turn_count": 15,
+    "total_stages": 4,
+    "updates_emitted": 4,
+    "final_stage_index": 4,
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "completed_all_stages": true,
+    "final_matches_reference": false,
+    "final_graph_metrics": {
+      "node_count": 5,
+      "edge_count": 0,
+      "group_count": 0,
+      "node_ids": [
+        "FIBER",
+        "SPINNING",
+        "WEAVING",
+        "DYEING",
+        "CUTTING"
+      ],
+      "edge_ids": [],
+      "group_ids": []
+    },
+    "reference_graph_metrics": {
+      "node_count": 7,
+      "edge_count": 6,
+      "group_count": 0,
+      "node_ids": [
+        "FIBER",
+        "SPINNING",
+        "WEAVING",
+        "DYEING",
+        "CUTTING",
+        "SEWING",
+        "DISTRIBUTION"
+      ],
+      "edge_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e5",
+        "e6"
+      ],
+      "group_ids": []
+    }
+  },
+  "final_state": {
+    "sample_id": "hf_ms13k_er_12130",
+    "diagram_type": "er",
+    "current_stage_index": 4,
+    "current_graph_ir": {
+      "graph_id": "hf_ms13k_er_12130",
+      "diagram_type": "er",
+      "nodes": [
+        {
+          "id": "FIBER",
+          "label": "FIBER",
+          "kind": "entity",
+          "parent": null,
+          "source_index": 2,
+          "metadata": {}
+        },
+        {
+          "id": "SPINNING",
+          "label": "SPINNING",
+          "kind": "entity",
+          "parent": null,
+          "source_index": 4,
+          "metadata": {}
+        },
+        {
+          "id": "WEAVING",
+          "label": "WEAVING",
+          "kind": "entity",
+          "parent": null,
+          "source_index": 6,
+          "metadata": {}
+        },
+        {
+          "id": "DYEING",
+          "label": "DYEING",
+          "kind": "entity",
+          "parent": null,
+          "source_index": 7,
+          "metadata": {}
+        },
+        {
+          "id": "CUTTING",
+          "label": "CUTTING",
+          "kind": "entity",
+          "parent": null,
+          "source_index": 9,
+          "metadata": {}
+        }
+      ],
+      "edges": [],
+      "groups": [],
+      "styles": [],
+      "metadata": {}
+    },
+    "rendered_mermaid": "graph TD\n    FIBER[\"FIBER\"]\n    SPINNING[\"SPINNING\"]\n    WEAVING[\"WEAVING\"]\n    DYEING[\"DYEING\"]\n    CUTTING[\"CUTTING\"]",
+    "applied_stage_indices": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "metadata": {
+      "graph_metrics": {
+        "node_count": 5,
+        "edge_count": 0,
+        "group_count": 0,
+        "node_ids": [
+          "FIBER",
+          "SPINNING",
+          "WEAVING",
+          "DYEING",
+          "CUTTING"
+        ],
+        "edge_ids": [],
+        "group_ids": []
+      }
+    }
+  },
+  "events": [
+    {
+      "turn": {
+        "turn_id": 0,
+        "speaker": "speaker_a",
+        "content": "小王，今天我来给你介绍我们纺织厂的完整生产流程。首先，所有的生产都从最基础的原料开始，那就是纤维。我们把原始的纤维材料称为FIBER。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3242.3131,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The current stage (Stage 1) is actively introducing concrete identifiers (FIBER) and defining the starting point of the process. The graph is empty, and the dialogue is still in the bootstrap phase of Stage 1. According to the guidelines, when the same stage is actively introducing concrete identifiers, we should prefer WAIT until the s",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 1,
+        "speaker": "speaker_b",
+        "content": "原来如此，那FIBER纤维接下来会怎么处理呢？",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3278.4655,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The current stage (Stage 1) is actively introducing concrete identifiers (FIBER) and defining the starting point of the process. The dialogue is still in the early, bootstrap phase of Stage 1, and the graph is empty. According to the guidelines, when the same stage is actively introducing concrete identifiers, we should prefer WAIT unti",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 0,
+        "applied_stage_indices": [],
+        "graph_metrics": {
+          "node_count": 0,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD"
+      },
+      "planner": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "FIBER",
+            "label": "FIBER",
+            "kind": "entity",
+            "id": "FIBER"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added FIBER node as the starting raw material entity.",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 5929.4267,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 1,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"FIBER\",\n      \"label\": \"FIBER\",\n      \"kind\": \"entity\"\n    }\n  ],\n  \"notes\": \"Added FIBER node as the starting raw material entity.\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 1,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "FIBER",
+            "label": "FIBER",
+            "kind": "entity",
+            "id": "FIBER"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "FIBER"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 2,
+          "edge_count": 1,
+          "group_count": 0,
+          "delta_count": 3
+        },
+        "preview_mermaid": "graph TD\n    FIBER[\"FIBER\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "FIBER"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    FIBER[\"FIBER\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 2,
+        "speaker": "speaker_a",
+        "content": "纤维材料会被送到纺纱工序，我们称之为SPINNING。这个过程将松散的纤维转化为可用的纱线。可以说，FIBER is processed by SPINNING，纤维通过纺纱得到处理。",
+        "stage_index": 1,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 1,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3319.3867,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The dialogue is still within Stage 1, actively introducing the relationship between FIBER and SPINNING. The current graph has only 1 node and 0 edges, indicating the stage is in its bootstrap phase. According to the guidelines, when the same stage is actively introducing concrete identifiers and relationships, the system should WAIT unt",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "FIBER"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    FIBER[\"FIBER\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 3,
+        "speaker": "speaker_b",
+        "content": "明白了，纺纱是第一步加工。那纺出来的纱线又要做什么呢？",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 2,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3423.9793,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 1,\n  \"reason\": \"The dialogue is still actively introducing concrete identifiers for Stage 1 (FIBER, SPINNING) and defining their relationships. The current graph has only 1 node and 0 edges, indicating the stage is not yet complete. The transition to Stage 2 (implied by the last turn) is premature before the foundational nodes and edges of Stage",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 1,
+        "applied_stage_indices": [
+          1
+        ],
+        "graph_metrics": {
+          "node_count": 1,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "FIBER"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    FIBER[\"FIBER\"]"
+      },
+      "planner": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "SPINNING",
+            "label": "SPINNING",
+            "kind": "entity",
+            "parent": null,
+            "id": "SPINNING"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added SPINNING entity as the next step in the textile production process.",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 6657.5139,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 2,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"SPINNING\",\n      \"label\": \"SPINNING\",\n      \"kind\": \"entity\",\n      \"parent\": null\n    }\n  ],\n  \"notes\": \"Added SPINNING entity as the next step in the textile production process.\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 2,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "SPINNING",
+            "label": "SPINNING",
+            "kind": "entity",
+            "parent": null,
+            "id": "SPINNING"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "FIBER",
+            "SPINNING"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 4,
+          "edge_count": 3,
+          "group_count": 0,
+          "delta_count": 4
+        },
+        "preview_mermaid": "graph TD\n    FIBER[\"FIBER\"]\n    SPINNING[\"SPINNING\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "FIBER",
+            "SPINNING"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    FIBER[\"FIBER\"]\n    SPINNING[\"SPINNING\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 4,
+        "speaker": "speaker_a",
+        "content": "纺纱完成后，纱线会被送往织造工序WEAVING。在这个环节，纱线被编织成布料。SPINNING is transformed into WEAVING，纺纱的产物转化为织造的材料。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3280.5629,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"The dialogue is still actively introducing concrete nodes and relationships for Stage 1 (FIBER, SPINNING) and the transition to Stage 2 (WEAVING). Although the current_stage_index is 2, the recent turns are defining the inputs for Stage 2 rather than fully establishing the structure of Stage 2 itself. The system should wait until",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "FIBER",
+            "SPINNING"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    FIBER[\"FIBER\"]\n    SPINNING[\"SPINNING\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 5,
+        "speaker": "speaker_b",
+        "content": "织出来的布料还需要处理吗？",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3283.0505,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"The dialogue is still actively introducing concrete nodes and relationships for Stage 1 (FIBER, SPINNING) and transitioning into Stage 2 (WEAVING). The current state shows only 2 nodes and 0 edges, indicating the graph is lagging. The user's last question asks about the next step after weaving, but the system has not",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "FIBER",
+            "SPINNING"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    FIBER[\"FIBER\"]\n    SPINNING[\"SPINNING\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 6,
+        "speaker": "speaker_a",
+        "content": "当然，布料还需要进行染色处理，也就是DYEING工序。WEAVING is colored by DYEING，织造出来的布料通过染色获得颜色。",
+        "stage_index": 2,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 2,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3314.4765,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"The dialogue is still actively introducing concrete nodes and relationships for Stage 1 (FIBER, SPINNING) and Stage 2 (WEAVING, DYEING). Although the current_stage_index is 2, the recent turns (turns 0-6) are predominantly focused on defining the entities and their transformations within the earlier stages. The",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "FIBER",
+            "SPINNING"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    FIBER[\"FIBER\"]\n    SPINNING[\"SPINNING\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 7,
+        "speaker": "speaker_b",
+        "content": "原来如此，那染好色的布料接下来呢？",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 3,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3311.4598,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"WAIT\",\n  \"target_stage_index\": 2,\n  \"reason\": \"The dialogue is still actively introducing concrete nodes and relationships for Stage 1 (FIBER, SPINNING) and Stage 2 (WEAVING, DYEING). Although the user asks about the next step in Turn 7, the current graph state shows only 2 nodes and 0 edges, indicating that the foundational structure for Stage 2",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": true,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 2,
+        "applied_stage_indices": [
+          1,
+          2
+        ],
+        "graph_metrics": {
+          "node_count": 2,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "FIBER",
+            "SPINNING"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    FIBER[\"FIBER\"]\n    SPINNING[\"SPINNING\"]"
+      },
+      "planner": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "WEAVING",
+            "label": "WEAVING",
+            "kind": "entity",
+            "parent": null,
+            "id": "WEAVING"
+          },
+          {
+            "op": "add_node",
+            "node_id": "DYEING",
+            "label": "DYEING",
+            "kind": "entity",
+            "parent": null,
+            "id": "DYEING"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added WEAVING and DYEING entities based on dialogue turns 4 and 6.",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 10140.5196,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 3,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"WEAVING\",\n      \"label\": \"WEAVING\",\n      \"kind\": \"entity\",\n      \"parent\": null\n    },\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"DYEING\",\n      \"label\": \"DYEING\",\n      \"kind\": \"entity\",\n      \"parent\": null\n    }\n  ],\n  \"notes\": \"Added WEAVING and DYEING entities based on dialogue turns 4 and 6.\"\n",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 3,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "WEAVING",
+            "label": "WEAVING",
+            "kind": "entity",
+            "parent": null,
+            "id": "WEAVING"
+          },
+          {
+            "op": "add_node",
+            "node_id": "DYEING",
+            "label": "DYEING",
+            "kind": "entity",
+            "parent": null,
+            "id": "DYEING"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "FIBER",
+            "SPINNING",
+            "WEAVING",
+            "DYEING"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 6,
+          "edge_count": 5,
+          "group_count": 0,
+          "delta_count": 4
+        },
+        "preview_mermaid": "graph TD\n    FIBER[\"FIBER\"]\n    SPINNING[\"SPINNING\"]\n    WEAVING[\"WEAVING\"]\n    DYEING[\"DYEING\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "FIBER",
+            "SPINNING",
+            "WEAVING",
+            "DYEING"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    FIBER[\"FIBER\"]\n    SPINNING[\"SPINNING\"]\n    WEAVING[\"WEAVING\"]\n    DYEING[\"DYEING\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 8,
+        "speaker": "speaker_a",
+        "content": "染色完成后的布料会被送到裁剪工序CUTTING。DYEING is prepared for CUTTING，染色后的布料为裁剪做好准备，按照设计图纸裁切成不同的衣片。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "EMIT_UPDATE",
+        "target_stage_index": 4,
+        "reason": "",
+        "confidence": null,
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B",
+          "latency_ms": 3301.018,
+          "usage": {},
+          "raw_text_preview": "{\n  \"action\": \"EMIT_UPDATE\",\n  \"target_stage_index\": 3,\n  \"reason\": \"The dialogue has completed the definition of Stage 2 (WEAVING) and Stage 3 (CUTTING) by introducing concrete nodes (FIBER, SPINNING, WEAVING, DYEING) and describing their relationships. The current state reflects the end of Stage 2's node accumulation and the beginning of Stage 3's",
+          "semantic_attempt": 1,
+          "fallback_forced_emit": false,
+          "salvaged_partial_json": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 3,
+        "applied_stage_indices": [
+          1,
+          2,
+          3
+        ],
+        "graph_metrics": {
+          "node_count": 4,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "FIBER",
+            "SPINNING",
+            "WEAVING",
+            "DYEING"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    FIBER[\"FIBER\"]\n    SPINNING[\"SPINNING\"]\n    WEAVING[\"WEAVING\"]\n    DYEING[\"DYEING\"]"
+      },
+      "planner": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "CUTTING",
+            "label": "CUTTING",
+            "kind": "entity",
+            "parent": null,
+            "id": "CUTTING"
+          }
+        ],
+        "target_graph_ir": null,
+        "notes": "Added CUTTING node as the final stage in the textile production process.",
+        "metadata": {
+          "model_name": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-27B",
+          "latency_ms": 6647.2175,
+          "usage": {},
+          "raw_text_preview": "{\n  \"target_stage_index\": 4,\n  \"delta_ops\": [\n    {\n      \"op\": \"add_node\",\n      \"node_id\": \"CUTTING\",\n      \"label\": \"CUTTING\",\n      \"kind\": \"entity\",\n      \"parent\": null\n    }\n  ],\n  \"notes\": \"Added CUTTING node as the final stage in the textile production process.\"\n}",
+          "semantic_attempt": 1,
+          "planner_noop": false,
+          "salvaged_partial_json": false
+        }
+      },
+      "update": {
+        "target_stage_index": 4,
+        "delta_ops": [
+          {
+            "op": "add_node",
+            "node_id": "CUTTING",
+            "label": "CUTTING",
+            "kind": "entity",
+            "parent": null,
+            "id": "CUTTING"
+          }
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "FIBER",
+            "SPINNING",
+            "WEAVING",
+            "DYEING",
+            "CUTTING"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "gold_stage_metrics": {
+          "node_count": 7,
+          "edge_count": 6,
+          "group_count": 0,
+          "delta_count": 2
+        },
+        "preview_mermaid": "graph TD\n    FIBER[\"FIBER\"]\n    SPINNING[\"SPINNING\"]\n    WEAVING[\"WEAVING\"]\n    DYEING[\"DYEING\"]\n    CUTTING[\"CUTTING\"]",
+        "matches_reference_stage": false
+      },
+      "state_after": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "FIBER",
+            "SPINNING",
+            "WEAVING",
+            "DYEING",
+            "CUTTING"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    FIBER[\"FIBER\"]\n    SPINNING[\"SPINNING\"]\n    WEAVING[\"WEAVING\"]\n    DYEING[\"DYEING\"]\n    CUTTING[\"CUTTING\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 9,
+        "speaker": "speaker_b",
+        "content": "裁剪好的衣片要怎么变成完整的衣服呢？",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "FIBER",
+            "SPINNING",
+            "WEAVING",
+            "DYEING",
+            "CUTTING"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    FIBER[\"FIBER\"]\n    SPINNING[\"SPINNING\"]\n    WEAVING[\"WEAVING\"]\n    DYEING[\"DYEING\"]\n    CUTTING[\"CUTTING\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 10,
+        "speaker": "speaker_a",
+        "content": "裁剪好的衣片会被送往缝纫工序SEWING进行组装。CUTTING is assembled by SEWING，裁剪的部件通过缝纫组装成完整的成衣。",
+        "stage_index": 3,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "FIBER",
+            "SPINNING",
+            "WEAVING",
+            "DYEING",
+            "CUTTING"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    FIBER[\"FIBER\"]\n    SPINNING[\"SPINNING\"]\n    WEAVING[\"WEAVING\"]\n    DYEING[\"DYEING\"]\n    CUTTING[\"CUTTING\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 11,
+        "speaker": "speaker_b",
+        "content": "太好了，现在我已经了解了从纤维到成衣的主要生产环节。请问这些做好的衣服最终会去哪里呢？",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "FIBER",
+            "SPINNING",
+            "WEAVING",
+            "DYEING",
+            "CUTTING"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    FIBER[\"FIBER\"]\n    SPINNING[\"SPINNING\"]\n    WEAVING[\"WEAVING\"]\n    DYEING[\"DYEING\"]\n    CUTTING[\"CUTTING\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 12,
+        "speaker": "speaker_a",
+        "content": "很好，你已经掌握了我们整个生产流程的核心。最后一个环节是物流配送，称之为DISTRIBUTION。SEWING is sent to DISTRIBUTION，缝纫完成的成衣会被发送到各个分销点，最终到达消费者手中。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "FIBER",
+            "SPINNING",
+            "WEAVING",
+            "DYEING",
+            "CUTTING"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    FIBER[\"FIBER\"]\n    SPINNING[\"SPINNING\"]\n    WEAVING[\"WEAVING\"]\n    DYEING[\"DYEING\"]\n    CUTTING[\"CUTTING\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 13,
+        "speaker": "speaker_b",
+        "content": "原来整个纺织供应链从FIBER纤维开始，经过SPINNING纺纱、WEAVING织造、DYEING染色、CUTTING裁剪、SEWING缝纫，最后到DISTRIBUTION配送，这就是一个完整的生命周期了。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "FIBER",
+            "SPINNING",
+            "WEAVING",
+            "DYEING",
+            "CUTTING"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    FIBER[\"FIBER\"]\n    SPINNING[\"SPINNING\"]\n    WEAVING[\"WEAVING\"]\n    DYEING[\"DYEING\"]\n    CUTTING[\"CUTTING\"]"
+      }
+    },
+    {
+      "turn": {
+        "turn_id": 14,
+        "speaker": "speaker_a",
+        "content": "完全正确！整个供应链包含七个关键节点，每个环节都紧密相连。希望你能对这些概念有更清晰的理解。",
+        "stage_index": 4,
+        "metadata": {
+          "alignment_status": null,
+          "alignment_note": null,
+          "stage_name": null
+        }
+      },
+      "gate": {
+        "action": "WAIT",
+        "target_stage_index": 4,
+        "reason": "all stages already applied",
+        "confidence": 1.0,
+        "metadata": {
+          "runtime_short_circuit": true
+        }
+      },
+      "state_before": {
+        "current_stage_index": 4,
+        "applied_stage_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "graph_metrics": {
+          "node_count": 5,
+          "edge_count": 0,
+          "group_count": 0,
+          "node_ids": [
+            "FIBER",
+            "SPINNING",
+            "WEAVING",
+            "DYEING",
+            "CUTTING"
+          ],
+          "edge_ids": [],
+          "group_ids": []
+        },
+        "rendered_mermaid": "graph TD\n    FIBER[\"FIBER\"]\n    SPINNING[\"SPINNING\"]\n    WEAVING[\"WEAVING\"]\n    DYEING[\"DYEING\"]\n    CUTTING[\"CUTTING\"]"
+      }
+    }
+  ]
+}
