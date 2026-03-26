@@ -1,0 +1,1224 @@
+{
+  "generated_at_utc": "2026-03-22T08:44:59Z",
+  "output_dir": "E:\\Desktop\\stream2graph\\artifacts\\finetune\\qwen35_incremental_transfer_bundle",
+  "copied_files": [
+    "requirements/finetune.txt",
+    "tools/finetune/bootstrap_local_finetune_env.sh",
+    "tools/finetune/export_incremental_qwen35_bundle.py",
+    "tools/finetune/train_qwen3_lora.py",
+    "tools/finetune/run_local_qwen35_4b_gate_smoke.sh",
+    "tools/finetune/run_local_qwen35_27b_planner_smoke.sh",
+    "tools/finetune/run_cloud_qwen35_4b_gate_autodl.sh",
+    "tools/finetune/run_cloud_qwen35_27b_planner_autodl.sh",
+    "tools/finetune/run_incremental_qwen35_ablation_eval.py",
+    "tools/finetune/run_cloud_incremental_qwen35_ablation_eval.sh",
+    "tools/finetune/prefetch_hf_models.py",
+    "tools/incremental_finetune/prepare_gate_sft_dataset.py",
+    "tools/incremental_finetune/prepare_planner_sft_dataset.py",
+    "tools/incremental_finetune/common.py",
+    "tools/eval/common.py",
+    "tools/eval/incremental_dataset.py",
+    "tools/eval/run_incremental_benchmark.py",
+    "tools/eval/run_incremental_inference.py",
+    "tools/eval/run_incremental_metrics.py",
+    "tools/eval/reporting.py",
+    "tools/incremental_dataset/schema.py",
+    "tools/incremental_system/algorithm.py",
+    "tools/incremental_system/loader.py",
+    "tools/incremental_system/run_session.py",
+    "tools/incremental_system/chat_clients.py",
+    "tools/incremental_system/models.py",
+    "tools/incremental_system/runtime.py",
+    "tools/incremental_system/schema.py",
+    "configs/finetune/qwen35_4b_gate_local_smoke.json",
+    "configs/finetune/qwen35_4b_gate_cloud_autodl.json",
+    "configs/finetune/qwen35_4b_gate_cloud_rtxpro6000_96g.json",
+    "configs/finetune/qwen35_27b_planner_local_smoke.json",
+    "configs/finetune/qwen35_27b_planner_cloud_autodl.json",
+    "configs/finetune/qwen35_27b_planner_cloud_rtxpro6000_96g.json",
+    "configs/evaluation/model_benchmarks/incremental_localhf_qwen35_27b_planner_qwen35_4b_gate_validation.example.json",
+    "configs/evaluation/model_benchmarks/incremental_localhf_qwen35_27b_planner_qwen35_4b_gate_test_full.example.json",
+    "configs/evaluation/model_benchmarks/local_hf_qwen35_27b_base_benchmark.example.json",
+    "configs/evaluation/model_benchmarks/local_hf_qwen35_27b_sft_benchmark.example.json",
+    "docs/operations/AUTODL_CLOUD_TRAINING.md",
+    "docs/evaluation/EVALUATION_PLATFORM.md",
+    "docs/training/INCREMENTAL_QWEN35_FINETUNE_PREP.md"
+  ],
+  "copied_dirs": [
+    "artifacts/model_cache/qwen35_incremental",
+    "data/incremental_dataset/runs/incremental_open_balanced_v1_3360_public_clean",
+    "data/finetune/incremental_gate_sft_cloud",
+    "data/finetune/incremental_planner_sft_cloud",
+    "reports/evaluation/published/incremental_open_balanced_v1_3360_public_clean_analysis_reaudit_20260322",
+    "reports/evaluation/runs/incremental_system/incremental_oracle_smoke_test_open_balanced_v1_3360_public_clean_20260322_r2"
+  ],
+  "optional_dir_statuses": {
+    "artifacts/model_cache/qwen35_incremental": true,
+    "data/incremental_dataset/runs/incremental_open_balanced_v1_3360_public_clean": true,
+    "data/finetune/incremental_gate_sft_cloud": true,
+    "data/finetune/incremental_planner_sft_cloud": true,
+    "reports/evaluation/published/incremental_open_balanced_v1_3360_public_clean_analysis_reaudit_20260322": true,
+    "reports/evaluation/runs/incremental_system/incremental_oracle_smoke_test_open_balanced_v1_3360_public_clean_20260322_r2": true
+  },
+  "source_state": {
+    "model_cache_manifest": {
+      "generated_at_utc": "2026-03-22T06:25:24Z",
+      "cache_dir": "E:\\Desktop\\stream2graph\\artifacts\\model_cache\\qwen35_incremental",
+      "models": {
+        "Qwen/Qwen3.5-27B": {
+          "model_name": "Qwen/Qwen3.5-27B",
+          "local_dir": "E:\\Desktop\\stream2graph\\artifacts\\model_cache\\qwen35_incremental\\Qwen__Qwen3.5-27B",
+          "downloaded": true,
+          "download_mode": "serial"
+        },
+        "Qwen/Qwen3.5-4B": {
+          "model_name": "Qwen/Qwen3.5-4B",
+          "local_dir": "E:\\Desktop\\stream2graph\\artifacts\\model_cache\\qwen35_incremental\\Qwen__Qwen3.5-4B",
+          "downloaded": true,
+          "download_mode": "serial"
+        }
+      }
+    },
+    "gate_finetune_manifest": {
+      "generated_at_utc": "2026-03-22T02:45:41Z",
+      "task_name": "incremental_gate_sft",
+      "run_root": "E:\\Desktop\\stream2graph\\data\\incremental_dataset\\runs\\incremental_open_balanced_v1_3360_public_clean",
+      "output_dir": "E:\\Desktop\\stream2graph\\data\\finetune\\incremental_gate_sft_cloud",
+      "split_counts": {
+        "train": 30835,
+        "validation": 3655,
+        "test": 3573
+      },
+      "target_model": "Qwen/Qwen3.5-4B",
+      "recent_turn_limit": 8
+    },
+    "planner_finetune_manifest": {
+      "generated_at_utc": "2026-03-22T02:44:48Z",
+      "task_name": "incremental_planner_sft",
+      "run_root": "E:\\Desktop\\stream2graph\\data\\incremental_dataset\\runs\\incremental_open_balanced_v1_3360_public_clean",
+      "output_dir": "E:\\Desktop\\stream2graph\\data\\finetune\\incremental_planner_sft_cloud",
+      "split_counts": {
+        "train": 6616,
+        "validation": 812,
+        "test": 798
+      },
+      "target_model": "Qwen/Qwen3.5-27B",
+      "recent_turn_limit": 24,
+      "omit_target_graph": false
+    },
+    "public_benchmark_analysis": {
+      "generated_at_utc": "2026-03-22T03:41:55Z",
+      "run_root": "E:\\Desktop\\stream2graph\\data\\incremental_dataset\\runs\\incremental_open_balanced_v1_3360_public_clean",
+      "sample_count": 3199,
+      "loaded_count": 3199,
+      "self_check": {
+        "load_error_count": 0,
+        "load_error_examples": [],
+        "boundary_count_mismatch_count": 0,
+        "boundary_count_mismatch_examples": [],
+        "boundary_not_exact_count": 0,
+        "boundary_not_exact_examples": [],
+        "duplicate_turn_id_count": 0,
+        "duplicate_turn_id_examples": [],
+        "boundary_exact_rate": 1.0,
+        "boundary_count_match_rate": 1.0,
+        "stage_indices_sequential_rate": 1.0,
+        "boundary_indices_sequential_rate": 1.0,
+        "turn_ids_unique_rate": 1.0,
+        "turn_ids_monotonic_rate": 1.0,
+        "monotonic_graph_rate": 1.0,
+        "preview_present_rate": 1.0,
+        "nonempty_delta_stage_rate": 1.0,
+        "turn_stage_label_coverage_rate": 0.9808
+      },
+      "distributions": {
+        "split": [
+          {
+            "label": "train",
+            "count": 2574
+          },
+          {
+            "label": "test",
+            "count": 313
+          },
+          {
+            "label": "validation",
+            "count": 312
+          }
+        ],
+        "diagram_type": [
+          {
+            "label": "architecture",
+            "count": 538
+          },
+          {
+            "label": "mindmap",
+            "count": 538
+          },
+          {
+            "label": "flowchart",
+            "count": 537
+          },
+          {
+            "label": "er",
+            "count": 533
+          },
+          {
+            "label": "sequence",
+            "count": 531
+          },
+          {
+            "label": "statediagram",
+            "count": 522
+          }
+        ],
+        "source": [
+          {
+            "label": "augmented_real_structure",
+            "count": 1625
+          },
+          {
+            "label": "huggingface",
+            "count": 973
+          },
+          {
+            "label": "github",
+            "count": 516
+          },
+          {
+            "label": "other",
+            "count": 58
+          },
+          {
+            "label": "gitlab",
+            "count": 19
+          },
+          {
+            "label": "github_industrial",
+            "count": 8
+          }
+        ],
+        "license": [
+          {
+            "label": "mit",
+            "count": 2409
+          },
+          {
+            "label": "apache-2.0",
+            "count": 465
+          },
+          {
+            "label": "gpl-3.0",
+            "count": 156
+          },
+          {
+            "label": "agpl-3.0",
+            "count": 62
+          },
+          {
+            "label": "cc-by-sa-4.0",
+            "count": 25
+          },
+          {
+            "label": "bsd-3-clause",
+            "count": 19
+          },
+          {
+            "label": "cc0-1.0",
+            "count": 11
+          },
+          {
+            "label": "mit-0",
+            "count": 11
+          },
+          {
+            "label": "lgpl-3.0",
+            "count": 8
+          },
+          {
+            "label": "cc-by-4.0",
+            "count": 8
+          },
+          {
+            "label": "mpl-2.0",
+            "count": 7
+          },
+          {
+            "label": "isc",
+            "count": 7
+          },
+          {
+            "label": "unlicense",
+            "count": 5
+          },
+          {
+            "label": "gpl-2.0",
+            "count": 3
+          },
+          {
+            "label": "bsl-1.0",
+            "count": 1
+          },
+          {
+            "label": "lgpl-2.1",
+            "count": 1
+          },
+          {
+            "label": "bsd-2-clause",
+            "count": 1
+          }
+        ],
+        "augmented": [
+          {
+            "label": "true",
+            "count": 1625
+          },
+          {
+            "label": "false",
+            "count": 1574
+          }
+        ],
+        "complexity_bucket": [
+          {
+            "label": "1",
+            "count": 654
+          },
+          {
+            "label": "2",
+            "count": 646
+          },
+          {
+            "label": "4",
+            "count": 639
+          },
+          {
+            "label": "3",
+            "count": 636
+          },
+          {
+            "label": "5",
+            "count": 624
+          }
+        ]
+      },
+      "metrics": {
+        "turn_count": {
+          "count": 3199,
+          "mean": 11.8984,
+          "min": 1.0,
+          "max": 69.0,
+          "p50": 10.0,
+          "p95": 23.0
+        },
+        "stage_count": {
+          "count": 3199,
+          "mean": 2.5714,
+          "min": 1.0,
+          "max": 5.0,
+          "p50": 2.0,
+          "p95": 5.0
+        },
+        "turns_per_stage": {
+          "count": 3199,
+          "mean": 5.408,
+          "min": 1.0,
+          "max": 34.0,
+          "p50": 4.6667,
+          "p95": 11.0
+        },
+        "turn_tokens_per_dialogue": {
+          "count": 3199,
+          "mean": 527.0125,
+          "min": 0.0,
+          "max": 2735.0,
+          "p50": 461.0,
+          "p95": 1082.3
+        },
+        "turn_tokens_per_turn": {
+          "count": 38063,
+          "mean": 44.2927,
+          "min": 0.0,
+          "max": 249.0,
+          "p50": 42.0,
+          "p95": 79.0
+        },
+        "final_nodes": {
+          "count": 3199,
+          "mean": 7.4542,
+          "min": 0.0,
+          "max": 93.0,
+          "p50": 5.0,
+          "p95": 28.0
+        },
+        "final_edges": {
+          "count": 3199,
+          "mean": 2.3698,
+          "min": 0.0,
+          "max": 73.0,
+          "p50": 0.0,
+          "p95": 8.0
+        },
+        "final_groups": {
+          "count": 3199,
+          "mean": 1.1791,
+          "min": 0.0,
+          "max": 25.0,
+          "p50": 0.0,
+          "p95": 7.0
+        },
+        "final_entities": {
+          "count": 3199,
+          "mean": 11.0031,
+          "min": 1.0,
+          "max": 128.0,
+          "p50": 7.0,
+          "p95": 37.0
+        },
+        "delta_ops_per_stage": {
+          "count": 8226,
+          "mean": 4.279,
+          "min": 1.0,
+          "max": 43.0,
+          "p50": 3.0,
+          "p95": 11.0
+        },
+        "actual_entity_growth_per_stage": {
+          "count": 8226,
+          "mean": 4.279,
+          "min": 1.0,
+          "max": 43.0,
+          "p50": 3.0,
+          "p95": 11.0
+        },
+        "final_edge_density": {
+          "count": 3199,
+          "mean": 0.3735,
+          "min": 0.0,
+          "max": 11.75,
+          "p50": 0.0,
+          "p95": 1.2536
+        }
+      },
+      "slices": {
+        "by_diagram_type": [
+          {
+            "diagram_type": "architecture",
+            "count": 538,
+            "avg_turns": 14.4405,
+            "avg_stages": 3.329,
+            "avg_final_entities": 15.9201,
+            "avg_delta_ops_per_stage": 4.4277,
+            "avg_actual_entity_growth_per_stage": 4.4277,
+            "boundary_exact_rate": 1.0,
+            "monotonic_graph_rate": 1.0
+          },
+          {
+            "diagram_type": "er",
+            "count": 533,
+            "avg_turns": 10.8537,
+            "avg_stages": 2.5891,
+            "avg_final_entities": 7.2158,
+            "avg_delta_ops_per_stage": 2.708,
+            "avg_actual_entity_growth_per_stage": 2.708,
+            "boundary_exact_rate": 1.0,
+            "monotonic_graph_rate": 1.0
+          },
+          {
+            "diagram_type": "flowchart",
+            "count": 537,
+            "avg_turns": 12.1769,
+            "avg_stages": 2.6872,
+            "avg_final_entities": 10.6853,
+            "avg_delta_ops_per_stage": 3.0174,
+            "avg_actual_entity_growth_per_stage": 3.0174,
+            "boundary_exact_rate": 1.0,
+            "monotonic_graph_rate": 1.0
+          },
+          {
+            "diagram_type": "mindmap",
+            "count": 538,
+            "avg_turns": 10.539,
+            "avg_stages": 2.1859,
+            "avg_final_entities": 8.4721,
+            "avg_delta_ops_per_stage": 3.0179,
+            "avg_actual_entity_growth_per_stage": 3.0179,
+            "boundary_exact_rate": 1.0,
+            "monotonic_graph_rate": 1.0
+          },
+          {
+            "diagram_type": "sequence",
+            "count": 531,
+            "avg_turns": 9.2034,
+            "avg_stages": 1.0,
+            "avg_final_entities": 5.6347,
+            "avg_delta_ops_per_stage": 5.6347,
+            "avg_actual_entity_growth_per_stage": 5.6347,
+            "boundary_exact_rate": 1.0,
+            "monotonic_graph_rate": 1.0
+          },
+          {
+            "diagram_type": "statediagram",
+            "count": 522,
+            "avg_turns": 14.2011,
+            "avg_stages": 3.6494,
+            "avg_final_entities": 18.1992,
+            "avg_delta_ops_per_stage": 4.5227,
+            "avg_actual_entity_growth_per_stage": 4.5227,
+            "boundary_exact_rate": 1.0,
+            "monotonic_graph_rate": 1.0
+          }
+        ]
+      }
+    },
+    "public_benchmark_hard_audit": {
+      "selected_count": 3199,
+      "missing_structure_count": 0,
+      "missing_agent_count": 0,
+      "empty_final_graph_count": 0,
+      "missing_license_count": 0,
+      "unknown_license_count": 0,
+      "status_counts": {
+        "completed": 3199
+      },
+      "missing_top_level_count": 0,
+      "examples": {
+        "missing_structure": [],
+        "missing_agent": [],
+        "empty_final_graph": [],
+        "missing_license": [],
+        "unknown_licenses": {},
+        "missing_top_level_examples": []
+      }
+    },
+    "public_benchmark_oracle_smoke": {
+      "generated_at_utc": "2026-03-21T17:39:14Z",
+      "input_jsonl": "E:\\Desktop\\stream2graph\\reports\\evaluation\\runs\\incremental_system\\incremental_oracle_smoke_test_open_balanced_v1_3360_public_clean_20260322_r2\\inference\\predictions.jsonl",
+      "reference_run_root": "E:\\Desktop\\stream2graph\\data\\incremental_dataset\\runs\\incremental_open_balanced_v1_3360_public_clean",
+      "sample_count": 5,
+      "valid_row_count": 5,
+      "error_rows": 0,
+      "overall": {
+        "completed_all_stages": {
+          "count": 5,
+          "rate": 1.0
+        },
+        "final_matches_reference": {
+          "count": 5,
+          "rate": 1.0
+        },
+        "canonicalized_match": {
+          "count": 5,
+          "rate": 1.0
+        },
+        "exact_update_count_match": {
+          "count": 5,
+          "rate": 1.0
+        },
+        "stage_coverage_rate": {
+          "count": 5,
+          "mean": 1.0,
+          "p50": 1.0,
+          "p95": 1.0,
+          "max": 1.0,
+          "min": 1.0
+        },
+        "node_semantic_f1": {
+          "count": 5,
+          "mean": 1.0,
+          "p50": 1.0,
+          "p95": 1.0,
+          "max": 1.0,
+          "min": 1.0
+        },
+        "group_semantic_f1": {
+          "count": 5,
+          "mean": 1.0,
+          "p50": 1.0,
+          "p95": 1.0,
+          "max": 1.0,
+          "min": 1.0
+        },
+        "edge_semantic_f1": {
+          "count": 5,
+          "mean": 1.0,
+          "p50": 1.0,
+          "p95": 1.0,
+          "max": 1.0,
+          "min": 1.0
+        },
+        "attachment_semantic_f1": {
+          "count": 5,
+          "mean": 1.0,
+          "p50": 1.0,
+          "p95": 1.0,
+          "max": 1.0,
+          "min": 1.0
+        },
+        "entity_semantic_f1": {
+          "count": 5,
+          "mean": 1.0,
+          "p50": 1.0,
+          "p95": 1.0,
+          "max": 1.0,
+          "min": 1.0
+        },
+        "updates_emitted": {
+          "count": 5,
+          "mean": 5.0,
+          "p50": 5.0,
+          "p95": 5.0,
+          "max": 5.0,
+          "min": 5.0
+        },
+        "total_stages": {
+          "count": 5,
+          "mean": 5.0,
+          "p50": 5.0,
+          "p95": 5.0,
+          "max": 5.0,
+          "min": 5.0
+        },
+        "planner_calls": {
+          "count": 5,
+          "mean": 5.0,
+          "p50": 5.0,
+          "p95": 5.0,
+          "max": 5.0,
+          "min": 5.0
+        },
+        "gate_latency_mean_ms": null,
+        "planner_latency_mean_ms": null,
+        "total_model_latency_ms": {
+          "count": 5,
+          "mean": 0.0,
+          "p50": 0.0,
+          "p95": 0.0,
+          "max": 0.0,
+          "min": 0.0
+        }
+      },
+      "slices": {
+        "by_diagram_type": [
+          {
+            "group": "architecture",
+            "count": 3,
+            "metrics": {
+              "completed_all_stages": {
+                "count": 3,
+                "rate": 1.0
+              },
+              "final_matches_reference": {
+                "count": 3,
+                "rate": 1.0
+              },
+              "canonicalized_match": {
+                "count": 3,
+                "rate": 1.0
+              },
+              "exact_update_count_match": {
+                "count": 3,
+                "rate": 1.0
+              },
+              "stage_coverage_rate": {
+                "count": 3,
+                "mean": 1.0,
+                "p50": 1.0,
+                "p95": 1.0,
+                "max": 1.0,
+                "min": 1.0
+              },
+              "node_semantic_f1": {
+                "count": 3,
+                "mean": 1.0,
+                "p50": 1.0,
+                "p95": 1.0,
+                "max": 1.0,
+                "min": 1.0
+              },
+              "group_semantic_f1": {
+                "count": 3,
+                "mean": 1.0,
+                "p50": 1.0,
+                "p95": 1.0,
+                "max": 1.0,
+                "min": 1.0
+              },
+              "edge_semantic_f1": {
+                "count": 3,
+                "mean": 1.0,
+                "p50": 1.0,
+                "p95": 1.0,
+                "max": 1.0,
+                "min": 1.0
+              },
+              "attachment_semantic_f1": {
+                "count": 3,
+                "mean": 1.0,
+                "p50": 1.0,
+                "p95": 1.0,
+                "max": 1.0,
+                "min": 1.0
+              },
+              "entity_semantic_f1": {
+                "count": 3,
+                "mean": 1.0,
+                "p50": 1.0,
+                "p95": 1.0,
+                "max": 1.0,
+                "min": 1.0
+              },
+              "updates_emitted": {
+                "count": 3,
+                "mean": 5.0,
+                "p50": 5.0,
+                "p95": 5.0,
+                "max": 5.0,
+                "min": 5.0
+              },
+              "total_stages": {
+                "count": 3,
+                "mean": 5.0,
+                "p50": 5.0,
+                "p95": 5.0,
+                "max": 5.0,
+                "min": 5.0
+              },
+              "planner_calls": {
+                "count": 3,
+                "mean": 5.0,
+                "p50": 5.0,
+                "p95": 5.0,
+                "max": 5.0,
+                "min": 5.0
+              },
+              "gate_latency_mean_ms": null,
+              "planner_latency_mean_ms": null,
+              "total_model_latency_ms": {
+                "count": 3,
+                "mean": 0.0,
+                "p50": 0.0,
+                "p95": 0.0,
+                "max": 0.0,
+                "min": 0.0
+              }
+            }
+          },
+          {
+            "group": "flowchart",
+            "count": 2,
+            "metrics": {
+              "completed_all_stages": {
+                "count": 2,
+                "rate": 1.0
+              },
+              "final_matches_reference": {
+                "count": 2,
+                "rate": 1.0
+              },
+              "canonicalized_match": {
+                "count": 2,
+                "rate": 1.0
+              },
+              "exact_update_count_match": {
+                "count": 2,
+                "rate": 1.0
+              },
+              "stage_coverage_rate": {
+                "count": 2,
+                "mean": 1.0,
+                "p50": 1.0,
+                "p95": 1.0,
+                "max": 1.0,
+                "min": 1.0
+              },
+              "node_semantic_f1": {
+                "count": 2,
+                "mean": 1.0,
+                "p50": 1.0,
+                "p95": 1.0,
+                "max": 1.0,
+                "min": 1.0
+              },
+              "group_semantic_f1": {
+                "count": 2,
+                "mean": 1.0,
+                "p50": 1.0,
+                "p95": 1.0,
+                "max": 1.0,
+                "min": 1.0
+              },
+              "edge_semantic_f1": {
+                "count": 2,
+                "mean": 1.0,
+                "p50": 1.0,
+                "p95": 1.0,
+                "max": 1.0,
+                "min": 1.0
+              },
+              "attachment_semantic_f1": {
+                "count": 2,
+                "mean": 1.0,
+                "p50": 1.0,
+                "p95": 1.0,
+                "max": 1.0,
+                "min": 1.0
+              },
+              "entity_semantic_f1": {
+                "count": 2,
+                "mean": 1.0,
+                "p50": 1.0,
+                "p95": 1.0,
+                "max": 1.0,
+                "min": 1.0
+              },
+              "updates_emitted": {
+                "count": 2,
+                "mean": 5.0,
+                "p50": 5.0,
+                "p95": 5.0,
+                "max": 5.0,
+                "min": 5.0
+              },
+              "total_stages": {
+                "count": 2,
+                "mean": 5.0,
+                "p50": 5.0,
+                "p95": 5.0,
+                "max": 5.0,
+                "min": 5.0
+              },
+              "planner_calls": {
+                "count": 2,
+                "mean": 5.0,
+                "p50": 5.0,
+                "p95": 5.0,
+                "max": 5.0,
+                "min": 5.0
+              },
+              "gate_latency_mean_ms": null,
+              "planner_latency_mean_ms": null,
+              "total_model_latency_ms": {
+                "count": 2,
+                "mean": 0.0,
+                "p50": 0.0,
+                "p95": 0.0,
+                "max": 0.0,
+                "min": 0.0
+              }
+            }
+          }
+        ],
+        "by_split": [
+          {
+            "group": "test",
+            "count": 5,
+            "metrics": {
+              "completed_all_stages": {
+                "count": 5,
+                "rate": 1.0
+              },
+              "final_matches_reference": {
+                "count": 5,
+                "rate": 1.0
+              },
+              "canonicalized_match": {
+                "count": 5,
+                "rate": 1.0
+              },
+              "exact_update_count_match": {
+                "count": 5,
+                "rate": 1.0
+              },
+              "stage_coverage_rate": {
+                "count": 5,
+                "mean": 1.0,
+                "p50": 1.0,
+                "p95": 1.0,
+                "max": 1.0,
+                "min": 1.0
+              },
+              "node_semantic_f1": {
+                "count": 5,
+                "mean": 1.0,
+                "p50": 1.0,
+                "p95": 1.0,
+                "max": 1.0,
+                "min": 1.0
+              },
+              "group_semantic_f1": {
+                "count": 5,
+                "mean": 1.0,
+                "p50": 1.0,
+                "p95": 1.0,
+                "max": 1.0,
+                "min": 1.0
+              },
+              "edge_semantic_f1": {
+                "count": 5,
+                "mean": 1.0,
+                "p50": 1.0,
+                "p95": 1.0,
+                "max": 1.0,
+                "min": 1.0
+              },
+              "attachment_semantic_f1": {
+                "count": 5,
+                "mean": 1.0,
+                "p50": 1.0,
+                "p95": 1.0,
+                "max": 1.0,
+                "min": 1.0
+              },
+              "entity_semantic_f1": {
+                "count": 5,
+                "mean": 1.0,
+                "p50": 1.0,
+                "p95": 1.0,
+                "max": 1.0,
+                "min": 1.0
+              },
+              "updates_emitted": {
+                "count": 5,
+                "mean": 5.0,
+                "p50": 5.0,
+                "p95": 5.0,
+                "max": 5.0,
+                "min": 5.0
+              },
+              "total_stages": {
+                "count": 5,
+                "mean": 5.0,
+                "p50": 5.0,
+                "p95": 5.0,
+                "max": 5.0,
+                "min": 5.0
+              },
+              "planner_calls": {
+                "count": 5,
+                "mean": 5.0,
+                "p50": 5.0,
+                "p95": 5.0,
+                "max": 5.0,
+                "min": 5.0
+              },
+              "gate_latency_mean_ms": null,
+              "planner_latency_mean_ms": null,
+              "total_model_latency_ms": {
+                "count": 5,
+                "mean": 0.0,
+                "p50": 0.0,
+                "p95": 0.0,
+                "max": 0.0,
+                "min": 0.0
+              }
+            }
+          }
+        ]
+      },
+      "failure_examples": [
+        {
+          "generated_at_utc": "2026-03-21T17:39:13Z",
+          "sample_id": "gh_architecture_01689",
+          "split": "test",
+          "diagram_type": "architecture",
+          "complexity_bucket": 5,
+          "gate_kind": "oracle_gate",
+          "planner_kind": "oracle_planner",
+          "turn_count": 22,
+          "total_stages": 5,
+          "updates_emitted": 5,
+          "final_stage_index": 5,
+          "stage_coverage_rate": 1.0,
+          "completed_all_stages": true,
+          "final_matches_reference": true,
+          "exact_update_count_match": true,
+          "gate_calls": 22,
+          "planner_calls": 5,
+          "gate_latency_mean_ms": null,
+          "planner_latency_mean_ms": null,
+          "total_model_latency_ms": 0,
+          "detail_path": "E:\\Desktop\\stream2graph\\reports\\evaluation\\runs\\incremental_system\\incremental_oracle_smoke_test_open_balanced_v1_3360_public_clean_20260322_r2\\inference\\details\\gh_architecture_01689.json",
+          "error": null,
+          "canonicalized_match": true,
+          "node_semantic_f1": 1.0,
+          "group_semantic_f1": 1.0,
+          "edge_semantic_f1": 1.0,
+          "attachment_semantic_f1": 1.0,
+          "entity_semantic_f1": 1.0
+        },
+        {
+          "generated_at_utc": "2026-03-21T17:39:13Z",
+          "sample_id": "gh_architecture_01830",
+          "split": "test",
+          "diagram_type": "architecture",
+          "complexity_bucket": 5,
+          "gate_kind": "oracle_gate",
+          "planner_kind": "oracle_planner",
+          "turn_count": 15,
+          "total_stages": 5,
+          "updates_emitted": 5,
+          "final_stage_index": 5,
+          "stage_coverage_rate": 1.0,
+          "completed_all_stages": true,
+          "final_matches_reference": true,
+          "exact_update_count_match": true,
+          "gate_calls": 15,
+          "planner_calls": 5,
+          "gate_latency_mean_ms": null,
+          "planner_latency_mean_ms": null,
+          "total_model_latency_ms": 0,
+          "detail_path": "E:\\Desktop\\stream2graph\\reports\\evaluation\\runs\\incremental_system\\incremental_oracle_smoke_test_open_balanced_v1_3360_public_clean_20260322_r2\\inference\\details\\gh_architecture_01830.json",
+          "error": null,
+          "canonicalized_match": true,
+          "node_semantic_f1": 1.0,
+          "group_semantic_f1": 1.0,
+          "edge_semantic_f1": 1.0,
+          "attachment_semantic_f1": 1.0,
+          "entity_semantic_f1": 1.0
+        },
+        {
+          "generated_at_utc": "2026-03-21T17:39:13Z",
+          "sample_id": "gh_flowchart_00588",
+          "split": "test",
+          "diagram_type": "flowchart",
+          "complexity_bucket": 5,
+          "gate_kind": "oracle_gate",
+          "planner_kind": "oracle_planner",
+          "turn_count": 38,
+          "total_stages": 5,
+          "updates_emitted": 5,
+          "final_stage_index": 5,
+          "stage_coverage_rate": 1.0,
+          "completed_all_stages": true,
+          "final_matches_reference": true,
+          "exact_update_count_match": true,
+          "gate_calls": 38,
+          "planner_calls": 5,
+          "gate_latency_mean_ms": null,
+          "planner_latency_mean_ms": null,
+          "total_model_latency_ms": 0,
+          "detail_path": "E:\\Desktop\\stream2graph\\reports\\evaluation\\runs\\incremental_system\\incremental_oracle_smoke_test_open_balanced_v1_3360_public_clean_20260322_r2\\inference\\details\\gh_flowchart_00588.json",
+          "error": null,
+          "canonicalized_match": true,
+          "node_semantic_f1": 1.0,
+          "group_semantic_f1": 1.0,
+          "edge_semantic_f1": 1.0,
+          "attachment_semantic_f1": 1.0,
+          "entity_semantic_f1": 1.0
+        },
+        {
+          "generated_at_utc": "2026-03-21T17:39:13Z",
+          "sample_id": "gh_flowchart_00553",
+          "split": "test",
+          "diagram_type": "flowchart",
+          "complexity_bucket": 5,
+          "gate_kind": "oracle_gate",
+          "planner_kind": "oracle_planner",
+          "turn_count": 20,
+          "total_stages": 5,
+          "updates_emitted": 5,
+          "final_stage_index": 5,
+          "stage_coverage_rate": 1.0,
+          "completed_all_stages": true,
+          "final_matches_reference": true,
+          "exact_update_count_match": true,
+          "gate_calls": 20,
+          "planner_calls": 5,
+          "gate_latency_mean_ms": null,
+          "planner_latency_mean_ms": null,
+          "total_model_latency_ms": 0,
+          "detail_path": "E:\\Desktop\\stream2graph\\reports\\evaluation\\runs\\incremental_system\\incremental_oracle_smoke_test_open_balanced_v1_3360_public_clean_20260322_r2\\inference\\details\\gh_flowchart_00553.json",
+          "error": null,
+          "canonicalized_match": true,
+          "node_semantic_f1": 1.0,
+          "group_semantic_f1": 1.0,
+          "edge_semantic_f1": 1.0,
+          "attachment_semantic_f1": 1.0,
+          "entity_semantic_f1": 1.0
+        },
+        {
+          "generated_at_utc": "2026-03-21T17:39:13Z",
+          "sample_id": "gh_architecture_01353",
+          "split": "test",
+          "diagram_type": "architecture",
+          "complexity_bucket": 5,
+          "gate_kind": "oracle_gate",
+          "planner_kind": "oracle_planner",
+          "turn_count": 21,
+          "total_stages": 5,
+          "updates_emitted": 5,
+          "final_stage_index": 5,
+          "stage_coverage_rate": 1.0,
+          "completed_all_stages": true,
+          "final_matches_reference": true,
+          "exact_update_count_match": true,
+          "gate_calls": 21,
+          "planner_calls": 5,
+          "gate_latency_mean_ms": null,
+          "planner_latency_mean_ms": null,
+          "total_model_latency_ms": 0,
+          "detail_path": "E:\\Desktop\\stream2graph\\reports\\evaluation\\runs\\incremental_system\\incremental_oracle_smoke_test_open_balanced_v1_3360_public_clean_20260322_r2\\inference\\details\\gh_architecture_01353.json",
+          "error": null,
+          "canonicalized_match": true,
+          "node_semantic_f1": 1.0,
+          "group_semantic_f1": 1.0,
+          "edge_semantic_f1": 1.0,
+          "attachment_semantic_f1": 1.0,
+          "entity_semantic_f1": 1.0
+        }
+      ],
+      "semantic_failure_examples": [
+        {
+          "generated_at_utc": "2026-03-21T17:39:13Z",
+          "sample_id": "gh_architecture_01689",
+          "split": "test",
+          "diagram_type": "architecture",
+          "complexity_bucket": 5,
+          "gate_kind": "oracle_gate",
+          "planner_kind": "oracle_planner",
+          "turn_count": 22,
+          "total_stages": 5,
+          "updates_emitted": 5,
+          "final_stage_index": 5,
+          "stage_coverage_rate": 1.0,
+          "completed_all_stages": true,
+          "final_matches_reference": true,
+          "exact_update_count_match": true,
+          "gate_calls": 22,
+          "planner_calls": 5,
+          "gate_latency_mean_ms": null,
+          "planner_latency_mean_ms": null,
+          "total_model_latency_ms": 0,
+          "detail_path": "E:\\Desktop\\stream2graph\\reports\\evaluation\\runs\\incremental_system\\incremental_oracle_smoke_test_open_balanced_v1_3360_public_clean_20260322_r2\\inference\\details\\gh_architecture_01689.json",
+          "error": null,
+          "canonicalized_match": true,
+          "node_semantic_f1": 1.0,
+          "group_semantic_f1": 1.0,
+          "edge_semantic_f1": 1.0,
+          "attachment_semantic_f1": 1.0,
+          "entity_semantic_f1": 1.0
+        },
+        {
+          "generated_at_utc": "2026-03-21T17:39:13Z",
+          "sample_id": "gh_architecture_01830",
+          "split": "test",
+          "diagram_type": "architecture",
+          "complexity_bucket": 5,
+          "gate_kind": "oracle_gate",
+          "planner_kind": "oracle_planner",
+          "turn_count": 15,
+          "total_stages": 5,
+          "updates_emitted": 5,
+          "final_stage_index": 5,
+          "stage_coverage_rate": 1.0,
+          "completed_all_stages": true,
+          "final_matches_reference": true,
+          "exact_update_count_match": true,
+          "gate_calls": 15,
+          "planner_calls": 5,
+          "gate_latency_mean_ms": null,
+          "planner_latency_mean_ms": null,
+          "total_model_latency_ms": 0,
+          "detail_path": "E:\\Desktop\\stream2graph\\reports\\evaluation\\runs\\incremental_system\\incremental_oracle_smoke_test_open_balanced_v1_3360_public_clean_20260322_r2\\inference\\details\\gh_architecture_01830.json",
+          "error": null,
+          "canonicalized_match": true,
+          "node_semantic_f1": 1.0,
+          "group_semantic_f1": 1.0,
+          "edge_semantic_f1": 1.0,
+          "attachment_semantic_f1": 1.0,
+          "entity_semantic_f1": 1.0
+        },
+        {
+          "generated_at_utc": "2026-03-21T17:39:13Z",
+          "sample_id": "gh_flowchart_00588",
+          "split": "test",
+          "diagram_type": "flowchart",
+          "complexity_bucket": 5,
+          "gate_kind": "oracle_gate",
+          "planner_kind": "oracle_planner",
+          "turn_count": 38,
+          "total_stages": 5,
+          "updates_emitted": 5,
+          "final_stage_index": 5,
+          "stage_coverage_rate": 1.0,
+          "completed_all_stages": true,
+          "final_matches_reference": true,
+          "exact_update_count_match": true,
+          "gate_calls": 38,
+          "planner_calls": 5,
+          "gate_latency_mean_ms": null,
+          "planner_latency_mean_ms": null,
+          "total_model_latency_ms": 0,
+          "detail_path": "E:\\Desktop\\stream2graph\\reports\\evaluation\\runs\\incremental_system\\incremental_oracle_smoke_test_open_balanced_v1_3360_public_clean_20260322_r2\\inference\\details\\gh_flowchart_00588.json",
+          "error": null,
+          "canonicalized_match": true,
+          "node_semantic_f1": 1.0,
+          "group_semantic_f1": 1.0,
+          "edge_semantic_f1": 1.0,
+          "attachment_semantic_f1": 1.0,
+          "entity_semantic_f1": 1.0
+        },
+        {
+          "generated_at_utc": "2026-03-21T17:39:13Z",
+          "sample_id": "gh_flowchart_00553",
+          "split": "test",
+          "diagram_type": "flowchart",
+          "complexity_bucket": 5,
+          "gate_kind": "oracle_gate",
+          "planner_kind": "oracle_planner",
+          "turn_count": 20,
+          "total_stages": 5,
+          "updates_emitted": 5,
+          "final_stage_index": 5,
+          "stage_coverage_rate": 1.0,
+          "completed_all_stages": true,
+          "final_matches_reference": true,
+          "exact_update_count_match": true,
+          "gate_calls": 20,
+          "planner_calls": 5,
+          "gate_latency_mean_ms": null,
+          "planner_latency_mean_ms": null,
+          "total_model_latency_ms": 0,
+          "detail_path": "E:\\Desktop\\stream2graph\\reports\\evaluation\\runs\\incremental_system\\incremental_oracle_smoke_test_open_balanced_v1_3360_public_clean_20260322_r2\\inference\\details\\gh_flowchart_00553.json",
+          "error": null,
+          "canonicalized_match": true,
+          "node_semantic_f1": 1.0,
+          "group_semantic_f1": 1.0,
+          "edge_semantic_f1": 1.0,
+          "attachment_semantic_f1": 1.0,
+          "entity_semantic_f1": 1.0
+        },
+        {
+          "generated_at_utc": "2026-03-21T17:39:13Z",
+          "sample_id": "gh_architecture_01353",
+          "split": "test",
+          "diagram_type": "architecture",
+          "complexity_bucket": 5,
+          "gate_kind": "oracle_gate",
+          "planner_kind": "oracle_planner",
+          "turn_count": 21,
+          "total_stages": 5,
+          "updates_emitted": 5,
+          "final_stage_index": 5,
+          "stage_coverage_rate": 1.0,
+          "completed_all_stages": true,
+          "final_matches_reference": true,
+          "exact_update_count_match": true,
+          "gate_calls": 21,
+          "planner_calls": 5,
+          "gate_latency_mean_ms": null,
+          "planner_latency_mean_ms": null,
+          "total_model_latency_ms": 0,
+          "detail_path": "E:\\Desktop\\stream2graph\\reports\\evaluation\\runs\\incremental_system\\incremental_oracle_smoke_test_open_balanced_v1_3360_public_clean_20260322_r2\\inference\\details\\gh_architecture_01353.json",
+          "error": null,
+          "canonicalized_match": true,
+          "node_semantic_f1": 1.0,
+          "group_semantic_f1": 1.0,
+          "edge_semantic_f1": 1.0,
+          "attachment_semantic_f1": 1.0,
+          "entity_semantic_f1": 1.0
+        }
+      ]
+    }
+  }
+}

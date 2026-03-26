@@ -1,0 +1,998 @@
+Starting Qwen3 LoRA training run
+{
+  "config": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/configs/finetune/qwen35_4b_gate_cloud_rtxpro6000_96g.json",
+  "model_name_or_path": "Qwen/Qwen3.5-4B",
+  "dataset_dir": "data/finetune/incremental_gate_sft_cloud",
+  "output_dir": "artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g",
+  "logging_dir": "reports/finetune/tensorboard/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g",
+  "offload_dir": "artifacts/finetune/offload/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g",
+  "max_seq_length": 1024,
+  "per_device_train_batch_size": 8,
+  "per_device_eval_batch_size": 8,
+  "gradient_accumulation_steps": 8,
+  "learning_rate": 0.0002,
+  "weight_decay": 0.0,
+  "warmup_ratio": 0.03,
+  "num_train_epochs": 2.0,
+  "max_steps": -1,
+  "logging_steps": 10,
+  "eval_steps": 100,
+  "save_steps": 100,
+  "save_total_limit": 4,
+  "seed": 42,
+  "lora_r": 16,
+  "lora_alpha": 32,
+  "lora_dropout": 0.05,
+  "target_modules": "q_proj,k_proj,v_proj,o_proj,gate_proj,up_proj,down_proj",
+  "gpu_memory_limit_mib": 48000,
+  "cpu_memory_limit_gib": 48,
+  "attn_implementation": "sdpa"
+}
+CUDA available: NVIDIA RTX PRO 6000 Blackwell Server Edition
+{
+  "requested_model_name_or_path": "Qwen/Qwen3.5-4B",
+  "resolved_model_source": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B"
+}
+Tokenizer loaded from /root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 12235 examples [00:00, 70091.16 examples/s]Generating train split: 24040 examples [00:00, 75377.59 examples/s]Generating train split: 30835 examples [00:00, 75471.64 examples/s]
+Generating validation split: 0 examples [00:00, ? examples/s]Generating validation split: 3655 examples [00:00, 76209.27 examples/s]
+Generating test split: 0 examples [00:00, ? examples/s]Generating test split: 3573 examples [00:00, 72615.18 examples/s]
+Tokenizing dataset:   0%|          | 0/30835 [00:00<?, ? examples/s]Tokenizing dataset:   0%|          | 25/30835 [00:00<02:08, 239.40 examples/s]Tokenizing dataset:   0%|          | 60/30835 [00:00<01:42, 300.04 examples/s]Tokenizing dataset:   0%|          | 94/30835 [00:00<01:37, 315.50 examples/s]Tokenizing dataset:   0%|          | 126/30835 [00:00<01:37, 313.44 examples/s]Tokenizing dataset:   1%|          | 165/30835 [00:00<01:31, 336.61 examples/s]Tokenizing dataset:   1%|          | 200/30835 [00:00<01:30, 337.89 examples/s]Tokenizing dataset:   1%|          | 236/30835 [00:00<01:29, 342.98 examples/s]Tokenizing dataset:   1%|          | 271/30835 [00:00<01:29, 341.57 examples/s]Tokenizing dataset:   1%|          | 322/30835 [00:00<01:30, 338.98 examples/s]Tokenizing dataset:   1%|          | 356/30835 [00:01<01:30, 338.15 examples/s]Tokenizing dataset:   1%|▏         | 396/30835 [00:01<01:26, 353.21 examples/s]Tokenizing dataset:   1%|▏         | 436/30835 [00:01<01:23, 364.89 examples/s]Tokenizing dataset:   2%|▏         | 474/30835 [00:01<01:22, 367.55 examples/s]Tokenizing dataset:   2%|▏         | 515/30835 [00:01<01:20, 376.14 examples/s]Tokenizing dataset:   2%|▏         | 566/30835 [00:01<01:24, 359.04 examples/s]Tokenizing dataset:   2%|▏         | 618/30835 [00:01<01:25, 352.95 examples/s]Tokenizing dataset:   2%|▏         | 656/30835 [00:01<01:24, 357.55 examples/s]Tokenizing dataset:   2%|▏         | 695/30835 [00:01<01:22, 364.51 examples/s]Tokenizing dataset:   2%|▏         | 747/30835 [00:02<01:24, 354.77 examples/s]Tokenizing dataset:   3%|▎         | 787/30835 [00:02<01:23, 361.92 examples/s]Tokenizing dataset:   3%|▎         | 824/30835 [00:02<01:22, 361.79 examples/s]Tokenizing dataset:   3%|▎         | 864/30835 [00:02<01:21, 368.61 examples/s]Tokenizing dataset:   3%|▎         | 920/30835 [00:02<01:21, 368.88 examples/s]Tokenizing dataset:   3%|▎         | 975/30835 [00:02<01:21, 365.69 examples/s]Tokenizing dataset:   3%|▎         | 1016/30835 [00:03<02:23, 207.21 examples/s]Tokenizing dataset:   3%|▎         | 1047/30835 [00:03<02:14, 222.25 examples/s]Tokenizing dataset:   4%|▎         | 1082/30835 [00:03<02:01, 244.83 examples/s]Tokenizing dataset:   4%|▎         | 1119/30835 [00:03<01:51, 267.67 examples/s]Tokenizing dataset:   4%|▎         | 1152/30835 [00:03<01:46, 278.94 examples/s]Tokenizing dataset:   4%|▍         | 1188/30835 [00:03<01:40, 295.89 examples/s]Tokenizing dataset:   4%|▍         | 1237/30835 [00:03<01:37, 303.74 examples/s]Tokenizing dataset:   4%|▍         | 1272/30835 [00:03<01:34, 313.17 examples/s]Tokenizing dataset:   4%|▍         | 1307/30835 [00:04<01:31, 321.50 examples/s]Tokenizing dataset:   4%|▍         | 1343/30835 [00:04<01:29, 328.40 examples/s]Tokenizing dataset:   4%|▍         | 1380/30835 [00:04<01:26, 338.76 examples/s]Tokenizing dataset:   5%|▍         | 1415/30835 [00:04<01:27, 338.11 examples/s]Tokenizing dataset:   5%|▍         | 1454/30835 [00:04<01:24, 347.95 examples/s]Tokenizing dataset:   5%|▍         | 1506/30835 [00:04<01:25, 343.54 examples/s]Tokenizing dataset:   5%|▌         | 1544/30835 [00:04<01:23, 350.31 examples/s]Tokenizing dataset:   5%|▌         | 1583/30835 [00:04<01:21, 358.65 examples/s]Tokenizing dataset:   5%|▌         | 1630/30835 [00:05<01:26, 336.01 examples/s]Tokenizing dataset:   5%|▌         | 1678/30835 [00:05<01:28, 327.65 examples/s]Tokenizing dataset:   6%|▌         | 1713/30835 [00:05<01:28, 330.43 examples/s]Tokenizing dataset:   6%|▌         | 1750/30835 [00:05<01:26, 337.88 examples/s]Tokenizing dataset:   6%|▌         | 1801/30835 [00:05<01:26, 334.70 examples/s]Tokenizing dataset:   6%|▌         | 1836/30835 [00:05<01:26, 336.01 examples/s]Tokenizing dataset:   6%|▌         | 1872/30835 [00:05<01:25, 340.13 examples/s]Tokenizing dataset:   6%|▌         | 1925/30835 [00:05<01:24, 342.22 examples/s]Tokenizing dataset:   6%|▋         | 1975/30835 [00:06<01:26, 334.80 examples/s]Tokenizing dataset:   7%|▋         | 2016/30835 [00:06<01:48, 264.96 examples/s]Tokenizing dataset:   7%|▋         | 2046/30835 [00:06<01:46, 271.44 examples/s]Tokenizing dataset:   7%|▋         | 2080/30835 [00:06<01:41, 283.99 examples/s]Tokenizing dataset:   7%|▋         | 2116/30835 [00:06<01:35, 300.20 examples/s]Tokenizing dataset:   7%|▋         | 2151/30835 [00:06<01:32, 311.14 examples/s]Tokenizing dataset:   7%|▋         | 2185/30835 [00:06<01:30, 317.15 examples/s]Tokenizing dataset:   7%|▋         | 2220/30835 [00:06<01:28, 322.49 examples/s]Tokenizing dataset:   7%|▋         | 2253/30835 [00:06<01:28, 321.49 examples/s]Tokenizing dataset:   7%|▋         | 2287/30835 [00:07<01:28, 322.57 examples/s]Tokenizing dataset:   8%|▊         | 2320/30835 [00:07<01:28, 321.45 examples/s]Tokenizing dataset:   8%|▊         | 2369/30835 [00:07<01:29, 319.08 examples/s]Tokenizing dataset:   8%|▊         | 2403/30835 [00:07<01:28, 321.09 examples/s]Tokenizing dataset:   8%|▊         | 2452/30835 [00:07<01:28, 320.00 examples/s]Tokenizing dataset:   8%|▊         | 2494/30835 [00:07<01:34, 300.30 examples/s]Tokenizing dataset:   8%|▊         | 2535/30835 [00:07<01:38, 287.63 examples/s]Tokenizing dataset:   8%|▊         | 2573/30835 [00:08<01:42, 275.31 examples/s]Tokenizing dataset:   8%|▊         | 2602/30835 [00:08<01:42, 274.51 examples/s]Tokenizing dataset:   9%|▊         | 2632/30835 [00:08<01:41, 278.32 examples/s]Tokenizing dataset:   9%|▊         | 2665/30835 [00:08<01:36, 290.66 examples/s]Tokenizing dataset:   9%|▉         | 2700/30835 [00:08<01:32, 305.00 examples/s]Tokenizing dataset:   9%|▉         | 2740/30835 [00:08<01:26, 326.38 examples/s]Tokenizing dataset:   9%|▉         | 2776/30835 [00:08<01:24, 333.83 examples/s]Tokenizing dataset:   9%|▉         | 2812/30835 [00:08<01:22, 339.47 examples/s]Tokenizing dataset:   9%|▉         | 2863/30835 [00:08<01:23, 336.90 examples/s]Tokenizing dataset:   9%|▉         | 2905/30835 [00:09<01:18, 357.18 examples/s]Tokenizing dataset:  10%|▉         | 2944/30835 [00:09<01:16, 363.36 examples/s]Tokenizing dataset:  10%|▉         | 2983/30835 [00:09<01:16, 365.53 examples/s]Tokenizing dataset:  10%|▉         | 3031/30835 [00:09<01:38, 282.37 examples/s]Tokenizing dataset:  10%|▉         | 3065/30835 [00:09<01:34, 292.87 examples/s]Tokenizing dataset:  10%|█         | 3101/30835 [00:09<01:29, 308.33 examples/s]Tokenizing dataset:  10%|█         | 3138/30835 [00:09<01:25, 322.95 examples/s]Tokenizing dataset:  10%|█         | 3175/30835 [00:09<01:23, 332.49 examples/s]Tokenizing dataset:  10%|█         | 3212/30835 [00:10<01:20, 342.00 examples/s]Tokenizing dataset:  11%|█         | 3264/30835 [00:10<01:20, 340.45 examples/s]Tokenizing dataset:  11%|█         | 3316/30835 [00:10<01:21, 337.47 examples/s]Tokenizing dataset:  11%|█         | 3352/30835 [00:10<01:20, 340.77 examples/s]Tokenizing dataset:  11%|█         | 3387/30835 [00:10<01:20, 339.97 examples/s]Tokenizing dataset:  11%|█         | 3437/30835 [00:10<01:21, 335.29 examples/s]Tokenizing dataset:  11%|█▏        | 3473/30835 [00:10<01:20, 339.05 examples/s]Tokenizing dataset:  11%|█▏        | 3508/30835 [00:10<01:20, 339.49 examples/s]Tokenizing dataset:  11%|█▏        | 3544/30835 [00:11<01:19, 343.22 examples/s]Tokenizing dataset:  12%|█▏        | 3583/30835 [00:11<01:17, 352.92 examples/s]Tokenizing dataset:  12%|█▏        | 3620/30835 [00:11<01:16, 356.19 examples/s]Tokenizing dataset:  12%|█▏        | 3669/30835 [00:11<01:19, 341.78 examples/s]Tokenizing dataset:  12%|█▏        | 3706/30835 [00:11<01:18, 346.20 examples/s]Tokenizing dataset:  12%|█▏        | 3741/30835 [00:11<01:18, 345.74 examples/s]Tokenizing dataset:  12%|█▏        | 3779/30835 [00:11<01:16, 352.10 examples/s]Tokenizing dataset:  12%|█▏        | 3816/30835 [00:11<01:16, 355.51 examples/s]Tokenizing dataset:  13%|█▎        | 3868/30835 [00:11<01:17, 349.48 examples/s]Tokenizing dataset:  13%|█▎        | 3905/30835 [00:12<01:16, 351.76 examples/s]Tokenizing dataset:  13%|█▎        | 3955/30835 [00:12<01:18, 340.54 examples/s]Tokenizing dataset:  13%|█▎        | 3993/30835 [00:12<01:17, 348.56 examples/s]Tokenizing dataset:  13%|█▎        | 4035/30835 [00:12<01:34, 284.98 examples/s]Tokenizing dataset:  13%|█▎        | 4067/30835 [00:12<01:32, 290.33 examples/s]Tokenizing dataset:  13%|█▎        | 4102/30835 [00:12<01:28, 300.68 examples/s]Tokenizing dataset:  13%|█▎        | 4138/30835 [00:12<01:25, 313.62 examples/s]Tokenizing dataset:  14%|█▎        | 4173/30835 [00:12<01:23, 319.54 examples/s]Tokenizing dataset:  14%|█▎        | 4210/30835 [00:13<01:20, 330.36 examples/s]Tokenizing dataset:  14%|█▍        | 4246/30835 [00:13<01:19, 336.26 examples/s]Tokenizing dataset:  14%|█▍        | 4285/30835 [00:13<01:16, 348.32 examples/s]Tokenizing dataset:  14%|█▍        | 4322/30835 [00:13<01:15, 351.32 examples/s]Tokenizing dataset:  14%|█▍        | 4361/30835 [00:13<01:13, 360.87 examples/s]Tokenizing dataset:  14%|█▍        | 4416/30835 [00:13<01:13, 361.53 examples/s]Tokenizing dataset:  14%|█▍        | 4455/30835 [00:13<01:11, 366.39 examples/s]Tokenizing dataset:  15%|█▍        | 4494/30835 [00:13<01:11, 368.43 examples/s]Tokenizing dataset:  15%|█▍        | 4532/30835 [00:13<01:11, 368.71 examples/s]Tokenizing dataset:  15%|█▍        | 4571/30835 [00:13<01:10, 370.13 examples/s]Tokenizing dataset:  15%|█▌        | 4627/30835 [00:14<01:11, 368.46 examples/s]Tokenizing dataset:  15%|█▌        | 4664/30835 [00:14<01:11, 366.81 examples/s]Tokenizing dataset:  15%|█▌        | 4701/30835 [00:14<01:11, 363.85 examples/s]Tokenizing dataset:  15%|█▌        | 4740/30835 [00:14<01:11, 367.33 examples/s]Tokenizing dataset:  16%|█▌        | 4793/30835 [00:14<01:13, 355.86 examples/s]Tokenizing dataset:  16%|█▌        | 4845/30835 [00:14<01:14, 348.64 examples/s]Tokenizing dataset:  16%|█▌        | 4897/30835 [00:14<01:15, 342.78 examples/s]Tokenizing dataset:  16%|█▌        | 4936/30835 [00:15<01:13, 350.56 examples/s]Tokenizing dataset:  16%|█▌        | 4975/30835 [00:15<01:12, 357.68 examples/s]Tokenizing dataset:  16%|█▋        | 5018/30835 [00:15<01:30, 285.86 examples/s]Tokenizing dataset:  16%|█▋        | 5055/30835 [00:15<01:24, 303.42 examples/s]Tokenizing dataset:  17%|█▋        | 5089/30835 [00:15<01:23, 309.12 examples/s]Tokenizing dataset:  17%|█▋        | 5124/30835 [00:15<01:21, 315.81 examples/s]Tokenizing dataset:  17%|█▋        | 5158/30835 [00:15<01:20, 319.93 examples/s]Tokenizing dataset:  17%|█▋        | 5199/30835 [00:15<01:26, 296.46 examples/s]Tokenizing dataset:  17%|█▋        | 5233/30835 [00:16<01:36, 264.01 examples/s]Tokenizing dataset:  17%|█▋        | 5278/30835 [00:16<01:34, 270.61 examples/s]Tokenizing dataset:  17%|█▋        | 5310/30835 [00:16<01:31, 279.53 examples/s]Tokenizing dataset:  17%|█▋        | 5348/30835 [00:16<01:24, 301.46 examples/s]Tokenizing dataset:  17%|█▋        | 5384/30835 [00:16<01:20, 315.50 examples/s]Tokenizing dataset:  18%|█▊        | 5418/30835 [00:16<01:19, 320.78 examples/s]Tokenizing dataset:  18%|█▊        | 5454/30835 [00:16<01:16, 330.72 examples/s]Tokenizing dataset:  18%|█▊        | 5505/30835 [00:16<01:16, 333.29 examples/s]Tokenizing dataset:  18%|█▊        | 5539/30835 [00:17<01:15, 333.93 examples/s]Tokenizing dataset:  18%|█▊        | 5574/30835 [00:17<01:15, 335.63 examples/s]Tokenizing dataset:  18%|█▊        | 5609/30835 [00:17<01:14, 337.68 examples/s]Tokenizing dataset:  18%|█▊        | 5647/30835 [00:17<01:12, 347.13 examples/s]Tokenizing dataset:  18%|█▊        | 5683/30835 [00:17<01:12, 347.81 examples/s]Tokenizing dataset:  19%|█▊        | 5735/30835 [00:17<01:12, 345.11 examples/s]Tokenizing dataset:  19%|█▊        | 5772/30835 [00:17<01:11, 349.32 examples/s]Tokenizing dataset:  19%|█▉        | 5808/30835 [00:17<01:11, 349.32 examples/s]Tokenizing dataset:  19%|█▉        | 5847/30835 [00:17<01:09, 357.29 examples/s]Tokenizing dataset:  19%|█▉        | 5897/30835 [00:18<01:12, 346.13 examples/s]Tokenizing dataset:  19%|█▉        | 5935/30835 [00:18<01:10, 352.10 examples/s]Tokenizing dataset:  19%|█▉        | 5972/30835 [00:18<01:10, 353.76 examples/s]Tokenizing dataset:  20%|█▉        | 6018/30835 [00:18<01:25, 290.17 examples/s]Tokenizing dataset:  20%|█▉        | 6052/30835 [00:18<01:23, 297.78 examples/s]Tokenizing dataset:  20%|█▉        | 6087/30835 [00:18<01:19, 309.48 examples/s]Tokenizing dataset:  20%|█▉        | 6124/30835 [00:18<01:16, 323.56 examples/s]Tokenizing dataset:  20%|█▉        | 6161/30835 [00:18<01:14, 331.98 examples/s]Tokenizing dataset:  20%|██        | 6197/30835 [00:18<01:13, 334.39 examples/s]Tokenizing dataset:  20%|██        | 6232/30835 [00:19<01:13, 334.61 examples/s]Tokenizing dataset:  20%|██        | 6266/30835 [00:19<01:13, 334.08 examples/s]Tokenizing dataset:  20%|██        | 6302/30835 [00:19<01:12, 337.85 examples/s]Tokenizing dataset:  21%|██        | 6340/30835 [00:19<01:10, 348.07 examples/s]Tokenizing dataset:  21%|██        | 6376/30835 [00:19<01:09, 349.86 examples/s]Tokenizing dataset:  21%|██        | 6413/30835 [00:19<01:09, 353.32 examples/s]Tokenizing dataset:  21%|██        | 6453/30835 [00:19<01:06, 364.35 examples/s]Tokenizing dataset:  21%|██        | 6505/30835 [00:19<01:08, 355.11 examples/s]Tokenizing dataset:  21%|██        | 6543/30835 [00:19<01:07, 360.51 examples/s]Tokenizing dataset:  21%|██▏       | 6580/30835 [00:20<01:07, 361.57 examples/s]Tokenizing dataset:  22%|██▏       | 6631/30835 [00:20<01:09, 350.62 examples/s]Tokenizing dataset:  22%|██▏       | 6670/30835 [00:20<01:07, 357.34 examples/s]Tokenizing dataset:  22%|██▏       | 6707/30835 [00:20<01:07, 359.87 examples/s]Tokenizing dataset:  22%|██▏       | 6745/30835 [00:20<01:06, 362.17 examples/s]Tokenizing dataset:  22%|██▏       | 6783/30835 [00:20<01:06, 361.99 examples/s]Tokenizing dataset:  22%|██▏       | 6820/30835 [00:20<01:06, 361.39 examples/s]Tokenizing dataset:  22%|██▏       | 6858/30835 [00:20<01:06, 362.20 examples/s]Tokenizing dataset:  22%|██▏       | 6895/30835 [00:20<01:06, 360.99 examples/s]Tokenizing dataset:  23%|██▎       | 6949/30835 [00:21<01:06, 358.57 examples/s]Tokenizing dataset:  23%|██▎       | 6986/30835 [00:21<01:06, 359.67 examples/s]Tokenizing dataset:  23%|██▎       | 7037/30835 [00:21<01:19, 300.96 examples/s]Tokenizing dataset:  23%|██▎       | 7074/30835 [00:21<01:15, 314.79 examples/s]Tokenizing dataset:  23%|██▎       | 7111/30835 [00:21<01:12, 327.90 examples/s]Tokenizing dataset:  23%|██▎       | 7149/30835 [00:21<01:09, 339.10 examples/s]Tokenizing dataset:  23%|██▎       | 7200/30835 [00:21<01:10, 337.59 examples/s]Tokenizing dataset:  23%|██▎       | 7238/30835 [00:21<01:08, 345.35 examples/s]Tokenizing dataset:  24%|██▎       | 7276/30835 [00:22<01:06, 351.74 examples/s]Tokenizing dataset:  24%|██▎       | 7312/30835 [00:22<01:06, 353.02 examples/s]Tokenizing dataset:  24%|██▍       | 7349/30835 [00:22<01:06, 354.11 examples/s]Tokenizing dataset:  24%|██▍       | 7386/30835 [00:22<01:06, 354.76 examples/s]Tokenizing dataset:  24%|██▍       | 7423/30835 [00:22<01:05, 356.34 examples/s]Tokenizing dataset:  24%|██▍       | 7462/30835 [00:22<01:04, 360.58 examples/s]Tokenizing dataset:  24%|██▍       | 7500/30835 [00:22<01:04, 360.54 examples/s]Tokenizing dataset:  24%|██▍       | 7554/30835 [00:22<01:05, 355.94 examples/s]Tokenizing dataset:  25%|██▍       | 7606/30835 [00:23<01:06, 348.16 examples/s]Tokenizing dataset:  25%|██▍       | 7645/30835 [00:23<01:05, 356.03 examples/s]Tokenizing dataset:  25%|██▍       | 7681/30835 [00:23<01:05, 352.71 examples/s]Tokenizing dataset:  25%|██▌       | 7719/30835 [00:23<01:04, 356.50 examples/s]Tokenizing dataset:  25%|██▌       | 7760/30835 [00:23<01:02, 367.31 examples/s]Tokenizing dataset:  25%|██▌       | 7798/30835 [00:23<01:02, 369.22 examples/s]Tokenizing dataset:  25%|██▌       | 7838/30835 [00:23<01:01, 375.04 examples/s]Tokenizing dataset:  26%|██▌       | 7878/30835 [00:23<01:00, 377.03 examples/s]Tokenizing dataset:  26%|██▌       | 7918/30835 [00:23<01:00, 379.51 examples/s]Tokenizing dataset:  26%|██▌       | 7971/30835 [00:23<01:02, 367.76 examples/s]Tokenizing dataset:  26%|██▌       | 8017/30835 [00:24<01:16, 299.14 examples/s]Tokenizing dataset:  26%|██▌       | 8056/30835 [00:24<01:11, 316.89 examples/s]Tokenizing dataset:  26%|██▌       | 8094/30835 [00:24<01:08, 331.13 examples/s]Tokenizing dataset:  26%|██▋       | 8130/30835 [00:24<01:07, 335.56 examples/s]Tokenizing dataset:  27%|██▋       | 8182/30835 [00:24<01:07, 336.77 examples/s]Tokenizing dataset:  27%|██▋       | 8221/30835 [00:24<01:05, 346.74 examples/s]Tokenizing dataset:  27%|██▋       | 8260/30835 [00:24<01:03, 355.68 examples/s]Tokenizing dataset:  27%|██▋       | 8299/30835 [00:24<01:02, 363.35 examples/s]Tokenizing dataset:  27%|██▋       | 8337/30835 [00:25<01:01, 364.99 examples/s]Tokenizing dataset:  27%|██▋       | 8374/30835 [00:25<01:01, 364.75 examples/s]Tokenizing dataset:  27%|██▋       | 8412/30835 [00:25<01:01, 366.85 examples/s]Tokenizing dataset:  27%|██▋       | 8453/30835 [00:25<00:59, 376.08 examples/s]Tokenizing dataset:  28%|██▊       | 8492/30835 [00:25<00:59, 376.57 examples/s]Tokenizing dataset:  28%|██▊       | 8532/30835 [00:25<00:58, 381.40 examples/s]Tokenizing dataset:  28%|██▊       | 8571/30835 [00:25<00:58, 380.85 examples/s]Tokenizing dataset:  28%|██▊       | 8611/30835 [00:25<00:57, 383.59 examples/s]Tokenizing dataset:  28%|██▊       | 8651/30835 [00:25<00:57, 385.67 examples/s]Tokenizing dataset:  28%|██▊       | 8691/30835 [00:25<00:57, 387.91 examples/s]Tokenizing dataset:  28%|██▊       | 8733/30835 [00:26<00:56, 394.32 examples/s]Tokenizing dataset:  29%|██▊       | 8793/30835 [00:26<00:56, 393.05 examples/s]Tokenizing dataset:  29%|██▊       | 8835/30835 [00:26<00:55, 397.49 examples/s]Tokenizing dataset:  29%|██▉       | 8879/30835 [00:26<00:54, 405.81 examples/s]Tokenizing dataset:  29%|██▉       | 8941/30835 [00:26<00:54, 404.94 examples/s]Tokenizing dataset:  29%|██▉       | 8982/30835 [00:26<00:54, 402.98 examples/s]Tokenizing dataset:  29%|██▉       | 9038/30835 [00:26<01:06, 328.92 examples/s]Tokenizing dataset:  29%|██▉       | 9091/30835 [00:27<01:05, 332.76 examples/s]Tokenizing dataset:  30%|██▉       | 9144/30835 [00:27<01:04, 337.18 examples/s]Tokenizing dataset:  30%|██▉       | 9179/30835 [00:27<01:04, 337.67 examples/s]Tokenizing dataset:  30%|██▉       | 9219/30835 [00:27<01:01, 349.53 examples/s]Tokenizing dataset:  30%|███       | 9256/30835 [00:27<01:01, 353.05 examples/s]Tokenizing dataset:  30%|███       | 9293/30835 [00:27<01:00, 356.35 examples/s]Tokenizing dataset:  30%|███       | 9330/30835 [00:27<01:00, 356.14 examples/s]Tokenizing dataset:  30%|███       | 9368/30835 [00:27<00:59, 361.65 examples/s]Tokenizing dataset:  31%|███       | 9405/30835 [00:27<00:59, 361.77 examples/s]Tokenizing dataset:  31%|███       | 9459/30835 [00:28<00:59, 357.83 examples/s]Tokenizing dataset:  31%|███       | 9501/30835 [00:28<00:57, 370.43 examples/s]Tokenizing dataset:  31%|███       | 9544/30835 [00:28<00:55, 382.26 examples/s]Tokenizing dataset:  31%|███       | 9586/30835 [00:28<00:54, 389.97 examples/s]Tokenizing dataset:  31%|███       | 9628/30835 [00:28<00:53, 394.57 examples/s]Tokenizing dataset:  31%|███▏      | 9669/30835 [00:28<00:53, 392.71 examples/s]Tokenizing dataset:  31%|███▏      | 9710/30835 [00:28<00:53, 394.59 examples/s]Tokenizing dataset:  32%|███▏      | 9769/30835 [00:28<00:53, 391.74 examples/s]Tokenizing dataset:  32%|███▏      | 9827/30835 [00:29<00:54, 386.05 examples/s]Tokenizing dataset:  32%|███▏      | 9869/30835 [00:29<00:53, 393.23 examples/s]Tokenizing dataset:  32%|███▏      | 9910/30835 [00:29<00:53, 394.38 examples/s]Tokenizing dataset:  32%|███▏      | 9954/30835 [00:29<00:51, 404.29 examples/s]Tokenizing dataset:  32%|███▏      | 9996/30835 [00:29<00:51, 407.22 examples/s]Tokenizing dataset:  33%|███▎      | 10038/30835 [00:29<01:05, 316.59 examples/s]Tokenizing dataset:  33%|███▎      | 10079/30835 [00:29<01:01, 336.86 examples/s]Tokenizing dataset:  33%|███▎      | 10119/30835 [00:29<00:58, 351.28 examples/s]Tokenizing dataset:  33%|███▎      | 10164/30835 [00:29<00:55, 374.74 examples/s]Tokenizing dataset:  33%|███▎      | 10221/30835 [00:30<00:55, 374.19 examples/s]Tokenizing dataset:  33%|███▎      | 10261/30835 [00:30<00:54, 377.24 examples/s]Tokenizing dataset:  33%|███▎      | 10302/30835 [00:30<00:53, 384.00 examples/s]Tokenizing dataset:  34%|███▎      | 10344/30835 [00:30<00:52, 389.33 examples/s]Tokenizing dataset:  34%|███▎      | 10403/30835 [00:30<00:52, 386.71 examples/s]Tokenizing dataset:  34%|███▍      | 10444/30835 [00:30<00:52, 391.94 examples/s]Tokenizing dataset:  34%|███▍      | 10485/30835 [00:30<00:51, 393.71 examples/s]Tokenizing dataset:  34%|███▍      | 10543/30835 [00:30<00:52, 389.81 examples/s]Tokenizing dataset:  34%|███▍      | 10604/30835 [00:31<00:51, 391.99 examples/s]Tokenizing dataset:  35%|███▍      | 10664/30835 [00:31<00:51, 391.60 examples/s]Tokenizing dataset:  35%|███▍      | 10723/30835 [00:31<00:51, 390.68 examples/s]Tokenizing dataset:  35%|███▍      | 10763/30835 [00:31<00:51, 391.76 examples/s]Tokenizing dataset:  35%|███▌      | 10805/30835 [00:31<00:50, 397.06 examples/s]Tokenizing dataset:  35%|███▌      | 10845/30835 [00:31<00:50, 394.80 examples/s]Tokenizing dataset:  35%|███▌      | 10885/30835 [00:31<00:50, 394.19 examples/s]Tokenizing dataset:  35%|███▌      | 10926/30835 [00:31<00:50, 395.45 examples/s]Tokenizing dataset:  36%|███▌      | 10985/30835 [00:32<00:50, 391.45 examples/s]Tokenizing dataset:  36%|███▌      | 11037/30835 [00:32<01:02, 317.69 examples/s]Tokenizing dataset:  36%|███▌      | 11074/30835 [00:32<01:00, 328.58 examples/s]Tokenizing dataset:  36%|███▌      | 11111/30835 [00:32<00:58, 337.04 examples/s]Tokenizing dataset:  36%|███▌      | 11149/30835 [00:32<00:56, 346.77 examples/s]Tokenizing dataset:  36%|███▋      | 11190/30835 [00:32<00:54, 360.56 examples/s]Tokenizing dataset:  36%|███▋      | 11228/30835 [00:32<00:54, 362.87 examples/s]Tokenizing dataset:  37%|███▋      | 11268/30835 [00:32<00:52, 370.92 examples/s]Tokenizing dataset:  37%|███▋      | 11325/30835 [00:33<00:52, 372.39 examples/s]Tokenizing dataset:  37%|███▋      | 11364/30835 [00:33<00:52, 373.44 examples/s]Tokenizing dataset:  37%|███▋      | 11403/30835 [00:33<00:51, 375.07 examples/s]Tokenizing dataset:  37%|███▋      | 11443/30835 [00:33<00:51, 377.30 examples/s]Tokenizing dataset:  37%|███▋      | 11500/30835 [00:33<00:51, 373.09 examples/s]Tokenizing dataset:  37%|███▋      | 11539/30835 [00:33<00:51, 371.95 examples/s]Tokenizing dataset:  38%|███▊      | 11579/30835 [00:33<00:50, 378.91 examples/s]Tokenizing dataset:  38%|███▊      | 11618/30835 [00:33<00:50, 380.16 examples/s]Tokenizing dataset:  38%|███▊      | 11677/30835 [00:33<00:50, 383.16 examples/s]Tokenizing dataset:  38%|███▊      | 11718/30835 [00:34<00:49, 387.22 examples/s]Tokenizing dataset:  38%|███▊      | 11759/30835 [00:34<00:49, 387.54 examples/s]Tokenizing dataset:  38%|███▊      | 11816/30835 [00:34<00:49, 380.90 examples/s]Tokenizing dataset:  38%|███▊      | 11858/30835 [00:34<00:48, 389.13 examples/s]Tokenizing dataset:  39%|███▊      | 11913/30835 [00:34<00:50, 376.84 examples/s]Tokenizing dataset:  39%|███▉      | 11954/30835 [00:34<00:49, 380.23 examples/s]Tokenizing dataset:  39%|███▉      | 12000/30835 [00:34<00:59, 316.86 examples/s]Tokenizing dataset:  39%|███▉      | 12041/30835 [00:35<00:55, 335.90 examples/s]Tokenizing dataset:  39%|███▉      | 12080/30835 [00:35<00:54, 345.88 examples/s]Tokenizing dataset:  39%|███▉      | 12120/30835 [00:35<00:52, 358.53 examples/s]Tokenizing dataset:  39%|███▉      | 12162/30835 [00:35<00:50, 372.15 examples/s]Tokenizing dataset:  40%|███▉      | 12204/30835 [00:35<00:48, 383.26 examples/s]Tokenizing dataset:  40%|███▉      | 12245/30835 [00:35<00:47, 388.39 examples/s]Tokenizing dataset:  40%|███▉      | 12290/30835 [00:35<00:46, 401.23 examples/s]Tokenizing dataset:  40%|███▉      | 12331/30835 [00:35<00:46, 399.13 examples/s]Tokenizing dataset:  40%|████      | 12390/30835 [00:35<00:46, 393.50 examples/s]Tokenizing dataset:  40%|████      | 12431/30835 [00:35<00:46, 393.12 examples/s]Tokenizing dataset:  40%|████      | 12473/30835 [00:36<00:46, 396.24 examples/s]Tokenizing dataset:  41%|████      | 12516/30835 [00:36<00:45, 404.80 examples/s]Tokenizing dataset:  41%|████      | 12558/30835 [00:36<00:45, 405.77 examples/s]Tokenizing dataset:  41%|████      | 12620/30835 [00:36<00:44, 406.14 examples/s]Tokenizing dataset:  41%|████      | 12661/30835 [00:36<00:45, 403.74 examples/s]Tokenizing dataset:  41%|████      | 12703/30835 [00:36<00:44, 405.55 examples/s]Tokenizing dataset:  41%|████▏     | 12747/30835 [00:36<00:43, 411.93 examples/s]Tokenizing dataset:  42%|████▏     | 12807/30835 [00:36<00:44, 400.79 examples/s]Tokenizing dataset:  42%|████▏     | 12860/30835 [00:37<01:00, 297.98 examples/s]Tokenizing dataset:  42%|████▏     | 12903/30835 [00:37<00:55, 323.58 examples/s]Tokenizing dataset:  42%|████▏     | 12946/30835 [00:37<00:51, 345.57 examples/s]Tokenizing dataset:  42%|████▏     | 12989/30835 [00:37<00:49, 362.43 examples/s]Tokenizing dataset:  42%|████▏     | 13041/30835 [00:37<00:56, 316.32 examples/s]Tokenizing dataset:  42%|████▏     | 13080/30835 [00:37<00:53, 331.69 examples/s]Tokenizing dataset:  43%|████▎     | 13122/30835 [00:37<00:50, 351.11 examples/s]Tokenizing dataset:  43%|████▎     | 13162/30835 [00:38<00:48, 361.51 examples/s]Tokenizing dataset:  43%|████▎     | 13202/30835 [00:38<00:47, 367.39 examples/s]Tokenizing dataset:  43%|████▎     | 13242/30835 [00:38<00:47, 372.84 examples/s]Tokenizing dataset:  43%|████▎     | 13281/30835 [00:38<00:46, 375.17 examples/s]Tokenizing dataset:  43%|████▎     | 13320/30835 [00:38<00:46, 373.99 examples/s]Tokenizing dataset:  43%|████▎     | 13360/30835 [00:38<00:46, 378.92 examples/s]Tokenizing dataset:  44%|████▎     | 13416/30835 [00:38<00:46, 373.43 examples/s]Tokenizing dataset:  44%|████▎     | 13454/30835 [00:38<00:47, 369.58 examples/s]Tokenizing dataset:  44%|████▍     | 13509/30835 [00:38<00:47, 367.95 examples/s]Tokenizing dataset:  44%|████▍     | 13548/30835 [00:39<00:46, 371.60 examples/s]Tokenizing dataset:  44%|████▍     | 13591/30835 [00:39<00:45, 382.49 examples/s]Tokenizing dataset:  44%|████▍     | 13630/30835 [00:39<00:45, 381.97 examples/s]Tokenizing dataset:  44%|████▍     | 13671/30835 [00:39<00:44, 384.84 examples/s]Tokenizing dataset:  44%|████▍     | 13715/30835 [00:39<00:43, 397.92 examples/s]Tokenizing dataset:  45%|████▍     | 13758/30835 [00:39<00:42, 403.62 examples/s]Tokenizing dataset:  45%|████▍     | 13800/30835 [00:39<00:42, 400.49 examples/s]Tokenizing dataset:  45%|████▍     | 13842/30835 [00:39<00:42, 403.34 examples/s]Tokenizing dataset:  45%|████▌     | 13885/30835 [00:39<00:41, 408.97 examples/s]Tokenizing dataset:  45%|████▌     | 13928/30835 [00:39<00:41, 409.78 examples/s]Tokenizing dataset:  45%|████▌     | 13972/30835 [00:40<00:40, 414.39 examples/s]Tokenizing dataset:  45%|████▌     | 14019/30835 [00:40<00:50, 334.34 examples/s]Tokenizing dataset:  46%|████▌     | 14061/30835 [00:40<00:47, 352.89 examples/s]Tokenizing dataset:  46%|████▌     | 14103/30835 [00:40<00:45, 370.12 examples/s]Tokenizing dataset:  46%|████▌     | 14147/30835 [00:40<00:43, 385.94 examples/s]Tokenizing dataset:  46%|████▌     | 14190/30835 [00:40<00:41, 396.67 examples/s]Tokenizing dataset:  46%|████▌     | 14234/30835 [00:40<00:40, 406.13 examples/s]Tokenizing dataset:  46%|████▋     | 14279/30835 [00:40<00:39, 415.50 examples/s]Tokenizing dataset:  46%|████▋     | 14323/30835 [00:40<00:39, 419.87 examples/s]Tokenizing dataset:  47%|████▋     | 14387/30835 [00:41<00:39, 415.18 examples/s]Tokenizing dataset:  47%|████▋     | 14431/30835 [00:41<00:39, 418.44 examples/s]Tokenizing dataset:  47%|████▋     | 14476/30835 [00:41<00:38, 424.00 examples/s]Tokenizing dataset:  47%|████▋     | 14521/30835 [00:41<00:37, 429.96 examples/s]Tokenizing dataset:  47%|████▋     | 14565/30835 [00:41<00:37, 429.53 examples/s]Tokenizing dataset:  47%|████▋     | 14609/30835 [00:41<00:37, 430.61 examples/s]Tokenizing dataset:  48%|████▊     | 14674/30835 [00:41<00:37, 428.37 examples/s]Tokenizing dataset:  48%|████▊     | 14720/30835 [00:41<00:37, 434.13 examples/s]Tokenizing dataset:  48%|████▊     | 14769/30835 [00:42<00:36, 446.06 examples/s]Tokenizing dataset:  48%|████▊     | 14817/30835 [00:42<00:35, 453.73 examples/s]Tokenizing dataset:  48%|████▊     | 14869/30835 [00:42<00:33, 471.50 examples/s]Tokenizing dataset:  48%|████▊     | 14917/30835 [00:42<00:33, 472.29 examples/s]Tokenizing dataset:  49%|████▊     | 14966/30835 [00:42<00:33, 472.42 examples/s]Tokenizing dataset:  49%|████▊     | 15023/30835 [00:42<00:40, 387.20 examples/s]Tokenizing dataset:  49%|████▉     | 15066/30835 [00:42<00:39, 394.96 examples/s]Tokenizing dataset:  49%|████▉     | 15109/30835 [00:42<00:39, 400.04 examples/s]Tokenizing dataset:  49%|████▉     | 15161/30835 [00:43<00:47, 332.45 examples/s]Tokenizing dataset:  49%|████▉     | 15198/30835 [00:43<00:51, 301.11 examples/s]Tokenizing dataset:  49%|████▉     | 15240/30835 [00:43<00:53, 290.10 examples/s]Tokenizing dataset:  50%|████▉     | 15281/30835 [00:43<00:54, 283.25 examples/s]Tokenizing dataset:  50%|████▉     | 15312/30835 [00:43<00:54, 287.03 examples/s]Tokenizing dataset:  50%|████▉     | 15343/30835 [00:43<00:53, 291.80 examples/s]Tokenizing dataset:  50%|████▉     | 15382/30835 [00:43<00:55, 277.70 examples/s]Tokenizing dataset:  50%|█████     | 15421/30835 [00:44<00:57, 270.41 examples/s]Tokenizing dataset:  50%|█████     | 15460/30835 [00:44<00:57, 265.19 examples/s]Tokenizing dataset:  50%|█████     | 15497/30835 [00:44<00:59, 256.58 examples/s]Tokenizing dataset:  50%|█████     | 15528/30835 [00:44<00:57, 266.45 examples/s]Tokenizing dataset:  50%|█████     | 15558/30835 [00:44<00:56, 272.31 examples/s]Tokenizing dataset:  51%|█████     | 15589/30835 [00:44<00:54, 278.72 examples/s]Tokenizing dataset:  51%|█████     | 15632/30835 [00:44<00:54, 279.26 examples/s]Tokenizing dataset:  51%|█████     | 15662/30835 [00:44<00:53, 281.99 examples/s]Tokenizing dataset:  51%|█████     | 15693/30835 [00:45<00:52, 286.60 examples/s]Tokenizing dataset:  51%|█████     | 15723/30835 [00:45<00:52, 287.07 examples/s]Tokenizing dataset:  51%|█████     | 15756/30835 [00:45<00:50, 297.31 examples/s]Tokenizing dataset:  51%|█████     | 15789/30835 [00:45<00:49, 301.78 examples/s]Tokenizing dataset:  51%|█████▏    | 15820/30835 [00:45<00:50, 299.46 examples/s]Tokenizing dataset:  51%|█████▏    | 15862/30835 [00:45<00:52, 287.16 examples/s]Tokenizing dataset:  52%|█████▏    | 15904/30835 [00:45<00:53, 280.85 examples/s]Tokenizing dataset:  52%|█████▏    | 15934/30835 [00:45<00:52, 281.18 examples/s]Tokenizing dataset:  52%|█████▏    | 15967/30835 [00:45<00:50, 292.69 examples/s]Tokenizing dataset:  52%|█████▏    | 16000/30835 [00:46<01:02, 236.04 examples/s]Tokenizing dataset:  52%|█████▏    | 16029/30835 [00:46<01:00, 245.80 examples/s]Tokenizing dataset:  52%|█████▏    | 16060/30835 [00:46<00:57, 258.80 examples/s]Tokenizing dataset:  52%|█████▏    | 16092/30835 [00:46<00:54, 271.70 examples/s]Tokenizing dataset:  52%|█████▏    | 16122/30835 [00:46<00:53, 276.22 examples/s]Tokenizing dataset:  52%|█████▏    | 16152/30835 [00:46<00:52, 279.09 examples/s]Tokenizing dataset:  52%|█████▏    | 16183/30835 [00:46<00:51, 284.72 examples/s]Tokenizing dataset:  53%|█████▎    | 16212/30835 [00:46<00:51, 283.00 examples/s]Tokenizing dataset:  53%|█████▎    | 16244/30835 [00:46<00:50, 290.89 examples/s]Tokenizing dataset:  53%|█████▎    | 16274/30835 [00:47<00:50, 289.87 examples/s]Tokenizing dataset:  53%|█████▎    | 16318/30835 [00:47<00:50, 287.24 examples/s]Tokenizing dataset:  53%|█████▎    | 16362/30835 [00:47<00:50, 284.78 examples/s]Tokenizing dataset:  53%|█████▎    | 16391/30835 [00:47<00:50, 283.92 examples/s]Tokenizing dataset:  53%|█████▎    | 16427/30835 [00:47<00:47, 300.92 examples/s]Tokenizing dataset:  53%|█████▎    | 16462/30835 [00:47<00:45, 313.02 examples/s]Tokenizing dataset:  54%|█████▎    | 16498/30835 [00:47<00:44, 324.83 examples/s]Tokenizing dataset:  54%|█████▎    | 16531/30835 [00:47<00:44, 324.08 examples/s]Tokenizing dataset:  54%|█████▍    | 16578/30835 [00:48<00:45, 315.78 examples/s]Tokenizing dataset:  54%|█████▍    | 16612/30835 [00:48<00:44, 318.31 examples/s]Tokenizing dataset:  54%|█████▍    | 16647/30835 [00:48<00:43, 325.26 examples/s]Tokenizing dataset:  54%|█████▍    | 16681/30835 [00:48<00:43, 326.99 examples/s]Tokenizing dataset:  54%|█████▍    | 16733/30835 [00:48<00:42, 328.71 examples/s]Tokenizing dataset:  54%|█████▍    | 16770/30835 [00:48<00:41, 336.03 examples/s]Tokenizing dataset:  55%|█████▍    | 16818/30835 [00:48<00:42, 328.31 examples/s]Tokenizing dataset:  55%|█████▍    | 16866/30835 [00:48<00:43, 319.24 examples/s]Tokenizing dataset:  55%|█████▍    | 16912/30835 [00:49<00:44, 311.22 examples/s]Tokenizing dataset:  55%|█████▌    | 16960/30835 [00:49<00:44, 309.93 examples/s]Tokenizing dataset:  55%|█████▌    | 16995/30835 [00:49<00:43, 316.09 examples/s]Tokenizing dataset:  55%|█████▌    | 17032/30835 [00:49<00:54, 253.14 examples/s]Tokenizing dataset:  55%|█████▌    | 17060/30835 [00:49<00:53, 257.43 examples/s]Tokenizing dataset:  55%|█████▌    | 17091/30835 [00:49<00:51, 266.96 examples/s]Tokenizing dataset:  56%|█████▌    | 17122/30835 [00:49<00:49, 274.61 examples/s]Tokenizing dataset:  56%|█████▌    | 17156/30835 [00:50<00:47, 286.75 examples/s]Tokenizing dataset:  56%|█████▌    | 17199/30835 [00:50<00:48, 281.93 examples/s]Tokenizing dataset:  56%|█████▌    | 17231/30835 [00:50<00:47, 288.98 examples/s]Tokenizing dataset:  56%|█████▌    | 17261/30835 [00:50<00:46, 290.20 examples/s]Tokenizing dataset:  56%|█████▌    | 17294/30835 [00:50<00:45, 298.87 examples/s]Tokenizing dataset:  56%|█████▌    | 17329/30835 [00:50<00:43, 310.38 examples/s]Tokenizing dataset:  56%|█████▋    | 17375/30835 [00:50<00:44, 302.23 examples/s]Tokenizing dataset:  56%|█████▋    | 17408/30835 [00:50<00:43, 307.20 examples/s]Tokenizing dataset:  57%|█████▋    | 17440/30835 [00:50<00:43, 308.50 examples/s]Tokenizing dataset:  57%|█████▋    | 17486/30835 [00:51<00:43, 304.69 examples/s]Tokenizing dataset:  57%|█████▋    | 17530/30835 [00:51<00:45, 295.57 examples/s]Tokenizing dataset:  57%|█████▋    | 17565/30835 [00:51<00:43, 305.55 examples/s]Tokenizing dataset:  57%|█████▋    | 17599/30835 [00:51<00:42, 312.68 examples/s]Tokenizing dataset:  57%|█████▋    | 17632/30835 [00:51<00:42, 313.92 examples/s]Tokenizing dataset:  57%|█████▋    | 17681/30835 [00:51<00:41, 314.90 examples/s]Tokenizing dataset:  57%|█████▋    | 17713/30835 [00:51<00:41, 312.85 examples/s]Tokenizing dataset:  58%|█████▊    | 17745/30835 [00:51<00:41, 311.95 examples/s]Tokenizing dataset:  58%|█████▊    | 17780/30835 [00:52<00:40, 320.06 examples/s]Tokenizing dataset:  58%|█████▊    | 17816/30835 [00:52<00:39, 328.43 examples/s]Tokenizing dataset:  58%|█████▊    | 17849/30835 [00:52<00:39, 327.46 examples/s]Tokenizing dataset:  58%|█████▊    | 17882/30835 [00:52<00:39, 324.65 examples/s]Tokenizing dataset:  58%|█████▊    | 17926/30835 [00:52<00:41, 308.38 examples/s]Tokenizing dataset:  58%|█████▊    | 17960/30835 [00:52<00:40, 314.97 examples/s]Tokenizing dataset:  58%|█████▊    | 18000/30835 [00:52<00:52, 244.22 examples/s]Tokenizing dataset:  58%|█████▊    | 18032/30835 [00:52<00:49, 258.91 examples/s]Tokenizing dataset:  59%|█████▊    | 18062/30835 [00:53<00:47, 266.52 examples/s]Tokenizing dataset:  59%|█████▊    | 18095/30835 [00:53<00:45, 280.51 examples/s]Tokenizing dataset:  59%|█████▉    | 18128/30835 [00:53<00:43, 289.70 examples/s]Tokenizing dataset:  59%|█████▉    | 18175/30835 [00:53<00:43, 293.14 examples/s]Tokenizing dataset:  59%|█████▉    | 18208/30835 [00:53<00:41, 300.68 examples/s]Tokenizing dataset:  59%|█████▉    | 18240/30835 [00:53<00:41, 302.18 examples/s]Tokenizing dataset:  59%|█████▉    | 18272/30835 [00:53<00:41, 304.84 examples/s]Tokenizing dataset:  59%|█████▉    | 18304/30835 [00:53<00:40, 308.25 examples/s]Tokenizing dataset:  60%|█████▉    | 18351/30835 [00:53<00:40, 304.91 examples/s]Tokenizing dataset:  60%|█████▉    | 18383/30835 [00:54<00:40, 305.46 examples/s]Tokenizing dataset:  60%|█████▉    | 18414/30835 [00:54<00:40, 305.11 examples/s]Tokenizing dataset:  60%|█████▉    | 18448/30835 [00:54<00:39, 311.89 examples/s]Tokenizing dataset:  60%|█████▉    | 18489/30835 [00:54<00:41, 295.72 examples/s]Tokenizing dataset:  60%|██████    | 18522/30835 [00:54<00:40, 302.78 examples/s]Tokenizing dataset:  60%|██████    | 18553/30835 [00:54<00:40, 302.00 examples/s]Tokenizing dataset:  60%|██████    | 18584/30835 [00:54<00:40, 302.13 examples/s]Tokenizing dataset:  60%|██████    | 18619/30835 [00:54<00:39, 312.44 examples/s]Tokenizing dataset:  61%|██████    | 18664/30835 [00:55<00:39, 305.82 examples/s]Tokenizing dataset:  61%|██████    | 18697/30835 [00:55<00:39, 308.49 examples/s]Tokenizing dataset:  61%|██████    | 18732/30835 [00:55<00:38, 315.56 examples/s]Tokenizing dataset:  61%|██████    | 18765/30835 [00:55<00:38, 317.51 examples/s]Tokenizing dataset:  61%|██████    | 18797/30835 [00:55<00:37, 318.11 examples/s]Tokenizing dataset:  61%|██████    | 18830/30835 [00:55<00:37, 316.05 examples/s]Tokenizing dataset:  61%|██████    | 18875/30835 [00:55<00:39, 305.77 examples/s]Tokenizing dataset:  61%|██████▏   | 18908/30835 [00:55<00:38, 310.73 examples/s]Tokenizing dataset:  61%|██████▏   | 18941/30835 [00:55<00:38, 312.55 examples/s]Tokenizing dataset:  62%|██████▏   | 18975/30835 [00:55<00:37, 317.20 examples/s]Tokenizing dataset:  62%|██████▏   | 19017/30835 [00:56<00:46, 254.27 examples/s]Tokenizing dataset:  62%|██████▏   | 19047/30835 [00:56<00:44, 262.18 examples/s]Tokenizing dataset:  62%|██████▏   | 19076/30835 [00:56<00:44, 266.57 examples/s]Tokenizing dataset:  62%|██████▏   | 19108/30835 [00:56<00:42, 277.32 examples/s]Tokenizing dataset:  62%|██████▏   | 19141/30835 [00:56<00:40, 286.78 examples/s]Tokenizing dataset:  62%|██████▏   | 19172/30835 [00:56<00:40, 290.89 examples/s]Tokenizing dataset:  62%|██████▏   | 19202/30835 [00:56<00:40, 289.09 examples/s]Tokenizing dataset:  62%|██████▏   | 19234/30835 [00:56<00:39, 296.99 examples/s]Tokenizing dataset:  62%|██████▏   | 19265/30835 [00:57<00:38, 297.25 examples/s]Tokenizing dataset:  63%|██████▎   | 19295/30835 [00:57<00:39, 292.98 examples/s]Tokenizing dataset:  63%|██████▎   | 19325/30835 [00:57<00:39, 293.01 examples/s]Tokenizing dataset:  63%|██████▎   | 19357/30835 [00:57<00:38, 296.22 examples/s]Tokenizing dataset:  63%|██████▎   | 19391/30835 [00:57<00:37, 304.90 examples/s]Tokenizing dataset:  63%|██████▎   | 19427/30835 [00:57<00:36, 315.41 examples/s]Tokenizing dataset:  63%|██████▎   | 19460/30835 [00:57<00:35, 316.37 examples/s]Tokenizing dataset:  63%|██████▎   | 19493/30835 [00:57<00:35, 318.32 examples/s]Tokenizing dataset:  63%|██████▎   | 19527/30835 [00:57<00:35, 321.75 examples/s]Tokenizing dataset:  63%|██████▎   | 19572/30835 [00:58<00:36, 309.27 examples/s]Tokenizing dataset:  64%|██████▎   | 19620/30835 [00:58<00:36, 311.21 examples/s]Tokenizing dataset:  64%|██████▎   | 19653/30835 [00:58<00:35, 314.73 examples/s]Tokenizing dataset:  64%|██████▍   | 19697/30835 [00:58<00:36, 304.83 examples/s]Tokenizing dataset:  64%|██████▍   | 19730/30835 [00:58<00:35, 309.27 examples/s]Tokenizing dataset:  64%|██████▍   | 19763/30835 [00:58<00:35, 310.46 examples/s]Tokenizing dataset:  64%|██████▍   | 19795/30835 [00:58<00:35, 309.38 examples/s]Tokenizing dataset:  64%|██████▍   | 19828/30835 [00:58<00:35, 311.95 examples/s]Tokenizing dataset:  64%|██████▍   | 19860/30835 [00:58<00:35, 312.67 examples/s]Tokenizing dataset:  65%|██████▍   | 19905/30835 [00:59<00:36, 302.64 examples/s]Tokenizing dataset:  65%|██████▍   | 19937/30835 [00:59<00:35, 304.93 examples/s]Tokenizing dataset:  65%|██████▍   | 19969/30835 [00:59<00:35, 307.09 examples/s]Tokenizing dataset:  65%|██████▍   | 20000/30835 [00:59<00:45, 236.84 examples/s]Tokenizing dataset:  65%|██████▍   | 20033/30835 [00:59<00:42, 256.18 examples/s]Tokenizing dataset:  65%|██████▌   | 20066/30835 [00:59<00:39, 273.41 examples/s]Tokenizing dataset:  65%|██████▌   | 20099/30835 [00:59<00:37, 286.51 examples/s]Tokenizing dataset:  65%|██████▌   | 20134/30835 [00:59<00:35, 300.68 examples/s]Tokenizing dataset:  65%|██████▌   | 20167/30835 [01:00<00:34, 305.16 examples/s]Tokenizing dataset:  66%|██████▌   | 20201/30835 [01:00<00:34, 310.02 examples/s]Tokenizing dataset:  66%|██████▌   | 20237/30835 [01:00<00:37, 282.22 examples/s]Tokenizing dataset:  66%|██████▌   | 20269/30835 [01:00<00:36, 289.79 examples/s]Tokenizing dataset:  66%|██████▌   | 20302/30835 [01:00<00:35, 298.79 examples/s]Tokenizing dataset:  66%|██████▌   | 20336/30835 [01:00<00:34, 307.45 examples/s]Tokenizing dataset:  66%|██████▌   | 20370/30835 [01:00<00:33, 311.97 examples/s]Tokenizing dataset:  66%|██████▌   | 20404/30835 [01:00<00:32, 318.31 examples/s]Tokenizing dataset:  66%|██████▋   | 20452/30835 [01:00<00:33, 312.48 examples/s]Tokenizing dataset:  66%|██████▋   | 20486/30835 [01:01<00:32, 317.10 examples/s]Tokenizing dataset:  67%|██████▋   | 20519/30835 [01:01<00:32, 319.40 examples/s]Tokenizing dataset:  67%|██████▋   | 20554/30835 [01:01<00:31, 323.65 examples/s]Tokenizing dataset:  67%|██████▋   | 20590/30835 [01:01<00:30, 331.36 examples/s]Tokenizing dataset:  67%|██████▋   | 20625/30835 [01:01<00:30, 332.74 examples/s]Tokenizing dataset:  67%|██████▋   | 20664/30835 [01:01<00:29, 346.86 examples/s]Tokenizing dataset:  67%|██████▋   | 20703/30835 [01:01<00:28, 357.79 examples/s]Tokenizing dataset:  67%|██████▋   | 20752/30835 [01:01<00:29, 343.22 examples/s]Tokenizing dataset:  67%|██████▋   | 20801/30835 [01:02<00:29, 335.33 examples/s]Tokenizing dataset:  68%|██████▊   | 20850/30835 [01:02<00:30, 331.42 examples/s]Tokenizing dataset:  68%|██████▊   | 20900/30835 [01:02<00:30, 329.39 examples/s]Tokenizing dataset:  68%|██████▊   | 20948/30835 [01:02<00:30, 325.20 examples/s]Tokenizing dataset:  68%|██████▊   | 20984/30835 [01:02<00:29, 330.68 examples/s]Tokenizing dataset:  68%|██████▊   | 21033/30835 [01:02<00:36, 270.74 examples/s]Tokenizing dataset:  68%|██████▊   | 21067/30835 [01:02<00:34, 283.15 examples/s]Tokenizing dataset:  68%|██████▊   | 21103/30835 [01:03<00:32, 298.00 examples/s]Tokenizing dataset:  69%|██████▊   | 21137/30835 [01:03<00:31, 303.52 examples/s]Tokenizing dataset:  69%|██████▊   | 21172/30835 [01:03<00:30, 312.67 examples/s]Tokenizing dataset:  69%|██████▉   | 21206/30835 [01:03<00:30, 318.31 examples/s]Tokenizing dataset:  69%|██████▉   | 21254/30835 [01:03<00:30, 316.68 examples/s]Tokenizing dataset:  69%|██████▉   | 21289/30835 [01:03<00:29, 323.31 examples/s]Tokenizing dataset:  69%|██████▉   | 21324/30835 [01:03<00:29, 327.63 examples/s]Tokenizing dataset:  69%|██████▉   | 21358/30835 [01:03<00:28, 327.31 examples/s]Tokenizing dataset:  69%|██████▉   | 21392/30835 [01:03<00:28, 328.40 examples/s]Tokenizing dataset:  69%|██████▉   | 21429/30835 [01:04<00:27, 337.07 examples/s]Tokenizing dataset:  70%|██████▉   | 21466/30835 [01:04<00:27, 343.60 examples/s]Tokenizing dataset:  70%|██████▉   | 21504/30835 [01:04<00:26, 351.16 examples/s]Tokenizing dataset:  70%|██████▉   | 21541/30835 [01:04<00:26, 353.73 examples/s]Tokenizing dataset:  70%|███████   | 21592/30835 [01:04<00:26, 343.09 examples/s]Tokenizing dataset:  70%|███████   | 21643/30835 [01:04<00:27, 339.77 examples/s]Tokenizing dataset:  70%|███████   | 21694/30835 [01:04<00:27, 337.81 examples/s]Tokenizing dataset:  71%|███████   | 21743/30835 [01:04<00:27, 332.38 examples/s]Tokenizing dataset:  71%|███████   | 21780/30835 [01:05<00:26, 339.12 examples/s]Tokenizing dataset:  71%|███████   | 21815/30835 [01:05<00:26, 341.07 examples/s]Tokenizing dataset:  71%|███████   | 21851/30835 [01:05<00:26, 342.80 examples/s]Tokenizing dataset:  71%|███████   | 21888/30835 [01:05<00:25, 347.03 examples/s]Tokenizing dataset:  71%|███████   | 21941/30835 [01:05<00:25, 344.39 examples/s]Tokenizing dataset:  71%|███████▏  | 21976/30835 [01:05<00:25, 342.14 examples/s]Tokenizing dataset:  71%|███████▏  | 22017/30835 [01:05<00:32, 272.55 examples/s]Tokenizing dataset:  72%|███████▏  | 22051/30835 [01:05<00:30, 284.76 examples/s]Tokenizing dataset:  72%|███████▏  | 22085/30835 [01:06<00:29, 296.68 examples/s]Tokenizing dataset:  72%|███████▏  | 22119/30835 [01:06<00:28, 307.06 examples/s]Tokenizing dataset:  72%|███████▏  | 22153/30835 [01:06<00:27, 314.64 examples/s]Tokenizing dataset:  72%|███████▏  | 22187/30835 [01:06<00:27, 319.69 examples/s]Tokenizing dataset:  72%|███████▏  | 22220/30835 [01:06<00:27, 316.53 examples/s]Tokenizing dataset:  72%|███████▏  | 22265/30835 [01:06<00:27, 309.70 examples/s]Tokenizing dataset:  72%|███████▏  | 22298/30835 [01:06<00:27, 312.86 examples/s]Tokenizing dataset:  72%|███████▏  | 22344/30835 [01:06<00:27, 307.91 examples/s]Tokenizing dataset:  73%|███████▎  | 22393/30835 [01:06<00:27, 311.99 examples/s]Tokenizing dataset:  73%|███████▎  | 22427/30835 [01:07<00:26, 316.31 examples/s]Tokenizing dataset:  73%|███████▎  | 22462/30835 [01:07<00:26, 321.52 examples/s]Tokenizing dataset:  73%|███████▎  | 22498/30835 [01:07<00:25, 329.82 examples/s]Tokenizing dataset:  73%|███████▎  | 22534/30835 [01:07<00:24, 335.90 examples/s]Tokenizing dataset:  73%|███████▎  | 22569/30835 [01:07<00:24, 337.01 examples/s]Tokenizing dataset:  73%|███████▎  | 22606/30835 [01:07<00:23, 344.02 examples/s]Tokenizing dataset:  73%|███████▎  | 22642/30835 [01:07<00:23, 344.62 examples/s]Tokenizing dataset:  74%|███████▎  | 22679/30835 [01:07<00:23, 348.59 examples/s]Tokenizing dataset:  74%|███████▎  | 22714/30835 [01:07<00:23, 344.88 examples/s]Tokenizing dataset:  74%|███████▍  | 22749/30835 [01:08<00:23, 342.59 examples/s]Tokenizing dataset:  74%|███████▍  | 22799/30835 [01:08<00:24, 333.53 examples/s]Tokenizing dataset:  74%|███████▍  | 22851/30835 [01:08<00:23, 337.17 examples/s]Tokenizing dataset:  74%|███████▍  | 22887/30835 [01:08<00:23, 341.02 examples/s]Tokenizing dataset:  74%|███████▍  | 22941/30835 [01:08<00:22, 343.96 examples/s]Tokenizing dataset:  75%|███████▍  | 22981/30835 [01:08<00:22, 353.77 examples/s]Tokenizing dataset:  75%|███████▍  | 23017/30835 [01:08<00:27, 280.04 examples/s]Tokenizing dataset:  75%|███████▍  | 23049/30835 [01:09<00:27, 287.23 examples/s]Tokenizing dataset:  75%|███████▍  | 23084/30835 [01:09<00:25, 300.54 examples/s]Tokenizing dataset:  75%|███████▍  | 23120/30835 [01:09<00:24, 312.88 examples/s]Tokenizing dataset:  75%|███████▌  | 23154/30835 [01:09<00:24, 319.06 examples/s]Tokenizing dataset:  75%|███████▌  | 23189/30835 [01:09<00:23, 325.54 examples/s]Tokenizing dataset:  75%|███████▌  | 23223/30835 [01:09<00:23, 327.88 examples/s]Tokenizing dataset:  75%|███████▌  | 23258/30835 [01:09<00:22, 330.94 examples/s]Tokenizing dataset:  76%|███████▌  | 23293/30835 [01:09<00:22, 335.45 examples/s]Tokenizing dataset:  76%|███████▌  | 23328/30835 [01:09<00:22, 339.17 examples/s]Tokenizing dataset:  76%|███████▌  | 23365/30835 [01:09<00:21, 345.02 examples/s]Tokenizing dataset:  76%|███████▌  | 23402/30835 [01:10<00:21, 348.34 examples/s]Tokenizing dataset:  76%|███████▌  | 23439/30835 [01:10<00:20, 352.45 examples/s]Tokenizing dataset:  76%|███████▌  | 23477/30835 [01:10<00:20, 359.00 examples/s]Tokenizing dataset:  76%|███████▋  | 23513/30835 [01:10<00:20, 355.00 examples/s]Tokenizing dataset:  76%|███████▋  | 23549/30835 [01:10<00:20, 354.38 examples/s]Tokenizing dataset:  76%|███████▋  | 23588/30835 [01:10<00:20, 360.21 examples/s]Tokenizing dataset:  77%|███████▋  | 23626/30835 [01:10<00:19, 363.11 examples/s]Tokenizing dataset:  77%|███████▋  | 23665/30835 [01:10<00:19, 366.58 examples/s]Tokenizing dataset:  77%|███████▋  | 23705/30835 [01:10<00:19, 372.30 examples/s]Tokenizing dataset:  77%|███████▋  | 23760/30835 [01:11<00:19, 364.37 examples/s]Tokenizing dataset:  77%|███████▋  | 23797/30835 [01:11<00:19, 363.08 examples/s]Tokenizing dataset:  77%|███████▋  | 23836/30835 [01:11<00:19, 367.36 examples/s]Tokenizing dataset:  77%|███████▋  | 23873/30835 [01:11<00:19, 364.98 examples/s]Tokenizing dataset:  78%|███████▊  | 23910/30835 [01:11<00:19, 363.88 examples/s]Tokenizing dataset:  78%|███████▊  | 23950/30835 [01:11<00:18, 370.48 examples/s]Tokenizing dataset:  78%|███████▊  | 23995/30835 [01:11<00:17, 391.37 examples/s]Tokenizing dataset:  78%|███████▊  | 24048/30835 [01:11<00:22, 295.67 examples/s]Tokenizing dataset:  78%|███████▊  | 24083/30835 [01:11<00:22, 305.12 examples/s]Tokenizing dataset:  78%|███████▊  | 24117/30835 [01:12<00:21, 311.33 examples/s]Tokenizing dataset:  78%|███████▊  | 24151/30835 [01:12<00:21, 316.61 examples/s]Tokenizing dataset:  78%|███████▊  | 24187/30835 [01:12<00:20, 324.65 examples/s]Tokenizing dataset:  79%|███████▊  | 24224/30835 [01:12<00:19, 333.03 examples/s]Tokenizing dataset:  79%|███████▊  | 24259/30835 [01:12<00:19, 335.81 examples/s]Tokenizing dataset:  79%|███████▉  | 24297/30835 [01:12<00:18, 345.37 examples/s]Tokenizing dataset:  79%|███████▉  | 24336/30835 [01:12<00:18, 355.56 examples/s]Tokenizing dataset:  79%|███████▉  | 24374/30835 [01:12<00:17, 360.84 examples/s]Tokenizing dataset:  79%|███████▉  | 24413/30835 [01:12<00:17, 367.01 examples/s]Tokenizing dataset:  79%|███████▉  | 24466/30835 [01:13<00:17, 356.62 examples/s]Tokenizing dataset:  80%|███████▉  | 24519/30835 [01:13<00:17, 353.73 examples/s]Tokenizing dataset:  80%|███████▉  | 24569/30835 [01:13<00:18, 344.43 examples/s]Tokenizing dataset:  80%|███████▉  | 24611/30835 [01:13<00:19, 319.88 examples/s]Tokenizing dataset:  80%|███████▉  | 24650/30835 [01:13<00:18, 334.72 examples/s]Tokenizing dataset:  80%|████████  | 24687/30835 [01:13<00:18, 340.73 examples/s]Tokenizing dataset:  80%|████████  | 24726/30835 [01:13<00:17, 350.21 examples/s]Tokenizing dataset:  80%|████████  | 24764/30835 [01:13<00:17, 356.20 examples/s]Tokenizing dataset:  80%|████████  | 24803/30835 [01:14<00:16, 364.02 examples/s]Tokenizing dataset:  81%|████████  | 24844/30835 [01:14<00:16, 371.06 examples/s]Tokenizing dataset:  81%|████████  | 24884/30835 [01:14<00:15, 376.77 examples/s]Tokenizing dataset:  81%|████████  | 24922/30835 [01:14<00:15, 374.04 examples/s]Tokenizing dataset:  81%|████████  | 24977/30835 [01:14<00:15, 368.56 examples/s]Tokenizing dataset:  81%|████████  | 25019/30835 [01:14<00:19, 299.23 examples/s]Tokenizing dataset:  81%|████████▏ | 25055/30835 [01:14<00:18, 311.63 examples/s]Tokenizing dataset:  81%|████████▏ | 25093/30835 [01:14<00:17, 324.79 examples/s]Tokenizing dataset:  81%|████████▏ | 25130/30835 [01:15<00:17, 333.09 examples/s]Tokenizing dataset:  82%|████████▏ | 25166/30835 [01:15<00:16, 338.26 examples/s]Tokenizing dataset:  82%|████████▏ | 25203/30835 [01:15<00:16, 342.10 examples/s]Tokenizing dataset:  82%|████████▏ | 25243/30835 [01:15<00:15, 353.73 examples/s]Tokenizing dataset:  82%|████████▏ | 25280/30835 [01:15<00:15, 356.23 examples/s]Tokenizing dataset:  82%|████████▏ | 25316/30835 [01:15<00:15, 353.88 examples/s]Tokenizing dataset:  82%|████████▏ | 25354/30835 [01:15<00:15, 357.07 examples/s]Tokenizing dataset:  82%|████████▏ | 25405/30835 [01:15<00:15, 347.96 examples/s]Tokenizing dataset:  83%|████████▎ | 25441/30835 [01:15<00:15, 346.94 examples/s]Tokenizing dataset:  83%|████████▎ | 25476/30835 [01:16<00:15, 344.91 examples/s]Tokenizing dataset:  83%|████████▎ | 25527/30835 [01:16<00:15, 338.68 examples/s]Tokenizing dataset:  83%|████████▎ | 25564/30835 [01:16<00:15, 344.68 examples/s]Tokenizing dataset:  83%|████████▎ | 25604/30835 [01:16<00:14, 357.73 examples/s]Tokenizing dataset:  83%|████████▎ | 25641/30835 [01:16<00:14, 358.10 examples/s]Tokenizing dataset:  83%|████████▎ | 25699/30835 [01:16<00:14, 366.29 examples/s]Tokenizing dataset:  83%|████████▎ | 25737/30835 [01:16<00:13, 367.81 examples/s]Tokenizing dataset:  84%|████████▎ | 25776/30835 [01:16<00:13, 370.72 examples/s]Tokenizing dataset:  84%|████████▎ | 25814/30835 [01:16<00:13, 367.87 examples/s]Tokenizing dataset:  84%|████████▍ | 25853/30835 [01:17<00:13, 371.69 examples/s]Tokenizing dataset:  84%|████████▍ | 25891/30835 [01:17<00:13, 370.53 examples/s]Tokenizing dataset:  84%|████████▍ | 25931/30835 [01:17<00:13, 372.89 examples/s]Tokenizing dataset:  84%|████████▍ | 25988/30835 [01:17<00:13, 370.25 examples/s]Tokenizing dataset:  84%|████████▍ | 26033/30835 [01:17<00:16, 295.84 examples/s]Tokenizing dataset:  85%|████████▍ | 26070/30835 [01:17<00:15, 310.73 examples/s]Tokenizing dataset:  85%|████████▍ | 26109/30835 [01:17<00:14, 328.89 examples/s]Tokenizing dataset:  85%|████████▍ | 26149/30835 [01:17<00:13, 346.07 examples/s]Tokenizing dataset:  85%|████████▍ | 26188/30835 [01:18<00:13, 353.71 examples/s]Tokenizing dataset:  85%|████████▌ | 26228/30835 [01:18<00:12, 365.27 examples/s]Tokenizing dataset:  85%|████████▌ | 26267/30835 [01:18<00:12, 369.99 examples/s]Tokenizing dataset:  85%|████████▌ | 26325/30835 [01:18<00:12, 373.79 examples/s]Tokenizing dataset:  85%|████████▌ | 26363/30835 [01:18<00:12, 371.53 examples/s]Tokenizing dataset:  86%|████████▌ | 26402/30835 [01:18<00:11, 372.84 examples/s]Tokenizing dataset:  86%|████████▌ | 26459/30835 [01:18<00:11, 373.00 examples/s]Tokenizing dataset:  86%|████████▌ | 26499/30835 [01:18<00:11, 376.41 examples/s]Tokenizing dataset:  86%|████████▌ | 26538/30835 [01:18<00:11, 378.85 examples/s]Tokenizing dataset:  86%|████████▌ | 26577/30835 [01:19<00:11, 377.44 examples/s]Tokenizing dataset:  86%|████████▋ | 26618/30835 [01:19<00:10, 385.62 examples/s]Tokenizing dataset:  86%|████████▋ | 26657/30835 [01:19<00:10, 384.61 examples/s]Tokenizing dataset:  87%|████████▋ | 26697/30835 [01:19<00:10, 386.80 examples/s]Tokenizing dataset:  87%|████████▋ | 26753/30835 [01:19<00:10, 378.10 examples/s]Tokenizing dataset:  87%|████████▋ | 26811/30835 [01:19<00:10, 376.39 examples/s]Tokenizing dataset:  87%|████████▋ | 26850/30835 [01:19<00:10, 378.81 examples/s]Tokenizing dataset:  87%|████████▋ | 26906/30835 [01:19<00:10, 375.17 examples/s]Tokenizing dataset:  87%|████████▋ | 26948/30835 [01:20<00:10, 383.33 examples/s]Tokenizing dataset:  88%|████████▊ | 26991/30835 [01:20<00:09, 391.82 examples/s]Tokenizing dataset:  88%|████████▊ | 27041/30835 [01:20<00:11, 323.53 examples/s]Tokenizing dataset:  88%|████████▊ | 27081/30835 [01:20<00:11, 339.61 examples/s]Tokenizing dataset:  88%|████████▊ | 27120/30835 [01:20<00:10, 349.18 examples/s]Tokenizing dataset:  88%|████████▊ | 27173/30835 [01:20<00:10, 347.75 examples/s]Tokenizing dataset:  88%|████████▊ | 27211/30835 [01:20<00:10, 353.12 examples/s]Tokenizing dataset:  88%|████████▊ | 27248/30835 [01:20<00:10, 355.51 examples/s]Tokenizing dataset:  88%|████████▊ | 27285/30835 [01:21<00:09, 358.12 examples/s]Tokenizing dataset:  89%|████████▊ | 27325/30835 [01:21<00:09, 366.13 examples/s]Tokenizing dataset:  89%|████████▊ | 27366/30835 [01:21<00:09, 374.58 examples/s]Tokenizing dataset:  89%|████████▉ | 27407/30835 [01:21<00:08, 380.94 examples/s]Tokenizing dataset:  89%|████████▉ | 27463/30835 [01:21<00:09, 374.45 examples/s]Tokenizing dataset:  89%|████████▉ | 27521/30835 [01:21<00:08, 374.95 examples/s]Tokenizing dataset:  89%|████████▉ | 27561/30835 [01:21<00:08, 379.42 examples/s]Tokenizing dataset:  90%|████████▉ | 27616/30835 [01:21<00:08, 371.12 examples/s]Tokenizing dataset:  90%|████████▉ | 27657/30835 [01:21<00:08, 377.05 examples/s]Tokenizing dataset:  90%|████████▉ | 27696/30835 [01:22<00:08, 377.74 examples/s]Tokenizing dataset:  90%|█████████ | 27754/30835 [01:22<00:08, 377.13 examples/s]Tokenizing dataset:  90%|█████████ | 27793/30835 [01:22<00:08, 379.05 examples/s]Tokenizing dataset:  90%|█████████ | 27832/30835 [01:22<00:07, 378.75 examples/s]Tokenizing dataset:  90%|█████████ | 27871/30835 [01:22<00:07, 376.01 examples/s]Tokenizing dataset:  91%|█████████ | 27909/30835 [01:22<00:07, 372.79 examples/s]Tokenizing dataset:  91%|█████████ | 27950/30835 [01:22<00:07, 379.16 examples/s]Tokenizing dataset:  91%|█████████ | 28000/30835 [01:22<00:09, 304.01 examples/s]Tokenizing dataset:  91%|█████████ | 28036/30835 [01:23<00:08, 315.30 examples/s]Tokenizing dataset:  91%|█████████ | 28088/30835 [01:23<00:08, 321.82 examples/s]Tokenizing dataset:  91%|█████████ | 28127/30835 [01:23<00:08, 336.73 examples/s]Tokenizing dataset:  91%|█████████▏| 28166/30835 [01:23<00:07, 349.49 examples/s]Tokenizing dataset:  91%|█████████▏| 28207/30835 [01:23<00:07, 364.00 examples/s]Tokenizing dataset:  92%|█████████▏| 28247/30835 [01:23<00:06, 371.16 examples/s]Tokenizing dataset:  92%|█████████▏| 28286/30835 [01:23<00:06, 373.05 examples/s]Tokenizing dataset:  92%|█████████▏| 28326/30835 [01:23<00:06, 378.19 examples/s]Tokenizing dataset:  92%|█████████▏| 28368/30835 [01:23<00:06, 388.37 examples/s]Tokenizing dataset:  92%|█████████▏| 28408/30835 [01:24<00:06, 388.65 examples/s]Tokenizing dataset:  92%|█████████▏| 28450/30835 [01:24<00:06, 393.31 examples/s]Tokenizing dataset:  92%|█████████▏| 28490/30835 [01:24<00:06, 390.63 examples/s]Tokenizing dataset:  93%|█████████▎| 28551/30835 [01:24<00:05, 391.07 examples/s]Tokenizing dataset:  93%|█████████▎| 28595/30835 [01:24<00:05, 400.98 examples/s]Tokenizing dataset:  93%|█████████▎| 28636/30835 [01:24<00:05, 399.22 examples/s]Tokenizing dataset:  93%|█████████▎| 28695/30835 [01:24<00:05, 394.31 examples/s]Tokenizing dataset:  93%|█████████▎| 28753/30835 [01:24<00:05, 387.41 examples/s]Tokenizing dataset:  93%|█████████▎| 28794/30835 [01:25<00:05, 390.72 examples/s]Tokenizing dataset:  94%|█████████▎| 28835/30835 [01:25<00:05, 394.93 examples/s]Tokenizing dataset:  94%|█████████▎| 28875/30835 [01:25<00:04, 394.86 examples/s]Tokenizing dataset:  94%|█████████▍| 28915/30835 [01:25<00:04, 391.49 examples/s]Tokenizing dataset:  94%|█████████▍| 28972/30835 [01:25<00:04, 382.44 examples/s]Tokenizing dataset:  94%|█████████▍| 29019/30835 [01:25<00:05, 319.09 examples/s]Tokenizing dataset:  94%|█████████▍| 29058/30835 [01:25<00:05, 333.00 examples/s]Tokenizing dataset:  94%|█████████▍| 29097/30835 [01:25<00:05, 343.38 examples/s]Tokenizing dataset:  95%|█████████▍| 29140/30835 [01:26<00:04, 359.83 examples/s]Tokenizing dataset:  95%|█████████▍| 29178/30835 [01:26<00:04, 362.29 examples/s]Tokenizing dataset:  95%|█████████▍| 29222/30835 [01:26<00:04, 380.64 examples/s]Tokenizing dataset:  95%|█████████▍| 29268/30835 [01:26<00:03, 399.00 examples/s]Tokenizing dataset:  95%|█████████▌| 29309/30835 [01:26<00:03, 400.31 examples/s]Tokenizing dataset:  95%|█████████▌| 29353/30835 [01:26<00:03, 409.11 examples/s]Tokenizing dataset:  95%|█████████▌| 29397/30835 [01:26<00:03, 415.01 examples/s]Tokenizing dataset:  95%|█████████▌| 29439/30835 [01:26<00:03, 414.69 examples/s]Tokenizing dataset:  96%|█████████▌| 29481/30835 [01:26<00:03, 413.95 examples/s]Tokenizing dataset:  96%|█████████▌| 29523/30835 [01:26<00:03, 411.30 examples/s]Tokenizing dataset:  96%|█████████▌| 29584/30835 [01:27<00:03, 408.26 examples/s]Tokenizing dataset:  96%|█████████▌| 29627/30835 [01:27<00:02, 411.87 examples/s]Tokenizing dataset:  96%|█████████▌| 29672/30835 [01:27<00:02, 420.11 examples/s]Tokenizing dataset:  96%|█████████▋| 29719/30835 [01:27<00:02, 429.89 examples/s]Tokenizing dataset:  97%|█████████▋| 29782/30835 [01:27<00:02, 423.04 examples/s]Tokenizing dataset:  97%|█████████▋| 29827/30835 [01:27<00:02, 428.64 examples/s]Tokenizing dataset:  97%|█████████▋| 29871/30835 [01:27<00:02, 429.14 examples/s]Tokenizing dataset:  97%|█████████▋| 29920/30835 [01:27<00:02, 443.17 examples/s]Tokenizing dataset:  97%|█████████▋| 29967/30835 [01:27<00:01, 445.63 examples/s]Tokenizing dataset:  97%|█████████▋| 30023/30835 [01:28<00:02, 367.39 examples/s]Tokenizing dataset:  98%|█████████▊| 30069/30835 [01:28<00:01, 386.96 examples/s]Tokenizing dataset:  98%|█████████▊| 30114/30835 [01:28<00:01, 400.99 examples/s]Tokenizing dataset:  98%|█████████▊| 30157/30835 [01:28<00:01, 406.48 examples/s]Tokenizing dataset:  98%|█████████▊| 30217/30835 [01:28<00:01, 400.38 examples/s]Tokenizing dataset:  98%|█████████▊| 30280/30835 [01:28<00:01, 402.46 examples/s]Tokenizing dataset:  98%|█████████▊| 30324/30835 [01:28<00:01, 409.77 examples/s]Tokenizing dataset:  98%|█████████▊| 30367/30835 [01:28<00:01, 411.83 examples/s]Tokenizing dataset:  99%|█████████▊| 30412/30835 [01:29<00:01, 420.19 examples/s]Tokenizing dataset:  99%|█████████▉| 30455/30835 [01:29<00:00, 422.19 examples/s]Tokenizing dataset:  99%|█████████▉| 30499/30835 [01:29<00:00, 424.67 examples/s]Tokenizing dataset:  99%|█████████▉| 30546/30835 [01:29<00:00, 432.53 examples/s]Tokenizing dataset:  99%|█████████▉| 30590/30835 [01:29<00:00, 431.75 examples/s]Tokenizing dataset:  99%|█████████▉| 30654/30835 [01:29<00:00, 424.88 examples/s]Tokenizing dataset: 100%|█████████▉| 30697/30835 [01:29<00:00, 420.31 examples/s]Tokenizing dataset: 100%|█████████▉| 30745/30835 [01:29<00:00, 433.72 examples/s]Tokenizing dataset: 100%|█████████▉| 30791/30835 [01:29<00:00, 438.97 examples/s]Tokenizing dataset: 100%|██████████| 30835/30835 [01:30<00:00, 342.16 examples/s]
+Filter:   0%|          | 0/30835 [00:00<?, ? examples/s]Filter:   3%|▎         | 1000/30835 [00:00<00:18, 1608.17 examples/s]Filter:   6%|▋         | 2000/30835 [00:01<00:17, 1684.84 examples/s]Filter:  10%|▉         | 3000/30835 [00:01<00:15, 1759.31 examples/s]Filter:  13%|█▎        | 4000/30835 [00:02<00:14, 1799.13 examples/s]Filter:  16%|█▌        | 5000/30835 [00:02<00:14, 1831.34 examples/s]Filter:  19%|█▉        | 6000/30835 [00:03<00:13, 1875.61 examples/s]Filter:  23%|██▎       | 7000/30835 [00:03<00:12, 1920.28 examples/s]Filter:  26%|██▌       | 8000/30835 [00:04<00:11, 1944.74 examples/s]Filter:  29%|██▉       | 9000/30835 [00:04<00:11, 1960.98 examples/s]Filter:  32%|███▏      | 10000/30835 [00:05<00:10, 1960.95 examples/s]Filter:  36%|███▌      | 11000/30835 [00:05<00:10, 1978.90 examples/s]Filter:  39%|███▉      | 12000/30835 [00:06<00:09, 2008.74 examples/s]Filter:  42%|████▏     | 13000/30835 [00:06<00:09, 1868.33 examples/s]Filter:  45%|████▌     | 14000/30835 [00:07<00:08, 1932.88 examples/s]Filter:  49%|████▊     | 15000/30835 [00:07<00:07, 2042.14 examples/s]Filter:  52%|█████▏    | 16000/30835 [00:08<00:07, 1879.60 examples/s]Filter:  55%|█████▌    | 17000/30835 [00:09<00:07, 1745.69 examples/s]Filter:  58%|█████▊    | 18000/30835 [00:09<00:07, 1682.11 examples/s]Filter:  62%|██████▏   | 19000/30835 [00:10<00:07, 1686.32 examples/s]Filter:  65%|██████▍   | 20000/30835 [00:10<00:06, 1708.19 examples/s]Filter:  68%|██████▊   | 21000/30835 [00:11<00:05, 1758.11 examples/s]Filter:  71%|███████▏  | 22000/30835 [00:11<00:04, 1788.18 examples/s]Filter:  75%|███████▍  | 23000/30835 [00:12<00:04, 1816.19 examples/s]Filter:  78%|███████▊  | 24000/30835 [00:13<00:03, 1845.86 examples/s]Filter:  81%|████████  | 25000/30835 [00:13<00:03, 1873.48 examples/s]Filter:  84%|████████▍ | 26000/30835 [00:14<00:02, 1905.77 examples/s]Filter:  88%|████████▊ | 27000/30835 [00:14<00:01, 1944.86 examples/s]Filter:  91%|█████████ | 28000/30835 [00:15<00:01, 1972.54 examples/s]Filter:  94%|█████████▍| 29000/30835 [00:15<00:00, 2005.83 examples/s]Filter:  97%|█████████▋| 30000/30835 [00:15<00:00, 2078.57 examples/s]Filter: 100%|██████████| 30835/30835 [00:16<00:00, 2161.93 examples/s]Filter: 100%|██████████| 30835/30835 [00:16<00:00, 1892.52 examples/s]
+Tokenizing dataset:   0%|          | 0/3655 [00:00<?, ? examples/s]Tokenizing dataset:   1%|          | 30/3655 [00:00<00:12, 284.84 examples/s]Tokenizing dataset:   2%|▏         | 60/3655 [00:00<00:12, 287.59 examples/s]Tokenizing dataset:   3%|▎         | 92/3655 [00:00<00:11, 299.34 examples/s]Tokenizing dataset:   3%|▎         | 122/3655 [00:00<00:11, 299.18 examples/s]Tokenizing dataset:   4%|▍         | 156/3655 [00:00<00:11, 309.46 examples/s]Tokenizing dataset:   5%|▌         | 192/3655 [00:00<00:10, 320.31 examples/s]Tokenizing dataset:   6%|▌         | 225/3655 [00:00<00:10, 317.43 examples/s]Tokenizing dataset:   7%|▋         | 259/3655 [00:00<00:10, 323.54 examples/s]Tokenizing dataset:   8%|▊         | 296/3655 [00:00<00:10, 334.26 examples/s]Tokenizing dataset:   9%|▉         | 334/3655 [00:01<00:09, 346.20 examples/s]Tokenizing dataset:  10%|█         | 372/3655 [00:01<00:09, 353.25 examples/s]Tokenizing dataset:  12%|█▏        | 424/3655 [00:01<00:09, 347.13 examples/s]Tokenizing dataset:  13%|█▎        | 462/3655 [00:01<00:09, 353.36 examples/s]Tokenizing dataset:  14%|█▎        | 499/3655 [00:01<00:08, 355.40 examples/s]Tokenizing dataset:  15%|█▍        | 535/3655 [00:01<00:08, 352.86 examples/s]Tokenizing dataset:  16%|█▌        | 577/3655 [00:01<00:08, 369.56 examples/s]Tokenizing dataset:  17%|█▋        | 616/3655 [00:01<00:08, 373.16 examples/s]Tokenizing dataset:  18%|█▊        | 671/3655 [00:01<00:08, 368.51 examples/s]Tokenizing dataset:  19%|█▉        | 709/3655 [00:02<00:07, 370.29 examples/s]Tokenizing dataset:  21%|██        | 750/3655 [00:02<00:07, 378.97 examples/s]Tokenizing dataset:  22%|██▏       | 789/3655 [00:02<00:07, 377.60 examples/s]Tokenizing dataset:  23%|██▎       | 830/3655 [00:02<00:07, 381.93 examples/s]Tokenizing dataset:  24%|██▍       | 872/3655 [00:02<00:07, 388.42 examples/s]Tokenizing dataset:  25%|██▌       | 929/3655 [00:02<00:07, 381.44 examples/s]Tokenizing dataset:  27%|██▋       | 986/3655 [00:02<00:07, 378.73 examples/s]Tokenizing dataset:  28%|██▊       | 1037/3655 [00:03<00:11, 230.43 examples/s]Tokenizing dataset:  29%|██▉       | 1075/3655 [00:03<00:10, 254.60 examples/s]Tokenizing dataset:  30%|███       | 1114/3655 [00:03<00:09, 279.28 examples/s]Tokenizing dataset:  32%|███▏      | 1152/3655 [00:03<00:08, 299.52 examples/s]Tokenizing dataset:  33%|███▎      | 1192/3655 [00:03<00:07, 320.10 examples/s]Tokenizing dataset:  34%|███▎      | 1231/3655 [00:03<00:07, 334.22 examples/s]Tokenizing dataset:  35%|███▍      | 1272/3655 [00:03<00:06, 352.89 examples/s]Tokenizing dataset:  36%|███▌      | 1311/3655 [00:03<00:06, 359.47 examples/s]Tokenizing dataset:  37%|███▋      | 1351/3655 [00:04<00:06, 367.18 examples/s]Tokenizing dataset:  38%|███▊      | 1392/3655 [00:04<00:06, 376.74 examples/s]Tokenizing dataset:  39%|███▉      | 1433/3655 [00:04<00:05, 384.03 examples/s]Tokenizing dataset:  41%|████      | 1490/3655 [00:04<00:05, 380.15 examples/s]Tokenizing dataset:  42%|████▏     | 1530/3655 [00:04<00:05, 381.54 examples/s]Tokenizing dataset:  43%|████▎     | 1589/3655 [00:04<00:05, 380.90 examples/s]Tokenizing dataset:  45%|████▍     | 1634/3655 [00:04<00:05, 396.35 examples/s]Tokenizing dataset:  46%|████▌     | 1681/3655 [00:04<00:04, 413.59 examples/s]Tokenizing dataset:  47%|████▋     | 1724/3655 [00:04<00:04, 413.93 examples/s]Tokenizing dataset:  48%|████▊     | 1767/3655 [00:05<00:05, 361.90 examples/s]Tokenizing dataset:  49%|████▉     | 1807/3655 [00:05<00:05, 321.94 examples/s]Tokenizing dataset:  51%|█████     | 1849/3655 [00:05<00:05, 305.26 examples/s]Tokenizing dataset:  52%|█████▏    | 1890/3655 [00:05<00:06, 291.64 examples/s]Tokenizing dataset:  53%|█████▎    | 1922/3655 [00:05<00:05, 295.75 examples/s]Tokenizing dataset:  53%|█████▎    | 1955/3655 [00:05<00:05, 301.59 examples/s]Tokenizing dataset:  54%|█████▍    | 1989/3655 [00:05<00:05, 309.97 examples/s]Tokenizing dataset:  56%|█████▌    | 2031/3655 [00:06<00:06, 256.81 examples/s]Tokenizing dataset:  57%|█████▋    | 2068/3655 [00:06<00:05, 280.84 examples/s]Tokenizing dataset:  58%|█████▊    | 2115/3655 [00:06<00:05, 288.80 examples/s]Tokenizing dataset:  59%|█████▊    | 2146/3655 [00:06<00:05, 292.34 examples/s]Tokenizing dataset:  60%|█████▉    | 2192/3655 [00:06<00:04, 293.56 examples/s]Tokenizing dataset:  61%|██████    | 2226/3655 [00:06<00:04, 303.36 examples/s]Tokenizing dataset:  62%|██████▏   | 2258/3655 [00:06<00:04, 304.89 examples/s]Tokenizing dataset:  63%|██████▎   | 2292/3655 [00:06<00:04, 311.43 examples/s]Tokenizing dataset:  64%|██████▎   | 2328/3655 [00:07<00:04, 320.43 examples/s]Tokenizing dataset:  65%|██████▍   | 2361/3655 [00:07<00:04, 321.37 examples/s]Tokenizing dataset:  66%|██████▌   | 2396/3655 [00:07<00:03, 327.57 examples/s]Tokenizing dataset:  67%|██████▋   | 2444/3655 [00:07<00:03, 322.43 examples/s]Tokenizing dataset:  68%|██████▊   | 2477/3655 [00:07<00:03, 323.71 examples/s]Tokenizing dataset:  69%|██████▊   | 2510/3655 [00:07<00:03, 322.33 examples/s]Tokenizing dataset:  70%|██████▉   | 2546/3655 [00:07<00:03, 331.08 examples/s]Tokenizing dataset:  71%|███████   | 2595/3655 [00:07<00:03, 324.65 examples/s]Tokenizing dataset:  72%|███████▏  | 2631/3655 [00:07<00:03, 331.54 examples/s]Tokenizing dataset:  73%|███████▎  | 2666/3655 [00:08<00:02, 334.69 examples/s]Tokenizing dataset:  74%|███████▍  | 2701/3655 [00:08<00:02, 335.28 examples/s]Tokenizing dataset:  75%|███████▍  | 2736/3655 [00:08<00:02, 335.86 examples/s]Tokenizing dataset:  76%|███████▌  | 2773/3655 [00:08<00:02, 342.18 examples/s]Tokenizing dataset:  77%|███████▋  | 2811/3655 [00:08<00:02, 349.39 examples/s]Tokenizing dataset:  78%|███████▊  | 2852/3655 [00:08<00:02, 365.13 examples/s]Tokenizing dataset:  79%|███████▉  | 2889/3655 [00:08<00:02, 364.31 examples/s]Tokenizing dataset:  80%|████████  | 2930/3655 [00:08<00:01, 373.15 examples/s]Tokenizing dataset:  82%|████████▏ | 2986/3655 [00:08<00:01, 368.35 examples/s]Tokenizing dataset:  83%|████████▎ | 3032/3655 [00:09<00:02, 289.19 examples/s]Tokenizing dataset:  84%|████████▍ | 3070/3655 [00:09<00:01, 306.57 examples/s]Tokenizing dataset:  85%|████████▍ | 3106/3655 [00:09<00:01, 317.98 examples/s]Tokenizing dataset:  86%|████████▌ | 3143/3655 [00:09<00:01, 329.14 examples/s]Tokenizing dataset:  87%|████████▋ | 3182/3655 [00:09<00:01, 342.93 examples/s]Tokenizing dataset:  88%|████████▊ | 3223/3655 [00:09<00:01, 357.00 examples/s]Tokenizing dataset:  89%|████████▉ | 3262/3655 [00:09<00:01, 364.15 examples/s]Tokenizing dataset:  90%|█████████ | 3301/3655 [00:09<00:00, 367.01 examples/s]Tokenizing dataset:  91%|█████████▏| 3340/3655 [00:09<00:00, 372.20 examples/s]Tokenizing dataset:  92%|█████████▏| 3380/3655 [00:10<00:00, 376.98 examples/s]Tokenizing dataset:  94%|█████████▎| 3421/3655 [00:10<00:00, 383.98 examples/s]Tokenizing dataset:  95%|█████████▍| 3463/3655 [00:10<00:00, 390.15 examples/s]Tokenizing dataset:  96%|█████████▌| 3506/3655 [00:10<00:00, 398.67 examples/s]Tokenizing dataset:  97%|█████████▋| 3552/3655 [00:10<00:00, 414.30 examples/s]Tokenizing dataset:  98%|█████████▊| 3600/3655 [00:10<00:00, 429.02 examples/s]Tokenizing dataset: 100%|█████████▉| 3648/3655 [00:10<00:00, 443.42 examples/s]Tokenizing dataset: 100%|██████████| 3655/3655 [00:10<00:00, 339.41 examples/s]
+Filter:   0%|          | 0/3655 [00:00<?, ? examples/s]Filter:  27%|██▋       | 1000/3655 [00:00<00:01, 1804.56 examples/s]Filter:  55%|█████▍    | 2000/3655 [00:01<00:00, 1897.18 examples/s]Filter:  82%|████████▏ | 3000/3655 [00:01<00:00, 1868.51 examples/s]Filter: 100%|██████████| 3655/3655 [00:01<00:00, 1962.99 examples/s]Filter: 100%|██████████| 3655/3655 [00:01<00:00, 1921.14 examples/s]
+Prepared tokenized datasets: train=29307 validation=3409
+{
+  "effective_batch_size": 64,
+  "approx_steps_per_epoch": 458,
+  "approx_total_steps": 916
+}
+`torch_dtype` is deprecated! Use `dtype` instead!
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<01:10,  6.01it/s]Loading weights:   1%|▏         | 6/426 [00:00<00:16, 24.71it/s]Loading weights:   2%|▏         | 9/426 [00:00<00:26, 15.80it/s]Loading weights:   3%|▎         | 12/426 [00:00<00:24, 16.87it/s]Loading weights:   3%|▎         | 14/426 [00:00<00:27, 14.95it/s]Loading weights:   5%|▍         | 20/426 [00:01<00:17, 23.76it/s]Loading weights:   5%|▌         | 23/426 [00:01<00:23, 16.96it/s]Loading weights:   6%|▌         | 26/426 [00:01<00:20, 19.30it/s]Loading weights:  30%|███       | 129/426 [00:01<00:01, 227.41it/s]Loading weights: 100%|██████████| 426/426 [00:01<00:00, 267.54it/s]
+trainable params: 21,233,664 || all params: 4,226,984,960 || trainable%: 0.5023
+Base model loaded and LoRA adapters attached
+{
+  "training_args_skipped_for_compatibility": [
+    "save_safetensors"
+  ]
+}
+warmup_ratio is deprecated and will be removed in v5.2. Use `warmup_steps` instead.
+`logging_dir` is deprecated and will be removed in v5.2. Please set `TENSORBOARD_LOGGING_DIR` instead.
+Trainer initialized, starting train()
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 248046, 'pad_token_id': 248044}.
+  0%|          | 0/916 [00:00<?, ?it/s]  0%|          | 1/916 [00:35<9:08:20, 35.96s/it]                                                 {'loss': '0.9065', 'grad_norm': '0.3534', 'learning_rate': '0', 'epoch': '0.002183'}
+  0%|          | 1/916 [00:35<9:08:20, 35.96s/it]  0%|          | 2/916 [01:11<9:07:45, 35.96s/it]  0%|          | 3/916 [01:48<9:12:56, 36.34s/it]  0%|          | 4/916 [02:24<9:06:32, 35.96s/it]  1%|          | 5/916 [03:00<9:09:08, 36.17s/it]  1%|          | 6/916 [03:36<9:07:06, 36.07s/it]  1%|          | 7/916 [04:12<9:04:00, 35.91s/it]  1%|          | 8/916 [04:47<9:01:00, 35.75s/it]  1%|          | 9/916 [05:22<8:58:10, 35.60s/it]  1%|          | 10/916 [05:59<9:03:36, 36.00s/it]                                                  {'loss': '0.5735', 'grad_norm': '0.1682', 'learning_rate': '6.429e-05', 'epoch': '0.02183'}
+  1%|          | 10/916 [05:59<9:03:36, 36.00s/it]  1%|          | 11/916 [06:36<9:06:09, 36.21s/it]  1%|▏         | 12/916 [07:11<9:00:22, 35.87s/it]  1%|▏         | 13/916 [07:46<8:56:41, 35.66s/it]  2%|▏         | 14/916 [08:23<9:01:22, 36.01s/it]  2%|▏         | 15/916 [08:59<8:59:23, 35.92s/it]  2%|▏         | 16/916 [09:35<9:00:02, 36.00s/it]  2%|▏         | 17/916 [10:11<9:00:17, 36.06s/it]  2%|▏         | 18/916 [10:47<9:00:32, 36.12s/it]  2%|▏         | 19/916 [11:23<9:00:17, 36.14s/it]  2%|▏         | 20/916 [11:58<8:51:36, 35.60s/it]                                                  {'loss': '0.04162', 'grad_norm': '0.03962', 'learning_rate': '0.0001357', 'epoch': '0.04367'}
+  2%|▏         | 20/916 [11:58<8:51:36, 35.60s/it]  2%|▏         | 21/916 [12:34<8:52:48, 35.72s/it]  2%|▏         | 22/916 [13:09<8:51:16, 35.66s/it]  3%|▎         | 23/916 [13:45<8:50:50, 35.67s/it]  3%|▎         | 24/916 [14:21<8:51:53, 35.78s/it]  3%|▎         | 25/916 [14:58<8:55:05, 36.03s/it]  3%|▎         | 26/916 [15:31<8:43:47, 35.31s/it]  3%|▎         | 27/916 [16:08<8:48:42, 35.68s/it]  3%|▎         | 28/916 [16:45<8:54:20, 36.10s/it]  3%|▎         | 29/916 [17:21<8:52:43, 36.04s/it]  3%|▎         | 30/916 [17:56<8:48:19, 35.78s/it]                                                  {'loss': '0.01278', 'grad_norm': '0.01438', 'learning_rate': '0.0002', 'epoch': '0.0655'}
+  3%|▎         | 30/916 [17:56<8:48:19, 35.78s/it]  3%|▎         | 31/916 [18:32<8:49:59, 35.93s/it]  3%|▎         | 32/916 [19:08<8:48:00, 35.84s/it]  4%|▎         | 33/916 [19:43<8:46:20, 35.76s/it]  4%|▎         | 34/916 [20:20<8:50:37, 36.10s/it]  4%|▍         | 35/916 [20:57<8:54:14, 36.38s/it]  4%|▍         | 36/916 [21:33<8:49:06, 36.08s/it]  4%|▍         | 37/916 [22:08<8:44:06, 35.78s/it]  4%|▍         | 38/916 [22:42<8:36:39, 35.31s/it]  4%|▍         | 39/916 [23:18<8:39:42, 35.56s/it]  4%|▍         | 40/916 [23:55<8:43:06, 35.83s/it]                                                  {'loss': '0.01089', 'grad_norm': '0.01019', 'learning_rate': '0.0001999', 'epoch': '0.08734'}
+  4%|▍         | 40/916 [23:55<8:43:06, 35.83s/it]  4%|▍         | 41/916 [24:31<8:45:20, 36.02s/it]  5%|▍         | 42/916 [25:07<8:44:50, 36.03s/it]  5%|▍         | 43/916 [25:43<8:43:52, 36.00s/it]  5%|▍         | 44/916 [26:19<8:41:01, 35.85s/it]  5%|▍         | 45/916 [26:54<8:40:26, 35.85s/it]  5%|▌         | 46/916 [27:31<8:42:15, 36.02s/it]  5%|▌         | 47/916 [28:04<8:28:51, 35.13s/it]  5%|▌         | 48/916 [28:38<8:22:59, 34.77s/it]  5%|▌         | 49/916 [29:13<8:25:25, 34.98s/it]  5%|▌         | 50/916 [29:49<8:29:19, 35.29s/it]                                                  {'loss': '0.00822', 'grad_norm': '0.01711', 'learning_rate': '0.0001997', 'epoch': '0.1092'}
+  5%|▌         | 50/916 [29:49<8:29:19, 35.29s/it]  6%|▌         | 51/916 [30:25<8:31:04, 35.45s/it]  6%|▌         | 52/916 [31:01<8:32:01, 35.56s/it]  6%|▌         | 53/916 [31:37<8:34:30, 35.77s/it]  6%|▌         | 54/916 [32:13<8:35:21, 35.87s/it]  6%|▌         | 55/916 [32:49<8:34:25, 35.85s/it]  6%|▌         | 56/916 [33:24<8:31:11, 35.66s/it]  6%|▌         | 57/916 [34:01<8:36:25, 36.07s/it]  6%|▋         | 58/916 [34:36<8:29:03, 35.60s/it]  6%|▋         | 59/916 [35:12<8:29:53, 35.70s/it]  7%|▋         | 60/916 [35:47<8:26:31, 35.50s/it]                                                  {'loss': '0.007982', 'grad_norm': '0.01812', 'learning_rate': '0.0001994', 'epoch': '0.131'}
+  7%|▋         | 60/916 [35:47<8:26:31, 35.50s/it]  7%|▋         | 61/916 [36:22<8:25:48, 35.49s/it]  7%|▋         | 62/916 [36:58<8:26:43, 35.60s/it]  7%|▋         | 63/916 [37:34<8:26:20, 35.62s/it]  7%|▋         | 64/916 [38:08<8:19:48, 35.20s/it]  7%|▋         | 65/916 [38:44<8:22:46, 35.45s/it]  7%|▋         | 66/916 [39:20<8:23:46, 35.56s/it]  7%|▋         | 67/916 [39:56<8:27:04, 35.84s/it]  7%|▋         | 68/916 [40:31<8:22:48, 35.58s/it]  8%|▊         | 69/916 [41:06<8:16:22, 35.16s/it]  8%|▊         | 70/916 [41:41<8:15:04, 35.11s/it]                                                  {'loss': '0.007041', 'grad_norm': '0.008975', 'learning_rate': '0.0001989', 'epoch': '0.1528'}
+  8%|▊         | 70/916 [41:41<8:15:04, 35.11s/it]  8%|▊         | 71/916 [42:16<8:14:49, 35.14s/it]  8%|▊         | 72/916 [42:51<8:16:09, 35.27s/it]  8%|▊         | 73/916 [43:28<8:20:49, 35.65s/it]  8%|▊         | 74/916 [44:03<8:18:39, 35.53s/it]  8%|▊         | 75/916 [44:39<8:18:29, 35.56s/it]  8%|▊         | 76/916 [45:15<8:19:04, 35.65s/it]  8%|▊         | 77/916 [45:51<8:20:06, 35.76s/it]  9%|▊         | 78/916 [46:28<8:24:50, 36.15s/it]  9%|▊         | 79/916 [47:04<8:23:48, 36.12s/it]  9%|▊         | 80/916 [47:39<8:18:56, 35.81s/it]                                                  {'loss': '0.006795', 'grad_norm': '0.01044', 'learning_rate': '0.0001984', 'epoch': '0.1747'}
+  9%|▊         | 80/916 [47:39<8:18:56, 35.81s/it]  9%|▉         | 81/916 [48:16<8:22:58, 36.14s/it]  9%|▉         | 82/916 [48:53<8:25:08, 36.34s/it]  9%|▉         | 83/916 [49:28<8:20:26, 36.05s/it]  9%|▉         | 84/916 [50:05<8:22:05, 36.21s/it]  9%|▉         | 85/916 [50:40<8:20:09, 36.11s/it]  9%|▉         | 86/916 [51:17<8:20:00, 36.15s/it]  9%|▉         | 87/916 [51:53<8:19:05, 36.12s/it] 10%|▉         | 88/916 [52:29<8:18:39, 36.13s/it] 10%|▉         | 89/916 [53:06<8:21:32, 36.39s/it] 10%|▉         | 90/916 [53:41<8:16:55, 36.10s/it]                                                  {'loss': '0.006432', 'grad_norm': '0.01149', 'learning_rate': '0.0001977', 'epoch': '0.1965'}
+ 10%|▉         | 90/916 [53:41<8:16:55, 36.10s/it] 10%|▉         | 91/916 [54:17<8:15:42, 36.05s/it] 10%|█         | 92/916 [54:54<8:17:01, 36.19s/it] 10%|█         | 93/916 [55:30<8:17:13, 36.25s/it] 10%|█         | 94/916 [56:07<8:20:38, 36.54s/it] 10%|█         | 95/916 [56:43<8:15:45, 36.23s/it] 10%|█         | 96/916 [57:20<8:17:09, 36.38s/it] 11%|█         | 97/916 [57:55<8:13:31, 36.16s/it] 11%|█         | 98/916 [58:31<8:10:57, 36.01s/it] 11%|█         | 99/916 [59:05<8:03:52, 35.54s/it] 11%|█         | 100/916 [59:40<7:59:31, 35.26s/it]                                                   {'loss': '0.006808', 'grad_norm': '0.006236', 'learning_rate': '0.0001969', 'epoch': '0.2183'}
+ 11%|█         | 100/916 [59:40<7:59:31, 35.26s/it]
+  0%|          | 0/427 [00:00<?, ?it/s][A
+  0%|          | 2/427 [00:00<03:03,  2.32it/s][A
+  1%|          | 3/427 [00:01<04:19,  1.64it/s][A
+  1%|          | 4/427 [00:02<04:58,  1.42it/s][A
+  1%|          | 5/427 [00:03<05:20,  1.32it/s][A
+  1%|▏         | 6/427 [00:04<05:28,  1.28it/s][A
+  2%|▏         | 7/427 [00:05<05:37,  1.24it/s][A
+  2%|▏         | 8/427 [00:05<05:44,  1.22it/s][A
+  2%|▏         | 9/427 [00:06<05:47,  1.20it/s][A
+  2%|▏         | 10/427 [00:07<05:47,  1.20it/s][A
+  3%|▎         | 11/427 [00:08<05:49,  1.19it/s][A
+  3%|▎         | 12/427 [00:09<05:51,  1.18it/s][A
+  3%|▎         | 13/427 [00:10<05:52,  1.17it/s][A
+  3%|▎         | 14/427 [00:11<05:51,  1.18it/s][A
+  4%|▎         | 15/427 [00:11<05:51,  1.17it/s][A
+  4%|▎         | 16/427 [00:12<05:43,  1.20it/s][A
+  4%|▍         | 17/427 [00:13<05:39,  1.21it/s][A
+  4%|▍         | 18/427 [00:14<05:42,  1.20it/s][A
+  4%|▍         | 19/427 [00:15<05:42,  1.19it/s][A
+  5%|▍         | 20/427 [00:16<05:42,  1.19it/s][A
+  5%|▍         | 21/427 [00:16<05:44,  1.18it/s][A
+  5%|▌         | 22/427 [00:17<05:43,  1.18it/s][A
+  5%|▌         | 23/427 [00:18<05:43,  1.18it/s][A
+  6%|▌         | 24/427 [00:19<05:44,  1.17it/s][A
+  6%|▌         | 25/427 [00:20<05:37,  1.19it/s][A
+  6%|▌         | 26/427 [00:21<05:31,  1.21it/s][A
+  6%|▋         | 27/427 [00:21<05:28,  1.22it/s][A
+  7%|▋         | 28/427 [00:22<05:31,  1.20it/s][A
+  7%|▋         | 29/427 [00:23<05:26,  1.22it/s][A
+  7%|▋         | 30/427 [00:24<05:24,  1.22it/s][A
+  7%|▋         | 31/427 [00:25<05:25,  1.22it/s][A
+  7%|▋         | 32/427 [00:26<05:21,  1.23it/s][A
+  8%|▊         | 33/427 [00:26<05:19,  1.23it/s][A
+  8%|▊         | 34/427 [00:27<05:11,  1.26it/s][A
+  8%|▊         | 35/427 [00:28<05:11,  1.26it/s][A
+  8%|▊         | 36/427 [00:29<05:05,  1.28it/s][A
+  9%|▊         | 37/427 [00:29<05:06,  1.27it/s][A
+  9%|▉         | 38/427 [00:30<05:11,  1.25it/s][A
+  9%|▉         | 39/427 [00:31<05:12,  1.24it/s][A
+  9%|▉         | 40/427 [00:32<05:16,  1.22it/s][A
+ 10%|▉         | 41/427 [00:33<05:18,  1.21it/s][A
+ 10%|▉         | 42/427 [00:34<05:13,  1.23it/s][A
+ 10%|█         | 43/427 [00:34<05:16,  1.21it/s][A
+ 10%|█         | 44/427 [00:35<05:15,  1.21it/s][A
+ 11%|█         | 45/427 [00:36<05:18,  1.20it/s][A
+ 11%|█         | 46/427 [00:37<05:21,  1.18it/s][A
+ 11%|█         | 47/427 [00:38<05:10,  1.22it/s][A
+ 11%|█         | 48/427 [00:39<05:05,  1.24it/s][A
+ 11%|█▏        | 49/427 [00:39<05:04,  1.24it/s][A
+ 12%|█▏        | 50/427 [00:40<04:57,  1.27it/s][A
+ 12%|█▏        | 51/427 [00:41<04:56,  1.27it/s][A
+ 12%|█▏        | 52/427 [00:42<04:56,  1.27it/s][A
+ 12%|█▏        | 53/427 [00:42<04:54,  1.27it/s][A
+ 13%|█▎        | 54/427 [00:43<04:54,  1.27it/s][A
+ 13%|█▎        | 55/427 [00:44<04:56,  1.26it/s][A
+ 13%|█▎        | 56/427 [00:45<05:01,  1.23it/s][A
+ 13%|█▎        | 57/427 [00:46<05:06,  1.21it/s][A
+ 14%|█▎        | 58/427 [00:47<05:09,  1.19it/s][A
+ 14%|█▍        | 59/427 [00:47<05:05,  1.20it/s][A
+ 14%|█▍        | 60/427 [00:48<05:02,  1.21it/s][A
+ 14%|█▍        | 61/427 [00:49<05:03,  1.21it/s][A
+ 15%|█▍        | 62/427 [00:50<04:54,  1.24it/s][A
+ 15%|█▍        | 63/427 [00:51<04:51,  1.25it/s][A
+ 15%|█▍        | 64/427 [00:51<04:53,  1.24it/s][A
+ 15%|█▌        | 65/427 [00:52<04:55,  1.22it/s][A
+ 15%|█▌        | 66/427 [00:53<04:46,  1.26it/s][A
+ 16%|█▌        | 67/427 [00:54<04:38,  1.29it/s][A
+ 16%|█▌        | 68/427 [00:55<04:38,  1.29it/s][A
+ 16%|█▌        | 69/427 [00:55<04:33,  1.31it/s][A
+ 16%|█▋        | 70/427 [00:56<04:30,  1.32it/s][A
+ 17%|█▋        | 71/427 [00:57<04:34,  1.30it/s][A
+ 17%|█▋        | 72/427 [00:58<04:40,  1.26it/s][A
+ 17%|█▋        | 73/427 [00:58<04:36,  1.28it/s][A
+ 17%|█▋        | 74/427 [00:59<04:38,  1.27it/s][A
+ 18%|█▊        | 75/427 [01:00<04:38,  1.27it/s][A
+ 18%|█▊        | 76/427 [01:01<04:39,  1.25it/s][A
+ 18%|█▊        | 77/427 [01:02<04:44,  1.23it/s][A
+ 18%|█▊        | 78/427 [01:02<04:35,  1.27it/s][A
+ 19%|█▊        | 79/427 [01:03<04:40,  1.24it/s][A
+ 19%|█▊        | 80/427 [01:04<04:34,  1.26it/s][A
+ 19%|█▉        | 81/427 [01:05<04:32,  1.27it/s][A
+ 19%|█▉        | 82/427 [01:06<04:26,  1.29it/s][A
+ 19%|█▉        | 83/427 [01:06<04:26,  1.29it/s][A
+ 20%|█▉        | 84/427 [01:07<04:26,  1.29it/s][A
+ 20%|█▉        | 85/427 [01:08<04:27,  1.28it/s][A
+ 20%|██        | 86/427 [01:09<04:34,  1.24it/s][A
+ 20%|██        | 87/427 [01:10<04:32,  1.25it/s][A
+ 21%|██        | 88/427 [01:10<04:35,  1.23it/s][A
+ 21%|██        | 89/427 [01:11<04:31,  1.24it/s][A
+ 21%|██        | 90/427 [01:12<04:28,  1.25it/s][A
+ 21%|██▏       | 91/427 [01:13<04:28,  1.25it/s][A
+ 22%|██▏       | 92/427 [01:13<04:23,  1.27it/s][A
+ 22%|██▏       | 93/427 [01:14<04:23,  1.27it/s][A
+ 22%|██▏       | 94/427 [01:15<04:24,  1.26it/s][A
+ 22%|██▏       | 95/427 [01:16<04:17,  1.29it/s][A
+ 22%|██▏       | 96/427 [01:17<04:12,  1.31it/s][A
+ 23%|██▎       | 97/427 [01:17<04:18,  1.28it/s][A
+ 23%|██▎       | 98/427 [01:18<04:23,  1.25it/s][A
+ 23%|██▎       | 99/427 [01:19<04:27,  1.22it/s][A
+ 23%|██▎       | 100/427 [01:20<04:21,  1.25it/s][A
+ 24%|██▎       | 101/427 [01:21<04:14,  1.28it/s][A
+ 24%|██▍       | 102/427 [01:21<04:18,  1.26it/s][A
+ 24%|██▍       | 103/427 [01:22<04:19,  1.25it/s][A
+ 24%|██▍       | 104/427 [01:23<04:23,  1.23it/s][A
+ 25%|██▍       | 105/427 [01:24<04:27,  1.20it/s][A
+ 25%|██▍       | 106/427 [01:25<04:27,  1.20it/s][A
+ 25%|██▌       | 107/427 [01:26<04:23,  1.22it/s][A
+ 25%|██▌       | 108/427 [01:26<04:19,  1.23it/s][A
+ 26%|██▌       | 109/427 [01:27<04:16,  1.24it/s][A
+ 26%|██▌       | 110/427 [01:28<04:15,  1.24it/s][A
+ 26%|██▌       | 111/427 [01:29<04:12,  1.25it/s][A
+ 26%|██▌       | 112/427 [01:30<04:11,  1.25it/s][A
+ 26%|██▋       | 113/427 [01:30<04:12,  1.25it/s][A
+ 27%|██▋       | 114/427 [01:31<04:14,  1.23it/s][A
+ 27%|██▋       | 115/427 [01:32<04:12,  1.24it/s][A
+ 27%|██▋       | 116/427 [01:33<04:05,  1.27it/s][A
+ 27%|██▋       | 117/427 [01:33<03:59,  1.30it/s][A
+ 28%|██▊       | 118/427 [01:34<03:55,  1.31it/s][A
+ 28%|██▊       | 119/427 [01:35<04:03,  1.27it/s][A
+ 28%|██▊       | 120/427 [01:36<03:59,  1.28it/s][A
+ 28%|██▊       | 121/427 [01:37<03:59,  1.28it/s][A
+ 29%|██▊       | 122/427 [01:37<03:58,  1.28it/s][A
+ 29%|██▉       | 123/427 [01:38<04:03,  1.25it/s][A
+ 29%|██▉       | 124/427 [01:39<04:02,  1.25it/s][A
+ 29%|██▉       | 125/427 [01:40<04:02,  1.25it/s][A
+ 30%|██▉       | 126/427 [01:41<03:52,  1.29it/s][A
+ 30%|██▉       | 127/427 [01:41<03:52,  1.29it/s][A
+ 30%|██▉       | 128/427 [01:42<03:49,  1.30it/s][A
+ 30%|███       | 129/427 [01:43<03:50,  1.29it/s][A
+ 30%|███       | 130/427 [01:44<03:47,  1.31it/s][A
+ 31%|███       | 131/427 [01:44<03:43,  1.32it/s][A
+ 31%|███       | 132/427 [01:45<03:42,  1.32it/s][A
+ 31%|███       | 133/427 [01:46<03:51,  1.27it/s][A
+ 31%|███▏      | 134/427 [01:47<03:57,  1.23it/s][A
+ 32%|███▏      | 135/427 [01:48<04:02,  1.21it/s][A
+ 32%|███▏      | 136/427 [01:49<04:00,  1.21it/s][A
+ 32%|███▏      | 137/427 [01:49<03:52,  1.25it/s][A
+ 32%|███▏      | 138/427 [01:50<03:46,  1.28it/s][A
+ 33%|███▎      | 139/427 [01:51<03:46,  1.27it/s][A
+ 33%|███▎      | 140/427 [01:52<03:42,  1.29it/s][A
+ 33%|███▎      | 141/427 [01:52<03:42,  1.29it/s][A
+ 33%|███▎      | 142/427 [01:53<03:38,  1.30it/s][A
+ 33%|███▎      | 143/427 [01:54<03:35,  1.32it/s][A
+ 34%|███▎      | 144/427 [01:55<03:37,  1.30it/s][A
+ 34%|███▍      | 145/427 [01:55<03:41,  1.27it/s][A
+ 34%|███▍      | 146/427 [01:56<03:33,  1.32it/s][A
+ 34%|███▍      | 147/427 [01:57<03:34,  1.30it/s][A
+ 35%|███▍      | 148/427 [01:58<03:37,  1.28it/s][A
+ 35%|███▍      | 149/427 [01:59<03:42,  1.25it/s][A
+ 35%|███▌      | 150/427 [01:59<03:37,  1.27it/s][A
+ 35%|███▌      | 151/427 [02:00<03:41,  1.25it/s][A
+ 36%|███▌      | 152/427 [02:01<03:40,  1.25it/s][A
+ 36%|███▌      | 153/427 [02:02<03:23,  1.35it/s][A
+ 36%|███▌      | 154/427 [02:02<03:25,  1.33it/s][A
+ 36%|███▋      | 155/427 [02:03<03:29,  1.30it/s][A
+ 37%|███▋      | 156/427 [02:04<03:35,  1.26it/s][A
+ 37%|███▋      | 157/427 [02:05<03:30,  1.28it/s][A
+ 37%|███▋      | 158/427 [02:05<03:26,  1.30it/s][A
+ 37%|███▋      | 159/427 [02:06<03:27,  1.29it/s][A
+ 37%|███▋      | 160/427 [02:07<03:24,  1.31it/s][A
+ 38%|███▊      | 161/427 [02:08<03:22,  1.31it/s][A
+ 38%|███▊      | 162/427 [02:09<03:20,  1.32it/s][A
+ 38%|███▊      | 163/427 [02:09<03:18,  1.33it/s][A
+ 38%|███▊      | 164/427 [02:10<03:17,  1.33it/s][A
+ 39%|███▊      | 165/427 [02:11<03:19,  1.31it/s][A
+ 39%|███▉      | 166/427 [02:12<03:18,  1.32it/s][A
+ 39%|███▉      | 167/427 [02:12<03:19,  1.31it/s][A
+ 39%|███▉      | 168/427 [02:13<03:16,  1.32it/s][A
+ 40%|███▉      | 169/427 [02:14<03:15,  1.32it/s][A
+ 40%|███▉      | 170/427 [02:15<03:13,  1.33it/s][A
+ 40%|████      | 171/427 [02:15<03:17,  1.30it/s][A
+ 40%|████      | 172/427 [02:16<03:18,  1.28it/s][A
+ 41%|████      | 173/427 [02:17<03:20,  1.27it/s][A
+ 41%|████      | 174/427 [02:18<03:16,  1.28it/s][A
+ 41%|████      | 175/427 [02:19<03:20,  1.25it/s][A
+ 41%|████      | 176/427 [02:19<03:19,  1.26it/s][A
+ 41%|████▏     | 177/427 [02:20<03:15,  1.28it/s][A
+ 42%|████▏     | 178/427 [02:21<03:11,  1.30it/s][A
+ 42%|████▏     | 179/427 [02:22<03:09,  1.31it/s][A
+ 42%|████▏     | 180/427 [02:22<03:10,  1.30it/s][A
+ 42%|████▏     | 181/427 [02:23<03:07,  1.31it/s][A
+ 43%|████▎     | 182/427 [02:24<03:07,  1.31it/s][A
+ 43%|████▎     | 183/427 [02:25<03:08,  1.30it/s][A
+ 43%|████▎     | 184/427 [02:26<03:10,  1.27it/s][A
+ 43%|████▎     | 185/427 [02:26<03:12,  1.26it/s][A
+ 44%|████▎     | 186/427 [02:27<03:07,  1.28it/s][A
+ 44%|████▍     | 187/427 [02:28<03:04,  1.30it/s][A
+ 44%|████▍     | 188/427 [02:29<03:02,  1.31it/s][A
+ 44%|████▍     | 189/427 [02:29<03:00,  1.32it/s][A
+ 44%|████▍     | 190/427 [02:30<03:06,  1.27it/s][A
+ 45%|████▍     | 191/427 [02:31<03:03,  1.28it/s][A
+ 45%|████▍     | 192/427 [02:32<03:04,  1.27it/s][A
+ 45%|████▌     | 193/427 [02:32<03:01,  1.29it/s][A
+ 45%|████▌     | 194/427 [02:33<02:55,  1.33it/s][A
+ 46%|████▌     | 195/427 [02:34<02:56,  1.31it/s][A
+ 46%|████▌     | 196/427 [02:35<02:47,  1.38it/s][A
+ 46%|████▌     | 197/427 [02:35<02:39,  1.44it/s][A
+ 46%|████▋     | 198/427 [02:36<02:35,  1.47it/s][A
+ 47%|████▋     | 199/427 [02:37<02:40,  1.42it/s][A
+ 47%|████▋     | 200/427 [02:37<02:39,  1.42it/s][A
+ 47%|████▋     | 201/427 [02:38<02:37,  1.43it/s][A
+ 47%|████▋     | 202/427 [02:39<02:35,  1.45it/s][A
+ 48%|████▊     | 203/427 [02:39<02:29,  1.50it/s][A
+ 48%|████▊     | 204/427 [02:40<02:22,  1.56it/s][A
+ 48%|████▊     | 205/427 [02:40<02:16,  1.62it/s][A
+ 48%|████▊     | 206/427 [02:41<02:12,  1.67it/s][A
+ 48%|████▊     | 207/427 [02:42<02:08,  1.71it/s][A
+ 49%|████▊     | 208/427 [02:42<02:22,  1.54it/s][A
+ 49%|████▉     | 209/427 [02:43<02:35,  1.41it/s][A
+ 49%|████▉     | 210/427 [02:44<02:44,  1.32it/s][A
+ 49%|████▉     | 211/427 [02:45<02:50,  1.27it/s][A
+ 50%|████▉     | 212/427 [02:46<02:54,  1.23it/s][A
+ 50%|████▉     | 213/427 [02:47<02:57,  1.21it/s][A
+ 50%|█████     | 214/427 [02:48<02:58,  1.19it/s][A
+ 50%|█████     | 215/427 [02:48<02:58,  1.19it/s][A
+ 51%|█████     | 216/427 [02:49<02:58,  1.18it/s][A
+ 51%|█████     | 217/427 [02:50<02:58,  1.17it/s][A
+ 51%|█████     | 218/427 [02:51<02:58,  1.17it/s][A
+ 51%|█████▏    | 219/427 [02:52<02:55,  1.18it/s][A
+ 52%|█████▏    | 220/427 [02:53<02:54,  1.18it/s][A
+ 52%|█████▏    | 221/427 [02:53<02:53,  1.19it/s][A
+ 52%|█████▏    | 222/427 [02:54<02:54,  1.18it/s][A
+ 52%|█████▏    | 223/427 [02:55<02:54,  1.17it/s][A
+ 52%|█████▏    | 224/427 [02:56<02:53,  1.17it/s][A
+ 53%|█████▎    | 225/427 [02:57<02:53,  1.17it/s][A
+ 53%|█████▎    | 226/427 [02:58<02:51,  1.17it/s][A
+ 53%|█████▎    | 227/427 [02:59<02:51,  1.17it/s][A
+ 53%|█████▎    | 228/427 [02:59<02:51,  1.16it/s][A
+ 54%|█████▎    | 229/427 [03:00<02:47,  1.18it/s][A
+ 54%|█████▍    | 230/427 [03:01<02:46,  1.18it/s][A
+ 54%|█████▍    | 231/427 [03:02<02:46,  1.17it/s][A
+ 54%|█████▍    | 232/427 [03:03<02:43,  1.19it/s][A
+ 55%|█████▍    | 233/427 [03:04<02:40,  1.21it/s][A
+ 55%|█████▍    | 234/427 [03:04<02:40,  1.20it/s][A
+ 55%|█████▌    | 235/427 [03:05<02:41,  1.19it/s][A
+ 55%|█████▌    | 236/427 [03:06<02:41,  1.18it/s][A
+ 56%|█████▌    | 237/427 [03:07<02:41,  1.18it/s][A
+ 56%|█████▌    | 238/427 [03:08<02:41,  1.17it/s][A
+ 56%|█████▌    | 239/427 [03:09<02:39,  1.18it/s][A
+ 56%|█████▌    | 240/427 [03:10<02:39,  1.17it/s][A
+ 56%|█████▋    | 241/427 [03:10<02:39,  1.17it/s][A
+ 57%|█████▋    | 242/427 [03:11<02:38,  1.16it/s][A
+ 57%|█████▋    | 243/427 [03:12<02:38,  1.16it/s][A
+ 57%|█████▋    | 244/427 [03:13<02:38,  1.16it/s][A
+ 57%|█████▋    | 245/427 [03:14<02:37,  1.16it/s][A
+ 58%|█████▊    | 246/427 [03:15<02:35,  1.16it/s][A
+ 58%|█████▊    | 247/427 [03:16<02:33,  1.17it/s][A
+ 58%|█████▊    | 248/427 [03:16<02:30,  1.19it/s][A
+ 58%|█████▊    | 249/427 [03:17<02:26,  1.21it/s][A
+ 59%|█████▊    | 250/427 [03:18<02:25,  1.22it/s][A
+ 59%|█████▉    | 251/427 [03:19<02:23,  1.22it/s][A
+ 59%|█████▉    | 252/427 [03:20<02:25,  1.20it/s][A
+ 59%|█████▉    | 253/427 [03:21<02:26,  1.19it/s][A
+ 59%|█████▉    | 254/427 [03:21<02:26,  1.18it/s][A
+ 60%|█████▉    | 255/427 [03:22<02:26,  1.17it/s][A
+ 60%|█████▉    | 256/427 [03:23<02:26,  1.17it/s][A
+ 60%|██████    | 257/427 [03:24<02:24,  1.17it/s][A
+ 60%|██████    | 258/427 [03:25<02:23,  1.18it/s][A
+ 61%|██████    | 259/427 [03:26<02:23,  1.17it/s][A
+ 61%|██████    | 260/427 [03:27<02:23,  1.17it/s][A
+ 61%|██████    | 261/427 [03:27<02:22,  1.17it/s][A
+ 61%|██████▏   | 262/427 [03:28<02:19,  1.18it/s][A
+ 62%|██████▏   | 263/427 [03:29<02:17,  1.19it/s][A
+ 62%|██████▏   | 264/427 [03:30<02:16,  1.19it/s][A
+ 62%|██████▏   | 265/427 [03:31<02:14,  1.20it/s][A
+ 62%|██████▏   | 266/427 [03:32<02:14,  1.20it/s][A
+ 63%|██████▎   | 267/427 [03:32<02:12,  1.21it/s][A
+ 63%|██████▎   | 268/427 [03:33<02:12,  1.20it/s][A
+ 63%|██████▎   | 269/427 [03:34<02:12,  1.19it/s][A
+ 63%|██████▎   | 270/427 [03:35<02:13,  1.18it/s][A
+ 63%|██████▎   | 271/427 [03:36<02:10,  1.20it/s][A
+ 64%|██████▎   | 272/427 [03:37<02:10,  1.19it/s][A
+ 64%|██████▍   | 273/427 [03:37<02:09,  1.18it/s][A
+ 64%|██████▍   | 274/427 [03:38<02:10,  1.18it/s][A
+ 64%|██████▍   | 275/427 [03:39<02:09,  1.17it/s][A
+ 65%|██████▍   | 276/427 [03:40<02:09,  1.17it/s][A
+ 65%|██████▍   | 277/427 [03:41<02:07,  1.18it/s][A
+ 65%|██████▌   | 278/427 [03:42<02:04,  1.19it/s][A
+ 65%|██████▌   | 279/427 [03:43<02:04,  1.19it/s][A
+ 66%|██████▌   | 280/427 [03:43<02:04,  1.18it/s][A
+ 66%|██████▌   | 281/427 [03:44<02:04,  1.17it/s][A
+ 66%|██████▌   | 282/427 [03:45<01:59,  1.22it/s][A
+ 66%|██████▋   | 283/427 [03:46<01:58,  1.21it/s][A
+ 67%|██████▋   | 284/427 [03:47<01:59,  1.20it/s][A
+ 67%|██████▋   | 285/427 [03:47<01:54,  1.24it/s][A
+ 67%|██████▋   | 286/427 [03:48<01:50,  1.27it/s][A
+ 67%|██████▋   | 287/427 [03:49<01:47,  1.30it/s][A
+ 67%|██████▋   | 288/427 [03:50<01:49,  1.27it/s][A
+ 68%|██████▊   | 289/427 [03:51<01:50,  1.25it/s][A
+ 68%|██████▊   | 290/427 [03:51<01:52,  1.22it/s][A
+ 68%|██████▊   | 291/427 [03:52<01:53,  1.20it/s][A
+ 68%|██████▊   | 292/427 [03:53<01:53,  1.19it/s][A
+ 69%|██████▊   | 293/427 [03:54<01:53,  1.18it/s][A
+ 69%|██████▉   | 294/427 [03:55<01:51,  1.19it/s][A
+ 69%|██████▉   | 295/427 [03:56<01:50,  1.20it/s][A
+ 69%|██████▉   | 296/427 [03:57<01:50,  1.19it/s][A
+ 70%|██████▉   | 297/427 [03:57<01:50,  1.18it/s][A
+ 70%|██████▉   | 298/427 [03:58<01:49,  1.18it/s][A
+ 70%|███████   | 299/427 [03:59<01:48,  1.18it/s][A
+ 70%|███████   | 300/427 [04:00<01:48,  1.17it/s][A
+ 70%|███████   | 301/427 [04:01<01:43,  1.21it/s][A
+ 71%|███████   | 302/427 [04:02<01:42,  1.22it/s][A
+ 71%|███████   | 303/427 [04:02<01:40,  1.23it/s][A
+ 71%|███████   | 304/427 [04:03<01:39,  1.24it/s][A
+ 71%|███████▏  | 305/427 [04:04<01:38,  1.24it/s][A
+ 72%|███████▏  | 306/427 [04:05<01:37,  1.24it/s][A
+ 72%|███████▏  | 307/427 [04:06<01:38,  1.22it/s][A
+ 72%|███████▏  | 308/427 [04:06<01:38,  1.21it/s][A
+ 72%|███████▏  | 309/427 [04:07<01:39,  1.19it/s][A
+ 73%|███████▎  | 310/427 [04:08<01:39,  1.18it/s][A
+ 73%|███████▎  | 311/427 [04:09<01:38,  1.18it/s][A
+ 73%|███████▎  | 312/427 [04:10<01:36,  1.19it/s][A
+ 73%|███████▎  | 313/427 [04:11<01:35,  1.19it/s][A
+ 74%|███████▎  | 314/427 [04:11<01:33,  1.21it/s][A
+ 74%|███████▍  | 315/427 [04:12<01:33,  1.20it/s][A
+ 74%|███████▍  | 316/427 [04:13<01:33,  1.19it/s][A
+ 74%|███████▍  | 317/427 [04:14<01:31,  1.20it/s][A
+ 74%|███████▍  | 318/427 [04:15<01:31,  1.19it/s][A
+ 75%|███████▍  | 319/427 [04:16<01:29,  1.21it/s][A
+ 75%|███████▍  | 320/427 [04:16<01:29,  1.20it/s][A
+ 75%|███████▌  | 321/427 [04:17<01:29,  1.19it/s][A
+ 75%|███████▌  | 322/427 [04:18<01:27,  1.20it/s][A
+ 76%|███████▌  | 323/427 [04:19<01:23,  1.24it/s][A
+ 76%|███████▌  | 324/427 [04:20<01:23,  1.24it/s][A
+ 76%|███████▌  | 325/427 [04:21<01:23,  1.23it/s][A
+ 76%|███████▋  | 326/427 [04:21<01:21,  1.23it/s][A
+ 77%|███████▋  | 327/427 [04:22<01:20,  1.24it/s][A
+ 77%|███████▋  | 328/427 [04:23<01:21,  1.21it/s][A
+ 77%|███████▋  | 329/427 [04:24<01:20,  1.22it/s][A
+ 77%|███████▋  | 330/427 [04:25<01:19,  1.23it/s][A
+ 78%|███████▊  | 331/427 [04:25<01:19,  1.21it/s][A
+ 78%|███████▊  | 332/427 [04:26<01:19,  1.20it/s][A
+ 78%|███████▊  | 333/427 [04:27<01:19,  1.19it/s][A
+ 78%|███████▊  | 334/427 [04:28<01:14,  1.25it/s][A
+ 78%|███████▊  | 335/427 [04:29<01:11,  1.28it/s][A
+ 79%|███████▊  | 336/427 [04:29<01:09,  1.31it/s][A
+ 79%|███████▉  | 337/427 [04:30<01:08,  1.32it/s][A
+ 79%|███████▉  | 338/427 [04:31<01:08,  1.30it/s][A
+ 79%|███████▉  | 339/427 [04:32<01:09,  1.26it/s][A
+ 80%|███████▉  | 340/427 [04:33<01:09,  1.25it/s][A
+ 80%|███████▉  | 341/427 [04:33<01:10,  1.23it/s][A
+ 80%|████████  | 342/427 [04:34<01:10,  1.21it/s][A
+ 80%|████████  | 343/427 [04:35<01:10,  1.19it/s][A
+ 81%|████████  | 344/427 [04:36<01:10,  1.18it/s][A
+ 81%|████████  | 345/427 [04:37<01:08,  1.20it/s][A
+ 81%|████████  | 346/427 [04:38<01:08,  1.19it/s][A
+ 81%|████████▏ | 347/427 [04:39<01:07,  1.19it/s][A
+ 81%|████████▏ | 348/427 [04:39<01:05,  1.20it/s][A
+ 82%|████████▏ | 349/427 [04:40<01:05,  1.20it/s][A
+ 82%|████████▏ | 350/427 [04:41<01:04,  1.19it/s][A
+ 82%|████████▏ | 351/427 [04:42<01:01,  1.23it/s][A
+ 82%|████████▏ | 352/427 [04:42<00:58,  1.29it/s][A
+ 83%|████████▎ | 353/427 [04:43<00:57,  1.29it/s][A
+ 83%|████████▎ | 354/427 [04:44<00:56,  1.29it/s][A
+ 83%|████████▎ | 355/427 [04:45<00:56,  1.28it/s][A
+ 83%|████████▎ | 356/427 [04:46<00:55,  1.28it/s][A
+ 84%|████████▎ | 357/427 [04:46<00:56,  1.24it/s][A
+ 84%|████████▍ | 358/427 [04:47<00:54,  1.27it/s][A
+ 84%|████████▍ | 359/427 [04:48<00:53,  1.26it/s][A
+ 84%|████████▍ | 360/427 [04:49<00:52,  1.28it/s][A
+ 85%|████████▍ | 361/427 [04:50<00:51,  1.28it/s][A
+ 85%|████████▍ | 362/427 [04:50<00:51,  1.27it/s][A
+ 85%|████████▌ | 363/427 [04:51<00:49,  1.30it/s][A
+ 85%|████████▌ | 364/427 [04:52<00:47,  1.31it/s][A
+ 85%|████████▌ | 365/427 [04:53<00:47,  1.30it/s][A
+ 86%|████████▌ | 366/427 [04:53<00:47,  1.29it/s][A
+ 86%|████████▌ | 367/427 [04:54<00:47,  1.27it/s][A
+ 86%|████████▌ | 368/427 [04:55<00:47,  1.24it/s][A
+ 86%|████████▋ | 369/427 [04:56<00:45,  1.28it/s][A
+ 87%|████████▋ | 370/427 [04:57<00:45,  1.26it/s][A
+ 87%|████████▋ | 371/427 [04:57<00:42,  1.32it/s][A
+ 87%|████████▋ | 372/427 [04:58<00:40,  1.37it/s][A
+ 87%|████████▋ | 373/427 [04:59<00:38,  1.41it/s][A
+ 88%|████████▊ | 374/427 [04:59<00:37,  1.40it/s][A
+ 88%|████████▊ | 375/427 [05:00<00:39,  1.33it/s][A
+ 88%|████████▊ | 376/427 [05:01<00:37,  1.36it/s][A
+ 88%|████████▊ | 377/427 [05:02<00:36,  1.37it/s][A
+ 89%|████████▊ | 378/427 [05:02<00:35,  1.37it/s][A
+ 89%|████████▉ | 379/427 [05:03<00:36,  1.33it/s][A
+ 89%|████████▉ | 380/427 [05:04<00:36,  1.31it/s][A
+ 89%|████████▉ | 381/427 [05:05<00:36,  1.28it/s][A
+ 89%|████████▉ | 382/427 [05:05<00:34,  1.30it/s][A
+ 90%|████████▉ | 383/427 [05:06<00:33,  1.32it/s][A
+ 90%|████████▉ | 384/427 [05:07<00:32,  1.33it/s][A
+ 90%|█████████ | 385/427 [05:08<00:32,  1.31it/s][A
+ 90%|█████████ | 386/427 [05:08<00:30,  1.33it/s][A
+ 91%|█████████ | 387/427 [05:09<00:30,  1.29it/s][A
+ 91%|█████████ | 388/427 [05:10<00:30,  1.29it/s][A
+ 91%|█████████ | 389/427 [05:11<00:29,  1.29it/s][A
+ 91%|█████████▏| 390/427 [05:12<00:28,  1.32it/s][A
+ 92%|█████████▏| 391/427 [05:12<00:27,  1.31it/s][A
+ 92%|█████████▏| 392/427 [05:13<00:26,  1.32it/s][A
+ 92%|█████████▏| 393/427 [05:14<00:25,  1.34it/s][A
+ 92%|█████████▏| 394/427 [05:15<00:24,  1.35it/s][A
+ 93%|█████████▎| 395/427 [05:15<00:23,  1.33it/s][A
+ 93%|█████████▎| 396/427 [05:16<00:23,  1.32it/s][A
+ 93%|█████████▎| 397/427 [05:17<00:21,  1.40it/s][A
+ 93%|█████████▎| 398/427 [05:17<00:20,  1.41it/s][A
+ 93%|█████████▎| 399/427 [05:18<00:20,  1.39it/s][A
+ 94%|█████████▎| 400/427 [05:19<00:19,  1.36it/s][A
+ 94%|█████████▍| 401/427 [05:20<00:18,  1.37it/s][A
+ 94%|█████████▍| 402/427 [05:20<00:18,  1.35it/s][A
+ 94%|█████████▍| 403/427 [05:21<00:17,  1.36it/s][A
+ 95%|█████████▍| 404/427 [05:22<00:17,  1.34it/s][A
+ 95%|█████████▍| 405/427 [05:23<00:17,  1.29it/s][A
+ 95%|█████████▌| 406/427 [05:23<00:15,  1.34it/s][A
+ 95%|█████████▌| 407/427 [05:24<00:14,  1.35it/s][A
+ 96%|█████████▌| 408/427 [05:25<00:13,  1.42it/s][A
+ 96%|█████████▌| 409/427 [05:25<00:12,  1.44it/s][A
+ 96%|█████████▌| 410/427 [05:26<00:12,  1.40it/s][A
+ 96%|█████████▋| 411/427 [05:27<00:11,  1.36it/s][A
+ 96%|█████████▋| 412/427 [05:28<00:10,  1.44it/s][A
+ 97%|█████████▋| 413/427 [05:28<00:09,  1.51it/s][A
+ 97%|█████████▋| 414/427 [05:29<00:08,  1.55it/s][A
+ 97%|█████████▋| 415/427 [05:29<00:07,  1.51it/s][A
+ 97%|█████████▋| 416/427 [05:30<00:07,  1.49it/s][A
+ 98%|█████████▊| 417/427 [05:31<00:06,  1.52it/s][A
+ 98%|█████████▊| 418/427 [05:31<00:05,  1.58it/s][A
+ 98%|█████████▊| 419/427 [05:32<00:05,  1.60it/s][A
+ 98%|█████████▊| 420/427 [05:33<00:04,  1.57it/s][A
+ 99%|█████████▊| 421/427 [05:33<00:03,  1.59it/s][A
+ 99%|█████████▉| 422/427 [05:34<00:03,  1.57it/s][A
+ 99%|█████████▉| 423/427 [05:35<00:02,  1.55it/s][A
+ 99%|█████████▉| 424/427 [05:35<00:01,  1.58it/s][A
+100%|█████████▉| 425/427 [05:36<00:01,  1.63it/s][A
+100%|█████████▉| 426/427 [05:36<00:00,  1.66it/s][A
+100%|██████████| 427/427 [05:37<00:00,  1.95it/s][A                                                   
+                                                 [A{'eval_loss': '0.006766', 'eval_runtime': '337.9', 'eval_samples_per_second': '10.09', 'eval_steps_per_second': '1.264', 'epoch': '0.2183'}
+ 11%|█         | 100/916 [1:05:18<7:59:31, 35.26s/it]
+100%|██████████| 427/427 [05:37<00:00,  1.95it/s][A
+                                                 [A 11%|█         | 101/916 [1:05:54<30:59:41, 136.91s/it] 11%|█         | 102/916 [1:06:30<24:05:26, 106.54s/it] 11%|█         | 103/916 [1:07:07<19:20:32, 85.65s/it]  11%|█▏        | 104/916 [1:07:42<15:55:41, 70.62s/it] 11%|█▏        | 105/916 [1:08:18<13:34:38, 60.27s/it] 12%|█▏        | 106/916 [1:08:53<11:48:28, 52.48s/it] 12%|█▏        | 107/916 [1:09:28<10:38:01, 47.32s/it] 12%|█▏        | 108/916 [1:10:03<9:49:08, 43.75s/it]  12%|█▏        | 109/916 [1:10:38<9:12:37, 41.09s/it] 12%|█▏        | 110/916 [1:11:14<8:50:08, 39.46s/it]                                                     {'loss': '0.006306', 'grad_norm': '0.009205', 'learning_rate': '0.0001959', 'epoch': '0.2402'}
+ 12%|█▏        | 110/916 [1:11:14<8:50:08, 39.46s/it] 12%|█▏        | 111/916 [1:11:50<8:36:30, 38.50s/it] 12%|█▏        | 112/916 [1:12:26<8:27:18, 37.86s/it] 12%|█▏        | 113/916 [1:13:03<8:20:32, 37.40s/it] 12%|█▏        | 114/916 [1:13:39<8:13:36, 36.93s/it] 13%|█▎        | 115/916 [1:14:14<8:08:27, 36.59s/it] 13%|█▎        | 116/916 [1:14:50<8:02:24, 36.18s/it] 13%|█▎        | 117/916 [1:15:26<8:02:05, 36.20s/it] 13%|█▎        | 118/916 [1:16:02<8:02:17, 36.26s/it] 13%|█▎        | 119/916 [1:16:38<7:59:14, 36.08s/it] 13%|█▎        | 120/916 [1:17:14<7:59:28, 36.14s/it]                                                     {'loss': '0.006045', 'grad_norm': '0.007384', 'learning_rate': '0.0001949', 'epoch': '0.262'}
+ 13%|█▎        | 120/916 [1:17:14<7:59:28, 36.14s/it] 13%|█▎        | 121/916 [1:17:50<7:58:40, 36.13s/it] 13%|█▎        | 122/916 [1:18:26<7:57:44, 36.10s/it] 13%|█▎        | 123/916 [1:19:03<7:58:02, 36.17s/it] 14%|█▎        | 124/916 [1:19:38<7:55:17, 36.01s/it] 14%|█▎        | 125/916 [1:20:14<7:53:57, 35.95s/it] 14%|█▍        | 126/916 [1:20:50<7:54:24, 36.03s/it] 14%|█▍        | 127/916 [1:21:26<7:53:36, 36.02s/it] 14%|█▍        | 128/916 [1:22:03<7:54:06, 36.10s/it] 14%|█▍        | 129/916 [1:22:39<7:54:03, 36.14s/it] 14%|█▍        | 130/916 [1:23:14<7:49:47, 35.86s/it]                                                     {'loss': '0.008213', 'grad_norm': '0.005425', 'learning_rate': '0.0001937', 'epoch': '0.2838'}
+ 14%|█▍        | 130/916 [1:23:14<7:49:47, 35.86s/it] 14%|█▍        | 131/916 [1:23:50<7:50:53, 35.99s/it] 14%|█▍        | 132/916 [1:24:28<7:55:17, 36.37s/it] 15%|█▍        | 133/916 [1:25:04<7:52:54, 36.24s/it] 15%|█▍        | 134/916 [1:25:40<7:53:49, 36.36s/it] 15%|█▍        | 135/916 [1:26:17<7:53:18, 36.36s/it] 15%|█▍        | 136/916 [1:26:53<7:55:05, 36.55s/it] 15%|█▍        | 137/916 [1:27:30<7:53:33, 36.47s/it] 15%|█▌        | 138/916 [1:28:06<7:53:40, 36.53s/it] 15%|█▌        | 139/916 [1:28:41<7:45:16, 35.93s/it] 15%|█▌        | 140/916 [1:29:17<7:46:32, 36.07s/it]                                                     {'loss': '0.006589', 'grad_norm': '0.009545', 'learning_rate': '0.0001924', 'epoch': '0.3057'}
+ 15%|█▌        | 140/916 [1:29:17<7:46:32, 36.07s/it] 15%|█▌        | 141/916 [1:29:53<7:44:56, 35.99s/it] 16%|█▌        | 142/916 [1:30:28<7:41:32, 35.78s/it] 16%|█▌        | 143/916 [1:31:05<7:44:25, 36.05s/it] 16%|█▌        | 144/916 [1:31:41<7:44:49, 36.13s/it] 16%|█▌        | 145/916 [1:32:18<7:47:03, 36.35s/it] 16%|█▌        | 146/916 [1:32:55<7:46:25, 36.34s/it] 16%|█▌        | 147/916 [1:33:29<7:38:30, 35.77s/it] 16%|█▌        | 148/916 [1:34:05<7:39:16, 35.88s/it] 16%|█▋        | 149/916 [1:34:41<7:39:36, 35.95s/it] 16%|█▋        | 150/916 [1:35:17<7:36:57, 35.79s/it]                                                     {'loss': '0.006633', 'grad_norm': '0.00668', 'learning_rate': '0.000191', 'epoch': '0.3275'}
+ 16%|█▋        | 150/916 [1:35:17<7:36:57, 35.79s/it] 16%|█▋        | 151/916 [1:35:54<7:40:00, 36.08s/it] 17%|█▋        | 152/916 [1:36:30<7:39:15, 36.07s/it] 17%|█▋        | 153/916 [1:37:05<7:37:58, 36.01s/it] 17%|█▋        | 154/916 [1:37:42<7:40:18, 36.25s/it] 17%|█▋        | 155/916 [1:38:18<7:39:31, 36.23s/it] 17%|█▋        | 156/916 [1:38:55<7:40:43, 36.37s/it] 17%|█▋        | 157/916 [1:39:30<7:36:09, 36.06s/it] 17%|█▋        | 158/916 [1:40:06<7:35:21, 36.04s/it] 17%|█▋        | 159/916 [1:40:43<7:37:55, 36.29s/it] 17%|█▋        | 160/916 [1:41:20<7:39:03, 36.43s/it]                                                     {'loss': '0.006903', 'grad_norm': '0.01196', 'learning_rate': '0.0001895', 'epoch': '0.3493'}
+ 17%|█▋        | 160/916 [1:41:20<7:39:03, 36.43s/it] 18%|█▊        | 161/916 [1:41:57<7:39:46, 36.54s/it] 18%|█▊        | 162/916 [1:42:32<7:35:06, 36.22s/it] 18%|█▊        | 163/916 [1:43:08<7:32:39, 36.07s/it] 18%|█▊        | 164/916 [1:43:45<7:35:30, 36.34s/it] 18%|█▊        | 165/916 [1:44:21<7:33:21, 36.22s/it] 18%|█▊        | 166/916 [1:44:57<7:33:12, 36.26s/it] 18%|█▊        | 167/916 [1:45:34<7:33:49, 36.35s/it] 18%|█▊        | 168/916 [1:46:10<7:31:52, 36.25s/it] 18%|█▊        | 169/916 [1:46:46<7:31:43, 36.28s/it] 19%|█▊        | 170/916 [1:47:24<7:34:50, 36.58s/it]                                                     {'loss': '0.006217', 'grad_norm': '0.006408', 'learning_rate': '0.0001878', 'epoch': '0.3712'}
+ 19%|█▊        | 170/916 [1:47:24<7:34:50, 36.58s/it] 19%|█▊        | 171/916 [1:48:00<7:33:07, 36.49s/it] 19%|█▉        | 172/916 [1:48:34<7:24:42, 35.86s/it] 19%|█▉        | 173/916 [1:49:09<7:19:09, 35.46s/it] 19%|█▉        | 174/916 [1:49:46<7:23:31, 35.86s/it] 19%|█▉        | 175/916 [1:50:22<7:24:33, 36.00s/it] 19%|█▉        | 176/916 [1:50:58<7:24:28, 36.04s/it] 19%|█▉        | 177/916 [1:51:34<7:23:39, 36.02s/it] 19%|█▉        | 178/916 [1:52:10<7:23:49, 36.08s/it] 20%|█▉        | 179/916 [1:52:46<7:21:38, 35.95s/it] 20%|█▉        | 180/916 [1:53:22<7:21:38, 36.00s/it]                                                     {'loss': '0.006592', 'grad_norm': '0.006483', 'learning_rate': '0.0001861', 'epoch': '0.393'}
+ 20%|█▉        | 180/916 [1:53:22<7:21:38, 36.00s/it] 20%|█▉        | 181/916 [1:53:59<7:24:15, 36.27s/it] 20%|█▉        | 182/916 [1:54:35<7:23:47, 36.28s/it] 20%|█▉        | 183/916 [1:55:12<7:24:03, 36.35s/it] 20%|██        | 184/916 [1:55:48<7:24:03, 36.40s/it] 20%|██        | 185/916 [1:56:24<7:22:29, 36.32s/it] 20%|██        | 186/916 [1:57:00<7:20:22, 36.20s/it] 20%|██        | 187/916 [1:57:36<7:17:55, 36.04s/it] 21%|██        | 188/916 [1:58:11<7:13:05, 35.69s/it] 21%|██        | 189/916 [1:58:48<7:16:30, 36.03s/it] 21%|██        | 190/916 [1:59:23<7:14:38, 35.92s/it]                                                     {'loss': '0.005897', 'grad_norm': '0.00546', 'learning_rate': '0.0001842', 'epoch': '0.4148'}
+ 21%|██        | 190/916 [1:59:23<7:14:38, 35.92s/it] 21%|██        | 191/916 [1:59:59<7:13:08, 35.85s/it] 21%|██        | 192/916 [2:00:36<7:16:17, 36.16s/it] 21%|██        | 193/916 [2:01:13<7:17:52, 36.34s/it] 21%|██        | 194/916 [2:01:47<7:09:06, 35.66s/it] 21%|██▏       | 195/916 [2:02:23<7:10:43, 35.84s/it] 21%|██▏       | 196/916 [2:02:58<7:08:39, 35.72s/it] 22%|██▏       | 197/916 [2:03:35<7:11:40, 36.02s/it] 22%|██▏       | 198/916 [2:04:11<7:11:05, 36.02s/it] 22%|██▏       | 199/916 [2:04:47<7:08:24, 35.85s/it] 22%|██▏       | 200/916 [2:05:22<7:05:11, 35.63s/it]                                                     {'loss': '0.006367', 'grad_norm': '0.004167', 'learning_rate': '0.0001823', 'epoch': '0.4367'}
+ 22%|██▏       | 200/916 [2:05:22<7:05:11, 35.63s/it]
+  0%|          | 0/427 [00:00<?, ?it/s][A
+  0%|          | 2/427 [00:00<03:08,  2.26it/s][A
+  1%|          | 3/427 [00:01<04:25,  1.60it/s][A
+  1%|          | 4/427 [00:02<05:05,  1.39it/s][A
+  1%|          | 5/427 [00:03<05:27,  1.29it/s][A
+  1%|▏         | 6/427 [00:04<05:34,  1.26it/s][A
+  2%|▏         | 7/427 [00:05<05:42,  1.22it/s][A
+  2%|▏         | 8/427 [00:06<05:49,  1.20it/s][A
+  2%|▏         | 9/427 [00:06<05:51,  1.19it/s][A
+  2%|▏         | 10/427 [00:07<05:52,  1.18it/s][A
+  3%|▎         | 11/427 [00:08<05:55,  1.17it/s][A
+  3%|▎         | 12/427 [00:09<05:57,  1.16it/s][A
+  3%|▎         | 13/427 [00:10<05:57,  1.16it/s][A
+  3%|▎         | 14/427 [00:11<05:56,  1.16it/s][A
+  4%|▎         | 15/427 [00:12<05:55,  1.16it/s][A
+  4%|▎         | 16/427 [00:12<05:47,  1.18it/s][A
+  4%|▍         | 17/427 [00:13<05:43,  1.19it/s][A
+  4%|▍         | 18/427 [00:14<05:47,  1.18it/s][A
+  4%|▍         | 19/427 [00:15<05:47,  1.17it/s][A
+  5%|▍         | 20/427 [00:16<05:47,  1.17it/s][A
+  5%|▍         | 21/427 [00:17<05:49,  1.16it/s][A
+  5%|▌         | 22/427 [00:18<05:48,  1.16it/s][A
+  5%|▌         | 23/427 [00:18<05:48,  1.16it/s][A
+  6%|▌         | 24/427 [00:19<05:49,  1.15it/s][A
+  6%|▌         | 25/427 [00:20<05:41,  1.18it/s][A
+  6%|▌         | 26/427 [00:21<05:34,  1.20it/s][A
+  6%|▋         | 27/427 [00:22<05:32,  1.20it/s][A
+  7%|▋         | 28/427 [00:23<05:35,  1.19it/s][A
+  7%|▋         | 29/427 [00:23<05:30,  1.21it/s][A
+  7%|▋         | 30/427 [00:24<05:27,  1.21it/s][A
+  7%|▋         | 31/427 [00:25<05:29,  1.20it/s][A
+  7%|▋         | 32/427 [00:26<05:25,  1.21it/s][A
+  8%|▊         | 33/427 [00:27<05:22,  1.22it/s][A
+  8%|▊         | 34/427 [00:27<05:14,  1.25it/s][A
+  8%|▊         | 35/427 [00:28<05:15,  1.24it/s][A
+  8%|▊         | 36/427 [00:29<05:08,  1.27it/s][A
+  9%|▊         | 37/427 [00:30<05:10,  1.26it/s][A
+  9%|▉         | 38/427 [00:31<05:15,  1.23it/s][A
+  9%|▉         | 39/427 [00:32<05:16,  1.23it/s][A
+  9%|▉         | 40/427 [00:32<05:21,  1.20it/s][A
+ 10%|▉         | 41/427 [00:33<05:24,  1.19it/s][A
+ 10%|▉         | 42/427 [00:34<05:19,  1.20it/s][A
+ 10%|█         | 43/427 [00:35<05:23,  1.19it/s][A
+ 10%|█         | 44/427 [00:36<05:21,  1.19it/s][A
+ 11%|█         | 45/427 [00:37<05:24,  1.18it/s][A
+ 11%|█         | 46/427 [00:38<05:26,  1.17it/s][A
+ 11%|█         | 47/427 [00:38<05:15,  1.20it/s][A
+ 11%|█         | 48/427 [00:39<05:09,  1.22it/s][A
+ 11%|█▏        | 49/427 [00:40<05:09,  1.22it/s][A
+ 12%|█▏        | 50/427 [00:41<05:01,  1.25it/s][A
+ 12%|█▏        | 51/427 [00:41<05:00,  1.25it/s][A
+ 12%|█▏        | 52/427 [00:42<04:59,  1.25it/s][A
+ 12%|█▏        | 53/427 [00:43<04:57,  1.26it/s][A
+ 13%|█▎        | 54/427 [00:44<04:56,  1.26it/s][A
+ 13%|█▎        | 55/427 [00:45<04:58,  1.25it/s][A
+ 13%|█▎        | 56/427 [00:46<05:03,  1.22it/s][A
+ 13%|█▎        | 57/427 [00:46<05:08,  1.20it/s][A
+ 14%|█▎        | 58/427 [00:47<05:12,  1.18it/s][A
+ 14%|█▍        | 59/427 [00:48<05:08,  1.19it/s][A
+ 14%|█▍        | 60/427 [00:49<05:05,  1.20it/s][A
+ 14%|█▍        | 61/427 [00:50<05:06,  1.19it/s][A
+ 15%|█▍        | 62/427 [00:51<04:57,  1.23it/s][A
+ 15%|█▍        | 63/427 [00:51<04:54,  1.23it/s][A
+ 15%|█▍        | 64/427 [00:52<04:57,  1.22it/s][A
+ 15%|█▌        | 65/427 [00:53<04:59,  1.21it/s][A
+ 15%|█▌        | 66/427 [00:54<04:49,  1.25it/s][A
+ 16%|█▌        | 67/427 [00:54<04:40,  1.28it/s][A
+ 16%|█▌        | 68/427 [00:55<04:41,  1.27it/s][A
+ 16%|█▌        | 69/427 [00:56<04:37,  1.29it/s][A
+ 16%|█▋        | 70/427 [00:57<04:33,  1.30it/s][A
+ 17%|█▋        | 71/427 [00:58<04:37,  1.28it/s][A
+ 17%|█▋        | 72/427 [00:58<04:44,  1.25it/s][A
+ 17%|█▋        | 73/427 [00:59<04:39,  1.27it/s][A
+ 17%|█▋        | 74/427 [01:00<04:41,  1.25it/s][A
+ 18%|█▊        | 75/427 [01:01<04:41,  1.25it/s][A
+ 18%|█▊        | 76/427 [01:02<04:42,  1.24it/s][A
+ 18%|█▊        | 77/427 [01:02<04:47,  1.22it/s][A
+ 18%|█▊        | 78/427 [01:03<04:38,  1.25it/s][A
+ 19%|█▊        | 79/427 [01:04<04:43,  1.23it/s][A
+ 19%|█▊        | 80/427 [01:05<04:37,  1.25it/s][A
+ 19%|█▉        | 81/427 [01:06<04:35,  1.26it/s][A
+ 19%|█▉        | 82/427 [01:06<04:29,  1.28it/s][A
+ 19%|█▉        | 83/427 [01:07<04:30,  1.27it/s][A
+ 20%|█▉        | 84/427 [01:08<04:30,  1.27it/s][A
+ 20%|█▉        | 85/427 [01:09<04:30,  1.26it/s][A
+ 20%|██        | 86/427 [01:10<04:37,  1.23it/s][A
+ 20%|██        | 87/427 [01:10<04:35,  1.23it/s][A
+ 21%|██        | 88/427 [01:11<04:38,  1.22it/s][A
+ 21%|██        | 89/427 [01:12<04:35,  1.23it/s][A
+ 21%|██        | 90/427 [01:13<04:32,  1.24it/s][A
+ 21%|██▏       | 91/427 [01:14<04:32,  1.23it/s][A
+ 22%|██▏       | 92/427 [01:14<04:27,  1.25it/s][A
+ 22%|██▏       | 93/427 [01:15<04:27,  1.25it/s][A
+ 22%|██▏       | 94/427 [01:16<04:27,  1.24it/s][A
+ 22%|██▏       | 95/427 [01:17<04:21,  1.27it/s][A
+ 22%|██▏       | 96/427 [01:18<04:15,  1.29it/s][A
+ 23%|██▎       | 97/427 [01:18<04:22,  1.26it/s][A
+ 23%|██▎       | 98/427 [01:19<04:26,  1.23it/s][A
+ 23%|██▎       | 99/427 [01:20<04:31,  1.21it/s][A
+ 23%|██▎       | 100/427 [01:21<04:24,  1.24it/s][A
+ 24%|██▎       | 101/427 [01:22<04:18,  1.26it/s][A
+ 24%|██▍       | 102/427 [01:22<04:21,  1.24it/s][A
+ 24%|██▍       | 103/427 [01:23<04:22,  1.23it/s][A
+ 24%|██▍       | 104/427 [01:24<04:26,  1.21it/s][A
+ 25%|██▍       | 105/427 [01:25<04:31,  1.19it/s][A
+ 25%|██▍       | 106/427 [01:26<04:31,  1.18it/s][A
+ 25%|██▌       | 107/427 [01:27<04:25,  1.20it/s][A
+ 25%|██▌       | 108/427 [01:27<04:22,  1.21it/s][A
+ 26%|██▌       | 109/427 [01:28<04:20,  1.22it/s][A
+ 26%|██▌       | 110/427 [01:29<04:18,  1.23it/s][A
+ 26%|██▌       | 111/427 [01:30<04:15,  1.24it/s][A
+ 26%|██▌       | 112/427 [01:31<04:15,  1.24it/s][A
+ 26%|██▋       | 113/427 [01:32<04:15,  1.23it/s][A
+ 27%|██▋       | 114/427 [01:32<04:19,  1.21it/s][A
+ 27%|██▋       | 115/427 [01:33<04:17,  1.21it/s][A
+ 27%|██▋       | 116/427 [01:34<04:08,  1.25it/s][A
+ 27%|██▋       | 117/427 [01:35<04:01,  1.28it/s][A
+ 28%|██▊       | 118/427 [01:35<03:58,  1.30it/s][A
+ 28%|██▊       | 119/427 [01:36<04:05,  1.25it/s][A
+ 28%|██▊       | 120/427 [01:37<04:02,  1.27it/s][A
+ 28%|██▊       | 121/427 [01:38<04:02,  1.26it/s][A
+ 29%|██▊       | 122/427 [01:39<04:01,  1.26it/s][A
+ 29%|██▉       | 123/427 [01:40<04:05,  1.24it/s][A
+ 29%|██▉       | 124/427 [01:40<04:04,  1.24it/s][A
+ 29%|██▉       | 125/427 [01:41<04:05,  1.23it/s][A
+ 30%|██▉       | 126/427 [01:42<03:56,  1.28it/s][A
+ 30%|██▉       | 127/427 [01:43<03:55,  1.27it/s][A
+ 30%|██▉       | 128/427 [01:43<03:52,  1.29it/s][A
+ 30%|███       | 129/427 [01:44<03:53,  1.28it/s][A
+ 30%|███       | 130/427 [01:45<03:48,  1.30it/s][A
+ 31%|███       | 131/427 [01:46<03:44,  1.32it/s][A
+ 31%|███       | 132/427 [01:46<03:42,  1.32it/s][A
+ 31%|███       | 133/427 [01:47<03:51,  1.27it/s][A
+ 31%|███▏      | 134/427 [01:48<03:58,  1.23it/s][A
+ 32%|███▏      | 135/427 [01:49<04:02,  1.20it/s][A
+ 32%|███▏      | 136/427 [01:50<04:01,  1.21it/s][A
+ 32%|███▏      | 137/427 [01:51<03:53,  1.24it/s][A
+ 32%|███▏      | 138/427 [01:51<03:47,  1.27it/s][A
+ 33%|███▎      | 139/427 [01:52<03:48,  1.26it/s][A
+ 33%|███▎      | 140/427 [01:53<03:43,  1.28it/s][A
+ 33%|███▎      | 141/427 [01:54<03:43,  1.28it/s][A
+ 33%|███▎      | 142/427 [01:54<03:40,  1.30it/s][A
+ 33%|███▎      | 143/427 [01:55<03:37,  1.31it/s][A
+ 34%|███▎      | 144/427 [01:56<03:39,  1.29it/s][A
+ 34%|███▍      | 145/427 [01:57<03:42,  1.27it/s][A
+ 34%|███▍      | 146/427 [01:58<03:34,  1.31it/s][A
+ 34%|███▍      | 147/427 [01:58<03:36,  1.29it/s][A
+ 35%|███▍      | 148/427 [01:59<03:39,  1.27it/s][A
+ 35%|███▍      | 149/427 [02:00<03:44,  1.24it/s][A
+ 35%|███▌      | 150/427 [02:01<03:39,  1.26it/s][A
+ 35%|███▌      | 151/427 [02:02<03:42,  1.24it/s][A
+ 36%|███▌      | 152/427 [02:02<03:40,  1.25it/s][A
+ 36%|███▌      | 153/427 [02:03<03:24,  1.34it/s][A
+ 36%|███▌      | 154/427 [02:04<03:26,  1.32it/s][A
+ 36%|███▋      | 155/427 [02:05<03:30,  1.29it/s][A
+ 37%|███▋      | 156/427 [02:05<03:36,  1.25it/s][A
+ 37%|███▋      | 157/427 [02:06<03:32,  1.27it/s][A
+ 37%|███▋      | 158/427 [02:07<03:28,  1.29it/s][A
+ 37%|███▋      | 159/427 [02:08<03:29,  1.28it/s][A
+ 37%|███▋      | 160/427 [02:08<03:26,  1.29it/s][A
+ 38%|███▊      | 161/427 [02:09<03:24,  1.30it/s][A
+ 38%|███▊      | 162/427 [02:10<03:23,  1.30it/s][A
+ 38%|███▊      | 163/427 [02:11<03:21,  1.31it/s][A
+ 38%|███▊      | 164/427 [02:12<03:20,  1.31it/s][A
+ 39%|███▊      | 165/427 [02:12<03:21,  1.30it/s][A
+ 39%|███▉      | 166/427 [02:13<03:20,  1.30it/s][A
+ 39%|███▉      | 167/427 [02:14<03:20,  1.30it/s][A
+ 39%|███▉      | 168/427 [02:15<03:17,  1.31it/s][A
+ 40%|███▉      | 169/427 [02:15<03:15,  1.32it/s][A
+ 40%|███▉      | 170/427 [02:16<03:13,  1.32it/s][A
+ 40%|████      | 171/427 [02:17<03:17,  1.30it/s][A
+ 40%|████      | 172/427 [02:18<03:18,  1.28it/s][A
+ 41%|████      | 173/427 [02:19<03:20,  1.27it/s][A
+ 41%|████      | 174/427 [02:19<03:16,  1.29it/s][A
+ 41%|████      | 175/427 [02:20<03:20,  1.26it/s][A
+ 41%|████      | 176/427 [02:21<03:19,  1.26it/s][A
+ 41%|████▏     | 177/427 [02:22<03:14,  1.28it/s][A
+ 42%|████▏     | 178/427 [02:22<03:11,  1.30it/s][A
+ 42%|████▏     | 179/427 [02:23<03:08,  1.31it/s][A
+ 42%|████▏     | 180/427 [02:24<03:09,  1.30it/s][A
+ 42%|████▏     | 181/427 [02:25<03:07,  1.31it/s][A
+ 43%|████▎     | 182/427 [02:25<03:06,  1.31it/s][A
+ 43%|████▎     | 183/427 [02:26<03:08,  1.30it/s][A
+ 43%|████▎     | 184/427 [02:27<03:10,  1.27it/s][A
+ 43%|████▎     | 185/427 [02:28<03:12,  1.25it/s][A
+ 44%|████▎     | 186/427 [02:29<03:08,  1.28it/s][A
+ 44%|████▍     | 187/427 [02:29<03:05,  1.29it/s][A
+ 44%|████▍     | 188/427 [02:30<03:03,  1.30it/s][A
+ 44%|████▍     | 189/427 [02:31<03:01,  1.31it/s][A
+ 44%|████▍     | 190/427 [02:32<03:07,  1.26it/s][A
+ 45%|████▍     | 191/427 [02:32<03:05,  1.27it/s][A
+ 45%|████▍     | 192/427 [02:33<03:05,  1.26it/s][A
+ 45%|████▌     | 193/427 [02:34<03:02,  1.28it/s][A
+ 45%|████▌     | 194/427 [02:35<02:56,  1.32it/s][A
+ 46%|████▌     | 195/427 [02:36<02:58,  1.30it/s][A
+ 46%|████▌     | 196/427 [02:36<02:49,  1.37it/s][A
+ 46%|████▌     | 197/427 [02:37<02:41,  1.42it/s][A
+ 46%|████▋     | 198/427 [02:37<02:37,  1.45it/s][A
+ 47%|████▋     | 199/427 [02:38<02:44,  1.39it/s][A
+ 47%|████▋     | 200/427 [02:39<02:42,  1.39it/s][A
+ 47%|████▋     | 201/427 [02:40<02:40,  1.40it/s][A
+ 47%|████▋     | 202/427 [02:40<02:38,  1.42it/s][A
+ 48%|████▊     | 203/427 [02:41<02:32,  1.47it/s][A
+ 48%|████▊     | 204/427 [02:42<02:26,  1.52it/s][A
+ 48%|████▊     | 205/427 [02:42<02:20,  1.59it/s][A
+ 48%|████▊     | 206/427 [02:43<02:15,  1.63it/s][A
+ 48%|████▊     | 207/427 [02:43<02:12,  1.66it/s][A
+ 49%|████▊     | 208/427 [02:44<02:23,  1.53it/s][A
+ 49%|████▉     | 209/427 [02:45<02:36,  1.39it/s][A
+ 49%|████▉     | 210/427 [02:46<02:45,  1.31it/s][A
+ 49%|████▉     | 211/427 [02:47<02:53,  1.24it/s][A
+ 50%|████▉     | 212/427 [02:48<02:56,  1.22it/s][A
+ 50%|████▉     | 213/427 [02:48<02:59,  1.19it/s][A
+ 50%|█████     | 214/427 [02:49<03:01,  1.17it/s][A
+ 50%|█████     | 215/427 [02:50<03:00,  1.17it/s][A
+ 51%|█████     | 216/427 [02:51<03:01,  1.16it/s][A
+ 51%|█████     | 217/427 [02:52<03:01,  1.16it/s][A
+ 51%|█████     | 218/427 [02:53<03:01,  1.15it/s][A
+ 51%|█████▏    | 219/427 [02:54<02:57,  1.17it/s][A
+ 52%|█████▏    | 220/427 [02:55<02:56,  1.17it/s][A
+ 52%|█████▏    | 221/427 [02:55<02:55,  1.17it/s][A
+ 52%|█████▏    | 222/427 [02:56<02:56,  1.16it/s][A
+ 52%|█████▏    | 223/427 [02:57<02:56,  1.16it/s][A
+ 52%|█████▏    | 224/427 [02:58<02:56,  1.15it/s][A
+ 53%|█████▎    | 225/427 [02:59<02:56,  1.15it/s][A
+ 53%|█████▎    | 226/427 [03:00<02:54,  1.15it/s][A
+ 53%|█████▎    | 227/427 [03:01<02:54,  1.14it/s][A
+ 53%|█████▎    | 228/427 [03:02<02:54,  1.14it/s][A
+ 54%|█████▎    | 229/427 [03:02<02:50,  1.16it/s][A
+ 54%|█████▍    | 230/427 [03:03<02:49,  1.16it/s][A
+ 54%|█████▍    | 231/427 [03:04<02:49,  1.16it/s][A
+ 54%|█████▍    | 232/427 [03:05<02:45,  1.18it/s][A
+ 55%|█████▍    | 233/427 [03:06<02:42,  1.19it/s][A
+ 55%|█████▍    | 234/427 [03:07<02:42,  1.19it/s][A
+ 55%|█████▌    | 235/427 [03:07<02:42,  1.18it/s][A
+ 55%|█████▌    | 236/427 [03:08<02:43,  1.17it/s][A
+ 56%|█████▌    | 237/427 [03:09<02:43,  1.16it/s][A
+ 56%|█████▌    | 238/427 [03:10<02:42,  1.16it/s][A
+ 56%|█████▌    | 239/427 [03:11<02:41,  1.16it/s][A
+ 56%|█████▌    | 240/427 [03:12<02:41,  1.16it/s][A
+ 56%|█████▋    | 241/427 [03:13<02:41,  1.15it/s][A
+ 57%|█████▋    | 242/427 [03:13<02:40,  1.15it/s][A
+ 57%|█████▋    | 243/427 [03:14<02:40,  1.15it/s][A
+ 57%|█████▋    | 244/427 [03:15<02:39,  1.15it/s][A
+ 57%|█████▋    | 245/427 [03:16<02:38,  1.15it/s][A
+ 58%|█████▊    | 246/427 [03:17<02:37,  1.15it/s][A
+ 58%|█████▊    | 247/427 [03:18<02:35,  1.16it/s][A
+ 58%|█████▊    | 248/427 [03:19<02:31,  1.18it/s][A
+ 58%|█████▊    | 249/427 [03:19<02:28,  1.20it/s][A
+ 59%|█████▊    | 250/427 [03:20<02:26,  1.21it/s][A
+ 59%|█████▉    | 251/427 [03:21<02:25,  1.21it/s][A
+ 59%|█████▉    | 252/427 [03:22<02:27,  1.19it/s][A
+ 59%|█████▉    | 253/427 [03:23<02:28,  1.17it/s][A
+ 59%|█████▉    | 254/427 [03:24<02:28,  1.16it/s][A
+ 60%|█████▉    | 255/427 [03:25<02:28,  1.16it/s][A
+ 60%|█████▉    | 256/427 [03:25<02:28,  1.15it/s][A
+ 60%|██████    | 257/427 [03:26<02:26,  1.16it/s][A
+ 60%|██████    | 258/427 [03:27<02:25,  1.16it/s][A
+ 61%|██████    | 259/427 [03:28<02:25,  1.15it/s][A
+ 61%|██████    | 260/427 [03:29<02:24,  1.15it/s][A
+ 61%|██████    | 261/427 [03:30<02:24,  1.15it/s][A
+ 61%|██████▏   | 262/427 [03:31<02:21,  1.17it/s][A
+ 62%|██████▏   | 263/427 [03:31<02:19,  1.18it/s][A
+ 62%|██████▏   | 264/427 [03:32<02:18,  1.18it/s][A
+ 62%|██████▏   | 265/427 [03:33<02:16,  1.19it/s][A
+ 62%|██████▏   | 266/427 [03:34<02:15,  1.18it/s][A
+ 63%|██████▎   | 267/427 [03:35<02:14,  1.19it/s][A
+ 63%|██████▎   | 268/427 [03:36<02:13,  1.19it/s][A
+ 63%|██████▎   | 269/427 [03:37<02:14,  1.18it/s][A
+ 63%|██████▎   | 270/427 [03:37<02:14,  1.17it/s][A
+ 63%|██████▎   | 271/427 [03:38<02:11,  1.19it/s][A
+ 64%|██████▎   | 272/427 [03:39<02:11,  1.18it/s][A
+ 64%|██████▍   | 273/427 [03:40<02:11,  1.17it/s][A
+ 64%|██████▍   | 274/427 [03:41<02:11,  1.16it/s][A
+ 64%|██████▍   | 275/427 [03:42<02:11,  1.16it/s][A
+ 65%|██████▍   | 276/427 [03:43<02:11,  1.15it/s][A
+ 65%|██████▍   | 277/427 [03:43<02:08,  1.16it/s][A
+ 65%|██████▌   | 278/427 [03:44<02:07,  1.17it/s][A
+ 65%|██████▌   | 279/427 [03:45<02:06,  1.17it/s][A
+ 66%|██████▌   | 280/427 [03:46<02:07,  1.16it/s][A
+ 66%|██████▌   | 281/427 [03:47<02:08,  1.13it/s][A
+ 66%|██████▌   | 282/427 [03:48<02:05,  1.16it/s][A
+ 66%|██████▋   | 283/427 [03:49<02:04,  1.16it/s][A
+ 67%|██████▋   | 284/427 [03:49<02:04,  1.15it/s][A
+ 67%|██████▋   | 285/427 [03:50<01:58,  1.20it/s][A
+ 67%|██████▋   | 286/427 [03:51<01:54,  1.23it/s][A
+ 67%|██████▋   | 287/427 [03:52<01:50,  1.26it/s][A
+ 67%|██████▋   | 288/427 [03:53<01:52,  1.24it/s][A
+ 68%|██████▊   | 289/427 [03:53<01:53,  1.22it/s][A
+ 68%|██████▊   | 290/427 [03:54<01:54,  1.19it/s][A
+ 68%|██████▊   | 291/427 [03:55<01:55,  1.17it/s][A
+ 68%|██████▊   | 292/427 [03:56<01:55,  1.16it/s][A
+ 69%|██████▊   | 293/427 [03:57<01:55,  1.16it/s][A
+ 69%|██████▉   | 294/427 [03:58<01:53,  1.17it/s][A
+ 69%|██████▉   | 295/427 [03:59<01:51,  1.18it/s][A
+ 69%|██████▉   | 296/427 [03:59<01:52,  1.16it/s][A
+ 70%|██████▉   | 297/427 [04:00<01:52,  1.16it/s][A
+ 70%|██████▉   | 298/427 [04:01<01:51,  1.16it/s][A
+ 70%|███████   | 299/427 [04:02<01:50,  1.16it/s][A
+ 70%|███████   | 300/427 [04:03<01:50,  1.15it/s][A
+ 70%|███████   | 301/427 [04:04<01:45,  1.19it/s][A
+ 71%|███████   | 302/427 [04:05<01:43,  1.21it/s][A
+ 71%|███████   | 303/427 [04:05<01:42,  1.22it/s][A
+ 71%|███████   | 304/427 [04:06<01:40,  1.22it/s][A
+ 71%|███████▏  | 305/427 [04:07<01:39,  1.22it/s][A
+ 72%|███████▏  | 306/427 [04:08<01:39,  1.22it/s][A
+ 72%|███████▏  | 307/427 [04:09<01:39,  1.21it/s][A
+ 72%|███████▏  | 308/427 [04:10<01:40,  1.19it/s][A
+ 72%|███████▏  | 309/427 [04:10<01:40,  1.17it/s][A
+ 73%|███████▎  | 310/427 [04:11<01:40,  1.16it/s][A
+ 73%|███████▎  | 311/427 [04:12<01:39,  1.17it/s][A
+ 73%|███████▎  | 312/427 [04:13<01:37,  1.18it/s][A
+ 73%|███████▎  | 313/427 [04:14<01:36,  1.18it/s][A
+ 74%|███████▎  | 314/427 [04:15<01:34,  1.19it/s][A
+ 74%|███████▍  | 315/427 [04:15<01:34,  1.18it/s][A
+ 74%|███████▍  | 316/427 [04:16<01:34,  1.17it/s][A
+ 74%|███████▍  | 317/427 [04:17<01:32,  1.18it/s][A
+ 74%|███████▍  | 318/427 [04:18<01:32,  1.18it/s][A
+ 75%|███████▍  | 319/427 [04:19<01:30,  1.19it/s][A
+ 75%|███████▍  | 320/427 [04:20<01:30,  1.18it/s][A
+ 75%|███████▌  | 321/427 [04:21<01:30,  1.17it/s][A
+ 75%|███████▌  | 322/427 [04:21<01:28,  1.18it/s][A
+ 76%|███████▌  | 323/427 [04:22<01:24,  1.22it/s][A
+ 76%|███████▌  | 324/427 [04:23<01:24,  1.23it/s][A
+ 76%|███████▌  | 325/427 [04:24<01:24,  1.21it/s][A
+ 76%|███████▋  | 326/427 [04:25<01:22,  1.22it/s][A
+ 77%|███████▋  | 327/427 [04:25<01:21,  1.22it/s][A
+ 77%|███████▋  | 328/427 [04:26<01:22,  1.20it/s][A
+ 77%|███████▋  | 329/427 [04:27<01:20,  1.21it/s][A
+ 77%|███████▋  | 330/427 [04:28<01:19,  1.22it/s][A
+ 78%|███████▊  | 331/427 [04:29<01:20,  1.20it/s][A
+ 78%|███████▊  | 332/427 [04:30<01:20,  1.19it/s][A
+ 78%|███████▊  | 333/427 [04:31<01:20,  1.17it/s][A
+ 78%|███████▊  | 334/427 [04:31<01:15,  1.23it/s][A
+ 78%|███████▊  | 335/427 [04:32<01:12,  1.27it/s][A
+ 79%|███████▊  | 336/427 [04:33<01:10,  1.29it/s][A
+ 79%|███████▉  | 337/427 [04:33<01:08,  1.31it/s][A
+ 79%|███████▉  | 338/427 [04:34<01:09,  1.28it/s][A
+ 79%|███████▉  | 339/427 [04:35<01:10,  1.24it/s][A
+ 80%|███████▉  | 340/427 [04:36<01:10,  1.23it/s][A
+ 80%|███████▉  | 341/427 [04:37<01:10,  1.21it/s][A
+ 80%|████████  | 342/427 [04:38<01:11,  1.19it/s][A
+ 80%|████████  | 343/427 [04:39<01:11,  1.18it/s][A
+ 81%|████████  | 344/427 [04:39<01:11,  1.17it/s][A
+ 81%|████████  | 345/427 [04:40<01:09,  1.18it/s][A
+ 81%|████████  | 346/427 [04:41<01:09,  1.17it/s][A
+ 81%|████████▏ | 347/427 [04:42<01:08,  1.17it/s][A
+ 81%|████████▏ | 348/427 [04:43<01:06,  1.18it/s][A
+ 82%|████████▏ | 349/427 [04:44<01:06,  1.18it/s][A
+ 82%|████████▏ | 350/427 [04:45<01:05,  1.17it/s][A
+ 82%|████████▏ | 351/427 [04:45<01:02,  1.22it/s][A
+ 82%|████████▏ | 352/427 [04:46<00:58,  1.28it/s][A
+ 83%|████████▎ | 353/427 [04:47<00:57,  1.28it/s][A
+ 83%|████████▎ | 354/427 [04:48<00:57,  1.27it/s][A
+ 83%|████████▎ | 355/427 [04:48<00:56,  1.27it/s][A
+ 83%|████████▎ | 356/427 [04:49<00:56,  1.26it/s][A
+ 84%|████████▎ | 357/427 [04:50<00:57,  1.22it/s][A
+ 84%|████████▍ | 358/427 [04:51<00:55,  1.25it/s][A
+ 84%|████████▍ | 359/427 [04:52<00:54,  1.24it/s][A
+ 84%|████████▍ | 360/427 [04:52<00:52,  1.27it/s][A
+ 85%|████████▍ | 361/427 [04:53<00:52,  1.26it/s][A
+ 85%|████████▍ | 362/427 [04:54<00:51,  1.26it/s][A
+ 85%|████████▌ | 363/427 [04:55<00:50,  1.28it/s][A
+ 85%|████████▌ | 364/427 [04:55<00:48,  1.29it/s][A
+ 85%|████████▌ | 365/427 [04:56<00:48,  1.28it/s][A
+ 86%|████████▌ | 366/427 [04:57<00:48,  1.27it/s][A
+ 86%|████████▌ | 367/427 [04:58<00:48,  1.24it/s][A
+ 86%|████████▌ | 368/427 [04:59<00:48,  1.22it/s][A
+ 86%|████████▋ | 369/427 [05:00<00:46,  1.26it/s][A
+ 87%|████████▋ | 370/427 [05:00<00:46,  1.23it/s][A
+ 87%|████████▋ | 371/427 [05:01<00:43,  1.29it/s][A
+ 87%|████████▋ | 372/427 [05:02<00:41,  1.34it/s][A
+ 87%|████████▋ | 373/427 [05:02<00:39,  1.38it/s][A
+ 88%|████████▊ | 374/427 [05:03<00:38,  1.37it/s][A
+ 88%|████████▊ | 375/427 [05:04<00:39,  1.30it/s][A
+ 88%|████████▊ | 376/427 [05:05<00:38,  1.34it/s][A
+ 88%|████████▊ | 377/427 [05:05<00:37,  1.34it/s][A
+ 89%|████████▊ | 378/427 [05:06<00:36,  1.35it/s][A
+ 89%|████████▉ | 379/427 [05:07<00:36,  1.31it/s][A
+ 89%|████████▉ | 380/427 [05:08<00:36,  1.29it/s][A
+ 89%|████████▉ | 381/427 [05:09<00:36,  1.26it/s][A
+ 89%|████████▉ | 382/427 [05:09<00:35,  1.28it/s][A
+ 90%|████████▉ | 383/427 [05:10<00:33,  1.30it/s][A
+ 90%|████████▉ | 384/427 [05:11<00:32,  1.31it/s][A
+ 90%|█████████ | 385/427 [05:12<00:32,  1.29it/s][A
+ 90%|█████████ | 386/427 [05:12<00:31,  1.31it/s][A
+ 91%|█████████ | 387/427 [05:13<00:31,  1.28it/s][A
+ 91%|█████████ | 388/427 [05:14<00:30,  1.27it/s][A
+ 91%|█████████ | 389/427 [05:15<00:29,  1.27it/s][A
+ 91%|█████████▏| 390/427 [05:16<00:28,  1.30it/s][A
+ 92%|█████████▏| 391/427 [05:16<00:27,  1.29it/s][A
+ 92%|█████████▏| 392/427 [05:17<00:26,  1.30it/s][A
+ 92%|█████████▏| 393/427 [05:18<00:25,  1.32it/s][A
+ 92%|█████████▏| 394/427 [05:19<00:24,  1.33it/s][A
+ 93%|█████████▎| 395/427 [05:19<00:24,  1.31it/s][A
+ 93%|█████████▎| 396/427 [05:20<00:23,  1.30it/s][A
+ 93%|█████████▎| 397/427 [05:21<00:21,  1.37it/s][A
+ 93%|█████████▎| 398/427 [05:21<00:21,  1.38it/s][A
+ 93%|█████████▎| 399/427 [05:22<00:20,  1.37it/s][A
+ 94%|█████████▎| 400/427 [05:23<00:20,  1.34it/s][A
+ 94%|█████████▍| 401/427 [05:24<00:19,  1.35it/s][A
+ 94%|█████████▍| 402/427 [05:25<00:18,  1.32it/s][A
+ 94%|█████████▍| 403/427 [05:25<00:18,  1.33it/s][A
+ 95%|█████████▍| 404/427 [05:26<00:17,  1.32it/s][A
+ 95%|█████████▍| 405/427 [05:27<00:17,  1.27it/s][A
+ 95%|█████████▌| 406/427 [05:28<00:16,  1.31it/s][A
+ 95%|█████████▌| 407/427 [05:28<00:15,  1.32it/s][A
+ 96%|█████████▌| 408/427 [05:29<00:13,  1.39it/s][A
+ 96%|█████████▌| 409/427 [05:30<00:12,  1.41it/s][A
+ 96%|█████████▌| 410/427 [05:30<00:12,  1.36it/s][A
+ 96%|█████████▋| 411/427 [05:31<00:12,  1.33it/s][A
+ 96%|█████████▋| 412/427 [05:32<00:10,  1.41it/s][A
+ 97%|█████████▋| 413/427 [05:32<00:09,  1.49it/s][A
+ 97%|█████████▋| 414/427 [05:33<00:08,  1.52it/s][A
+ 97%|█████████▋| 415/427 [05:34<00:08,  1.48it/s][A
+ 97%|█████████▋| 416/427 [05:34<00:07,  1.47it/s][A
+ 98%|█████████▊| 417/427 [05:35<00:06,  1.50it/s][A
+ 98%|█████████▊| 418/427 [05:36<00:05,  1.56it/s][A
+ 98%|█████████▊| 419/427 [05:36<00:05,  1.57it/s][A
+ 98%|█████████▊| 420/427 [05:37<00:04,  1.55it/s][A
+ 99%|█████████▊| 421/427 [05:38<00:03,  1.56it/s][A
+ 99%|█████████▉| 422/427 [05:38<00:03,  1.54it/s][A
+ 99%|█████████▉| 423/427 [05:39<00:02,  1.53it/s][A
+ 99%|█████████▉| 424/427 [05:40<00:01,  1.56it/s][A
+100%|█████████▉| 425/427 [05:40<00:01,  1.60it/s][A
+100%|█████████▉| 426/427 [05:41<00:00,  1.64it/s][A
+100%|██████████| 427/427 [05:41<00:00,  1.91it/s][A                                                     
+                                                 [A{'eval_loss': '0.006199', 'eval_runtime': '342.4', 'eval_samples_per_second': '9.956', 'eval_steps_per_second': '1.247', 'epoch': '0.4367'}
+ 22%|██▏       | 200/916 [2:11:04<7:05:11, 35.63s/it]
+100%|██████████| 427/427 [05:41<00:00,  1.91it/s][A
+                                                 [A 22%|██▏       | 201/916 [2:11:40<27:29:06, 138.39s/it] 22%|██▏       | 202/916 [2:12:16<21:20:59, 107.65s/it] 22%|██▏       | 203/916 [2:12:52<17:03:18, 86.11s/it]  22%|██▏       | 204/916 [2:13:28<14:05:11, 71.22s/it] 22%|██▏       | 205/916 [2:14:05<12:03:31, 61.06s/it] 22%|██▏       | 206/916 [2:14:42<10:35:24, 53.70s/it] 23%|██▎       | 207/916 [2:15:17<9:26:31, 47.94s/it]  23%|██▎       | 208/916 [2:15:52<8:42:58, 44.32s/it] 23%|██▎       | 209/916 [2:16:28<8:12:09, 41.77s/it] 23%|██▎       | 210/916 [2:17:04<7:51:11, 40.04s/it]                                                     {'loss': '0.006395', 'grad_norm': '0.006044', 'learning_rate': '0.0001802', 'epoch': '0.4585'}
+ 23%|██▎       | 210/916 [2:17:04<7:51:11, 40.04s/it] 23%|██▎       | 211/916 [2:17:39<7:33:10, 38.57s/it] 23%|██▎       | 212/916 [2:18:16<7:25:54, 38.00s/it] 23%|██▎       | 213/916 [2:18:53<7:20:07, 37.56s/it] 23%|██▎       | 214/916 [2:19:28<7:13:30, 37.05s/it] 23%|██▎       | 215/916 [2:20:05<7:12:01, 36.98s/it] 24%|██▎       | 216/916 [2:20:41<7:07:08, 36.61s/it] 24%|██▎       | 217/916 [2:21:17<7:05:03, 36.49s/it] 24%|██▍       | 218/916 [2:21:53<7:02:35, 36.33s/it] 24%|██▍       | 219/916 [2:22:29<7:01:31, 36.29s/it] 24%|██▍       | 220/916 [2:23:07<7:05:03, 36.64s/it]                                                     {'loss': '0.004988', 'grad_norm': '0.005154', 'learning_rate': '0.000178', 'epoch': '0.4803'}
+ 24%|██▍       | 220/916 [2:23:07<7:05:03, 36.64s/it] 24%|██▍       | 221/916 [2:23:44<7:05:41, 36.75s/it] 24%|██▍       | 222/916 [2:24:20<7:04:05, 36.67s/it] 24%|██▍       | 223/916 [2:24:56<6:58:33, 36.24s/it] 24%|██▍       | 224/916 [2:25:31<6:56:46, 36.14s/it] 25%|██▍       | 225/916 [2:26:08<6:58:13, 36.31s/it] 25%|██▍       | 226/916 [2:26:45<6:58:49, 36.42s/it] 25%|██▍       | 227/916 [2:27:21<6:56:39, 36.28s/it] 25%|██▍       | 228/916 [2:27:57<6:55:02, 36.20s/it] 25%|██▌       | 229/916 [2:28:32<6:51:11, 35.91s/it] 25%|██▌       | 230/916 [2:29:07<6:47:27, 35.64s/it]                                                     {'loss': '0.006151', 'grad_norm': '0.008552', 'learning_rate': '0.0001758', 'epoch': '0.5022'}
+ 25%|██▌       | 230/916 [2:29:07<6:47:27, 35.64s/it] 25%|██▌       | 231/916 [2:29:43<6:47:36, 35.70s/it] 25%|██▌       | 232/916 [2:30:20<6:50:29, 36.01s/it] 25%|██▌       | 233/916 [2:30:57<6:54:40, 36.43s/it] 26%|██▌       | 234/916 [2:31:33<6:52:58, 36.33s/it] 26%|██▌       | 235/916 [2:32:08<6:49:05, 36.04s/it] 26%|██▌       | 236/916 [2:32:44<6:48:17, 36.03s/it] 26%|██▌       | 237/916 [2:33:18<6:39:41, 35.32s/it] 26%|██▌       | 238/916 [2:33:53<6:37:29, 35.18s/it] 26%|██▌       | 239/916 [2:34:29<6:40:10, 35.47s/it] 26%|██▌       | 240/916 [2:35:05<6:41:12, 35.61s/it]                                                     {'loss': '0.006788', 'grad_norm': '0.004403', 'learning_rate': '0.0001734', 'epoch': '0.524'}
+ 26%|██▌       | 240/916 [2:35:05<6:41:12, 35.61s/it] 26%|██▋       | 241/916 [2:35:42<6:43:32, 35.87s/it] 26%|██▋       | 242/916 [2:36:18<6:43:21, 35.91s/it] 27%|██▋       | 243/916 [2:36:53<6:40:27, 35.70s/it] 27%|██▋       | 244/916 [2:37:29<6:43:16, 36.01s/it] 27%|██▋       | 245/916 [2:38:05<6:40:03, 35.77s/it] 27%|██▋       | 246/916 [2:38:40<6:37:38, 35.61s/it] 27%|██▋       | 247/916 [2:39:15<6:36:32, 35.56s/it] 27%|██▋       | 248/916 [2:39:51<6:36:05, 35.58s/it] 27%|██▋       | 249/916 [2:40:27<6:37:24, 35.75s/it] 27%|██▋       | 250/916 [2:41:03<6:37:13, 35.79s/it]                                                     {'loss': '0.00637', 'grad_norm': '0.007181', 'learning_rate': '0.000171', 'epoch': '0.5459'}
+ 27%|██▋       | 250/916 [2:41:03<6:37:13, 35.79s/it] 27%|██▋       | 251/916 [2:41:39<6:35:59, 35.73s/it] 28%|██▊       | 252/916 [2:42:15<6:38:44, 36.03s/it] 28%|██▊       | 253/916 [2:42:52<6:40:06, 36.21s/it] 28%|██▊       | 254/916 [2:43:28<6:38:34, 36.13s/it] 28%|██▊       | 255/916 [2:44:03<6:36:09, 35.96s/it] 28%|██▊       | 256/916 [2:44:39<6:34:32, 35.87s/it] 28%|██▊       | 257/916 [2:45:16<6:36:03, 36.06s/it] 28%|██▊       | 258/916 [2:45:52<6:35:07, 36.03s/it] 28%|██▊       | 259/916 [2:46:28<6:35:04, 36.08s/it][2026-03-23T08:14:58Z] Manual restart with optimized 4B config from latest checkpoint
+Starting Qwen3 LoRA training run
+{
+  "config": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/configs/finetune/qwen35_4b_gate_cloud_rtxpro6000_96g.json",
+  "model_name_or_path": "Qwen/Qwen3.5-4B",
+  "dataset_dir": "data/finetune/incremental_gate_sft_cloud",
+  "output_dir": "artifacts/finetune/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g",
+  "logging_dir": "reports/finetune/tensorboard/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g",
+  "offload_dir": "artifacts/finetune/offload/qwen35_4b_incremental_gate_cloud_rtxpro6000_96g",
+  "max_seq_length": 1024,
+  "per_device_train_batch_size": 8,
+  "per_device_eval_batch_size": 8,
+  "gradient_accumulation_steps": 8,
+  "learning_rate": 0.0002,
+  "weight_decay": 0.0,
+  "warmup_ratio": 0.03,
+  "num_train_epochs": 2.0,
+  "max_steps": -1,
+  "logging_steps": 10,
+  "eval_steps": 200,
+  "save_steps": 200,
+  "save_total_limit": 4,
+  "seed": 42,
+  "resume_from_checkpoint": "latest",
+  "lora_r": 16,
+  "lora_alpha": 32,
+  "lora_dropout": 0.05,
+  "target_modules": "q_proj,k_proj,v_proj,o_proj,gate_proj,up_proj,down_proj",
+  "gpu_memory_limit_mib": 86000,
+  "cpu_memory_limit_gib": 64,
+  "attn_implementation": "sdpa",
+  "dataloader_num_workers": 4,
+  "gradient_checkpointing": false
+}
+CUDA available: NVIDIA RTX PRO 6000 Blackwell Server Edition
+{
+  "requested_model_name_or_path": "Qwen/Qwen3.5-4B",
+  "resolved_model_source": "/root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B"
+}
+Tokenizer loaded from /root/autodl-tmp/qwen35_incremental_transfer_bundle/artifacts/model_cache/qwen35_incremental/Qwen__Qwen3.5-4B
+Prepared tokenized datasets: train=29307 validation=3409
+{
+  "effective_batch_size": 64,
+  "approx_steps_per_epoch": 458,
+  "approx_total_steps": 916
+}
+`torch_dtype` is deprecated! Use `dtype` instead!
